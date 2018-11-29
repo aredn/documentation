@@ -47,7 +47,7 @@ In order to get your new AREDN |trade| node on the air, you need to enter the fo
 
 * Use the dropdown list to select the maximum output power for this device. Remember that amateur operators are required to use the minimum power necessary to make contact with other stations.
 
-* Use the slider to select the estimated maximum distance you estimate between your node and other neighboring nodes.
+* Use the slider to select the maximum distance you estimate between your node and other neighboring nodes.
 
 * Some devices have max power levels that change depending on the channel or frequency being used, and in that case the max level may change when you save the settings. The output power will be capped at the max level supported by the hardware for that frequency.
 

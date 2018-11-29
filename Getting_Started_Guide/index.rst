@@ -16,4 +16,4 @@ AREDN Getting Started Guide
    node_status
    mesh_status
    advanced_config
-   more-info.rst
+   more_info.rst

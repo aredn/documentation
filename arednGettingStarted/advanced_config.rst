@@ -223,5 +223,15 @@ Click the **Administration** link to navigate to these settings. There are four 
 **Support Data**
   There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| forum in order to get help with a problem. Click *Download Support Data* to save a compressed archive file to your local computer.
 
+Node Reset Button
+-----------------
+
+The reset button on an AREDN |trade| node has two built-in functions based on the length of time the button is pressed.
+
+With the node powered on:
+
+* Hold for 5 seconds to reset the password and DHCP server
+* Hold for 15 seconds to return the node to “just-flashed” condition
+
 .. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
    :ltrim:

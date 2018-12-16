@@ -228,7 +228,7 @@ Node Reset Button
 
 The reset button on an AREDN |trade| node has two built-in functions based on the length of time the button is pressed.
 
-With the node powered on:
+With the node powered on and fully booted:
 
 * Hold for 5 seconds to reset the password and DHCP server
 * Hold for 15 seconds to return the node to “just-flashed” condition

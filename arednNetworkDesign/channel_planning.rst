@@ -10,31 +10,18 @@ Some amount of data traffic is required for :abbr:`OLSR (Optimized Link State Ro
 
 Another case is when there is one poor quality link over which all traffic must be routed. The handshaking and data retransmissions may cause all the other links to wait. The entire network can be impacted by one low quality path which becomes a single bottleneck. If at all possible you should increase the signal quality of that vital link, or establish a better link as an alternate path.
 
-The Hidden Node Problem
------------------------
+Detecting a Busy Channel
+------------------------
 
-In any wireless network there will be nodes which are not within radio range of each other. In the example below, **A** can hear **B** but cannot hear **C**. Since **A** and **C** are hidden from each other, they may try to transmit on the same channel at the same time without knowing it. *Collision Detection* mechanisms will not help because the nodes have no way to communicate except through node **B**.
+In any wireless network there will be nodes which are not within radio range of each other. In the example below, **A** can hear **B** but cannot hear **C**. Since **A** and **C** are hidden from each other, they may try to transmit on the same channel at the same time without knowing it. Collision detection mechanisms will not help because the nodes have no way to communicate except through node **B**, so collision avoidance mechanisms must be used instead.
 
 .. image:: _images/hidden-node.png
    :alt: Hidden Node Problem
    :align: center
 
-AREDN |trade| firmware uses IEEE 802.11 :abbr:`RTS (Request to Send)`/:abbr:`CTS (Clear to Send)` messages and *Collision Avoidance* mechanisms help solve this problem. When a node wants to transmit, it sends a :abbr:`RTS (Request to Send)` message and waits until it receives the corresponding :abbr:`CTS (Clear to Send)` message. Decreased network throughput is one side effect of this scheme because several nodes may be negotiating or waiting to use the channel.
+AREDN |trade| firmware follows `IEEE 802.11a/b/g/n standards <https://en.wikipedia.org/wiki/IEEE_802.11n-2009>`_ and uses `Carrier Sense Multiple Access / Collision Avoidance (CSMA/CA) <https://en.wikipedia.org/wiki/Carrier-sense_multiple_access>`_ for determining whether a channel is busy.  Optionally AREDN |trade| firmware also employs `Request to Send / Clear to Send (RTS/CTS) messages <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ to negotiate the use of a channel. Decreased network throughput is one side effect of this, because several nodes may be negotiating or waiting to use the channel.
 
-Two approaches may help to minimize this issue. You may be able to make the hidden nodes visible to each other, for example by increasing their signal strength. The alternative is to isolate the nodes completely by placing them onto different bands or channels. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel. They are always appropriate when the linked nodes are on a different band or channel.
-
-The Exposed Node Problem
-------------------------
-
-Consider the example of two neighbor nodes (**B** and **C**) on towers separated by many miles, with each node having a set of connected nodes beyond it. If the two tower nodes can hear each other on the same channel, then only one of them can transmit at a time, which puts all other traffic on hold during that period. While **B** communicates with its neighbor (**A**), the **C** node would not be allowed to communicate with its local neighbor (**D**) who wants to transmit at the same time (even though that signal would never be detected by the nodes on the **A**/**B** side). **D** sends a :abbr:`RTS (Request to Send)` message, but **C** knows that the channel is already busy and cannot respond with a :abbr:`CTS (Clear to Send)` message.
-
-.. image:: _images/exposed-node.png
-   :alt: Exposed Node Problem
-   :align: center
-
-The main issue created by the *Exposed Node* problem is that significant delays are introduced since some nodes are prevented from sending traffic to other nodes because of an active transmitter farther down the path. Notice that **D** could send traffic without interfering with the conversation between **A** and **B** because **D** is not within radio range of either node.
-
-In a case like this it might be best to create a *Backbone Link* between the towers and to put the radios on a different band or channel. Then deploy an *Intermediate Link* to communicate with the downstream devices on each side of the backbone.
+For `hidden nodes <https://en.wikipedia.org/wiki/Hidden_node_problem>`_, two approaches may help to minimize this issue. You may be able to make the hidden nodes visible to each other, for example by increasing their signal strength. The alternative is to isolate the nodes completely by placing them onto different bands or channels. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel. It may be more appropriate to create a separate link between the sites and to put the radios on a different band or channel.
 
 Route Flapping
 --------------

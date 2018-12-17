@@ -10,8 +10,8 @@ Some amount of data traffic is required for :abbr:`OLSR (Optimized Link State Ro
 
 Another case is when there is one poor quality link over which all traffic must be routed. The handshaking and data retransmissions may cause all the other links to wait. The entire network can be impacted by one low quality path which becomes a single bottleneck. If at all possible you should increase the signal quality of that vital link, or establish a better link as an alternate path.
 
-Detecting a Busy Channel
-------------------------
+Channel Contention
+------------------
 
 In any wireless network there will be nodes which are not within radio range of each other. In the example below, **A** can hear **B** but cannot hear **C**. Since **A** and **C** are hidden from each other, they may try to transmit on the same channel at the same time without knowing it. Collision detection mechanisms will not help because the nodes have no way to communicate except through node **B**, so collision avoidance mechanisms must be used instead.
 
@@ -65,8 +65,8 @@ Antenna Polarization
 
 Most of the latest AREDN |trade| devices use dual polarity antennas and :abbr:`MIMO (Multiple Input - Multiple Output)` features in the radios that  exploit multipath propagation. However, if you are using single polarity antennas with "single chain" radios, another way to achieve signal separation for collocated devices is to orient the site's antennas so that one is vertically polarized and the other is horizontally polarized. This can result in a signal separation of up to 20 dB. Vertical polarization is usually preferred because it tends to be less susceptible to reflections and rain fade, but horizontal polarization still provides adequate signal with clear line of sight. Note that the antennas on both sides of a radio link must be oriented the same way.
 
-Aligning Nodes
---------------
+Aligning Link Nodes
+-------------------
 
 The AREDN |trade| web interface provides information that is helpful when aligning two nodes that are being installed to form a link. On the **Node Status** page, click the **Charts** button to view the *Realtime Signal to Noise* graph. Slowly turn and tilt your antenna, pausing to view the signal metrics. Once you see the best signal, as shown below, you can lock your antenna into position. Depending on the implementation, a Signal to Noise Ratio of 15 dB is adequate to pass data at speeds in the range of 5 to 20 :abbr:`Mbps (Megabits per second)`.
 
@@ -77,9 +77,13 @@ The AREDN |trade| web interface provides information that is helpful when aligni
 Channel Planning Tips
 ---------------------
 
-You may experience poor network performance if there are too many nodes using the same band and channel. Use channel separation and DtD linking of collocated nodes to avoid RF channel contention. The 3.4 GHz and 5.8 GHz bands provide the most unshared channels for use in AREDN |trade| networks.
+.. sidebar:: Avoid Network Scalability Issues
 
-Based on the purpose for your network, try to create reliable paths to the locations where data is needed.
+   If there are two towers or cell coverage areas within range of each other, configure them with different channels to avoid poor performance.
+
+You may experience poor network performance if there are too many nodes using the same band and channel. Here is a simple example to illustrate the issue: a three-hop path from QTH1 to Tower1 to Tower2 to QTH2. If all links are using the same channel, then only one link at half-duplex can send data at a time. This instantly cuts the throughput by one-third or more and increases latency with protocol overhead. To improve performance you can configure each link to use a different channel, allowing simultaneous transmissions. In the first case with channel sharing, it might be possible to have one HD video stream and one VoIP call with frequent dropouts. In the second case using different link channels, you could have three HD video streams and several VoIP calls simultaneously with few dropouts.
+
+Based on the purpose for your network, try to create reliable paths to the locations where data is needed. Use channel separation and DtD linking of collocated nodes to avoid RF channel contention. The 3.4 GHz and 5.8 GHz bands provide the most unshared channels for use in AREDN |trade| networks.
 
 * If you need broad local coverage for a high profile area you can install sector antennas on a tower site: for example, three panels with 120 degree beam width each. DtD link the sectors at the tower site, and use different channels for each sector in order to avoid channel contention issues.
 

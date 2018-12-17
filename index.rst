@@ -31,4 +31,4 @@ AREDN Documentation
   more_info
 
 
-:Author(s): KC0EUW
+:Reviewers: KC0EUW, K5DLQ, AE6XE, K6AH, WU2S

@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'AREDN Getting Started Guide'
+project = u'AREDN Documentation'
 copyright = u'2018, AREDN'
 author = u'KC0EUW'
 
@@ -105,7 +105,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'AREDN_Getting_Started_Guidedoc'
+htmlhelp_basename = 'AREDN_Documentation'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -132,7 +132,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'AREDN_Getting_Started_Guide.tex', u'AREDN\\_Getting\\_Started\\_Guide',
+    (master_doc, 'AREDN_Documentation.tex', u'AREDN Documentation',
      u'AREDN', 'manual'),
 ]
 
@@ -142,7 +142,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'aredn_getting_started_guide', u'AREDN_Getting_Started_Guide',
+    (master_doc, 'aredn_documentation', u'AREDN Documentation',
      [author], 1)
 ]
 
@@ -153,8 +153,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'AREDN_Getting_Started_Guide', u'AREDN_Getting_Started_Guide',
-     author, 'AREDN_Getting_Started_Guide', 'A basic guide for getting started with AREDN.',
+    (master_doc, 'AREDN_Documentation', u'AREDN Documentation',
+     author, 'AREDN_Documentation', 'A guide for AREDN software.',
      'Miscellaneous'),
 ]
 

@@ -17,7 +17,7 @@ One of the best sources of detailed device information is a manufacturer's datas
 
 If you are just getting started with AREDN |trade| you can easily begin with one of the low-cost devices that comes with an integrated antenna and a :abbr:`PoE (Power over Ethernet)` unit. If you are expanding your AREDN |trade| network with more sophisticated equipment, you may choose a standalone radio attached to any of several kinds of high-gain antennas.
 
-.. note:: See the **AREDN Design Guide** for more information about constructing robust mesh networks.
+.. note:: See the **AREDN Network Design Guide** for more information about constructing robust mesh networks.
 
 
 .. |trade|  unicode:: U+02122 .. TRADE MARK SIGN

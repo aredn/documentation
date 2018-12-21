@@ -9,7 +9,7 @@ AREDN documentation is written using the reStructuredText markup language. Text 
 After you setup your GitHub account, you should:
 
 1. FORK the AREDN documentation repository to your GitHub account.
-2. Then, to send updates or additions, checkout your repository from github.com/<your account>/documentation, commit local changes you have made (additions or corrections to the AREDN docs), push to origin (your repository).
+2. Then, to send updates or additions, checkout your repository from github.com/your-account/documentation, commit local changes you have made (additions or corrections to the AREDN docs), push to origin (your repository).
 3. Create a pull request.
 
 The AREDN team will then review your request just as it does for code changes. Once your documentation contributions are committed to the AREDN GitHub repository, a webhook updates and builds the latest docs for viewing and exporting on ReadTheDocs.org

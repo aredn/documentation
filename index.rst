@@ -3,6 +3,9 @@ AREDN Documentation
 ===================
 
 :Version: 3.18.9.0
+:Reviewers: KC0EUW, K5DLQ, AE6XE, K6AH, WU2S
+
+This documentation set contains the *Getting Started Guide* which walks through the process of configuring an AREDN |trade| radio node. It also contains the *Network Design Guide* which provides background information and tips for planning and deploying a robust mesh network.
 
 .. toctree::
    :maxdepth: 2
@@ -34,10 +37,6 @@ AREDN Documentation
    :hidden:
 
    more_info
-
-:Reviewers: KC0EUW, K5DLQ, AE6XE, K6AH, WU2S
-
-This documentation set contains the *Getting Started Guide* which walks through the process of configuring an AREDN |trade| radio node. It also contains the *Network Design Guide* which provides background information and tips for planning and deploying a robust mesh network. 
 
 
 .. |trade|  unicode:: U+02122 .. TRADE MARK SIGN

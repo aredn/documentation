@@ -54,7 +54,7 @@ It is important not to use a subnet larger than is necessary because the chance 
 
 The other LAN Mode is ``NAT``, and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh RF* IP address of the node. This is the same way that most routers use an Internet connection, and all services provided by computers on the LAN can only be accessed through port forwarding rules. A single :abbr:`DMZ (DeMilitarized Zone)` server can be used to accept all incoming traffic that is not already handled by other rules or by the node itself.
 
-By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server for its LAN nodes. The last octet of the start/end range for host IP addresses is shown in the LAN column. If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server on each subnet, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your LAN network.
+By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server for its LAN interface, which lets the node assign IP addresses automatically for devices connected to the node's local area network. The last octet of the start/end range for host IP addresses is shown in the LAN column. If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
 
 The *Disable Default Route* checkbox will tell the node not to advertise that it can be used as a default gateway. This means that computers on the LAN network will have no route to reach the Internet or other networks via the mesh node. If this checkbox is selected your hosts will not be able to access the Internet even if your node has Internet available on its WAN port. You may need to disable the default route if your node needs to be connected to two networks at once, such as being wired to the mesh and connected to a local served agency WiFi network.
 
@@ -81,7 +81,7 @@ VLAN 2
 No VLAN tag
   Packets received by the node that are untagged will be identified as LAN traffic from computers on the local area network.
 
-It is important to understand AREDN |trade| VLANs when configuring network smart switches for Internet access, tunneling, or DtD linking of nodes.
+It is important to understand AREDN |trade| VLANs when configuring network smart switches for Internet access, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN |trade| website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_.
 
 Port Forwarding, DHCP, and Services
 -----------------------------------
@@ -105,7 +105,9 @@ Since DHCP leases are dynamic and can change over time, there may be a reason wh
 Advertised Services
 ^^^^^^^^^^^^^^^^^^^
 
-Network services can run on LAN hosts or on your node itself. Just remember that AREDN |trade| nodes have a limited amount of system resources with which to run services, so it may be a good idea to run services on an external computer connected to the node's LAN network. In the example above you can see that an external host has been given a reserved DHCP address, and it is also running the *meshchat* program as a service that is advertised on the network through this node. Use the following steps to create an advertised service.
+*Services* include the required applications, programs, or functions that are available to devices on the mesh network. The purpose of the network is to transport data for the services which are being used. Network services may include keyboard-to-keyboard chat or email programs, document sharing applications, Voice over IP phone or video conferencing services, streaming video from surveillance cameras, and a variety of other network-enabled features. Services can run on the node itself or on any of its LAN-connected devices.
+
+Remember that AREDN |trade| nodes have a limited amount of system resources with which to run services, so installing add-on services directly on the mesh node should be avoided because the node will become unstable and the mesh network can fail if insufficient RAM is available for the node to function, particularly on devices with only 32 MB of memory. It is a best practice to run services on an external computer connected to the node's LAN network. In the example above you can see that an external host has been given a reserved DHCP address, and it is also running the *meshchat* program as a service that is advertised on the network through this node. Use the following steps to create an advertised service.
 
 Name
   Enter a service name in the *Name* field.
@@ -120,7 +122,7 @@ URL
   From the dropdown list select the node or host on which this service is running.
 
 Port
-  Enter the network port on which the service is listening for user connections. There may be several applications provided through a single web server on a node or host using a single port, and in that case a valid application *Path* must be entered after the port number (as in the example above). In other cases the network port alone uniquely identifies the application or program that is listening for user connections to that service.
+  Enter the network port on which the service is listening for user connections. There may be several applications provided through a single web server on a node or host using a single port, and in that case a valid application *Path* must be entered after the port number (as in the example above). In other cases the network port alone uniquely identifies the application or program that is listening for user connections to that service. You can click this link for additional information about `network ports <https://en.wikipedia.org/wiki/Port_(computer_networking)>`_.
 
 Once you have entered the values for your advertised service, click *Add* to add the service to the **Advertised Services** list. You may also remove an existing advertised service by clicking the *Del* button to delete it from the list.
 
@@ -129,7 +131,7 @@ Port Forwarding
 
 If you are using ``NAT`` for your LAN mode, then *Port Forwarding* rules are the only way other devices have for connecting to your services. To create a port forwarding rule, select the network interface on which the traffic will enter your node. Select the protocol used by the incoming packets (TCP, UDP, or Both). Enter the port number that the external request is using to connect to your service. When your node receives traffic on the selected interface, protocol, and port, the request will be routed to the LAN IP address and port on which that host is listening for incoming service requests.
 
-See your node's **Help** file for additional insights on how this configuration section changes based on the LAN mode of your node.
+See your node's **Help** file for additional insights on how this configuration section changes based on the LAN mode of your node. Click this link for more information on `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
 
 Tunnel Server
 -------------
@@ -149,7 +151,7 @@ WAN Interface IP (Tunnel Server *node* only)
   Set a static IP address on your tunnel server node's WAN interface so your Internet-connected router/firewall has a consistent way to forward traffic to your node.
 
 Internet Firewall/Router Settings (Tunnel Server network only)
-  Set your network firewall or router to permit traffic from the Internet on port 5525, which is the default AREDN |trade| tunnel service port. Then configure a port forwarding rule on your firewall or router to send any traffic from the Internet on port 5525 to the static IP address of your node's WAN interface on the *node's* port 5525. See the equipment manual for your firewall or router to determine how to configure these settings.
+  Set your network firewall or router to permit traffic from the Internet on port 5525, which is the default AREDN |trade| tunnel service port. Then configure a port forwarding rule on your firewall or router to send any traffic from the Internet on port 5525 to the static IP address of your node's WAN interface on the *node's* port 5525. See the equipment manual for your firewall or router to determine how to configure these settings. Also, some Internet Service Providers may not allow port forwarding by default, so you should check with your ISP if you have difficulty opening ports.
 
 Tunnel Server Node Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -230,8 +232,10 @@ The reset button on an AREDN |trade| node has two built-in functions based on th
 
 With the node powered on and fully booted:
 
-* Hold for 5 seconds to reset the password and DHCP server
-* Hold for 15 seconds to return the node to “just-flashed” condition
+* **Hold for 5 seconds to reset the password and DHCP server**
+* **Hold for 15 seconds to return the node to “just-flashed” condition**
+
+On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.
 
 .. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
    :ltrim:

@@ -2,10 +2,19 @@
 AREDN Documentation
 ===================
 
-:Version: 3.18.9.0
+:Version: 3.18.9.0 plus nightly build additions
 :Reviewers: KC0EUW, K5DLQ, AE6XE, K6AH, WU2S
 
-This documentation set contains the *Getting Started Guide* which walks through the process of configuring an AREDN |trade| radio node. It also contains the *Network Design Guide* which provides background information and tips for planning and deploying a robust mesh network.
+This documentation set consists of several sections which are shown in the navigation list.
+
+* The **Getting Started Guide** walks through the process of configuring an AREDN |trade| radio node to be part of a mesh network.
+* The **Network Design Guide** provides background information and tips for planning and deploying a robust mesh network.
+* The **Applications and Services Guide** discusses the types of programs or services that can be used across a mesh network. *NOTE: This section is incomplete while in progress.*
+* Finally, the **Appendix** contains supplementary information.
+
+If you wish to locate specific topics within the documentation, you can type keywords into the *Search docs* field to display a list of items which match your search.
+
+If you would like to see the documentation for a specific AREDN release, click on the **Read the Docs** label at the bottom of the navigation bar. This label shows the version you are currently viewing, but clicking the label bar opens a panel with several other options. Here you may choose to view another version of the documentation, and you can also download the entire documentation set in any of several formats *(PDF, ePub, HTML)* for offline use.
 
 .. toctree::
    :maxdepth: 2
@@ -33,7 +42,16 @@ This documentation set contains the *Getting Started Guide* which walks through 
   arednNetworkDesign/network_modeling
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Applications and Services Guide
+   :hidden:
+
+   arednServicesGuide/services_overview
+
+
+.. toctree::
    :maxdepth: 1
+   :caption: Appendix
    :hidden:
 
    more_info

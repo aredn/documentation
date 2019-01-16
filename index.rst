@@ -47,7 +47,13 @@ If you would like to see the documentation for a specific AREDN release, click o
    :hidden:
 
    arednServicesGuide/services_overview
-
+   arednServicesGuide/chat_programs
+   arednServicesGuide/email_programs
+   arednServicesGuide/file_sharing
+   arednServicesGuide/voip_programs
+   arednServicesGuide/video_streaming
+   arednServicesGuide/collaborative_editing
+   arednServicesGuide/other_programs
 
 .. toctree::
    :maxdepth: 1

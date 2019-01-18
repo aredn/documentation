@@ -2,7 +2,7 @@
 Video Streaming and Surveillance
 ================================
 
-.. attention:: This section of the documentation is currently a work in progress.
+.. important:: This section of the documentation is currently a work in progress.
 
 
 

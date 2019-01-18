@@ -2,7 +2,7 @@
 Collaborative Document Editing
 ==============================
 
-.. attention:: This section of the documentation is currently a work in progress.
+.. important:: This section of the documentation is currently a work in progress.
 
 
 

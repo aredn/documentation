@@ -2,27 +2,25 @@
 Chat Programs
 =============
 
-.. attention:: This section of the documentation is currently a work in progress.
+`Online chat <https://en.wikipedia.org/wiki/Online_chat>`_ programs include any application which transmits short text messages between the sender and receiver. These realtime keyboard-to-keyboard messages create an environment similar to a spoken conversation. A chat session may involve one-to-one communication or group meetings. These programs are valuable for quick question/answer interactions where immediate replies are important. Timestamped conversation history is typically saved for future reference.
 
-`Online chat <https://en.wikipedia.org/wiki/Online_chat>`_ programs include any application which transmits short text messages between the sender and receiver. These types of keyboard-to-keyboard messages create an environment similar to a spoken conversation. A chat session may involve one-to-one communication or group chats. These programs are valuable for quick question/answer interactions where immediate replies are important. Timestamped conversation history is typically saved for future reference.
-
-The following list of applications is not comprehensive or complete, but represents a sample of the types of chat programs that might be available for you to use as services on your mesh network. Only programs with open source licenses were included in this list, although there are commercial chat applications that can also be used.
+Chat programs are one of the least network-intensive types of communication programs, so they are a good candidate as low impact services on a mesh network. Many chat programs also offer file sharing, which allows you to get two functions within a single program. The following list of applications is not comprehensive or complete, but represents a sample of the types of chat programs that might be available for you to use as services on your mesh network. Only programs with open source licenses were included in this list, although there are commercial chat applications that can also be used.
 
 MeshChat
 --------
 
 MeshChat has become the primary chat service for AREDN |trade| networks because it was written specifically for mesh communication. Users access MeshChat via web browser, and the service runs on the mesh node itself or on a LAN-connected Raspberry Pi computer. After logging in by entering a call sign, send a message by typing into a text box and clicking the *Submit* button. The list of active users is displayed, and every message is visible to all participants on the chat service. Multiple *Zones* and *Channels* are supported for categorizing and separating message traffic.
 
-The message database is stored on every device where mesh chat is running. Nodes may vary in network connectivity, but as long as at least one node is available the MeshChat database remains intact. Once nodes come online they immediately catch up by retrieving a full copy of the message database. If any new messages are found, they are appended to the local message database.
+The message database is stored on every device where MeshChat is running. Nodes may have intermittent network connectivity, but as long as at least one node is available the MeshChat database remains intact. Once nodes come online they immediately catch up by retrieving a full copy of the message database. If any new messages are found, they are appended to the local message database.
 
-In addition to the keyboard-to-keyboard chat feature, MeshChat also allows files to be shared between nodes. Files may be uploaded from or downloaded to the user's computer at any time. If MeshChat is running on a radio node then the file storage is limited to 500kb, but if running on an external computer the file storage is limited only by the size of the disk that is allocated for MeshChat files.
+In addition to the keyboard-to-keyboard chat feature, MeshChat also allows files to be shared between nodes. Files may be uploaded from or downloaded to the user's computer at any time. If MeshChat is running on a radio node then the file storage is limited to 500 kb, but if running on an external computer the file storage is limited only by the size of the disk that is allocated for MeshChat files.
 
 MeshChat *Action Scripts* also provide for functional extensions, such as sending messages to an SMS gateway for external distribution. It is also possible for action scripts to periodically save the message database for archive purposes or integration with external tools. For additional information about MeshChat, visit this link: `MeshChat <http://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
 
 Internet Relay Chat
 -------------------
 
-Several implementations of `Internet Relay Chat <https://en.wikipedia.org/wiki/IRCd>`_ are available, either as open source software or in proprietary versions. The Internet Relay Chat Daemon (IRCd) is a server program that listens for connections from IRC client programs, and it brokers the communication between the connected clients. With this client-server architecture, the IRC server must be available on a network link with sufficient bandwidth in order for the clients to function.
+Several implementations of `Internet Relay Chat <https://en.wikipedia.org/wiki/IRCd>`_ are available, either as open source software or in proprietary versions. The Internet Relay Chat Daemon (IRCd) is a server program that listens for connections from IRC client programs and brokers the communication between the connected clients. With this client-server architecture, the IRC server must be available on a network link with sufficient bandwidth in order for the clients to function.
 
 A wide variety of features and functions are available with these and similar chat programs, including various zones, channel types, and user roles. For additional information about IRC services, visit these links: `IRC Servers <https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_daemons>`_ and `IRC Clients <https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients>`_
 
@@ -43,7 +41,7 @@ Mattermost
 
 The *Mattermost Team Edition* is an open source platform that supports mobile and desktop messaging apps. It provides one-to-one and group messaging, file sharing, and message history with search capabilities. It is often described as an open source alternative to the commercial *Slack* communication tool.
 
-Mattermost provides one-to-one communication as well as group meeting sessions, and @mentions are supported. Channels are available for organizing conversations and they can be topic-based, group-based, or event-based. Notifications indicate user presence and activity. File sharing is provided for PDF and text files, as well as audio, video, and image files. For additional information about Mattermost, visit this link: `Mattermost <https://mattermost.com/>`_
+Mattermost supports @mentions, and channels are available for organizing conversations which can be topic-based, group-based, or event-based. Notifications indicate user presence and activity. File sharing is provided for PDF and text files, as well as audio, video, and image files. For additional information about Mattermost, visit this link: `Mattermost <https://mattermost.com/>`_
 
 Matrix - Synapse
 ----------------
@@ -56,18 +54,18 @@ Example Chat Service Comparison
 -------------------------------
 
 Platform abbreviations:
-  win=MS Windows, mac=Apple, linux=Linux, rpi=Raspberry Pi
+  win=MS Windows, mac=Apple, lin=Linux, rpi=Raspberry Pi
 
-===========  =============  ============  ====  =========  ======
-Program      Architecture   Network Load  Age   Platform   Effort
-===========  =============  ============  ====  =========  ======
-MeshChat     mesh aware     small         new   node/rpi   easy
-IRCd server  client-server  small         old   all        medium
-Jabber/XMPP  client-server  small         old   all        medium
-Let's Chat   client-server  small         new   all        medium
-Mattermost   client-server  medium        new   linux      expert
-Matrix       distributed    medium        new   linux/mac  expert
-===========  =============  ============  ====  =========  ======
+===========  =============  ============  ====  ===============  ======
+Program      Architecture   Network Load  Age   Platform         Effort
+===========  =============  ============  ====  ===============  ======
+MeshChat     mesh aware     small         new   node/rpi         easy
+IRCd server  client-server  small         old   lin/mac/rpi/win  medium
+Jabber/XMPP  client-server  small         old   lin/mac/rpi/win  medium
+Let's Chat   client-server  small         new   lin/mac/rpi/win  medium
+Mattermost   client-server  medium        new   linux            expert
+Matrix       distributed    medium        new   linux/mac        expert
+===========  =============  ============  ====  ===============  ======
 
 
 .. |trade|  unicode:: U+02122 .. TRADE MARK SIGN

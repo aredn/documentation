@@ -17,7 +17,7 @@ If you wish to locate specific topics within the documentation, you can type key
 If you would like to see the documentation for a specific AREDN release, click on the **Read the Docs** label at the bottom of the navigation bar. This label shows the version you are currently viewing, but clicking the label bar opens a panel with several other options. Here you may choose to view another version of the documentation, and you can also download the entire documentation set in any of several formats *(PDF, ePub, HTML)* for offline use.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Getting Started Guide
    :hidden:
 
@@ -31,7 +31,7 @@ If you would like to see the documentation for a specific AREDN release, click o
    arednGettingStarted/advanced_config
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
   :caption: Network Design Guide
   :hidden:
 
@@ -42,7 +42,7 @@ If you would like to see the documentation for a specific AREDN release, click o
   arednNetworkDesign/network_modeling
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Applications and Services Guide
    :hidden:
 

@@ -27,7 +27,7 @@ Users login to NextCloud to see available content, and file sharing permissions 
 Collaborative Computing
 -----------------------
 
-Collaborative computing enables people collaborate on documents together in real time. Multiple users dispersed across a wide geographic area can be working together simultaneously to create or modify a set of documents that are available to others over the network. With this type of collaborative model, documents no longer need be viewed as static but can become truly living projects.
+Collaborative computing enables people to collaborate on documents together in real time. Multiple users dispersed across a wide geographic area can be working simultaneously to create or modify a set of documents that are available to others over the network. With this type of collaborative model, documents no longer need be viewed as static but can become truly living projects.
 
 One example package that facilitates collaborative document creation is `Etherpad Lite <https://en.wikipedia.org/wiki/Etherpad>`_. Users access the Etherpad server through a web browser, so no client software is required on the users' computers. Anyone who connects to the service can create a new document or contribute to an existing document. Active users are displayed and have the ability to chat with each other in the messaging area. Changes to a document are periodically auto-saved, but users can force a checkpoint to capture the current state of a document. The "time slider" control allows users to view document revisions at any point in time throughout its history. Documents can be downloaded in several formats (text, HTML, Open Document, Microsoft Word, or PDF).
 

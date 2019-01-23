@@ -1,6 +1,6 @@
-==============================
-Collaborative Document Editing
-==============================
+================================
+Computer Aided Dispatch Programs
+================================
 
 .. important:: This section of the documentation is currently a work in progress.
 

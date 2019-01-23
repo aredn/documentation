@@ -1,6 +1,6 @@
-=========================
-VoIP Audio/Video Programs
-=========================
+=============================
+VoIP Audio/Video Conferencing
+=============================
 
 .. important:: This section of the documentation is currently a work in progress.
 

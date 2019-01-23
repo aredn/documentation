@@ -14,7 +14,7 @@ The purpose for this section of the AREDN |trade| documentation is to identify t
 
 When choosing programs to use as AREDN |trade| services you will probably find that there is more than one way to accomplish your goals. It is crucial to clearly understand the types of communication that are required on your network, and then you will be able to select the best program for the job. Always try to use a program that will cause the least performance impact to your network as it is working to fulfill your communication needs.
 
-Most TCP/IP programs are designed to use the `Client-Server <https://en.wikipedia.org/wiki/Client%E2%80%93server_model>`_ model, where one or more client programs communicate through a central server or servers distributed hierarchically. These types of programs will operate on a mesh network as long as the server is available on a readily accessible network segment with adequate bandwidth.
+Most TCP/IP programs are designed to use the `Client-Server <https://en.wikipedia.org/wiki/Client%E2%80%93server_model>`_ model, where one or more client programs communicate through a central server or servers distributed hierarchically. These types of programs will operate on a mesh network as long as the server is reachable on a readily accessible network segment with adequate bandwidth.
 
 There are also programs which have been designed to take advantage of multiple paths between nodes and multiple peer servers coexisting on a mesh network. There are fewer of these mesh-friendly programs, but they will be identified as they appear in the following sections.
 

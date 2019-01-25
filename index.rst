@@ -9,7 +9,7 @@ This documentation set consists of several sections which are shown in the navig
 
 * The **Getting Started Guide** walks through the process of configuring an AREDN |trade| radio node to be part of a mesh network.
 * The **Network Design Guide** provides background information and tips for planning and deploying a robust mesh network.
-* The **Applications and Services Guide** discusses the types of programs or services that can be used across a mesh network. *NOTE: This section is incomplete while in progress.*
+* The **Applications and Services Guide** discusses the types of programs or services that can be used across a mesh network.
 * The **How-to Guides** provide tips and techniques for various tasks.
 * Finally, the **Appendix** contains supplementary information.
 

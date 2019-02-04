@@ -22,10 +22,10 @@ Since the application *server* must be reachable on the network in order for *cl
 
 For mission-critical services on high speed data networks, *Disaster Recovery* designs are often implemented to ensure that services continue operating in the event of a failure. There are several methods for accomplishing this, which usually involve duplicating server hardware and software with some type of data replication between these systems. At a high level, two basic designs could be implemented as described below.
 
-**Manual Failover Design**
+*Manual Failover Design*
   In this design there is a primary server that remains active, with a duplicate backup server located on another network segment. The standby server is brought online only if the primary server becomes unreachable. Application data on the primary server could be copied periodically to the standby server using an intelligent utility such as `rsync <https://en.wikipedia.org/wiki/Rsync>`_ running as a scheduled task which copies only what has changed since the last check. This design provides a fallback that can be used in case of emergency, but it requires some degree of manual intervention to bring up the standby service on the network when the primary becomes unreachable.
 
-**Automated Failover Design**
+*Automated Failover Design*
   `High Availability <https://en.wikipedia.org/wiki/High-availability_cluster>`_ technology allows two or more sets of computing resources to send `heartbeat <https://en.wikipedia.org/wiki/Heartbeat_(computing)>`_ signals for detecting whether their services are available across the network. Several types of open source and commercial clustering packages are available, which provide varying degrees of complexity and recovery capabilities. Suffice it to say that many options are available for ensuring the availability of mission-critical services on your network. Feel free to research, investigate, and test several of these options if you have a pressing need for highly available mesh services.
 
 .. image:: _images/server-sync.png

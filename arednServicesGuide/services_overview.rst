@@ -16,6 +16,26 @@ When choosing programs to use as AREDN |trade| services you will probably find t
 
 Most TCP/IP programs are designed to use the `Client-Server <https://en.wikipedia.org/wiki/Client%E2%80%93server_model>`_ model, where one or more client programs communicate through a central server or servers distributed hierarchically. These types of programs will operate on a mesh network as long as the server is reachable on a readily accessible network segment with adequate bandwidth.
 
+**Keeping Multiple Servers in Sync**
+
+Since the application *server* must be reachable on the network in order for *clients* to function, and since a solitary server can be a single point of failure, it may be useful to explore ways for redundant servers to be kept in sync across the network. If one server becomes unreachable, a backup or failover server could be used to keep the service running.
+
+For mission-critical services on high speed data networks, *Disaster Recovery* designs are often implemented to ensure that services continue operating in the event of a failure. There are several methods for accomplishing this, which usually involve duplicating server hardware and software with some type of data replication between these systems. At a high level, two basic designs could be implemented as described below.
+
+**Manual Failover Design**
+  In this design there is a primary server that remains active, with a duplicate backup server located on another network segment. The standby server is brought online only if the primary server becomes unreachable. Application data on the primary server could be copied periodically to the standby server using an intelligent utility such as `rsync <https://en.wikipedia.org/wiki/Rsync>`_ running as a scheduled task which copies only what has changed since the last check. This design provides a fallback that can be used in case of emergency, but it requires some degree of manual intervention to bring up the standby service on the network when the primary becomes unreachable.
+
+**Automated Failover Design**
+  `High Availability <https://en.wikipedia.org/wiki/High-availability_cluster>`_ technology allows two or more sets of computing resources to send `heartbeat <https://en.wikipedia.org/wiki/Heartbeat_(computing)>`_ signals for detecting whether their services are available across the network. Several types of open source and commercial clustering packages are available, which provide varying degrees of complexity and recovery capabilities. Suffice it to say that many options are available for ensuring the availability of mission-critical services on your network. Feel free to research, investigate, and test several of these options if you have a pressing need for highly available mesh services.
+
+.. image:: _images/server-sync.png
+   :alt: Server Sync Diagram
+   :align: center
+
+As a general rule for mesh networks, simpler is better. The more complicated and automated you make your service design, the more network and computing resources will be required to operate the system. It is always best to conserve mesh networking resources wherever possible.
+
+----------
+
 There are also programs which have been designed to take advantage of multiple paths between nodes and multiple peer servers coexisting on a mesh network. There are fewer of these mesh-friendly programs, but they will be identified as they appear in the following sections.
 
 The remaining parts of this section focus on examples of services that could be offered on your AREDN |trade| network. Programs are grouped by type, and where possible the network impact of each program will be described in order for you to understand the resources that may be required to use the program as a service on the mesh.

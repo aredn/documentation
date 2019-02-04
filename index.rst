@@ -63,13 +63,15 @@ If you would like to see the documentation for a specific AREDN release, click o
 
    arednHow-toGuides/howto_overview
    arednHow-toGuides/puttygen_ssh_keys
+   arednHow-toGuides/radio_mobile_settings
 
 .. toctree::
    :maxdepth: 1
    :caption: Appendix
    :hidden:
 
-   more_info
+   appendix/freq_charts
+   appendix/more_info
 
 
 .. |trade|  unicode:: U+02122 .. TRADE MARK SIGN

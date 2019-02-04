@@ -43,7 +43,7 @@ Some of the advantages and disadvantages of each frequency range are explained i
    :align: center
 
 **Advantages**
-  Within the available frequency range you have the option of selecting channel widths of either 5, 10, or 20 MHz. A larger channel width will provide higher data rates. However, one effect of reducing the channel width is to increase the :abbr:`SNR (Signal to Noise Ratio)` to improve signal quality. For example, changing from a 20 MHz to a 5 MHz channel width will result in a 6 dB signal gain and could make the difference between a marginal link and a usable one.
+  Within the available frequency range you have the option of selecting channel widths of either 5, 10, or 20 MHz. A larger channel width will provide higher data rates. However, one effect of reducing the channel width is to increase the :abbr:`SNR (Signal to Noise Ratio)` to improve signal quality. For example, changing from a 20 MHz to a 10 MHz channel width will result in a 3 dB signal gain and could make the difference between a marginal link and a usable one. Just remember that when you cut the channel width in half you are also reducing your maximum throughput by half. Carefully test you links to ensure optimal performance.
 
   One advantage for the 13 cm band is that radio equipment and antenna systems are more readily available and less costly due to higher consumer demand. There is a wide variety of equipment from several manufacturers which supports the AREDN |trade| firmware and operates in this band. Radio and antenna systems for this band are often smaller in size and less difficult to install. With clear line of sight and well-tuned antennas, 2.4 GHz signals can propagate across very long distances.
 

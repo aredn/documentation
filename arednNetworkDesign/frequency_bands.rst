@@ -2,16 +2,16 @@
 Radio Spectrum Characteristics
 ==============================
 
-AREDN |trade| networks operate in the microwave radio spectrum, and licensed amateur radio operators have unique access to many of these frequencies. For bands in which amateur operators share the spectrum, there is an increased chance for RF interference which may make certain frequencies unusable for AREDN |trade| data networking. All of the 33 cm band is shared with other FCC authorized users. All of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` and FCC Part 18 :abbr:`ISM (Industrial, Scientific, Medical)` users, as are all of the lower channels on the 5 cm band. The only frequency range which amateur operators do not currently share with non-licensed users is the 9 cm band, in which the US military may occasionally operate radio location units. The following table lists each amateur radio band, frequency range, usable channel width, and the number of channels that are available for AREDN |trade| networking.
+AREDN |trade| networks operate in the microwave radio spectrum, and licensed amateur radio operators have unique access to many of these frequencies. For bands in which amateur operators share the spectrum, there is an increased chance for RF interference which may make certain frequencies unusable for AREDN |trade| data networking. All of the 33 cm band is shared with other FCC authorized users. All of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` and FCC Part 18 :abbr:`ISM (Industrial, Scientific, Medical)` users, as are all of the lower channels on the 5 cm band. The only frequency range which amateur operators do not currently share with non-licensed users is the 9 cm band, in which the US military may occasionally operate radio location units. The following table lists each amateur radio band, frequency range, total bandwidth of allocation, and the number of channels that are available for AREDN |trade| networking.
 
-=======  =================  ==============  ========
-Band     Frequency Range    Usable Width    Channels
-=======  =================  ==============  ========
-33 cm    902-928   MHz      25 MHz          5
-13 cm    2390-2450 MHz      45 MHz          9
-9  cm    3300-3500 MHz      120 MHz         24
-5  cm    5650-5925 MHz      260 MHz         52
-=======  =================  ==============  ========
+=======  =================  ===============  ========
+Band     Frequency Range    Total Bandwidth  Channels
+=======  =================  ===============  ========
+33 cm    902-928   MHz      25 MHz           5
+13 cm    2390-2450 MHz      45 MHz           9
+9  cm    3300-3500 MHz      120 MHz          24
+5  cm    5650-5925 MHz      260 MHz          52
+=======  =================  ===============  ========
 
 The table above shows that the 9 cm band has the most available bandwidth in its unshared channels, while the 5 cm band has the next largest amount of available bandwidth in unshared channels. The choice of a frequency band for AREDN |trade| networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width. The advantages and disadvantages of each frequency range are explained in the sections below.
 

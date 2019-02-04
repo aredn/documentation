@@ -2,7 +2,7 @@
 Additional Information
 ======================
 
-Additional information about the AREDN |trade| project can be found at the links below or by entering the keyword "AREDN" in online search engines and popular video sites.
+Additional information about the AREDN |trade| project can be found at the links below.
 
 * `AREDN homepage <https://www.arednmesh.org/>`_
 * `AREDN forums <https://www.arednmesh.org/forum>`_

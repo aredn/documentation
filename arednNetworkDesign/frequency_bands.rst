@@ -13,7 +13,11 @@ Band     Frequency Range    Total Bandwidth  Channels
 5  cm    5650-5925 MHz      260 MHz          52
 =======  =================  ===============  ========
 
-The table above shows that the 9 cm band has the most available bandwidth in its unshared channels, while the 5 cm band has the next largest amount of available bandwidth in unshared channels. The choice of a frequency band for AREDN |trade| networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width. The advantages and disadvantages of each frequency range are explained in the sections below.
+The table above shows that the 9 cm band has the most available bandwidth in its unshared channels, while the 5 cm band has the next largest amount of available bandwidth in unshared channels. The choice of a frequency band for AREDN |trade| networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width.
+
+You have the option of selecting the channel width for each link. When using channels at the top or bottom of a band, be certain that your chosen width will not transmit outside of the FCC Part 97 allocation for that band. Different channel widths may yield better throughput than others. In some areas operators use different channels to isolate links, so they may need to use 10 MHz rather than 20 MHz channels in order to ensure they have enough available channels. Also, long distance links simply have better performance using 10 MHz vs. 20 MHz or 5 MHz channel widths. Test the performance of your links using various channel widths to ensure that they are optimized.
+
+Some of the advantages and disadvantages of each frequency range are explained in the sections below.
 
 900 MHz Characteristics
 -----------------------
@@ -39,7 +43,7 @@ The table above shows that the 9 cm band has the most available bandwidth in its
    :align: center
 
 **Advantages**
-  Within the available frequency range you have the option of selecting channel widths of either 5, 10, or 20 MHz, but only the 5 and 10 MHz widths should be used on the unshared lower channels. A larger channel width will provide higher data rates. However, one effect of reducing the channel width is to increase the :abbr:`SNR (Signal to Noise Ratio)` to improve signal quality. For example, changing from a 20 MHz to a 5 MHz channel width will result in a 6 dB signal gain and could make the difference between a marginal link and a usable one.
+  Within the available frequency range you have the option of selecting channel widths of either 5, 10, or 20 MHz. A larger channel width will provide higher data rates. However, one effect of reducing the channel width is to increase the :abbr:`SNR (Signal to Noise Ratio)` to improve signal quality. For example, changing from a 20 MHz to a 5 MHz channel width will result in a 6 dB signal gain and could make the difference between a marginal link and a usable one.
 
   One advantage for the 13 cm band is that radio equipment and antenna systems are more readily available and less costly due to higher consumer demand. There is a wide variety of equipment from several manufacturers which supports the AREDN |trade| firmware and operates in this band. Radio and antenna systems for this band are often smaller in size and less difficult to install. With clear line of sight and well-tuned antennas, 2.4 GHz signals can propagate across very long distances.
 

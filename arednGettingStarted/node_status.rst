@@ -75,5 +75,11 @@ Data shown in the **Archive** charts is not stored in permanent memory on the no
 
 If you click and drag your mouse across a region of the chart, the display will zoom into that selected area. This allows you to view data points for a specific time range of your choice. While zoomed, two additional icons will appear in the upper right of the chart. The **Pan** icon allows you to scroll and pan the zoomed portion of the chart. The **Reset** icon returns the chart to its normal display mode.
 
+.. image:: _images/snr-sound.png
+   :alt: SNR Sound Control
+   :align: left
+
+On the left of the Realtime Graph for some devices there is an **SNR Sound** control. Clicking the *On* button will cause your computer to emit a tone that corresponds to the relative SNR level, with higher pitch tones indicating better SNR. This feature was added in order to provide an audio queue to operators in the process of aligning directional antennas. When your antenna reaches a position at which the highest pitch tone is heard you can lock it down without having to look at the signal graph display, knowing that you are receiving the best signal available.
+
 .. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
    :ltrim:

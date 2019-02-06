@@ -2,7 +2,7 @@
 Settings for Radio Mobile
 =========================
 
-*Radio Mobile* is a valuable tool for network planning and modeling. The results obtained depend upon the accuracy of the settings used to generate the model. The following Radio Mobile settings have proven useful, especially for modeling links between Ubiquiti radios. The full AREDN |trade| forum post for these settings appears here: `Radio Mobile Settings <https://www.arednmesh.org/content/question-about-radio-mobile-link>`_
+*Radio Mobile* is a valuable timesaving tool for network planning and modeling. The results obtained depend upon the accuracy of the settings used to generate the model. The following Radio Mobile settings have proven useful. The full AREDN |trade| forum post for these settings appears here: `Radio Mobile Settings <https://www.arednmesh.org/content/question-about-radio-mobile-link>`_
 
 =====================  ===================
 Radio System Section   Recommended Setting
@@ -15,7 +15,7 @@ RX line loss (dB)      0.5
 RX threshold (μV)      4
 =====================  ===================
 
-While the radio may have a TX Power specification of 1/2 Watt, it's often more accurate to use 1/4 watt because the power is split between the vertical and horizontal chains on a dual polarity device. The TX and RX Line Loss is minimal, so you can use 1/2 dB to account for the coax jumpers. Using 4 μV for the Receive Threshold will approximate a receive sensitivity of -94 dB. It is usually best to underestimate the TX and RX Antenna Gain in order to obtain a more realistic model.
+While the radio may have a TX Power specification of 1/2 watt (27 dBm), it's more accurate to use 1/4 watt (24 dBm) for dual chain (MIMO) devices because the power is split between the vertical and horizontal domains. The TX and RX Line Loss is minimal, so you can use 1/2 dB to account for the coax jumpers. Using 4 μV for the Receive Threshold will approximate the device's receive sensitivity of -94 dB. It is usually best to underestimate the TX and RX Antenna Gain in order to obtain a more realistic model.
 
 When Radio Mobile completes its link analysis, it will display the Fade Margin.  For a solid connection a fade margin of 15 dB or greater is needed. Anything above that will only increase the MCS rate.  For example, MCS15 requires 19 dB more received signal (94 - 75) and the Ubiquiti Rocket transmit power is 5 dB lower at that same rate, so you will need a total of 24 dB (19 + 5) additional fade margin (39 dB in total) to achieve that data rate. 39 dB is a large Fade Margin and is not often achieved on a link.
 
@@ -25,7 +25,7 @@ If you telnet to your node, the following command will indicate the MCS rate the
 
 ``cat /sys/kernel/debug/ieee80211/phy0/netdev:wlan0/stations/*/rc_stats``
 
-Here is an example from an endpoint node pointing to a backbone node over 25 miles away. The *Node Status* screen indicates -73/-95/22dB SNR.
+Here is an example from an endpoint node pointing to a backbone node over 25 miles away. The *Node Status* screen indicates -73/-95/22 dB SNR.
 
 >>>
 type         rate     throughput  ewma prob   this prob  retry   this succ/attempt   success    attempts

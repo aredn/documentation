@@ -22,7 +22,7 @@ Although the AREDN |trade| nodes themselves do not depend on network time synchr
 
 Most NTP implementations depend on an Internet connection in order to synchronize with upstream time servers. However, it would be more useful to be able to synchronize system clocks in an off-grid situation when AREDN |trade| nodes are deployed during an emergency. One way to accomplish this would be to configure one or more battery powered computers as NTP servers which retrieve upstream time from GPS satellites *(stratum 0)*. Position your portable NTP server so that it maintains a clear view of the sky and can get a fix on as many GPS satellites as possible.
 
-.. image:: _images/ntp-GPS.png
+.. image:: _images/ntp-gps.png
    :alt: OffGrid NTP Server
    :align: center
 

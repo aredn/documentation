@@ -37,9 +37,17 @@ You have already configured many of the basic settings, but there are several ad
 Mesh RF Column
 ^^^^^^^^^^^^^^
 
-*Mesh RF* is the node's *radio* interface. The AREDN |trade| firmware has been designed to simplify the process of configuring networking interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. Normally you will not need to change any of the network settings on this page, so keep these values unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
+*Mesh RF* is the node's *radio* interface. The AREDN |trade| firmware has been designed to simplify the process of configuring networking interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. You may need to change the *Channel* and possibly the *Channel Width* parameters to match those of your local AREDN |trade| mesh, as explained previously in the **Basic Radio Setup** section. Normally you will not need to change the other network settings on this page, so keep these values unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
-The *Active Settings* can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*. A node may decrease its output power as it increases its data rate in order to maintain a linear spectrum. The *Distance* setting increases the packet retry timer to allow stations that are farther away more time to respond.
+The *Active Settings* can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*. A node may decrease its output power as it increases its data rate in order to maintain a linear spectrum. The *Distance* setting, which must be a value greater than zero, increases the packet retry timer to allow stations that are farther away more time to respond.
+
+.. image:: _images/07a-lanAP-on.png
+   :alt: LAN AP Settings
+   :align: left
+
+You can disable your node's radio interface by deselecting the *Enable* checkbox, saving your changes, and rebooting the node. With the Mesh RF interface disabled the *Active Settings* no longer apply and will disappear. Since your node now has an unused RF interface, you will notice that a new section appears which allows you to use the node's radio as an FCC Part 15 *LAN Access Point*. You can enable or disable the LAN AP using the *Enable* checkbox. See the details below for configuring the LAN Access Point.
+
+----------
 
 LAN Column
 ^^^^^^^^^^
@@ -56,7 +64,7 @@ The other LAN Mode is ``NAT``, and in this mode the LAN is isolated from the mes
 
 By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server for its LAN interface, which lets the node assign IP addresses automatically for devices connected to the node's local area network. The last octet of the start/end range for host IP addresses is shown in the LAN column. If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
 
-The *Disable Default Route* checkbox will tell the node not to advertise that it can be used as a default gateway. This means that computers on the LAN network will have no route to reach the Internet or other networks via the mesh node. If this checkbox is selected your hosts will not be able to access the Internet even if your node has Internet available on its WAN port. You may need to disable the default route if your node needs to be connected to two networks at once, such as being wired to the mesh and connected to a local served agency WiFi network.
+If you enabled the *LAN Access Point* feature, edit the access point's SSID, channel, encryption method, and password. Click *Save Changes* to write your information to the node's configuration, and a node reboot will also be required. Now wireless devices can connect to your node through this new WiFi AP, and their DHCP IP address will be assigned by the node's DHCP server. If your node hardware has two radios, for example the *Mikrotik hAP ac lite* with both 2.4 and 5.8 GHz radios in a single unit, the *LAN Access Point* section will always be visible whether or not your *Mesh RF* interface is enabled.
 
 WAN Column
 ^^^^^^^^^^
@@ -65,7 +73,9 @@ The :abbr:`WAN (Wide Area Network)` interface on your node is typically used to 
 
 If you are not going to use the WAN interface on your node, you can select *disabled* from the *Protocol* dropdown list. If you will be using your node as a *Tunnel Server*, you should assign the node a *Static* IP address on your WAN network. This will be explained in the *Tunnel Server* section below.
 
-When a node has Internet access from either the WAN or LAN interface, that access is available to the node itself and to any computers connected via the *LAN* port. Checking the *Mesh Gateway* box will also allow this node to route traffic from the *Mesh RF* interface to/from the Internet or other external network. By default the *Mesh Gateway* box is unchecked because it is not desirable to route Internet traffic over the radio interface. AREDN |trade| is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local wireless Internet access, consider using a standard FCC Part 15 compliant access point instead of the node's *Mesh Gateway* feature.
+When a node has Internet access on its WAN interface, that access is available to the node itself and to any computers connected via the LAN port. Checking the *Allow others to use my WAN* box will allow this node to route traffic from all its interfaces to/from the Internet or other external network. This box is unchecked by default because it is not desirable to route Internet traffic over the radio interface. AREDN |trade| is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local wireless Internet access, consider using an FCC Part 15 access point instead of the node's WAN gateway.
+
+The *Prevent LAN devices from accessing WAN* checkbox will tell the node not to advertise that it can be used as a default gateway. This means that computers on the LAN network will lose their route to the Internet or other networks via your mesh node. This checkbox is deselected by default. If this checkbox is selected your LAN hosts will have no access to the Internet even if your node has Internet access on its WAN interface. You may need to disable the default route if your node needs to be connected to two networks at once, such as being wired to the mesh and connected to a local served agency WiFi network.
 
 Node VLANs
 ^^^^^^^^^^

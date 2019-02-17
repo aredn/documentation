@@ -24,9 +24,9 @@ copyright = u'2019, AREDN'
 author = u'KC0EUW'
 
 # The short X.Y version
-version = u'3.18.9.0'
+version = u'3.19.3.0'
 # The full version, including alpha/beta/rc tags
-release = u'3.18.9.0 base with additions'
+release = u'3.19.3.0 pre-release'
 
 
 # -- General configuration ---------------------------------------------------

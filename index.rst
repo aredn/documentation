@@ -2,7 +2,7 @@
 AREDN Documentation
 ===================
 
-:Version: 3.18.9.0 plus nightly build additions
+:Version: 3.19.3.0 pre-release
 :Reviewers: KC0EUW, K5DLQ, AE6XE, K6AH, WU2S
 
 This documentation set consists of several sections which are shown in the navigation list.

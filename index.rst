@@ -1,9 +1,12 @@
+.. image:: _images/AREDN-Logo.png
+   :alt: AREDN
+   :align: right
+
 ===================
 AREDN Documentation
 ===================
 
 :Version: 3.19.3.0 pre-release
-:Reviewers: KC0EUW, K5DLQ, AE6XE, K6AH, WU2S
 
 This documentation set consists of several sections which are shown in the navigation list.
 

@@ -67,6 +67,7 @@ If you would like to see the documentation for a specific AREDN release, click o
    arednHow-toGuides/howto_overview
    arednHow-toGuides/puttygen_ssh_keys
    arednHow-toGuides/radio_mobile_settings
+   arednHow-toGuides/iperf
 
 .. toctree::
    :maxdepth: 1

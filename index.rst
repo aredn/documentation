@@ -64,7 +64,7 @@ If you would like to see the documentation for a specific AREDN release, click o
    :caption: How-to Guides
    :hidden:
 
-   arednHow-toGuides/howto_overview
+   arednHow-toGuides/firmware_upgrade
    arednHow-toGuides/puttygen_ssh_keys
    arednHow-toGuides/radio_mobile_settings
    arednHow-toGuides/iperf

@@ -1,7 +1,3 @@
-.. image:: ../_images/AREDN-Logo.png
-   :alt: AREDN
-   :align: right
-
 ==============
 AREDN Overview
 ==============
@@ -16,7 +12,7 @@ This tried-and-true scenario has worked well, and it continues to work for handl
 
    The primary goal of the AREDN |trade| project is to empower licensed amateur radio operators to quickly and easily deploy high-speed data networks when and where they are needed.
 
-In today's high-tech society people have become accustomed to different ways of handling their communication needs. The preferred methods involve short messaging and keyboard-to-keyboard communication, along with audio-video communication using Voice Over IP (VoIP) and streaming technologies.
+In today's high-tech society people have become accustomed to different ways of handling their communication needs. The preferred methods involve short messaging and keyboard-to-keyboard communication, along with audio-video communication using Voice over IP (VoIP) and streaming technologies.
 
 The amateur radio community is able to meet these high-bandwidth digital communication requirements by using FCC Part 97 amateur radio frequency bands to send digital data between devices which are linked with each other to form a self-healing, fault-tolerant data network. Some have described this as an amateur radio version of the Internet. Although it is not intended for connecting people to **the Internet**, an AREDN |trade| mesh network will provide typical Internet or intranet-type applications to people who need to communicate across a wide area during an emergency or community event.
 

@@ -4,7 +4,7 @@ Advanced Configuration
 
 During your node's *Basic Setup* you used the configuration display by clicking the **Setup** button and typing your username and password. The configuration area has several additional features which will be described in more detail below. Clicking **Node Status** exits configuration mode without saving any changes, returning you to the *Node Status* display.
 
-.. image:: _images/06-admin-header.png
+.. image:: _images/admin-header.png
    :alt: Admin Navigation Controls
    :align: center
 
@@ -236,6 +236,38 @@ Click the **Administration** link to navigate to these settings. There are four 
 
 **Support Data**
   There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| forum in order to get help with a problem. Click *Download Support Data* to save a compressed archive file to your local computer.
+
+Advanced Configuration
+----------------------
+
+The **Advanced Configuration** section allows you to change settings for various items that may be available on the type of hardware you are using. Not all hardware can support every value shown below. These settings are best left as default unless you have a clear understanding of why the defaults will not work for your node or mesh network.
+
+.. image:: _images/advancedconfiguration.png
+   :alt: Advanced Configuration
+   :align: center
+
+Above the settings table there are links that allow you to 1) view the node help file, 2) reboot the node, or 3) reset the node to a firstboot or "N0CALL" configuration.
+
+Specific values can be set for the following items. You may change these settings and then click the *Save Setting* button.  You may also reset these items to their default values by clicking the *Set to Default* button.
+
+*Map Tiles*
+  Specifies the URL where map tiles can be found.
+
+*Leaflet CSS*
+  Specifies the URL where the Leaflet CSS file can be found.
+
+*Leaflet JS*
+  Specifies the URL where the Leaflet Javascript file can be found.
+
+*Firmware Download Path*
+  Specifies the URL from which AREDN firmware files can be downloaded.
+
+*PoE Passthrough*
+  Specifies whether Power over Ethernet should be enabled on nodes with ports that support PoE passthrough.
+
+*USB Passthrough*
+  Specifies whether the USB port should be enabled on nodes having a USB port.
+
 
 Node Reset Button
 -----------------

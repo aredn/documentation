@@ -41,7 +41,7 @@ Mesh RF Column
 
 The **Active Settings** can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*. A node may decrease its output power as it increases its data rate in order to maintain a linear spectrum.
 
-The *Distance* setting adjusts the RF retry timer to define how long the transmitter will wait for an acknowledgement from a neighbor station. If the distance parameter is too short, the transmitter will send duplicate data packets before an acknowledgement has time to return. If the distance parameter is too long, the transmitter will wait extra time before considering the data lost and retransmitting the packets. A value of zero will cause the radio to automatically determine the RF retry timer by measuring the actual time it takes acknowledgement packets to be received. The timer is set using a Exponential Weighted Moving Average (EWMA) method. *Auto* is the default setting and in most situations it will be the best option. The *Distance* setting is only applicable to nodes that can communicate directly over RF.
+The *Distance* setting adjusts the RF retry timer to define how long the transmitter will wait for an acknowledgement from a neighbor station. If the distance parameter is too short, the transmitter will send duplicate data packets before an acknowledgement has time to return. If the distance parameter is too long, the transmitter will wait extra time before considering the data lost and retransmitting the packets. The *Distance* setting is only applicable to nodes that can communicate directly over RF.
 
 .. image:: _images/07a-lanAP-on.png
    :alt: LAN AP Settings

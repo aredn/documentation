@@ -6,7 +6,7 @@
 AREDN Documentation
 ===================
 
-:Version: 3.19.3.0 pre-release
+:Version: 3.19.3.0
 
 This documentation set consists of several sections which are shown in the navigation list.
 

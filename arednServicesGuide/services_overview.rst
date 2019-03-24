@@ -41,5 +41,5 @@ There are also programs which have been designed to take advantage of multiple p
 The remaining parts of this section focus on examples of services that could be offered on your AREDN |trade| network. Programs are grouped by type, and where possible the network impact of each program will be described in order for you to understand the resources that may be required to use the program as a service on the mesh.
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

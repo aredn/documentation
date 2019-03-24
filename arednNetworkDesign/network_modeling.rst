@@ -65,5 +65,5 @@ An example *Radio Mobile* coverage plot is shown below. After entering the site,
 
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

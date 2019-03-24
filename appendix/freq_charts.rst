@@ -23,5 +23,5 @@ The frequencies and channels that are available for AREDN |trade| networking are
    :align: center
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

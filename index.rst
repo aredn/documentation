@@ -2,9 +2,9 @@
    :alt: AREDN
    :align: right
 
-===================
-AREDN Documentation
-===================
+===========================
+AREDN |trade| Documentation
+===========================
 
 :Version: 3.19.3.0
 
@@ -18,7 +18,7 @@ This documentation set consists of several sections which are shown in the navig
 
 If you wish to locate specific topics within the documentation, you can type keywords into the *Search docs* field to display a list of items which match your search.
 
-If you would like to see the documentation for a specific AREDN release, click on the **Read the Docs** label at the bottom of the navigation bar. This label shows the version you are currently viewing, but clicking the label bar opens a panel with several other options. Here you may choose to view another version of the documentation, and you can also download the entire documentation set in any of several formats *(PDF, ePub, HTML)* for offline use.
+If you would like to see the documentation for a specific AREDN |trade| release, click on the **Read the Docs** label at the bottom of the navigation bar. This label shows the version you are currently viewing, but clicking the label bar opens a panel with several other options. Here you may choose to view another version of the documentation, and you can also download the entire documentation set in any of several formats *(PDF, ePub, HTML)* for offline use.
 
 .. toctree::
    :maxdepth: 1
@@ -78,5 +78,5 @@ If you would like to see the documentation for a specific AREDN release, click o
    appendix/more_info
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

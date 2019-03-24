@@ -66,5 +66,5 @@ Open Email  client-server       small         lin/mac/rpi        expert
 WinLink     email, attachments  small         win (proprietary)  medium
 ==========  ==================  ============  =================  ======
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

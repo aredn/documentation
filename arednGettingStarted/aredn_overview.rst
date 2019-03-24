@@ -1,6 +1,6 @@
-==============
-AREDN Overview
-==============
+======================
+AREDN |trade| Overview
+======================
 
 The AREDN |trade| acronym stands for "Amateur Radio Emergency Data Network" and it provides a way for *Amateur Radio* operators to create high-speed ad hoc *Data Networks* for use in *Emergency* and service-oriented communications.
 
@@ -21,5 +21,5 @@ An AREDN |trade| network is able to serve as the transport mechanism for the pre
 The primary goal of the AREDN |trade| project is to empower licensed amateur radio operators to quickly and easily deploy high-speed data networks when and where they might be needed, as a service both to the hobby and the community. This is especially important in cases when traditional "utility" services (electricity, phone lines, or Internet services) become unavailable. In those cases an off-grid amateur radio emergency data network may be a lifeline for communities impacted by a local disaster.
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

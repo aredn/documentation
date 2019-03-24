@@ -50,5 +50,5 @@ The "T" in the 10th character position indicates the current MCS rate, and a "t"
 
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

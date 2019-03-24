@@ -46,5 +46,5 @@ One example package that facilitates collaborative document creation is `Etherpa
    :align: center
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

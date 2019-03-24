@@ -31,5 +31,5 @@ A variety of factors could isolate groups of mesh nodes from each other. For exa
 Different types of radio links may be needed to connect all of the mesh nodes that are required in order to fulfill the purposes for your network. The ultimate goal is to have a reliable data network that accomplishes its purpose for providing services to the intended destinations and users.
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

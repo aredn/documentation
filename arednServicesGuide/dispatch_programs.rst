@@ -65,5 +65,5 @@ OpenCAD       open source     small        win/lin/mac/rpi  medium
 ============  ==============  ===========  ===============  ======
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

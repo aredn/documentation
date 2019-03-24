@@ -50,5 +50,5 @@ There may be situations when it would also be helpful to track the locations of 
 Depending on the requirements of your specific situation, almost any program that can operate across a peer-to-peer TCP/IP network could be deployed as a service on your mesh network. Check the `AREDN Forums <https://www.arednmesh.org/forum>`_ for additional information, ideas, and how-to posts about possible services for mesh networking.
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

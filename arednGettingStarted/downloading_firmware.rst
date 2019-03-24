@@ -1,6 +1,6 @@
-==========================
-Downloading AREDN Firmware
-==========================
+==================================
+Downloading AREDN |trade| Firmware
+==================================
 
 Once you have selected and obtained a device, the next step is to choose the matching AREDN |trade| firmware image for that specific device. The `AREDN download page <http://downloads.arednmesh.org/firmware/ubnt/html/stable.html>`_ displays the most current firmware releases for every supported device.
 
@@ -14,5 +14,5 @@ There are two types of firmware images: one for the first-time replacement of th
 
 Once you have selected the correct firmware image for your device, click the link to download the image file to your local computer. Make a note of the download location on your computer, since you will need to use that image to install the AREDN |trade| firmware on your device.
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

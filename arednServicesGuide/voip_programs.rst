@@ -92,5 +92,5 @@ TeamTalk    video conferencing  large         win/lin/mac/rpi     easy
 ==========  ==================  ============  ==================  ======
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

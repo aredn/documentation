@@ -8,10 +8,10 @@ Additional information about the AREDN |trade| project can be found at the links
 * `AREDN forums <https://www.arednmesh.org/forum>`_
 
 
-Contributing AREDN Documentation
---------------------------------
+Contributing AREDN |trade| Documentation
+----------------------------------------
 
-If you are interested in contributing to the rapidly growing set of AREDN documentation you can easily do so on GitHub. To contribute to the AREDN project you first must create your own GitHub account. This is free and easy to do by following these steps:
+If you are interested in contributing to the rapidly growing set of AREDN |trade| documentation you can easily do so on GitHub. To contribute to the AREDN |trade| project you first must create your own GitHub account. This is free and easy to do by following these steps:
 
 1. Open your web browser and navigate to the `GitHub URL <https://github.com>`_.
 2. Click the ``Sign Up`` button and enter a username, email, and password. We suggest using your callsign as the username.
@@ -28,5 +28,5 @@ The only difference is the repository name of ``aredn/documentation`` and the ma
 After you create a Pull Request on GitHub, the AREDN |trade| team will review your changes. Once your documentation contributions are committed to the AREDN |trade| GitHub repository, a webhook automatically updates and builds the latest docs for viewing and exporting on ReadTheDocs.org
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

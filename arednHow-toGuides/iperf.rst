@@ -25,5 +25,5 @@ Once the test has completed you will see the collected data summarized by time i
 One of the many uses for IperfSpeed is to validate and optimize your node's *Distance* setting on the **Basic Setup** page. Try different *Distance* settings and note the network bandwidth using iperf, with the goal of choosing the *Distance* setting which yields the best network performance.
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

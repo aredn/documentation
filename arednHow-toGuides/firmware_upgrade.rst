@@ -11,5 +11,5 @@ Before starting the firmware upgrade, it may be necessary to stop, disable, or u
 Use a stepped approach to firmware upgrades. For example, if your node is running version 3.16.1.0 you should probably upgrade to version 3.18.9.0 before attempting to apply a newer version.
 
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

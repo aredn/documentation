@@ -2,7 +2,7 @@
 Basic Radio Setup
 ==================
 
-After you have installed the AREDN |trade| firmware, rebooted the device, and connected your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` you can navigate to the following URL: ``http://localnode:8080``. The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button.
+After you have installed the AREDN |trade| firmware, rebooted the device, and connected your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` you can navigate to the following URL: ``http://localnode``. The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button.
 
 ----------
 

@@ -50,7 +50,7 @@ Download the appropriate *factory* file for your device by following the instruc
 
 7. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node.
 
-8. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh:8080``
+8. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``
 
 9. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
@@ -116,22 +116,22 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 
 1. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node.
 
-2. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh:8080``
+2. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``
 
 3. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
 Mikrotik First Install Process
 ------------------------------
 
-**Mikrotik** devices must be flashed using steps that are similar to the alternate TP-LINK process described above. Your computer must run a TFTP/Bootp server in order to provide firmware images to Mikrotik nodes. Mikrotik nodes require a **two-part install** process: First, install and boot the *factory* (elf) file, and finally use the in-memory-only AREDN |trade| Administration UI to complete the installation of the *sysupgrade* (bin) file.
+**Mikrotik** devices must be flashed using steps that are similar to the alternate TP-LINK process described above. Your computer must run a TFTP/Bootp server in order to provide firmware images to Mikrotik nodes. Mikrotik nodes require a **two-part install** process: First, install and boot the correct mikrotik-vmlinux-initramfs file with the **elf** extension, and then use the in-memory-only AREDN |trade| Administration UI to complete the installation of the appropriate mikrotik-rb file with the **bin** extension.
 
 **Preparation**
 
-1. Download the appropriate Mikrotik *factory* and *sysupgrade* files. Rename the factory file to ``rb.elf`` and keep the *sysupgrade* file available for later.
+1. Download the appropriate Mikrotik **elf** and **bin** files. Rename the *elf* file to ``rb.elf`` and keep the *bin* file available for later.
 
 2. Set your computer’s Ethernet network adapter to a static IP address of 192.168.1.10 with a netmask of 255.255.255.0
 
-3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a Mikrotik hAP ac lite device, connect the Ethernet cable from Port 1 of the Mikrotik to the dumb switch.
+3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a Mikrotik hAP ac lite device, connect the Ethernet cable from *Port 1* of the Mikrotik to the dumb switch.
 
 **Linux Procedure**
 
@@ -148,7 +148,7 @@ Mikrotik First Install Process
 
 4. With the PoE unit powered off, connect the Mikrotik node to the POE port. Press and hold the reset button on the Mikrotik while powering on the PoE unit or the hAP device.
 
-5. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after about 10 seconds. Release the reset button as the computer starts communicating with the node. When you see the "sent" message, this indicates success, and the node has downloaded the image and will reboot. You can now <ctrl>C or kill dnsmasq.
+5. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after about ten seconds. Release the reset button as the computer starts communicating with the node. When you see the "sent" message, this indicates success, and the node has downloaded the image and will reboot. You can now <ctrl>C or kill dnsmasq.
 
 **Windows Procedure**
 
@@ -160,7 +160,7 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 
 3. Start the Tiny PXE server exe and select your Ethernet interface IP from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``rb.elf`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the Tiny PXE window.
 
-4. With the PoE unit powered off, connect the Mikrotik node to the POE port. If you are flashing a Mikrotik hAP ac lite device, connect the LAN cable from Port 1 of the Mikrotik to the dumb switch.
+4. With the PoE unit powered off, connect the Mikrotik node to the POE port. If you are flashing a Mikrotik hAP ac lite device, connect the LAN cable from *Port 1* of the Mikrotik to the dumb switch.
 
 5. Press and hold the reset button on the node while powering on the PoE unit or the device. Continue holding the reset button until you see ``TFTPd: DoReadFile: rb.elf`` in the Tiny PXE log window.
 
@@ -168,17 +168,25 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 
 **Final Configuration Steps**
 
-1. After booting the AREDN firmware image the node should have a default IP address of 192.168.1.1.  Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node. You should be able to ping the node at 192.168.1.1.  If this does not work, then something is wrong. Don't proceed until you can ping the node.
+1. After booting the AREDN firmware image the node should have a default IP address of 192.168.1.1.  Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node. For the hAP ac lite, pull the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4). You should be able to ping the node at 192.168.1.1.  If this does not work, then something is wrong. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
-2. In a web browser, open the node’s Administration page http://192.168.1.1:8080/cgi-bin/admin (user = 'root' password = 'hsmm') and navigate to the *Setup > Administration > Firmware Update* section. Select the *sysupgrade* file you previously downloaded and click the *Upload* button.
+2. In a web browser, open the node’s Administration page http://192.168.1.1/cgi-bin/admin (user = 'root' password = 'hsmm') and navigate to the *Setup > Administration > Firmware Update* section. Select the **bin** file you previously downloaded and click the *Upload* button.
+
+   As an alternative to using the node's web interface, if your node has plenty of free memory you can copy the **bin** file to the node and run a command line program to install the image. This will allow you to see any error messages that are not displayed when using the web interface upgrade procedure. Execute the following commands from your computer:
+
+   >>>
+   my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
+   my-computer:$ ssh -p 2222 root@192.168.1.1
+   ~~~~~~~ after logging into the node with ssh ~~~~~~~
+   node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
 
 3. After the node reboots, navigate to the node’s *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
 ----------
 
-Once your device is running AREDN |trade| firmware, you can display its web interface by connecting your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigating to the following URL: ``http://localnode:8080``
+Once your device is running AREDN |trade| firmware, you can display its web interface by connecting your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigating to the following URL: ``http://localnode``. Each node will serve its web interface on both port 80 and 8080.
 
-By default AREDN |trade| devices run the :abbr:`DHCP (Dynamic Host Control Protocol)` service on their LAN interface, so your computer will receive an IP address from the node as soon as it is connected with an Ethernet cable. Ensure that your computer is set to obtain its IP address via :abbr:`DHCP (Dynamic Host Control Protocol)`.
+By default AREDN |trade| devices run the :abbr:`DHCP (Dynamic Host Control Protocol)` service on their LAN interface, so your computer will receive an IP address from the node as soon as it is connected with an Ethernet cable. Ensure that your computer is set to obtain its IP address via :abbr:`DHCP (Dynamic Host Control Protocol)`. You may also need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
 .. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

@@ -1,6 +1,6 @@
-=======================
-AREDN Services Overview
-=======================
+===============================
+AREDN |trade| Services Overview
+===============================
 
 As mentioned in the AREDN |trade| overview, the purpose of an amateur radio emergency data network is to provide typical Internet or intranet programs to people who need to communicate across a wide area during an emergency or community event. An AREDN |trade| network provides the transport mechanism for the types of programs people typically use today to communicate with each other in the normal course of their business and social interactions. This may include keyboard-to-keyboard chat, email messages with images and attachments, file transfer, collaborative document sharing, :abbr:`VoIP (Voice over IP)` phone service, video conferencing, :abbr:`GPS (Global Positioning System)` tracking, surveillance camera streaming, computer aided dispatch, deployed resource management, weather station reporting, sensor monitoring and control, repeater linking, and many other services.
 

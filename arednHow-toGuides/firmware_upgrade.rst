@@ -8,6 +8,8 @@ Here are some "best practice" tips to assist with the firmware upgrade process. 
 
 Before starting the firmware upgrade, it may be necessary to stop, disable, or uninstall Meshchat, hamchat, snmp, and any active tunnels. The goal of this step is to keep those processes from using RAM memory and to free as much RAM as possible before the upgrade. Rebooting the node will ensure that its RAM utilization is at a minimum.
 
+When using a web browser to perform an upgrade, be sure to clear the browser's cache to remove any cached pages remaining from your node's previous firmware version. A clear cache will help to eliminate confusion when displaying node data in the browser.
+
 Use a stepped approach to firmware upgrades. For example, if your node is running version 3.16.1.0 you should probably upgrade to version 3.18.9.0 before attempting to apply a newer version.
 
 

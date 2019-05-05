@@ -142,7 +142,7 @@ Mikrotik First Install Process
 3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
 
   >>>
-  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.0.100,192.168.0.200  \
+  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.1.100,192.168.1.200  \
     --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/  \
     -d -p0 -K --log-dhcp --bootp-dynamic
 

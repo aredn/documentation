@@ -272,7 +272,7 @@ Specific values can be set for the following items. You may change these setting
   Specifies the URL where the Leaflet Javascript file can be found.
 
 *Firmware Download Path*
-  Specifies the URL from which AREDN firmware files can be downloaded.
+  Specifies the URL from which AREDN |trade| firmware files can be downloaded.
 
 *PoE Passthrough*
   Specifies whether Power over Ethernet should be enabled on nodes with ports that support PoE passthrough.
@@ -293,5 +293,5 @@ With the node powered on and fully booted:
 
 On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.
 
-.. |trade|  unicode:: U+02122 .. TRADE MARK SIGN
+.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:

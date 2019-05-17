@@ -185,7 +185,9 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 GL-iNET First Install Process
 ------------------------------
 
-**GL-iNET** devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNET documentation for your device if you have questions about initial configuration. GL-iNET devices usually have a default IP address of 192.168.8.1, so you can give your computer a static IP address on that subnet. After the GL-iNET device has been booted and configured, navigate to the *Upgrade* section and click *Local Upgrade* to select the AREDN |trade| "sysupgrade.bin" file you downloaded for your device. Be sure to uncheck/deselect the "Keep Settings" checkbox. After the device has rebooted to the AREDN |trade| image, you should be able to navigate to ``http://192.168.1.1:8080`` for the firstboot or NOCALL page to appear.
+**GL-iNET** devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNET documentation for your device if you have questions about initial configuration. Both GL-iNET and AREDN devices provide DHCP services, so you should be able to connect your computer and automatically receive an IP address on the correct subnet. GL-iNET devices have a default IP address of 192.168.8.1, so if for some reason you need to give your computer a static IP address you can use that subnet.
+
+After the GL-iNET device has been booted and configured, navigate to the *Upgrade* section and click *Local Upgrade* to select the AREDN |trade| "sysupgrade.bin" file you downloaded for your device. Be sure to uncheck/deselect the "Keep Settings" checkbox, since GL-iNET settings are incompatible with AREDN. After the device has rebooted to the AREDN |trade| image, you should be able to navigate to ``http://192.168.1.1:8080`` for the firstboot or NOCALL page to appear.
 
 ----------
 

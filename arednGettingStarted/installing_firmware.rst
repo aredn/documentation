@@ -189,6 +189,9 @@ GL-iNET First Install Process
 
 After the GL-iNET device has been booted and configured, navigate to the *Upgrade* section and click *Local Upgrade* to select the AREDN |trade| "sysupgrade.bin" file you downloaded for your device. Be sure to uncheck/deselect the "Keep Settings" checkbox, since GL-iNET settings are incompatible with AREDN. After the device has rebooted to the AREDN |trade| image, you should be able to navigate to ``http://192.168.1.1:8080`` for the firstboot or NOCALL page to appear.
 
+If for some reason your GL-iNET device gets into an unusable state, you should be able to recover using the process documented here:
+`GL-iNET debrick procedure <https://docs.gl-inet.com/en/2/troubleshooting/debrick/>`_
+
 ----------
 
 Once your device is running AREDN |trade| firmware, you can display its web interface by connecting your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigating to the following URL: ``http://localnode``. Each node will serve its web interface on both port 80 and 8080.

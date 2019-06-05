@@ -9,7 +9,7 @@ Understand the impact to your network before using iperf. During the test period
 Installing iperf and IperfSpeed
 -------------------------------
 
-Two packages should be installed on each AREDN |trade| node in order to facilitate testing between nodes. The `iperf3 <http://downloads.arednmesh.org/releases/3/18/3.18.9.0/packages/mips_24kc/base/iperf3_3.5-1AREDN_mips_24kc.ipk>`_ package allows the nodes to function either as an iperf client or server during the test. The `iperfspeed <https://s3.amazonaws.com/aredn/iperfspeed_0.5_all.ipk>`_ package provides a web-based control interface for running network tests between the nodes.
+Two packages should be installed on each AREDN |trade| node in order to facilitate testing between nodes. The `iperf3 <http://downloads.arednmesh.org/releases/3/19/3.19.3.0/packages/mips_24kc/base/iperf3_3.5-1AREDN_mips_24kc.ipk>`_ package allows the nodes to function either as an iperf client or server during the test. The `iperfspeed <https://s3.amazonaws.com/aredn/iperfspeed_0.5_all.ipk>`_ package provides a web-based control interface for running network tests between the nodes.
 
 Using IperfSpeed
 ----------------

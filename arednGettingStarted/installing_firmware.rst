@@ -6,7 +6,7 @@ The steps for installing device firmware are documented on the AREDN |trade| web
 
 There are two cases for installing AREDN |trade| firmware:
 
-1. If you already have an existing version of AREDN |trade| running on your device, then you can use your computer's web interface to navigate to **Setup > Administration > Firmware Update** to install your new firmware. This process will be explained in more detail in the **Advanced Configuration** section of this guide.
+1. If you already have an existing version of AREDN |trade| running on your device, then you can use your computer's web interface to navigate to **Setup > Administration > Firmware Update** to install your new firmware. This process will be explained in more detail in the **Advanced Configuration** section of this guide. Also, see *Firmware Upgrade Tips* in the **How-to Guides** section for additional information.
 
 ----------
 
@@ -19,6 +19,8 @@ There are two cases for installing AREDN |trade| firmware:
    The diagram above shows that your computer with the downloaded firmware image must be connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is helpful to connect the computer and node through a simple Ethernet switch so that the switch can maintain the computer's link while the node is being rebooted.
 
    Different node hardware will require different methods for installing the AREDN |trade| firmware. For Ubiquiti devices, your computer's TFTP client will connect to the node's TFTP server in order to upload the firmware image. For TP-LINK and GL-iNET devices, your computer's web browser will connect to the node's web server to upload the firmware image. For Mikrotik devices, your computer will run a remote boot server and the node's remote boot client will load its boot image from your computer. Refer to the specific procedures below for your node hardware.
+
+  One common issue can occur when installing firmware using a web browser interface. The browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing the web browser's cache will allow the latest URL settings to be registered so you can continue with the install process.
 
 Ubiquiti First Install Process
 ------------------------------

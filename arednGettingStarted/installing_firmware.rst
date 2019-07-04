@@ -25,7 +25,7 @@ There are two cases for installing AREDN |trade| firmware:
 Ubiquiti First Install Process
 ------------------------------
 
-**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10>`_ or download and install a `TFTP command line client <https://www.pcwdld.com/tftp-client-for-windows-7>`_.
+**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10>`_ or download and install a another `standalone TFTP client <http://tftpd32.jounin.net/tftpd32_download.html>`_ of your choice. Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 
 Download the appropriate *factory* file for your device by following the instructions in the **Downloading AREDN Firmware** section of this documentation.
 
@@ -37,7 +37,7 @@ Download the appropriate *factory* file for your device by following the instruc
 
 4. Continue holding the device's reset button for approximately 30 to 45 seconds until you see the LEDs on the node alternating in a 1-3, 2-4, 1-3, 2-4 pattern, then release the reset button.
 
-5. Open a command window on your computer and execute the following commands to send the AREDN firmware to your device:
+5. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. The following is one example of TFTP commands that transfer the firmware image to a node:
 
   >>>
   > tftp 192.168.1.20   [If your device is an AirRouter use 192.168.1.1]

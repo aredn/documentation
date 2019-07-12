@@ -25,11 +25,13 @@ There are two cases for installing AREDN |trade| firmware:
 Ubiquiti First Install Process
 ------------------------------
 
-**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10>`_ or download and install a another `standalone TFTP client <http://tftpd32.jounin.net/tftpd32_download.html>`_ of your choice. Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
+**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10>`_ or download and install a another `standalone TFTP client <http://tftpd32.jounin.net/tftpd32_download.html>`_ of your choice.
+
+Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 
 Download the appropriate *factory* file for your device by following the instructions in the **Downloading AREDN Firmware** section of this documentation.
 
-1. Set your computer’s Ethernet network adapter to a static IP address of 192.168.1.5 with a netmask of 255.255.255.0
+1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet but does not conflict with the default IP of the device.
 
 2. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
 
@@ -37,22 +39,26 @@ Download the appropriate *factory* file for your device by following the instruc
 
 4. Continue holding the device's reset button for approximately 30 to 45 seconds until you see the LEDs on the node alternating in a 1-3, 2-4, 1-3, 2-4 pattern, then release the reset button.
 
-5. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. The following is one example of TFTP commands that transfer the firmware image to a node:
+5. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 or 192.168.1.1 for AirRouters. The following is one example of TFTP commands that transfer the firmware image to a node:
 
   >>>
-  > tftp 192.168.1.20   [If your device is an AirRouter use 192.168.1.1]
-  > bin                 [This puts the transfer in the required "binary" mode]
-  > trace on            [This will show the transfer in progress]
-  > put <full path to the AREDN firmware file>
-          [For example, put c:\temp\aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin]
+  [Linux/Mac]
+  > tftp 192.168.1.20
+  > bin                 [Transfer in "binary" mode]
+  > trace on            [Show the transfer in progress]
+  > put <full path to the firmware file>
+    [For example, put /temp/aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin]
+  -----------------------------------
+  [Windows with command on a single line]
+  >tftp -i 192.168.1.20 put C:\temp\aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin
 
   The TFTP client should indicate that data is being transferred and eventually completes.
 
 6. Watch the LEDs for about 2-3 minutes until the node has finished rebooting. The reboot is completed when the LED 4 light (farthest on the right) is lit and is steady green.
 
-7. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node.
+7. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node. You may need to unplug/reconnect the Ethernet cable from your computer to force it to get a new IP address from the node.
 
-8. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``
+8. After the node reboots, open a web browser and enter the following URL: ``http://localnode``
 
 9. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
@@ -73,7 +79,7 @@ TP-LINK devices also have a built-in :abbr:`TFTP (Trivial File Transfer Protocol
 
 1. Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
 
-2. Set your computer’s Ethernet network adapter to a static IP address of 192.168.0.100 with a netmask of 255.255.255.0
+2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most TP-LINK devices use the 192.168.0.x subnet by default, so you can give your computer a static IP such as 192.168.0.100 with a netmask of 255.255.255.0. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet.
 
 3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
 
@@ -81,12 +87,12 @@ TP-LINK devices also have a built-in :abbr:`TFTP (Trivial File Transfer Protocol
 
 1. Create a directory on your computer called ``/tftp`` and copy the TP-LINK ``recovery.bin`` file there.
 
-2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.0.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below.
+2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.0.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.0.110,192.168.0.120 as shown below.
 
 3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
 
   >>>
-  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.0.150,192.168.0.200  \
+  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.0.110,192.168.0.120  \
     --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/  \
     -d -p0 -K --log-dhcp --bootp-dynamic
 
@@ -118,7 +124,7 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 
 1. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node.
 
-2. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``
+2. After the node reboots, open a web browser and enter the following URL: ``http://localnode``
 
 3. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
@@ -131,7 +137,7 @@ Mikrotik First Install Process
 
 1. Download the appropriate Mikrotik **elf** and **bin** files. Rename the *elf* file to ``rb.elf`` and keep the *bin* file available for later.
 
-2. Set your computer’s Ethernet network adapter to a static IP address of 192.168.1.10 with a netmask of 255.255.255.0
+2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Mikrotik devices use the 192.168.1.x subnet by default, so you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. Other devices may use different default subnets, such as QRT units which use 192.168.88.x. Select a static IP for your computer which puts it on the same subnet as your device.
 
 3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a Mikrotik hAP ac lite device, connect the Ethernet cable from *Port 1* of the Mikrotik to the dumb switch.
 
@@ -139,12 +145,12 @@ Mikrotik First Install Process
 
 1. Create a directory on your computer called ``/tftp`` and copy the ``rb.elf`` file there.
 
-2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.1.10 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below.
+2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.1.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.1.110,192.168.1.120 as shown below.
 
 3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
 
   >>>
-  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.1.100,192.168.1.200  \
+  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.1.110,192.168.1.120  \
     --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/  \
     -d -p0 -K --log-dhcp --bootp-dynamic
 
@@ -170,7 +176,7 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 
 **Final Configuration Steps**
 
-1. After booting the AREDN firmware image the node should have a default IP address of 192.168.1.1.  Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node. For the hAP ac lite, pull the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4). You should be able to ping the node at 192.168.1.1.  If this does not work, then something is wrong. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
+1. After booting the AREDN firmware image the node should have a default IP address of 192.168.1.1. Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node. For the hAP ac lite, pull the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4). You should be able to ping the node at 192.168.1.1. If this does not work, then something is wrong. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
 2. In a web browser, open the node’s Administration page ``http://192.168.1.1/cgi-bin/admin`` (user = 'root' password = 'hsmm') and navigate to the *Setup > Administration > Firmware Update* section. Select the **bin** file you previously downloaded and click the *Upload* button.
 
@@ -189,7 +195,7 @@ GL-iNET First Install Process
 
 **GL-iNET** devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNET documentation for your device if you have questions about initial configuration. Both GL-iNET and AREDN devices provide DHCP services, so you should be able to connect your computer and automatically receive an IP address on the correct subnet. GL-iNET devices have a default IP address of 192.168.8.1, so if for some reason you need to give your computer a static IP address you can use that subnet.
 
-After the GL-iNET device has been booted and configured, navigate to the *Upgrade* section and click *Local Upgrade* to select the AREDN |trade| "sysupgrade.bin" file you downloaded for your device. Be sure to uncheck/deselect the "Keep Settings" checkbox, since GL-iNET settings are incompatible with AREDN. After the device has rebooted to the AREDN |trade| image, you should be able to navigate to ``http://192.168.1.1:8080`` for the firstboot or NOCALL page to appear.
+After the GL-iNET device has been booted and configured, navigate to the *Upgrade* section and click *Local Upgrade* to select the AREDN |trade| "sysupgrade.bin" file you downloaded for your device. Be sure to uncheck/deselect the "Keep Settings" checkbox, since GL-iNET settings are incompatible with AREDN. After the device has rebooted to the AREDN |trade| image, you should be able to navigate to ``http://192.168.1.1`` for the firstboot or NOCALL page to appear.
 
 If for some reason your GL-iNET device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNET debrick procedure <https://docs.gl-inet.com/en/2/troubleshooting/debrick/>`_

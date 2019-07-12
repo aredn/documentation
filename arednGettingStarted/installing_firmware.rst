@@ -25,13 +25,15 @@ There are two cases for installing AREDN |trade| firmware:
 Ubiquiti First Install Process
 ------------------------------
 
-**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10>`_ or download and install a another `standalone TFTP client <http://tftpd32.jounin.net/tftpd32_download.html>`_ of your choice.
+**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10>`_ or download and install another `standalone TFTP client <http://tftpd32.jounin.net/tftpd32_download.html>`_ of your choice.
 
 Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 
 Download the appropriate *factory* file for your device by following the instructions in the **Downloading AREDN Firmware** section of this documentation.
 
-1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet but does not conflict with the default IP of the device.
+1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. For example, set your Ethernet adapter to a static IP address of 192.168.1.100.
+
+  You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet but does not conflict with the default IP of the device.
 
 2. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
 
@@ -50,7 +52,7 @@ Download the appropriate *factory* file for your device by following the instruc
     [For example, put /temp/aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin]
   -----------------------------------
   [Windows with command on a single line]
-  >tftp -i 192.168.1.20 put C:\temp\aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin
+  > tftp -i 192.168.1.20 put C:\temp\aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin
 
   The TFTP client should indicate that data is being transferred and eventually completes.
 
@@ -58,7 +60,7 @@ Download the appropriate *factory* file for your device by following the instruc
 
 7. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node. You may need to unplug/reconnect the Ethernet cable from your computer to force it to get a new IP address from the node.
 
-8. After the node reboots, open a web browser and enter the following URL: ``http://localnode``
+8. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address.
 
 9. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
@@ -79,7 +81,9 @@ TP-LINK devices also have a built-in :abbr:`TFTP (Trivial File Transfer Protocol
 
 1. Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
 
-2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most TP-LINK devices use the 192.168.0.x subnet by default, so you can give your computer a static IP such as 192.168.0.100 with a netmask of 255.255.255.0. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet.
+2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most TP-LINK devices use the 192.168.0.x subnet by default, so you can give your computer a static IP such as 192.168.0.100 with a netmask of 255.255.255.0.
+
+  You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.0.0 and 192.168.0.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet.
 
 3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
 
@@ -92,9 +96,9 @@ TP-LINK devices also have a built-in :abbr:`TFTP (Trivial File Transfer Protocol
 3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
 
   >>>
-  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.0.110,192.168.0.120  \
-    --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/  \
-    -d -p0 -K --log-dhcp --bootp-dynamic
+  (root)# dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic \
+        --dhcp-range=192.168.0.110,192.168.0.120 -d -p0 -K \
+        --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
 
 4. With the PoE unit powered off, connect an Ethernet cable from the TP-LINK node to the POE port.
 
@@ -124,7 +128,7 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 
 1. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node.
 
-2. After the node reboots, open a web browser and enter the following URL: ``http://localnode``
+2. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address.
 
 3. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
@@ -137,7 +141,9 @@ Mikrotik First Install Process
 
 1. Download the appropriate Mikrotik **elf** and **bin** files. Rename the *elf* file to ``rb.elf`` and keep the *bin* file available for later.
 
-2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Mikrotik devices use the 192.168.1.x subnet by default, so you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. Other devices may use different default subnets, such as QRT units which use 192.168.88.x. Select a static IP for your computer which puts it on the same subnet as your device.
+2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Mikrotik devices use the 192.168.1.x subnet by default, so you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0.
+
+  You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may use different default subnets, such as QRT units which use 192.168.88.x. Select a static IP for your computer which puts it on the same subnet as your device.
 
 3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a Mikrotik hAP ac lite device, connect the Ethernet cable from *Port 1* of the Mikrotik to the dumb switch.
 
@@ -150,9 +156,9 @@ Mikrotik First Install Process
 3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
 
   >>>
-  # dnsmasq -i eth0 -u joe --dhcp-range=192.168.1.110,192.168.1.120  \
-    --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/  \
-    -d -p0 -K --log-dhcp --bootp-dynamic
+  (root)# dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic \
+        --dhcp-range=192.168.1.110,192.168.1.120 -d -p0 -K \
+        --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
 
 4. With the PoE unit powered off, connect the Mikrotik node to the POE port. Press and hold the reset button on the Mikrotik while powering on the PoE unit or the hAP device.
 
@@ -202,7 +208,7 @@ If for some reason your GL-iNET device gets into an unusable state, you should b
 
 ----------
 
-Once your device is running AREDN |trade| firmware, you can display its web interface by connecting your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigating to the following URL: ``http://localnode``. Each node will serve its web interface on both port 80 and 8080.
+Once your device is running AREDN |trade| firmware, you can display its web interface by connecting your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigating to the following URL: ``http://localnode.local.mesh``  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address. Each node will serve its web interface on both port 80 and 8080.
 
 By default AREDN |trade| devices run the :abbr:`DHCP (Dynamic Host Control Protocol)` service on their LAN interface, so your computer will receive an IP address from the node as soon as it is connected with an Ethernet cable. Ensure that your computer is set to obtain its IP address via :abbr:`DHCP (Dynamic Host Control Protocol)`. You may also need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 

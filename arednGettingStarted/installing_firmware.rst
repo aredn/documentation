@@ -222,7 +222,7 @@ If for some reason the node's web interface does not work, you may be able to us
 >>>
 my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
 my-computer:$ ssh -p 2222 root@192.168.1.1
-~~~~~~~ after logging into the node as *root* (hsmm) ~~~~~~~
+~~~~~~~ after logging into the node as root (hsmm) ~~~~~~~
 node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
 
 Additional questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.

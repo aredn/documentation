@@ -33,7 +33,7 @@ There are four sections on the **Mesh Status** display.
 **Current Neighbors**
   This shows a list of *Neighbor Nodes* that are directly connected with your node (1 hop). These nodes may be connected via :abbr:`RF (Radio Frequency)`, :abbr:`DtD (Device to Device)` link using an Ethernet cable, or a tunnel over an Internet connection. There are several link quality statistics displayed for each connected node.
 
-  - ``LQ`` or Link Quality is your node's view of the percent of :abbr:`OLSR (Optimized Link State Routing protocol)` packets received from the neighbor node. These packets exchange mesh routing and advertised services information, and they include a sequence number that is used to identify missing packets which is a measure of the quality of the link.
+  - ``LQ`` or Link Quality is your node's view of the percent of `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ packets received from the neighbor node. These packets exchange mesh routing and advertised services information, and they include a sequence number that is used to identify missing packets which is a measure of the quality of the link.
 
   - ``NLQ`` or Neighbor Link Quality is the neighbor node's view of the percent of :abbr:`OLSR (Optimized Link State Routing protocol)` packets received from your node. This measures the quality of the link from the neighbor's side.
 

@@ -2,7 +2,7 @@
 Channel Planning
 ================
 
-The previous section identified the different channels in each frequency band which are available for AREDN |trade| networking. Devices on each side of a radio link must use the same frequency band, channel, and channel width. Beyond that requirement, however, you have quite a bit of freedom to select the radio channels that will ensure the highest signal quality for your network. In a basic AREDN |trade| *meshnet* with individual nodes spread across a limited geographical area, all of the nodes can use the same band, channel, and channel width. This allows them to establish the mesh network and route data to any of the sites as needed.
+The previous section identified the different channels in each frequency band which are available for AREDN |trade| networking. Devices on each side of a radio link must use the same frequency band, channel, and channel width. Beyond that requirement, however, you have quite a bit of freedom to select the radio channels that will ensure the highest signal quality for your network. In a basic AREDN |trade| network with individual nodes spread across a limited geographical area, all of the nodes can use the same band, channel, and channel width. This allows them to establish the mesh network and route data to any of the sites as needed.
 
 However, as more nodes join the network or when several nodes are :abbr:`collocated (sharing the same physical site)`, it is possible for overall network performance to degrade over time. In order for an AREDN |trade| network to scale up in size and complexity, frequency coordination and channel planning become increasingly important. To plan for future growth, mesh groups may need to segment network traffic by allocating channels for specific areas or types of links in order to ensure the network will be able to support the expected services.
 
@@ -46,7 +46,7 @@ Device to Device (DtD) Linking
 
 In its most basic configuration for two collocated nodes, an Ethernet cable is connected between the PoE *LAN* port of each device. :abbr:`OLSR (Optimized Link State Routing protocol)` will assign a very low "link cost" (0.1) to the DtD connection and automatically route traffic between the nodes over Ethernet rather than causing the RF channel to become busy.
 
-One added benefit of DtD linking is that you can link nodes which are operating on different bands and channels. Nodes that are using *Channel Separation* to segment traffic can still pass data at high speeds through their DtD link and be members of a single network. At a tower site like the one shown here, you could link 2.4 GHz, 3.4 GHz, and 5.8 GHz nodes to the same *meshnet*. In fact, at a busy site like this it is best practice to use DtD linking, because otherwise RF channel contention could make the network unusable.
+One added benefit of DtD linking is that you can link nodes which are operating on different bands and channels. Nodes that are using *Channel Separation* to segment traffic can still pass data at high speeds through their DtD link and be members of a single network. At a tower site like the one shown here, you could link 2.4 GHz, 3.4 GHz, and 5.8 GHz nodes to the same network. In fact, at a busy site like this it is best practice to use DtD linking, because otherwise RF channel contention could make the network unusable.
 
 Ideally you should configure your collocated nodes to use different bands and channels, then set up DtD links between the nodes to ensure that traffic is routed efficiently without generating RF contention or delays. :abbr:`OLSR (Optimized Link State Routing protocol)` will always choose the DtD path first when passing traffic between linked nodes. Each AREDN |trade| node recognizes incoming packets tagged with :abbr:`VLAN (Virtual Local Area Network)` 2 as DtD traffic.
 
@@ -87,7 +87,7 @@ Based on the purpose for your network, try to create reliable paths to the locat
 
 * If you need broad local coverage for a high profile area you can install sector antennas on a tower site: for example, three panels with 120 degree beam width each. DtD link the sectors at the tower site, and use different channels for each sector in order to avoid channel contention issues.
 
-* Consider putting each local *meshnet* on its own channel to minimize the interaction between coverage areas, similar to how cellular network "cells" are planned and deployed.
+* Consider putting each local network on its own channel to minimize the interaction between coverage areas, similar to how cellular network "cells" are planned and deployed.
 
 * If you are installing long distance point to point links to connect mesh islands, be sure to use a separate band or channel for the backbone link. This type of link has a single purpose: to carry as much data as quickly as possible from one end to the other. Eliminate any type of channel contention so that these links can focus on throughput without distractions.
 

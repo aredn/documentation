@@ -8,7 +8,7 @@ Every AREDN |trade| node is capable of automatically joining an AREDN |trade| me
    :alt: Mesh Topology
    :align: center
 
-This automatic ability to form a mesh network is built into the AREDN |trade| firmware on each node. Every node within radio range of other nodes will be able to participate in the network to extend its reach, provide route redundancy, or host services needed on the network at large. This basic *meshnet* may serve its purpose perfectly for a short-term network deployment in support of a local event, or even for more permanent communication between nodes which are always within radio range.
+This automatic ability to form a mesh network is built into the AREDN |trade| firmware on each node. Every node within radio range of other nodes will be able to participate in the network to extend its reach, provide route redundancy, or host services needed on the network at large. This basic network may serve its purpose perfectly for a short-term network deployment in support of a local event, or even for more permanent communication between nodes which are always within radio range.
 
 Types of Links
 --------------

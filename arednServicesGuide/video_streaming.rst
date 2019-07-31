@@ -32,7 +32,7 @@ Some cameras are easier than others to configure and deploy, so be sure to resea
 Video Display Software
 ----------------------
 
-The software described in this section can help you to provision video surveillance services on your *meshnet*. The following list is not comprehensive or complete but represents a sample of the types of software that may be available for services on your network. Primarily programs with open source licenses were included in this list, although software with proprietary licenses can also be used successfully.
+The software described in this section can help you to provision video surveillance services on your network. The following list is not comprehensive or complete but represents a sample of the types of software that may be available for services on your network. Primarily programs with open source licenses were included in this list, although software with proprietary licenses can also be used successfully.
 
 iSpy
 ++++

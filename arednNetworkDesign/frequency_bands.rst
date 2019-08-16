@@ -2,7 +2,15 @@
 Radio Spectrum Characteristics
 ==============================
 
-AREDN |trade| networks operate in the microwave radio spectrum, and licensed amateur radio operators have unique access to many of these frequencies. For bands in which amateur operators share the spectrum, there is an increased chance for RF interference which may make certain frequencies unusable for AREDN |trade| data networking. All of the 33 cm band is shared with other FCC authorized users. All of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` and FCC Part 18 :abbr:`ISM (Industrial, Scientific, Medical)` users, as are all of the lower channels on the 5 cm band. The only frequency range which amateur operators do not currently share with non-licensed users is the 9 cm band, in which the US military may occasionally operate radio location units. The following table lists each amateur radio band, frequency range, total bandwidth of allocation, and the number of channels that are available for AREDN |trade| networking.
+AREDN |trade| networks operate in the microwave radio spectrum, and licensed amateur radio operators have unique access to many of these frequencies. For bands in which amateur operators share the spectrum, there is an increased chance for RF interference which may make some frequencies unusable for AREDN |trade| data networking. For best results, select frequencies that are not shared with other unlicensed users.
+
+Each band is divided into channels, each of which consists of a 5 MHz frequency offset identified by the center frequency of the channel and assigned a numerical label. In the example below you can see that a selected channel may use more or less of the frequency range based on the chosen channel width. The wider the channel, the more overlap there will be with adjacent channels. Wide channels have the effect of reducing the number of non-overlapping or non-interfering channels that will be available for use. When selecting channels and widths, be sure to use non-overlapping channels in order to avoid *Adjacent Channel Interference* (ACI).
+
+.. image:: _images/channel-width-example.png
+   :alt: Channel Width Example
+   :align: center
+
+All of the 33 cm band is shared with other FCC authorized users. All of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` and FCC Part 18 :abbr:`ISM (Industrial, Scientific, Medical)` users, as are all of the lower channels on the 5 cm band. The only frequency range which amateur operators do not currently share with non-licensed users is the 9 cm band, in which the US military may occasionally operate radio location units. The following table lists each amateur radio band, frequency range, total bandwidth of allocation, and the number of channels that are available for AREDN |trade| networking.
 
 =======  =================  ===============  ========
 Band     Frequency Range    Total Bandwidth  Channels
@@ -53,7 +61,7 @@ Some of the advantages and disadvantages of each frequency range are explained i
 **Disadvantages**
   As mentioned above, there must be clear line of sight and the Fresnel Zone between nodes also must be clear. For a link in the 9 cm band with 10 miles between nodes the first Fresnel Zone radius will be 62 feet, which is less than the 13 cm band discussed above. However, the 60% no blockage radius is still about 37 feet. Consider node :abbr:`AGL (height Above Ground Level)` and terrain in order to minimize obstructions.
 
-  Equipment for the 9 cm band is less readily available and is typically more expensive due to less consumer demand. Care must be taken when selecting radios so as not to confuse them with the more common :abbr:`WiMAX (IEEE 802.16)` devices which are designed for the 3.65 GHz range.
+  Equipment for the 9 cm band is less readily available and is typically more expensive due to less consumer demand. Care must be taken when selecting radios so as not to confuse them with the more common :abbr:`WiMAX (IEEE 802.16)` devices which are designed for the 3.65 GHz range and are not supported by AREDN |trade| firmware.
 
 .. image:: _images/3.4ghz.png
    :alt: 3.4 GHz Band

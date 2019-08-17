@@ -18,7 +18,7 @@ In a single-channel wireless network, any node that needs to transmit will autom
 Channel Contention
 ++++++++++++++++++
 
-The concept of *Adjacent Channel Interference (ACI)* was mentioned in the **Radio Spectrum Characteristics** section and is illustrated on right side of the following channel scan diagram. *Adjacent Channel Interference* is very serious, but it can be eliminated by selecting non-overlapping channels for all devices accessing your mesh network. A second issue related to how wireless networks operate is illustrated on the left side of the diagram. It is commonly called *Co-channel Interference (CCI)* but is more accurately described as *Co-channel Contention* or *Co-channel Cooperation*.
+The concept of *Adjacent Channel Interference (ACI)* is illustrated on right side of the following channel scan diagram. *Adjacent Channel Interference* is very serious, but it can be eliminated by selecting non-overlapping channels for all devices accessing your mesh network. A second issue related to how wireless networks operate is illustrated on the left side of the diagram. It is commonly called *Co-channel Interference (CCI)* but is more accurately described as *Co-channel Contention* or *Co-channel Cooperation*.
 
 .. image:: _images/cci-aci.png
    :alt: Co-Channel Contention

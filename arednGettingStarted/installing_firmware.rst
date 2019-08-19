@@ -156,7 +156,7 @@ Mikrotik First Install Process
   >>>
   (root)# dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic \
         --dhcp-range=192.168.1.110,192.168.1.120 -d -p0 -K \
-        --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
+        --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/
 
 4. With the PoE unit powered off, connect the Mikrotik node to the POE port. Press and hold the reset button on the Mikrotik while powering on the PoE unit or the hAP device.
 

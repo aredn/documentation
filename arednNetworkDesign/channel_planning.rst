@@ -18,7 +18,7 @@ In a single-channel wireless network, any node that needs to transmit will autom
 Channel Contention
 ++++++++++++++++++
 
-The concept of *Adjacent Channel Interference (ACI)* is illustrated on right side of the following channel scan diagram. *Adjacent Channel Interference* is very serious, but it can be eliminated by selecting non-overlapping channels for all devices accessing your mesh network. A second issue related to how wireless networks operate is illustrated on the left side of the diagram. It is commonly called *Co-channel Interference (CCI)* but is more accurately described as *Co-channel Contention* or *Co-channel Cooperation*.
+The concept of *Overlapping Channel Interference* is illustrated on the right side of the following channel scan diagram. *Overlapping Channel Interference* is very serious, but it can be eliminated by selecting non-overlapping channels for all devices accessing your mesh network. A second issue related to how wireless networks operate is illustrated on the left side of the diagram. It is commonly called *Co-channel Interference* but is more accurately described as *Co-channel Contention* or *Co-channel Cooperation*.
 
 .. image:: _images/cci-aci.png
    :alt: Co-Channel Contention
@@ -28,7 +28,7 @@ In this example several nodes must share a single channel, so they all negotiate
 
 This example is not meant to show that having only seven nodes will overload a channel. There is no established rule of thumb for channel sharing that specifies how many nodes are too many. The answer depends on the number of nodes, the bandwidth in use to support required services, the link signal qualities, and other network characteristics. Based on these parameters one shared channel may perform well with many dozens of nodes, while another network may see performance degradation with significantly fewer nodes sharing a channel. Many factors interact to influence network performance, but it will soon become obvious to users whether the network is behaving as expected.
 
-Several tools are available for testing network performance such as *ping* to measure latency, *traceroute* to identify how traffic is being routed, and *iperf3* to estimate network throughput. Periodic measurements along with user perceptions can be helpful in determining whether channel separation would be of benefit. This issue is an expected by-product of how wireless networks normally operate, but performance can be enhanced by planning the assigned channels for your mesh devices as described in the **Channel Plans** section below.
+Several tools are available for testing network performance such as *ping* to measure latency, *traceroute* to identify how traffic is being routed, and *iperf3* to estimate network throughput. Periodic measurements along with user perceptions can be helpful in determining whether channel separation would be of benefit. It is an expected by-product of how wireless networks normally operate, but performance can be enhanced by planning the assigned channels for your mesh devices as described in the **Channel Plans** section below.
 
 Hidden Nodes
 ++++++++++++
@@ -69,7 +69,7 @@ Band     Channel Width    Unshared Non-overlapping Channels
 5.8 GHz  10 MHz           8
 =======  ===============  =================================
 
-Ideally, adjacent or overlapping RF coverage zones (sometimes called "cells") should use different channels. Overlapping cell coverage can provide broader connectivity, but the overlapping coverage zones should not use overlapping RF frequencies.
+Ideally, RF coverage zones (sometimes called "cells") should use different channels. Overlapping cell coverage can provide broader connectivity, but the overlapping coverage zones should not use overlapping RF frequencies.
 
 .. image:: _images/channel-reuse-example.png
    :alt: Example Channel Reuse Plan
@@ -113,7 +113,7 @@ Most of the latest AREDN |trade| devices use dual polarity antennas and :abbr:`M
 Aligning Linked Nodes
 +++++++++++++++++++++
 
-The AREDN |trade| web interface provides information that is helpful when aligning two nodes that are being installed to form a link. On the **Node Status** page, click the **Charts** button to view the *Realtime Signal to Noise* graph. Slowly turn and tilt your antenna, pausing to view the signal metrics. Once you see the best signal, as shown below, you can lock your antenna into position. If you want to focus on the antenna position without having to view the SNR graph, you can also enable the *SNR Sound* feature and align the antenna to the highest pitch tone. Depending on the implementation, a Signal to Noise Ratio of 15 dB is adequate to pass data at speeds in the range of 5 to 20 :abbr:`Mbps (Megabits per second)`.
+The AREDN |trade| web interface provides information that is helpful when aligning two nodes that are being installed to form a link. On the **Node Status** page, click the **Charts** button to view the *Realtime Signal to Noise* graph. Slowly turn and tilt your antenna, pausing to view the signal metrics. Once you see the best signal, as shown below, you can lock your antenna into position. If you want to focus on the antenna position without having to watch the SNR graph, you can also enable the *SNR Sound* feature and align the antenna to the highest pitch tone. Depending on the implementation, a Signal to Noise Ratio of 15 dB is adequate to pass data at speeds in the range of 5 to 20 :abbr:`Mbps (Megabits per second)`.
 
 .. image:: _images/align-nodes.png
    :alt: Aligning Nodes

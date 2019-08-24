@@ -134,7 +134,7 @@ Based on the purpose for your network, try to create reliable paths to the locat
 
 * If you are installing long distance point-to-point links to connect mesh islands, be sure to use a separate band or channel for the backbone link. This type of link has a single purpose: to carry as much data as quickly as possible from one end to the other. Eliminate any type of channel contention so that these links can achieve high throughput.
 
-* Remember that a multi-hop path through the network must have good signal quality on each leg of the journey. You cannot expect adequate performance through a series of poor quality links. For example, if you traverse three links having :abbr:`LQ (Link Quality)` metrics of 65%, 45%, and 58%, your aggregate :abbr:`LQ (Link Quality)` will be 17% which is unusable. The aggregate :abbr:`LQ (Link Quality)` should be at least 50% to have a usable path.
+* Remember that a multi-hop path through the network must have good signal quality on each leg of the journey. You cannot expect adequate performance through a series of poor quality links. For example, if you traverse three links having :abbr:`LQ (Link Quality)` metrics of 65%, 45%, and 58%, your aggregate :abbr:`LQ (Link Quality)` will be 17% which is unusable. Ideally the aggregate :abbr:`LQ (Link Quality)` should be at least 80% to have a link that supports the applications and services you require.
 
 
 .. |trade|  unicode:: U+00AE .. Registered Trademark SIGN

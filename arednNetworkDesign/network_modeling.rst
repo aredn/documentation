@@ -4,7 +4,7 @@ Network Modeling
 
 As you design your AREDN |trade| network it is often helpful to estimate ahead of time whether a node or link might accomplish your goals for the network. One way to get this information is to use computer modeling programs that predict the performance of RF devices. There are many types of computerized tools that you can use, ranging from relatively expensive commercial software to freely available open source programs. You should select and become familiar with the tool that best fits your aptitude, experience, and budget.
 
-In this section two free tools will be used to illustrate how to determine your network's available paths and overall coverage. Keep in mind that a computer modeling tool only provides a prediction and does not guarantee that two sites will be able to communicate when actually deployed.
+In this section some free tools will be used to illustrate how to determine your network's available paths and overall coverage. Keep in mind that a computer modeling tool only provides a prediction and does not guarantee that two sites will be able to communicate when actually deployed.
 
 Creating a Path Profile
 -----------------------
@@ -47,6 +47,21 @@ With *Radio Mobile* you must first create a *Site* for each of your endpoints. T
 
 .. image:: _images/radioMobile-path.png
    :alt: Radio Mobile Path Profile
+   :align: center
+
+----
+
+HeyWhatsThat Path Profiler
+++++++++++++++++++++++++++
+
+Another web-based tool will generate a path profile from points selected on a map. HeyWhatsThat Path Profiler is available here: http://heywhatsthat.com/profiler.html
+
+Simply click on the map at the bottom of the webpage to add an endpoint for each side of your link. Once an endpoint has been added, it can be moved by clicking and holding the endpoint while dragging it to the new location on the map. After adding your endpoints you will see the path profile displayed at the top of the webpage. You can click the *Parameters* link under the path display to specify additional items for the path calculation. If you specify the frequency then the Fresnel zone for the path will be added to the display.
+
+----
+
+.. image:: _images/heywhatsthatprofiler.png
+   :alt: HeyWhatThat Path Profiler
    :align: center
 
 ----

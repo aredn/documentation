@@ -8,7 +8,7 @@ The use of Secure Shell (SSH) keys when using PuTTY or another SSH client is a u
 
 First, obtain the PuTTY suite of applications from the `PuTTY Download Page <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ and install them on your computer.
 
-Second, obtain and prepare to use a text editor such as `Notepad++ <https://notepad-plus-plus.org/download/>`_ that does not insert unwanted characters and metadata into a text file.
+Second, obtain and prepare to use a text editor such as `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ that does not insert unwanted characters and metadata into a text file.
 
 Next, follow the steps below.
 

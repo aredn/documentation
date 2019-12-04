@@ -229,7 +229,7 @@ my-computer:$ ssh -p 2222 root@192.168.1.1
 ~~~~~~~ after logging into the node as root (hsmm) ~~~~~~~
 node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
 
-The steps above will usually work for operators struggling to install AREDN |trade| firmware on a *Mikrotik hAP ac lite* device. Recently another issue was described in the upstream OpenWRT code. The 5GHz 802.11ac wireless driver used only in the *hap ac lite* has a memory issue which can leave the device without sufficient memory to complete the firmware install. The AREDN |trade| development team advises that, if you can telnet or ssh to the node and type the command ``# wifi down`` you can free the memory used by this driver. Then the firmware install from the command line or web interface should work as designed.
+The steps above will usually work for operators struggling to install AREDN |trade| firmware on a *Mikrotik hAP ac lite* device. Recently another issue was described in the upstream OpenWRT code. The 5GHz 802.11ac wireless driver used only in the *hap ac lite* has a memory issue which can leave the device without sufficient memory to complete the firmware install. The AREDN |trade| development team advises that, if you can telnet or ssh to the node and type the command ``wifi down`` you can free the memory used by this driver. Then the firmware install from the command line or web interface should work as designed.
 
 Additional questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
 

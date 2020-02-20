@@ -95,7 +95,7 @@ The *Prevent LAN devices from accessing WAN* checkbox will tell the node not to 
    :alt: WiFi as WAN
    :align: right
 
-If your node has a radio which is not already being used for Mesh RF or as a LAN AP, you can enable it as a WAN interface by checking the *WAN Wifi Client* checkbox. Enter the SSID and authentication string for your wifi AP which has Internet access. The mesh node uses "WPA2 PSK" encryption to connect to the wifi AP. The password length must be a minimum of 8 and maximum of 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A single quote character must not be used in the passphrase. 
+If your node has a radio which is not already being used for Mesh RF or as a LAN AP, you can enable it as a WAN interface by checking the *WAN Wifi Client* checkbox. Enter the SSID and authentication string for your wifi AP which has Internet access. The mesh node uses "WPA2 PSK" encryption to connect to the wifi AP. The password length must be a minimum of 8 and maximum of 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A single quote character must not be used in the passphrase.
 
 After you have saved changes and rebooted, the node will have Internet access via wifi rather than requiring a cable plugged into the node's WAN port. In fact, enabling the *WAN Wifi Client* will disable VLAN1, so Internet access will no longer be possible through the physical WAN port.
 
@@ -270,7 +270,7 @@ The **Advanced Configuration** section allows you to change settings for various
    :alt: Advanced Configuration
    :align: center
 
-Above the settings table there are links that allow you to 1) view the node help file, 2) reboot the node, or 3) reset the node to a firstboot or "N0CALL" configuration.
+Above the settings table there are links that allow you to 1) view the node help file, 2) reboot the node, or 3) reset the node to a firstboot or "NOCALL" configuration.
 
 Specific values can be set for the following items. You may change these settings and then click the *Save Setting* button.  You may also reset these items to their default values by clicking the *Set to Default* button.
 
@@ -290,8 +290,10 @@ Specific values can be set for the following items. You may change these setting
   Specifies whether Power over Ethernet should be enabled on nodes with ports that support PoE passthrough.
 
 *USB Passthrough*
-  Specifies whether the USB port should be enabled on nodes having a USB port.
+  Specifies whether USB power passthrough should be enabled on nodes having a USB port.
 
+*OLSR Restart*
+  The OLSR routing process can be restarted by clicking the checkbox and then clicking the *Save Setting* button. This can be useful when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.
 
 Node Reset Button
 -----------------
@@ -300,7 +302,7 @@ The reset button on an AREDN |trade| node has two built-in functions based on th
 
 With the node powered on and fully booted:
 
-* **Hold for 5 seconds to reset the password and DHCP server**
+* **Hold for 5 seconds to reset the password and DHCP service**
 * **Hold for 15 seconds to return the node to “just-flashed” condition**
 
 On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.

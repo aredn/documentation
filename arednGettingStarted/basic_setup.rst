@@ -7,7 +7,7 @@ After you have installed the AREDN |trade| firmware, rebooted the device, and co
 ----------
 
 .. image:: _images/01-setup-nocall.png
-   :alt: Setup N0CALL
+   :alt: Setup NOCALL
    :align: center
 
 ----------

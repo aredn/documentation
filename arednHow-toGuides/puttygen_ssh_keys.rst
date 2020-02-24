@@ -1,6 +1,6 @@
-===================================================================================
-How-to Use PuTTYGen on Windows to Make SSH Keys and Use Them on AREDN |trade| Nodes
-===================================================================================
+=============================
+Use PuTTYGen to Make SSH Keys
+=============================
 
 This How-to will show you a method for generating SSH key pairs on a Windows computer, saving them to a USB flash drive, installing the SSH key on an AREDN |trade| node and using the SSH keys with a PuTTY terminal session.
 

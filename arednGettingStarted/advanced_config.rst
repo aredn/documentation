@@ -213,6 +213,9 @@ Client Node Name
 Client Password
   Enter a complex password that the client node will use to connect to your node over the tunnel. Use only uppercase and lowercase characters and numbers in your password.
 
+Contact Info/Comment (optional)
+  You have the option to enter a line of text which may include the contact information of the person responsible for a the tunnel endpoint. It is a 50 character freeform text field which can contain any other useful identifier or information as needed.
+
 Once these settings are correct, click *Add* to add the new client to the list of authorized tunnel clients. On the right of each entry there is an envelope icon which will automatically open your computer's email program and copy the client settings into a new email which allows you to quickly and easily send credentials to the owners of the client nodes.
 
 To allow a client to connect to your tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active.

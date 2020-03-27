@@ -46,7 +46,7 @@ Some of the advantages and disadvantages of each frequency range are explained i
 
   One concern with all of the higher frequency bands is that there must be clear line of sight between the nodes on each side of the link. This means that not only do the nodes need to have an unobstructed direct path, but the Fresnel Zone between the nodes must also be clear. The diameter of the Fresnel Zone depends on the frequency and the distance between nodes. For example, on a link in the 13 cm band with 10 miles between nodes, the first Fresnel Zone radius will be 72 feet. If less than 20% of the Fresnel Zone is obstructed there is little signal loss, but any blockage beyond 40% will cause significant signal loss and could make the path unusable. In the 13 cm band the 60% no blockage radius is approximately 43 feet, which is often higher than most *Intermediate* or *Last Mile* nodes have been installed. Careful consideration must be given to node height and the terrain between nodes in order to minimize obstructions.
 
-.. image:: _images/2.4ghz.png
+.. image:: ../_images/2.4ghz.png
    :alt: 2.4 GHz Band
    :align: center
 
@@ -63,7 +63,7 @@ Some of the advantages and disadvantages of each frequency range are explained i
 
   Equipment for the 9 cm band is less readily available and is typically more expensive due to less consumer demand. Care must be taken when selecting radios so as not to confuse them with the more common :abbr:`WiMAX (IEEE 802.16)` devices which are designed for the 3.65 GHz range and are not supported by AREDN |trade| firmware.
 
-.. image:: _images/3.4ghz.png
+.. image:: ../_images/3.4ghz.png
    :alt: 3.4 GHz Band
    :align: center
 
@@ -76,7 +76,7 @@ Some of the advantages and disadvantages of each frequency range are explained i
 **Disadvantages**
   As mentioned previously, there must be clear line of sight and the Fresnel Zone between nodes also must be unobstructed. For a link in the 5 cm band with 10 miles between nodes the first Fresnel Zone radius will be 46 feet, which is much less than the frequency bands discussed above. However, the 60% no blockage radius in the 5 cm band is still about 28 feet. Be sure to account for node :abbr:`AGL (height Above Ground Level)` and terrain in order to achieve clear line of sight between nodes.
 
-.. image:: _images/5.8ghz.png
+.. image:: ../_images/5.8ghz.png
    :alt: 5.8 GHz Band
    :align: center
 

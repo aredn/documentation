@@ -17,9 +17,9 @@ Once you have selected the correct firmware image for your device, click the lin
 **Features Inherited from OpenWRT for New Architectures**
   The latest AREDN |trade| firmware contains features which are inherited from the newest OpenWRT upstream release (19.07). The OpenWRT *Release Notes* describe these new features and can be found here: `OpenWRT 19.07 Release Notes <http://openwrt.org/releases/19.07/start>`_
 
-  One important change is the inclusion of a new *target* for the firmware, labelled "ath79", which is the successor to the existing "ar71xx" target. The OpenWRT team explains the new target here: `ath79 <http://openwrt.org/docs/techref/targets/ath79>`_. Their main goal is to bring the code into a form that will allow all devices to run a standard unpatched Linux kernel. This will greatly reduce the amount of customization required and will streamline the firmware development process.
+  One important change is the inclusion of a new *target* (architecture) for the firmware, labelled "ath79", which is the successor to the existing "ar71xx" target. The OpenWRT team explains the new target here: `ath79 <http://openwrt.org/docs/techref/targets/ath79>`_. Their main goal is to bring the code into a form that will allow all devices to run a standard unpatched Linux kernel. This will greatly reduce the amount of customization required and will streamline the firmware development process.
 
-  You may notice that the AREDN |trade| firmware download page has one or both of these firmware versions for specific devices. Refer to the latest `firmware notes <http://downloads.arednmesh.org/snapshots/trunk/readme.md>`_ in order to ensure you have the correct firmware image for your specific device.
+  Since not all supported devices have been migrated to the new "ath79" target, AREDN |trade| continues to build firmware for both targets. **You should select the latest recommended target image based on the type of hardware on which it will be installed.** Refer to the latest `firmware notes <http://downloads.arednmesh.org/snapshots/trunk/readme.md>`_ in order to ensure you have the correct firmware image for your specific device.
 
 
 .. |trade|  unicode:: U+00AE .. Registered Trademark SIGN

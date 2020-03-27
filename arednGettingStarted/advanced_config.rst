@@ -298,6 +298,8 @@ Specific values can be set for the following items. You may change these setting
 *OLSR Restart*
   The OLSR routing process can be restarted by clicking the checkbox and then clicking the *Save Setting* button. This can be useful when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.
 
+  There is a known intermittent issue that may occur when OLSR starts as a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. You should do this if you see one or more of the following symptoms on the *Mesh Status* display: 1) a node's IP address rather than hostname is shown; 2) "dtdlink" or "mid" is shown in a hostname; 3) other users can but you cannot access a node by its hostname.
+
 Node Reset Button
 -----------------
 

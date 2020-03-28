@@ -6,19 +6,19 @@ The frequencies and channels that are available for AREDN |trade| networking are
 
 **2.4 GHz**
 
-.. image:: _images/2.4ghz.png
+.. image:: ../_images/2.4ghz.png
    :alt: 2.4 GHz Channels
    :align: center
 
 **3.4 GHz**
 
-.. image:: _images/3.4ghz.png
+.. image:: ../_images/3.4ghz.png
    :alt: 3.4 GHz Channels
    :align: center
 
 **5.8 GHz**
 
-.. image:: _images/5.8ghz.png
+.. image:: ../_images/5.8ghz.png
    :alt: 5.8 GHz Channels
    :align: center
 

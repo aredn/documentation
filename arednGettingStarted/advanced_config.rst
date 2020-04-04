@@ -237,7 +237,7 @@ Contact the amateur operator who controls the tunnel server and request client c
 
 To allow your client to connect to the tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active.
 
-.. attention:: There may be a character limitation on the client node name which might prevent the tunnel from connecting. Keep node names as short as possible in order to avoid this issue.
+.. attention:: The add-on tunnel package (vtun) may have a character limitation on the client node name which could prevent a tunnel from connecting. Keep node names as short as possible in order to avoid this issue. More information and discussion can be found in `this Forum thread <https://www.arednmesh.org/comment/4174>`_.
 
 
 Administration

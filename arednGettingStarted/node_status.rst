@@ -48,12 +48,11 @@ The :abbr:`OLSR (Optimized Link State Routing protocol)` **Entries** show the to
 Node and Broadcast Messages
 ---------------------------
 
-The AREDN |trade| development team now has the ability to post messages which Internet-connected nodes will automatically retrieve once every 12 hours. There are two types of messages: QST/broadcast messages intended for all nodes, and directed messages which are only retrieved by individual nodes. Messages are displayed at the top of the *Node Status* page above the node name.
+The AREDN |trade| development team now has the ability to post messages which Internet-connected nodes will automatically retrieve once every 12 hours. There are two types of messages: QST/broadcast messages intended for all nodes, and directed messages which are only retrieved by individual nodes. Messages are displayed at the top of the *Node Status* page above the node name. Be aware that there is no guarantee of privacy for these messages, since anyone can view the message repository online.
 
 .. image:: _images/node-messages.png
    :alt: Node Message Display
    :align: center
-
 
 Signal Charts
 -------------

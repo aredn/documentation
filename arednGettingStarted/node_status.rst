@@ -45,6 +45,16 @@ The **Load Average** is the average number of processes that have been running o
 
 The :abbr:`OLSR (Optimized Link State Routing protocol)` **Entries** show the total number of entries in the routing table, as well as the number of nodes currently connected to the mesh network.
 
+Node and Broadcast Messages
+---------------------------
+
+The AREDN |trade| development team now has the ability to post messages which Internet-connected nodes will automatically retrieve once every 12 hours. There are two types of messages: QST/broadcast messages intended for all nodes, and directed messages which are only retrieved by individual nodes. Messages are displayed at the top of the *Node Status* page above the node name.
+
+.. image:: _images/node-messages.png
+   :alt: Node Message Display
+   :align: center
+
+
 Signal Charts
 -------------
 

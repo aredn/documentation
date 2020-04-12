@@ -57,7 +57,7 @@ The AREDN |trade| development team now has the ability to post messages which In
 Signal Charts
 -------------
 
-There is a **Charts** button next to the node's **Signal Stength** display, and clicking this button takes you to **Signal Charts**. This page shows :abbr:`RF (Radio Frequency)` signal information in both a realtime and an archived view. The default view shows the average signal of all connected stations in realtime.
+There is a **Charts** button next to the node's **Signal Strength** display, and clicking this button takes you to **Signal Charts**. This page shows :abbr:`RF (Radio Frequency)` signal information in both a realtime and an archived view. The default view shows the average signal of all connected stations in realtime.
 
 .. image:: _images/04-node-charts.png
    :alt: Node Charts

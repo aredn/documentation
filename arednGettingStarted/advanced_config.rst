@@ -270,38 +270,31 @@ Click the **Administration** link to navigate to these settings. There are four 
 Advanced Configuration
 ----------------------
 
-The **Advanced Configuration** section allows you to change settings for various items that may be available on the type of hardware you are using. Not all hardware can support every value shown below. These settings are best left as default unless you have a clear understanding of why the defaults will not work for your node or mesh network.
+The **Advanced Configuration** section allows you to change settings for various items that may be available on the type of hardware you are using. Not all hardware can support every value. These settings are best left as default unless you have a clear understanding of why the defaults will not work for your node or mesh network.
+
+Above the settings table there are links that allow you to 1) view the node help file, 2) reboot the node, or 3) reset the node to a firstboot or "NOCALL" configuration.
+
+You can edit or select a setting and then click the *Save Setting* button at the right side of the row to implement the change.  You may also reset an item to default values by clicking the *Set to Default* button. Each row has hover help which can be displayed by hovering your cursor over the question mark icon at the left side of each row.
 
 .. image:: _images/advancedconfiguration.png
    :alt: Advanced Configuration
    :align: center
 
-Above the settings table there are links that allow you to 1) view the node help file, 2) reboot the node, or 3) reset the node to a firstboot or "NOCALL" configuration.
-
-Specific values can be set for the following items. You may change these settings and then click the *Save Setting* button.  You may also reset these items to their default values by clicking the *Set to Default* button.
-
-*Map Tiles*
-  Specifies the URL where map tiles can be found.
-
-*Leaflet CSS*
-  Specifies the URL where the Leaflet CSS file can be found.
-
-*Leaflet JS*
-  Specifies the URL where the Leaflet Javascript file can be found.
-
-*Firmware Download Path*
-  Specifies the URL from which AREDN |trade| firmware files can be downloaded.
+The first several rows in the *Advanced Configuration* table contain the URLs and paths that will be used by the node for accessing specific files such as map tiles, leaflet files, firmware, and packages.
 
 *PoE Passthrough*
-  Specifies whether Power over Ethernet should be enabled on nodes with ports that support PoE passthrough.
+  Specifies whether *Power over Ethernet* should be enabled on nodes with ports that support PoE passthrough.
 
 *USB Passthrough*
   Specifies whether USB power passthrough should be enabled on nodes having a USB port.
 
 *OLSR Restart*
-  The OLSR routing process can be restarted by clicking the checkbox and then clicking the *Save Setting* button. This can be useful when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.
+  The OLSR routing process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.
 
   There is a known intermittent issue that may occur when OLSR starts as a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. You should do this if you see one or more of the following symptoms on the *Mesh Status* display: 1) a node's IP address rather than hostname is shown; 2) "dtdlink" or "mid" is shown in a hostname; 3) other users can but you cannot access a node by its hostname.
+
+*AREDN Alert Message (AAM) Refresh*
+  The AREDN |trade| development team may post messages which Internet-connected nodes will automatically retrieve once every 12 hours. You can use this refresh setting if you want your node to retrieve any new messages immediately, without having to wait for the next auto-refresh window.
 
 Node Reset Button
 -----------------

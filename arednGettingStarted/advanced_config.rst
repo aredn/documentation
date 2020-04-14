@@ -291,7 +291,7 @@ The first several rows in the *Advanced Configuration* table contain the URLs an
 *OLSR Restart*
   The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.
 
-  There is a known intermittent issue that may occur when OLSR starts as a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. You should do this on your local node if other users can access a node by its hostname but you cannot. OLSR should be restarted on a your node if your node's IP address rather than hostname is shown on the Mesh Status display of a remote node, or if "dtdlink" or "mid" is shown in the hostname on a remote node.
+  There is a known intermittent issue that may occur when OLSR starts as a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. You should do this on your local node if other users can access a node by its hostname but you cannot. OLSR should be restarted on a your node if your node's IP address rather than hostname is shown on the *Mesh Status* display of a remote node, or if "dtdlink" or "mid" is shown in the hostname on a remote node.
 
 *AREDN Alert Message (AAM) Refresh*
   The AREDN |trade| development team may post messages which Internet-connected nodes will automatically retrieve once every 12 hours. You can use this refresh setting if you want your node to retrieve any new messages immediately, without having to wait for the next auto-refresh window.

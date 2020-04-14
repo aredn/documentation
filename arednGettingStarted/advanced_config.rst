@@ -289,9 +289,9 @@ The first several rows in the *Advanced Configuration* table contain the URLs an
   Specifies whether USB power passthrough should be enabled on nodes having a USB port.
 
 *OLSR Restart*
-  The OLSR routing process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.
+  The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.
 
-  There is a known intermittent issue that may occur when OLSR starts as a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. You should do this if you see one or more of the following symptoms on the *Mesh Status* display: 1) a node's IP address rather than hostname is shown; 2) "dtdlink" or "mid" is shown in a hostname; 3) other users can but you cannot access a node by its hostname.
+  There is a known intermittent issue that may occur when OLSR starts as a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. You should do this on your local node if other users can access a node by its hostname but you cannot. OLSR should be restarted on a remote node if your node's IP address rather than hostname is shown on the *Mesh Status* display, or if "dtdlink" or "mid" is shown in the hostname.
 
 *AREDN Alert Message (AAM) Refresh*
   The AREDN |trade| development team may post messages which Internet-connected nodes will automatically retrieve once every 12 hours. You can use this refresh setting if you want your node to retrieve any new messages immediately, without having to wait for the next auto-refresh window.

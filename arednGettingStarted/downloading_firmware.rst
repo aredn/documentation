@@ -2,7 +2,7 @@
 Downloading AREDN |trade| Firmware
 ==================================
 
-Once you have selected and obtained a device, the next step is to choose the matching AREDN |trade| firmware image for that specific device. The `AREDN download page <http://downloads.arednmesh.org/firmware/ubnt/html/stable.html>`_ displays the most current firmware releases for every supported device.
+Once you have selected and obtained a device, the next step is to choose the matching AREDN |trade| firmware image for that specific device. The `AREDN download page <http://downloads.arednmesh.org/firmware/html/stable.html>`_ displays the most current firmware releases for every supported device.
 
 Locate your device model/version in the left column. Most manufacturers print the hardware version on the product package label. In some cases, though, you may need to start the device using the manufacturer's pre-installed firmware and navigate to the system information page to determine the hardware version.
 

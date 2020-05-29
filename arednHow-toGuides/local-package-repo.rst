@@ -7,15 +7,15 @@ There may be cases where your mesh nodes have no way to access the AREDN |trade|
 Configure your Package Server
 =============================
 
-Your package server must be connected to the mesh as a host on your local node's LAN network, preferably using a node that also has Internet access via its WAN interface. You should add this host to the node's *DHCP Reservation List*. You do not need to add the package host to the *Advertised Services List* of the node it is connected to. The package server should be given a hostname that is unique on your mesh, typically prefixed with the callsign of the server owner. You can use any operating system platform you desire *(Windows, Linux, Mac),* as long as it has the ability to function as a web server. The two main tasks required of the local package server are:
+Your package server must be connected to the mesh as a host on your local node's LAN network, preferably using a node that also has Internet access via its WAN interface. You should add this host to the node's *DHCP Reservation List*. You do not need to add the package host to the *Advertised Services List* of the node it is connected to. The package server should be given a hostname that is unique on your mesh, typically prefixed with the callsign of the server owner. You can use any operating system platform you desire *(Windows, Linux, Mac),* as long as it has the ability to function as a web server. The following are the two main tasks required of the local package server:
 
 * Obtain the set of AREDN |trade| package files from ``downloads.arednmesh.org``
-* Make those files available via the computer's web server so nodes can query the package URLs
+* Make those files available via your computer's web server so nodes can query the package URLs
 
-There are several ways to accomplish these tasks, and the best approach may vary depending on the platform you implement for your package server. Downloading the AREDN |trade| package files can be done manually as needed, or the process could be automated and executed on a regular schedule. Tools that could be used for this task include `HTTRACK <https://en.wikipedia.org/wiki/HTTrack>`_, `Wget <https://en.wikipedia.org/wiki/Wget>`_, and others.
+There are several ways to accomplish these tasks, and the best approach may vary depending on the platform you implement for your package server. Downloading the AREDN |trade| package files can be done manually as needed, or the process could be automated and executed on a regular schedule. Tools that could be used for this task include `HTTRACK <https://en.wikipedia.org/wiki/HTTrack>`_, `Wget <https://en.wikipedia.org/wiki/Wget>`_, and others. You should try to make your local repository mirror the AREDN |trade| downloads directory tree as closely as possible, so it contains any of the package files you want to have available to your local mesh nodes.
 
-Once you have downloaded the AREDN |trade| package files, you need to make them available to network nodes via your web server. The steps for accomplishing this task will vary based on the specific web server software you are using. For example, Sys Admins using the `Apache Web Server <https://en.wikipedia.org/wiki/Apache_HTTP_Server>`_ might create an ``Alias`` to allow web access to parts of the filesystem that are not under the Apache *DocumentRoot* (as described `here <https://http
-d.apache.org/docs/2.4/urlmapping.html>`_). Once the package files have been made available via the web server, you should be able to enter the URL of that alias to navigate the entire package tree as shown below.
+Once you have downloaded the AREDN |trade| package files, you need to make them available to network nodes via your web server. The steps for accomplishing this task will vary based on the specific web server software you are using. For example, Sys Admins using the `Apache Web Server <https://en.wikipedia.org/wiki/Apache_HTTP_Server>`_ might put the package files under their web server's *DocumentRoot*, or they might create an ``Alias`` to allow web access to parts of the filesystem that are not under the Apache *DocumentRoot* (as described `here <https://http
+d.apache.org/docs/2.4/urlmapping.html>`_). Once the package files have been made available via the web server, you should be able to enter that URL to navigate the entire package tree as shown below.
 
 .. image:: _images/view-package-repo.png
    :alt:  View the local package repository
@@ -78,7 +78,7 @@ You can click the **Select Package** dropdown list to see the packages that are 
    :alt:  Administration - download new package
    :align: center
 
-There is a message that a reboot is required to refresh and restart all services, but this is a normal status and does not indicate an error condition.
+There is a message that a reboot is required to refresh and restart all services, but this is a normal status message and does not indicate an error condition.
 
 ---------------
 

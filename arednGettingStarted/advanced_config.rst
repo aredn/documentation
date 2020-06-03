@@ -285,7 +285,7 @@ You can edit or select a setting and then click the *Save Setting* button at the
 The first several rows in the *Advanced Configuration* table contain the URLs and paths that will be used by the node for accessing specific files such as map tiles, leaflet files, firmware, and packages.
 
 *PoE Passthrough*
-  Specifies whether *Power over Ethernet* should be enabled on nodes with ports that support PoE passthrough.
+  Specifies whether *Power over Ethernet* should be enabled on nodes with ports that support PoE passthrough, such as port 5 on the *Mikrotik hAP ac lite*.
 
 *USB Passthrough*
   Specifies whether USB power passthrough should be enabled on nodes having a USB port.

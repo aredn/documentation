@@ -68,6 +68,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
 
    arednHow-toGuides/firmware_upgrade
    arednHow-toGuides/home-router-connection
+   arednHow-toGuides/local-package-repo
    arednHow-toGuides/siso-mimo
    arednHow-toGuides/puttygen_ssh_keys
    arednHow-toGuides/radio_mobile_settings

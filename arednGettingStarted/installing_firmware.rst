@@ -235,7 +235,7 @@ node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
 Tiny PXE Server
 +++++++++++++++
 
-On Windows, make sure to fully allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server do not display any activity when you put your device in recevory mode, get to the firewall settings from the Windows control panel and click on "advanced settings". Look through the "Inbound Rules" to see if a rules exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public network. If no rule exists, create a new rule.
+On Windows, make sure to fully allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server do not display any activity when you put your device in recevory mode, get to the firewall settings from the Windows control panel and click on "advanced settings". Look through the "Inbound Rules" to see if a rule exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public network. If no rule exists, create a new rule allowing connection for both public and private network.
 
 Additional questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
 

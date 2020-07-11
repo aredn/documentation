@@ -20,6 +20,19 @@ There are two cases for installing AREDN |trade| firmware:
 
   Different node hardware will require different methods for installing the AREDN |trade| firmware. For Ubiquiti devices, your computer's TFTP client will connect to the node's TFTP server in order to upload the firmware image. For TP-LINK and GL-iNET devices, your computer's web browser will connect to the node's web server to upload the firmware image. For Mikrotik devices, your computer will run a remote boot server and the node's remote boot client will load its boot image from your computer. Refer to the specific procedures below for your node hardware.
 
+Tips & Tricks
+-------------
+
+Browser Sessions
+++++++++++++++++
+
+Depending on your browser, you might encounter errors related to session. For exemple, you might get "connection reset" error when you try to save changes made to the configuration or when trying to upload a file to update de firmware or packages. This is mostly due to sessions that browser did not yet refreshed. If you encounter such an error you may try to force a refresh of the session by accessing the node from the root address (http://localnode) or simply open a private browsing window. The private browsing window is fast and effective way to go around session problems while configuring multiple nodes.
+
+Windows Firewall & Tiny PXE Server
+++++++++++++++++++++++++++++++++++
+
+On Windows, make sure to allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server do not display any action when you put your device in recevory mode, get to the firewall settings from the Windows control panel and click on "advanced settings". Look through the "Inbound Rules" to see if a rules exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public network. If no rule exists, create a new rule.
+
 Ubiquiti First Install Process
 ------------------------------
 

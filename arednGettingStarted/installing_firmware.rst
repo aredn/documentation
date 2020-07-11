@@ -20,6 +20,37 @@ There are two cases for installing AREDN |trade| firmware:
 
   Different node hardware will require different methods for installing the AREDN |trade| firmware. For Ubiquiti devices, your computer's TFTP client will connect to the node's TFTP server in order to upload the firmware image. For TP-LINK and GL-iNET devices, your computer's web browser will connect to the node's web server to upload the firmware image. For Mikrotik devices, your computer will run a remote boot server and the node's remote boot client will load its boot image from your computer. Refer to the specific procedures below for your node hardware.
 
+Troubleshooting Tips
+--------------------
+
+Browser cache and sessions
+++++++++++++++++++++++++++
+
+One common issue can occur when installing firmware using a web browser interface. The browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing the web browser's cache will allow the latest URL settings to be registered so you can continue with the install process.
+
+Instead of a *Connection Reset* message, sometimes a *Bad Gateway* message may appear. This is an `HTTP Status Code <https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>`_ that can mean any of several things. Often it indicates a network communication issue between a web browser and a web server. During AREDN |trade| firmware installs you can usually resolve a *Bad Gateway* issue by doing one or more of the following things:
+
+* Refresh or Reload the URL for your node.
+* Clear your browser cache and delete cookies.
+* Close your browser and restart a new session.
+* Use a different web browser program or a *Safe Mode / Incognito* browser window.
+* Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
+
+If for some reason the node's web interface does not work, you may be able to use a command line program to install the firmware image. You must first copy the firmware *bin* file to the node, then log into the node and use the *sysupgrade* program to install the image as illustrated below.
+
+>>>
+my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
+my-computer:$ ssh -p 2222 root@192.168.1.1
+~~~~~~~ after logging into the node as root (hsmm) ~~~~~~~
+node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
+
+Tiny PXE Server
++++++++++++++++
+
+On Windows, make sure to fully allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server do not display any activity when you put your device in recevory mode, get to the firewall settings from the Windows control panel and click on "advanced settings". Look through the "Inbound Rules" to see if a rule exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public network. If no rule exists, create a new rule allowing connection for both public and private network.
+
+Additional questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
+
 Ubiquiti First Install Process
 ------------------------------
 
@@ -207,37 +238,6 @@ After the GL-iNET device has been booted and configured, navigate to the *Upgrad
 
 If for some reason your GL-iNET device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNET debrick procedure <https://docs.gl-inet.com/en/2/troubleshooting/debrick/>`_
-
-Troubleshooting Tips
---------------------
-
-Browser cache and sessions
-++++++++++++++++++++++++++
-
-One common issue can occur when installing firmware using a web browser interface. The browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing the web browser's cache will allow the latest URL settings to be registered so you can continue with the install process.
-
-Instead of a *Connection Reset* message, sometimes a *Bad Gateway* message may appear. This is an `HTTP Status Code <https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>`_ that can mean any of several things. Often it indicates a network communication issue between a web browser and a web server. During AREDN |trade| firmware installs you can usually resolve a *Bad Gateway* issue by doing one or more of the following things:
-
-* Refresh or Reload the URL for your node.
-* Clear your browser cache and delete cookies.
-* Close your browser and restart a new session.
-* Use a different web browser program or a *Safe Mode / Incognito* browser window.
-* Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
-
-If for some reason the node's web interface does not work, you may be able to use a command line program to install the firmware image. You must first copy the firmware *bin* file to the node, then log into the node and use the *sysupgrade* program to install the image as illustrated below.
-
->>>
-my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
-my-computer:$ ssh -p 2222 root@192.168.1.1
-~~~~~~~ after logging into the node as root (hsmm) ~~~~~~~
-node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
-
-Tiny PXE Server
-+++++++++++++++
-
-On Windows, make sure to fully allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server do not display any activity when you put your device in recevory mode, get to the firewall settings from the Windows control panel and click on "advanced settings". Look through the "Inbound Rules" to see if a rule exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public network. If no rule exists, create a new rule allowing connection for both public and private network.
-
-Additional questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
 
 Post-Install Steps
 ------------------

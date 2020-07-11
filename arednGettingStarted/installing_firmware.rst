@@ -211,6 +211,9 @@ If for some reason your GL-iNET device gets into an unusable state, you should b
 Troubleshooting Tips
 --------------------
 
+Browser cache and sessions
+++++++++++++++++++++++++++
+
 One common issue can occur when installing firmware using a web browser interface. The browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing the web browser's cache will allow the latest URL settings to be registered so you can continue with the install process.
 
 Instead of a *Connection Reset* message, sometimes a *Bad Gateway* message may appear. This is an `HTTP Status Code <https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>`_ that can mean any of several things. Often it indicates a network communication issue between a web browser and a web server. During AREDN |trade| firmware installs you can usually resolve a *Bad Gateway* issue by doing one or more of the following things:
@@ -228,6 +231,11 @@ my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
 my-computer:$ ssh -p 2222 root@192.168.1.1
 ~~~~~~~ after logging into the node as root (hsmm) ~~~~~~~
 node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
+
+Tiny PXE Server
++++++++++++++++
+
+On Windows, make sure to fully allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server do not display any activity when you put your device in recevory mode, get to the firewall settings from the Windows control panel and click on "advanced settings". Look through the "Inbound Rules" to see if a rules exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public network. If no rule exists, create a new rule.
 
 Additional questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
 

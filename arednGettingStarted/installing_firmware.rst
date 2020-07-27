@@ -23,6 +23,8 @@ There are two cases for installing AREDN |trade| firmware:
 Troubleshooting Tips
 --------------------
 
+Questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
+
 Browser cache and sessions
 ++++++++++++++++++++++++++
 
@@ -47,9 +49,7 @@ node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
 Tiny PXE Server
 +++++++++++++++
 
-On Windows, make sure to fully allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server do not display any activity when you put your device in recevory mode, get to the firewall settings from the Windows control panel and click on "advanced settings". Look through the "Inbound Rules" to see if a rule exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public network. If no rule exists, create a new rule allowing connection for both public and private network.
-
-Additional questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
+On Windows, make sure to allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server does not display any activity when you put your device in recovery mode, get to the firewall settings from the Windows control panel and click on *Advanced Settings*. Look through the "Inbound Rules" to see if a rule exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public networks. If no rule exists, create a new rule allowing connection for both public and private networks.
 
 Ubiquiti First Install Process
 ------------------------------
@@ -215,7 +215,11 @@ You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ so
 
 **Final Configuration Steps**
 
-1. After booting the AREDN firmware image the node should have a default IP address of 192.168.1.1. Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node. For the hAP ac lite, pull the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4). You should be able to ping the node at 192.168.1.1. If this does not work, then something is wrong. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
+1. After booting the AREDN firmware image the node should have a default IP address of 192.168.1.1. Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node.
+
+  .. attention:: For the *Mikrotik hAP ac lite* **only**, pull the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.
+
+  You should be able to ping the node at 192.168.1.1. If this does not work, then something is wrong. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
 2. In a web browser, open the node’s Administration page ``http://192.168.1.1/cgi-bin/admin`` (user = 'root' password = 'hsmm') and navigate to the *Setup > Administration > Firmware Update* section. Select the **bin** file you previously downloaded and click the *Upload* button.
 

@@ -21,7 +21,7 @@
 
 project = u'AREDN Documentation'
 copyright = u'2020, AREDN'
-author = u'KC0EUW'
+author = u'Steve AB7PA'
 
 # The short X.Y version
 version = u'3.20.3.1'

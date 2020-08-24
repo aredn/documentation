@@ -45,14 +45,16 @@ The **Load Average** is the average number of processes that have been running o
 
 The :abbr:`OLSR (Optimized Link State Routing protocol)` **Entries** show the total number of entries in the routing table, as well as the number of nodes currently connected to the mesh network.
 
-Node and Broadcast Messages
----------------------------
+AREDN |trade| Alert Messages
+----------------------------
 
-The AREDN |trade| development team now has the ability to post messages which Internet-connected nodes will automatically retrieve once every 12 hours. There are two types of messages: QST/broadcast messages intended for all nodes, and directed messages which are only retrieved by individual nodes. Messages are displayed at the top of the *Node Status* page above the node name. Be aware that there is no guarantee of privacy for these messages, since anyone can view the message repository online.
+The AREDN |trade| development team has the ability to post messages which Internet-connected nodes will automatically retrieve once every 12 hours. There are two types of messages: QST/broadcast messages intended for all nodes, and directed messages which are only retrieved by individual nodes. Messages are displayed on a node's webpages above the node name. Be aware that there is no guarantee of privacy for these messages, since anyone can view the message repository online.
 
-.. image:: _images/node-messages.png
-   :alt: Node Message Display
+.. image:: _images/aam-display.png
+   :alt: AAM Display
    :align: center
+
+Regular mesh nodes without Internet access also have the ability to display *Local Alerts*. The process for setting up a local message repository is described in the **Advanced Configuration** section. If a node has Internet access as well as local messages, then both types of messages will be displayed in the AREDN |trade| alerts banner as shown in the example above.
 
 Signal Charts
 -------------

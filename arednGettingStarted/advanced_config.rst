@@ -287,18 +287,18 @@ You can edit or select a setting and then click the *Save Setting* button at the
 The first several rows in the *Advanced Configuration* table contain the URLs and paths that will be used by the node for accessing specific files such as map tiles, leaflet files, firmware, and packages.
 
 *PoE Passthrough*
-  Specifies whether *Power over Ethernet* should be enabled on nodes with ports that support PoE passthrough, such as port 5 on the *Mikrotik hAP ac lite*.
+  Specifies whether *Power over Ethernet* should be enabled on nodes with ports that support PoE passthrough, such as port 5 on the *Mikrotik hAP ac lite*. Move the slider to **ON** and click *Save Setting* to enable PoE power passthrough.
 
 *USB Passthrough*
-  Specifies whether USB power passthrough should be enabled on nodes having a USB port.
+  Specifies whether USB power passthrough should be enabled on nodes having a USB port. Move the slider to **ON** and click *Save Setting* to enable USB power passthrough.
 
 *OLSR Restart*
-  The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot. Check the box showing the current status of this option (OFF), then click the *Save Setting* button to restart OLSR.
+  The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.  Move the slider to **ON** and click *Save Setting* to restart OLSR.
 
   There is a known intermittent issue that may occur when a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. OLSR should be restarted on your node if other nodes' *Mesh Status* display have your node's IP address rather than hostname or if "dtdlink" or "mid" is shown in your node's hostname on their *Mesh Status* display. If your node's *Mesh Status* display shows the IP address rather than hostname for a remote node, then that remote node should restart OLSR.
 
 *AREDN Alert Message (AAM) Refresh*
-  The AREDN |trade| development team may post messages which Internet-connected nodes will automatically retrieve once every 12 hours. You can use this refresh setting if you want your node to retrieve any new messages without having to wait for the next auto-refresh window. Select the *aam refresh* checkbox and click *Save Setting* to trigger an immediate message retrieval.
+  The AREDN |trade| development team may post messages which Internet-connected nodes will automatically retrieve once every 12 hours. You can use this refresh setting if you want your node to retrieve any new messages without having to wait for the next auto-refresh window.  Move the slider to **ON** and click *Save Setting* to trigger an immediate message retrieval.
 
 *AREDN Alerts Local Path*
   This field allows you to enter the URL for a local alert message repository. If you configure such a local repository then your nodes without Internet access can also receive alert messages pertinent to your local mesh. As shown below, enter the URL without a trailing backslash.

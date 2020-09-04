@@ -15,7 +15,7 @@ All of the 33 cm band is shared with other FCC authorized users. All of the uppe
 =======  =================  ===============  ========
 Band     Frequency Range    Total Bandwidth  Channels
 =======  =================  ===============  ========
-33 cm    902-928   MHz      25 MHz           5
+33 cm    902-928   MHz      25 MHz           4
 13 cm    2390-2450 MHz      45 MHz           9
 9  cm    3300-3500 MHz      120 MHz          24
 5  cm    5650-5925 MHz      260 MHz          52
@@ -33,7 +33,11 @@ Some of the advantages and disadvantages of each frequency range are explained i
 **Disadvantages**
   The entire 33 cm band is shared between several FCC authorized radio services. The disadvantage of using this band for AREDN |trade| networking is that in all but the most remote areas the RF noise floor may be very high, which reduces the :abbr:`SNR (Signal to Noise Ratio)` and results in packet loss, retransmission delays, and lower usable link quality.
 
-  Another disadvantage is that the equipment can be more expensive than devices that operate in the 2.4 and 5.8 GHz bands. Also the entire band is quite narrow (25 MHz) which means that only one, two, or five radio channels can exist in this shared frequency range, depending on the channel width that is selected.
+  Another disadvantage is that the equipment can be more expensive than devices that operate in the 2.4 and 5.8 GHz bands. Also the entire band is quite narrow (25 MHz) which means that only one, two, or four radio channels can exist in this shared frequency range, depending on the channel width that is selected.
+
+.. image:: ../_images/900mhz.png
+   :alt: 900 MHz Band
+   :align: center
 
 **Advantages**
   The advantage of this frequency band is that its longer wavelength makes it better suited for penetrating some types of obstructions and foliage which would normally block signals at higher frequencies. Its :abbr:`NLOS (Non Line of Sight)` propagation characteristics may be exactly what is needed in order to establish an RF link between two difficult locations.

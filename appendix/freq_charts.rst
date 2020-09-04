@@ -4,6 +4,12 @@ Frequencies and Channels
 
 The frequencies and channels that are available for AREDN |trade| networking are shown in the charts below.
 
+**900 MHz**
+
+.. image:: ../_images/900mhz.png
+   :alt: 900 MHz Band
+   :align: center
+
 **2.4 GHz**
 
 .. image:: ../_images/2.4ghz.png

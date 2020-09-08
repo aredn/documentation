@@ -176,7 +176,7 @@ See your node's **Help** file for additional insights on how this configuration 
 DNS Aliases
 ^^^^^^^^^^^
 
-**DNS Aliases** provide a way for you to create a mesh alias or synonym for a services computer. This can be useful if you want a computer on your node's LAN network to be reachable across the mesh by something other than its actual hostname. It provides a feature similar to the *Virtual Host* directive available on most web servers. The computer will respond to requests using its real hostname as well as any aliases that are defined for it.
+**DNS Aliases** provide a way for you to create a mesh alias or synonym for a services computer. This can be useful if you want a computer on your node's LAN network to be reachable across the mesh by something other than its actual hostname. It provides functionality similar to DNS *CNAME* records, so the computer will respond to requests using its real hostname as well as any aliases that are defined for it.
 
 To create an alias, enter an **Alias Name**. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the mesh network. Then use the drop-down selector to choose the name or **IP Address** of the existing host for which you are defining the alias. Once you have entered these values, click *Add* to add the alias to the **DNS Aliases** list. You may also remove an existing alias by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
 

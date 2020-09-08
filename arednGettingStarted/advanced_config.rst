@@ -136,7 +136,7 @@ If your node is running its default DHCP server on the LAN network, it will auto
 
 .. attention:: The hostnames of computers connected to the mesh at large must be unique. Typically you should prefix your amateur radio callsign to the computer's hostname in order to have the best chance of it being unique on the mesh network.
 
-Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. You can permanently reserve that host's DHCP address by clicking the *Add* button to the right of the host in the *DHCP Leases* list. You will see that host now appears in the list under the **DHCP Address Reservations** heading above the list of leases.
+Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. You can permanently reserve that host's DHCP address by clicking the *Add* button at the right of the row in the *DHCP Leases* list. You will see that host now appears in the list under the **DHCP Address Reservations** heading above the list of leases.
 
 There may be some devices on which you are not able to set the hostname prefixed by your callsign. Once you add that device to your **DHCP Address Reservations**, however, click the *Hostname* box to edit the hostname what will be propagated across the mesh network. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. If you have a device which needs to be reachable on its host node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information to the mesh.
 
@@ -162,14 +162,25 @@ URL
 Port
   Enter the network port on which the service is listening for user connections. There may be several applications provided through a single web server on a node or host using a single port, and in that case a valid application *Path* must be entered after the port number (as in the example above). In other cases the network port alone uniquely identifies the application or program that is listening for user connections to that service. You can click this link for additional information about `network ports <https://en.wikipedia.org/wiki/Port_(computer_networking)>`_.
 
-Once you have entered the values for your advertised service, click *Add* to add the service to the **Advertised Services** list. You may also remove an existing advertised service by clicking the *Del* button to delete it from the list.
+Once you have entered the values for your advertised service, click *Add* to add the service to the **Advertised Services** list. You may also remove an existing advertised service by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
 
 Port Forwarding
 ^^^^^^^^^^^^^^^
 
-If you are using ``NAT`` for your LAN mode, then *Port Forwarding* rules are the only way other devices have for connecting to your services. To create a port forwarding rule, select the network interface on which the traffic will enter your node. Select the protocol used by the incoming packets (TCP, UDP, or Both). Enter the port number that the external request is using to connect to your service. When your node receives traffic on the selected interface, protocol, and port, the request will be routed to the LAN IP address and port on which that host is listening for incoming service requests.
+If you are using ``NAT`` for your LAN mode, then *Port Forwarding* rules are the only way other devices have for connecting to your services. To create a port forwarding rule, select the network **Interface** on which the traffic will enter your node. Select the Protocol **Type** used by the incoming packets (TCP, UDP, or Both). Enter the **Port** number that the external request is using to connect to your service. When your node receives traffic on the selected interface, protocol, and port, that request will be routed to the **LAN IP** address and **LAN Port** on which the service host is listening for incoming requests.
+
+Once you have entered these values, click *Add* to add the rule to the **Port Forwarding** list. You may also remove an existing rule by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your port forwarding changes to the node's configuration.
 
 See your node's **Help** file for additional insights on how this configuration section changes based on the LAN mode of your node. Click this link for more information on `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
+
+DNS Aliases
+^^^^^^^^^^^
+
+**DNS Aliases** provide a way for you to create a mesh alias or synonym for a services computer. This can be useful if you want a computer on your node's LAN network to be reachable across the mesh by something other than its actual hostname. It provides functionality similar to DNS *CNAME* records, so the computer will respond to requests using its real hostname as well as any aliases that are defined for it.
+
+To create an alias, enter an **Alias Name**. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the mesh network. Then use the drop-down selector to choose the name or **IP Address** of the existing host for which you are defining the alias. Once you have entered these values, click *Add* to add the alias to the **DNS Aliases** list. You may also remove an existing alias by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
+
+Once they are defined the **DNS Aliases** become available for creating *Advertised Services* by choosing the alias from the host drop-down selector. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
 
 Tunnel Server
 -------------

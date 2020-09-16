@@ -47,8 +47,9 @@ Now your local environment knows about both the master documentation repository 
 	7. Resolve any conflicts that need to be merged if warned in the step above.
 	8. Final build and validation that your changes work on top of the latest changes from other contributors.
 5. `Commit` your changes to your local repository, then `Push` the changes to your own GitHub repository.
-	1. `git commit`
-	2. `git push origin my-new-doc-item`
+	1. `git add any-changed-files` (stage changes for commit)
+	2. `git commit` (commit changes with a meaningful commit message)
+	3. `git push origin my-new-doc-item`
 6. Create a `Pull Request` (PR) to the AREDN master repository by browsing to `github.com/myCall/documentation`, then select the my-new-doc-item branch. Click the `New Pull Request` button to generate your Pull Request. Others can now review your changes, test them, and give feedback. If feedback is given and you need to make changes, go back to step 3.
 7. Once your changes have been accepted into the AREDN master repository, you can delete your branch:
 	1. On your local repository: `git branch -D my-new-doc-item`

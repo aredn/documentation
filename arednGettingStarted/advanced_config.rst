@@ -186,7 +186,7 @@ To create an alias, enter an **Alias Name**. The alias should be prefixed with y
   Once they are defined the **DNS Aliases** become available for creating *Advertised Services* by choosing the alias from the host drop-down selector. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
 
 **Aliases in NAT Mode**
-  *DNS Aliases* work differently in ``NAT Mode``. Aliases **cannot** be propagated across the mesh when using ``NAT Mode``, but are only visible within the local LAN network on the node. ``NAT Mode`` aliases **cannot** be used when defining an *Advertised Services* listing or a *Port Forwarding* rule. They can only be used as an alternate hostname for a computer or device on the nodes' LAN.
+  *DNS Aliases* work differently in ``NAT Mode``. Aliases **cannot** be propagated across the mesh when using ``NAT Mode``. They are only visible within the local LAN network on the node. ``NAT Mode`` aliases **cannot** be used when defining an *Advertised Services* listing. They can only be used as an alternate hostname for a computer or device on the nodes' LAN.
 
 Tunnel Server
 -------------

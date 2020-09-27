@@ -183,7 +183,7 @@ To create an alias, enter an **Alias Name**. The alias should be prefixed with y
 **Aliases in Direct Mode**
   When your node is using ``Direct Mode`` for its LAN, *DNS Aliases* allow your computer or device to be reachable by its alias from across the mesh network. This provides functionality similar to DNS *CNAME* records, so the computer will respond to network requests using its real hostname as well as any aliases that are defined for it.
 
-  Once they are defined the **DNS Aliases** become available for creating *Advertised Services* and *Port Forwarding* rules by choosing the alias from the host drop-down selector. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
+  Once they are defined the **DNS Aliases** become available for creating *Advertised Services* by choosing the alias from the host drop-down selector. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
 
 **Aliases in NAT Mode**
   *DNS Aliases* work differently in ``NAT Mode``. Aliases **cannot** be propagated across the mesh when using ``NAT Mode``, but are only visible within the local LAN network on the node. ``NAT Mode`` aliases **cannot** be used when defining an *Advertised Services* listing or a *Port Forwarding* rule. They can only be used as an alternate hostname for a computer or device on the nodes' LAN.

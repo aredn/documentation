@@ -14,22 +14,22 @@ Once you have completed the initial setup on your AREDN |trade| node, you can co
 
 Below the node name bar there are several controls.
 
-**Help**
+Help
    Opens a new window or tab to display the node help page.
 
-**Refresh**
+Refresh
    Updates the Node Status page with current data.
 
-**Mesh Status**
+Mesh Status
    Opens the **Mesh Status** page showing the neighbor nodes and remote nodes visible on the mesh network, as well as what services are being provided by those nodes.
 
-**WiFi Scan**
+WiFi Scan
    Displays a list of other 802.11 signals that your node can see. The 802.11 signals may include Access Points, neighbor nodes, and other mesh networks (foreign ad-hoc networks).  WiFi Scan only finds devices on the same channel width as your node is configured to.  When installing at a new location, it is best practice to scan on 5, 10, and 20MHz channels to find all 802.11 signals in range.  This information will help to pick a channel clear of other interference.  When multiple ad-hoc networks are visible (with different SSIDs or channels), the ID of each 802.11 ad-hoc *network* is displayed but not the individual nodes. There is also an automatic scan mode, but running a Wifi Scan continuously is not recommended, particularly if the node is actively routing traffic.  The scan is passive, or only listens for other beacons through all channels, and risks loss of data on the assigned channel.  Wifi Scan does not transmit probes on every channel in passive mode, thus no risk of interfering with Radar stations on DFS channels, or other unintended transmissions.  Multiple attempts of Wifi Scan will be necessary to find all devices in range.
 
-**Setup**
+Setup
    Navigates to the **Setup** pages for your node. You will need to supply a username and password to access those pages. The username is always ``root``, while the password is the one you set during initial node setup. If the node has not yet been configured, the password is ``hsmm``.
 
-**Select Theme**
+Select Theme
    AREDN |trade| firmware has several built-in display themes. The default ``aredn`` theme has a gray background with black and red text. The ``black_on_white`` theme is often chosen because it provides the best screen contrast on a computer exposed to direct sunlight. ``red_on_black`` is much better suited for nighttime use since it helps preserve night vision.
 
 Node Settings Summary
@@ -67,13 +67,13 @@ There is a **Charts** button next to the node's **Signal Strength** display, and
 
 At the top of the charts display there are several control buttons.
 
-**Archive**
+Archive
   This button shows the charts for any archived signal data on this node.
 
-**Realtime**
+Realtime
   This button shows the charts for current signal data as seen from this node.
 
-**Quit**
+Quit
   This button exits the charts view and takes you back to the *Node Status* page.
 
 Below these controls you can choose to view the signal strength statistics for individual nodes that are directly connected to your node. Choose the neighbor node from the **Selected Device** dropdown list. Changing the selected device will automatically reload the chart to show that node's information.

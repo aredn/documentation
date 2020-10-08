@@ -10,19 +10,19 @@ During your node's *Basic Setup* you used the configuration display by clicking 
 
 There are several control buttons below the configuration links section.
 
-**Help**
+Help
    Opens a new window or tab to display the node help page.
 
-**Save Changes**
+Save Changes
   Click this button to save any configuration changes you have made. Saving changes will first do a basic validation of the new settings, saving them to flash memory if no errors are found. The new settings take effect in about 20 seconds and a reboot may or may not be required.
 
-**Reset Values**
+Reset Values
   Click this button to reload the currently saved settings from flash memory, effectively undoing any changes that were made.
 
-**Default Values**
+Default Values
   Click this button to reset your node's basic settings to the default values. This action does not affect your existing node name.
 
-**Reboot**
+Reboot
   Click this button to force your node to reboot.
 
 Basic Setup
@@ -41,7 +41,7 @@ Mesh RF Column
 
 The **Active Settings** can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*. A node may decrease its output power as it increases its data rate in order to maintain a linear spectrum.
 
-**Distance Setting**
+Distance Setting
    The *Distance* setting is only applicable to nodes that can communicate directly over RF. This setting adjusts the RF retry timer to define how long the transmitter will wait for an acknowledgement from a neighbor station. If the distance parameter is too short, the transmitter will send duplicate data packets before an acknowledgement has time to be received. If the distance parameter is too long, the transmitter will wait extra time before considering the data lost and retransmitting the packets.
 
    The maximum distance settings the ath9k wireless driver allows depends on the channel width:
@@ -56,7 +56,7 @@ The **Active Settings** can be adjusted and applied without saving changes or re
 
    However, the auto-distance setting does not work well when link quality is marginal or when there are many nodes sharing the channel. In this scenario the round-trip packet timing has a very wide range of values, so the timeout value becomes inflated and inconsistent. Static settings should be used in this situation.
 
-**Enable/Disable Mesh Radio**
+Enable/Disable Mesh Radio
   You can disable your node's radio interface by deselecting the *Enable* checkbox, saving your changes, and rebooting the node. With the Mesh RF interface disabled the *Active Settings* no longer apply and will disappear. Since your node now has an unused RF interface, you will notice that a new section appears which allows you to use the node's radio as an FCC Part 15 *LAN Access Point*. You can enable or disable the LAN AP using the *Enable* checkbox. See the details below for configuring the LAN Access Point.
 
 .. image:: _images/07a-lanAP-on.png
@@ -176,11 +176,17 @@ See your node's **Help** file for additional insights on how this configuration 
 DNS Aliases
 ^^^^^^^^^^^
 
-**DNS Aliases** provide a way for you to create a mesh alias or synonym for a services computer. This can be useful if you want a computer on your node's LAN network to be reachable across the mesh by something other than its actual hostname. It provides functionality similar to DNS *CNAME* records, so the computer will respond to requests using its real hostname as well as any aliases that are defined for it.
+**DNS Aliases** provide a way for you to create a mesh alias or synonym for a services computer. This can be useful if you want a computer or device on your node's LAN network to be identified by something other than its actual hostname.
 
-To create an alias, enter an **Alias Name**. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the mesh network. Then use the drop-down selector to choose the name or **IP Address** of the existing host for which you are defining the alias. Once you have entered these values, click *Add* to add the alias to the **DNS Aliases** list. You may also remove an existing alias by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
+To create an alias, enter an **Alias Name**. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the network. Then use the drop-down selector to choose the name or **IP Address** of the existing host for which you are defining the alias. Once you have entered these values, click *Add* to add the alias to the **DNS Aliases** list. You may also remove an existing alias by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
 
-Once they are defined the **DNS Aliases** become available for creating *Advertised Services* by choosing the alias from the host drop-down selector. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
+Aliases in Direct Mode
+  When your node is using ``Direct Mode`` for its LAN, *DNS Aliases* allow your computer or device to be reachable by its alias from across the mesh network. This provides functionality similar to DNS *CNAME* records, so the computer will respond to network requests using its real hostname as well as any aliases that are defined for it.
+
+  Once they are defined the **DNS Aliases** become available for creating *Advertised Services* by choosing the alias from the host drop-down selector. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
+
+Aliases in NAT Mode
+  *DNS Aliases* work differently in ``NAT Mode``. Aliases **cannot** be propagated across the mesh when using ``NAT Mode``. They are only visible within the local LAN network on the node. ``NAT Mode`` aliases **cannot** be used when defining an *Advertised Services* listing. They can only be used as an alternate hostname for a computer or device on the nodes' LAN.
 
 Tunnel Server
 -------------
@@ -197,6 +203,8 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 
 Managed Switch Settings (both Client and Server networks)
   Set your VLAN-capable network switch to appropriately tag traffic from the Internet with "VLAN 1" before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet connection on its WAN interface. See the equipment manual for your managed switch to determine how to configure these settings. There are also AREDN |trade| `website posts <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_ which contain helpful information.
+
+  .. note:: If you are using a *Mikrotik hAP ac lite* or *GL.iNET AR150/AR300M/AR750*, then you do not need a separate VLAN-capable switch as described above. These nodes have built-in switches with the appropriate VLANs preconfigured in the AREDN |trade| firmware.
 
   Your node should have Internet access after the smart switch is configured, and you can use the node's new Internet connection to install the *tunneling* software package. This package should be installed on both the tunnel server and the tunnel client nodes.
 
@@ -254,8 +262,7 @@ Contact the amateur operator who controls the tunnel server and request client c
 
 To allow your client to connect to the tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active.
 
-.. attention:: The add-on tunnel package (vtun) has a character limitation on the client node name which could prevent a tunnel from connecting. Keep node names as short as possible in order to avoid this issue. More information and discussion can be found in `this Forum thread <https://www.arednmesh.org/comment/4174>`_.
-
+.. warning:: The add-on tunnel package (vtun) has a character limitation on the client node name which could prevent a tunnel from connecting. Keep node names as short as possible in order to avoid this issue. More information and discussion can be found in `this Forum thread <https://www.arednmesh.org/comment/4174>`_.
 
 Administration
 --------------
@@ -266,22 +273,22 @@ Click the **Administration** link to navigate to these settings. There are four 
    :alt: Upgrade and Packages
    :align: center
 
-.. attention:: Files cannot be uploaded to a node while a tunnel server or client connection is enabled. Disable tunnel client or server connections before uploading firmware, packages, or ssh key files. The *Upload* buttons will be disabled until tunnels are disabled.
+.. important:: Files cannot be uploaded to a node while a tunnel server or client connection is enabled. Disable tunnel client or server connections before uploading firmware, packages, or ssh key files. The *Upload* buttons will be disabled until tunnels are disabled.
 
-**Firmware Update**
+Firmware Update
   If you have a new firmware image that has already been downloaded to your computer, click the *Browse* button and select the firmware file to upload. Click *Upload* and the file will be uploaded and installed on the node.
 
   If the node has Internet access (either from its WAN interface or from the mesh) you can use the *Download Firmware* option. Click *Refresh* to update the list of available images. Select the image to download, click *Download*, and wait for the firmware to download and be installed. When upgrading firmware, you can retain your existing configuration settings by selecting the *Keep Settings* checkbox.
 
-**Package Management**
+Package Management
   Here you can install or remove software packages on the node. *Upload Package* allows you to install a package file from your computer. *Download Package* allows you do retrieve a package over the Internet from the AREDN |trade| website. Clicking *Refresh* will update the list of packages available for download, but try to avoid updating this list unless you absolutely require it. The package information database is stored locally and will use quite a bit of storage space. Under normal circumstances it is rare to require a package refresh.
 
   The *Remove Package* list shows all packages currently installed on the node. Selecting a package and clicking *Remove* will uninstall the package. You will only be able to remove packages that you have added. All installed packages are shown, but the pre-installed packages cannot be deleted since they are necessary for proper operation of the node.
 
-**Authorized SSH Keys**
+Authorized SSH Keys
   Uploading ssh keys allows computers to connect to a node via ssh without having to know the password. The ssh keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload its *public* key to your AREDN |trade| node. If you want to remove an installed key, select it and click the *Remove* button.
 
-**Support Data**
+Support Data
   There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| forum in order to get help with a problem. Click *Download Support Data* to save a compressed archive file to your local computer.
 
 Advanced Configuration
@@ -299,21 +306,21 @@ You can edit or select a setting and then click the *Save Setting* button at the
 
 The first several rows in the *Advanced Configuration* table contain the URLs and paths that will be used by the node for accessing specific files such as map tiles, leaflet files, firmware, and packages.
 
-*PoE Passthrough*
+PoE Passthrough
   Specifies whether *Power over Ethernet* should be enabled on nodes with ports that support PoE passthrough, such as port 5 on the *Mikrotik hAP ac lite*. Move the slider to **ON** and click *Save Setting* to enable PoE power passthrough.
 
-*USB Passthrough*
+USB Passthrough
   Specifies whether USB power passthrough should be enabled on nodes having a USB port. Move the slider to **ON** and click *Save Setting* to enable USB power passthrough.
 
-*OLSR Restart*
+OLSR Restart
   The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.  Move the slider to **ON** and click *Save Setting* to restart OLSR.
 
   There is a known intermittent issue that may occur when a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. OLSR should be restarted on your node if other nodes' *Mesh Status* display have your node's IP address rather than hostname or if "dtdlink" or "mid" is shown in your node's hostname on their *Mesh Status* display. If your node's *Mesh Status* display shows the IP address rather than hostname for a remote node, then that remote node should restart OLSR.
 
-*AREDN Alert Message (AAM) Refresh*
+AREDN Alert Message (AAM) Refresh
   The AREDN |trade| development team may post messages which Internet-connected nodes will automatically retrieve once every 12 hours. You can use this refresh setting if you want your node to retrieve any new messages without having to wait for the next auto-refresh window.  Move the slider to **ON** and click *Save Setting* to trigger an immediate message retrieval.
 
-*AREDN Alerts Local Path*
+AREDN Alerts Local Path
   This field allows you to enter the URL for a local alert message repository. If you configure such a local repository then your nodes without Internet access can also receive alert messages pertinent to your local mesh. As shown below, enter the URL without a trailing backslash.
 
 .. image:: _images/alertlocalpath.png

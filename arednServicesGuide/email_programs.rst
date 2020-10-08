@@ -24,14 +24,14 @@ Open Source Email Server
 
 In order to implement an open source email server you will need to install several individual software packages, each of which will process one or more of the required email protocols. This is slightly more complicated than implementing a single groupware package such as the *Citadel* program described in the previous section. Protocols and example packages are described in the following lists.
 
-**SMTP**
+SMTP
   In order to implement an email server you will need to select a software package to handle the Simple Mail Transfer Protocol. You can select one of the example open source packages from the list below, or you can implement another SMTP agent of your choice.
 
   * `Sendmail <https://en.wikipedia.org/wiki/Sendmail>`_ is the original legacy SMTP server that is still used today, although one of the newer programs below is often chosen for its ease of configuration and added security features.
   * `Exim <https://en.wikipedia.org/wiki/Exim>`_ is the default SMTP server in Debian Linux, is well-documented, having many configurable features, and it runs from a single executable program.
   * `Postfix <https://en.wikipedia.org/wiki/Postfix_(software)>`_ is the default SMTP server in Ubuntu Linux and MacOS, with many integration and security features, and it runs a series of parallelized programs for improved performance.
 
-**IMAP and POP3**
+IMAP and POP3
   In order for email clients to retrieve their messages you will need to select a software package to handle IMAP and POP3 communication. You can select the example open source package below or you can implement another IMAP/POP3 package of your choice.
 
   * `Dovecot <https://en.wikipedia.org/wiki/Dovecot_(software)>`_ is one of the most popular IMAP and POP3 servers for open source email systems, being found on more than 2/3 of the email servers across the Internet.

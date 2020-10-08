@@ -26,30 +26,26 @@ Troubleshooting Tips
 Questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
 
 Browser cache and sessions
-++++++++++++++++++++++++++
+  One common issue can occur when installing firmware using a web browser interface. The browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing the web browser's cache will allow the latest URL settings to be registered so you can continue with the install process.
 
-One common issue can occur when installing firmware using a web browser interface. The browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing the web browser's cache will allow the latest URL settings to be registered so you can continue with the install process.
+  Instead of a *Connection Reset* message, sometimes a *Bad Gateway* message may appear. This is an `HTTP Status Code <https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>`_ that can mean any of several things. Often it indicates a network communication issue between a web browser and a web server. During AREDN |trade| firmware installs you can usually resolve a *Bad Gateway* issue by doing one or more of the following things:
 
-Instead of a *Connection Reset* message, sometimes a *Bad Gateway* message may appear. This is an `HTTP Status Code <https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>`_ that can mean any of several things. Often it indicates a network communication issue between a web browser and a web server. During AREDN |trade| firmware installs you can usually resolve a *Bad Gateway* issue by doing one or more of the following things:
+  * Refresh or Reload the URL for your node.
+  * Clear your browser cache and delete cookies.
+  * Close your browser and restart a new session.
+  * Use a different web browser program or a *Safe Mode / Incognito* browser window.
+  * Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
 
-* Refresh or Reload the URL for your node.
-* Clear your browser cache and delete cookies.
-* Close your browser and restart a new session.
-* Use a different web browser program or a *Safe Mode / Incognito* browser window.
-* Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
+  If for some reason the node's web interface does not work, you may be able to use a command line program to install the firmware image. You must first copy the firmware *bin* file to the node, then log into the node and use the *sysupgrade* program to install the image as illustrated below.
 
-If for some reason the node's web interface does not work, you may be able to use a command line program to install the firmware image. You must first copy the firmware *bin* file to the node, then log into the node and use the *sysupgrade* program to install the image as illustrated below.
-
->>>
-my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
-my-computer:$ ssh -p 2222 root@192.168.1.1
-~~~~~~~ after logging into the node as root (hsmm) ~~~~~~~
-node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
+  >>>
+  my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
+  my-computer:$ ssh -p 2222 root@192.168.1.1
+  ~~~~~~~ after logging into the node as root (hsmm) ~~~~~~~
+  node:# sysupgrade -n /tmp/aredn-firmware-filename.bin
 
 Tiny PXE Server
-+++++++++++++++
-
-On Windows, make sure to allow Tiny PXE Server through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server does not display any activity when you put your device in recovery mode, get to the firewall settings from the Windows control panel and click on *Advanced Settings*. Look through the "Inbound Rules" to see if a rule exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public networks. If no rule exists, create a new rule allowing connection for both public and private networks.
+  On Windows, make sure to allow Tiny PXE Server (described below) through the firewall when prompted on first launch. If you do not get prompted or Tiny PXE Server does not display any activity when you put your device in recovery mode, get to the firewall settings from the Windows control panel and click on *Advanced Settings*. Look through the "Inbound Rules" to see if a rule exists for Tiny PXE Server. If a rule exists, make sure to "allow connection" for both private and public networks. If no rule exists, create a new rule allowing connection for both public and private networks.
 
 Ubiquiti First Install Process
 ------------------------------
@@ -97,69 +93,65 @@ TP-LINK First Install Process
 -----------------------------
 
 Preferred Process
-+++++++++++++++++
-
-**TP-LINK** devices currently allow you to use the manufacturer's pre-installed *PharOS* web browser user interface to upload and apply new firmware images. This is the most user-friendly way to install AREDN |trade| firmware. Navigate to the *Setup* section to select and upload new firmware. Check the TP-LINK documentation for your device if you have questions about using their built-in user interface.
+  **TP-LINK** devices currently allow you to use the manufacturer's pre-installed *PharOS* web browser user interface to upload and apply new firmware images. This is the most user-friendly way to install AREDN |trade| firmware. Navigate to the *Setup* section to select and upload new firmware. Check the TP-LINK documentation for your device if you have questions about using their built-in user interface.
 
 Alternate Process
-+++++++++++++++++
+  TP-LINK devices also have a built-in :abbr:`TFTP (Trivial File Transfer Protocol)` and `Bootp <https://en.wikipedia.org/wiki/Bootstrap_Protocol>`_ client which allows them to obtain new firmware from an external source. Your computer must run a TFTP/Bootp server in order to provide firmware images to the node. In certain situations you may need to use this method to update the firmware or to restore a TP-LINK recovery file by following the steps below.
 
-TP-LINK devices also have a built-in :abbr:`TFTP (Trivial File Transfer Protocol)` and `Bootp <https://en.wikipedia.org/wiki/Bootstrap_Protocol>`_ client which allows them to obtain new firmware from an external source. Your computer must run a TFTP/Bootp server in order to provide firmware images to the node. In certain situations you may need to use this method to update the firmware or to restore a TP-LINK recovery file by following the steps below.
+  *Preparation*
 
-*Preparation*
+  1. Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
 
-1. Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
+  2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most TP-LINK devices use the 192.168.0.x subnet by default, so you can give your computer a static IP such as 192.168.0.100 with a netmask of 255.255.255.0.
 
-2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most TP-LINK devices use the 192.168.0.x subnet by default, so you can give your computer a static IP such as 192.168.0.100 with a netmask of 255.255.255.0.
+    You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.0.0 and 192.168.0.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet.
 
-  You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.0.0 and 192.168.0.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet.
+  3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
 
-3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
+  *Linux Procedure*
 
-*Linux Procedure*
+  1. Create a directory on your computer called ``/tftp`` and copy the TP-LINK ``recovery.bin`` file there.
 
-1. Create a directory on your computer called ``/tftp`` and copy the TP-LINK ``recovery.bin`` file there.
+  2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.0.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.0.110,192.168.0.120 as shown below.
 
-2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.0.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.0.110,192.168.0.120 as shown below.
-
-3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
+  3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
 
   >>>
   (root)# dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic \
         --dhcp-range=192.168.0.110,192.168.0.120 -d -p0 -K \
         --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
 
-4. With the PoE unit powered off, connect an Ethernet cable from the TP-LINK node to the POE port.
+  4. With the PoE unit powered off, connect an Ethernet cable from the TP-LINK node to the POE port.
 
-5. Push the reset button on the TP-LINK and hold it while powering on the PoE unit.  Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after about 10 seconds.  Release the reset button as the computer starts communicating with the node.  When you see the "sent" message, this indicates success, and the TP-LINK node has downloaded the image and will reboot. You can now <ctrl>C or kill dnsmasq.
+  5. Push the reset button on the TP-LINK and hold it while powering on the PoE unit.  Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after about 10 seconds.  Release the reset button as the computer starts communicating with the node.  When you see the "sent" message, this indicates success, and the TP-LINK node has downloaded the image and will reboot. You can now <ctrl>C or kill dnsmasq.
 
-*Windows Procedure*
+  *Windows Procedure*
 
-You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ software on your Windows computer. Download this software and extract it on your computer.
+  You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ software on your Windows computer. Download this software and extract it on your computer.
 
-1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line:  ``rfc951=1`` then save and close the file.
+  1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line:  ``rfc951=1`` then save and close the file.
 
-2. Copy the ``recovery.bin`` firmware image into the ``files`` folder under the Tiny PXE server directory location.
+  2. Copy the ``recovery.bin`` firmware image into the ``files`` folder under the Tiny PXE server directory location.
 
-3. Start the Tiny PXE server exe and select your Ethernet interface IP from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``recovery.bin`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the Tiny PXE window.
+  3. Start the Tiny PXE server exe and select your Ethernet interface IP from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``recovery.bin`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the Tiny PXE window.
 
-.. image:: _images/tiny-pxe-tpl.png
-  :alt: Tiny PXE Display
-  :align: center
+  .. image:: _images/tiny-pxe-tpl.png
+    :alt: Tiny PXE Display
+    :align: center
 
-4. With the PoE unit powered off, connect an Ethernet cable from the TP-LINK node to the POE port. Press and hold the reset button on the node while powering on the PoE unit.
+  4. With the PoE unit powered off, connect an Ethernet cable from the TP-LINK node to the POE port. Press and hold the reset button on the node while powering on the PoE unit.
 
-5. Continue holding the reset button until you see ``TFTPd: DoReadFile: recovery.bin`` in the Tiny PXE log window.
+  5. Continue holding the reset button until you see ``TFTPd: DoReadFile: recovery.bin`` in the Tiny PXE log window.
 
-6. Release the node’s reset button and click the *Offline* button in Tiny PXE.  You are finished using Tiny PXE when the firmware image has been read by the node.
+  6. Release the node’s reset button and click the *Offline* button in Tiny PXE.  You are finished using Tiny PXE when the firmware image has been read by the node.
 
-*Final Configuration Steps*
+  *Final Configuration Steps*
 
-1. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node.
+  1. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node.
 
-2. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address.
+  2. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address.
 
-3. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
+  3. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
 Mikrotik First Install Process
 ------------------------------

@@ -13,7 +13,7 @@ When selecting a device for your AREDN |trade| hardware there are several things
 * Some older or lower cost devices have a limited amount of onboard memory, but firmware images continue grow in size and functionality. Consider purchasing a device with more memory over one with less memory.
 * Check the maximum power output of the device, since some devices have lower power capabilities.
 
-One of the best sources of detailed device information is a manufacturer's datasheet, usually available for download from the manufacturer's website. Currently AREDN |trade| supports over fifty device models from manufacturers including GL-iNET, Mikrotik, TP-LINK, and Ubiquiti Networks.
+One of the best sources of detailed device information is a manufacturer's datasheet, usually available for download from the manufacturer's website. Currently AREDN |trade| supports over fifty device models from manufacturers including GL-iNet, Mikrotik, TP-LINK, and Ubiquiti Networks.
 
 If you are just getting started with AREDN |trade| you can easily begin with one of the low-cost devices that comes with an integrated antenna and a :abbr:`PoE (Power over Ethernet)` unit. If you are expanding your AREDN |trade| network with more sophisticated equipment, you may choose a standalone radio attached to any of several kinds of high-gain antennas.
 

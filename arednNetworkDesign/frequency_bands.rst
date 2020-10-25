@@ -18,7 +18,7 @@ Band     Frequency Range    Total Bandwidth  Channels
 33 cm    902-928   MHz      25 MHz           4
 13 cm    2390-2450 MHz      45 MHz           9
 9  cm    3300-3500 MHz      120 MHz          24
-5  cm    5650-5925 MHz      260 MHz          52
+5  cm    5650-5925 MHz      260 MHz          54
 =======  =================  ===============  ========
 
 The table above shows that the 9 cm band has the most available bandwidth in its unshared channels, while the 5 cm band has the next largest amount of available bandwidth in unshared channels. The choice of a frequency band for AREDN |trade| networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width.
@@ -85,9 +85,9 @@ Disadvantages
    :align: center
 
 Advantages
-  One advantage for using the 5 cm band is that it contains 52 channels, and many of them at the upper end of the band are under-utilized with less chance of interference. You can choose channel widths of 5, 10, or 20 MHz, with larger channel widths providing higher data rates. Remember that reducing the channel width will increase the :abbr:`SNR (Signal to Noise Ratio)` to improve signal quality if that is an issue for a problem link.
+  One advantage for using the 5 cm band is that it contains 54 channels, and many of them at the upper end of the band are under-utilized with less chance of interference. You can choose channel widths of 5, 10, or 20 MHz, with larger channel widths providing higher data rates. Remember that reducing the channel width will increase the :abbr:`SNR (Signal to Noise Ratio)` to improve signal quality if that is an issue for a problem link.
 
-  The radio equipment and antenna systems for this band are readily available and are less expensive due to greater consumer demand. There is a wide variety of equipment from several manufacturers which supports the AREDN |trade| firmware and operates across the 52 available channels. Radio and antenna systems for this band which are similar in size to those for other bands will often have higher gain. Devices in the 5 cm band are also well-suited for *Backbone Links* since there is little chance for RF interference from other radios sharing these frequencies at high profile sites. With clear line of sight and well-tuned antennas, 5.8 GHz signals can propagate across very long distances.
+  The radio equipment and antenna systems for this band are readily available and are less expensive due to greater consumer demand. There is a wide variety of equipment from several manufacturers which supports the AREDN |trade| firmware and operates across the 54 available channels. Radio and antenna systems for this band which are similar in size to those for other bands will often have higher gain. Devices in the 5 cm band are also well-suited for *Backbone Links* since there is little chance for RF interference from other radios sharing these frequencies at high profile sites. With clear line of sight and well-tuned antennas, 5.8 GHz signals can propagate across very long distances.
 
 ----------
 

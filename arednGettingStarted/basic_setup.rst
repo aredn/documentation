@@ -5,7 +5,7 @@ Basic Radio Setup
 First-Time Setup
 ----------------
 
-After you have installed the AREDN |trade| firmware, rebooted the device, and connected your computer to a LAN port on the node or the :abbr:`PoE (Power over Ethernet)` you can navigate to your node's web interface at ``http://192.168.1.1`` or ``http://localnode`` for first-time radio setup. The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button. This is sometimes referred to as the "NOCALL" or *firstboot* display.
+After you have installed the AREDN |trade| firmware, rebooted the device, and connected your computer to a LAN port on the node or the :abbr:`PoE (Power over Ethernet)` you can navigate to your node's web interface at ``http://192.168.1.1`` or ``http://localnode.local.mesh`` for first-time radio setup. The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button. This is sometimes referred to as the "NOCALL" or *firstboot* display.
 
 ----------
 
@@ -63,7 +63,7 @@ Once you have entered, applied, and verified that your node settings are correct
 Optional Settings
 -----------------
 
-In this section you can enter your node's latitude and longitude, as well as the grid square designator. The latitude/longitude values should be in decimal format (for example, 30.444522 and -95.111234). The optional node location settings are not required in order for your node to function normally.
+In this section you can enter your node's latitude and longitude, as well as the grid square designator. The latitude/longitude values should be in decimal format (for example, 30.5432 and -95.1234). The optional node location settings are not required in order for your node to function normally.
 
 .. image:: _images/optional-settings.png
   :alt: Optional Settings

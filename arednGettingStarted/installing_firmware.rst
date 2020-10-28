@@ -14,7 +14,7 @@ There are two cases for installing AREDN |trade| firmware:
 
 The diagram above shows that your computer with the downloaded firmware image must be connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is helpful to connect the computer and node through a simple Ethernet switch so that the switch can maintain the computer's network link while the node is being rebooted.
 
-Different node hardware will require different methods for installing the AREDN |trade| firmware. For **Ubiquiti** devices, your computer's TFTP client will connect to the node's TFTP server in order to upload the firmware image. For **Mikrotik** and **TP-LINK** devices, your computer will run a remote boot server and the node's remote boot client will load its boot image from your computer. For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
+Different node hardware will require different methods for installing the AREDN |trade| firmware. For **Ubiquiti** devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ client will connect to the node's TFTP server in order to upload the firmware image. For **Mikrotik** and **TP-LINK** devices, your computer will run a remote boot server and the node's remote boot client will load its boot image from your computer. For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
 Troubleshooting Tips
 --------------------
@@ -38,7 +38,7 @@ PXE Server
 Ubiquiti First Install Process
 ------------------------------
 
-**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10/>`_ or download and install another `standalone TFTP client <http://tftpd32.jounin.net/tftpd32_download.html>`_ of your choice.
+**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10/>`_ or download and install another `standalone TFTP client <https://www.tftp-server.com/tftp-client.html>`_ of your choice.
 
 Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 
@@ -50,11 +50,9 @@ Download the appropriate *factory* file for your device by following the instruc
 
 2. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
 
-3. Put the Ubiquiti device into TFTP mode by holding the reset button while plugging your node's Ethernet cable into the POE port on the PoE adapter.
+3. Put the Ubiquiti device into TFTP mode by holding the reset button while plugging your node's Ethernet cable into the POE port on the PoE adapter. Continue holding the device's reset button for approximately 30 to 45 seconds until you see the LEDs on the node alternating in a 1-3, 2-4, 1-3, 2-4 pattern, then release the reset button.
 
-4. Continue holding the device's reset button for approximately 30 to 45 seconds until you see the LEDs on the node alternating in a 1-3, 2-4, 1-3, 2-4 pattern, then release the reset button.
-
-5. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 or 192.168.1.1 for AirRouters. The following is one example of TFTP commands that transfer the firmware image to a node:
+4. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 or 192.168.1.1 for AirRouters. The following is one example of TFTP commands that transfer the firmware image to a node:
 
   >>>
   [Linux/Mac]
@@ -69,13 +67,13 @@ Download the appropriate *factory* file for your device by following the instruc
 
   The TFTP client should indicate that data is being transferred and eventually completes.
 
-6. Watch the LEDs for about 2-3 minutes until the node has finished rebooting. The reboot is completed when the LED 4 light (farthest on the right) is lit and is steady green.
+5. Watch the LEDs for about 2-3 minutes until the node has finished rebooting. The reboot is completed when the LED 4 light (farthest on the right) is lit and is steady green.
 
-7. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node. You may need to unplug/reconnect the Ethernet cable from your computer to force it to get a new IP address from the node.
+6. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node. You may need to unplug/reconnect the Ethernet cable from your computer to force it to get a new IP address from the node.
 
-8. After the node reboots, open a web browser and enter the following URL: ``http://localnode.local.mesh``  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address.
+7. After the node reboots, open a web browser and use either ``http://192.168.1.1`` or ``http://localnode.local.mesh`` for the URL. Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address.
 
-9. Navigate to the *Setup* page and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
+8. Click the *Setup* button and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
 
 Mikrotik First Install Process
 ------------------------------
@@ -91,7 +89,7 @@ Preparation
 
     You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may use different default subnets, such as QRT units which use 192.168.88.x. Select a static IP for your computer which puts it on the same subnet as your device.
 
-  3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a Mikrotik hAP ac lite device, connect the Ethernet cable from *Port 1* of the Mikrotik to the dumb switch.
+  3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a *Mikrotik hAP ac lite* device, connect the Ethernet cable from *Port #1* of the Mikrotik to the dumb switch.
 
 Linux Procedure
   1. Create a directory on your computer called ``/tftp`` and copy the ``rb.elf`` file there.
@@ -196,11 +194,9 @@ Windows Procedure
     :alt: Tiny PXE Display
     :align: center
 
-  4. With the PoE unit powered off, connect an Ethernet cable from the TP-LINK node to the POE port. Press and hold the reset button on the node while powering on the PoE unit.
+  4. With the PoE unit powered off, connect an Ethernet cable from the TP-LINK node to the POE port. Press and hold the reset button on the node while powering on the PoE unit. Continue holding the reset button until you see ``TFTPd: DoReadFile: recovery.bin`` in the Tiny PXE log window.
 
-  5. Continue holding the reset button until you see ``TFTPd: DoReadFile: recovery.bin`` in the Tiny PXE log window.
-
-  6. Release the node’s reset button and click the *Offline* button in Tiny PXE. You are finished using Tiny PXE when the firmware image has been read by the node.
+  5. Release the node’s reset button and click the *Offline* button in Tiny PXE. You are finished using Tiny PXE when the firmware image has been read by the node.
 
 Final Configuration Steps
   1. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset.
@@ -222,7 +218,7 @@ If for some reason your GL-iNet device gets into an unusable state, you should b
 Post-Install Steps
 ------------------
 
-Once your device is running AREDN |trade| firmware, you can display its web interface by connecting your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigating to the following URL: ``http://localnode.local.mesh``  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address. Each node will serve its web interface on both port 80 and 8080.
+Once your device is running AREDN |trade| firmware, you can display its web interface by connecting your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigating to either ``http://192.168.1.1`` or ``http://localnode.local.mesh``. Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address. Each node will serve its web interface on both port 80 and 8080.
 
 By default AREDN |trade| devices run the :abbr:`DHCP (Dynamic Host Control Protocol)` service on their LAN interface, so your computer will receive an IP address from the node as soon as it is connected with an Ethernet cable. Ensure that your computer is set to obtain its IP address via :abbr:`DHCP (Dynamic Host Control Protocol)`. You may also need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 

@@ -210,9 +210,11 @@ GL-iNet First Install Process
 
 **GL-iNet** devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNet documentation for your device if you have questions about initial configuration. Both GL-iNet and AREDN |trade| devices provide DHCP services, so you should be able to connect your computer and automatically receive an IP address on the correct subnet. GL-iNet devices usually have a default IP address of 192.168.8.1, so if for some reason you need to give your computer a static IP address you can use that subnet.
 
-After the GL-iNet device has been booted and configured, navigate to the *Upgrade* section and click *Local Upgrade* to select the AREDN |trade| "sysupgrade.bin" file you downloaded for your device. Be sure to uncheck/deselect the "Keep Settings" checkbox, since GL-iNet settings are incompatible with AREDN |trade|. After the device has rebooted to the AREDN |trade| image, you should be able to navigate to ``http://192.168.1.1`` for the firstboot or NOCALL page to appear.
+After the GL-iNet device has been booted and configured, navigate to the *Upgrade* section and click *Local Upgrade* to select the AREDN |trade| "sysupgrade.bin" file you downloaded for your device.
 
-If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
+.. attention:: Be sure to uncheck the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN |trade| firmware.
+
+After the device has rebooted to the AREDN |trade| image, you should be able to ping the device at 192.168.1.1 and navigate to ``http://192.168.1.1`` to continue with the firstboot or NOCALL settings process. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNet debrick procedure <https://docs.gl-inet.com/en/2/troubleshooting/debrick/>`_
 
 Post-Install Steps

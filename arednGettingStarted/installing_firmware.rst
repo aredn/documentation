@@ -108,7 +108,7 @@ Linux Procedure
   5. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after about ten seconds. Release the reset button as the computer starts communicating with the node. When you see the "sent" message, this indicates success, and the node has downloaded the image and will reboot. You can now <ctrl>-C or kill dnsmasq.
 
 Windows Procedure
-  You will need to install and configure a PXE Server on your Windows computer. The example below uses `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ but there may be several other alternatives that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_.
+  You will need to install and configure a PXE Server on your Windows computer. The example below uses `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ but there may be several other alternatives that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_ or `Serva <https://www.vercot.com/~serva/>`_.
 
   1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line:  ``rfc951=1`` then save and close the file.
 

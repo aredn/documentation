@@ -38,7 +38,7 @@ Jabber/XMPP
 
 Originally known as Jabber, `XMPP <https://en.wikipedia.org/wiki/XMPP>`_ servers have been around for a long time but are fully compliant with modern messaging standards thanks to a large community of developers worldwide. These servers provide one-to-one messaging as well as group chat sessions. User lists have activity and presence indicators, and chat history can be archived for later use. There are dozens of feature modules available for XMPP servers which can extend the functionality as needed.
 
-Two of the most popular XMPP servers are eJabberd and Prosody, but there are many others. For additional information about these services, visit the following links: `eJabberd <https://ejabberd.im/>`_ and `Prosody <https://prosody.im/>`_
+Two of the most popular XMPP servers are eJabberd and Prosody, but there are many others. For additional information about these services, visit the following links: `eJabberd <https://www.ejabberd.im/>`_ and `Prosody <https://prosody.im/>`_
 
 .. image:: _images/xmpp.png
    :alt: Prosody XMPP Interface
@@ -58,7 +58,7 @@ Mattermost
 
 The *Mattermost Team Edition* is an open source platform that supports mobile and desktop messaging apps. It provides one-to-one and group messaging, file sharing, and message history with search capabilities. It is often described as an open source alternative to the commercial *Slack* communication tool.
 
-Mattermost supports @mentions, and channels are available for organizing conversations which can be topic-based, group-based, or event-based. Notifications indicate user presence and activity. File sharing is provided for PDF and text files, as well as audio, video, and image files. For additional information about Mattermost, visit this link: `Mattermost <http://mattermost.com/>`_
+Mattermost supports @mentions, and channels are available for organizing conversations which can be topic-based, group-based, or event-based. Notifications indicate user presence and activity. File sharing is provided for PDF and text files, as well as audio, video, and image files. For additional information about Mattermost, visit this link: `Mattermost <https://mattermost.com/>`_
 
 .. image:: _images/mattermost.png
    :alt: Mattermost Interface

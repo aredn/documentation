@@ -33,7 +33,7 @@ Browser cache and sessions
   * Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
 
 PXE Server
-  If you are using a TFTP/Bootp server (described below) on a Windows computer, be sure to allow the Tiny PXE server through the Windows firewall when prompted on first launch. If you are not prompted or the Tiny PXE server does not display any activity when you put your device in recovery mode, go to the firewall settings from the Windows control panel and click *Advanced Settings*. Look through the "Inbound Rules" to see if a rule exists for Tiny PXE server. If a rule exists, make sure to "allow connection" for both private and public networks. If no rule exists, create a new rule allowing connection for both public and private networks.
+  If you are using a TFTP/Bootp server (described below) on a Windows computer, be sure to allow the server through the Windows firewall when prompted on first launch. If you are not prompted or the PXE server does not display any activity when you put your device in recovery mode, go to the firewall settings from the Windows control panel and click *Advanced Settings*. Look through the "Inbound Rules" to see if a rule exists for the PXE server. If a rule exists, make sure to "allow connection" for both private and public networks. If no rule exists, create a new rule allowing connection for both public and private networks.
 
 Ubiquiti First Install Process
 ------------------------------
@@ -108,7 +108,7 @@ Linux Procedure
   5. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after about ten seconds. Release the reset button as the computer starts communicating with the node. When you see the "sent" message, this indicates success, and the node has downloaded the image and will reboot. You can now <ctrl>-C or kill dnsmasq.
 
 Windows Procedure
-  You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ software on your Windows computer. Download this software and extract it on your computer.
+  You will need to install and configure a PXE Server on your Windows computer. The example below uses *Tiny PXE* which may be downloaded here `(link-1) <https://reboot.pro/files/file/303-tiny-pxe-server/>`_ or here `(link-2) <https://erwan.labalec.fr/tinypxeserver/>`_. There may be other Windows alternatives that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_ or `Serva <https://www.vercot.com/~serva/>`_.
 
   1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line:  ``rfc951=1`` then save and close the file.
 
@@ -182,7 +182,7 @@ Linux Procedure
   5. Push the reset button on the TP-LINK and hold it while powering on the PoE unit.  Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after about 10 seconds.  Release the reset button as the computer starts communicating with the node.  When you see the "sent" message, this indicates success, and the TP-LINK node has downloaded the image and will reboot. You can now <ctrl>-C or kill dnsmasq.
 
 Windows Procedure
-  You will need `Tiny PXE <http://reboot.pro/files/file/303-tiny-pxe-server/>`_ software on your Windows computer. Download this software and extract it on your computer.
+  You will need to install and configure a PXE Server on your Windows computer. The example below uses *Tiny PXE* which may be downloaded here `(link-1) <https://reboot.pro/files/file/303-tiny-pxe-server/>`_ or here `(link-2) <https://erwan.labalec.fr/tinypxeserver/>`_. There may be other Windows alternatives that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_ or `Serva <https://www.vercot.com/~serva/>`_.
 
   1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line:  ``rfc951=1`` then save and close the file.
 

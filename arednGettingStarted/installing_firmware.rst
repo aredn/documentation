@@ -60,10 +60,10 @@ Download the appropriate *factory* file for your device by following the instruc
   > bin                 [Transfer in "binary" mode]
   > trace on            [Show the transfer in progress]
   > put <full path to the firmware file>
-    [For example, put /temp/aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin]
+    [For example, put /temp/aredn-<release>-factory.bin]
   -----------------------------------
   [Windows with command on a single line]
-  > tftp -i 192.168.1.20 put C:\temp\aredn-3.19.3.0-ubnt-nano-m-xw-factory.bin
+  > tftp -i 192.168.1.20 put C:\temp\aredn-<release>-factory.bin
 
   The TFTP client should indicate that data is being transferred and eventually completes.
 

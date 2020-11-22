@@ -59,17 +59,7 @@ Channel Plans and Frequency Coordination
 
 You may experience poor network performance if there are too many nodes using the same band and channel. Here is a simple example to illustrate the issue: a three-hop path from QTH1 to Tower1 to Tower2 to QTH2. If all links are using the same channel, then only one node at a time can send data. This instantly cuts the throughput by one-third or more and increases latency with protocol overhead. To improve performance you could configure each link to use a different channel, allowing simultaneous transmissions. For example, the collocated tower nodes could be DtD linked via Ethernet, with QTH1 and Tower1 using 5 GHz channel 172 while QTH2 and Tower2 use channel 176. Before this channel plan is implemented it might be possible to have one HD video stream and one VoIP call with frequent dropouts. After the channel plan is implemented it should be possible to have three HD video streams and several VoIP calls simultaneously with few dropouts.
 
-Depending on the frequency band you are using, there are varying options available for assigning non-overlapping unshared channels to your mesh devices. As shown in the chart below, in the 2.4 GHz band using a 5 MHz channel width there are only two non-overlapping channels which are not already shared with other unlicensed users. In the 3.4 GHz band using the even-numbered 10 MHz channels, there are eleven non-overlapping channels. In the 5.8 GHz band using even-numbered 10 MHz channels, there are 25 non-overlapping channels, but only eight of them are not shared with other potential users of the spectrum.
-
-=======  ===============  =================================
-Band     Channel Width    Unshared Non-overlapping Channels
-=======  ===============  =================================
-2.4 GHz  5 MHz            2
-3.4 GHz  10 MHz           11
-5.8 GHz  10 MHz           8
-=======  ===============  =================================
-
-Ideally, RF coverage zones (sometimes called "cells") should use different channels. Overlapping cell coverage can provide broader connectivity, but the overlapping coverage zones should not use overlapping RF frequencies.
+Depending on the frequency band you are using, there are varying options available for assigning non-overlapping channels to your mesh devices. For example, in the 5.8 GHz band using even-numbered 10 MHz channels, there are 25 non-overlapping channels. Ideally, RF coverage zones (sometimes called "cells") should use different channels. Overlapping cell coverage can provide broader connectivity, but the overlapping coverage zones should not use overlapping RF frequencies.
 
 .. image:: _images/channel-reuse-example.png
    :alt: Example Channel Reuse Plan
@@ -91,7 +81,7 @@ Device to Device (DtD) Linking
 
 In its most basic configuration for two collocated nodes, an Ethernet cable is connected between the PoE *LAN* port of each device. :abbr:`OLSR (Optimized Link State Routing protocol)` will assign a very low "link cost" (0.1) to the DtD connection and automatically route traffic between the nodes over Ethernet rather than causing the RF channel to become busy.
 
-One added benefit of DtD linking is that you can link nodes which are operating on different bands and channels. Nodes that are using *Channel Separation* to segment traffic can still pass data at high speeds through their DtD link and be members of a single network. At a tower site like the one shown here, you could link 2.4 GHz, 3.4 GHz, and 5.8 GHz nodes to the same network. In fact, at a busy site like this it is best practice to use DtD linking, because otherwise RF channel contention could make the network unusable.
+One added benefit of DtD linking is that you can link nodes which are operating on different bands and channels. Nodes that are using *Channel Separation* to segment traffic can still pass data at high speeds through their DtD link and be members of a single network. At a tower site like the one shown here, you could link 2.4 GHz and 5.8 GHz nodes to the same network. In fact, at a busy site like this it is best practice to use DtD linking, because otherwise RF channel contention could make the network unusable.
 
 Ideally you should configure your collocated nodes to use different bands and channels, then set up DtD links between the nodes to ensure that traffic is routed efficiently without generating RF contention or delays. :abbr:`OLSR (Optimized Link State Routing protocol)` will always choose the DtD path first when passing traffic between linked nodes. Each AREDN |trade| node recognizes incoming packets tagged with :abbr:`VLAN (Virtual Local Area Network)` 2 as DtD traffic.
 
@@ -126,7 +116,7 @@ Channel Planning Tips
 
    If there are two towers or cell coverage areas within range of each other, configure the nodes with different channels to avoid poor performance.
 
-Based on the purpose for your network, try to create reliable paths to the locations where data is needed. Use channel separation and DtD linking of collocated nodes to avoid RF channel contention. The 3.4 GHz and 5.8 GHz bands provide the most unshared channels for use in AREDN |trade| networks.
+Based on the purpose for your network, try to create reliable paths to the locations where data is needed. Use channel separation and DtD linking of collocated nodes to avoid RF channel contention.
 
 * If you need broad local coverage for a high profile area you can install sector antennas on a tower site: for example, three panels with 120 degree beam width each. DtD link the sectors at the tower site, and use different channels for each sector to avoid channel contention.
 

@@ -6,7 +6,7 @@ The amateur radio community has recognized the benefits of using inexpensive com
 
 When selecting a device for your AREDN |trade| hardware there are several things to consider in your decision.
 
-* Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN |trade| supports devices which operate in the 900 MHz, 2.4 GHz, 3.4 GHz, and 5.8 GHz bands.
+* Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN |trade| supports devices which operate in several bands. Check the AREDN |trade| `website <https://arednmesh.org>`_ for the latest information.
 * Many devices come with an integrated dual-polarity :abbr:`MIMO (Multiple Input-Multiple Output)` antenna which helps to mitigate multipath propagation issues.
 * Radios can be purchased separately from the antenna, so it is possible to have more than one antenna option for a radio in order to optimize AREDN |trade| nodes for varying deployment conditions.
 * Costs of devices range from $50 to several hundred dollars for a complete node, so there are many options even for the budget-conscious operator.

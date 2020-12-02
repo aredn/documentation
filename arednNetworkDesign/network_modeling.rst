@@ -66,21 +66,6 @@ Simply click on the map at the bottom of the webpage to add an endpoint for each
 
 ----
 
-Radio Fresnel Tool
-++++++++++++++++++
-
-This web-based tool will generate a KML file which can be viewed as a 3D path profile using *Google Earth* software. Radio Fresnel is available here: http://www.radiofresnel.com
-
-Simply enter the required site information into the online form and click the *Get KML* button at the bottom of the webpage. There is a sample KML file as well as a video tutorial for how to use the tool.
-
-----
-
-.. image:: _images/radiofresnel.png
-   :alt: Radio Fresnel Tool
-   :align: center
-
-----
-
 Determining Node or Network Coverage
 ------------------------------------
 

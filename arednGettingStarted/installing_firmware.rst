@@ -63,7 +63,7 @@ Download the appropriate *factory* file for your device by following the instruc
     [For example, put /temp/aredn-<release>-factory.bin]
   -----------------------------------
   [Windows with command on a single line]
-  > tftp -i 192.168.1.20 put C:\temp\aredn-<release>-factory.bin
+  > tftp.exe -i 192.168.1.20 put C:\temp\aredn-<release>-factory.bin
 
   The TFTP client should indicate that data is being transferred and eventually completes.
 

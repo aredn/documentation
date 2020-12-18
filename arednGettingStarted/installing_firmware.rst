@@ -4,7 +4,7 @@ Installing AREDN |trade| Firmware
 
 There are two cases for installing AREDN |trade| firmware:
 
-1. If you already have an existing version of AREDN |trade| running on your device, then you can use your computer's web interface to navigate to **Setup > Administration > Firmware Update** to install your new firmware. This process will be explained in more detail in the **Advanced Configuration** section of this guide. Also, see *Firmware Upgrade Tips* in the **How-to Guides** section for additional information.
+1. If you already have an existing version of AREDN |trade| running on your device, then you can use your computer's web interface to navigate to **Setup > Administration > Firmware Update** to install your new firmware. This process will be explained in more detail in the **Configuration Deep Dive** section of this guide. Also, see *Firmware Upgrade Tips* in the **How-to Guides** section for additional information.
 
 2. If you are installing AREDN |trade| firmware on a device for the first time, each hardware platform may require a unique procedure.
 

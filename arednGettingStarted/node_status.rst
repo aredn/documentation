@@ -54,7 +54,7 @@ The AREDN |trade| development team has the ability to post messages which Intern
    :alt: AAM Display
    :align: center
 
-Mesh nodes without Internet access also have the ability to display *Local Alerts*. The process for setting up a local message repository is described in the **Advanced Configuration** section. If a node has Internet access as well as local messages, then both types of messages will be displayed in the AREDN |trade| alerts banner as shown in the example above.
+Mesh nodes without Internet access also have the ability to display *Local Alerts*. The process for setting up a local message repository is described in the **Configuration Deep Dive** section. If a node has Internet access as well as local messages, then both types of messages will be displayed in the AREDN |trade| alerts banner as shown in the example above.
 
 Signal Charts
 -------------

@@ -48,7 +48,7 @@ Channel and Channel Width
 
 **Active Settings**
 
-  See the *Advanced Configuration* section for more information about these and other settings in the **Mesh RF** column.
+  See the *Configuration Deep Dive* section for more information about these and other settings in the **Mesh RF** column.
 
   * Use the dropdown list to select the maximum output power for this device. Remember that amateur operators are required to use the minimum power necessary to make contact with other stations.
 

@@ -1,8 +1,8 @@
-======================
-Advanced Configuration
-======================
+=======================
+Configuration Deep Dive
+=======================
 
-During your node's *Basic Setup* you used the configuration display by clicking the **Setup** button and typing your username and password. The configuration area has several additional features which will be described in more detail below. Clicking **Node Status** exits configuration mode without saving any changes, returning you to the *Node Status* display.
+During your node's *Basic Setup* you used the configuration display by clicking the **Setup** button and typing your username and password. The configuration area has many additional features which will be described in more detail below. Clicking **Node Status** exits configuration mode without saving any changes, returning you to the *Node Status* display.
 
 .. image:: _images/admin-header.png
    :alt: Admin Navigation Controls

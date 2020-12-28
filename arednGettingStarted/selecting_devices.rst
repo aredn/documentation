@@ -7,7 +7,7 @@ The amateur radio community has recognized the benefits of using inexpensive com
 When selecting a device for your AREDN |trade| hardware there are several things to consider in your decision.
 
 * Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN |trade| supports devices which operate in several bands. Check the AREDN |trade| `website <https://arednmesh.org>`_ for the latest information.
-* Many devices have an integrated dual-polarity :abbr:`MIMO (Multiple Input-Multiple Output)` antenna which helps to leverage multipath propagation. AREDN |trade| firmware has always supported and recommended using MIMO hardware, since these devices typically outperform single chain radios when used as mesh nodes.
+* Many devices have an integrated dual-polarity :abbr:`MIMO (Multiple Input-Multiple Output)` antenna which helps to leverage multipath propagation. AREDN |trade| has always supported and recommended using MIMO hardware, since these devices typically outperform single chain radios when used as mesh nodes.
 * Radios can be purchased separately from the antenna, so it is possible to have more than one antenna option for a radio in order to optimize AREDN |trade| nodes for varying deployment conditions.
 * Costs of devices range from $50 to several hundred dollars for a complete node, so there are many options even for the budget-conscious operator.
 * Some older or lower cost devices have a limited amount of onboard memory, but firmware images continue to grow in size and functionality. Consider purchasing a device with more memory over one with less memory.

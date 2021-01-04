@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'AREDN Documentation'
-copyright = u'2020, AREDN'
+copyright = u'2021, AREDN'
 author = u'Steve AB7PA'
 
 # The short X.Y version

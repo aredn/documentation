@@ -44,7 +44,3 @@ One example package that facilitates collaborative document creation is `Etherpa
 .. image:: _images/etherpad.png
    :alt: Etherpad Web Interface
    :align: center
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

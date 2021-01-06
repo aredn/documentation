@@ -90,7 +90,3 @@ Mumble      voice + chat        medium        win/lin/mac         medium
 FreeSWITCH  PBX + video         medium-large  win/lin/mac/rpi     expert
 TeamTalk    video conferencing  large         win/lin/mac/rpi     easy
 ==========  ==================  ============  ==================  ======
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

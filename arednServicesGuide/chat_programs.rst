@@ -93,7 +93,3 @@ Let's Chat   client-server  small         new   lin/mac/rpi/win  medium
 Mattermost   client-server  medium        new   linux            expert
 Matrix       distributed    medium        new   linux/mac        expert
 ===========  =============  ============  ====  ===============  ======
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

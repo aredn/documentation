@@ -73,6 +73,3 @@ Troubleshooting Tips
 * If you have a marginal SISO-to-SISO link and you must replace one of the radios, either install another SISO radio or replace both ends with MIMO devices. A marginal but usable link between SISO devices may become unusable if one is replaced with a MIMO device.
 
 Additional information on the operation of SISO and MIMO radios can be found in references such as this: `MIMO for Dummies <https://www.halper.in//pubs/mimo_for_dummies.pdf>`_.
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

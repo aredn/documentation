@@ -56,7 +56,3 @@ Remote Nodes
 
 Previous Nodes
   This section lists any nodes which were recently connected to your node but are not currently connected. It shows the node name or IP address, as well as how long it has been since a node was actively connected to your node.
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

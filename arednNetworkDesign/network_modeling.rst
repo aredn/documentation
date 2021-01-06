@@ -92,9 +92,3 @@ An example *Radio Mobile* coverage plot is shown below. After entering the site,
 .. image:: _images/radioMobile-coverage.png
    :alt: Radio Mobile Coverage Plot
    :align: center
-
-
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

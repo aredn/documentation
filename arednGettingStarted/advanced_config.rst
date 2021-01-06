@@ -351,6 +351,3 @@ With the node powered on and fully booted:
 * **Hold for 15 seconds to return the node to “just-flashed” condition**
 
 On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

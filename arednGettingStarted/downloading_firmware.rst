@@ -32,7 +32,3 @@ Nightly Build Releases
 To download the latest build, navigate to the `Software > Nightly Builds <https://www.arednmesh.org/content/nightly-builds>`_ link on the AREDN |trade| website. You will find the most recent *README* file, a list of the latest changes included in the build, and a link to download the firmware. As explained above, select the correct target architecture for the device you will be flashing. To return your device to the current stable release, download the correct *Stable Release* firmware and reflash your device.
 
 *Nightly Build* filenames are prefixed with *aredn-XXXX-yyyyyyy*, where *XXXX* identifies the build number and *yyyyyyy* is a unique software commit identifier. Be aware that as new nightly builds become available, the older builds automatically become obsolete. If you want to install add-on packages for nodes running a nightly build, understand that specific packages may not be available for an *older* build if a *newer* build has already been released. To install packages on nightly build firmware, upgrade to the latest nightly build and then immediately install the packages you desire.
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

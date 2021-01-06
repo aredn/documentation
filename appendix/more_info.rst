@@ -26,7 +26,3 @@ The workflow for contributing documentation is described in the file titled `How
 Your local editing branch name can be anything that makes sense to you as you add topics to the documentation. AREDN |trade| documentation is written using the `reStructuredText <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html>`_ markup language and your text is saved in "rst" files. Before committing your changes, be sure to test your rst files locally using `Sphinx <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_ to ensure they will render correctly.
 
 After you create a Pull Request on GitHub, the AREDN |trade| team will review your changes. Once your documentation contributions are committed to the AREDN |trade| GitHub repository, a webhook automatically updates and builds the latest docs for viewing and exporting on ReadTheDocs.org
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

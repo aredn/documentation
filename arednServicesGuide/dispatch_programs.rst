@@ -63,7 +63,3 @@ EmComMap      open source     small        linux            medium
 ISES Tickets  open source     small        win/lin/mac/rpi  medium
 OpenCAD       open source     small        win/lin/mac/rpi  medium
 ============  ==============  ===========  ===============  ======
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

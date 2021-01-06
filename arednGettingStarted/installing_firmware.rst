@@ -85,22 +85,22 @@ Mikrotik devices have a built-in :abbr:`TFTP (Trivial File Transfer Protocol)` a
 Preparation
   1. Download the appropriate Mikrotik **elf** and **bin** files. Rename the *elf* file to ``rb.elf`` and keep the *bin* file available for later.
 
-  2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Mikrotik devices use the 192.168.1.x subnet by default, so you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0.
+  2. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. **Check the documentation for your specific hardware to determine the correct network number.** As in the example below, many Mikrotik devices use the 192.168.88.x subnet by default, so you can give your computer a static IP such as 192.168.88.100 with a netmask of 255.255.255.0.
 
-    You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may use different default subnets, such as QRT units which use 192.168.88.x. Select a static IP for your computer which puts it on the same subnet as your device.
+    You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.88.0 and 192.168.88.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Select a static IP for your computer which puts it on the same subnet as your device.
 
-  3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a *Mikrotik hAP ac lite* device, connect the Ethernet cable from *Port #1* of the Mikrotik to the dumb switch.
+  3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. If you are flashing a *Mikrotik hAP ac lite* device, connect the Ethernet cable from *Port #1* of the Mikrotik to the dumb switch. Leave the Mikrotik radio powered off for now.
 
 Linux Procedure
   1. Create a directory on your computer called ``/tftp`` and copy the ``rb.elf`` file there.
 
-  2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.1.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.1.110,192.168.1.120 as shown below.
+  2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.88.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.88.110,192.168.88.120 as shown below.
 
   3. Become ``root`` and open a terminal window to execute the following dnsmasq command:
 
       >>>
       (root)# dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic \
-        --dhcp-range=192.168.1.110,192.168.1.120 -d -p0 -K \
+        --dhcp-range=192.168.88.110,192.168.88.120 -d -p0 -K \
         --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/
 
   4. With the PoE unit powered off, connect the Mikrotik node to the POE port. If you are flashing a Mikrotik *hAP ac lite* device, connect the LAN cable from *Port 1* of the Mikrotik to the dumb switch. Press and hold the reset button on the Mikrotik while powering on the device.
@@ -127,7 +127,7 @@ Windows Procedure
   6. Release the node’s reset button and click the *Offline* button in Tiny PXE. You are finished using Tiny PXE when the firmware image has been read by the node.
 
 Final Configuration Steps
-  1. After booting the AREDN firmware image the node should have a default IP address of 192.168.1.1. Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node.
+  1. After booting the AREDN |trade| firmware image the node should have a default IP address of 192.168.1.1. Change your computer’s Ethernet interface to DHCP mode to obtain an IP address from the node.
 
     .. attention:: For the *Mikrotik hAP ac lite* **only**, pull the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.
 
@@ -163,7 +163,7 @@ Preparation
 
     You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node and is not within the range of DHCP addresses you will be providing in step 2 below. Of course you must also avoid using 192.168.0.0 and 192.168.0.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet.
 
-  3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
+  3. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch. Leave the TP-LINK radio powered off for now.
 
 Linux Procedure
   1. Create a directory on your computer called ``/tftp`` and copy the TP-LINK ``recovery.bin`` file there.

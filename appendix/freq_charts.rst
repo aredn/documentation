@@ -7,7 +7,3 @@ The frequencies and channels that are available for AREDN |trade| networking are
 .. image:: ../_images/AREDN-bands.png
    :alt: AREDN bands and channels
    :align: center
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

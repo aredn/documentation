@@ -114,7 +114,3 @@ SAVE the session definition again.
 .. image:: _images/20-puttygen.png
    :alt: Logged into node
    :align: center
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

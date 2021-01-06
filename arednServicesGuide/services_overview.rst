@@ -41,7 +41,3 @@ As a general rule for mesh networks, simpler is better. The more complicated and
 There are also programs which have been designed to take advantage of multiple paths between nodes and multiple peer servers coexisting on a mesh network. There are fewer of these mesh-friendly programs, but they will be identified as they appear in the following sections.
 
 The remaining parts of this section focus on examples of services that could be offered on your AREDN |trade| network. Programs are grouped by type, and where possible the network impact of each program will be described in order for you to understand the resources that may be required to use the program as a service on the mesh.
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

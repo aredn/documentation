@@ -78,7 +78,3 @@ Different frequency ranges are available to connect the mesh nodes that are requ
 ----------
 
 .. [footnote] Late in 2020 the `FCC ruled <https://docs.fcc.gov/public/attachments/FCC-20-138A1.pdf>`_ to sunset secondary Amateur allocations in the 9 cm *(3.3-3.5 GHz)* band. Although existing Amateur operations *"may continue while the Commission finalizes plans to reallocate spectrum,"* investing in or implementing new AREDN |trade| devices in this band is not recommended.
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

@@ -82,7 +82,3 @@ If you would like to see the documentation for a specific AREDN |trade| release,
 
    appendix/freq_charts
    appendix/more_info
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

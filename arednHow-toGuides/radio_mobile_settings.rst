@@ -47,8 +47,3 @@ HT20/LGI     MCS14           0.0        0.0         0.0      0              0(  
 HT20/LGI     MCS15           0.0        0.0         0.0      0              0(  0)         0        3495
 
 The "T" in the 10th character position indicates the current MCS rate, and a "t" indicates the current fallback rate.  In this case the link is running MCS11 at 30.3 Mbps.
-
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

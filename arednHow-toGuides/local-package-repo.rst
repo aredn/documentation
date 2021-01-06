@@ -73,7 +73,3 @@ The following example shows the type of information returned when you click the 
   ...
 
 Click the **Select Package** dropdown list to see the packages that are available for download to your node. Select a package and click the **Download** button. Status information will appear showing the actions that were taken to install the package from the local package host. A message may appear that a reboot is required to refresh and restart all services, but this is a normal status message and does not indicate an error condition.
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

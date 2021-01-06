@@ -19,7 +19,3 @@ The amateur radio community is able to meet these high-bandwidth digital communi
 An AREDN |trade| network is able to serve as the transport mechanism for the preferred applications people rely upon to communicate with each other in the normal course of their business and social interactions, including email, chat, phone service, document sharing, video conferencing, and many other useful programs. Depending on the characteristics of the AREDN |trade| implementation, this digital data network can operate at near-Internet speeds with many miles between network nodes.
 
 The primary goal of the AREDN |trade| project is to empower licensed amateur radio operators to quickly and easily deploy high-speed data networks when and where they might be needed, as a service both to the hobby and the community. This is especially important in cases when traditional "utility" services (electricity, phone lines, or Internet services) become unavailable. In those cases an off-grid amateur radio emergency data network may be a lifeline for communities impacted by a local disaster.
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

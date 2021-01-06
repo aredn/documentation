@@ -78,7 +78,3 @@ In this section you can enter your node's latitude and longitude, as well as the
 * Click the **Apply Location Settings** button after entering new location information on this page. The new settings become active without clicking the *Save Changes* button.
 
 You may also change the timezone for your node's system time, as well as selecting a `Network Time Protocol (NTP) <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ source if your node is connected to a network which has a network time server.
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

@@ -153,7 +153,3 @@ A *link_info* section will be included in the JSON data stream containing an ent
     }
   },
   ...
-
-
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:

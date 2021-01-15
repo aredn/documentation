@@ -2,11 +2,13 @@
 Network Topologies
 ==================
 
-Every AREDN |trade| node is capable of automatically joining an AREDN |trade| mesh network which is operating with the same SSID, channel, and bandwidth. A *Mesh* topology consists of independent nodes which each explore their surroundings by broadcasting their identity and listening for their neighbors' responses. Once nodes identify others within radio range, they share this information so that each node has a picture of the network topology. Periodic updates adjust the routes based on changes in signal quality or loss of a link, allowing the network to adapt to changing conditions. Since there are usually several possible routes between nodes, and since network disruptions typically effect only part of the network, a *Mesh* topology can be self-healing.
+Every AREDN |trade| node is capable of automatically joining an AREDN |trade| mesh network which is operating with the same SSID, channel, and bandwidth. A *Mesh* topology consists of independent nodes which each explore their surroundings by broadcasting their identity and listening for their neighbors' responses.
 
 .. image:: _images/01-mesh-topology.png
    :alt: Mesh Topology
-   :align: center
+   :align: right
+
+Once nodes identify others within radio range, they share this information so that each node has a picture of the network topology. Periodic updates adjust the routes based on changes in signal quality or loss of a link, allowing the network to adapt to changing conditions. Since there are usually several possible routes between nodes, and since network disruptions typically effect only part of the network, a *Mesh* topology can be self-healing.
 
 This automatic ability to form a mesh network is built into the AREDN |trade| firmware on each node. Every node within radio range of other nodes will be able to participate in the network to extend its reach, provide route redundancy, or host services needed on the network at large. This basic network may serve its purpose perfectly for a short-term network deployment in support of a local event, or even for more permanent communication between nodes which are always within radio range.
 

@@ -27,7 +27,7 @@ Internet Relay Chat
 
 Several implementations of `Internet Relay Chat <https://en.wikipedia.org/wiki/IRCd>`_ are available, either as open source software or in proprietary versions. The Internet Relay Chat Daemon (IRCd) is a server program that listens for connections from IRC client programs and brokers the communication between the connected clients. With this client-server architecture, the IRC server must be available on a network link with sufficient bandwidth in order for the clients to function.
 
-A wide variety of features and functions are available with these and similar chat programs, including various zones, channel types, and user roles. For additional information about IRC services, visit these links: `IRC Servers <https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_daemons>`_ and `IRC Clients <https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients>`_
+A wide variety of features and functions are available with these and similar chat programs, including various zones, channel types, and user roles. For additional information about IRC services, visit `IRC Clients <https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients>`_
 
 .. image:: _images/irc.png
    :alt: IRC in KiwiChat Web Interface

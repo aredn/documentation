@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'AREDN Documentation'
-copyright = u'2021, AREDN'
-author = u'Steve AB7PA'
+copyright = u'2021, Amateur Radio Emergency Data Network, Inc. Licensed under the terms of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International'
+author = u'Amateur Radio Emergency Data Network, Inc.'
 
 # The short X.Y version
 version = u'3.20.3.1'

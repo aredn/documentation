@@ -7,8 +7,8 @@
 To contribute to the AREDN project you first must create your own GitHub account. This is free and easy to do by following these steps:
 
 1. Open your web browser and navigate to the GitHub URL `https://github.com`.
-2. Click the `Sign Up` button and enter a username, email, and password. We suggest using your callsign as the username which will be indicated below as "myCall". You can, however, create any username you desire. Substitute your actual GitHub username for "myCall" in the examples below.
-3. On the GitHub website, click the `Sign In` button and enter your username or email, followed by your GitHub password.
+2. Click the `Sign Up` button and enter the required information. We suggest using your callsign as the username which will be indicated below as "myCall". You can, however, create any username you desire. Substitute your actual GitHub username for "myCall" in the examples below.
+3. On the GitHub website, click the `Sign In` button and authenticate to GitHub with the credentials you created.
 4. You can enter "aredn" into the search bar to find all repositories related to AREDN, or if you want to navigate directly to the AREDN documentation repository you can type this URL into your web browser: `https://github.com/aredn/documentation`.
 
 ### Understanding GitHub Workflow

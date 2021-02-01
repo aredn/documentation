@@ -5,7 +5,9 @@ Basic Radio Setup
 First-Time Setup
 ----------------
 
-After you have installed the AREDN |trade| firmware, rebooted the device, and connected your computer to a LAN port on the node or the :abbr:`PoE (Power over Ethernet)` you can navigate to your node's web interface at ``http://192.168.1.1`` or ``http://localnode.local.mesh`` for first-time radio setup. The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button. This is sometimes referred to as the "NOCALL" or *firstboot* display.
+After you have installed the AREDN |trade| firmware, rebooted the device, and connected your computer to a LAN port on the node or the :abbr:`PoE (Power over Ethernet)` unit, you can navigate to your node's web interface at ``http://192.168.1.1`` or ``http://localnode.local.mesh`` for first-time radio setup. Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address. Each node will serve its web interface on ports 80 and 8080.
+
+The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button. This is sometimes referred to as the "NOCALL" or *firstboot* display.
 
 ----------
 

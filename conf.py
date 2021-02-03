@@ -24,9 +24,9 @@ copyright = u'2021, Amateur Radio Emergency Data Network, Inc. Licensed under th
 author = u'Amateur Radio Emergency Data Network, Inc.'
 
 # The short X.Y version
-version = u'3.20.3.1'
+version = u'3.21.2.0'
 # The full version, including alpha/beta/rc tags
-release = u'3.20.3.1'
+release = u'3.21.2.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -46,6 +46,7 @@ extensions = [
 rst_prolog = """
 .. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:
+
 """
 
 # Add any paths that contain templates here, relative to this directory.

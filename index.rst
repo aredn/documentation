@@ -6,7 +6,7 @@
 AREDN |trade| Documentation
 ===========================
 
-:Version: 3.20.3.1
+:Release: |release|
 
 This documentation set consists of several sections which are shown in the navigation list.
 

@@ -24,9 +24,9 @@ copyright = u'2021, Amateur Radio Emergency Data Network, Inc. Licensed under th
 author = u'Amateur Radio Emergency Data Network, Inc.'
 
 # The short X.Y version
-version = u'3.21.3.0'
+version = u'3.20.3.1'
 # The full version, including alpha/beta/rc tags
-release = u'3.21.3.0'
+release = u'3.20.3.1 + NB features'
 
 
 # -- General configuration ---------------------------------------------------

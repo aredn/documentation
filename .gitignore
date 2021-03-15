@@ -1,5 +1,4 @@
 .DS_Store
-Makefile
 make.bat
 index.rst.original
 _build/

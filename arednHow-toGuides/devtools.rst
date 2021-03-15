@@ -17,7 +17,7 @@ The following information is always returned in the JSON data stream:
 * Node name
 * API version
 * Latitude, longitude, and grid square (if available)
-* *Node Details* section containing the firmware manufacturer and version, the radio model and board ID, and the node description text (if any)
+* *Node Details* section containing the firmware manufacturer and version, the radio model and board ID, WAN sharing status, and the node description text (if any)
 * *Sysinfo* section containing node uptime and load averages for the last one, five, and fifteen minutes
 * *Interfaces* section containing the name, MAC address, and IP address (if any) assigned to each of the node's network interfaces
 * *Mesh RF* section containing the SSID, channel, center frequency, channel width, and status of the mesh radio
@@ -28,7 +28,7 @@ The values returned by the API are represented in the following snippet of raw J
 ::
 
   {
-  "api_version": "1.7",
+  "api_version": "1.8",
   "lat": "33.101010",
   "lon": "-101.101010",
   "grid_square": "DM22xx",
@@ -43,6 +43,7 @@ The values returned by the API are represented in the following snippet of raw J
     },
   "node_details": {
     "description": "CALLSIGN-22 node information here...",
+    "mesh_gateway": "0",
     "model": "MikroTik RouterBOARD 952Ui-5ac2nD ",
     "board_id": "0x0000",
     "firmware_mfg": "AREDN",

@@ -10,13 +10,14 @@ Each band is divided into channels, each of which consists of a 5 MHz frequency 
    :alt: Channel Width Example
    :align: center
 
-Some or all of the bands shown below are shared with other FCC authorized users. For example, all of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` users. The following table lists each amateur radio band, frequency range, and the number of channels that are available for AREDN |trade| networking. [footnote]_
+Some or all of the bands shown below are shared with other FCC authorized users. For example, all of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` users. The following table lists each amateur radio band, frequency range, and the number of channels that are available for AREDN |trade| networking.
 
 =======  =================  ========
 Band     Frequency Range    Channels
 =======  =================  ========
 33 cm    902-928   MHz      4
 13 cm    2390-2450 MHz      13
+9 cm     3300-3500 MHz      24
 5  cm    5650-5925 MHz      54
 =======  =================  ========
 
@@ -58,6 +59,21 @@ Advantages
 
   One advantage for the 13 cm band is that radio equipment and antenna systems are more readily available and less costly due to higher consumer demand. There is a wide variety of equipment from several manufacturers which supports the AREDN |trade| firmware and operates in this band. With clear line of sight and well-tuned antennas, 2.4 GHz signals can propagate across very long distances.
 
+3.4 GHz Characteristics
+-----------------------
+
+Disadvantages
+  As mentioned above, there must be clear line of sight and the Fresnel Zone between nodes also must be clear. For a link in the 9 cm band with 10 miles between nodes the first Fresnel Zone radius will be 62 feet, which is less than the 13 cm band discussed above. However, the 60% no blockage radius is still about 37 feet. Consider node AGL and terrain in order to minimize obstructions.
+
+  Equipment for the 9 cm band is less readily available and is typically more expensive due to less consumer demand. Care must be taken when selecting radios so as not to confuse them with the more common WiMAX devices which are designed for the 3.65 GHz range. Also, late in 2020 the `FCC ruled <https://docs.fcc.gov/public/attachments/FCC-20-138A1.pdf>`_ to sunset secondary Amateur allocations in the 9 cm *(3.3-3.5 GHz)* band. Although existing Amateur operations *"may continue while the Commission finalizes plans to reallocate spectrum,"* be aware that future FCC actions could remove Amateur operations. Consider this before investing in or implementing new AREDN |trade| devices in this band.
+
+.. image:: ../_images/3.4ghz.png
+   :alt: 3.4 GHz Band
+   :align: center
+
+Advantages
+  The main advantage for using the 9 cm band is that it has more available bandwidth for use in unshared channels than any other band. You can select channel widths of 5, 10, or 20 MHz, with larger channel widths providing higher data rates. Remember that reducing the channel width will increase the SNR to improve signal quality if that is an issue for a particular link. Equipment in the 9 cm band is well-suited for *Backbone Links* since there is little possibility for interference from other devices sharing these frequencies at tower sites. With clear line of sight and well-tuned antennas, 3.4 GHz signals can propagate across very long distances.
+
 5.8 GHz Characteristics
 -----------------------
 
@@ -74,7 +90,3 @@ Advantages
   The radio equipment and antenna systems for this band are readily available and are less expensive due to greater consumer demand. There is a wide variety of equipment from several manufacturers which supports the AREDN |trade| firmware and operates across the 54 available channels. Radio and antenna systems for this band which are similar in size to those for other bands will often have higher gain. Devices in the 5 cm band are also well-suited for *Backbone Links* since there is little chance for RF interference from other radios sharing these frequencies at high profile sites. With clear line of sight and well-tuned antennas, 5.8 GHz signals can propagate across very long distances.
 
 Different frequency ranges are available to connect the mesh nodes that are required in order to fulfill the purposes for your network. As you plan the frequencies to be deployed at specific locations, it may be helpful to use a *spectrum analyzer* for identifying ranges that are already in use. The ultimate goal is to have a reliable data network that accomplishes its purpose for providing services to the intended destinations and users.
-
-----------
-
-.. [footnote] Late in 2020 the `FCC ruled <https://docs.fcc.gov/public/attachments/FCC-20-138A1.pdf>`_ to sunset secondary Amateur allocations in the 9 cm *(3.3-3.5 GHz)* band. Although existing Amateur operations *"may continue while the Commission finalizes plans to reallocate spectrum,"* investing in or implementing new AREDN |trade| devices in this band is not recommended.

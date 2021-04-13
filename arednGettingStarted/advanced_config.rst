@@ -294,40 +294,55 @@ Support Data
 Advanced Configuration
 ----------------------
 
-The **Advanced Configuration** section allows you to change settings for various items that may be available on the type of hardware you are using. Not all hardware can support every value. These settings are best left as default unless you have a clear understanding of why the defaults will not work for your node or mesh network.
+The **Advanced Configuration** section allows you to change settings for various items that may be available on the type of hardware you are using. Not all hardware can support every value. These settings are best left as default unless you have a clear understanding of why you need to change the defaults for your node or network.
 
-Above the settings table there are links that allow you to 1) view the node help file, 2) reboot the node, or 3) reset the node to a firstboot or "NOCALL" configuration.
+Above the settings table there are links that allow you to view the node help file, reboot the node, or reset the node to a firstboot or "NOCALL" configuration. You can edit or select a setting and then click the *Save Setting* button at the right side of the row to implement the change. You may also reset an item to default values by clicking the *Set to Default* button. Each row has hover help which can be displayed by hovering your cursor over the question mark icon at the left side of each row.
 
-You can edit or select a setting and then click the *Save Setting* button at the right side of the row to implement the change.  You may also reset an item to default values by clicking the *Set to Default* button. Each row has hover help which can be displayed by hovering your cursor over the question mark icon at the left side of each row.
+Map Tile and Script Paths
+  These fields contain the external URLs for map tiles and `leafletjs <https://leafletjs.com/>`_ *css* and *javascript* files used for interactive maps.
 
-.. image:: _images/advancedconfiguration.png
-   :alt: Advanced Configuration
-   :align: center
+  .. image:: _images/advConfig-leaflet.png
+    :alt: Advanced Configuration - map paths
+    :align: center
 
-The first several rows in the *Advanced Configuration* table contain the URLs and paths that will be used by the node for accessing specific files such as map tiles, leaflet files, firmware, and packages.
+----------
 
-PoE Passthrough
-  Specifies whether *Power over Ethernet* should be enabled on nodes with ports that support PoE passthrough, such as port 5 on the *Mikrotik hAP ac lite*. Move the slider to **ON** and click *Save Setting* to enable PoE power passthrough.
+Firmware and Package Download Paths
+  These fields contain the URLs used by the node for downloading firmware and package files during upgrades.
 
-USB Passthrough
-  Specifies whether USB power passthrough should be enabled on nodes having a USB port. Move the slider to **ON** and click *Save Setting* to enable USB power passthrough.
+  .. image:: _images/advConfig-downloads.png
+    :alt: Advanced Configuration - downloads
+    :align: center
+
+----------
+
+PoE and USB Power Passthrough
+  Specifies whether PoE power should be enabled on nodes with ports that support PoE power passthrough, such as port 5 on the *Mikrotik hAP ac lite*. USB power passthrough can also be enabled on nodes having a USB port which can supply ~5vdc for external devices. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
+
+  .. image:: _images/advConfig-passthrough.png
+    :alt: Advanced Configuration - passthrough
+    :align: center
+
+----------
 
 OLSR Restart
-  The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot.  Move the slider to **ON** and click *Save Setting* to restart OLSR.
+  The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot. Click the *Execute* button to restart OLSR.
 
   There is a known intermittent issue that may occur when a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. OLSR should be restarted on your node if other nodes' *Mesh Status* display have your node's IP address rather than hostname or if "dtdlink" or "mid" is shown in your node's hostname on their *Mesh Status* display. If your node's *Mesh Status* display shows the IP address rather than hostname for a remote node, then that remote node should restart OLSR.
 
+.. image:: _images/advConfig-olsr-alerts.png
+  :alt: Advanced Configuration - OLSR and Alerts
+  :align: center
+
+----------
+
 AREDN Alert Message (AAM) Refresh
-  The AREDN |trade| development team may post messages which Internet-connected nodes will automatically retrieve once every 12 hours. You can use this refresh setting if you want your node to retrieve any new messages without having to wait for the next auto-refresh window.  Move the slider to **ON** and click *Save Setting* to trigger an immediate message retrieval. This will retrieve all alerts eligible for display on your node, whether they come from the AREDN |trade| server over the Internet or from a local message source on your mesh network.
+  The AREDN |trade| development team may post messages which Internet-connected nodes can automatically download. You can execute the *aam.refresh* action if you want your node to retrieve any new messages without having to wait for the next auto-refresh window. Click the *Execute* button to trigger an immediate message retrieval. This will retrieve all alerts eligible for display on your node, whether they come from the AREDN |trade| server over the Internet or from a local message source on your mesh network.
 
 AREDN Alerts Local Path
-  This field allows you to enter the URL for a local alert message repository. If you configure such a local repository then your nodes without Internet access can also receive alert messages pertinent to your local mesh. As shown below, enter the URL without a trailing backslash.
+  This field allows you to enter the URL for a local alert message repository. If you configure such a local repository then your nodes without Internet access can also receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.
 
-  .. image:: _images/alertlocalpath.png
-     :alt: Local Alert Message Repository Path
-     :align: center
-
-  A local message repository should be configured on a mesh-connected web server which allows nodes to query the URL you provided. No Internet access is required for this feature to work as designed. You can consult with your local web server administrator in order to obtain the correct URL for the local message repository. Use the following file naming convention on the web server:
+  A local message repository should be configured on a mesh-connected web server which allows nodes to query the URL you entered. No Internet access is required for this feature to work as designed. You can consult with your local web server administrator in order to obtain the correct URL for the local message repository. Use the following file naming convention on the web server:
 
   * Create text files for individual nodes by using only lowercase characters with the exact node name, followed by the ``.txt`` extension as shown below.
   * To create a broadcast message intended for all local nodes, enter your message text in a file named ``all.txt`` using only lowercase characters for the filename.
@@ -336,10 +351,12 @@ AREDN Alerts Local Path
      :alt: Local Alert Message Repository Content
      :align: center
 
+----------
+
   It is possible to include HTML tags in your message text, such as using the ``<br />`` tag to display subsequent text on the next line. However, it is best practice to keep alert messages short in order to minimize the height of the alert banner displayed on node webpages.
 
 AREDN Alert Message Purge
-  Use this purge setting if you want to immediately remove the AREDN |trade| Alert Message banner from your node. Move the slider to **ON** and click *Save Setting* to trigger an immediate message banner removal. This will remove all alert messages, whether they originated from the AREDN |trade| server over the Internet or from a local message source on your mesh network.
+  Use this purge setting if you want to immediately remove the AREDN |trade| Alert Message banner from your node. Click the *Execute* button to trigger an immediate message banner removal. This will remove all alert messages, whether they originated from the AREDN |trade| server over the Internet or from a local message source on your mesh network.
 
 Node Reset Button
 -----------------

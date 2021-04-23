@@ -317,13 +317,26 @@ Firmware and Package Download Paths
 ----------
 
 PoE and USB Power Passthrough
-  Specifies whether PoE power should be enabled on nodes with ports that support PoE power passthrough, such as port 5 on the *Mikrotik hAP ac lite*. USB power passthrough can also be enabled on nodes having a USB port which can supply ~5vdc for external devices. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
+  These rows will only appear in the table if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack, as well as PoE power passthrough on Ethernet port 5. You are allowed to enable or disable power passthrough on nodes with ports that support this feature. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
 
   .. image:: _images/advConfig-passthrough.png
     :alt: Advanced Configuration - passthrough
     :align: center
 
 ----------
+
+Tunnel Server *maxclients* and Tunnel Client *maxservers*
+  These rows will appear in the table only if the AREDN |trade| tunneling package is installed on your node. By default a node is allowed to host up to 10 clients in its *Tunnel Server* display and connect with up to 10 servers in its *Tunnel Client* display. The *maxclients* and *maxservers* settings provide a method for adjusting the defaults.
+
+  .. image:: _images/advConfig-maxTunValues.png
+    :alt: Advanced Configuration - tunnel max values
+    :align: center
+
+----------
+
+  .. important:: If you plan to change these settings, review **Changing Tunnel Max Settings** in the **How-To Guide** section.
+
+  Use caution when increasing the *maxclients* or *maxservers* values. Enter only *zero* or positive integers up to a maximum value for the number of active connections your node hardware can handle, since each active tunnel connection consumes system resources that the node may need for normal operation.
 
 OLSR Restart
   The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot. Click the *Execute* button to restart OLSR.

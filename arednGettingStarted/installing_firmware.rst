@@ -112,7 +112,7 @@ PXE Boot: *Windows Procedure*
 
   2. Copy the ``rb.elf`` file into the ``files`` folder under the *Tiny PXE* server directory location.
 
-  3. Start the *Tiny PXE* server exe and select your Ethernet interface IP from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``rb.elf`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
+  3. Start the *Tiny PXE* server exe and select your computer's Ethernet IP address from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``rb.elf`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
 
   .. image:: _images/tiny-pxe-mik.png
     :alt: Tiny PXE Display for Mikrotik
@@ -182,7 +182,7 @@ Windows Procedure
 
   2. Copy the ``recovery.bin`` firmware image into the ``files`` folder under the *Tiny PXE* server directory location.
 
-  3. Start the *Tiny PXE* server exe and select your Ethernet interface IP from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``recovery.bin`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
+  3. Start the *Tiny PXE* server exe and select your computer's Ethernet IP address from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``recovery.bin`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
 
   .. image:: _images/tiny-pxe-tpl.png
     :alt: Tiny PXE Display for TP_LINK

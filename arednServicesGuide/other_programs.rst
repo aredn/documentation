@@ -1,6 +1,6 @@
-=======================
-Other Possible Services
-=======================
+==============
+Other Services
+==============
 
 As mentioned in the *Services Overview*, almost any program that can operate across a peer-to-peer TCP/IP network is a candidate for AREDN |trade| networking. Many useful services have been discussed previously, and this section will list some of the other types of services that you might consider deploying on your mesh network.
 

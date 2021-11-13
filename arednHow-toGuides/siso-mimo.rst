@@ -15,7 +15,7 @@ SISO Device Hardware
 
 By design SISO devices transmit all of their RF power on a single polarization. While it may seem like an advantage to have full power concentrated on a single polarization, there are specific limitations to SISO devices. A single chain device can only transmit one data stream at a time, and SISO devices do not have the ability to process and enhance multiple signals received simultaneously.
 
-SISO devices are also limited in the data throughput they can achieve on their single chain. For example, a SISO device is limited to the 802.11n :abbr:`MCS7 (Modulation and Coding Scheme)` `protocol rate <https://en.wikipedia.org/wiki/IEEE_802.11n-2009#Data_rates>`_ of 32.5 Mbps with Long Guard Interval (LGI), while a MIMO device using :abbr:`MCS15 (Modulation and Coding Scheme)` can achieve up to 65 Mbps. In this regard SISO is at a definite disadvantage since it lacks sophisticated signal combining and the multiple simultaneous data streams that are possible with MIMO.
+SISO devices are also limited in the data throughput they can achieve on their single chain. For example, a SISO device is limited to the 802.11n :abbr:`MCS7 (Modulation and Coding Scheme)` `protocol rate <https://en.wikipedia.org/wiki/IEEE_802.11n-2009#Data_rates>`_ of 32.5 Mbps with Long Guard Interval (LGI) using a 10 MHz channel width, while a MIMO device using :abbr:`MCS15 (Modulation and Coding Scheme)` can achieve up to 65 Mbps. In this regard SISO is at a definite disadvantage since it lacks sophisticated signal combining and the multiple simultaneous data streams that are possible with MIMO.
 
 MIMO Device Hardware
 --------------------

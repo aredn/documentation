@@ -15,12 +15,13 @@ The message database is stored on every device where MeshChat is running. Nodes 
 
 In addition to the keyboard-to-keyboard chat feature, MeshChat also allows files to be shared between nodes. Files may be uploaded from or downloaded to the user's computer at any time. If MeshChat is running on a radio node then the file storage is limited to 500 kb, but if running on an external computer the file storage is limited only by the size of the disk that is allocated for MeshChat files.
 
-MeshChat *Action Scripts* also provide for functional extensions, such as sending messages to an SMS gateway for external distribution. It is also possible for action scripts to periodically save the message database for archive purposes or integration with external tools. For additional information about MeshChat, visit this link: `MeshChat <http://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
+MeshChat *Action Scripts* also provide for functional extensions, such as sending messages to an SMS gateway for external distribution. It is also possible for action scripts to periodically save the message database for archive purposes or integration with external tools. Although MeshChat is a commonly deployed service, it is a third party package which is not available in the AREDN |trade| repositories. You can find additional information by visiting this link: `MeshChat <http://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface
    :align: center
 
+----------
 
 Internet Relay Chat
 -------------------
@@ -33,6 +34,8 @@ A wide variety of features and functions are available with these and similar ch
    :alt: IRC in KiwiChat Web Interface
    :align: center
 
+----------
+
 Jabber/XMPP
 -----------
 
@@ -44,6 +47,8 @@ Two of the most popular XMPP servers are eJabberd and Prosody, but there are man
    :alt: Prosody XMPP Interface
    :align: center
 
+----------
+
 Let's Chat
 ----------
 
@@ -52,6 +57,8 @@ Let's Chat
 .. image:: _images/letschat.png
    :alt: Let's Chat Interface
    :align: center
+
+----------
 
 Mattermost
 ----------
@@ -64,6 +71,7 @@ Mattermost supports @mentions, and channels are available for organizing convers
    :alt: Mattermost Interface
    :align: center
 
+----------
 
 Matrix - Synapse
 ----------------
@@ -76,6 +84,7 @@ Matrix services can provide one-to-one communication channels as well as group c
    :alt: Matrix Chat Interface
    :align: center
 
+----------
 
 Example Chat Service Comparison
 -------------------------------

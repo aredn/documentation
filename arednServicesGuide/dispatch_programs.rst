@@ -36,6 +36,8 @@ A variety of built-in reports are available which can be viewed, printed, and do
    :alt: Open ISES Tickets Display
    :align: center
 
+----------
+
 OpenCAD
 -------
 

@@ -28,8 +28,6 @@ If you are using Ubiquiti radios there is a free modeling tool available on the 
 
 The path profile is color coded to indicate whether the link quality is adequate. It displays the link distance, line of sight, as well as the Fresnel Zone and 60% clearance area. It also estimates the signal levels at each endpoint and the predicted throughput for the link. An example *AirLink* path profile is shown below.
 
-----
-
 .. image:: _images/airlink-path.png
    :alt: Ubiquiti AirLink Modeling
    :align: center
@@ -42,8 +40,6 @@ VE2DBE's Radio Mobile Tool
 Whether or not you are using Ubiquiti devices, you can create detailed path profiles using VE2DBE's *Radio Mobile* software. This program is available for download, but it is very easy to use the web-based version: http://www.ve2dbe.com/rmonline.html
 
 With *Radio Mobile* you must first create a *Site* for each of your endpoints. Then you can select the endpoints from your *Site* dropdown to generate a path profile between any of the listed locations. Once you enter the radio and antenna information in the link display, *Radio Mobile* will create your path profile. There are several metrics displayed here which may not be available in the Ubiquiti tool, including free space path loss, obstruction loss, forest loss, urban loss, and fade margin. This additional information may help you determine why a path is not working, and it may assist you with choosing alternate sites for node locations. Typically a fade margin of 15 dB or greater is adequate for a usable link. An example *Radio Mobile* path profile is shown below.
-
-----
 
 .. image:: _images/radioMobile-path.png
    :alt: Radio Mobile Path Profile
@@ -58,8 +54,6 @@ Another web-based tool will generate a path profile from points selected on a ma
 
 Simply click on the map at the bottom of the webpage to add an endpoint for each side of your link. Once an endpoint has been added, it can be moved by clicking and holding the endpoint while dragging it to the new location on the map. After adding your endpoints you will see the path profile displayed at the top of the webpage. You can click the *Parameters* link under the path display to specify additional items for the path calculation. If you specify the frequency then the Fresnel zone for the path will be added to the display.
 
-----
-
 .. image:: _images/heywhatsthatprofiler.png
    :alt: HeyWhatThat Path Profiler
    :align: center
@@ -72,8 +66,6 @@ Radio Fresnel Tool
 This web-based tool will generate a KML file which can be viewed as a 3D path profile using *Google Earth* software. Radio Fresnel is available here: http://www.radiofresnel.com
 
 Simply enter the required site information into the online form and click the *Get KML* button at the bottom of the webpage. There is a sample KML file as well as a video tutorial for how to use the tool.
-
-----
 
 .. image:: _images/radiofresnel.png
    :alt: Radio Fresnel Tool

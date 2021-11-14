@@ -48,16 +48,12 @@ Mesh RF
 Channel and Channel Width
   Nodes communicate only with other nodes that use the same channel and channel width. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks.
 
-**Active Settings**
-
+Active Settings
   See the *Configuration Deep Dive* section for more information about these and other settings in the **Mesh RF** column.
 
   * Use the dropdown list to select the maximum output power for this device. Remember that amateur operators are required to use the minimum power necessary to make contact with other stations.
-
   * Use the slider to select the maximum distance you estimate between your node and other neighboring nodes. A value of *zero* will tell the node to automatically determine the correct distance value.
-
   * Some devices have max power levels that change depending on the channel or frequency being used, and in that case the max level may change when you save the settings. The output power will be capped at the max level supported by the hardware for that frequency.
-
   * Once these settings have been adjusted, click the **Apply** button.
 
 Once you have entered, applied, and verified that your node settings are correct, click the **Save Changes** button. Your node will record the new configuration settings and automatically reboot.
@@ -70,6 +66,8 @@ In this section you can enter your node's latitude and longitude, as well as the
 .. image:: _images/optional-settings.png
   :alt: Optional Settings
   :align: center
+
+----------
 
 * If you are using a location-aware web browser, you can click the **Find Me** button to populate the latitude/longitude fields. This works well if you are viewing the *Basic Settings* page on a mobile device with built-in GPS.
 

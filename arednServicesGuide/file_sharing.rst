@@ -19,6 +19,8 @@ All of the most common web browsers allow content to be downloaded using FTP as 
    :alt: FTP Web Interface
    :align: center
 
+----------
+
 Web Services
 ------------
 
@@ -31,6 +33,8 @@ Users login to NextCloud to see available content, and file sharing permissions 
 .. image:: _images/nextcloud.png
    :alt: NextCloud Web Interface
    :align: center
+
+----------
 
 Collaborative Computing
 -----------------------

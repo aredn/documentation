@@ -20,6 +20,8 @@ Asterisk Server
    :alt: Asterisk Diagram
    :align: center
 
+----------
+
 FreePBX Server
   `FreePBX <https://en.wikipedia.org/wiki/FreePBX>`_ is a web-based graphical user interface (GUI) for managing Asterisk. However, it is most commonly deployed as part of the integrated `FreePBX Distro <https://en.wikipedia.org/wiki/FreePBX_Distro>`_, which installs a complete Linux operating system with Asterisk, FreePBX, and software dependencies included.
 
@@ -29,6 +31,7 @@ FreePBX Server
    :alt: FreePBX Diagram
    :align: center
 
+----------
 
 VoIP Endpoints
 --------------
@@ -38,6 +41,8 @@ Once you have a VoIP PBX provisioned on your mesh network, you will need VoIP en
 .. image:: _images/linphone.png
    :alt: Linphone Softphone
    :align: right
+
+----------
 
 Linphone Softphone
   `Linphone <https://en.wikipedia.org/wiki/Linphone>`_ is a software phone that is supported on Windows, Linux, MacOS, Raspberry Pi, iPhone, and Android. It can be used to place voice and video direct calls as well as calls through a VoIP PBX like those mentioned above. Users can transfer calls to other numbers, send chat messages, share pictures or files, and merge calls into a group conference. The softphone has the ability to manage contact lists, and call history is available for future reference.
@@ -51,6 +56,8 @@ Mumble
   :alt: Mumble Group Conference
   :align: center
 
+----------
+
 Video Conferencing Software
 ---------------------------
 
@@ -63,6 +70,7 @@ FreeSWITCH Server
    :alt: FreeSWITCH Video Conference
    :align: center
 
+----------
 
 TeamTalk
   `TeamTalk <https://en.wikipedia.org/wiki/TeamTalk>`_ is an audio-visual conferencing system which enables people to communicate and share information across the network. It is often classified as *freeware*, but the TeamTalk server is proprietary and its source code is not publicly available. During a conference users talk through their computer microphone, see others via their webcams, create instant messages, share files, and show desktop applications. The TeamTalk software package bundles the client and server programs, so any computer may play the role of client or server.
@@ -73,6 +81,7 @@ TeamTalk
    :alt: TeamTalk Video Conference
    :align: center
 
+----------
 
 Example VoIP Service Comparison
 -------------------------------

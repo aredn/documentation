@@ -14,6 +14,8 @@ For additional information about MeshMap, visit this link: `meshmap <https://git
    :alt: MeshMap Display
    :align: center
 
+----------
+
 weeWx Weather Service
 ---------------------
 
@@ -24,6 +26,8 @@ a valuable overview of weather conditions across a wide area, for example, showi
 .. image:: _images/weewx.png
    :alt: weeWx Display
    :align: center
+
+----------
 
 Network Time Services
 ---------------------

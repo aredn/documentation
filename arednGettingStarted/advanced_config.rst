@@ -34,6 +34,8 @@ You have already configured many of the basic settings, but there are several ad
    :alt: Setup Options
    :align: center
 
+----------
+
 Mesh RF Column
 ^^^^^^^^^^^^^^
 
@@ -62,6 +64,8 @@ Enable/Disable Mesh Radio
 .. image:: _images/07a-lanAP-on.png
    :alt: LAN AP Settings
    :align: center
+
+----------
 
 LAN Column
 ^^^^^^^^^^
@@ -257,8 +261,6 @@ Contact the amateur operator who controls the tunnel server and request client c
 .. image:: _images/11-tunnel-client.png
    :alt: Tunnel Client Settings
    :align: center
-
-----------
 
 To allow your client to connect to the tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active.
 

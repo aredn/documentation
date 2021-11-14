@@ -65,6 +65,8 @@ MIMO to MIMO
    :alt:  MIMO to MIMO
    :align: center
 
+----------
+
 Troubleshooting Tips
 --------------------
 

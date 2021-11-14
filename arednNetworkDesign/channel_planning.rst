@@ -97,6 +97,8 @@ If you want to partition traffic even further, you can configure VLANs on a mana
    :alt: Traffic Isolation with VLANs
    :align: center
 
+----------
+
 Antenna Polarization
 ++++++++++++++++++++
 
@@ -105,11 +107,13 @@ Most of the latest AREDN |trade| devices use dual polarity antennas and :abbr:`M
 Aligning Linked Nodes
 +++++++++++++++++++++
 
-The AREDN |trade| web interface provides information that is helpful when aligning two nodes that are being installed to form a link. On the **Node Status** page, click the **Charts** button to view the *Realtime Signal to Noise* graph. Slowly turn and tilt your antenna, pausing to view the signal metrics. Once you see the best signal, as shown below, you can lock your antenna into position. If you want to focus on the antenna position without having to watch the SNR graph, you can also enable the *SNR Sound* feature and align the antenna to the highest pitch tone. Depending on the implementation, a Signal to Noise Ratio of 15 dB is adequate to pass data at speeds in the range of 5 to 20 :abbr:`Mbps (Megabits per second)`.
+The AREDN |trade| web interface provides information that is helpful when aligning two nodes that are being installed to form a link. On the **Node Status** page, click the **Charts** button to view the *Realtime Signal to Noise* graph. Slowly turn and tilt your antenna, pausing to view the signal metrics. Once you see the best signal, as shown below, you can lock your antenna into position. If you want to focus on the antenna position without having to watch the SNR graph, you can also enable the *SNR Sound* feature and align the antenna to the highest pitch tone. Depending on the implementation, a Signal to Noise Ratio of 15 dB is adequate to pass data at speeds in the range of 5 to 20 :abbr:`Mbps (Megabits per second)`. See "Tips for Aiming Directional Antennas" in the **How-To Guides** section for additional information.
 
 .. image:: _images/align-nodes.png
-   :alt: Aligning Nodes
+   :alt: Aligning Nodes for Best SNR
    :align: center
+
+----------
 
 Channel Planning Tips
 ---------------------

@@ -344,6 +344,15 @@ Tunnel Server *maxclients* and Tunnel Client *maxservers*
 
   Use caution when increasing the *maxclients* or *maxservers* values. Enter only *zero* or positive integers up to a maximum value for the number of active connections your node hardware can handle, since each active tunnel connection consumes system resources that the node may need for normal operation.
 
+Low Memory Thresholds
+  As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's *Mesh Status* display. For older nodes with limited memory resources, the mesh status display may become very sluggish on large mesh networks. Recent firmware improvements have made the *Mesh Status* display much more responsive, and two new **Advanced Configuration** values are available for setting the *Low Memory Threshold* and maximum number of routes to be displayed. Currently the default low memory threshold is 10,000 KB, which if reached will limit the *Mesh Status* display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory.
+
+  .. image:: _images/advConfig-lowMem.png
+    :alt: Advanced Configuration - low memory thresholds
+    :align: center
+
+----------
+
 OLSR Restart
   The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot. Click the *Execute* button to restart OLSR.
 

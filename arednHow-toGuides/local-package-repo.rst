@@ -58,17 +58,17 @@ The following example shows the type of information returned when you click the 
 
   Package Management
 
-  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/trunk/packages/mips_24kc/base/Packages.gz
+  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/packages/mips_24kc/base/Packages.gz
   Updated list of available packages in /var/opkg-lists/aredn_base
-  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/trunk/packages/mips_24kc/base/Packages.sig
+  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/packages/mips_24kc/base/Packages.sig
   Signature check passed.
-  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/trunk/packages/mips_24kc/arednpackages/Packages.gz
+  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/packages/mips_24kc/arednpackages/Packages.gz
   Updated list of available packages in /var/opkg-lists/aredn_arednpackages
-  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/trunk/packages/mips_24kc/arednpackages/Packages.sig
+  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/packages/mips_24kc/arednpackages/Packages.sig
   Signature check passed.
-  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/trunk/packages/mips_24kc/luci/Packages.gz
+  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/packages/mips_24kc/luci/Packages.gz
   Updated list of available packages in /var/opkg-lists/aredn_luci
-  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/trunk/packages/mips_24kc/luci/Packages.sig
+  Downloading http://ab7pa-box2.local.mesh/arednSoftware/snapshots/packages/mips_24kc/luci/Packages.sig
   Signature check passed.
   ...
 

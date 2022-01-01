@@ -2,7 +2,7 @@
 License
 =======
 
-.. image:: ../_images/CC-by-nc-nd.png
+.. image:: ./_images/CC-by-nc-nd.png
    :alt: Attribution-NonCommercial-NoDerivs
    :width: 88 px
    :align: left

@@ -12,4 +12,4 @@ If you are interested in contributing to the rapidly growing set of AREDN relate
 
 Your local code branch name can be anything that makes sense to you. After you create your Pull Request, the AREDN team will review your request just as it does for code changes. Once your documentation contributions are committed to the AREDN GitHub repository, a webhook automatically updates and builds the latest docs for viewing and exporting on ReadTheDocs.org
 
-AREDN documentation is written using the reStructuredText markup language. Text is saved in "rst" files. Before committing your changes, be sure to test your `rst` files to ensure they will render correctly.
+AREDN documentation is written using the [reStructuredText](https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html) markup language and your text is saved in "rst" files. Before committing your changes, be sure to test your "rst" files locally using [Sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html) to ensure they will render correctly.

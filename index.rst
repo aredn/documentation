@@ -75,6 +75,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednHow-toGuides/iperf
    arednHow-toGuides/max_tunnel_settings
    arednHow-toGuides/puttygen_ssh_keys
+   arednHow-toGuides/cisco-voip
    arednHow-toGuides/local-package-repo
    arednHow-toGuides/devtools
 

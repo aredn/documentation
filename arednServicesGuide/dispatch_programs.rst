@@ -38,20 +38,6 @@ A variety of built-in reports are available which can be viewed, printed, and do
 
 ----------
 
-OpenCAD
--------
-
-Like *ISES Tickets* described above, *OpenCAD* is a web server application which can run on any computing platform that supports a traditional LAMP stack. *OpenCAD*, however, is not map-based and does not provide GIS mapping features. It is aimed primarily at creating and tracking calls in a law enforcement context. Several user roles are defined, each with access to specific dashboard views tailored to their responsibilities. These roles include communications/dispatch, police, fire, EMS, sheriff, highway patrol, roadside assistance, and civilian. The main task of *OpenCAD* administrators is to approve new user access requests and to manage user settings across the system.
-
-Users with law enforcement roles can view :abbr:`BOLOs (Be On the Look Out)` and active calls, as well as creating citations, warnings, and arrest reports. Users with fire and EMS roles can view and edit call details, as well as accepting call assignments. Dispatchers can create, edit, and assign calls, track resource availability, as well as viewing :abbr:`BOLOs (Be On the Look Out)`, citations, warnings, arrest reports, and warrants. Civilian and Roadside Assistance users can create calls. For additional information about *OpenCAD*, visit this link: `OpenCAD <https://opencad.io/>`_.
-
-.. image:: _images/opencad.png
-   :alt: OpenCAD Display
-   :align: center
-
-There is an older package similar to *OpenCAD*, but with fewer features, called *ampCAD*. Information is available here: `ampCAD <https://sourceforge.net/projects/ampcad/>`_
-
-
 Example Computer Aided Dispatch Comparison
 ------------------------------------------
 
@@ -63,5 +49,4 @@ Program       License         System Load  Platform         Effort
 ============  ==============  ===========  ===============  ======
 EmComMap      open source     small        linux            medium
 ISES Tickets  open source     small        win/lin/mac/rpi  medium
-OpenCAD       open source     small        win/lin/mac/rpi  medium
 ============  ==============  ===========  ===============  ======

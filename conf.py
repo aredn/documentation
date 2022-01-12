@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = u'AREDN Documentation'
-copyright = u'2021, Amateur Radio Emergency Data Network, Inc. Licensed under the terms of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International'
+copyright = u'2022, Amateur Radio Emergency Data Network, Inc. Licensed under the terms of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International'
 author = u'Amateur Radio Emergency Data Network, Inc.'
 
 # The short X.Y version
-version = u'3.21.4.0'
+version = u'3.22.1.0'
 # The full version, including alpha/beta/rc tags
-release = u'3.21.4.0'
+release = u'3.22.1.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -51,7 +51,7 @@ rst_prolog = """
 .. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
    :ltrim:
 
-`Link: AREDN Webpage <https://arednmesh.org>`_   
+`Link: AREDN Webpage <https://arednmesh.org>`_
 """
 
 # Add any paths that contain templates here, relative to this directory.

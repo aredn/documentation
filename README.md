@@ -10,6 +10,6 @@ While viewing the AREDN documentation in your web browser, you will see the cont
 ## Contributing:
 If you are interested in contributing to the rapidly growing set of AREDN related information, you can easily do so on GitHub. The workflow for contributing documentation is described in detail here: [How to Use GitHub for AREDN](https://github.com/aredn/documentation/blob/master/How%20to%20Use%20GitHub%20for%20AREDN.md).
 
-Your local code branch name can be anything that makes sense to you. After you create your Pull Request, the AREDN team will review your request just as it does for code changes. Once your documentation contributions are committed to the AREDN GitHub repository, a webhook automatically updates and builds the latest docs for viewing and exporting on ReadTheDocs.org
-
 AREDN documentation is written using the [reStructuredText](https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html) markup language and your text is saved in "rst" files. Before committing your changes, be sure to test your "rst" files locally using [Sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html) to ensure they will render correctly.
+
+Your local code branch name can be anything that makes sense to you. After you create your Pull Request, the AREDN team will review your request just as it does for code changes. Once your documentation contributions are committed to the AREDN GitHub repository, a webhook automatically updates and builds the latest docs for viewing and exporting on ReadTheDocs.org. All contributions that are included by the AREDN® team in the documentation set will be covered by the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International license held by Amateur Radio Emergency Data Network, Inc.

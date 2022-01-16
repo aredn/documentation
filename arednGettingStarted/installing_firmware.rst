@@ -23,6 +23,9 @@ Troubleshooting Tips
 
 Questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
 
+Error message uploading firmware
+  If you see an error message displayed when uploading new firmware to your node, ensure that you are loading the correct file by referring to the AREDN |trade| Downloads webpage, then you can safely ignore the warning. Our file naming standard has changed from a non-standard naming convention to the standard naming convention used by OpenWRT.
+
 Browser cache and sessions
   One common issue can occur when installing firmware using a web browser interface. Your computer's web browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing your computer's web browser cache will allow the latest URL settings to be registered so you can continue with the install process.
 

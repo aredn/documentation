@@ -40,6 +40,19 @@ Browser cache and sessions
 PXE Server
   If you are using a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ server (described below), be sure to allow the PXE server through your computer's firewall. If the PXE server does not display any activity when you begin your firmware install, check your firewall settings.  On the Windows control panel, for example, click *Advanced Settings* and look through the "Inbound Rules" to see if a rule exists for the PXE server. If a rule exists, make sure to "allow connection" for both private and public networks. If no rule exists, create a new rule allowing connection for both public and private networks.
 
+Firmware First Install Checklists
+---------------------------------
+
+It may be helpful to have a brief checklist of steps to follow when doing the initial firmware installation on node hardware. The checklists below are provided to assist with this process, based on the manufacturer of your device. Complete step-by-step instructions are detailed in the sections that follow.
+
+:download:`GL.iNet First Install Checklist (PDF) <_images/GL.iNet_First_Install_Checklist.pdf>`
+
+:download:`Mikrotik First Install Checklist (PDF) <_images/Mikrotik_First_Install_Checklist.pdf>`
+
+:download:`TP-LINK First Install Checklist (PDF) <_images/TP-LINK_First_Install_Checklist.pdf>`
+
+:download:`Ubiquiti First Install Checklist (PDF) <_images/Ubiquiti_First_Install_Checklist.pdf>`
+
 Ubiquiti First Install Process
 ------------------------------
 

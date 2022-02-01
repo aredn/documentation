@@ -48,9 +48,13 @@ Distance Setting
 
    The maximum distance settings the ath9k wireless driver allows depends on the channel width:
 
-   * 20 MHz: 46666 meters
-   * 10 MHz: 103030 meters
-   * 5 MHz: 215757 meters
+   =============  =================
+   Channel Width   Maximum Distance
+   =============  =================
+   20 MHz         46666 meters
+   10 MHz         103030 meters
+   5 MHz          215757 meters
+   =============  =================
 
    **Auto-Distance**: A value of zero will cause the radio to automatically determine the RF retry timer by measuring the actual time it takes acknowledgement packets to be received. The timer is set using an Exponential Weighted Moving Average (EWMA). The auto-distance setting is best used on high quality point-to-point links between backbone or relay nodes. Fifty percent performance increases have been observed on those links compared to using a static distance setting.
 

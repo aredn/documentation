@@ -2,23 +2,23 @@
 Channel Planning
 ================
 
-The previous section identified the different channels in each frequency band which are available for AREDN |trade| networking. Devices on each side of a radio link must use the same frequency band, channel, channel width, and SSID. Beyond that requirement, however, you have quite a bit of flexibility to select the radio channels that will ensure the highest signal quality and throughput for your network. In a basic AREDN |trade| network with several nodes spread across a limited geographical area, all of the nodes may use the same band, channel, and channel width. This allows them to establish the mesh network and route data to any of the sites as needed.
+The previous section identified the different channels in each frequency band which are available for AREDN |trade| networking. Devices on each side of a radio link must use the same frequency band, channel, channel width, and SSID. Beyond that requirement, however, you have quite a bit of flexibility to select the radio channels that will ensure the highest signal quality and throughput for your network. In a basic AREDN |trade| network with several nodes spread across a limited geographical area, all of the nodes may use the same band, channel, and channel width. This allows them to establish network routing to any of the sites as needed.
 
-However, as more nodes join the network or when several nodes are :abbr:`collocated (same physical site)` and share the same channel, it is possible for overall network performance to degrade. In order for an AREDN |trade| network to scale up in size and complexity, frequency coordination and channel planning become increasingly important. To plan for future growth, mesh groups may need to partition network traffic by allocating channels for specific areas or types of links in order to ensure the network will be able to support the expected services.
+However, as more nodes join the network or when several nodes are :abbr:`collocated (same physical site)` and share the same channel, it is possible for overall network performance to degrade. In order for an AREDN |trade| network to scale up in size and complexity, frequency coordination and channel planning become increasingly important. To plan for future growth, local AREDN |trade| groups may need to partition use different network topologies and to allocate different channels for specific geographic areas or types of links in order to ensure the network will be able to support the expected services.
 
 Wireless Network Operation
 --------------------------
 
 A wireless network is a shared half-duplex medium on which only one station at a time should transmit. In that sense wireless operations are analogous to other types of radio transmissions. If two stations key up their transmitters at the same time, they will interfere with each other to the extent that neither of them will receive the other's message. That is why net control procedures are implemented to ensure controlled access to a radio channel during emergency communication.
 
-AREDN |trade| firmware automatically mediates station access to the wireless medium by implementing `IEEE 802.11a/b/g/n <https://en.wikipedia.org/wiki/IEEE_802.11n-2009>`_ standards and `Carrier Sense Multiple Access / Collision Avoidance (CSMA/CA) <https://en.wikipedia.org/wiki/Carrier-sense_multiple_access>`_. This listen-before-talk technology helps nodes to determine whether a channel is busy. Each node performs a *Clear Channel Assessment (CCA)* as well as using `Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages to negotiate access to a channel. A negligible amount of network traffic is also required for `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to maintain routes for the mesh network as a whole, but this OLSR traffic is a very small fraction of the total.
+AREDN |trade| firmware automatically mediates station access to the wireless medium by implementing `IEEE 802.11a/b/g/n <https://en.wikipedia.org/wiki/IEEE_802.11n-2009>`_ standards and `Carrier Sense Multiple Access / Collision Avoidance (CSMA/CA) <https://en.wikipedia.org/wiki/Carrier-sense_multiple_access>`_. This listen-before-talk technology helps nodes to determine whether a channel is busy. Each node performs a *Clear Channel Assessment (CCA)* as well as using `Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages to negotiate access to a channel. A negligible amount of network traffic is also required for `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to maintain routes for the network as a whole, but this OLSR traffic is a very small fraction of the total.
 
 In a single-channel wireless network, any node that needs to transmit will automatically coordinate with the other nodes for a clear channel. This is by design, but as more devices try to gain access to the same channel there is an increased potential for each node to wait longer for its chance to transmit. This can result in increased latency and decreased network throughput as the number of network nodes increases.
 
 Channel Contention
 ++++++++++++++++++
 
-The concept of *Overlapping Channel Interference* is illustrated on the right side of the following channel scan diagram. *Overlapping Channel Interference* is very serious, but it can be eliminated by selecting non-overlapping channels for all devices accessing your mesh network. A second issue related to how wireless networks operate is illustrated on the left side of the diagram. It is commonly called *Co-channel Interference* but is more accurately described as *Co-channel Contention* or *Co-channel Cooperation*.
+The concept of *Overlapping Channel Interference* is illustrated on the right side of the following channel scan diagram. *Overlapping Channel Interference* is very serious, but it can be eliminated by selecting non-overlapping channels for all of the devices accessing your network. A second issue related to how wireless networks operate is illustrated on the left side of the diagram. It is commonly called *Co-channel Interference* but is more accurately described as *Co-channel Contention* or *Co-channel Cooperation*.
 
 .. image:: _images/cci-aci.png
    :alt: Co-Channel Contention
@@ -118,7 +118,7 @@ The AREDN |trade| web interface provides information that is helpful when aligni
 Channel Planning Tips
 ---------------------
 
-.. sidebar:: Avoid Network Scalability Issues
+.. sidebar:: Network Scalability Tip
 
    If there are two towers or cell coverage areas within range of each other, configure the nodes with different channels to avoid poor performance.
 
@@ -128,6 +128,6 @@ Based on the purpose for your network, try to create reliable paths to the locat
 
 * Consider putting each local coverage area on its own channel to minimize the interaction between zones. Be sure to allow adequate RF separation between zones where channels are being reused.
 
-* If you are installing long distance point-to-point links to connect mesh islands, be sure to use a separate band or channel for the backbone link. This type of link has a single purpose: to carry as much data as quickly as possible from one end to the other. Eliminate any type of channel contention so that these links can achieve high throughput.
+* If you are installing long distance point-to-point links to connect network islands, be sure to use a separate band or channel for the backbone link. This type of link has a single purpose: to carry as much data as quickly as possible from one end to the other. Eliminate any type of channel contention so that these links can achieve high throughput.
 
 * Remember that a multi-hop path through the network must have good signal quality on each leg of the journey. You cannot expect adequate performance through a series of poor quality links. For example, if you traverse three links having :abbr:`LQ (Link Quality)` metrics of 65%, 45%, and 58%, your aggregate :abbr:`LQ (Link Quality)` will be 17% which is unusable. Ideally the aggregate :abbr:`LQ (Link Quality)` should be at least 80% to have a link that supports the applications and services you require.

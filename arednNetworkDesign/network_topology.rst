@@ -2,21 +2,21 @@
 Network Topologies
 ==================
 
-Every AREDN |trade| node is capable of automatically joining an AREDN |trade| mesh network which is operating with the same SSID, channel, and bandwidth. New nodes will each explore their surroundings by broadcasting their identity and listening for their neighbors' responses. Once nodes identify others within radio range, they share this information so that each node has a picture of the network topology. Periodic updates adjust the network routes based on changes in signal quality or loss of a link, allowing the network to adapt to changing conditions. Since there can be several possible routes between nodes, and since network disruptions typically effect only part of the network, this type of topology can provide redundancy for network links.
+Every AREDN |trade| node is capable of automatically joining an *ad hoc* mesh network which is operating with the same SSID, channel, and bandwidth. New nodes will each explore their surroundings by broadcasting their identity and listening for their neighbors' responses. Once nodes identify others within radio range, they share this information so that each node has a picture of the network topology. Periodic updates adjust the network routes based on changes in signal quality or loss of a link, allowing the network to adapt to changing conditions. Since there can be several possible routes between nodes, and since network disruptions typically effect only part of the network, a mesh topology can provide redundancy for network links.
 
 .. image:: _images/mesh-topology.png
    :alt: Mesh Topology
    :align: right
 
-Every AREDN |trade| node within radio range of other nodes will be able to participate in the network to extend its reach, provide route redundancy, or host services needed on the network at large. This simple network topology may serve its purpose perfectly for a short-term network deployed in support of a local event, or even for more permanent communication between nodes which are always within radio range. However, as mentioned in the previous chapter, the most important consideration for you network design is *"What is the purpose for this particular network?"* The specific requirements of your mission should drive the design of your data network.
+Every AREDN |trade| node within radio range of other nodes will be able to participate in the network to extend its reach, provide route redundancy, or host services needed on the network at large. This simple mesh topology may serve its purpose perfectly for a short-term network deployed in support of a local event, or even for more permanent communication between nodes which are always within radio range. However, as mentioned in the previous chapter, the most important consideration for you network design is *"What is the purpose for this particular network?"* The specific requirements of your mission should drive the design of your data network.
 
 Types of Topologies
 -------------------
 
-Although AREDN |trade| nodes are capable of forming a simple mesh network topology, it is more common for operators to use other designs in order to accomplish their data communication goals. Typical network designs include Point-to-Point, Hub-and-Spoke, Tree or hybrid topologies.
+Although AREDN |trade| nodes are capable of forming a simple mesh network, it is more common for operators to use different topologies in order to accomplish their data communication goals in growing networks. Typical network designs include Point-to-Point, Hub-and-Spoke, Tree or hybrid topologies.
 
 Point-to-Point Topology
-  Point-to-Point topologies are best suited for moving data between the far endpoints, potentially using one or more intermediate nodes in order to traverse different types of terrain or overcome obstacles in the network path.
+  Point-to-Point topologies are best suited for moving data between the far endpoints, potentially using one or more intermediate nodes in order to traverse different types of terrain or to overcome obstacles in the network path.
 
   .. image:: _images/point-to-point.png
      :alt: Point-to-Point Topology
@@ -51,9 +51,9 @@ Backbone Links
   As the name implies, these links form the backbone or superhighway along which large amounts of data can travel for long distances at relatively high speed. Typically backbone or "backhaul" links are permanent installations on mountain peaks, tall buildings, or high towers. They are usually point-to-point links with large high-gain antenna systems running on reliable power sources. In some cases these links are designed with redundant radios which help ensure path protection. Backbone links can operate over distances between 10 to 30+ miles.
 
 Relay Links
-  Relay links bridge the gaps between endpoint nodes. Their primary purpose is to pass network data, but there may be cases where they also serve as mesh access nodes for users. Sometimes these links are called "mid-mile", "distribution", or "intermediate" nodes. They are usually installed on medium-height towers or buildings in order to achieve high signal quality with good line of sight to other relay nodes. Depending on conditions, intermediate links may operate over distances between 3 to 10+ miles.
+  Relay links bridge the gaps between endpoint nodes. Their primary purpose is to pass data efficiently, but there may be cases where they also serve as network access points for users. Sometimes these links are called "mid-mile", "distribution", or "intermediate" nodes. They are usually installed on medium-height towers or buildings in order to achieve high signal quality with good line of sight to other relay or backbone nodes. Depending on conditions, intermediate links may operate over distances between 3 to 10+ miles.
 
 Endpoint Links
-  Endpoint links are used to connect destination nodes to the mesh network. Sometimes these links are called "last mile", "tactical", or "terminal" nodes. Usually these nodes serve either as the originator or the final destination for network traffic. Depending on local conditions, endpoint links typically operate over distances of 3 miles or less.
+  Endpoint links are used to connect destination nodes to the network. Sometimes these links are called "last mile", "tactical", or "terminal" links. Usually the nodes at the far end will serve either as the originators or the final destinations for network traffic. Depending on local conditions, endpoint links typically operate over distances of 3 miles or less.
 
 Different types of radio links may be needed to connect all of the nodes that are required in order to fulfill the purposes for your network. The ultimate goal of your network topology is to have a reliable data network that accomplishes its purpose for providing services to the intended destinations and users.

@@ -6,7 +6,8 @@ AREDN |trade| networks operate in the microwave radio spectrum, and licensed ama
 
 .. caution:: **You are responsible for using frequencies, channels, bandwidths, and power levels that comply with your country's amateur radio license requirements.**
 
-Each band is divided into channels, each of which consists of a 5 MHz frequency offset identified by the center frequency of the channel and assigned a numerical label. In the example below you can see that a selected channel may use more or less of the frequency range based on the chosen channel width. The wider the channel, the more overlap there will be with adjacent channels. Wide channels have the effect of reducing the number of non-overlapping or non-interfering channels that will be available for use. When selecting channels and widths, be sure to use non-overlapping channels. Devices using channels or channel widths that overlap will interfere with one another and cannot communicate to coordinate the sharing of bandwidth.
+Channel Information
+  Each band is divided into channels, each of which consists of a 5 MHz frequency offset identified by the center frequency of the channel and assigned a numerical label. In the example below you can see that a selected channel may use more or less of the frequency range based on the chosen channel width. The wider the channel, the more overlap there will be with adjacent channels. Wide channels have the effect of reducing the number of non-overlapping or non-interfering channels that will be available for use. When selecting channels and widths, be sure to use non-overlapping channels. Devices using channels or channel widths that overlap will interfere with one another and cannot communicate to coordinate the sharing of bandwidth.
 
 .. image:: _images/channel-width-example.png
    :alt: Channel Width Example
@@ -26,6 +27,13 @@ Band     Frequency Range    Channels
 The choice of a frequency band for AREDN |trade| networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width.
 
 You have the option of selecting the channel width for each link. When using channels at the top or bottom of a band, be certain that your chosen width will not transmit outside of the FCC Part 97 allocation for that band. Different channel widths may yield better throughput than others. In some areas operators use different channels to isolate links, so they may need to use 10 MHz rather than 20 MHz channels in order to ensure they have enough available channels. Also, long distance links simply have better performance using 10 MHz vs. 20 MHz or 5 MHz channel widths. Test the performance of your links using various channel widths to ensure that they are optimized.
+
+Power Limitations
+  The power limits that apply to AREDN |trade| networks are the same as those that apply generally for amateur radio operators in your country. As with any other operating mode, you should use the *minimum* power required to make radio links between nodes. In the United States, for example, this rule is specified in FCC part 97.313(a), and the maximum transmitter output power cannot exceed 1.5 kW PEP as specified by FCC part 97.313(b).
+
+  However there is one situation in the US where AREDN |trade| devices are limited to 10W PEP. This special limitation applies to legacy devices that use 802.11b, which is a Spread Spectum (SS) emission. FCC part 97.313(j) limits SS transmitter power to 10W PEP. All other AREDN |trade| devices use 802.11n which transmits carrier waves with combinations of PSK and AM modulations. Refer to the 802.11n MCS rate tables for specific modulations that are used.
+
+  In actual practice, the output power of AREDN |trade| devices will be limited by the hardware that is used. Even though in the US the FCC rules allow higher power, all of the modern commercial routers being used for AREDN |trade| physically cannot transmit these high power levels. Therefore, the power limits allowed in the US by the FCC will never be reached unless you have an external Power Amplifier.
 
 Some of the advantages and disadvantages of each frequency range are explained in the sections below which give examples of frequencies that are available to amateur radio operators in the US.
 

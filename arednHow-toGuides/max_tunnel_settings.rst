@@ -8,7 +8,7 @@ By default a node is allowed to host up to 10 clients in its *Tunnel Server* dis
   :alt: Advanced Configuration - changing tunnel settings
   :align: center
 
-----------
+|
 
 .. warning:: Use caution when increasing the *maxclients* or *maxservers* values. Enter only *zero* or positive integers up to a maximum value for the number of active connections your node hardware can handle, since each active tunnel connection consumes system resources that the node may need for normal operation.
 

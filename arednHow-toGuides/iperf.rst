@@ -20,6 +20,8 @@ After iperf and IperfSpeed are installed on your nodes, you can select the *Iper
    :alt: iperfSpeed Display
    :align: center
 
+|
+
 Once the test has completed you will see the collected data summarized by time interval, and at the bottom of the display is the overall average of the results from the perspective of the sender (client) and the receiver (server). IperfSpeed also tracks previous tests that have been run, and it allows you to rerun any of the previous tests by clicking the *Re-Test* button.
 
 One of the many uses for IperfSpeed is to validate and optimize your node's *Distance* setting on the **Basic Setup** page. Try different *Distance* settings and note the network bandwidth using iperf, with the goal of choosing the *Distance* setting which yields the best network performance.

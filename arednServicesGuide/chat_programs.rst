@@ -21,7 +21,7 @@ MeshChat *Action Scripts* also provide for functional extensions, such as sendin
    :alt: MeshChat Web Interface
    :align: center
 
-----------
+|
 
 Internet Relay Chat
 -------------------
@@ -34,7 +34,7 @@ A wide variety of features and functions are available with these and similar ch
    :alt: IRC in KiwiChat Web Interface
    :align: center
 
-----------
+|
 
 Jabber/XMPP
 -----------
@@ -47,7 +47,7 @@ Two of the most popular XMPP servers are eJabberd and Prosody, but there are man
    :alt: Prosody XMPP Interface
    :align: center
 
-----------
+|
 
 Let's Chat
 ----------
@@ -58,7 +58,7 @@ Let's Chat
    :alt: Let's Chat Interface
    :align: center
 
-----------
+|
 
 Mattermost
 ----------
@@ -71,7 +71,7 @@ Mattermost supports @mentions, and channels are available for organizing convers
    :alt: Mattermost Interface
    :align: center
 
-----------
+|
 
 Matrix - Synapse
 ----------------
@@ -84,7 +84,7 @@ Matrix services can provide one-to-one communication channels as well as group c
    :alt: Matrix Chat Interface
    :align: center
 
-----------
+|
 
 Example Chat Service Comparison
 -------------------------------

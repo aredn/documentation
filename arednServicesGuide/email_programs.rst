@@ -19,7 +19,7 @@ Since a variety of features are bundled into a single application suite, Citadel
    :alt: Citadel Web Interface
    :align: center
 
-----------
+|
 
 Open Source Email Server
 ------------------------
@@ -44,7 +44,7 @@ You will need to have detailed knowledge and skills when building your own open 
    :alt: Thunderbird IMAP Client
    :align: center
 
-----------
+|
 
 Using WinLink to Send Email
 ---------------------------
@@ -55,7 +55,7 @@ Although it is not typically used as a TCP/IP network application, many operator
    :alt: Winlink Interface
    :align: center
 
-----------
+|
 
 Example Email Service Comparison
 --------------------------------

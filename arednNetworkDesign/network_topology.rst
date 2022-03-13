@@ -36,7 +36,7 @@ Tree Topology
      :alt: Tree Topology
      :align: center
 
-----------
+|
 
 Types of Links
 --------------

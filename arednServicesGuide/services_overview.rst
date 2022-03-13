@@ -34,6 +34,8 @@ For mission-critical services on high speed data networks, *Disaster Recovery* d
    :alt: Server Sync Diagram
    :align: center
 
+|
+
 As a general rule for mesh networks, simpler is better. The more complicated and automated you make your service design, the more network and computing resources will be required to operate the system. It is always best to conserve mesh networking resources wherever possible.
 
 ----------

@@ -39,6 +39,8 @@ In any wireless network there will be nodes that are not within radio range of e
    :alt: Hidden Node Problem
    :align: center
 
+|
+
 `Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages are used by AREDN |trade| nodes to minimize or eliminate this issue. For example, node **A** broadcasts a short RTS message with a proposed timeslot/duration for transmitting its complete data stream. Node **B** receives that request and broadcasts a CTS for that time slot. Node **C** could not hear the original RTS but will hear the CTS message and defer its transmissions during that time slot.
 
 Two other approaches may also alleviate the hidden node issue. You may be able to make the hidden nodes visible to each other, for example by increasing their signal strength. The alternative is to isolate the nodes completely by placing them onto different bands or channels. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel. It may be more appropriate to create a separate link between the sites and to put the radios on a different band or channel.
@@ -65,6 +67,8 @@ Depending on the frequency band you are using, there are varying options availab
    :alt: Example Channel Reuse Plan
    :align: center
 
+|
+
 The example coverage map shows that four different channels have been assigned to achieve broad coverage by segmenting specific areas into zones to reduce co-channel contention. It should be noted that even a channel reuse plan such as this may not eliminate all instances of contention. For example, if a node is at the outer edges of a coverage zone or is elevated well above ground level, its transmissions may propagate into a distant cell using the same channel. The radios in the other cell will defer if they hear the original node's transmissions, even though they originate in a different cell. Some degree of experimentation may be required in order to minimize contention and maximize network throughput.
 
 Collocated Nodes
@@ -75,6 +79,8 @@ At some sites there may be several devices mounted on the same building or struc
 .. image:: _images/collocated-nodes.png
    :alt: Collocated Nodes
    :align: center
+
+|
 
 Network performance degradation can occur if these nodes share an RF band and channel. For example, when two sector antennas are collocated and share the same channel, the network throughput for that site will be reduced by half or more. If you have collocated nodes then it makes sense to allow the devices to pass traffic over their Ethernet interface (as described below) rather than forcing them to use their radio channel.
 
@@ -97,7 +103,7 @@ If you want to partition traffic even further, you can configure VLANs on a mana
    :alt: Traffic Isolation with VLANs
    :align: center
 
-----------
+|
 
 Antenna Polarization
 ++++++++++++++++++++
@@ -113,7 +119,7 @@ The AREDN |trade| web interface provides information that is helpful when aligni
    :alt: Aligning Nodes for Best SNR
    :align: center
 
-----------
+|
 
 Channel Planning Tips
 ---------------------

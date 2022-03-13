@@ -15,14 +15,14 @@ Channel Information
 
 Some or all of the bands shown below are shared with other authorized users. For example, all of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` users in the US. The following table shows examples of the amateur radio bands, frequency ranges, and number of channels that are available for AREDN |trade| networking in the US.
 
-=======  =================  ========
-Band     Frequency Range    Channels
-=======  =================  ========
-33 cm    902-928   MHz      4
-13 cm    2390-2450 MHz      13
-9 cm     3300-3445 MHz      14
-5 cm     5650-5925 MHz      54
-=======  =================  ========
+  =======  =================  ========
+  Band     Frequency Range    Channels
+  =======  =================  ========
+  33 cm    902-928   MHz      4
+  13 cm    2390-2450 MHz      13
+  9 cm     3300-3445 MHz      14
+  5 cm     5650-5925 MHz      54
+  =======  =================  ========
 
 The choice of a frequency band for AREDN |trade| networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width.
 

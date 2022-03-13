@@ -28,13 +28,11 @@ Distant fixed nodes can be aligned with the same tools you used in the previous 
 
 For example, Mikrotik LHG5 and Ubiquiti RocketDish5 antennas are very narrow, with beam widths between 5° and 7°. Mikrotik QRT panels and Ubiquiti Powerbeam antennas have beam widths between 10° and 12°. Mikrotik SXTsq5 panels and Ubiquiti AirGrid antennas have beam widths between 20° and 23°. Ubiquiti NanoStations and Mikrotik SXTsq2 panels have beam widths between 45° and 60°. Sector antennas have typical beam widths of 90° or 120°, while omnidirectional antennas cover 360° with various degrees of downtilt.
 
-----------
-
 .. image:: _images/beamwidth-comparison.png
    :alt:  Antenna beam width comparison
    :align: center
 
-----------
+|
 
 While it is helpful to know the antenna pattern for the nodes at both ends, the key is knowing the exact coordinates of the two locations so you can determine their topographical relationship to each other (horizontal and vertical azimuth). There are several computer tools for modeling radio links that were mentioned in the **Network Design Guide** under the *Network Modeling* section. One of the most useful is `VE2DBE's Radio Mobile <http://www.ve2dbe.com/rmonline.html>`_ which provides all of the required details for aiming directional antennas between two locations, including both true and magnetic bearings for both sides of the link.
 
@@ -45,6 +43,8 @@ Studying the types of maps mentioned above may allow you to discover other sites
 .. image:: _images/link-azimuth.png
    :alt:  Antenna Aiming Details
    :align: center
+
+|
 
 The chart above shows typical link details that are provided by `Radio Mobile <http://www.ve2dbe.com/rmonline.html>`_. It is very helpful to know these kinds of details and to have an accurate compass before you begin the antenna aiming process. If you use magnetic bearings you will need to know the declination for your location, and be sure your phone or compass is not influenced by nearby metal objects.
 

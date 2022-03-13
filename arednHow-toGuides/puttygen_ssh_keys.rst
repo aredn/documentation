@@ -18,7 +18,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
    :alt:  Confirm SSH-2 RSA key
    :align: center
 
-----------
+|
 
 2. Select the *Generate key pair* menu item or click the *Generate* button and you will be asked to make some random mouse movements. After a short while you get a message asking you to wait while the keys are generated. Once it finishes you now have a new key pair.
 
@@ -26,7 +26,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
    :alt:  Label key pair and create pass phrase
    :align: center
 
-----------
+|
 
   Give the key pair a suitable comment so that you will remember what the keys are used for. Here we just entered testkey@wu2s.com for an example. Whatever you enter in the "Key Comment" field must look like an email address with no spaces and the "@" present. Normally this field is used to identify a specific *username@hostname*. You can also password protect the SSH login by providing a passphrase if you desire. Record this passphrase so you will remember it for future use.
 
@@ -36,7 +36,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
    :alt: Save key files
    :align: center
 
-----------
+|
 
 4. In order for your new public key to be installed on an AREDN |trade| node you will need to verify that there are no extra characters which Windows typically adds to text files. You can accomplish this using a text editor which allows you to view and remove the unwanted characters. This example shows opening `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ and navigating to *View > Show Symbol > Show End of Line*. Now you can see the line termination characters inserted by Windows.
 
@@ -44,7 +44,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
   :alt: Notepad view EOL
   :align: center
 
-----------
+|
 
   If you saved your public key file by clicking the *Save Public Key* button in PuTTYGen you may notice that it contains a header, footer, and lots of end of line characters. Your AREDN |trade| node will not accept the file with these extra characters. The easiest way to resolve this is to go back to PuTTYGen and highlight/select the entire contents of the text area titled "Public key for pasting into OpenSSH authorized_keys file." Copy this text using the CTRL-C keys on your keyboard.
 
@@ -52,7 +52,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
     :alt: Puttygen copy key text
     :align: center
 
-----------
+|
 
   Now go to Notepad++ and paste the copied text into a new window. You should see your public key text on a single line without any header/footer or line termination characters.
 
@@ -60,7 +60,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
     :alt: Puttygen copy key text
     :align: center
 
-----------
+|
 
   Save this Notepad++ window to a suitable filename with the **.pub** file extension.
 
@@ -68,7 +68,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
     :alt: Save the public key
     :align: center
 
-----------
+|
 
 5. In order to use your new SSH key pair, login to your AREDN |trade| node and go to the **Setup -> Administration** screen. At the bottom you will see the *Authorized SSH Keys* section where you can install the public keys to use on this node.
 
@@ -76,7 +76,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
    :alt: Node Administration page
    :align: center
 
-----------
+|
 
 6. Press the *Choose File* button to locate the *public* SSH key you want to install. After choosing the desired *public* key file, click the *Upload* button to install the key on the AREDN |trade| node.
 
@@ -84,7 +84,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
    :alt: Select key to install
    :align: center
 
-----------
+|
 
 7. You will see a message asking you to reboot your node. After rebooting you can confirm that the new key was installed by looking in the dropdown list under the *Remove Key* section. Your SSH key will appear in the list if it is installed. (You are verifying that the key was installed, but do not click the *Remove* button unless you want to remove it.)
 
@@ -92,7 +92,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
    :alt: Upload and install key
    :align: center
 
-----------
+|
 
 8. To use your SSH keys, open a new PuTTY session. In the *Hostname* box enter *localnode* and in the *Port* box enter 2222. It may be helpful to save this session definition using a name that identifies the specific node you are connecting to. Enter your identifier and click the *Save* button.
 
@@ -100,7 +100,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
    :alt: Create new Putty session
    :align: center
 
-----------
+|
 
 9. Now, using the menu at the left, go to the SSH section and then select the *Auth* item. This shows a number of Options. The only one we need is the very last – the location of the Private key file for authentication. Browse for it and select the correct filename as before. Remember that the PRIVATE key files end in .ppk  Go back to top of the menu on the left and select *Session*.
 SAVE the session definition again.
@@ -109,7 +109,7 @@ SAVE the session definition again.
    :alt: Session definition, location of private key
    :align: center
 
-----------
+|
 
 10. Now you can use the session information you saved by clicking the *Load* or *Open* button in the main PuTTY session screen. This will open a terminal window as shown below. Login to the AREDN |trade| node as `root`. If you configured the PuTTY session correctly, it will find your private key file and ask you for the passphrase (if any). If PuTTY cannot find the private key file, it will revert to prompting you for the `root` password that you normally use to login on the node.
 
@@ -117,10 +117,12 @@ SAVE the session definition again.
    :alt: Enter passphrase to use SSH key
    :align: center
 
-----------
+|
 
 11. The correct passphrase was entered. The node’s banner appears in the terminal session window and you can now do any command line tasks on the node.
 
 .. image:: _images/11-puttygen.png
    :alt: Logged into node
    :align: center
+
+|

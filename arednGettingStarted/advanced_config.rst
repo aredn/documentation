@@ -34,7 +34,7 @@ You have already configured many of the basic settings, but there are several ad
    :alt: Setup Options
    :align: center
 
-----------
+|
 
 Mesh RF Column
 ^^^^^^^^^^^^^^
@@ -69,7 +69,7 @@ Enable/Disable Mesh Radio
    :alt: LAN AP Settings
    :align: center
 
-----------
+|
 
 LAN Column
 ^^^^^^^^^^
@@ -132,13 +132,11 @@ Port Forwarding, DHCP, and Services
 
 Click the **Port Forwarding, DHCP, and Services** link to navigate to these settings. This section provides a way for you to configure LAN network address reservations and service advertisements on your node. If your LAN network uses ``NAT`` mode, you may also need to define port forwarding rules.
 
-----------
-
 .. image:: _images/08-port-forward.png
    :alt: Port Forwarding, DHCP, and Services
    :align: center
 
-----------
+|
 
 If your node is running its default DHCP server on the LAN network, it will automatically provide IP addresses to connected hosts. Look under the **Current DHCP Leases** heading to see the existing hosts and their assigned IP address.
 
@@ -227,13 +225,11 @@ Tunnel Server Node Settings
 
 The following diagram shows an overview of tunnel services between two nodes.
 
-----------
-
 .. image:: _images/10-tunneling-diagram.png
    :alt: Tunneling Diagram
    :align: center
 
-----------
+|
 
 The tunnel network address ranges are automatically calculated, and it is not necessary to change these settings unless there is a specific reason why the defaults will not work for your situation.
 
@@ -251,7 +247,7 @@ Contact Info/Comment (optional)
 
 Once these settings are correct, click *Add* to add the new client to the list of authorized tunnel clients. On the right of each entry there is an envelope icon which will automatically open your computer's email program and copy the client settings into a new email which allows you to quickly and easily send credentials to the owners of the client nodes.
 
-To allow a client to connect to your tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active.
+To allow a client to connect to your tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active. Depending on the timing of the page refresh, you may need to press the **Refresh** button to see the active icon.
 
 Tunnel Client
 -------------
@@ -260,13 +256,13 @@ Click the **Tunnel Client** link to navigate to these settings. In this section 
 
 Contact the amateur operator who controls the tunnel server and request client credentials by providing your specific node name. The tunnel server administrator will provide you with the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` URL for the tunnel server, the password you are to use, and the network IP address for your client node. Enter these values into the appropriate fields on your node and click *Add* to create a client entry in the list.
 
-----------
-
 .. image:: _images/11-tunnel-client.png
    :alt: Tunnel Client Settings
    :align: center
 
-To allow your client to connect to the tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active.
+|
+
+To allow your client to connect to the tunnel server, select the **Enabled?** checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active. Depending on the timing of the page refresh, you may need to press the **Refresh** button to see the active icon.
 
 .. warning:: The add-on tunnel package (vtun) has a character limitation on the client node name which could prevent a tunnel from connecting. Keep node names as short as possible in order to avoid this issue. More information and discussion can be found in `this Forum thread <https://www.arednmesh.org/comment/4174>`_.
 
@@ -278,6 +274,8 @@ Click the **Administration** link to navigate to these settings. There are four 
 .. image:: _images/09-admin-upgrade.png
    :alt: Upgrade and Packages
    :align: center
+
+|
 
 .. important:: Files cannot be uploaded to a node while a tunnel server or client connection is enabled. Disable tunnel client or server connections before uploading firmware, packages, or ssh key files. The *Upload* buttons will be disabled until tunnels are disabled.
 
@@ -313,7 +311,7 @@ Map Tile and Script Paths
     :alt: Advanced Configuration - map paths
     :align: center
 
-----------
+|
 
 Firmware and Package Download Paths
   These fields contain the URLs used by the node for downloading firmware and package files during upgrades. By default they point to the AREDN |trade| downloads server available across the Internet. You can change these paths to point to a local mesh package server in order to upgrade nodes that do not have Internet access.
@@ -324,7 +322,7 @@ Firmware and Package Download Paths
     :alt: Advanced Configuration - downloads
     :align: center
 
-----------
+|
 
 PoE and USB Power Passthrough
   These rows will only appear in the table if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack, as well as PoE power passthrough on Ethernet port 5. You are allowed to enable or disable power passthrough on nodes with ports that support this feature. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
@@ -333,7 +331,7 @@ PoE and USB Power Passthrough
     :alt: Advanced Configuration - passthrough
     :align: center
 
-----------
+|
 
 Tunnel Server *maxclients* and Tunnel Client *maxservers*
   These rows will appear in the table only if the AREDN |trade| tunneling package is installed on your node. By default a node is allowed to host up to 10 clients in its *Tunnel Server* display and connect with up to 10 servers in its *Tunnel Client* display. The *maxclients* and *maxservers* settings provide a method for adjusting the defaults.
@@ -342,7 +340,7 @@ Tunnel Server *maxclients* and Tunnel Client *maxservers*
     :alt: Advanced Configuration - tunnel max values
     :align: center
 
-----------
+|
 
   .. important:: If you plan to change these settings, review **Changing Tunnel Max Settings** in the **How-To Guide** section.
 
@@ -351,25 +349,31 @@ Tunnel Server *maxclients* and Tunnel Client *maxservers*
 Low Memory Thresholds
   As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's *Mesh Status* display. For older nodes with limited memory resources, the mesh status display may become very sluggish on large mesh networks. Recent firmware improvements have made the *Mesh Status* display much more responsive, and two new **Advanced Configuration** values are available for setting the *Low Memory Threshold* and maximum number of routes to be displayed. Currently the default low memory threshold is 10,000 KB, which if reached will limit the *Mesh Status* display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory.
 
-  .. image:: _images/advConfig-lowMem.png
-    :alt: Advanced Configuration - low memory thresholds
-    :align: center
+.. image:: _images/advConfig-lowMem.png
+  :alt: Advanced Configuration - low memory thresholds
+  :align: center
 
-----------
+|
 
 OLSR Restart
   The `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ process can be restarted when you want your node to rebuild its mesh routing table but you do not want to do a full reboot. Click the *Execute* button to restart OLSR.
 
-  There is a known intermittent issue that may occur when a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. OLSR should be restarted on your node if other nodes' *Mesh Status* display have your node's IP address rather than hostname or if "dtdlink" or "mid" is shown in your node's hostname on their *Mesh Status* display. If your node's *Mesh Status* display shows the IP address rather than hostname for a remote node, then that remote node should restart OLSR.
-
-.. image:: _images/advConfig-olsr-alerts.png
-  :alt: Advanced Configuration - OLSR and Alerts
+.. image:: _images/advConfig-olsr.png
+  :alt: Advanced Configuration - OLSR
   :align: center
 
-----------
+|
+
+  There is a known intermittent issue that may occur when a node boots. If OLSR fails to propagate information or does not receive all the network hostnames, a one-time restart of OLSR should resolve the issue. OLSR should be restarted on your node if other nodes' *Mesh Status* display have your node's IP address rather than hostname or if "dtdlink" or "mid" is shown in your node's hostname on their *Mesh Status* display. If your node's *Mesh Status* display shows the IP address rather than hostname for a remote node, then that remote node should restart OLSR.
 
 AREDN Alert Message (AAM) Refresh
   The AREDN |trade| development team may post messages which Internet-connected nodes can automatically download. You can execute the *aam.refresh* action if you want your node to retrieve any new messages without having to wait for the next auto-refresh window. Click the *Execute* button to trigger an immediate message retrieval. This will retrieve all alerts eligible for display on your node, whether they come from the AREDN |trade| server over the Internet or from a local message source on your mesh network.
+
+.. image:: _images/advConfig-alerts.png
+  :alt: Advanced Configuration - Alerts
+  :align: center
+
+|
 
 AREDN Alerts Local Path
   This field allows you to enter the URL for a local alert message repository. If you configure such a local repository then your nodes without Internet access can also receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.
@@ -383,9 +387,12 @@ AREDN Alerts Local Path
      :alt: Local Alert Message Repository Content
      :align: center
 
-----------
+|
 
   It is possible to include HTML tags in your message text, such as using the ``<br />`` tag to display subsequent text on the next line. However, it is best practice to keep alert messages short in order to minimize the height of the alert banner displayed on node webpages.
+
+AREDN Alert Pollrate
+  This field allows you to set the polling rate or interval in hours at which the node will check for message updates. The default polling rate is once every 12 hours, but you can make this value smaller if you want your node to check for updates more frequently.
 
 AREDN Alert Message Purge
   Use this purge setting if you want to immediately remove the AREDN |trade| Alert Message banner from your node. Click the *Execute* button to trigger an immediate message banner removal. This will remove all alert messages, whether they originated from the AREDN |trade| server over the Internet or from a local message source on your mesh network.

@@ -21,6 +21,8 @@ d.apache.org/docs/2.4/urlmapping.html>`_). Once the software has been made avail
    :alt:  View the local package repository
    :align: center
 
+|
+
 These tasks are all that should be required on your local package host. Once the package tree is available via its web server, you can begin pointing the nodes to your local software repository.
 
 Point Nodes to the New Server
@@ -44,6 +46,8 @@ It is good practice to use the `fully qualified domain name (FQDN) <https://en.w
    :alt:  Advanced Configuration - set package URL
    :align: center
 
+|
+
 After you have entered the new URL, click the **Save Setting** button to activate the new entry. To restore the default entry, click the **Set to Default** button.
 
 Once the node has been pointed to the local package repository, you can navigate to **Setup > Administration**. In the *Package Management* section, you can click the **Refresh** button to get the list of available packages from the local package repository. Remember that retrieving this package list will use memory resources on your node.
@@ -51,6 +55,8 @@ Once the node has been pointed to the local package repository, you can navigate
 .. image:: _images/refresh-package-list.png
    :alt:  Administration - refresh package list
    :align: center
+
+|
 
 The following example shows the type of information returned when you click the **Refresh** button:
 

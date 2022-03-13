@@ -48,7 +48,7 @@ The :abbr:`OLSR (Optimized Link State Routing protocol)` **Entries** show the to
 AREDN |trade| Alert Messages
 ----------------------------
 
-The AREDN |trade| development team has the ability to post messages which Internet-connected nodes will automatically retrieve once every 12 hours. There are two types of messages: broadcast messages intended for all nodes, and directed messages which are only retrieved by individual nodes. Messages are displayed in a yellow banner on a node's webpages above the node name. Be aware that there is no guarantee of privacy for these messages, since anyone can view the message repository online.
+The AREDN |trade| development team has the ability to post messages which Internet-connected nodes will automatically retrieve once every 12 hours by default. There are two types of messages: broadcast messages intended for all nodes, and directed messages which are only retrieved by individual nodes. Messages are displayed in a yellow banner on a node's webpages above the node name. Be aware that there is no guarantee of privacy for these messages, since anyone can view the message repository online.
 
 .. image:: _images/aam-display.png
    :alt: AAM Display

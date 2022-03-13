@@ -19,7 +19,7 @@ All of the most common web browsers allow content to be downloaded using FTP as 
    :alt: FTP Web Interface
    :align: center
 
-----------
+|
 
 Web Services
 ------------
@@ -34,7 +34,7 @@ Users login to NextCloud to see available content, and file sharing permissions 
    :alt: NextCloud Web Interface
    :align: center
 
-----------
+|
 
 Collaborative Computing
 -----------------------
@@ -48,3 +48,5 @@ One example package that facilitates collaborative document creation is `Etherpa
 .. image:: _images/etherpad.png
    :alt: Etherpad Web Interface
    :align: center
+
+|

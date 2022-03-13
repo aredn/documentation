@@ -10,6 +10,8 @@ The photo below shows a Mobile Command Center (MCC) deployed to support a large 
    :alt: Emergency Operations Center Video
    :align: center
 
+|
+
 More than a dozen high definition `IP cameras <https://en.wikipedia.org/wiki/IP_camera>`_ were collocated at portable AREDN |trade| node sites across the area, and the individual video streams were consolidated on several large displays in the MCC. Orange County Sheriff’s Administrator Sgt. Joseph Cope commented, “This mesh camera system provided by RACES members was a valuable tool for our command staff. The parade was the safest in years. As we were taking the calls, we could see the activity occurring in realtime. Incredibly, there was only one arrest for fighting, which just happened to take place in the camera's view.”
 
 IP Video Cameras
@@ -18,6 +20,8 @@ IP Video Cameras
 .. image:: _images/video-surveillance.png
    :alt: Portable Node with Camera
    :align: left
+
+|
 
 IP video cameras may have a fixed direction and focus, or they may be remote controlled `PTZ (Pan, Tilt, Zoom) <https://en.wikipedia.org/wiki/Pan%E2%80%93tilt%E2%80%93zoom_camera>`_ models. The cost and features for video cameras vary widely. On the low end is a very inexpensive Raspberry Pi Zero computer having an integrated camera, shown here next to the Ubiquiti Bullet radio. On the high end are the ruggedized commercial :abbr:`PTZ (Pan, Tilt, Zoom)` cameras which can cost hundreds of dollars, shown here with the bubble dome and infrared LEDs.
 
@@ -49,7 +53,7 @@ In the lower right video stream on the iSpy display below you can see the smoke 
    :alt: iSpy Display
    :align: center
 
-----------
+|
 
 MotionEye
 +++++++++
@@ -62,7 +66,7 @@ The backend `Motion <https://motion-project.github.io/index.html>`_ engine is bu
    :alt: MotionEye Display
    :align: center
 
-----------
+|
 
 ZoneMinder
 ++++++++++
@@ -77,7 +81,7 @@ This robust feature set comes at the cost of some administrative complexity, mak
    :alt: ZoneMinder Display
    :align: center
 
-----------
+|
 
 Shinobi
 +++++++
@@ -92,7 +96,7 @@ Shinobi tends to conserve computing resources fairly well, so more cameras or hi
    :alt: Shinobi Display
    :align: center
 
-----------
+|
 
 Example Video Service Comparison
 --------------------------------

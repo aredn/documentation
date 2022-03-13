@@ -8,6 +8,8 @@ SISO (Single Input Single Output) device hardware has a single transceiver-anten
    :alt:  SISO and MIMO radio chains
    :align: center
 
+|
+
 Both SISO and MIMO devices use `OFDM (Orthogonal Frequency Division Multiplexing) <https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing>`_, which inherently handles poor RF conditions such as `multipath interference <https://en.wikipedia.org/wiki/Multipath_propagation#Interference>`_ or fading. The rate selection algorithm in the wireless driver adapts to changing RF conditions so that the optimal :abbr:`MCS (Modulation and Coding Scheme)` `rate <https://en.wikipedia.org/wiki/IEEE_802.11n-2009#Data_rates>`_ is always used. The selected :abbr:`MCS (Modulation and Coding Scheme)` includes the appropriate modulation, forward error correction, and number of data streams.
 
 SISO Device Hardware
@@ -38,7 +40,7 @@ SISO to SISO
    :alt:  SISO to SISO
    :align: center
 
-----------
+|
 
 SISO to MIMO
   All transmit power is sent using a single polarization, and the MIMO receiver will enhance reception by combining multipath signals using `MRC <https://en.wikipedia.org/wiki/Maximal-ratio_combining>`_. Only one data stream at a time can be sent at a rate that is limited by the protocol.
@@ -47,7 +49,7 @@ SISO to MIMO
    :alt:  SISO to MIMO
    :align: center
 
-----------
+|
 
 MIMO to SISO
   The total transmit power is shared between MIMO chains, so the RF energy which is 90 degrees off-polarization from the receiving antenna may be lost. The SISO receiver cannot enhance multipath signals using `MRC <https://en.wikipedia.org/wiki/Maximal-ratio_combining>`_. Only one data stream at a time can be sent at a rate that is limited by the protocol.
@@ -56,7 +58,7 @@ MIMO to SISO
    :alt:  MIMO to SISO
    :align: center
 
-----------
+|
 
 MIMO to MIMO
   The total output power is shared between MIMO chains, but the full power from both polarizations can be processed by the receiver so that nothing is lost. The MIMO receiver can enhance reception by combining multipath signals using `MRC <https://en.wikipedia.org/wiki/Maximal-ratio_combining>`_. Simultaneous data streams can be sent using spatial multiplexing, effectively doubling data throughput.
@@ -65,7 +67,7 @@ MIMO to MIMO
    :alt:  MIMO to MIMO
    :align: center
 
-----------
+|
 
 Troubleshooting Tips
 --------------------

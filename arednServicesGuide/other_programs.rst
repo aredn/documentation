@@ -14,7 +14,7 @@ For additional information about MeshMap, visit this link: `meshmap <https://git
    :alt: MeshMap Display
    :align: center
 
-----------
+|
 
 weeWx Weather Service
 ---------------------
@@ -27,7 +27,7 @@ a valuable overview of weather conditions across a wide area, for example, showi
    :alt: weeWx Display
    :align: center
 
-----------
+|
 
 Network Time Services
 ---------------------
@@ -40,6 +40,8 @@ Most NTP implementations depend on an Internet connection in order to synchroniz
    :alt: OffGrid NTP Server
    :align: center
 
+|
+
 In order for NTP to operate properly, each client device must have a fast and reliable connection to the NTP servers on the network. Be sure to locate your NTP servers on reliable high-speed segments of your mesh. For additional information about building an off-grid NTP server, visit this link: `G4WNC NTP post <https://photobyte.org/raspberry-pi-stretch-gps-dongle-as-a-time-source-with-chrony-timedatectl/#>`_.
 
 GPS Tracking Services
@@ -48,6 +50,8 @@ GPS Tracking Services
 .. image:: _images/aprs.png
    :alt: APRS Map Display
    :align: right
+
+|
 
 Tracking deployed resources is an important task during any emergency. There are many options for monitoring and displaying the GPS locations of tracked resources, two of which are mentioned here.
 
@@ -59,6 +63,6 @@ There may be situations when it would also be helpful to track the locations of 
    :alt: ADS-B Map Display
    :align: center
 
-----------
+|
 
 Depending on the requirements of your specific situation, almost any program that can operate across a peer-to-peer TCP/IP network could be deployed as a service on your mesh network. Check the `AREDN Forums <https://www.arednmesh.org/forum>`_ for additional information, ideas, and how-to posts about possible services for mesh networking.

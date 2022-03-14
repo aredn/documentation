@@ -19,7 +19,7 @@ Some or all of the bands shown below are shared with other authorized users. For
   Band     Frequency Range    Channels
   =======  =================  ========
   33 cm    902-928   MHz      4
-  13 cm    2390-2450 MHz      13
+  13 cm    2390-2450 MHz      10
   9 cm     3300-3445 MHz      14
   5 cm     5650-5925 MHz      54
   =======  =================  ========

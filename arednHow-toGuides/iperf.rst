@@ -9,9 +9,9 @@ Understand the impact to your network before using iperf3. During the test perio
 Installing iperf3 and IperfSpeed
 --------------------------------
 
-Two packages should be installed on each AREDN |trade| node in order to facilitate testing between nodes. The **iperf3** package allows the nodes to function either as an iperf3 client or server during the test, and it can be found in the *base* package download section. The **IperfSpeed** package provides a web-based control interface for running network tests between nodes, and it was written by Trevor Paskett K7FPV using the Perl programming language.
+Two packages should be installed on each AREDN |trade| node in order to facilitate testing between nodes. The **iperf3** package allows the nodes to function either as an iperf3 client or server during the test, and it can be found in the *base* package download section.
 
-With the project to retire Perl on AREDN |trade| nodes, there is now an  alternative *IperfSpeed* package which uses the Lua programming language. The original Perl and new Lua packages are available at the following links:
+The **IperfSpeed** package provides a web-based control interface for running network tests between nodes, and it was written by Trevor Paskett K7FPV using the Perl programming language. With the project to retire Perl on AREDN |trade| nodes, there is now an  alternative *IperfSpeed* package which uses the Lua programming language. The original Perl and new Lua packages are available at the following links:
 
 * `Original Perl version of IperfSpeed <https://aredn.s3.amazonaws.com/iperfspeed_0.5.1_all.ipk>`_
 * `New Lua version of IperfSpeed <https://github.com/kn6plv/iperfspeed/raw/master/iperfspeed_0.6-lua_all.ipk>`_

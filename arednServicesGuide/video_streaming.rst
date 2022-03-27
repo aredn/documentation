@@ -31,7 +31,7 @@ A 1920x1080 resolution video stream at 60 frames/second can consume up to eight 
 
 IP cameras with an Ethernet port are preferred in order to simplify network connectivity and ensure adequate data transfer speeds. Configure the camera to obtain a mesh IP address from the node, and reserve the address for that camera in the node's DHCP settings so you have a consistent way to connect to it. A camera with :abbr:`PoE (Power over Ethernet)` support is also very useful as this simplifies site cabling.
 
-Some cameras are easier than others to configure and deploy, so be sure to research them carefully before investing in expensive camera hardware. There is a *Cameras* forum topic on the AREDN |trade| website where you can post your questions and experiences: `arednmesh.org camera forum <https://www.arednmesh.org/forums/cameras>`_.
+Some cameras are easier than others to configure and deploy, so be sure to research them carefully before investing in expensive camera hardware.
 
 Video Display Software
 ----------------------

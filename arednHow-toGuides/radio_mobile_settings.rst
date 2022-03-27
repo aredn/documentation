@@ -4,7 +4,7 @@ Settings for Radio Mobile
 
 *Contributor: Andre Hansen K6AH*
 
-*Radio Mobile* is a valuable timesaving tool for network planning and modeling. The results obtained depend upon the accuracy of the settings used to generate the model. The following Radio Mobile settings have proven useful. The full AREDN |trade| forum post for these settings appears here: `Radio Mobile Settings <https://www.arednmesh.org/content/question-about-radio-mobile-link>`_
+*Radio Mobile* is a valuable timesaving tool for network planning and modeling. The results obtained depend upon the accuracy of the settings used to generate the model. The following Radio Mobile settings have proven useful.
 
 =====================  ===================
 Radio System Section   Recommended Setting

@@ -42,7 +42,7 @@ Most NTP implementations depend on an Internet connection in order to synchroniz
 
 |
 
-In order for NTP to operate properly, each client device must have a fast and reliable connection to the NTP servers on the network. Be sure to locate your NTP servers on reliable high-speed segments of your mesh. For additional information about building an off-grid NTP server, visit this link: `G4WNC NTP post <https://photobyte.org/raspberry-pi-stretch-gps-dongle-as-a-time-source-with-chrony-timedatectl/#>`_.
+In order for NTP to operate properly, each client device must have a fast and reliable connection to the NTP servers on the network. Be sure to locate your NTP servers on reliable high-speed segments of your mesh. For additional information about building an off-grid NTP server, visit this link: `G4WNC NTP <https://photobyte.org/raspberry-pi-stretch-gps-dongle-as-a-time-source-with-chrony-timedatectl/#>`_.
 
 GPS Tracking Services
 ---------------------
@@ -65,4 +65,4 @@ There may be situations when it would also be helpful to track the locations of 
 
 |
 
-Depending on the requirements of your specific situation, almost any program that can operate across a peer-to-peer TCP/IP network could be deployed as a service on your mesh network. Check the `AREDN Forums <https://www.arednmesh.org/forum>`_ for additional information, ideas, and how-to posts about possible services for mesh networking.
+Depending on the requirements of your specific situation, almost any program that can operate across a peer-to-peer TCP/IP network could be deployed as a service on your mesh network.

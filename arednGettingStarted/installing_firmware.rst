@@ -21,8 +21,6 @@ There are *Firmware First Install Checklists* in the **How-to Guide** section wh
 Troubleshooting Tips
 --------------------
 
-Questions and troubleshooting assistance can usually be obtained by creating a post on the AREDN |trade| `online forum <https://www.arednmesh.org/forum>`_, which has an active community of helpful and experienced operators.
-
 Error message uploading firmware
   If you see an error message displayed when uploading new firmware to your node, ensure that you are loading the correct file by referring to the AREDN |trade| Downloads webpage, then you can safely ignore the warning. Our file naming standard has changed from a non-standard naming convention to the standard naming convention used by OpenWRT.
 

@@ -16,8 +16,6 @@ The diagram above shows that your computer with the downloaded firmware image mu
 
 Different node hardware will require different methods for installing the AREDN |trade| firmware. For **Ubiquiti** devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ client will connect to the node's TFTP server in order to upload the firmware image. For **Mikrotik** and **TP-LINK** devices, your computer will run a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ server and the node's remote boot client will download the boot image from your computer. For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
-There are *Firmware First Install Checklists* in the **How-to Guide** section which can be downloaded and used as a brief overview of the steps for the initial install of AREDN |trade| firmware.
-
 Troubleshooting Tips
 --------------------
 

@@ -66,7 +66,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    :caption: How-to Guides
    :hidden:
 
-   arednHow-toGuides/firmware_upgrade
+   arednHow-toGuides/firmware_tips
    arednHow-toGuides/home-router-connection
    arednHow-toGuides/siso-mimo
    arednHow-toGuides/radio_mobile_settings

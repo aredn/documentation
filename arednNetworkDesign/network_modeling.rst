@@ -11,13 +11,13 @@ Creating a Path Profile
 
 Path profiles are very helpful for determining whether a link between two nodes will have clear line of sight and acceptable signal levels. In order to create a path profile you will need to have the following information for both of your node endpoints:
 
-* Latitude and Longitude
-* Antenna :abbr:`AGL (height Above Ground Level)`
-* Frequency
-* Transmit Power
-* Line Loss
-* Antenna Gain
-* Receiver Sensitivity
+- Latitude and Longitude
+- Antenna :abbr:`AGL (height Above Ground Level)`
+- Frequency
+- Transmit Power
+- Line Loss
+- Antenna Gain
+- Receiver Sensitivity
 
 Most computer modeling software will be able to estimate the link characteristics given this information.
 

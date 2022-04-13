@@ -16,25 +16,7 @@ The diagram above shows that your computer with the downloaded firmware image mu
 
 Different node hardware will require different methods for installing the AREDN |trade| firmware. For **Ubiquiti** devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ client will connect to the node's TFTP server in order to upload the firmware image. For **Mikrotik** and **TP-LINK** devices, your computer will run a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ server and the node's remote boot client will download the boot image from your computer. For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
-Troubleshooting Tips
---------------------
-
-Error message uploading firmware
-  If you see an error message displayed when uploading new firmware to your node, ensure that you are loading the correct file by referring to the AREDN |trade| Downloads webpage, then you can safely ignore the warning. Our file naming standard has changed from a non-standard naming convention to the standard naming convention used by OpenWRT.
-
-Browser cache and sessions
-  One common issue can occur when installing firmware using a web browser interface. Your computer's web browser cache stores data for the URLs that have been visited, but IP addresses and other parameters often change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing your computer's web browser cache will allow the latest URL settings to be registered so you can continue with the install process.
-
-  Instead of a *Connection Reset* message, sometimes a *Bad Gateway* message may appear. This is an `HTTP Status Code <https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>`_ that can mean any of several things. Often it indicates a network communication issue between a web browser and a web server. During AREDN |trade| firmware installs you can usually resolve a *Bad Gateway* issue by doing one or more of the following things:
-
-  * Refresh or Reload the URL for your node.
-  * Clear your browser cache and delete cookies.
-  * Close your browser and restart a new session.
-  * Use a different web browser program or a *Safe Mode / Incognito* browser window.
-  * Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
-
-PXE Server
-  If you are using a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ server (described below), be sure to allow the PXE server through your computer's firewall. If the PXE server does not display any activity when you begin your firmware install, check your firewall settings.  On the Windows control panel, for example, click *Advanced Settings* and look through the "Inbound Rules" to see if a rule exists for the PXE server. If a rule exists, make sure to "allow connection" for both private and public networks. If no rule exists, create a new rule allowing connection for both public and private networks.
+If you experience an issue uploading firmware to your device you can refer to the *Firmware Tips* document in the **How-To Guide**.
 
 Firmware First Install Checklists
 ---------------------------------
@@ -97,11 +79,11 @@ Mikrotik devices require a **two-part install** process: First, boot the correct
 Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ client which allows them to download a boot image from an external source. Your computer must run a **PXE Server** to provide an IP address and boot image to Mikrotik devices. The important functions of a **PXE** server are to give the node an IP address via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ as well as providing the firmware image via `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_. The reason AREDN |trade| suggests using the 192.168.1.x network on your **PXE** server is to eliminate the need to change IP addresses on your computer during the install process. AREDN |trade| firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you.
 
 Preparation
-  * Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the **elf** file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
+  - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the **elf** file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 
-  * Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use in order to complete the installation. For example, you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is not within the range of DHCP addresses you will be providing as shown below.
+  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use in order to complete the installation. For example, you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is not within the range of DHCP addresses you will be providing as shown below.
 
-  * Connect an Ethernet cable from your computer to the network switch, and another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a *Mikrotik hAP ac lite* that uses a separate AC adapter, connect the last Ethernet cable from the switch to the Mikrotik's WAN port (1).
+  - Connect an Ethernet cable from your computer to the network switch, and another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a *Mikrotik hAP ac lite* that uses a separate AC adapter, connect the last Ethernet cable from the switch to the Mikrotik's WAN port (1).
 
 PXE Boot: *Linux Procedure*
   1. Create a directory on your computer called ``/tftp`` and copy the ``rb.elf`` file there.
@@ -167,11 +149,11 @@ TP-LINK First Install Process
 If the process above does not work or if you choose not to use the *PharOS* web interface, then you can install AREDN |trade| firmware on your device using steps similar to those described above for Mikrotik devices. TP-LINK devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ client which allows them to obtain new firmware from an external source. Your computer must run a **PXE Server** to provide an IP address and boot image to the device. The important functions of a **PXE** server are to give the node an IP address via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ as well as providing the firmware image via `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_. The reason AREDN |trade| suggests using the 192.168.1.x network on your **PXE** server is to eliminate the need to change IP addresses on your computer during the install process. AREDN |trade| firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you.
 
 Preparation
-  * Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
+  - Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
 
-  * Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use to complete the installation. For example, you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is not within the range of DHCP addresses you will be providing as shown below.
+  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use to complete the installation. For example, you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is not within the range of DHCP addresses you will be providing as shown below.
 
-  * Connect an Ethernet cable from your computer to the network switch, and another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now.
+  - Connect an Ethernet cable from your computer to the network switch, and another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now.
 
 Linux Procedure
   1. Create a directory on your computer called ``/tftp`` and copy the TP-LINK ``recovery.bin`` file there.

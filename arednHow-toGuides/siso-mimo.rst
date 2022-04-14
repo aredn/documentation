@@ -72,8 +72,8 @@ MIMO to MIMO
 Troubleshooting Tips
 --------------------
 
-* Whenever possible try not to mix device types on radio links. As a general rule, use MIMO-to-MIMO for most types of RF links.
+- Whenever possible try not to mix device types on radio links. As a general rule, use MIMO-to-MIMO for most types of RF links.
 
-* If you have a marginal SISO-to-SISO link and you must replace one of the radios, either install another SISO radio or replace both ends with MIMO devices. A marginal but usable link between SISO devices may become unusable if only one is replaced with a MIMO device.
+- If you have a marginal SISO-to-SISO link and you must replace one of the radios, either install another SISO radio or replace both ends with MIMO devices. A marginal but usable link between SISO devices may become unusable if only one is replaced with a MIMO device.
 
 Additional information on the operation of SISO and MIMO devices can be found in references such as this: `MIMO for Dummies <https://www.halper.in//pubs/mimo_for_dummies.pdf>`_.

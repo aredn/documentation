@@ -6,11 +6,11 @@ Use PuTTYGen to Make SSH Keys
 
 This How-to will show you a method for generating SSH key pairs on a Windows computer, saving them to a USB flash drive, installing the SSH key on an AREDN |trade| node and using the SSH keys with a PuTTY terminal session. The use of Secure Shell (SSH) keys when using PuTTY or another SSH client is a useful aid to managing a group of AREDN |trade| nodes.
 
-* First, obtain the PuTTY suite of applications from the `PuTTY Download Page <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ and install them on your computer.
+- First, obtain the PuTTY suite of applications from the `PuTTY Download Page <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ and install them on your computer.
 
-* Second, obtain and prepare to use a text editor such as `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ that allows you to remove unwanted characters and metadata from your key file.
+- Second, obtain and prepare to use a text editor such as `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ that allows you to remove unwanted characters and metadata from your key file.
 
-* Finally, follow the steps below to create, edit, and install your SSH keys.
+- Finally, follow the steps below to create, edit, and install your SSH keys.
 
 1. Start the PuTTYGen application. Confirm that you are going to generate an SSH-2 RSA key.
 

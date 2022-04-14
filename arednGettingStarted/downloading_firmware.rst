@@ -11,9 +11,9 @@ Locate your device model/version in the left column. Most manufacturers print th
 
 There are two types of firmware images: one for the first-time replacement of the manufacturer's firmware, and the other for upgrades of nodes that are already running AREDN |trade| firmware.
 
-* If you are loading AREDN |trade| firmware on a device for the first time you must download the *factory* firmware from the middle column. For Mikrotik devices you must also download the *sysupgrade* image from the righthand column.
+- If you are loading AREDN |trade| firmware on a device for the first time you must download the *factory* firmware from the middle column. For Mikrotik devices you must also download the *sysupgrade* image from the righthand column.
 
-* If you are already running AREDN |trade| firmware on the node then you will choose the *sysupgrade* firmware from the righthand column, and you will use the AREDN |trade| web interface to perform the firmware upgrade.
+- If you are already running AREDN |trade| firmware on the node then you will choose the *sysupgrade* firmware from the righthand column, and you will use the AREDN |trade| web interface to perform the firmware upgrade.
 
 Once you have selected the correct firmware image for your device, click the link to download the image file to your local computer. Make a note of the download location on your computer, since you will need to use that image to install the AREDN |trade| firmware on your device.
 

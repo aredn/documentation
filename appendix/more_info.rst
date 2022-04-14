@@ -4,8 +4,8 @@ Additional Information
 
 Additional information about the AREDN |trade| project can be found at the links below.
 
-* `AREDN homepage <https://www.arednmesh.org/>`_
-* `AREDN forums <https://www.arednmesh.org/forum>`_
+- `AREDN homepage <https://www.arednmesh.org/>`_
+- `AREDN forums <https://www.arednmesh.org/forum>`_
 
 
 Contributing AREDN |trade| Documentation

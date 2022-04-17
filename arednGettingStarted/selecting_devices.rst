@@ -2,11 +2,17 @@
 Selecting Radio Hardware
 ========================
 
-The amateur radio community has recognized the benefits of using inexpensive commercial :abbr:`WISP (Wireless Internet Service Provider)` radios to create AREDN |trade| networks. Each of these devices come with the vendor's firmware pre-installed, but by following a few simple steps this firmware can be replaced with an AREDN |trade| firmware image. Several open source software features have been adapted and enhanced to create the AREDN |trade| firmware, including `OpenWRT (Open Wireless Router) <https://en.wikipedia.org/wiki/OpenWRT>`_ and `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_. The AREDN |trade| team builds specific firmware images tailored to each type or version of radio, and the current list of supported devices is found on the AREDN |trade| website in the `Supported Platform Matrix <https://www.arednmesh.org/content/supported-platform-matrix/>`_.
+The amateur radio community has recognized the benefits of using inexpensive commercial :abbr:`WISP (Wireless Internet Service Provider)` radios to create AREDN |trade| networks. Each of these devices come with the vendor's firmware pre-installed, but by following a few simple steps this firmware can be replaced with an AREDN |trade| firmware image.
+
+Several open source software projects have been adapted and enhanced to create the AREDN |trade| firmware, including `OpenWRT (Open Wireless Router) <https://en.wikipedia.org/wiki/OpenWRT>`_ and `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_.
+
+The AREDN |trade| team builds specific firmware images tailored to each type of radio, and the current list of supported devices is found on the AREDN |trade| website in the `Supported Platform Matrix <https://www.arednmesh.org/content/supported-platform-matrix/>`_.
+
+There is additional guidance on the features and characteristics of specific devices in the `Device Selection Chart <https://www.arednmesh.org/content/device-selection-chart/>`_ on the AREDN |trade| website.
 
 When selecting a device for your AREDN |trade| hardware there are several things to consider in your decision.
 
-- Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN |trade| supports devices which operate in several bands. Check the AREDN |trade| `website <https://arednmesh.org>`_ for the latest information.
+- Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN |trade| supports devices which operate in several bands. Check the `frequency and channel chart <https://arednmesh.readthedocs.io/en/latest/appendix/freq_charts.html>`_ on the AREDN |trade| website for the latest information.
 
 - Many devices have an integrated dual-polarity :abbr:`MIMO (Multiple Input-Multiple Output)` antenna which helps to leverage multipath propagation. AREDN |trade| has always supported and recommended using MIMO hardware, since these devices typically outperform single chain radios when used as mesh nodes.
 

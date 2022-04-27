@@ -409,6 +409,15 @@ AREDN Alert Pollrate
 AREDN Alert Message Purge
   Use this purge setting if you want to immediately remove the AREDN |trade| Alert Message banner from your node. Click the *Execute* button to trigger an immediate message banner removal. This will remove all alert messages, whether they originated from the AREDN |trade| server over the Internet or from a local message source on your mesh network.
 
+**iperf** URL Feature
+  The *iperf URL* feature is described in the "Test Network Links with iperf3" section of the **How-To Guide**. It is enabled by default, but if you do not want your node to participate in such remote iperf tests then you can disable its ability to respond to those queries using this setting. Move the slider to ``OFF`` and click *Save Setting*.
+
+  .. image:: _images/advConfig-iperf-enable.png
+    :alt: Advanced Configuration - iperf URL enable/disable
+    :align: center
+
+|
+
 Node Reset Button
 -----------------
 

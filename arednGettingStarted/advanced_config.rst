@@ -199,9 +199,9 @@ Aliases in NAT Mode
 Tunnel Server
 -------------
 
-Click the **Tunnel Server** link to navigate to these settings. This section provides a way for you to configure your node with a special service that allows node-to-node connections across the Internet. Unless you have a specific need for this type of network connection, it is recommended that you do not use the tunneling feature. This is because it will cause your node to dedicate limited system resources to running network tunnels that are not required. In order to increase the performance of your node you should conserve system resources so they will be available for normal node operations, which is especially important for nodes with limited memory and storage.
+Click the **Tunnel Server** link to navigate to these settings. This section provides a way for you to configure your node with unencrypted node-to-node connections across the Internet. Unless you have a specific need for this type of network connection, it is recommended that you do not activate tunnels. This is because it will cause your node to dedicate limited resources to maintaining the tunnel connections. In order to increase the performance of your node you should conserve system resources so they will be available for normal node operations, which is especially important for nodes with limited memory and storage.
 
-Tunnels should be used as a temporary means of connecting mesh islands when RF links have yet to be established. They should be removed as soon as RF links are operational. Remember that AREDN |trade| is first and foremost an emergency communication resource, so it's likely that Internet-dependent links and the assets they provide will not be available during a disaster. Their presence could create a false expectation for served agency personnel, so the network will fail to meet their expectations when tunneled resources become unavailable during a disaster.
+Tunnels should be used as a temporary means of connecting mesh islands when RF links have yet to be established. They should be removed as soon as RF links are operational. Remember that AREDN |trade| is first and foremost an emergency communication resource, so it's likely that Internet-dependent links and the assets they provide will not be available during a disaster. Their presence could create a false expectation for served agency personnel, with the possibility that AREDN |trade| might fail to meet their expectations when tunneled resources become unavailable during a disaster.
 
 Also, before using the AREDN |trade| tunnel feature, be aware of how this type of connection could impact your local mesh network. If your node participates in a local mesh via RF, then adding one or more tunnel connections on that node will cause the nodes and hosts on the far side of the tunnel(s) to appear on your local *Mesh Status* display. This adds complexity and makes everyone's display a little more difficult to navigate. If you want to participate in remote mesh networks via tunnel, consider establishing those tunnels from one of your nodes that is *not* connected to your local mesh network via RF.
 
@@ -219,6 +219,8 @@ WAN Interface IP (Tunnel Server *node* only)
 
 Internet Firewall/Router Settings (Tunnel Server network only)
   Set your network firewall or router to permit traffic from the Internet on port 5525, which is the default AREDN |trade| tunnel service port. Then configure a port forwarding rule on your firewall or router to send any traffic from the Internet on port 5525 to the static IP address of your node's WAN interface on the *node's* port 5525. See the equipment manual for your firewall or router to determine how to configure these settings. Also, some Internet Service Providers may not allow port forwarding by default, so you should check with your ISP if you have difficulty opening ports.
+
+Also, remember that AREDN |trade| nodes do not have `Secure Sockets Layer (SSL) <https://en.wikipedia.org/wiki/Secure_Sockets_Layer>`_ libraries and do not encrypt their tunnel traffic.
 
 Tunnel Server Node Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

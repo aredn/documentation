@@ -220,7 +220,7 @@ WAN Interface IP (Tunnel Server *node* only)
 Internet Firewall/Router Settings (Tunnel Server network only)
   Set your network firewall or router to permit traffic from the Internet on port 5525, which is the default AREDN |trade| tunnel service port. Then configure a port forwarding rule on your firewall or router to send any traffic from the Internet on port 5525 to the static IP address of your node's WAN interface on the *node's* port 5525. See the equipment manual for your firewall or router to determine how to configure these settings. Also, some Internet Service Providers may not allow port forwarding by default, so you should check with your ISP if you have difficulty opening ports.
 
-Also, remember that AREDN |trade| nodes do not have `Secure Sockets Layer (SSL) <https://en.wikipedia.org/wiki/Secure_Sockets_Layer>`_ libraries and do not encrypt their tunnel traffic.
+Also, remember that the tunneling feature on AREDN |trade| nodes was not compiled with `Secure Sockets Layer (SSL) <https://en.wikipedia.org/wiki/Secure_Sockets_Layer>`_ libraries and that tunnel traffic is unencrypted.
 
 Tunnel Server Node Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -49,7 +49,9 @@ You will need to have detailed knowledge and skills when building your own open 
 Using WinLink to Send Email
 ---------------------------
 
-Although it is not typically used as a TCP/IP network application, many operators are already familiar with `WinLink 2000 <https://en.wikipedia.org/wiki/Winlink>`_ for sending message traffic between WinLink computers across amateur radio frequencies. It is possible to configure *RMS Express* and Telnet Post Office or Telnet P2P for sending email with attachments across a mesh network. You will need a stable Microsoft Windows computer with plenty of memory to run this system (8GB recommended). Refer to the information link below for details about the specific network port settings that will be required. The maximum attachment size is currently 5MB per message as compared to the 100KB limitation on HF and Packet RMS stations.
+Although it is not typically used as a TCP/IP network application, many operators are already familiar with `WinLink 2000 <https://en.wikipedia.org/wiki/Winlink>`_ for sending message traffic between WinLink computers across amateur radio frequencies. It is possible to configure *Winlink Express* and Telnet Post Office or Telnet P2P for sending email with attachments across a mesh network.
+
+You will need a stable Microsoft Windows computer with plenty of memory to run this system (8GB recommended). The maximum attachment size is currently 5MB per message as compared to the 100KB limitation on HF and Packet RMS stations. Refer to the information below for details about specific network settings and procedures for configuring Winlink over AREDN |trade|.  Additional information compiled by Orv Beach W6BI can be found in the `document linked here <https://www.arednmesh.org/sites/default/files/Configuring%20Winlink%20Express.pdf>`_.
 
 .. image:: _images/winlink.png
    :alt: Winlink Interface

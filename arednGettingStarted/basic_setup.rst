@@ -9,13 +9,11 @@ After you have installed the AREDN |trade| firmware, rebooted the device, and co
 
 The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button. This is sometimes referred to as the "NOCALL" or *firstboot* display.
 
-----------
-
 .. image:: _images/01-setup-nocall.png
    :alt: Setup NOCALL
    :align: center
 
-----------
+|
 
 You will be prompted to enter the administrative login credentials. The default authentication credentials are:
 
@@ -28,7 +26,7 @@ The **Basic Setup** page will be displayed, as shown below.
       :alt: Basic Setup
       :align: center
 
-----------
+|
 
 Many of these settings will be described in detail in subsequent sections of this documentation. In order to get your new AREDN |trade| node on the air for the first time, you need to enter the following items.
 
@@ -46,14 +44,14 @@ Mesh RF
   The *IP Address, Netmask, and SSID* fields are automatically calculated for you based on the unique :abbr:`MAC (Media Access Control)` address of your node. Do not change these settings. Everything under the **LAN** and **WAN** columns can be left unchanged for now.
 
 Channel and Channel Width
-  Nodes communicate only with other nodes that use the same channel and channel width. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks.
+  Nodes communicate only with other nodes that use the same SSID, channel and channel width. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks.
 
-Active Settings
+Power & Distance Settings
   See the *Configuration Deep Dive* section for more information about these and other settings in the **Mesh RF** column.
 
   - Use the dropdown list to select the maximum output power for this device. Remember that amateur operators are required to use the minimum power necessary to make contact with other stations.
 
-  - Use the slider to select the maximum distance you estimate between your node and other neighboring nodes. The default value is *zero* which tells the node to automatically determine the correct distance value. See the *Configuration Deep Dive* section for additional information.
+  - Use the slider to select the maximum distance you estimate between your node and other neighboring nodes. The default value is *zero* which tells the node to automatically determine the correct distance value to the farthest neighbor node. See the **Configuration Deep Dive** section for additional information.
 
   - Some devices have max power levels that change depending on the channel or frequency being used, and in that case the max level may change when you save the settings. The output power will be capped at the max level supported by the hardware for that frequency.
 
@@ -70,7 +68,7 @@ In this section you can enter your node's latitude and longitude, as well as the
   :alt: Optional Settings
   :align: center
 
-----------
+|
 
 - If you are using a location-aware web browser, you can click the **Find Me** button to populate the latitude/longitude fields. This works well if you are viewing the *Basic Settings* page on a mobile device with built-in GPS.
 

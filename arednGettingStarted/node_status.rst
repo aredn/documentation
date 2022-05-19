@@ -97,7 +97,7 @@ If you enabled *Link Quality Manager* (LQM), the *Neighbor Status* button will b
 
 |
 
-Neighbor
+RF Neighbor
   The neighbor node name with a clickable link to open that node's *Status* display.
 
 SNR

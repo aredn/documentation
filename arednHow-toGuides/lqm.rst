@@ -1,6 +1,6 @@
-========================================
-AREDN |trade| Link Quality Manager (LQM)
-========================================
+==========================
+Link Quality Manager (LQM)
+==========================
 
 *Contributor: Tim Wilkerson KN6PLV*
 

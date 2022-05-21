@@ -472,7 +472,7 @@ Link Quality Manager (LQM) Settings
     The margin above the *Minimum Quality* that must be detected in order for a node to be returned to the active list based on quality. The default value is 1 percent.
 
   Ping Penalty
-    The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is 10 percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
+    The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is 5 percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
 
   User Blocked Nodes
     A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. Nodes are blocked by their Wifi MAC address which must be all uppercase with the hex pairs separated by colons. Whitespace is not permitted in this list of MAC addresses.

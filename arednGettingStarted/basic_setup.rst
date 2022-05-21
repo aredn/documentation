@@ -46,16 +46,27 @@ Mesh RF
 Channel and Channel Width
   Nodes communicate only with other nodes that use the same SSID, channel and channel width. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks.
 
+See the **Configuration Deep Dive** section for more information about these and other settings in the *Mesh RF* column.
+
 Power & Distance Settings
-  See the *Configuration Deep Dive* section for more information about these and other settings in the **Mesh RF** column.
+  If you have *Link Quality Manager* disabled, you will see the *Power & Distance* settings.
 
   - Use the dropdown list to select the maximum output power for this device. Remember that amateur operators are required to use the minimum power necessary to make contact with other stations.
 
-  - Use the slider to select the maximum distance you estimate between your node and other neighboring nodes. The default value is *zero* which tells the node to automatically determine the correct distance value to the farthest neighbor node. See the **Configuration Deep Dive** section for additional information.
+  - Use the slider to select the maximum distance you estimate between your node and other neighboring nodes. The default value is *zero* which tells the node to automatically determine the correct distance value to the farthest neighbor node.
 
   - Some devices have max power levels that change depending on the channel or frequency being used, and in that case the max level may change when you save the settings. The output power will be capped at the max level supported by the hardware for that frequency.
 
-  - Once these settings have been adjusted, click the **Apply** button.
+Power & Link Quality Settings
+  If you have *Link Quality Manager* enabled, you will see the *Power & Link Quality* settings.
+
+  - Use the dropdown list to select the maximum output power for this device. Remember that amateur operators are required to use the minimum power necessary to make contact with other stations.
+
+  - *Max Distance* is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes.
+
+  - *Min SNR* is the minimum Signal-to-Noise ratio that you require in order to reliably pass data between nodes. The default is 15 dB, but you can adjust this value if you require your node to continue passing data even on links that have reduced signal characteristics.
+
+  - *Min Quality* is the minimum Link Quality required in order to reliably pass data between nodes. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if the node had to send every packet twice for it to be successfully received, the link quality would be 50%.
 
 Once you have entered, applied, and verified that your node settings are correct, click the **Save Changes** button. Your node will record the new configuration settings and automatically reboot.
 

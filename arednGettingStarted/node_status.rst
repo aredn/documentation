@@ -118,7 +118,8 @@ Status
   - *blocked*: LQM determined that the link is unusable and has blocked it from use.
   - *blocked - distance*: LQM determined that the remote node is either too close or too distant, based on the Min and Max Distance settings described in the *Advanced Configuration* section.
   - *blocked - signal*: LQM determined that the SNR on the link is too low to reliably pass data, based on the Min SNR setting described in the *Advanced Configuration* section.
-  - *blocked - quality*: LQM determined that the link quality was too low to reliably pass data, based on the Min Quality setting described in the *Advanced Configuration* section.
+  - *blocked - retries*: LQM determined that the retransmission rate was too high to reliably pass data.
+  - *blocked - latency*: LQM determined that the link latency was to long to reliably pass data.
   - *blocked - dtd*: LQM blocks the RF interface on any nodes to which a DtD link also exists.
   - *blocked - dup*: LQM blocks a link in cases when your node has an RF link to other nodes which themselves connect to each other via DtD. This can occur when there are multiple radios at a site using the same channel. The best remote node is chosen as the RF link for your node but the other possible RF connections are blocked as duplicates.
   - *blocked - user*: LQM will block any node which you enter in the *User Blocked Nodes* field described in the *Advanced Configuration* section.

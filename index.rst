@@ -85,4 +85,4 @@ If you would like to see the documentation for a specific AREDN |trade| release,
 
    appendix/freq_charts
    appendix/more_info
-   LICENSE.rst
+   LICENSE

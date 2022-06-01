@@ -505,7 +505,7 @@ Link Quality Manager (LQM) Settings
     The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is 5 percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
 
   User Blocked Nodes
-    A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. Nodes are blocked by their Wifi MAC address which must be all uppercase with the hex pairs separated by colons. Whitespace is not permitted in this list of MAC addresses.
+    A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. Nodes are blocked by their Wifi MAC address which is typically uppercase with the hex pairs separated by colons.
 
   .. image:: _images/advConfig-lqm.png
     :alt: Advanced Configuration - Link Quality Manager

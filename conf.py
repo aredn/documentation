@@ -16,11 +16,12 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
+from datetime import date
 
 # -- Project information -----------------------------------------------------
 
 project = u'AREDN Documentation'
-copyright = u'2022, Amateur Radio Emergency Data Network, Inc. Licensed under the terms of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International'
+copyright = f'{date.today().year}, Amateur Radio Emergency Data Network, Inc. Licensed under the terms of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International'
 author = u'Amateur Radio Emergency Data Network, Inc.'
 
 # The short X.Y version

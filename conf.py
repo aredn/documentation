@@ -25,9 +25,9 @@ copyright = f'{date.today().year}, Amateur Radio Emergency Data Network, Inc. Li
 author = u'Amateur Radio Emergency Data Network, Inc.'
 
 # The short X.Y version
-version = u'3.22.6.0'
+version = u'latest'
 # The full version, including alpha/beta/rc tags
-release = u'3.22.6.0'
+release = u'latest nightly build'
 
 # -- General configuration ---------------------------------------------------
 
@@ -77,7 +77,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [u'_build', u'Thumbs.db', u'.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None

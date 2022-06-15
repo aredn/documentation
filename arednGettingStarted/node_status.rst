@@ -97,14 +97,19 @@ If you enabled *Link Quality Manager* (LQM), the *Neighbor Status* button will b
 
 |
 
-RF Neighbor
-  The neighbor node name with a clickable link to open that node's *Status* display.
+Neighbor
+  The remote neighbor node name with a clickable link to open that node's *Status* display.
+
+Link
+  The type of link your node has with each remote node. Valid link types are *RF* for a radio link, *DtD* for a direct device-to-device connection, and *Tunnel* for a tunnel link.
 
 SNR
-  The Signal-to-Noise ratio in dB for both sides of the radio link.
+  The Signal-to-Noise ratio in dB for both sides of any radio links (local SNR / remote SNR).
 
 Distance
-  The calculated distance between your node and each listed node. This calculation is based on the GPS coordinates (Lat/Lon) that were entered on each node. If no GPS coordinates were entered, then the distance cannot be calculated and that metric will not be considered in the LQM improvement process.
+  The calculated distance between your node and each remote node. This calculation is based on the GPS coordinates (Lat/Lon) that were entered on each node.
+
+  .. note:: If no GPS coordinates were entered, then the distance cannot be calculated and that metric will not be considered in the LQM improvement process.
 
 Quality
   The Link Quality expressed as a percent. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if the node had to send every packet twice for it to be successfully received, the link quality would be 50%. An additional penalty is subtracted from Link Quality if the neighbor node is unpingable, which is explained in the *Advanced Configuration* section under "Ping Penalty".

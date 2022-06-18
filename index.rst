@@ -35,6 +35,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednGettingStarted/node_status
    arednGettingStarted/mesh_status
    arednGettingStarted/advanced_config
+   arednGettingStarted/handle_issues
 
 .. toctree::
    :maxdepth: 1

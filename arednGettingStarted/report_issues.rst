@@ -1,5 +1,5 @@
 ============================
-Handling Problems and Issues
+Reporting Problems or Issues
 ============================
 
 If you experience issues with building or using AREDN |trade| devices, there are several sources of help. There is an active user community that regularly contributes to the AREDN |trade| `Forum <https://www.arednmesh.org/forum>`_, and you can post your experience there to receive help and feedback.

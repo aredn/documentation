@@ -139,7 +139,7 @@ WiFi Scan
 
 There is also an automatic scan mode, but running a Wifi Scan continuously is not recommended, particularly if the node is actively routing traffic. The scan is passive and only listens for other beacons through all channels, but there is a risk of data loss on the assigned channel. Wifi Scan does not transmit probes on every channel in passive mode, so there is no risk of interfering with Radar stations on DFS channels or other unintended transmissions. Multiple attempts of Wifi Scan may be necessary to find all devices in range.
 
-Below the scan results there is a Spectral View of signals detected during the scan. This may be useful for visualizing a clear channel for your node.
+Below the scan results there is a Spectral View of RF energy detected during the scan. This may be useful for visualizing a clear channel for your node.
 
 .. image:: _images/wifi-scan.png
    :alt: WiFi Scan

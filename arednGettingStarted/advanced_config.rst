@@ -499,7 +499,7 @@ Link Quality Manager (LQM) Settings
     The minimum distance (in meters) that must exist between nodes in order for a link to be considered for activation. The default value is 0 meters. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes designed to link only with other distant nodes.
 
   Auto Distance
-    The distance (in meters) to use when the actual distance between nodes cannot be calculated. The default value is zero, which causes the node to using the "Auto Distance" feature discussed in the *Mesh RF* section above.
+    The distance (in meters) to use when the actual distance between nodes cannot be calculated. The default value is zero, which causes the node to use the "Auto Distance" feature discussed in the *Mesh RF* section above.
 
   Quality Margin
     The margin above the *Minimum Quality* that must be detected in order for a node to be returned to the active list based on quality. The default value is 1 percent.

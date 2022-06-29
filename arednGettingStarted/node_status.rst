@@ -25,7 +25,7 @@ Neighbor Status
   If you have *Link Quality Manager* (LQM) enabled, you will also see a button which takes you to the **Neighbor Status** display. LQM is enabled/disabled from the **Advanced Configuration** page, and the settings for LQM are described in the **Configuration Deep Dive** section. The basic settings for *Link Quality Manager* are described below. The theory behind its operation is discussed in the AREDN |trade| *Link Quality Manager* section of the **How-To Guide**.
 
 WiFi Scan
-   Displays a list of other 802.11 signals that your node can see. The 802.11 signals may include Access Points, neighbor nodes, and other mesh networks (foreign ad-hoc networks).  WiFi Scan only finds devices on the same channel width as your node is configured to.  When installing at a new location, it is best practice to scan on 5, 10, and 20MHz channels to find all 802.11 signals in range.  This information will help to pick a channel clear of other interference.  When multiple ad-hoc networks are visible (with different SSIDs or channels), the ID of each 802.11 ad-hoc *network* is displayed but not the individual nodes. There is also an automatic scan mode, but running a Wifi Scan continuously is not recommended, particularly if the node is actively routing traffic.  The scan is passive, or only listens for other beacons through all channels, and risks loss of data on the assigned channel.  Wifi Scan does not transmit probes on every channel in passive mode, thus no risk of interfering with Radar stations on DFS channels, or other unintended transmissions.  Multiple attempts of Wifi Scan will be necessary to find all devices in range.
+   Displays a list of other 802.11 signals within range of your node. The 802.11 signals may include Access Points, neighbor nodes, and other mesh networks (foreign ad-hoc networks). WiFi Scan is described in more detail below.
 
 Setup
    Navigates to the **Setup** pages for your node. You will need to supply a username and password to access those pages. The username is always ``root``, while the password is the one you set during initial node setup. If the node has not yet been configured, the password is ``hsmm``.
@@ -131,6 +131,21 @@ Status
   - *disconnected*: This RF Neighbor is no longer online.
 
 The *Neighbor Status* table will be refreshed automatically every minute as LQM evaluates your node's radio links on an ongoing basis. Links whose quality has improved may be activated, while links whose quality has worsened may be blocked. If an existing node link goes offline, it will age out of the list within about an hour. To refresh the neighbor list on demand you can click the **Refresh** button. If you want to return to the *Node Status* display, click the **Quit** button.
+
+WiFi Scan
+---------
+
+**WiFi Scan** initiates a passive scan for Wifi signals that are within range, but it only reports devices on the same channel width as your node. When installing a node at a new location it is best practice to scan on 5, 10, and 20MHz channel widths to find all 802.11 signals in range. This information will help you to pick a channel clear of other interference. When multiple ad-hoc networks are visible (using different SSIDs or channels), the ID of each 802.11 ad-hoc *network* is displayed but not the individual nodes.
+
+There is also an automatic scan mode, but running a Wifi Scan continuously is not recommended, particularly if the node is actively routing traffic. The scan is passive and only listens for other beacons through all channels, but there is a risk of data loss on the assigned channel. Wifi Scan does not transmit probes on every channel in passive mode, so there is no risk of interfering with Radar stations on DFS channels or other unintended transmissions. Multiple attempts of Wifi Scan may be necessary to find all devices in range.
+
+Below the scan results there is a Spectral View of RF energy detected during the scan. This may be useful for visualizing a clear channel for your node.
+
+.. image:: _images/wifi-scan.png
+   :alt: WiFi Scan
+   :align: center
+
+|
 
 AREDN |trade| Alert Messages
 ----------------------------

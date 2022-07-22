@@ -135,11 +135,11 @@ The *Neighbor Status* table will be refreshed automatically every minute as LQM 
 WiFi Scan
 ---------
 
-**WiFi Scan** initiates a passive scan for Wifi signals that are within range, but it only reports devices on the same channel width as your node. When installing a node at a new location it is best practice to scan on 5, 10, and 20MHz channel widths to find all 802.11 signals in range. This information will help you to pick a channel clear of other interference. When multiple ad-hoc networks are visible (using different SSIDs or channels), the ID of each 802.11 ad-hoc *network* is displayed but not the individual nodes.
+**WiFi Scan** initiates a *passive* scan for wifi signals that are within range, but it only reports devices on the same channel width as your node. When installing a node at a new location it is best practice to scan on 5, 10, and 20 MHz channel widths to find all other 802.11 signals in range. This information will help you to pick a channel clear of interference. Several scans may be necessary to find all devices in range. When multiple ad-hoc networks are visible (using different SSIDs or channels), the ID of each 802.11 *network* is displayed but not the individual nodes.
 
-There is also an automatic scan mode, but running a Wifi Scan continuously is not recommended, particularly if the node is actively routing traffic. The scan is passive and only listens for other beacons through all channels, but there is a risk of data loss on the assigned channel. Wifi Scan does not transmit probes on every channel in passive mode, so there is no risk of interfering with Radar stations on DFS channels or other unintended transmissions. Multiple attempts of Wifi Scan may be necessary to find all devices in range.
+A passive scan does not transmit probes, so there is no risk that unintended transmissions will interfere with radar stations on DFS channels. Automatic scan mode is available, but running a scan continuously is not recommended if the node is actively routing traffic. The auto-scan is passive and only listens for other beacons across all channels, but there is a risk of data loss on the assigned channel.
 
-Below the scan results there is a Spectral View of RF energy detected during the scan. This may be useful for visualizing a clear channel for your node.
+Once the scan has finished, you can click the *Refresh* button to start a new scan. If you want your node to rescan continually you can click the *Auto* button. Click *Quit* to return to the **Node Status** display.
 
 .. image:: _images/wifi-scan.png
    :alt: WiFi Scan

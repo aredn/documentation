@@ -34,7 +34,7 @@ It may be helpful to have a brief checklist of steps to follow when doing the in
 Ubiquiti First Install Process
 ------------------------------
 
-**Ubiquiti** devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ server to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP client software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, `enable the TFTP client <https://www.trishtech.com/2014/10/enable-tftp-telnet-in-windows-10/>`_ or download and install another `standalone TFTP client <https://www.tftp-server.com/tftp-client.html>`_ of your choice.
+Ubiquiti devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *server* to which you can upload the AREDN |trade| *factory* image. Your computer must have **TFTP client** software available. Linux and Mac both have native TFTP clients, but you may need to enable or obtain a TFTP client for Windows computers. If you are using a Windows computer, use a web search engine to find information for your specific version (for example search "tftp client for windows 10"). There is a wealth of information available online for configuring your computer with a TFTP client program.
 
 Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 

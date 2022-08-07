@@ -40,7 +40,7 @@ Different TFTP client programs may have different command line options or flags 
 
 Download the appropriate *factory* file for your device by following the instructions in the **Downloading AREDN Firmware** section of this documentation.
 
-1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. For example, set your Ethernet adapter to a static IP address of 192.168.1.100.
+1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. For example, set your Ethernet adapter to a static IP address of 192.168.1.10.
 
   You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet but does not conflict with the default IP of the device.
 
@@ -48,7 +48,7 @@ Download the appropriate *factory* file for your device by following the instruc
 
 3. Put the Ubiquiti device into TFTP mode by holding the reset button while plugging your node's Ethernet cable into the *POE* port on the PoE adapter. Continue holding the device's reset button for approximately 30 to 45 seconds until you see the LEDs on the node alternating in a 1-3, 2-4, 1-3, 2-4 pattern, then release the reset button.
 
-4. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 or 192.168.1.1 for AirRouters. The following is one example of TFTP commands that transfer the firmware image to a node:
+4. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 (or 192.168.1.1 for AirRouters). The following is one example of TFTP commands that transfer the firmware image to a node:
 
   >>>
   [Linux/Mac]
@@ -81,19 +81,19 @@ Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Exe
 Preparation
   - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the **elf** file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 
-  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use in order to complete the installation. For example, you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is not within the range of DHCP addresses you will be providing as shown below.
+  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use in order to complete the installation. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
 
   - Connect an Ethernet cable from your computer to the network switch, and another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a *Mikrotik hAP ac lite* that uses a separate AC adapter, connect the last Ethernet cable from the switch to the Mikrotik's WAN port (1).
 
 PXE Boot: *Linux Procedure*
   1. Create a directory on your computer called ``/tftp`` and copy the ``rb.elf`` file there.
 
-  2. Determine your computer’s Ethernet *interface name* with ``ifconfig``. It will be the interface you set to 192.168.1.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.1.110,192.168.1.120 as shown below.
+  2. Determine your computer’s Ethernet *interface name* with ``ifconfig``. It will be the interface you set to 192.168.1.10 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.1.100,192.168.1.200 as shown below.
 
   3. Open a terminal window to execute the following dnsmasq command with escalated privileges:
 
       >>>
-      > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.1.110,192.168.1.120 -d -p0 -K --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/
+      > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.1.100,192.168.1.200 -d -p0 -K --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/
 
   4. With the unit powered off, press and hold the reset button on the radio while powering on the device. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after 20-30 seconds. Release the reset button when you see the "sent" message, which indicates success, and you can now <ctrl>-C or end dnsmasq.
 
@@ -108,9 +108,9 @@ PXE Boot: *Windows Procedure*
 
   3. Start the *Tiny PXE* server exe and select your computer's Ethernet IP address from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``rb.elf`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
 
-  .. image:: _images/tiny-pxe-mik.png
-    :alt: Tiny PXE Display for Mikrotik
-    :align: center
+    .. image:: _images/tiny-pxe-mik.png
+      :alt: Tiny PXE Display for Mikrotik
+      :align: center
 
   4. With the unit powered off, press and hold the reset button on the node while powering on the device. Continue holding the reset button until you see ``TFTPd: DoReadFile: rb.elf`` in the *Tiny PXE* log window.
 
@@ -151,19 +151,19 @@ If the process above does not work or if you choose not to use the *PharOS* web 
 Preparation
   - Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
 
-  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use to complete the installation. For example, you can give your computer a static IP such as 192.168.1.100 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is not within the range of DHCP addresses you will be providing as shown below.
+  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet because it will put devices on the network you will eventually need to use to complete the installation. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is not within the range of DHCP addresses you will be providing as shown below.
 
   - Connect an Ethernet cable from your computer to the network switch, and another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now.
 
 Linux Procedure
   1. Create a directory on your computer called ``/tftp`` and copy the TP-LINK ``recovery.bin`` file there.
 
-  2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.1.100 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.1.110,192.168.1.120 as shown below.
+  2. Determine your computer’s Ethernet interface name with ``ifconfig``. It will be the interface you set to 192.168.1.10 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.1.100,192.168.1.200 as shown below.
 
   3. Open a terminal window to execute the following dnsmasq command with escalated privileges:
 
       >>>
-      > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.1.110,192.168.1.120 -d -p0 -K --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
+      > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.1.100,192.168.1.200 -d -p0 -K --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
 
   4. With the unit powered off, press and hold the reset button on the radio while powering on the device. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after 20-30 seconds. Release the reset button when you see the "sent" message, which indicates success, and you can now <ctrl>-C or end dnsmasq.
 
@@ -178,9 +178,9 @@ Windows Procedure
 
   3. Start the *Tiny PXE* server exe and select your computer's Ethernet IP address from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``recovery.bin`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
 
-  .. image:: _images/tiny-pxe-tpl.png
-    :alt: Tiny PXE Display for TP_LINK
-    :align: center
+    .. image:: _images/tiny-pxe-tpl.png
+      :alt: Tiny PXE Display for TP_LINK
+      :align: center
 
   4. With the unit powered off, press and hold the reset button on the node while powering on the device. Continue holding the reset button until you see ``TFTPd: DoReadFile: recovery.bin`` in the *Tiny PXE* log window.
 

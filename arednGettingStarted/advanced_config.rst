@@ -382,23 +382,49 @@ The **Advanced Configuration** section allows you to change settings for various
 
 Above the settings table there are links that allow you to view the node help file, reboot the node, or reset the node to a firstboot or "NOCALL" configuration. You can edit or select a setting and then click the *Save Setting* button at the right side of the row to implement the change. You may also reset an item to default values by clicking the *Set to Default* button. Each row has hover help which can be displayed by hovering your cursor over the question mark icon at the left side of each row.
 
-Map Tile and Script Paths
-  These fields contain the external URLs for map tiles and `leafletjs <https://leafletjs.com/>`_ *css* and *javascript* files used for interactive maps.
+Link Quality Manager (LQM) Settings
+  The first group of LQM settings was described above under the **Mesh RF Column**, but additional LQM settings are also available here in the **Advanced Configuration** section.
 
-  .. image:: _images/advConfig-leaflet.png
-    :alt: Advanced Configuration - map paths
+  Enable
+    Enable or disable the LQM feature in its entirety.
+
+  SNR Margin
+    The margin above the *Minimum SNR* that must be detected in order for a node to be returned to the active list based on signal level. The default value is 1 dB.
+
+  Minimum Distance
+    The minimum distance (in meters) that must exist between nodes in order for a link to be considered for activation. The default value is 0 meters. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes designed to link only with other distant nodes.
+
+  Auto Distance
+    The distance (in meters) to use when the actual distance between nodes cannot be calculated from their GPS coordinates. The default value is zero, which causes the node to use the "Auto Distance" feature discussed in the *Mesh RF* section above.
+
+  Quality Margin
+    The margin above the *Minimum Quality* that must be detected in order for a node to be returned to the active list based on quality. The default value is 1 percent.
+
+  Ping Penalty
+    The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is 5 percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
+
+  User Blocked Nodes
+    A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. RF nodes are blocked by their Wifi MAC address, while DtD nodes are blocked by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.
+
+  User Allowed Nodes
+    A comma-separated list of MAC addresses which you always want to allow. This feature allows you to "whitelist" specific nodes. RF nodes are allowed by their Wifi MAC address, while DtD nodes are allowed by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.
+
+  .. image:: _images/advConfig-lqm.png
+    :alt: Advanced Configuration - Link Quality Manager
     :align: center
 
 |
 
-Firmware and Package Download Paths
-  These fields contain the URLs used by the node for downloading firmware and package files during upgrades. By default they point to the AREDN |trade| downloads server available across the Internet. You can change these paths to point to a local mesh package server in order to upgrade nodes that do not have Internet access.
+WAN Interface VLAN Number
+  This feature only applies to node hardware which uses a VLAN tag for the WAN interface. It will not appear on hardware where the Ethernet ports are on a switch chip, since changing the default VLAN number is not supported on those devices at the present time. It will appear as a ``blank`` field on devices that have a dedicated WAN port and therefore do not need a VLAN tag for their WAN interface.
 
-  .. note:: If you plan to create a local software repository for your mesh network, review **Creating a Local Package Server** in the **How-To Guide** section.
+  If you have node hardware that uses a VLAN tag for the WAN interface, then the default WAN VLAN identifier is ``1``. In some cases this default VLAN may be in use already or may be reserved by other equipment on your network. This field allows you to change the VLAN number being used on your node's WAN interface.
 
-  .. image:: _images/advConfig-downloads.png
-    :alt: Advanced Configuration - downloads
-    :align: center
+  .. caution:: If you plan to change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+
+.. image:: _images/advConfig-wanVlan.png
+  :alt: Advanced Configuration - WAN VLAN ID
+  :align: center
 
 |
 
@@ -428,24 +454,11 @@ Tunnel Options
 
 |
 
-Low Memory Thresholds
+Memory Thresholds
   As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's *Mesh Status* display. For older nodes with limited memory resources, the mesh status display may become very sluggish on large mesh networks. Recent firmware improvements have made the *Mesh Status* display much more responsive, and two new **Advanced Configuration** values are available for setting the *Low Memory Threshold* and maximum number of routes to be displayed. Currently the default low memory threshold is 10,000 KB, which if reached will limit the *Mesh Status* display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory.
 
 .. image:: _images/advConfig-lowMem.png
   :alt: Advanced Configuration - low memory thresholds
-  :align: center
-
-|
-
-WAN Interface VLAN Number
-  This feature only applies to node hardware which uses a VLAN tag for the WAN interface. It will not appear on hardware where the Ethernet ports are on a switch chip, since changing the default VLAN number is not supported on those devices at the present time. It will appear as a ``blank`` field on devices that have a dedicated WAN port and therefore do not need a VLAN tag for their WAN interface.
-
-  If you have node hardware that uses a VLAN tag for the WAN interface, then the default WAN VLAN identifier is ``1``. In some cases this default VLAN may be in use already or may be reserved by other equipment on your network. This field allows you to change the VLAN number being used on your node's WAN interface.
-
-  .. caution:: If you plan to change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
-
-.. image:: _images/advConfig-wanVlan.png
-  :alt: Advanced Configuration - WAN VLAN ID
   :align: center
 
 |
@@ -462,6 +475,26 @@ Network Tools
 .. image:: _images/advConfig-networkTools.png
   :alt: Advanced Configuration - Network Tools
   :align: center
+
+|
+
+Map Tile and Script Paths
+  These fields contain the external URLs for map tiles and `leafletjs <https://leafletjs.com/>`_ *css* and *javascript* files used for interactive maps.
+
+  .. image:: _images/advConfig-leaflet.png
+    :alt: Advanced Configuration - map paths
+    :align: center
+
+|
+
+Firmware and Package Download Paths
+  These fields contain the URLs used by the node for downloading firmware and package files during upgrades. By default they point to the AREDN |trade| downloads server available across the Internet. You can change these paths to point to a local mesh package server in order to upgrade nodes that do not have Internet access.
+
+  .. note:: If you plan to create a local software repository for your mesh network, review **Creating a Local Package Server** in the **How-To Guide** section.
+
+  .. image:: _images/advConfig-downloads.png
+    :alt: Advanced Configuration - downloads
+    :align: center
 
 |
 
@@ -496,40 +529,6 @@ AREDN |trade| Alert Messages
   :align: center
 
 |
-
-Link Quality Manager (LQM) Settings
-  The first group of LQM settings was described above under the **Mesh RF Column**, but additional LQM settings are also available here in the **Advanced Configuration** section.
-
-  Enable
-    Enable or disable the LQM feature in its entirety.
-
-  SNR Margin
-    The margin above the *Minimum SNR* that must be detected in order for a node to be returned to the active list based on signal level. The default value is 1 dB.
-
-  Minimum Distance
-    The minimum distance (in meters) that must exist between nodes in order for a link to be considered for activation. The default value is 0 meters. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes designed to link only with other distant nodes.
-
-  Auto Distance
-    The distance (in meters) to use when the actual distance between nodes cannot be calculated from their GPS coordinates. The default value is zero, which causes the node to use the "Auto Distance" feature discussed in the *Mesh RF* section above.
-
-  Quality Margin
-    The margin above the *Minimum Quality* that must be detected in order for a node to be returned to the active list based on quality. The default value is 1 percent.
-
-  Ping Penalty
-    The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is 5 percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
-
-  User Blocked Nodes
-    A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. RF nodes are blocked by their Wifi MAC address, while DtD nodes are blocked by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.
-
-  User Allowed Nodes
-    A comma-separated list of MAC addresses which you always want to allow. This feature allows you to "whitelist" specific nodes. RF nodes are allowed by their Wifi MAC address, while DtD nodes are allowed by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.
-
-  .. image:: _images/advConfig-lqm.png
-    :alt: Advanced Configuration - Link Quality Manager
-    :align: center
-
-|
-
 
 Node Reset Button Actions
 -------------------------

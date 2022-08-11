@@ -9,7 +9,7 @@ After you have installed the AREDN |trade| firmware, rebooted the device, and co
 
 The initial status page will be displayed, instructing you to configure your node by clicking the **Setup** button. This is sometimes referred to as the "NOCALL" or *firstboot* display.
 
-.. image:: _images/01-setup-nocall.png
+.. image:: _images/basic-nocall.png
    :alt: Setup NOCALL
    :align: center
 
@@ -22,7 +22,7 @@ You will be prompted to enter the administrative login credentials. The default 
 
 The **Basic Setup** page will be displayed, as shown below.
 
-   .. image:: _images/02-basic-setup.png
+   .. image:: _images/basic-setup.png
       :alt: Basic Setup
       :align: center
 
@@ -76,7 +76,7 @@ Optional Settings
 Location Settings
   In this section you can enter your node's latitude and longitude, as well as the grid square designator. The latitude/longitude values should be in decimal format (for example, 30.5432 and -95.1234). The optional node location settings are not required in order for your node to function normally.
 
-  .. image:: _images/optional-settings.png
+  .. image:: _images/basic-optional.png
     :alt: Optional Settings
     :align: center
 

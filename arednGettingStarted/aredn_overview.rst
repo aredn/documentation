@@ -10,7 +10,7 @@ This tried-and-true scenario has worked well, and it continues to work for handl
 
 .. sidebar:: Our Mission
 
-   The primary goal of the AREDN |trade| project is to empower licensed amateur radio operators to quickly and easily deploy high-speed data networks when and where they are needed.
+  The primary goal of the AREDN |trade| project is to empower licensed amateur radio operators to quickly and easily deploy high-speed data networks when and where they are needed.
 
 In today's high-tech society people have become accustomed to different ways of handling their communication needs. The preferred methods involve short messaging and keyboard-to-keyboard communication, along with audio-video communication using Voice over IP (VoIP) and streaming technologies.
 

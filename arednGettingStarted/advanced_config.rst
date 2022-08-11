@@ -30,7 +30,7 @@ Basic Setup
 
 You have already configured many of the basic settings, but there are several additional features that will be explained below.
 
-.. image:: _images/advConfig-basic.png
+.. image:: _images/basic-setup.png
    :alt: Basic Setup Options
    :align: center
 
@@ -40,6 +40,10 @@ Mesh RF Column
 ^^^^^^^^^^^^^^
 
 *Mesh RF* is the node's *radio* interface. The AREDN |trade| firmware has been designed to simplify the process of configuring networking interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. You may need to change the *Channel* and possibly the *Channel Width* parameters to match those of your local AREDN |trade| mesh, as explained previously in the **Basic Radio Setup** section. Normally you will not need to change the other network settings on this page, so keep these values unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
+
+.. image:: _images/basic-pwr-dist.png
+  :alt: Basic Power and Distance Settings
+  :align: right
 
 The **Power & Distance** settings can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*. A node may decrease its output power as it increases its data rate in order to maintain a linear spectrum.
 
@@ -64,14 +68,12 @@ Distance Setting
 
   A basic rule of thumb is when nodes are within five kilometers of each other you should test several *static* distance settings to see which one works best. The best way to test each distance setting is to use the **iperf3** package between endpoint nodes to measure the throughput of the RF channel under different distance settings. See *Test Network Links with iperf3* in the **How-To Section** for additional information.
 
+.. image:: _images/lqm-basic-settings.png
+  :alt: LQM Basic Settings
+  :align: right
+
 Configuring LQM Settings
   When *Link Quality Manager* is enabled, the **Basic Setup** page will show a slightly different group of settings for *Power & Link Quality* under the **Mesh RF** column.
-
-  .. image:: _images/lqm-basic-settings.png
-    :alt: LQM Basic Settings
-    :align: center
-
-  |
 
   Max Distance
     The maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with closer nodes. Local conditions may dictate a shorter distance based, for example, on dense tree cover or other terrain features which impact line of sight communication. You can lower this value if you want to limit your node to linking only with nearby nodes.
@@ -85,7 +87,7 @@ Configuring LQM Settings
 Enable/Disable Mesh RF
   You can disable your node's radio interface by deselecting the *Enable* checkbox, saving your changes, and rebooting the node. With the Mesh RF interface disabled the *Power & Distance* settings no longer apply and will be hidden. Since your node now has an unused RF interface, you will notice that a new section appears which allows you to use the node's radio as an FCC Part 15 *LAN Access Point*. You can enable or disable the LAN AP using the *Enable* checkbox. See the details below for configuring the LAN Access Point.
 
-.. image:: _images/07a-lanAP-on.png
+.. image:: _images/advConfig-lanAP.png
    :alt: LAN AP Settings
    :align: center
 
@@ -113,17 +115,13 @@ If you enabled the **LAN Access Point** feature mentioned previously, edit the a
 WAN Column
 ^^^^^^^^^^
 
-The :abbr:`WAN (Wide Area Network)` interface on your node is typically used to connect it to the Internet or to another external network. By default the WAN interface is set to obtain an IP address via DHCP from your upstream network. The :abbr:`DNS (Domain Name System)` servers are set by default to use Google's DNS services and should not be changed under normal circumstances. Google's name resolution servers are configured properly to detect error conditions and report them correctly.
-
-If you are not going to use the WAN interface on your node, you can select *disabled* from the *Protocol* dropdown list. If you will be using your node as a *Tunnel Server*, you should reserve an IP address on your router for the node's WAN interface. This will be explained in the *Tunnel Server* section below.
-
 .. image:: _images/wifi-as-wan.png
    :alt: WiFi as WAN
    :align: right
 
-When a node has Internet access on its WAN interface, that access is available to the node itself and to any computers connected via the LAN port. Checking the *Allow others to use my WAN* box will allow this node to route traffic from *all* its interfaces to/from the Internet or other external network. This box is unchecked by default because it is not desirable to route Internet traffic over the radio interface. AREDN |trade| is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local wireless Internet access, consider using an FCC Part 15 access point instead of the node's WAN gateway.
+The :abbr:`WAN (Wide Area Network)` interface on your node is typically used to connect it to the Internet or to another external network. By default the WAN interface is set to obtain an IP address via DHCP from your upstream network. The :abbr:`DNS (Domain Name System)` servers are set by default to use Google's DNS services and should not be changed under normal circumstances. Google's name resolution servers are configured properly to detect error conditions and report them correctly.
 
-The *Prevent LAN devices from accessing WAN* checkbox will tell the node not to advertise that it can be used as a default gateway. This means that computers on the LAN network will lose their route to the Internet or other networks via your mesh node. This checkbox is deselected by default. If this checkbox is selected your LAN hosts will have no access to the Internet even if your node has Internet access on its WAN interface. You may need to disable the default route if your node needs to be connected to two networks at once, such as being wired to the mesh and connected to a local served agency WiFi network.
+If you are not going to use the WAN interface on your node, you can select *disabled* from the *Protocol* dropdown list. If you will be using your node as a *Tunnel Server*, you should reserve an IP address on your router for the node's WAN interface. This will be explained in the *Tunnel Server* section below. When a node has Internet access on its WAN interface, that access is available to the node itself and to any computers connected via the LAN port by default. Some WAN access settings can be adjusted on the **Advanced Configuration** display.
 
 WAN WiFi Client
   As mentioned above in the *Mesh RF* section, if your node has a radio on which you have *disabled* Mesh RF and you are not using it as a LAN AP, you can enable this available radio as a WAN interface by checking the **WAN Wifi Client** checkbox. Enter the SSID and authentication string for the wifi AP that you want to connect through for Internet access.
@@ -291,7 +289,7 @@ Tunnel Server Node Settings
 
 The following diagram shows an overview of tunnel services between two nodes.
 
-.. image:: _images/10-tunneling-diagram.png
+.. image:: _images/tunneling-diagram.png
    :alt: Tunneling Diagram
    :align: center
 
@@ -322,7 +320,7 @@ Click the **Tunnel Client** link to navigate to these settings. In this section 
 
 Contact the amateur operator who controls the tunnel server and request client credentials by providing your specific node name. The tunnel server administrator will provide you with the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` URL for the tunnel server, the password you are to use, and the network IP address for your client node. Enter these values into the appropriate fields on your node and click *Add* to create a client entry in the list.
 
-.. image:: _images/11-tunnel-client.png
+.. image:: _images/tunnel-client.png
    :alt: Tunnel Client Settings
    :align: center
 
@@ -409,21 +407,33 @@ Link Quality Manager (LQM) Settings
   User Allowed Nodes
     A comma-separated list of MAC addresses which you always want to allow. This feature allows you to "whitelist" specific nodes. RF nodes are allowed by their Wifi MAC address, while DtD nodes are allowed by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.
 
-  .. image:: _images/advConfig-lqm.png
-    :alt: Advanced Configuration - Link Quality Manager
-    :align: center
+.. image:: _images/advConfig-lqm.png
+  :alt: Advanced Configuration - Link Quality Manager
+  :align: center
 
 |
 
-WAN Interface VLAN Number
-  This feature only applies to node hardware which uses a VLAN tag for the WAN interface. It will not appear on hardware where the Ethernet ports are on a switch chip, since changing the default VLAN number is not supported on those devices at the present time. It will appear as a ``blank`` field on devices that have a dedicated WAN port and therefore do not need a VLAN tag for their WAN interface.
+WAN Settings
+  Several WAN access settings can be adjusted in this section. It is recommended that these settings be left at their default values, but specific use cases may require you to change them.
 
-  If you have node hardware that uses a VLAN tag for the WAN interface, then the default WAN VLAN identifier is ``1``. In some cases this default VLAN may be in use already or may be reserved by other equipment on your network. This field allows you to change the VLAN number being used on your node's WAN interface.
+  Allow MESH nodes to use my WAN
+    The default value is ``OFF`` and it is recommended that you use this default unless there is a special reason to enable it. Setting the value to ``ON`` will allow this node to route traffic from its MESH RF interface to/from your WAN interface. Since the WAN interface typically provides a gateway to the Internet, it is not desirable to route Internet traffic over your Mesh RF interface. AREDN |trade| is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway.
 
-  .. caution:: If you plan to change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+  Allow my LAN devices to access my WAN
+    The default value is ``ON`` which allows your LAN-connected devices to access your node's WAN network. Setting this value to ``OFF`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network.
 
-.. image:: _images/advConfig-wanVlan.png
-  :alt: Advanced Configuration - WAN VLAN ID
+  Provide my LAN devices with a default route
+    Your node's DHCP server provides routes to LAN devices so they can access its available networks. A default route is required for WAN access, and that is provided automatically if "Allow my LAN devices to access my WAN" is ``ON`` as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121 and will require a default route in order to access the mesh network. Setting this value to ``ON`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network, care should be taken to understand how the device will deal with default routes to more than one network.
+
+  WAN VLAN Id
+    .. important:: This feature only applies to node hardware which requires a VLAN tag for the WAN interface. It will not appear on hardware where the Ethernet ports are on a switch chip, since changing the default VLAN number is not supported on those devices at the present time. It will appear as a ``blank`` field on devices that have a dedicated WAN port and therefore do not need a VLAN tag for their WAN interface.
+
+    If you have node hardware that uses a VLAN tag for the WAN interface, then the default WAN VLAN identifier is ``1``. In some cases this default VLAN may be in use already or may be reserved by other equipment on your network. This field allows you to change the VLAN number being used on your node's WAN interface.
+
+    .. warning:: If you plan to change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+
+.. image:: _images/advConfig-wan.png
+  :alt: Advanced Configuration - WAN Settings
   :align: center
 
 |
@@ -431,9 +441,9 @@ WAN Interface VLAN Number
 PoE and USB Power Passthrough
   These rows will only appear in the table if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack, as well as PoE power passthrough on Ethernet port 5. You are allowed to enable or disable power passthrough on nodes with ports that support this feature. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
 
-  .. image:: _images/advConfig-passthrough.png
-    :alt: Advanced Configuration - passthrough
-    :align: center
+.. image:: _images/advConfig-passthrough.png
+  :alt: Advanced Configuration - passthrough
+  :align: center
 
 |
 
@@ -448,9 +458,9 @@ Tunnel Options
   Tunnel WAN Only Setting
     This setting is enabled by default and it prevents tunnel traffic from being routed over the Mesh RF network. It limits tunnels to using the WAN interface, which is typically the intended route. If in your situation you need tunnel traffic to be routed over RF to a node with WAN access, then you can disable this setting to allow that traffic to pass.
 
-  .. image:: _images/advConfig-maxTunValues.png
-    :alt: Advanced Configuration - tunnel max values
-    :align: center
+.. image:: _images/advConfig-maxTunValues.png
+  :alt: Advanced Configuration - tunnel max values
+  :align: center
 
 |
 
@@ -481,9 +491,9 @@ Network Tools
 Map Tile and Script Paths
   These fields contain the external URLs for map tiles and `leafletjs <https://leafletjs.com/>`_ *css* and *javascript* files used for interactive maps.
 
-  .. image:: _images/advConfig-leaflet.png
-    :alt: Advanced Configuration - map paths
-    :align: center
+.. image:: _images/advConfig-leaflet.png
+  :alt: Advanced Configuration - map paths
+  :align: center
 
 |
 
@@ -492,9 +502,9 @@ Firmware and Package Download Paths
 
   .. note:: If you plan to create a local software repository for your mesh network, review **Creating a Local Package Server** in the **How-To Guide** section.
 
-  .. image:: _images/advConfig-downloads.png
-    :alt: Advanced Configuration - downloads
-    :align: center
+.. image:: _images/advConfig-downloads.png
+  :alt: Advanced Configuration - downloads
+  :align: center
 
 |
 

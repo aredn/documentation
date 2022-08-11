@@ -6,7 +6,7 @@ The **Mesh Status** page lists mesh nodes, link quality information, and the adv
 
 ----------
 
-.. image:: _images/05-mesh-status.png
+.. image:: _images/mesh-status.png
    :alt: Mesh Status
    :align: center
 
@@ -23,7 +23,8 @@ Auto
 Quit
   This button returns you to the *Node Status* display.
 
-----------
+Mesh Status Display Sections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are four sections on the **Mesh Status** display.
 

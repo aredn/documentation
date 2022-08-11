@@ -4,7 +4,7 @@ Node Status Display
 
 Once you have completed the initial setup on your AREDN |trade| node, you can connect your computer to the LAN port on the :abbr:`PoE (Power over Ethernet)` and navigate to the following URL: ``http://localnode.local.mesh``. You will be redirected to the **Node Status** page as shown below.
 
-.. image:: _images/03-node-status.png
+.. image:: _images/node-status.png
    :alt: Node Status
    :align: center
 
@@ -49,7 +49,7 @@ Signal Charts
 
 There is a **Charts** button next to the node's **Signal Strength** display, and clicking this button takes you to **Signal Charts**. This page shows :abbr:`RF (Radio Frequency)` signal information in both a realtime and an archived view. The default view shows the average signal of all connected stations in realtime.
 
-.. image:: _images/04-node-charts.png
+.. image:: _images/node-charts.png
    :alt: Node Charts
    :align: center
 

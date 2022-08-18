@@ -59,6 +59,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednServicesGuide/file_sharing
    arednServicesGuide/voip_programs
    arednServicesGuide/video_streaming
+   arednServicesGuide/network_tools
    arednServicesGuide/dispatch_programs
    arednServicesGuide/other_programs
 

@@ -4,18 +4,6 @@ Other Services
 
 As mentioned in the *Services Overview*, almost any program that can operate across a peer-to-peer TCP/IP network is a candidate for AREDN |trade| networking. Many useful services have been discussed previously, and this section will list some of the other types of services that you might consider deploying on your mesh network.
 
-MeshMap Network Visualizer
---------------------------
-
-**MeshMap** provides an automated way to visualize your AREDN |trade| network topology. `Eric KG6WXC <https://www.qrz.com/lookup/kg6wxc>`_ created this useful tool and makes it available as an open source project. MeshMap can be installed on a mesh services computer having minimal hardware specifications, which allows it to run on a Raspberry Pi in your shack or in the field. MeshMap automatically discovers live nodes and periodically polls them to display their current configuration, services, and network link information.
-For additional information about MeshMap, visit this link: `meshmap <https://gitlab.kg6wxc.net/mesh/meshmap>`_.
-
-.. image:: _images/meshmap.png
-   :alt: MeshMap Display
-   :align: center
-
-|
-
 weeWx Weather Service
 ---------------------
 

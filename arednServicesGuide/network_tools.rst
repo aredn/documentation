@@ -20,7 +20,7 @@ For additional information visit this link: `KG6WXC MeshMap <https://gitlab.kg6w
 KP4MSR MeshMap Network Visualizer
 ---------------------------------
 
-`Manual KP4MSR <https://www.qrz.com/db/KP4MSR>`_ originally created this software for the Puerto Rico AREDN |trade| network, with a current fork and rewrite of the code maintained by `Tim KN6PLV <https://www.qrz.com/db/KN6PLV>`_. This program does *not* run continuously and does *not* maintain a persistent database of nodes, so it is less resource-intensive on the network. Once the static pages are built, it can be run on any device with a web server, including on a node with enough free memory.
+`Manuel KP4MSR <https://www.qrz.com/db/KP4MSR>`_ originally created this software for the Puerto Rico AREDN |trade| network, with a current fork and rewrite of the code maintained by `Tim KN6PLV <https://www.qrz.com/db/KN6PLV>`_. This program does *not* run continuously and does *not* maintain a persistent database of nodes, so it is less resource-intensive on the network. Once the static pages are built, it can be run on any device with a web server, including on a node with enough free memory.
 
 For additional information visit this link: `KN6PLV MeshMap <https://github.com/kn6plv/MeshMap>`_.
 

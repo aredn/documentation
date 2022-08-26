@@ -19,10 +19,7 @@ MeshChat *Action Scripts* also provide for functional extensions, such as sendin
 
 Although MeshChat is a commonly deployed service, it is a third party package which is not available in the AREDN |trade| repositories. You can find additional information by visiting this link: `MeshChat at Trevor's Bench <http://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
 
-As originally designed, MeshChat uses the Perl programming language and is able to run either on an AREDN |trade| node or on a LAN-connected Debian or Raspberry Pi computer. With the project to retire Perl on AREDN |trade| nodes, there are now alternative MeshChat packages which use the Lua programming language for running on nodes. If you are running the original Perl version on an external computer, you can still use the new Lua API on your node to provide the computer with the list of MeshChat nodes. These Lua packages are available at the following links:
-
-* `Full MeshChat package for a node <https://github.com/kn6plv/meshchat/raw/master/meshchat_2.0_all.ipk>`_
-* `MeshChat package containing the node API only <https://github.com/kn6plv/meshchat/raw/master/meshchat-api_2.0_all.ipk>`_
+As originally designed, MeshChat uses the Perl programming language and is able to run either on an AREDN |trade| node or on a LAN-connected Debian or Raspberry Pi computer. With the project to retire Perl on AREDN |trade| nodes, there are now alternative MeshChat packages which use the Lua programming language for running on nodes. If you are running the original Perl version on an external computer, you can still use the new Lua API on your node to provide the computer with the list of MeshChat nodes. These Lua packages are available at the following link: `Lua MeshChat <https://github.com/kn6plv/meshchat>`_
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface

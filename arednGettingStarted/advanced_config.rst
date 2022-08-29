@@ -371,7 +371,7 @@ Authorized SSH Keys
   .. note:: If you plan to use ssh keys you may want to review **Use PuTTYGen to Make SSH Keys** in the **How-To Guide** section which describes this process in detail for users of Microsoft Windows computers.
 
 Support Data
-  There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| team in order to get help with a problem. Click *Download Support Data* to save a compressed archive file to your local computer.
+  There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| team in order to get help with a problem. Click the *Download Support Data* button to save a compressed archive file to your local computer.
 
 Advanced Configuration
 ----------------------

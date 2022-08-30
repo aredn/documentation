@@ -130,8 +130,6 @@ WAN WiFi Client
 
   To the right of the *WAN WiFi Client* label is an icon with hover text indicating the status of the WAN WiFi connection.  |icon1| indicates no wifi connection to the local access point.  |icon2| indicates a wifi connection but no Internet connection.  |icon3| indicates both a wifi connection to the local access point and a connection to the Internet.
 
-  .. note:: The WAN Wifi Client always uses the **2GHz** radio, so if you have a dual-band device and you also want to have a LAN Access Point then you must use the **5GHz** radio for the LAN Access Point. 
-
   After you *Save Changes* and reboot, the node will have Internet access via wifi rather than requiring a cable plugged into the node's WAN port. In fact, enabling the *WAN Wifi Client* will disable VLAN1, so Internet access will no longer be possible through the physical WAN port. Also, on the *Node Status* display you will see the **WiFi WAN Address** label and IP address to indicate that your WAN connection is using the WAN WiFi Client.
 
   .. |icon1| image:: _images/wifi-noConn.png

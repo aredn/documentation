@@ -88,4 +88,5 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    appendix/more_info
    appendix/responsible_disclosure
    appendix/freq_charts
+   appendix/acronyms
    appendix/LICENSE

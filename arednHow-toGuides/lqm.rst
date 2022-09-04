@@ -55,7 +55,7 @@ Auto-distance
 
 AREDN |trade| provides a “Distance to FARTHEST Neighbor” setting which, indirectly, allows the Coverage Class to be set (the Linux kernel calculates the coverage class from the distance setting). An “auto” option is provided and enabled by default. “Auto” uses a “dynamic ack” algorithm in the kernel which automatically adjusts the Coverage Class. The adjustment is based on the timing of packets sent to and acknowledged from other devices. The class will always be large enough to handle the most distant device.
 
-AREDN |trade| is an open, ad hoc, network allowing any node to associate with any other node as long as it uses the same channel and bandwidth. This results in distant nodes with very low SNRs being associated with each other. Unfortunately the dynamic-ack algorithm does not know that these links are essentially unusable, but it still adjusts the Coverage Class to accommodate them. The result is a higher Coverage Class than is required for optimal network operation, resulting in longer delays in packet retransmission. This compounds the already increased retransmissions inherent in longer links and further reduces the data rate.
+AREDN |trade| is an open, ad hoc, network allowing any node to associate with any other node as long as it uses the same channel and bandwidth. This results in distant nodes with very low SNRs being associated with each other. Unfortunately the dynamic-ack algorithm does not know that these links are essentially unusable, but it still adjusts the Coverage Class to accommodate them. The result is a higher Coverage Class than is required for optimal network operation, resulting in longer delays in packet retransmission. This compounds the already increased retransmissions inherent in longer links and further reduces the throughput.
 
 Link Quality Manager (LQM)
 --------------------------
@@ -73,7 +73,7 @@ What does this mean?
 
 1. Occasionally nodes are directly connected (DtD) to collocated nodes which are also using the same channel. Although the DtD link should be preferred by OLSRD, LQM ensures that any radio link between DtD nodes is always ignored.
 2. LQM ignores links with SNR too low to be useful. The application uses adjustable settings to accomplish this: drop below the minimum SNR and the link is blocked until the SNR is above the activate level. The hysteresis avoids links bouncing in and out of a blocked state. This stops OLSR from using poor links.
-3. LQM limits how far a node can be from a neighbor and still have a reliable link, even if there is a high SNR. The more distant a node, the lower the data rate of the link. In addition, the total data rate on a node is affected by the most distant node it communicates with. LQM automatically determines the distance between nodes using the latitude and longitude information available from each node’s sysinfo.json api.
+3. LQM limits how far a node can be from a neighbor and still have a reliable link, even if there is a high SNR. The more distant a node, the lower the throughput of the link. In addition, the total throughput on a node is affected by the most distant node it communicates with. LQM automatically determines the distance between nodes using the latitude and longitude information available from each node’s sysinfo.json api.
 4. Some links can have high SNR, not be far away, but still have terrible performance due to excessive retransmission errors. While some retransmissions are to be expected, if this rate becomes large then performance suffers. LQM blocks links with poor link quality.
 5. LQM disables automatic distance detection and takes over the job of managing the Coverage Class. LQM evaluates the non-blocked links and determines whether there is at least one route which uses this link. It then selects the link with the largest distance and uses this to calculate the Coverage Class.
 
@@ -120,8 +120,8 @@ These results yield the following conclusions. LQM never negatively affects band
 Conclusions
 -----------
 
-Experiments with the *Link Quality Manager* have demonstrated that we can improve the data rate on links by a significant amount without making physical changes to the network. Improvements of 3x bandwidth are common and in many cases much more is observed.
+Experiments with the *Link Quality Manager* have demonstrated that we can improve the throughput on links by a significant amount without making physical changes to the network. Improvements of 3x bandwidth are common and in many cases much more is observed.
 
 LQM also blocks paths in the network which are marginal, either due to excessive distance, poor SNR, or high retransmissions. We expect that by blocking poorly performing links the entire network will be more stable and performant.
 
-Nodes with a mix of long and short links showed less improvement because the radio is optimized for the longer link distance. This increases retransmissions delays on the shorter links, reducing the data rate and lowering overall node performance. It might be better to use two radios at those sites to offload the longer links.
+Nodes with a mix of long and short links showed less improvement because the radio is optimized for the longer link distance. This increases retransmissions delays on the shorter links, reducing the throughput and lowering overall node performance. It might be better to use two radios at those sites to offload the longer links.

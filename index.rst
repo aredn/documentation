@@ -85,6 +85,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    :caption: Appendix
    :hidden:
 
+   appendix/known_issues
    appendix/more_info
    appendix/responsible_disclosure
    appendix/freq_charts

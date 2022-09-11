@@ -10,9 +10,6 @@ Issue #497: Channel 6 does not work for the LAN AP with 2GHz radio.
 Issue #494: Changing the MAC address in the DHCP Reservation may not work.
   *Workaround*: If the IP address you want to change is already in use, then changing the MAC address is not allowed. No workaround at this time.
 
-Issue #460: Node intermittently goes “deaf” in specific situations.
-  *Workaround*: /usr/local/bin/mgr/rssi_monitor.lua resets a deaf node if either horizontal or vertical polarity SNR changes by 3.5 standard deviations from the weighted rolling average of the last 60 samples. Try setting these values to a lower number (3.0 or 2.5) and test various values to determine the correct threshold that keeps your node from going deaf without triggering unnecessary resets on the node.
-
 Issue #414: WiFi Scan shows bogus channels.
   *Workaround*: This appears to occur when collocated nodes are running at high power. Apparently the baseband signal of the chip may be getting detected at times and reported to random channels. This situation does not cause any RF issues and can be ignored, or you can shield or reduce power on the devices to remove the bogus entries from the scan list.
 

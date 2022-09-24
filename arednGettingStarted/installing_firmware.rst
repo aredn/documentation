@@ -50,16 +50,17 @@ Download the appropriate *factory* file for your device by following the instruc
 
 4. Open a command window on your computer and execute a file transfer command to send the AREDN firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 (or 192.168.1.1 for AirRouters). The following is one example of TFTP commands that transfer the firmware image to a node:
 
-  >>>
-  [Linux/Mac]
-  > tftp 192.168.1.20
-  > bin                 [Transfer in "binary" mode]
-  > trace on            [Show the transfer in progress]
-  > put <full path to the firmware file>
-    [For example, put /temp/aredn-<release>-factory.bin]
-  -----------------------------------
-  [Windows with command on a single line]
-  > tftp.exe -i 192.168.1.20 put C:\temp\aredn-<release>-factory.bin
+  ::
+
+    [Linux/Mac]
+    > tftp 192.168.1.20
+    > bin                 [Transfer in "binary" mode]
+    > trace on            [Show the transfer in progress]
+    > put <full path to the firmware file>
+      [For example, put /temp/aredn-<release>-factory.bin]
+    -----------------------------------
+    [Windows with command on a single line]
+    > tftp.exe -i 192.168.1.20 put C:\temp\aredn-<release>-factory.bin
 
   The TFTP client should indicate that data is being transferred and eventually completes.
 
@@ -92,8 +93,9 @@ PXE Boot: *Linux Procedure*
 
   3. Open a terminal window to execute the following dnsmasq command with escalated privileges:
 
-      >>>
-      > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.1.100,192.168.1.200 -d -p0 -K --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/
+  ::
+
+    > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.1.100,192.168.1.200 -d -p0 -K --dhcp-boot=rb.elf --enable-tftp --tftp-root=/tftp/
 
   4. With the unit powered off, press and hold the reset button on the radio while powering on the device. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after 20-30 seconds. Release the reset button when you see the "sent" message, which indicates success, and you can now <ctrl>-C or end dnsmasq.
 
@@ -127,17 +129,18 @@ Install the *sysupgrade* Firmware Image
 
   2. In a web browser, open the node’s Administration page ``http://192.168.1.1/cgi-bin/admin`` (user = 'root', password = 'hsmm') and immediately navigate to the *Firmware Update* section. Browse to find the *sysupgrade* **bin** file you previously downloaded and click the *Upload* button.
 
-      As an alternative to using the node's web interface, you can manually copy the *sysupgrade* **bin** file to the node and run a command line program to install the firmware. This will allow you to see any error messages that may not appear when using the web interface. Note that devices running AREDN |trade| firmware images use port 2222 for secure copy/shell access.
+    As an alternative to using the node's web interface, you can manually copy the *sysupgrade* **bin** file to the node and run a command line program to install the firmware. This will allow you to see any error messages that may not appear when using the web interface. Note that devices running AREDN |trade| firmware images use port 2222 for secure copy/shell access.
 
-      Execute the following commands from a Linux computer:
+    Execute the following commands from a Linux computer:
 
-      >>>
+    ::
+
       my-computer:$ scp -P 2222 <aredn-firmware-filename>.bin root@192.168.1.1:/tmp
       my-computer:$ ssh -p 2222 root@192.168.1.1
       ~~~~~~~ after logging into the node with ssh ~~~~~~~
       node:# sysupgrade -n /tmp/<aredn-firmware-filename>.bin
 
-      To transfer the image from a Windows computer you can use a *Secure Copy* program such as `WinSCP <https://winscp.net>`_. Then use a terminal program such as `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
+    To transfer the image from a Windows computer you can use a *Secure Copy* program such as `WinSCP <https://winscp.net>`_. Then use a terminal program such as `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
 
   3. The node will now automatically reboot with the new AREDN |trade| firmware image.
 
@@ -162,7 +165,8 @@ Linux Procedure
 
   3. Open a terminal window to execute the following dnsmasq command with escalated privileges:
 
-      >>>
+    ::
+
       > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.1.100,192.168.1.200 -d -p0 -K --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
 
   4. With the unit powered off, press and hold the reset button on the radio while powering on the device. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after 20-30 seconds. Release the reset button when you see the "sent" message, which indicates success, and you can now <ctrl>-C or end dnsmasq.

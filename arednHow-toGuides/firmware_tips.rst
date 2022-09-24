@@ -19,7 +19,7 @@ Web browser cache and sessions
   - Close your browser and restart a new session.
 
   - Use a different web browser program or a *Safe Mode / Incognito* browser window.
-  
+
   - Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
 
 PXE Server
@@ -48,11 +48,12 @@ Tips for legacy nodes with low memory (32mb)
 
     Execute the following commands from a Linux computer:
 
-    >>>
-    my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
-    my-computer:$ ssh -p 2222 root@192.168.1.1
-    ~~~~~~~ after logging into the node with ssh ~~~~~~~
-    node:# sysupgrade /tmp/aredn-firmware-filename.bin
+    ::
+
+      my-computer:$ scp -P 2222 aredn-firmware-filename.bin root@192.168.1.1:/tmp
+      my-computer:$ ssh -p 2222 root@192.168.1.1
+      ~~~~~~~ after logging into the node with ssh ~~~~~~~
+      node:# sysupgrade /tmp/aredn-firmware-filename.bin
 
     To transfer the image from a Windows computer you can use a *Secure Copy* program such as `WinSCP <https://winscp.net>`_. Then use a terminal program such as `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
 

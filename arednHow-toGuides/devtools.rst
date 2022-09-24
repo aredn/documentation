@@ -28,7 +28,7 @@ The values returned by the API are represented in the following snippet of raw J
 ::
 
   {
-  "api_version": "1.8",
+  "api_version": "1.11",
   "lat": "33.101010",
   "lon": "-101.101010",
   "grid_square": "DM22xx",
@@ -42,7 +42,7 @@ The values returned by the API are represented in the following snippet of raw J
       ]
     },
   "node_details": {
-    "description": "CALLSIGN-22 node information here...",
+    "description": "CALLSIGN-NODE-22 information here...",
     "mesh_gateway": "0",
     "model": "MikroTik RouterBOARD 952Ui-5ac2nD ",
     "board_id": "0x0000",
@@ -153,4 +153,67 @@ A *link_info* section will be included in the JSON data stream containing an ent
       "olsrInterface": "eth0.2"
     }
   },
+  ...
+
+Add LQM Information
+-------------------
+
+To retrieve Link Quality Manager information, invoke the API using the following flag on the URL:
+``http://<nodename>.local.mesh/cgi-bin/sysinfo.json?lqm=1``
+
+An *lqm* section will be included in the JSON data stream containing a section showing the current LQM configuration settings as well as an entry for each node that is reachable via RF, :abbr:`DTD (Device To Device)`, or :abbr:`TUN (Tunnel)` from the node being queried. Each entry will be identified by the MAC address of the reachable node, and a variety of parameters will be displayed showing the tracked status of each link. The values returned by the *lqm* flag are represented in the following snippet of raw JSON.
+
+::
+
+  ...
+  "lqm": {
+  "enabled": true,
+  "config": {
+    "min_quality": 50,
+    "min_distance": 0,
+    "max_distance": 16093,
+    "min_snr": 12,
+    "ping_penalty": 5,
+    "auto_distance": 1610,
+    "margin_snr": 1,
+    "margin_quality": 1
+  },
+  "info": {
+    "coverage": -1,
+    "trackers": {
+      "94:83:C4:03:A8:89": {
+        "snr": 42,
+        "ip": "10.3.168.137",
+        "firstseen": 166982,
+        "blocks": {
+          "dup": false,
+          "signal": false,
+          "user": false,
+          "pair": false,
+          "distance": false,
+          "dtd": false,
+          "quality": false
+        },
+        "hostname": "CALLSIGN-NODE-22",
+        "routable": true,
+        "tx_quality": 100,
+        "quality": 100,
+        "mac": "94:83:C4:03:A8:89",
+        "type": "RF",
+        "avg_snr": 40.5,
+        "device": "wlan0",
+        "pending": 167282,
+        "user_allow": false,
+        "rev_snr": 39,
+        "refresh": 168009,
+        "blocked": false,
+        "last_tx": 0,
+        "last_tx_total": 0,
+        "ping_quality": 100,
+        "lastseen": 167109
+      },
+      "now": 167109,
+       "distance": 0
+     }
+   },
   ...

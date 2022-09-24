@@ -29,23 +29,24 @@ If you telnet to your node, the following command will indicate the MCS rate the
 
 Here is an example from an endpoint node pointing to a backbone node over 25 miles away. The *Node Status* screen indicates -73/-95/22 dB SNR.
 
->>>
-type         rate     throughput  ewma prob   this prob  retry   this succ/attempt   success    attempts
-HT20/LGI     MCS0            5.6      100.0       100.0      1              0(  0)         1           1
-HT20/LGI     MCS1           10.5      100.0       100.0      4              0(  0)         4           4
-HT20/LGI     MCS2           14.8      100.0       100.0      5              0(  0)        93          93
-HT20/LGI     MCS3           18.6       97.7       100.0      5              0(  0)      1380        1416
-HT20/LGI  tP MCS4           25.1       99.9       100.0      5              0(  0)     31688       33264
-HT20/LGI     MCS5            8.6       25.8       100.0      0              0(  0)       175        3495
-HT20/LGI     MCS6            0.0        0.0         0.0      0              0(  0)         1        3495
-HT20/LGI     MCS7            0.0        0.0         0.0      0              0(  0)         0        3495
-HT20/LGI     MCS8           10.5      100.0       100.0      0              0(  0)         1           1
-HT20/LGI     MCS9           18.6       99.9       100.0      5              0(  0)       368         380
-HT20/LGI     MCS10          25.1       99.9       100.0      5              0(  0)     37921       38776
-HT20/LGI T   MCS11          30.3       99.9       100.0      5              0(  0)    439091      448760
-HT20/LGI     MCS12          14.1       33.2       100.0      6              0(  0)      4482        8447
-HT20/LGI     MCS13           0.0        0.0         0.0      0              0(  0)         0        3495
-HT20/LGI     MCS14           0.0        0.0         0.0      0              0(  0)         0        3496
-HT20/LGI     MCS15           0.0        0.0         0.0      0              0(  0)         0        3495
+::
+
+  type         rate     throughput  ewma prob   this prob  retry   this succ/attempt   success    attempts
+  HT20/LGI     MCS0            5.6      100.0       100.0      1              0(  0)         1           1
+  HT20/LGI     MCS1           10.5      100.0       100.0      4              0(  0)         4           4
+  HT20/LGI     MCS2           14.8      100.0       100.0      5              0(  0)        93          93
+  HT20/LGI     MCS3           18.6       97.7       100.0      5              0(  0)      1380        1416
+  HT20/LGI  tP MCS4           25.1       99.9       100.0      5              0(  0)     31688       33264
+  HT20/LGI     MCS5            8.6       25.8       100.0      0              0(  0)       175        3495
+  HT20/LGI     MCS6            0.0        0.0         0.0      0              0(  0)         1        3495
+  HT20/LGI     MCS7            0.0        0.0         0.0      0              0(  0)         0        3495
+  HT20/LGI     MCS8           10.5      100.0       100.0      0              0(  0)         1           1
+  HT20/LGI     MCS9           18.6       99.9       100.0      5              0(  0)       368         380
+  HT20/LGI     MCS10          25.1       99.9       100.0      5              0(  0)     37921       38776
+  HT20/LGI T   MCS11          30.3       99.9       100.0      5              0(  0)    439091      448760
+  HT20/LGI     MCS12          14.1       33.2       100.0      6              0(  0)      4482        8447
+  HT20/LGI     MCS13           0.0        0.0         0.0      0              0(  0)         0        3495
+  HT20/LGI     MCS14           0.0        0.0         0.0      0              0(  0)         0        3496
+  HT20/LGI     MCS15           0.0        0.0         0.0      0              0(  0)         0        3495
 
 The "T" in the 10th character position indicates the current MCS rate, and a "t" indicates the current fallback rate.  In this case the link is running MCS11 at 30.3 Mbps.

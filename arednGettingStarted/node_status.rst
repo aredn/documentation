@@ -112,7 +112,9 @@ Distance
   .. note:: If no GPS coordinates were entered, then the distance cannot be calculated and that metric will not be considered in the LQM improvement process.
 
 Quality
-  The Link Quality expressed as a percent. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if the node had to send every packet twice for it to be successfully received, the link quality would be 50%. An additional penalty is subtracted from Link Quality if the neighbor node is unpingable, which is explained in the *Advanced Configuration* section under "Ping Penalty".
+  The Link Quality expressed as a percent. This is calculated as the moving average of (total sent packets) divided by (total sent packets plus retransmissions). For example, if the node had to send every packet twice for it to be successfully received, the link quality would be 50%. Be aware that the *LQ/NLQ* metrics on the *Mesh Status* display are calculated differently, so there may not be a perfect alignment when comparing the two quality metrics.
+
+  An additional penalty is subtracted from Link Quality if the neighbor node is unpingable, which is explained in the *Advanced Configuration* section under "Ping Penalty".
 
 Status
   The current status of each radio link. Valid status identifiers include:

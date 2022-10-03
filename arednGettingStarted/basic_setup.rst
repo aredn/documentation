@@ -74,23 +74,28 @@ Optional Settings
 -----------------
 
 Location Settings
-  In this section you can enter your node's latitude and longitude, as well as the grid square designator. The latitude/longitude values should be in decimal format (for example, 30.5432 and -95.1234). The optional node location settings are not required in order for your node to function normally.
+  In this section you can enter your node's latitude and longitude, as well as the grid square designator. The values should be in decimal format (for example, 30.5432 and -95.1234). The node location settings are optional, but if you have *Link Quality Manager* enabled then the location becomes important for calculating the distance between linked nodes.
 
-  .. image:: _images/basic-optional.png
-    :alt: Optional Settings
+  .. image:: _images/basic-location.png
+    :alt: Optional Settings - Location
     :align: center
 
-|
+There are several options for setting your node's location:
 
-  - If you are using a location-aware web browser, you can click the **Find Me** button to populate the latitude/longitude fields. This works well if you are viewing the *Basic Settings* page on a mobile device with built-in GPS.
+- If you are using a location-aware web browser, you can click the **Find Me** button to populate the latitude/longitude fields. This works well if you are viewing the *Basic Settings* page on a mobile device with built-in GPS.
 
-  - If your node has an Internet connection available, the **Show Map** and **Upload Data to AREDN Servers** buttons will become active. The **Show Map** button will display a map that allows you to click the position where your node is located or to drag an existing location marker to a different spot on the map. Both of these actions will automatically update the latitude/longitude fields on the page.
+- If your node has an Internet connection available, the **Show Map** and **Upload Data to AREDN Servers** buttons will become active. The **Show Map** button will display a map that allows you to click the position where your node is located or to drag an existing location marker to a different spot on the map. Both of these actions will automatically update the latitude/longitude fields on the page.
 
-  - The **Upload Data to AREDN Servers** button will send your node information to an AREDN |trade| server on the Internet. By submitting this information you are agreeing to allow AREDN |trade| to publish your node location on a public mapping service and utilize the information for other purposes such as statistical analysis. No sensitive data such as passwords are sent to the AREDN |trade| servers. If you wish to remove your node location from the public mapping service, simply clear or erase your latitude/longitude values, click *Apply Location Settings* and then *Upload Data to AREDN Servers*.
+- The **Upload Data to AREDN Servers** button will send your node information to an AREDN |trade| server on the Internet. By submitting this information you are agreeing to allow AREDN |trade| to publish your node location on a public mapping service and utilize the information for other purposes such as statistical analysis. No sensitive data such as passwords are sent to the AREDN |trade| servers. If you wish to remove your node location from the public mapping service, simply clear or erase your latitude/longitude values, click *Apply Location Settings* and then *Upload Data to AREDN Servers*.
 
-  - Click the **Apply Location Settings** button after entering new location information on this page. The new settings become active without clicking the *Save Changes* button.
+- Click the **Apply Location Settings** button after entering new location information on this page. The new settings become active without clicking the *Save Changes* button.
 
 Timezone and NTP Server
-  You may also change the timezone for your node's system time, as well as entering the URL for a `Network Time Protocol (NTP) <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid URL for the network time source, for example `us.pool.ntp.org` or `AD5BC-ntp.local.mesh`.
+  Here you select the timezone for your node's system clock, and the default value is ``UTC``. You can also enter the URL for a `Network Time Protocol (NTP) <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid URL for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node's clock by selecting a value from the dropdown list. The default is once per day [``daily``] but you may also select once per hour [``hourly``].
+
+  .. image:: _images/basic-time.png
+    :alt: Optional Settings - Time
+    :align: center
+
 
   If your node is unable to connect to the NTP server specified here then it will briefly search for another NTP service which might be defined on your local mesh network. The node hosting that service must enter its Advertised Service with "NTP" as part of the service name. The protocol should be set to "ntp://", the URL should point to the host providing the service, and the port should be set to "123", the standard NTP port. For example, ``ntp://ab7pa-box2.local.mesh:123`` would identify the NTP server portion of the Advertised Service. See the **Configuration Deep Dive** section for additional information about Advertised Services.

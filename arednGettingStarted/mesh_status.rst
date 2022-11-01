@@ -19,16 +19,10 @@ Mesh Status Display Sections
 
 |
 
-This Node
-  This shows your node as well as any connected LAN hosts and the advertised services available on your node and hosts. You can click any available web links to navigate to the services on your node or LAN hosts. This will be true for any available services in the *Current Neighbors* or *Remote Nodes* sections, too.
+Your Node
+  This shows your node as well as any connected LAN hosts and the advertised services available on your node and hosts. You can click any available web links to navigate to the services on your node or LAN hosts. This will be true for any available services in the *Current Neighbors* or *Remote Nodes* sections, too. Since this display is slightly wider than before, each row will be highlighted as you hover your cursor over it. This gives a visual indicator for any column entries that are part of the row over which you are hovering.
 
   If you have any hosts for which you selected *Do Not Propagate* in the **DHCP Reservations List**, those hosts will be displayed in a light gray color only on your node's *Local Hosts* column. If you created any **DNS Aliases** for your hosts, those aliases will be displayed in a light orange color only on your node's *Local Hosts* column. All other hosts will be displayed in the default color for the theme that you are using.
-
-OLSR Entries
-  This section shows the number of other nodes on your mesh network which have been registered by the Optimized Link State Routing protocol running on your node. It also shows the total number of OLSR routes, which includes the nodes and all other devices seen by your node.
-
-Previous Neighbors
-  This section lists any nodes which were recently connected to your node but are not currently connected. It shows the node name or IP address, as well as how long it has been since a node was actively connected to your node.
 
 Current Neighbors
   This shows a list of *Neighbor Nodes* that are directly connected with your node, meaning they are only one network "hop" distant. These nodes may be connected via :abbr:`RF (Radio Frequency)`, :abbr:`DtD (Device to Device)` link, or a tunnel over an Internet connection. It also shows any LAN hosts on your current neighbors as well as any advertised services available on those nodes and hosts.
@@ -50,6 +44,9 @@ Current Neighbors
   - ``(tun)`` indicates the path to the neighbor node is over an Internet tunnel. ``(tun*?)`` next to a mesh node in the *Remote Nodes* column indicates the node has tunnel links over the Internet to connect mesh islands together. ``?`` is a number indicating the number of tunnel connections on that node.
 
   - ``(wan)`` indicates the node has been configured as a *Mesh Gateway*. Typically this is a gateway to the Internet, but it may also be to another isolated network.
+
+Previous Neighbors
+  If there were any Current Neighbors which disconnected within the last 24 hours they will be listed below any nodes that are currently connected. It shows the node name or IP address, as well as how long it has been since a node was actively connected to your node.
 
 Remote Nodes
   This section lists the other nodes on the network that are two or more hops away from your node. Advertised services on nodes and their LAN hosts are also listed. Remote Nodes are sorted by their ``ETX`` or *Expected Transmission* metric. :abbr:`ETX (Expected TX metric)` is an estimate of the number of :abbr:`OLSR (Optimized Link State Routing protocol)` packets that must be sent in order to receive a round trip acknowledgement, and it is often referred to as *link cost*. When sending data the :abbr:`OLSR (Optimized Link State Routing)` protocol selects the least cost route based on the lowest :abbr:`ETX (Expected TX metric)` in the direction of the final destination.

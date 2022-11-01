@@ -11,23 +11,23 @@ Locate your device model/version in the left column. Most manufacturers print th
 
 There are two types of firmware images: one for the first-time replacement of the manufacturer's firmware, and the other for upgrades of nodes that are already running AREDN |trade| firmware.
 
-- If you are loading AREDN |trade| firmware on a device for the first time you must download the *factory* firmware from the middle column. For Mikrotik devices you must also download the *sysupgrade* image from the righthand column.
+- If you are loading AREDN |trade| firmware on TP-LINK or Ubuquiti devices for the first time you must download the *factory* firmware from the middle column. For Mikrotik devices you must download both the *factory* and *sysupgrade* images. For GL.iNet devices you must download the *sysupgrade* image from the righthand column.
 
 - If you are already running AREDN |trade| firmware on the node then you will choose the *sysupgrade* firmware from the righthand column, and you will use the AREDN |trade| web interface to perform the firmware upgrade.
 
 Once you have selected the correct firmware image for your device, click the link to download the image file to your local computer. Make a note of the download location on your computer, since you will need to use that image to install the AREDN |trade| firmware on your device.
 
 Features Inherited from OpenWRT for New Architectures
-  The latest AREDN |trade| firmware contains features which are inherited from the newest OpenWRT upstream releases. The OpenWRT *Release Notes* describe these new features and can be found here: `OpenWRT 19.07 Release Notes <http://openwrt.org/releases/19.07/start>`_ and `OpenWRT 21.02 Release Notes <http://openwrt.org/releases/21.02/start>`_.
+  The latest AREDN |trade| firmware contains features which are inherited from the newest OpenWRT upstream releases. The `OpenWRT *Release Notes* <https://openwrt.org/>`_ describe these new features.
 
-  One important change is the inclusion of a new *target* (architecture) for the firmware, labelled "ath79", which is the successor to the existing "ar71xx" target. The OpenWRT team explains the new target here: `ath79 <https://openwrt.org/docs/techref/targets/ath79>`_. Their main goal is to bring the code into a form that will allow all devices to run a standard unpatched Linux kernel. This will greatly reduce the amount of customization required and will streamline the firmware development process.
+  One important change is the inclusion of a new *target* architecture for the firmware, labelled "ath79", which is the successor to the existing "ar71xx" target. The OpenWRT team explains the new target here: `ath79 <https://openwrt.org/docs/techref/targets/ath79>`_. Their main goal is to bring the code into a form that will allow all devices to run a standard unpatched Linux kernel. This will greatly reduce the amount of customization required and will streamline the firmware development process.
 
-  Since not all supported devices have been migrated to the new "ath79" target, AREDN |trade| continues to build firmware for both targets. **You should select the latest recommended target image based on the type of hardware on which it will be installed.** Refer to the latest `firmware notes <http://downloads.arednmesh.org/snapshots/readme.md>`_ in order to ensure you have the correct firmware image for your specific device.
+  Since not all supported devices have been migrated to the new "ath79" target, AREDN |trade| continues to build firmware for both targets as needed. **You should select the latest recommended target image based on the type of hardware on which it will be installed.** Refer to the latest `Firmware Notes <http://downloads.arednmesh.org/snapshots/readme.md>`_ in order to ensure you have the correct firmware image for your specific device.
 
 Nightly Build Firmware
 -----------------------
 
-*Nightly Build* firmware contains the latest bug fixes, features, and support for the newest devices being added to the *Supported Platform Matrix*. It is considered more experimental or cutting-edge and may not be suitable for production nodes. However, if you are having a specific issue that has been addressed in newly developed code, or if you are loading AREDN |trade| firmware onto a device that has just been added, then it might make sense to install the nightly build firmware.
+*Nightly Build* firmware contains the latest bug fixes, features, and support for the newest devices being added to the *Supported Platform Matrix*. It allows the wider mesh community to test new code before it is included in a formal code release. The Nightly Build is considered more experimental or cutting-edge and may not be suitable for *production* nodes. However, if you are having a specific issue that has been addressed in newly developed code, or if you are loading AREDN |trade| firmware onto a device that has just been added, then it might make sense to install the nightly build firmware.
 
 To download the *Nightly Build*, navigate to the `Software > Nightly Builds <https://www.arednmesh.org/content/nightly-builds>`_ link on the AREDN |trade| website. Nightly Build filenames are prefixed with *aredn-XXXX-yyyyyyy*, where *XXXX* identifies the build number and *yyyyyyy* is a unique software commit identifier. You will find the most recent *README* file, a cumulative list of the changes included in the build, and a link to download the firmware. As explained above, select the correct target architecture for the device you will be flashing. To return your device to the current stable release, download the correct *Stable Release* firmware and reflash your device.
 

@@ -41,6 +41,8 @@ Current Neighbors
 
   - ``(dtd)`` indicates a *Device to Device* connection (typically using an Ethernet cable) between the nodes.
 
+  - ``(xlink)`` indicates a connection between the nodes that traverses cross-linked devices.
+
   - ``(tun)`` indicates the path to the neighbor node is over an Internet tunnel. ``(tun*?)`` next to a mesh node in the *Remote Nodes* column indicates the node has tunnel links over the Internet to connect mesh islands together. ``?`` is a number indicating the number of tunnel connections on that node.
 
   - ``(wan)`` indicates the node has been configured as a *Mesh Gateway*. Typically this is a gateway to the Internet, but it may also be to another isolated network.

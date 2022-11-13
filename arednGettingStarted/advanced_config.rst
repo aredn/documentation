@@ -50,6 +50,8 @@ Channel Width Setting
   - To extend the usable distance between neighbor nodes.
   - To increase the number of available channels in a crowded RF coverage area.
 
+  Please review the **Network Design** section for more information about designing a network that meets the specific requirements of your applications and services.
+
 Distance Setting
   .. image:: _images/basic-pwr-dist.png
     :alt: Basic Power and Distance Settings

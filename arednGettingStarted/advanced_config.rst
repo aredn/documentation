@@ -41,13 +41,20 @@ Mesh RF Column
 
 *Mesh RF* is the node's *radio* interface. The AREDN |trade| firmware has been designed to simplify the process of configuring networking interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. You may need to change the *Channel* and possibly the *Channel Width* parameters to match those of your local AREDN |trade| mesh, as explained previously in the **Basic Radio Setup** section. Normally you will not need to change the other network settings on this page, so keep these values unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
-.. image:: _images/basic-pwr-dist.png
-  :alt: Basic Power and Distance Settings
-  :align: right
+Channel Width Setting
+  For most AREDN |trade| devices you have a choice of using 20 MHz, 10 MHz, or 5 MHz channel widths. As a general rule, a larger channel width will allow more data to be transferred, but it can only do this over shorter distances (as will be illustrated in the following section). One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB.
 
-The **Power & Distance** settings can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*. A node may decrease its output power as it increases its data rate in order to maintain a linear spectrum.
+  There may be several reasons why you might want to reduce the *Channel Width* setting:
+
+  - To achieve a better SNR on a marginal link.
+  - To extend the usable distance between neighbor nodes.
+  - To increase the number of available channels in a crowded RF coverage area.
 
 Distance Setting
+  .. image:: _images/basic-pwr-dist.png
+    :alt: Basic Power and Distance Settings
+    :align: right
+
   The *Distance* setting is only applicable to nodes that can communicate directly over RF. This setting adjusts the RF retry timer to define how long the transmitter will wait for an acknowledgement from a neighbor station. If the distance parameter is too short, the transmitter will send duplicate data packets before an acknowledgement has time to be received. If the distance parameter is too long, the transmitter will wait extra time before considering the data lost and retransmitting the packets.
 
   The maximum distance settings the ath9k wireless driver allows depends on the channel width:
@@ -68,11 +75,11 @@ Distance Setting
 
   A basic rule of thumb is when nodes are within five kilometers of each other you should test several *static* distance settings to see which one works best. The best way to test each distance setting is to use the **iperf3** package between endpoint nodes to measure the throughput of the RF channel under different distance settings. See *Test Network Links with iperf3* in the **How-To Section** for additional information.
 
-.. image:: _images/lqm-basic-settings.png
-  :alt: LQM Basic Settings
-  :align: right
-
 Configuring LQM Settings
+  .. image:: _images/lqm-basic-settings.png
+    :alt: LQM Basic Settings
+    :align: right
+
   When *Link Quality Manager* is enabled, the **Basic Setup** page will show a slightly different group of settings for *Power & Link Quality* under the **Mesh RF** column.
 
   Max Distance
@@ -83,6 +90,8 @@ Configuring LQM Settings
 
   Min Quality
     The minimum Link Quality required in order to reliably pass data between nodes. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if the node had to send every packet twice for it to be successfully received, the link quality would be 50%. An additional penalty is subtracted from Link Quality if the neighbor node is unpingable, and this is explained below under *Ping Penalty* in the *Advanced Configuration* section.
+
+The **Power & Distance** settings can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*. A node may decrease its output power as it increases its data rate in order to maintain a linear spectrum.
 
 Enable/Disable Mesh RF
   You can disable your node's radio interface by deselecting the *Enable* checkbox, saving your changes, and rebooting the node. With the Mesh RF interface disabled the *Power & Distance* settings no longer apply and will be hidden. Since your node now has an unused RF interface, you will notice that a new section appears which allows you to use the node's radio as an FCC Part 15 *LAN Access Point*. You can enable or disable the LAN AP using the *Enable* checkbox. See the details below for configuring the LAN Access Point.

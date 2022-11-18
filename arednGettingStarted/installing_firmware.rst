@@ -202,7 +202,7 @@ After the GL-iNet device is first booted and configured, navigate to the **Upgra
 .. attention:: Be sure to uncheck the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN |trade| firmware.
 
 The node will automatically reboot with the new AREDN |trade| firmware image. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
-`GL-iNet debrick procedure <https://docs.gl-inet.com/en/2/troubleshooting/debrick/>`_
+`GL-iNet debrick procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_
 
 After the Firmware Install
 --------------------------

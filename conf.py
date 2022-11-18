@@ -44,7 +44,7 @@ extensions = [
 ]
 
 rst_epilog = """
-`Link: AREDN Webpage <https://arednmesh.org>`_
+`Link: AREDN Webpage <https://www.arednmesh.org>`_
 """
 
 # Include the trademark symbol in the prolog

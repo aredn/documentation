@@ -99,3 +99,8 @@ Timezone and NTP Server
 
 
   If your node is unable to connect to the NTP server specified here then it will briefly search for another NTP service which might be defined on your local mesh network. The node hosting that service must enter its Advertised Service with "NTP" as part of the service name. The protocol should be set to "ntp://", the hostname should point to the host providing the service, and the port should be set to "123", the standard NTP port. For example, ``ntp://ab7pa-box2.local.mesh:123`` would identify the NTP server portion of the Advertised Service. See the **Configuration Deep Dive** section for additional information about Advertised Services.
+
+Next Steps
+----------
+
+After you finish configuring your node and click *Save Changes*, your node will immediately reboot using your new configuration. Your node will have an IP address in the 10.x.x.x range, so you should set your computer to use `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ to obtain a new IP address from your node. As explained in the installation checklists, you may need to disconnect/reconnect or disable/enable your computer's Ethernet interface so that it begins using the new IP address. You can open a web browser and enter ``http://localnode.local.mesh`` or ``http://<your-nodename>.local.mesh`` to login to your node.

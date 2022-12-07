@@ -162,15 +162,15 @@ Step3: Install the firmware
 
   ::
 
-    hexdump -Cv /bin/ubntbox | sed 's/14 40 fe 27/00 00 00 00/g' | hexdump -R > /tmp/fwupdate
+    hexdump -Cv /bin/ubntbox | sed 's/14 40 fe 27/00 00 00 00/g' | hexdump -R > /tmp/fwupdate.real
 
-    chmod +x /tmp/fwupdate
+    chmod +x /tmp/fwupdate.real
 
   Finally flash the AREDN |trade| firmware by typing:
 
   ::
 
-    /tmp/fwupdate -m /tmp/factory.bin
+    /tmp/fwupdate.real -m /tmp/factory.bin
 
   Do **not** unplug the device until the flashing process is complete and the device has rebooted. The device will install the AREDN |trade| image, boot into it, and end up on IP address 192.168.1.1 as a normal AREDN |trade| device. You can then configure the device by following the steps in the **Basic Radio Setup** section of the documentation.
 

@@ -158,6 +158,8 @@ Step3: Install the firmware
 
     ssh -oHostKeyAlgorithms=+ssh-rsa admin@192.168.1.20
 
+  You will be asked for the password (for example, admin!23) and once entered you will be logged into the device and shown the shell prompt.
+
   To install the AREDN |trade| firmware you first need to create a program to do this. Ubiquiti devices expect signed firmware but AREDN |trade| is not signed, so we need to bypass the checking process. To do this type or copy/paste the following two commands:
 
   ::
@@ -166,13 +168,15 @@ Step3: Install the firmware
 
     chmod +x /tmp/fwupdate.real
 
+  These commands take the standard Ubiquiti program used for flashing new firmware and change a few bytes to create our own version with the signature checking code disabled. The first command can take a little while to complete but when successful will return you to the shell prompt.
+
   Finally flash the AREDN |trade| firmware by typing:
 
   ::
 
     /tmp/fwupdate.real -m /tmp/factory.bin
 
-  Do **not** unplug the device until the flashing process is complete and the device has rebooted. The device will install the AREDN |trade| image, boot into it, and end up on IP address 192.168.1.1 as a normal AREDN |trade| device. You can then configure the device by following the steps in the **Basic Radio Setup** section of the documentation.
+  Do **not** unplug the device until the flashing process is complete and the device has rebooted. The device will install the AREDN |trade| image, boot into it, and end up on IP address 192.168.1.1 as a normal AREDN |trade| device. If you cannot connect to the device on its new IP address after five minutes, power cycle the device and try connecting to 192.168.1.1 again. You can then configure the device by following the steps in the **Basic Radio Setup** section of the documentation.
 
 Mikrotik First Install Process
 ------------------------------

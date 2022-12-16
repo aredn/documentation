@@ -14,11 +14,13 @@ Issue #414: WiFi Scan shows bogus channels.
   *Workaround*: This appears to occur when collocated nodes are running at high power. Apparently the baseband signal of the chip may be getting detected at times and reported to random channels. Since this situation does not cause any RF issues it can be ignored, or you can shield or reduce power on the devices to remove the bogus entries from the scan list.
 
 Issue #352: Legacy SSH rsa key issue.
-  *Workaround*: Newer applications have begun deprecating ssh-rsa keys, which are used on AREDN nodes. Try explicitly identifying the key type to your application, for example:
+  Newer applications have begun deprecating ssh-rsa keys, which are used on AREDN nodes.
+
+  .. attention:: This issue has been resolved in the 3.22.12.0 firmware release.
+
+  *Workaround*: Try explicitly identifying the key type to your application, for example:
 
   ``ssh -oHostKeyAlgorithms=+ssh-rsa -p 2222 root@myNode.local.mesh``
-
-    .. note:: This issue has been resolved in the nightly build firmware and will be available soon in the next stable release.
 
 Issue #142: Changing MESH RF IP Address does not change the corresponding DTD IP address.
   *Workaround*: No workaround at this time.

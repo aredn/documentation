@@ -20,9 +20,7 @@ Once you have selected the correct firmware image for your device, click the lin
 Features Inherited from OpenWRT for New Architectures
   The latest AREDN |trade| firmware contains features which are inherited from the newest OpenWRT upstream releases. The `OpenWRT *Release Notes* <https://openwrt.org/>`_ describe these new features.
 
-  One important change is the inclusion of a new *target* architecture for the firmware, labelled "ath79", which is the successor to the existing "ar71xx" target. The OpenWRT team explains the new target here: `ath79 <https://openwrt.org/docs/techref/targets/ath79>`_. Their main goal is to bring the code into a form that will allow all devices to run a standard unpatched Linux kernel. This will greatly reduce the amount of customization required and will streamline the firmware development process.
-
-  Since not all supported devices have been migrated to the new "ath79" target, AREDN |trade| continues to build firmware for both targets as needed. **You should select the latest recommended target image based on the type of hardware on which it will be installed.** Refer to the latest `Firmware Notes <http://downloads.arednmesh.org/snapshots/readme.md>`_ in order to ensure you have the correct firmware image for your specific device.
+  One important change is the inclusion of new *target* architectures for the firmware. The legacy "ar71xx" target has been retired and is replaced by the "ath79" and "ipq40xx" target architectures. All supported devices have been migrated to the new targets. **You should select the latest recommended target image based on the type of hardware on which it will be installed.** Refer to the latest `Firmware Notes <http://downloads.arednmesh.org/snapshots/readme.md>`_ in order to ensure you have the correct firmware image for your specific device.
 
 Nightly Build Firmware
 -----------------------

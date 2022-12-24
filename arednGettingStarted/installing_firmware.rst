@@ -181,12 +181,12 @@ Step3: Install the firmware
 Mikrotik First Install Process
 ------------------------------
 
-Mikrotik devices require a **two-part install** process: First, boot the correct mikrotik-vmlinux-initramfs file with the **elf** extension, and then use that temporary AREDN |trade| Administration environment to complete the installation of the appropriate *sysupgrade* file with the **bin** extension.
+Mikrotik devices require a **two-part install** process: First, boot the correct Mikrotik initramfs-kernel file, and then use that temporary AREDN |trade| Administration environment to complete the installation of the appropriate *sysupgrade* file.
 
 Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. You will need to install and configure a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Tools for Your Computer** section above.
 
 Preparation
-  - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the **elf** file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
+  - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the initramfs-kernel file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 
   - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your **PXE** server will avoid changing IP addresses on your computer during the install process. AREDN |trade| firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
 

@@ -6,7 +6,7 @@ The amateur radio community has recognized the benefits of using inexpensive com
 
 Several open source software projects have been adapted and enhanced to create the AREDN |trade| firmware, including `OpenWRT (Open Wireless Router) <https://en.wikipedia.org/wiki/OpenWRT>`_ and `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_.
 
-The AREDN |trade| team builds specific firmware images tailored to each type of radio, and the current list of supported devices is found on the AREDN |trade| website in the `Supported Platform Matrix <https://www.arednmesh.org/content/supported-platform-matrix/>`_.
+The AREDN |trade| team builds specific firmware images tailored to each type of radio, and the current list of supported devices is found on the AREDN |trade| website. For *Stable* firmware this list is found in the `Supported Platform Matrix <https://www.arednmesh.org/content/supported-platform-matrix/>`_. For *Nightly Build* firmware this list is found in the `Supported Devices <http://downloads.arednmesh.org/snapshots/SUPPORTED_DEVICES.md>`_ file.
 
 There is additional guidance on the features and characteristics of specific devices in the `Device Selection Chart <https://www.arednmesh.org/content/device-selection-chart/>`_ on the AREDN |trade| website.
 

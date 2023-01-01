@@ -36,7 +36,7 @@ The **IperfSpeed** package provides a web-based control interface for running ne
 
 - `Original Perl version of IperfSpeed <https://aredn.s3.amazonaws.com/iperfspeed_0.5.1_all.ipk>`_
 
-- `New Lua version of IperfSpeed <https://github.com/kn6plv/iperfspeed/raw/master/iperfspeed_0.6-lua_all.ipk>`_
+- `New Lua version of IperfSpeed <https://github.com/kn6plv/iperfspeed>`_
 
 Select the *IperfSpeed* service on one of the nodes to open its web interface in a new browser tab or window. From the dropdown lists, select a node as the iperf3 server and also one as the iperf3 client. Click the *Run Test* button to begin the network throughput test.
 

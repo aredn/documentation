@@ -30,10 +30,10 @@ This example is not meant to show that having only seven nodes will overload a c
 
 Several tools are available for testing network performance such as *ping* to measure latency, *traceroute* to identify how traffic is being routed, and *iperf3* to estimate network throughput. Periodic measurements along with user perceptions can be helpful in determining whether channel separation would be of benefit. It is an expected by-product of how wireless networks normally operate, but performance can be enhanced by planning the assigned channels for your mesh devices as described in the **Channel Plans** section below.
 
-Hidden Nodes
-++++++++++++
+Hidden and Exposed Nodes
+++++++++++++++++++++++++
 
-In any wireless network there will be nodes that are not within radio range of each other but which share the same channel. In the example diagram, **A** can hear **B** but cannot hear **C**. Since **A** and **C** are `hidden from each other <https://en.wikipedia.org/wiki/Hidden_node_problem>`_, they may try to transmit on the shared channel at the same time without knowing it. Because of their relative locations and any associated network delays, each node may appear to have a clear channel for transmission.
+In any wireless network there will be nodes that are not within radio range of each other but which share the same channel. In the `Hidden Node <https://en.wikipedia.org/wiki/Hidden_node_problem>`_ example below, **A** can reach **B** but cannot reach **C**. Since **A** and **C** are hidden from each other, they may try to transmit on the shared channel at the same time without knowing it. Because of their relative locations and any associated network delays, each node may think it has a clear channel for transmitting.
 
 .. image:: _images/hidden-node.png
    :alt: Hidden Node Problem
@@ -41,11 +41,20 @@ In any wireless network there will be nodes that are not within radio range of e
 
 |
 
-`Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages are used by AREDN |trade| nodes to minimize or eliminate this issue. For example, node **A** broadcasts a short RTS message with a proposed timeslot/duration for transmitting its complete data stream. Node **B** receives that request and broadcasts a CTS for that time slot. Node **C** could not hear the original RTS but will hear the CTS message and defer its transmissions during that time slot.
+In the `Exposed Node <https://en.wikipedia.org/wiki/Exposed_node_problem>`_ example below, **A** can reach **B** but cannot reach **C** or **D**. However, if **A** and **B** are communicating, then **C** will detect that the channel is not clear and will prevent **D** from transmitting even though **D**'s transmission would not interfere with the conversation between **A** and **B**. This increases the network wait time which impacts overall throughput.
 
-Two other approaches may also alleviate the hidden node issue. You may be able to make the hidden nodes visible to each other, for example by increasing their signal strength. The alternative is to isolate the nodes completely by placing them onto different bands or channels. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel. It may be more appropriate to create a separate link between the sites and to put the radios on a different band or channel.
+.. image:: _images/exposed-node.png
+   :alt: Exposed Node Problem
+   :align: center
 
-Another case is when there is one poor quality link over which all traffic must be routed. The handshaking and data retransmissions may cause all the other nodes to wait. The entire network can be impacted by one low quality path which becomes a single bottleneck. If at all possible you should increase the signal quality of that vital link or install a better link as an alternate path.
+|
+
+
+`Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages can be used by AREDN |trade| nodes to minimize these issues. For example, node **A** broadcasts a short RTS message with a proposed timeslot/duration for transmitting its complete data stream. Node **B** receives that request and broadcasts a CTS for that time slot. Node **C** could not hear the original RTS but will hear the CTS message and defer its transmissions during that time slot.
+
+Other approaches may alleviate these issues. You may be able to make hidden nodes visible to each other, for example by increasing their signal strength. Another alternative would be to isolate the nodes completely by placing them onto different bands or channels. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel. It may be more appropriate to create a separate link between the sites and to put the radios on different bands or channels.
+
+Another case is when there is one poor quality link over which all traffic must be routed. The handshaking and data retransmissions may cause all the other nodes to wait. The entire network can be impacted by one low quality path which becomes a bottleneck. If at all possible you should increase the signal quality of that vital link or install a better link as an alternate path.
 
 Route Flapping
 ++++++++++++++

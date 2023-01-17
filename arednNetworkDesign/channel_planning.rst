@@ -41,7 +41,7 @@ In any wireless network there will be nodes that are not within radio range of e
 
 |
 
-In the `Exposed Node <https://en.wikipedia.org/wiki/Exposed_node_problem>`_ example below, **A** can reach **B** but cannot reach **C** or **D**. However, if **A** and **B** are communicating, then **C** will detect that the channel is not clear and will prevent **D** from transmitting even though **D**'s transmission would not interfere with the conversation between **A** and **B**. This increases the network wait time which impacts overall throughput.
+In the `Exposed Node <https://en.wikipedia.org/wiki/Exposed_node_problem>`_ example below, **A** can reach **B** but cannot reach **C** or **D**. However, if **A** and **B** are communicating, then **C** will detect that the channel is not clear and will not transmit to **D** even though the transmission would not interfere with the conversation between **A** and **B**. This increases the network wait time which impacts overall throughput.
 
 .. image:: _images/exposed-node.png
    :alt: Exposed Node Problem

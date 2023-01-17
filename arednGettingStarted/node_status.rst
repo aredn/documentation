@@ -121,7 +121,6 @@ Status
 
   - *pending*: LQM is collecting data and evaluating the link.
   - *active*: LQM determined that the link is viable and can be used.
-  - *idle*: LQM has determined that the link is usable and would be *active* but the node routing table does not yet have a route for sending traffic across the link.
   - *blocked*: LQM determined that the link is unusable and has blocked it from use.
   - *blocked - distance*: LQM determined that the remote node is either too close or too distant, based on the Min and Max Distance settings described in the *Advanced Configuration* section.
   - *blocked - signal*: LQM determined that the SNR on the link is too low to reliably pass data, based on the Min SNR setting described in the *Advanced Configuration* section.
@@ -130,6 +129,9 @@ Status
   - *blocked - dtd*: LQM blocks the RF interface on any nodes to which a DtD link also exists.
   - *blocked - dup*: LQM blocks a link in cases when your node has an RF link to other nodes which themselves connect to each other via DtD. This can occur when there are multiple radios at a site using the same channel. The best remote node is chosen as the RF link for your node but the other possible RF connections are blocked as duplicates.
   - *blocked - user*: LQM will block any node which you enter in the *User Blocked Nodes* field described in the *Advanced Configuration* section.
+  - *hidden*: LQM will display nodes that are out of range of your node but which are able to access a common intermediary node.
+  - *exposed*: LQM will display nodes that can reach other nodes which are hidden from your node.
+  - *idle*: LQM has determined that the link is usable and would be *active* but the node routing table does not yet have a route for sending traffic across the link.
   - *disconnected*: This RF Neighbor is no longer online.
 
 The *Neighbor Status* table will be refreshed automatically every minute as LQM evaluates your node's radio links on an ongoing basis. Links whose quality has improved may be activated, while links whose quality has worsened may be blocked. If an existing node link goes offline, it will age out of the list within about an hour. To refresh the neighbor list on demand you can click the **Refresh** button. If you want to return to the *Node Status* display, click the **Quit** button.

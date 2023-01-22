@@ -18,8 +18,15 @@ Different radio hardware will require different methods for installing the AREDN
 
 If you experience an issue uploading firmware to your device you can refer to the *Firmware Tips* document in the **How-To Guide**.
 
-Tools for Your Computer
+Preparing Your Computer
 -----------------------
+
+Setting a Static IP Address on your Computer
+  For all of the device models discussed below you will be asked to set a static IP address on your computer as part of the install process. Various computer operating systems have different ways of accomplishing this, and there is a wealth of information in computer manuals, publications, and online resources to walk you through the steps for your specific computer.
+
+  As mentioned above, AREDN |trade| recommends that you connect your computer to the node through an intermediary network switch. This allows your computer to activate its Ethernet interface with the static IP address even when the node is not powered on. Since node hardware needs to be powered on/off or rebooted during the install process, the network switch will keep your computer's network interface active on its static IP address.
+
+  If you choose not to use an intermediary network switch, then you will be responsible for making sure your computer maintains an active interface with the static IP address. You may need to power on the node temporarily in order for your computer to bring up its interface, but then immediately power off the node in order to follow the installation instructions for your model. Having an intermediary network switch eliminates these headaches.
 
 Depending on your device model you may need to have various command line tools available on your computer. The required tools are native to both Linux and MacOS computers. For Windows computers you may need to enable specific features or install appropriate programs.
 

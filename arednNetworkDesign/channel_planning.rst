@@ -30,22 +30,26 @@ This example is not meant to show that having only seven nodes will overload a c
 
 Several tools are available for testing network performance such as *ping* to measure latency, *traceroute* to identify how traffic is being routed, and *iperf3* to estimate network throughput. Periodic measurements along with user perceptions can be helpful in determining whether channel separation would be of benefit. It is an expected by-product of how wireless networks normally operate, but performance can be enhanced by planning the assigned channels for your mesh devices as described in the **Channel Plans** section below.
 
+Hidden and Exposed Nodes
+++++++++++++++++++++++++
+
 Hidden Nodes
-++++++++++++
+  In any wireless network there will be nodes that are not within radio range of each other but which share the same channel. In the `Hidden Node <https://en.wikipedia.org/wiki/Hidden_node_problem>`_ example below, node **A** can reach node **B** but cannot reach node **C**. Since **A** and **C** are hidden from each other, they may try to transmit on the shared channel at the same time without knowing it. Because of their relative locations and any associated network delays, each node may think it has a clear channel for transmitting.
 
-In any wireless network there will be nodes that are not within radio range of each other but which share the same channel. In the example diagram, **A** can hear **B** but cannot hear **C**. Since **A** and **C** are `hidden from each other <https://en.wikipedia.org/wiki/Hidden_node_problem>`_, they may try to transmit on the shared channel at the same time without knowing it. Because of their relative locations and any associated network delays, each node may appear to have a clear channel for transmission.
+  .. image:: _images/hidden-node.png
+     :alt: Hidden Node Problem
+     :align: center
 
-.. image:: _images/hidden-node.png
-   :alt: Hidden Node Problem
-   :align: center
+  `Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages can be used by AREDN |trade| nodes to minimize these issues. For example, node **A** broadcasts a short RTS message with a proposed timeslot/duration for transmitting its data stream. Node **B** receives that request and broadcasts a CTS for that time slot. Node **C** could not hear the original RTS but will hear the CTS message and defer its transmissions during that time slot.
 
-|
+Exposed Nodes
+  In the `Exposed Node <https://en.wikipedia.org/wiki/Exposed_node_problem>`_ example below, Endpoint **A** and tower **B** can communicate with each other at the same time that tower **C** can communicate with endpoint **D**. However, if endpoint **E** is exposed to *both* of the towers, then the tower nodes will detect that the channel is not clear and will not be able to communicate when the exposed node is transmitting. This increases the network wait time which impacts overall throughput.
 
-`Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages are used by AREDN |trade| nodes to minimize or eliminate this issue. For example, node **A** broadcasts a short RTS message with a proposed timeslot/duration for transmitting its complete data stream. Node **B** receives that request and broadcasts a CTS for that time slot. Node **C** could not hear the original RTS but will hear the CTS message and defer its transmissions during that time slot.
+  .. image:: _images/exposed-node.png
+     :alt: Exposed Node Problem
+     :align: center
 
-Two other approaches may also alleviate the hidden node issue. You may be able to make the hidden nodes visible to each other, for example by increasing their signal strength. The alternative is to isolate the nodes completely by placing them onto different bands or channels. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel. It may be more appropriate to create a separate link between the sites and to put the radios on a different band or channel.
-
-Another case is when there is one poor quality link over which all traffic must be routed. The handshaking and data retransmissions may cause all the other nodes to wait. The entire network can be impacted by one low quality path which becomes a single bottleneck. If at all possible you should increase the signal quality of that vital link or install a better link as an alternate path.
+  Try to eliminate the exposed node problem by placing them onto different bands or channels along with the nodes you want them to communicate with. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel so that exposed nodes are not created unintentionally. If you have exposed nodes that are causing throughput degradation, segment each group of nodes by putting them on different bands or channels.
 
 Route Flapping
 ++++++++++++++
@@ -55,6 +59,8 @@ This is another issue that can lead to performance problems on a network. You ma
 However, when a bandwidth-intensive application such as video conferencing begins sending traffic across one of the paths, you may notice that link getting bogged down and the :abbr:`ETX (Expected Transmit metric)` will drop below that of the other path. At this point :abbr:`OLSR (Optimized Link State Routing protocol)` switches to the alternate path which now has a lower cost. The video stream then bogs down its new path, which lowers the :abbr:`ETX (Expected Transmit metric)`, and :abbr:`OLSR (Optimized Link State Routing protocol)` switches back to the original link whose :abbr:`ETX (Expected Transmit metric)` is better again. This situation may continue indefinitely, with neither path being able to deliver the traffic adequately.
 
 This issue can happen on multi-hop links with similar :abbr:`ETX (Expected Transmit metric)` which seem to work fine until they are loaded with traffic. Then packet loss begins to occur, connections time out, and neither path is reliable during that cycle. One solution might be to improve the multi-hop link cost by increasing the signal quality of the links along one of the paths. Conversely, you could also turn down the power on the alternate path to increase its cost. If bandwidth-intensive traffic must be passed between two remote endpoints, the best approach would be to design a more robust path between those two endpoints to meet that need.
+
+Another case is when there is one poor quality link over which all traffic must be routed. The handshaking and data retransmissions may cause all the other nodes to wait. The entire network can be impacted by one low quality path which becomes a bottleneck. If at all possible you should increase the signal quality of that vital link or install a better link as an alternate path.
 
 Channel Plans and Frequency Coordination
 ----------------------------------------

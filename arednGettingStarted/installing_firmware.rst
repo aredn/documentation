@@ -98,13 +98,7 @@ Download the appropriate *factory* file for your device by following the instruc
 
   The TFTP client should indicate that data is being transferred and eventually completes.
 
-5. Watch the LEDs for about 2-3 minutes until the node has finished rebooting. The reboot is completed when the LED 4 light (farthest on the right) is lit and is steady green.
-
-6. Configure your computer’s Ethernet network interface to use DHCP for obtaining an IP address from the node. You may need to unplug/reconnect the Ethernet cable from your computer to force it to get a new IP address from the node.
-
-7. After the node reboots, open a web browser and use either ``http://192.168.1.1`` or ``http://localnode.local.mesh`` for the URL. Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address.
-
-8. Click the *Setup* button and configure the new “firstboot” node as described in the **Basic Radio Setup** section.
+5. The node will now automatically reboot with the new AREDN |trade| firmware image.
 
 Ubiquiti 802.11ac First Install Process
 ---------------------------------------
@@ -320,8 +314,8 @@ The node will automatically reboot with the new AREDN |trade| firmware image. If
 After the Firmware Install
 --------------------------
 
-After the node reboots, it should have a default IP address of 192.168.1.1. By default AREDN |trade| devices provide :abbr:`DHCP (Dynamic Host Control Protocol)` on their LAN interface, so your computer will receive an IP address automatically from the node. Ensure that your computer is set to obtain its IP address via :abbr:`DHCP (Dynamic Host Control Protocol)`.
+After the node reboots, it should have a default IP address of 192.168.1.1. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that it has a connection.
 
-You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset.
+Once your device is running AREDN |trade| firmware, you can display its web interface by navigating to either ``http://192.168.1.1`` or ``http://localnode.local.mesh``.  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address. You may need to clear your web browser's cache in order to remove any cached pages.
 
-Once your device is running AREDN |trade| firmware, you can display its web interface by navigating to either ``http://192.168.1.1`` or ``http://localnode.local.mesh``. You may need to clear your web browser's cache in order to remove any cached pages. You can use your web browser to configure the new node with your callsign, admin password, and other settings as described in the **Basic Radio Setup** section of the documentation.
+You can use your web browser to configure the new node with your callsign, admin password, and other settings as described in the **Basic Radio Setup** section of the documentation.

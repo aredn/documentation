@@ -1,4 +1,9 @@
 .DS_Store
+.vscode
 make.bat
 index.rst.original
 _build/
+
+# Remove when internationalization pull request is accepted; 
+# this is where .po/.mo files for translations would go during build
+locale 

@@ -81,4 +81,6 @@ However, there is a difference if you are downgrading the firmware on a node whi
   - For Mikrotik models you will boot using the *vmlinux-initramfs.elf* file (which you rename to *rb.elf*) and then immediately apply the *sysupgrade.bin* firmware image.
   - For GL.iNet models you will use the `recovery procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_ to upload the *sysupgrade.bin* firmware image.
 
+Another possible way to downgrade firmware between architectures is to enable **Dangerous Upgrade** under the *Advanced Configuration* settings. Setting this to *ON* will disable the normal firmware compatibility checks that are done automatically during the firmware install process. This should allow your node to install a firmware image that uses a legacy architecture.
+
 After downgrading your node's firmware you will then continue the process for entering your callsign and configuring the node's settings, as explained in the **Basic Setup** section.

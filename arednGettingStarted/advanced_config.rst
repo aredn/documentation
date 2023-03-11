@@ -549,13 +549,15 @@ These fields contain the external URLs for map tiles and `leafletjs <https://lea
 Firmware and Package Download Paths
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: _images/advConfig-downloads.png
+.. image:: _images/advConfig-firmware.png
   :alt: Advanced Configuration - downloads
   :align: center
 
-These fields contain the URLs used by the node for downloading firmware and package files during upgrades. By default they point to the AREDN |trade| downloads server available across the Internet. You can change these paths to point to a local mesh package server in order to upgrade nodes that do not have Internet access.
+|
 
-.. note:: If you plan to create a local software repository for your mesh network, review **Creating a Local Package Server** in the **How-To Guide** section.
+These fields contain the URLs used by the node for downloading firmware and package files during upgrades. By default they point to the AREDN |trade| downloads server available across the Internet. You can change these paths to point to a local mesh package server in order to upgrade nodes that do not have Internet access. If you plan to create a local software repository for your mesh network, review **Creating a Local Package Server** in the **How-To Guide** section.
+
+The **Dangerous Upgrade** setting allows you to disable the normal firmware compatibility safety checks that typically prevent you from loading the wrong firmware image on your node. The default setting is *OFF*, which means that the safety checks remain enabled, and this setting should not be changed unless you have a specific reason to disable the firmware compatibility checks.
 
 AREDN |trade| Alert Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

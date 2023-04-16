@@ -56,8 +56,6 @@ Remote Nodes
 Searchable Column Headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As your network grows in size, the length of the *Mesh Status* display will also grow. At some point it may become difficult to find specific devices or services on the page, especially in the *Remote Nodes* section. To help alleviate this issue search fields have been provided on several column headers in the *Current Neighbors* and *Remote Nodes* tables.
+As your network grows in size, the length of the *Mesh Status* display will also grow. At some point it may become difficult to find specific devices or services on the page, especially in the *Remote Nodes* section. To help alleviate this issue search fields have been provided on the column headers in these tables.
 
-As you enter each character from your keyboard into the search fields, the display will change to show only the entries that match your character or string. The filter is case insensitive, so it will find both upper and lower case entries for the characters you enter.
-
-If you press the **Refresh** button on the *Mesh Status* display, your search fields will be cleared. In some cases if you press the ``Enter`` key after entering your search string, you may notice that the *Mesh Status* display is refreshed and your search string is gone -- but if you click the field where you entered the search string you may see that the browser has saved that string for future use and it can be selected from a dropdown list. This behavior is browser-dependent, so you may find slightly different behavior depending on the web browser you are using.
+As you enter each character from your keyboard into the search fields, the display will change to show only the entries that match your character or string. The filter is case insensitive, so it will find both upper and lower case entries for the characters you enter. If you press the **Refresh** button on the *Mesh Status* display, your search fields will be cleared. 

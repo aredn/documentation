@@ -1,6 +1,6 @@
-=======================
-Network Discovery Tools
-=======================
+========================
+Network Management Tools
+========================
 
 There are several service programs that can assist in visualizing or mapping an AREDN |trade| network, as well as for viewing local RF conditions near your node. Some of these programs are discussed below.
 
@@ -26,6 +26,35 @@ For additional information visit this link: `KN6PLV MeshMap <https://github.com/
 
 .. image:: _images/meshmap-kn6plv.png
    :alt: KN6PLV MeshMap Display
+   :align: center
+
+|
+
+AREDN |trade| Prometheus Exporter
+---------------------------------
+
+`Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_ is an open-source monitoring and alerting toolkit which collects and stores metrics as time series data. At given intervals it can collect metrics from AREDN |trade| nodes having the ``prometheus-exporter`` package installed. Prometheus evaluates rule expressions, displays the results, and can trigger alerts when specified conditions are detected.
+
+AREDN |trade| metrics in the ``prometheus-exporter`` package include the following:
+
+- Node details (name, model, firmware, description, Lat/Lon, grid square, band, channel, width, frequency, SSID)
+- Memory, storage, CPU, and networking metrics
+- RF metrics (signal, noise, MSC rate, TX/RX packets/rates)
+- LQM metrics
+- OLSR link info
+
+In order for Prometheus to pull metrics from a node it will use the following target URL: ``http://<NODE>.local.mesh/cgi-bin/metrics`` and metrics are returned by the node as standard *text/plain* content. Minimal node resources are required to support Prometheus data collection since the node only uses minimal resources whenever this URL is queried.
+
+.. image:: _images/prometheus-exporter.png
+   :alt: Prometheus Exporter metrics in text format
+   :align: center
+
+|
+
+The AREDN |trade| ``prometheus-exporter`` simply makes these metrics available for Prometheus to pull. For additional information about Prometheus itself, visit `their website here <https://prometheus.io/>`_. The following image shows Prometheus metrics for an AREDN |trade| node being displayed by the `Grafana <https://en.wikipedia.org/wiki/Grafana>`_ visualization application.
+
+.. image:: _images/grafana.png
+   :alt: Prometheus Exporter metrics in Grafana
    :align: center
 
 |

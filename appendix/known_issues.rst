@@ -4,9 +4,6 @@ Known Issues
 
 The following list contains known issues which the development team is aware of and is working to resolve where possible.
 
-Issue #497: Channel 6 does not work for the LAN AP with 2GHz radio.
-  *Workaround*: Avoid channel 6 for LAN AP with 2 GHz radio.
-
 Issue #494: Changing the MAC address in the DHCP Reservation may not work.
   *Workaround*: If the IP address you want to change is already in use, then changing the MAC address is not allowed. No workaround at this time.
 

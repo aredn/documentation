@@ -60,7 +60,7 @@ AREDN |trade| is an open, ad hoc, network allowing any node to associate with an
 Link Quality Manager (LQM)
 --------------------------
 
-The *Link Quality Manager* can be enabled on any node running the current nightly build or newer firmware. It runs in the background to evaluate RF links and automatically take the following actions: 
+The *Link Quality Manager* can be enabled on any node running 3.22.12.0 or newer firmware. It runs in the background to evaluate RF links and automatically take the following actions: 
 
 1. Blocks radio links which are also DtD links
 2. Blocks radio links which have too low an SNR

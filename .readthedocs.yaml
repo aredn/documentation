@@ -6,3 +6,6 @@ build:
         nodejs: "18"
         rust: "1.64"
         golang: "1.19"
+python:
+  install:
+    - requirements: requirements.txt

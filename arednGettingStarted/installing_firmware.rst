@@ -68,7 +68,7 @@ It may be helpful to have a brief checklist of steps to follow when doing the in
 Ubiquiti 802.11n First Install Process
 --------------------------------------
 
-Ubiquiti 802.11n devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *server* to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP *client* software available. For more information, see the **Tools for Your Computer** section above.
+Ubiquiti 802.11n devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *server* to which you can upload the AREDN |trade| *factory* image. Your computer must have TFTP *client* software available. For more information, see the **Preparing Your Computer** section above.
 
 Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 
@@ -104,12 +104,12 @@ Ubiquiti 802.11ac First Install Process
 ---------------------------------------
 
 Prerequisites
-  The installing computer must be capable of connecting to the command line of the target device. This will require that the computer support both the *ssh* and *scp* protocols. *Ssh* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. For more information, see the **Tools for Your Computer** section above.
+  The installing computer must be capable of connecting to the command line of the target device. This will require that the computer support both the *ssh* and *scp* protocols. *Ssh* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. For more information, see the **Preparing Your Computer** section above.
 
 Step 1: Preparing the device
   Before you install AREDN |trade| firmware on a Ubiquiti 802.11ac device, you must first make sure it is running version **8.7.0** of the standard Ubiquiti AirOS software. This procedure will not work if the device is running any other version. Fortunately you can upgrade or downgrade the standard software.
 
-  As described above, it is best to connect your computer to the device using a simple Ethernet switch so that your computer's network interface remains unaffected by reboots on the radio. The IP address for a new Ubiquiti device is 192.168.1.20. Set the IP address of your computer to 192.168.1.10 and, when the device is powered up, enter 192.168.1.20 in a web browser. For a brand new device you’ll be asked to select your country and agree to the EULA. Then click *Continue*. Next you will be prompted to create a user account and password on the radio. You can enter the username ``admin`` and the password ``admin!23`` (for example) and then click *Save*.
+  As described above, it is best to connect your computer to the device using a simple Ethernet switch so that your computer's network interface remains unaffected by reboots on the radio. The IP address for a new Ubiquiti device is 192.168.1.20. Set the IP address of your computer to 192.168.1.10 and, when the device is powered up, enter 192.168.1.20 in a web browser. For a brand new device you’ll be asked to select your country and agree to the EULA. Then click *Continue*. Next you will be prompted to create a user account and password on the radio. You can enter the username ``admin`` and the password ``admin!23`` (for example) and then click *Save*. Make a note of this username and password because you will use it in the following steps.
 
   You should now see the main Dashboard view in AirOS. On the left, click the *Gear* icon. This will take you to the System page. At the top of this page you will find the radio's current firmware version. For example, it might read ``FIRMWARE VERSION XC.V8.7.1``. If the firmware version shows either **XC.V8.7.0** or **WA.V8.7.0** then you have the correct AirOS software and can move on to **Step 2**.
 
@@ -123,10 +123,10 @@ Step 1: Preparing the device
 
   On the top right of the System page you will see “UPLOAD FIRMWARE” and UPLOAD in blue. Clicking the blue UPLOAD text will open a dialog and let you select the **8.7.0** firmware you downloaded to your computer. Now that firmware will be uploaded to the device. Once completed a dialog in the top right will be displayed allowing you to either UPDATE or DISCARD the newly uploaded firmware. Click *UPDATE*. The upgrade process will now start. Do **not** unplug the device until this step is completed.
 
-  Once the upgrade has been completed, the device will return you to the login page. Log in using the username and password set earlier (``admin`` / ``admin!23``). Once again you will see the System page and if everything has been successful, the firmware version will now read either WA.V8.7.0 or XC.V8.7.0 and you can move to **Step 2**.
+  Once the upgrade has been completed, the device will return you to the login page. Log in using the username and password you created earlier (``admin`` / ``admin!23``). Once again you will see the System page and if everything has been successful, the firmware version will now read either WA.V8.7.0 or XC.V8.7.0 and you can move to **Step 2**.
 
 Step 2: Copy the AREDN |trade| firmware to the device
-  Before you can install AREDN |trade| firmware on the device, you first need to put the AREDN |trade| image in the device’s ``/tmp`` directory. Note that each 802.11ac model will have a *different* AREDN |trade| image name, as opposed to currently where one AREDN |trade| image may support multiple models. Be sure to download the correct firmware image from the AREDN |trade| download site. Copy the firmware to the device using the scp command:
+  Before you can install AREDN |trade| firmware on the device, you first need to put the AREDN |trade| image in the device’s ``/tmp`` directory. Note that each 802.11ac model will have a *different* AREDN |trade| image name, as opposed to currently where one AREDN |trade| image may support multiple models. Be sure to download the correct firmware image from the AREDN |trade| download site. Copy the firmware to the device using the scp command with the username and password you created in **Step 1**.
 
   ::
 
@@ -159,7 +159,7 @@ Step3: Install the firmware
 
     ssh -oHostKeyAlgorithms=+ssh-rsa admin@192.168.1.20
 
-  You will be asked for the password (for example, admin!23) and once entered you will be logged into the device and shown the shell prompt.
+  You will be asked for the password created in **Step 1** (for example, admin!23) and once entered you will be logged into the device and shown the shell prompt.
 
   To install the AREDN |trade| firmware you first need to create a program to do this. Ubiquiti devices expect signed firmware but AREDN |trade| is not signed, so we need to bypass the checking process. To do this type or copy/paste the following two commands:
 
@@ -184,7 +184,7 @@ Mikrotik First Install Process
 
 Mikrotik devices require a **two-part install** process: First, boot the correct Mikrotik initramfs-kernel file, and then use that temporary AREDN |trade| Administration environment to complete the installation of the appropriate *sysupgrade* file.
 
-Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. You will need to install and configure a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Tools for Your Computer** section above.
+Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. You will need to install and configure a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Preparing Your Computer** section above.
 
 For most Mikrotik devices the steps below will work without issue. However, if your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface. Navigate to the *System > Routerboard* section. Verify that the *Boot Device* is set to ``try-ethernet-once-then-nand`` and uncheck or deselect ``Protected Routerboot`` as shown in the example below. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN |trade| firmware install checklist.
 
@@ -215,7 +215,7 @@ PXE Boot: *Linux Procedure*
   5. The node will now automatically reboot with the temporary AREDN |trade| Administration image.
 
 PXE Boot: *Windows Procedure*
-  Configure the PXE Server on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Tools for Your Computer** section above.
+  Configure the PXE Server on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Preparing Your Computer** section above.
 
   1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line: ``rfc951=1`` then save and close the file.
 
@@ -262,7 +262,7 @@ TP-LINK First Install Process
 
 **TP-LINK** devices may allow you to use the manufacturer's native *PharOS* web browser interface to apply new firmware images. If available, this is the most user-friendly way to install AREDN |trade| firmware. Navigate to the system setup menu to select and upload new firmware. Check the TP-LINK documentation for your device if you have questions about using their built-in user interface. If this process works then you will have AREDN |trade| firmware installed on your device and you skip all of the steps described below.
 
-If the process above does not work or if you choose not to use the *PharOS* web interface, then you can install AREDN |trade| firmware on your device using steps similar to those described above for Mikrotik devices. TP-LINK devices are programmed to use `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ for downloading a boot image from an external source. If you already have a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer then you can use that. The example below uses *Tiny PXE*. It may also be possible to use a simple TFTP server instead. For more information, see the **Tools for Your Computer** section above.
+If the process above does not work or if you choose not to use the *PharOS* web interface, then you can install AREDN |trade| firmware on your device using steps similar to those described above for Mikrotik devices. TP-LINK devices are programmed to use `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ for downloading a boot image from an external source. If you already have a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer then you can use that. The example below uses *Tiny PXE*. It may also be possible to use a simple TFTP server instead. For more information, see the **Preparing Your Computer** section above.
 
 Preparation
   - Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
@@ -287,7 +287,7 @@ Linux Procedure
   5. The node will now automatically reboot with the new AREDN |trade| firmware image.
 
 Windows Procedure
-  Configure the PXE or TFTP Server on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Tools for Your Computer** section above.
+  Configure the PXE or TFTP Server on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Preparing Your Computer** section above.
 
   1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line:  ``rfc951=1`` then save and close the file.
 

@@ -393,6 +393,32 @@ Authorized SSH Keys
 Support Data
   There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| team in order to get help with a problem. Click the *Download Support Data* button to save a compressed archive file to your local computer.
 
+Advanced Network
+----------------
+
+If you have a supported multiport device (currently *Mikrotik hAP ac2* or *ac3* only), then you will see a menu option for **Advanced Network**. This provides a way for you to configure the ports on your multiport node. For more information on the AREDN |trade| VLANs being used, refer to the *Node VLANs* description in the **Basic Setup** section above.
+
+
+.. image:: _images/advnet.png
+  :alt: Advanced Networking
+  :align: center
+
+|
+
+Ports
+  The **Ports** section shows the available ports across the top and the possible configurations along the left side. The default configuration is as follows:
+
+  - The first port is configured as a WAN port. The data entry field to the right of the *vlan* label can contain any valid vlan identifier if it is required, typically in the range between 1 and 4094. The default for these multiport devices is no vlan (untagged), so leave the default unless there is a specific reason why it is required in your situation.
+  - The middle ports are configured as LAN ports with no vlan (untagged).
+  - The last port is configured for DtD linking to another AREDN |trade| node with vlan2 (tagged).
+
+  You should only have one box checked for each port. If you want to change a port's configuration, simply uncheck the existing box and check the box for the new setting on that port.
+
+Xlinks
+  A cross-link allows your node to pass AREDN |trade| traffic across non-AREDN |trade| point-to-point RF links. To add a cross-link click the *plus* icon, enter an unused VLAN number for the link, the IP address of the near-side radio, the IP address of the far-side radio, a weighting factor, and the port to which the near-side radio is connected on your node. The *Weight* will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN |trade| traffic. If you want to remove a cross-link, simply click the *minus* icon on the right side of the row to remove.
+
+When you have finished making configuration changes to the ports and cross-links, click the *Save Changes* button. You will be notified if a reboot is required to activate your changes, and you can then click the *Reboot* button.
+
 Advanced Configuration
 ----------------------
 

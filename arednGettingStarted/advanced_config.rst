@@ -469,6 +469,8 @@ WAN Settings
   :alt: Advanced Configuration - WAN Settings
   :align: center
 
+|
+
 Several WAN access settings can be adjusted in this section. It is recommended that these settings be left at their default values, but specific use cases may require you to change them.
 
 Allow MESH nodes to use my WAN
@@ -498,12 +500,18 @@ Provide my LAN devices with a default route
 
   Remember that the default value is ``OFF`` and you should not turn it on unless you have a special reason to do so.
 
-WAN VLAN Id
+WAN VLAN Number
   .. important:: This feature only applies to node hardware which requires a VLAN tag for the WAN interface. It will not appear on hardware where the Ethernet ports are on a switch chip, since changing the default VLAN number is not supported on those devices at the present time. It will appear as a ``blank`` field on devices that have a dedicated WAN port and therefore do not need a VLAN tag for their WAN interface.
 
   If you have node hardware that uses a VLAN tag for the WAN interface, then the default WAN VLAN identifier is ``1``. In some cases this default VLAN may be in use already or may be reserved by other equipment on your network. This field allows you to change the VLAN number being used on your node's WAN interface.
 
   .. warning:: If you plan to change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+
+Enable Web access
+  Access to your node from the WAN is now disabled by default. If you need to have web access to your node from the WAN, then you can turn it ``ON`` here. Remember that the default value is ``OFF`` and you should not turn it on unless you have a special reason to do so.
+
+Enable SSH access
+  Access to your node from the WAN is now disabled by default. If you need to have command line access to your node from the WAN, then you can turn ``ON`` SSH access here. Remember that the default value is ``OFF`` and you should not turn it on unless you have a special reason to do so.
 
 PoE and USB Power Passthrough
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -30,6 +30,8 @@ Tips for Upgrading Firmware
 
 Upgrading an AREDN |trade| node is accomplished using the *Setup > Administration > Firmware Update* feature on the node's web interface. Follow the procedures documented in the **Downloading AREDN Firmware** section to ensure you have the correct firmware version from the AREDN |trade| website to install on your node.
 
+.. note:: Currently there are two Mikrotik devices which require that the standard firmware compatibility checks be disabled in order to upgrade from version 3.22.12.0 or older to a newer firmware version. The specific devices are shown in the **Supported Devices** list on the AREDN |trade| website with a *Status* of *danger-upgrade*, and the notes at the bottom of that page explain what is required. You must first install the `Dangerous Upgrade package <https://github.com/kn6plv/DangerousUpgrade/>`_ (the **ipk** file) which will disable the firmware compatibility checks. After this package is installed on your node you can perform a normal firmware upgrade (for example) from 3.22.12.0 to 3.23.4.0.
+
 In rare cases the upgrade process can fail due to lack of node resources, but such a failure will leave the node running its previous firmware version. The following tips help ensure that memory utilization is at a minimum on the node.
 
 Try to Load Local Firmware

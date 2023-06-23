@@ -433,6 +433,8 @@ Link Quality Manager (LQM) Settings
   :alt: Advanced Configuration - Link Quality Manager
   :align: center
 
+|
+
 The basic LQM settings were described above under the **Mesh RF Column**, but additional LQM settings are also available here in the **Advanced Configuration** section.
 
 Enable
@@ -454,7 +456,10 @@ Ping Penalty
   The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is 5 percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
 
 RTS Threshold
-  The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes.
+  The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is 1.
+
+Maximum Packet Size
+  The maximum size of a packet which is sent over WiFi. The default is 1500 bytes, but this value can be decreased if your hardware is unable to handle larger packet sizes.
 
 User Blocked Nodes
   A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. RF nodes are blocked by their Wifi MAC address, while DtD nodes are blocked by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.

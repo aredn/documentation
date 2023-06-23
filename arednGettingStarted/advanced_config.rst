@@ -459,7 +459,7 @@ RTS Threshold
   The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is 1.
 
 Maximum Packet Size
-  The maximum size of a packet which is sent over WiFi. The default is 1500 bytes, but this value can be decreased if your hardware is unable to handle larger packet sizes.
+  The maximum size of a packet which is sent over WiFi. The value is between 256 and 1500 with a default of 1500 bytes. Decreasing this value can improve link quality in some cases, especially in noisy environments with long distance connections.
 
 User Blocked Nodes
   A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. RF nodes are blocked by their Wifi MAC address, while DtD nodes are blocked by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.

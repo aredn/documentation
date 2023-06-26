@@ -194,7 +194,7 @@ For most Mikrotik devices the steps below will work without issue. However, if y
 
 |
 
-.. attention:: OpenWRT firmware (and therefore AREDN |trade|) may experience a boot loop during installation of the sysupgrade file on Mikrotik devices with RouterOS v6.45.8 or newer. If your Mikrotik device came with a factory operating system newer than v6.45.8, you should downgrade Mikrotik RouterOS prior to flashing with AREDN |trade|. Follow the instructions on this page for further details on this process: `OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_
+.. attention:: OpenWRT firmware (and therefore AREDN |trade|) may experience a boot loop during installation of the *sysupgrade* file on Mikrotik devices with RouterOS v6.45.8 or newer. If your Mikrotik device came with a factory operating system newer than v6.45.8, you can follow the instructions on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing with AREDN |trade|. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN |trade| firmware, and the MIPSBE version (routeros-mipsbe) for other AREDN |trade| devices.
 
 Preparation
   - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the initramfs-kernel file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.

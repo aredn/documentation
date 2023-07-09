@@ -626,6 +626,20 @@ Alert Message Local URL
 
   It is possible to include HTML tags in your message text, such as using the ``<br />`` tag to display subsequent text on the next line. However, it is best practice to keep alert messages short in order to minimize the height of the alert banner displayed on node webpages.
 
+Alert Message Groups
+  In addition to local alert messages, it is possible to receive group alert messages. Group alert messages allow node operators to organize the mesh network into administrative/geographical domains or alert type by free form group names. Multiple group names can be added to this field as a comma seperated list. It is highly advisable that group name *not* contain spaces.
+
+  Group alerts should be considered by the network management team to create a consistant alert structure and types. The following are some examples to consider:
+
+  - Geographic regions (States, ARRL sections, large cities, etc.)
+  - Connection types (i.e. backbone, leaf nodes, tunnels)
+  - Infrastructure changes
+  - Weather alerts
+  - Wildfire, flooding, tsunami or volcano alerts
+  - SKYWARN activations / DHS threat level
+
+  The group alert messages are retrieved from the web server specified by the local URL setting. Similarly to how the local alert messages are created, the group alerts need to be stored in a file named after the group name in all lower case with a ``.txt`` extension.
+
 Alert Message Pollrate
   This field allows you to set the polling rate or interval in hours at which the node will check for message updates. The default polling rate is once every 12 hours, but you can make this value smaller if you want your node to check for updates more frequently.
 

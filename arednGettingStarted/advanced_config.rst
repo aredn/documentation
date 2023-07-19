@@ -512,11 +512,8 @@ WAN VLAN Number
 
   .. warning:: If you plan to change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
 
-Enable Web access
-  Access to your node from the WAN is now disabled by default. If you need to have web access to your node from the WAN, then you can turn it ``ON`` here. Remember that the default value is ``OFF`` and you should not turn it on unless you have a special reason to do so.
-
-Enable SSH access
-  Access to your node from the WAN is now disabled by default. If you need to have command line access to your node from the WAN, then you can turn ``ON`` SSH access here. Remember that the default value is ``OFF`` and you should not turn it on unless you have a special reason to do so.
+Enable Web, SSH, or Telnet Access
+  HTTP, SSH, and Telnet access to your node is enabled by default on your node's WAN interface. If you need to restrict this access to your node from the WAN, then you can turn it ``OFF`` here.
 
 PoE and USB Power Passthrough
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

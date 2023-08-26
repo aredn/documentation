@@ -4,6 +4,27 @@ Other Services
 
 As mentioned in the *Services Overview*, almost any program that can operate across a peer-to-peer TCP/IP network is a candidate for AREDN |trade| networking. Many useful services have been discussed previously, and this section will list some of the other types of services that you might consider deploying on your mesh network.
 
+Network Time Services
+---------------------
+
+Although the AREDN |trade| nodes themselves do not depend on network time synchronization, there may be other programs or services running on your mesh network which would benefit from having accurate network time updates. `Network Time Protocol (NTP) <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ is a reliable way for networked devices to update their system clocks. This may be especially helpful for devices that do not have an onboard realtime clock, such as Raspberry Pi computers. It may also be important to have accurate timestamps across the network for programs such as MeshChat, email message logging, file timestamps, video surveillance images, and many others.
+
+Most NTP implementations depend on an Internet connection in order to synchronize with upstream time servers. However, it would be more useful to be able to synchronize system clocks in an off-grid situation when AREDN |trade| nodes are deployed during an emergency. One way to accomplish this would be to configure one or more battery powered computers as NTP servers which retrieve upstream time from GPS satellites *(stratum 0)*.
+
+.. image:: _images/centerclick.png
+   :alt: NTP Appliance
+   :align: right
+
+Position your portable NTP server so that it maintains a clear view of the sky and can get a fix on as many GPS satellites as possible. In order for NTP to operate properly, each client device must have a reliable connection to the NTP servers on the network. Be sure to locate your NTP servers on reliable high-speed segments of your mesh.
+
+.. image:: _images/ntp-gps.png
+   :alt: OffGrid NTP Server
+   :align: right
+
+|
+
+You may choose to purchase an inexpensive off-the-shelf NTP appliance such as those offered by `Centerclick <https://centerclick.com/ntp/>`_ and others. There are also many sources of information for building your own off-grid NTP server (for example, this one using a Raspberry Pi: `G4WNC NTP <https://photobyte.org/raspberry-pi-stretch-gps-dongle-as-a-time-source-with-chrony-timedatectl/#>`_)
+
 weeWx Weather Service
 ---------------------
 
@@ -16,21 +37,6 @@ a valuable overview of weather conditions across a wide area, for example, showi
    :align: center
 
 |
-
-Network Time Services
----------------------
-
-Although the AREDN |trade| nodes themselves do not depend on network time synchronization, there may be other programs or services running on your mesh network which would benefit from having accurate network time updates. `Network Time Protocol (NTP) <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ is a reliable way for networked devices to update their system clocks. This may be especially helpful for devices that do not have an onboard realtime clock, such as Raspberry Pi computers. It may also be important to have accurate timestamps across the network for programs such as email message logging, file updates, video surveillance images, and many others.
-
-Most NTP implementations depend on an Internet connection in order to synchronize with upstream time servers. However, it would be more useful to be able to synchronize system clocks in an off-grid situation when AREDN |trade| nodes are deployed during an emergency. One way to accomplish this would be to configure one or more battery powered computers as NTP servers which retrieve upstream time from GPS satellites *(stratum 0)*. Position your portable NTP server so that it maintains a clear view of the sky and can get a fix on as many GPS satellites as possible.
-
-.. image:: _images/ntp-gps.png
-   :alt: OffGrid NTP Server
-   :align: center
-
-|
-
-In order for NTP to operate properly, each client device must have a fast and reliable connection to the NTP servers on the network. Be sure to locate your NTP servers on reliable high-speed segments of your mesh. For additional information about building an off-grid NTP server, visit this link: `G4WNC NTP <https://photobyte.org/raspberry-pi-stretch-gps-dongle-as-a-time-source-with-chrony-timedatectl/#>`_.
 
 GPS Tracking Services
 ---------------------

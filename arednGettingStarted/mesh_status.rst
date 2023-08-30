@@ -10,6 +10,8 @@ The **Mesh Status** page lists mesh nodes and link quality information, along wi
 
 - The **Quit** button returns you to the *Node Status* display.
 
+- The **Search** field allows you to filter the *Mesh Status* display by any keywords of your choice. The display will be limited to showing only nodes which match the keywords you enter. As you type each character from your keyboard into the search fields, the display will change to show only the entries that match your character or string. The filter is case insensitive, so it will find both upper and lower case entries for the characters you enter. If you press the **Refresh** button on the *Mesh Status* display, the search field will be cleared.
+
 Mesh Status Display Sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -19,13 +21,13 @@ Mesh Status Display Sections
 
 |
 
-Your Node
-  This shows your node as well as any connected LAN hosts and the advertised services available on your node and hosts. You can click any available web links to navigate to the services on your node or LAN hosts. This will be true for any available services in the *Current Neighbors* or *Remote Nodes* sections, too. Since this display is slightly wider than before, each row will be highlighted as you hover your cursor over it. This gives a visual indicator for any column entries that are part of the row over which you are hovering.
+Node Name
+  This shows your node as well as any connected LAN hosts and the advertised services available on your node and hosts. You can click any available web links to navigate to the services on your node or LAN hosts. This will be true for any available services in the *Current Neighbors* or *Remote Nodes* sections, too. Each node will be highlighted as you hover your cursor over it. This gives a visual indicator for any column entries that are part of the row over which you are hovering.
 
-  If you have any hosts for which you selected *Do Not Propagate* in the **DHCP Reservations List**, those hosts will be displayed in a light gray color only on your node's *Local Hosts* column. If you created any **DNS Aliases** for your hosts, those aliases will be displayed in a light orange color only on your node's *Local Hosts* column. All other hosts will be displayed in the default color for the theme that you are using.
+  If you have any hosts for which you selected *Do Not Propagate* in the **DHCP Reservations List**, those hosts will be displayed in a light gray color only on your node's *LAN Hostname* column. If you created any **DNS Aliases** for your hosts, those aliases will be displayed in a light orange color only on your node's *LAN Hostname* column. All other hosts will be displayed in the default color for the theme that you are using.
 
 Current Neighbors
-  This shows a list of *Neighbor Nodes* that are directly connected with your node, meaning they are only one network "hop" distant. These nodes may be connected via :abbr:`RF (Radio Frequency)`, :abbr:`DtD (Device to Device)` link, or a tunnel over an Internet connection. It also shows any LAN hosts on your current neighbors as well as any advertised services available on those nodes and hosts.
+  This shows a list of *Neighbor Nodes* that are directly linked with your node, meaning they are only one network "hop" distant. These nodes may be connected via :abbr:`RF (Radio Frequency)`, :abbr:`DtD (Device to Device)` link, or a tunnel over an Internet connection. It also shows any LAN hosts on your current neighbors as well as any advertised services available on those nodes and hosts.
 
   There are several link quality statistics displayed for each connected node.
 
@@ -35,7 +37,7 @@ Current Neighbors
 
   - ``TxMbps`` or Transmit Megabits per Second is an estimate of the data rate achieved across any :abbr:`RF (Radio Frequency)` link with a neighbor node. This column may show zero if the data being transmitted between these nodes is not sufficient for the metric to be calculated.
 
-  - ``Services`` is the column which displays any available services on the neighbor node or its LAN hosts. You can click on service links to navigate to the webpage for those services on the neighbor node.
+  - ``Service Name`` is the column which displays any available services on the neighbor node or its LAN hosts. You can click on service links to navigate to the webpage for those services.
 
   In addition to the neighbor node name, there may be a text abbreviation in parentheses that tells how the neighbor node is connected.
 
@@ -52,10 +54,3 @@ Previous Neighbors
 
 Remote Nodes
   This section lists the other nodes on the network that are two or more hops away from your node. Advertised services on nodes and their LAN hosts are also listed. Remote Nodes are sorted by their ``ETX`` or *Expected Transmission* metric. :abbr:`ETX (Expected TX metric)` is an estimate of the number of :abbr:`OLSR (Optimized Link State Routing protocol)` packets that must be sent in order to receive a round trip acknowledgement, and it is often referred to as *link cost*. When sending data the :abbr:`OLSR (Optimized Link State Routing)` protocol selects the least cost route based on the lowest :abbr:`ETX (Expected TX metric)` in the direction of the final destination.
-
-Searchable Column Headers
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-As your network grows in size, the length of the *Mesh Status* display will also grow. At some point it may become difficult to find specific devices or services on the page, especially in the *Remote Nodes* section. To help alleviate this issue search fields have been provided on the column headers in these tables.
-
-As you enter each character from your keyboard into the search fields, the display will change to show only the entries that match your character or string. The filter is case insensitive, so it will find both upper and lower case entries for the characters you enter. If you press the **Refresh** button on the *Mesh Status* display, your search fields will be cleared. 

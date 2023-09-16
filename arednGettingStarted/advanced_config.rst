@@ -369,7 +369,9 @@ Firmware Update
   #) **Load Local Firmware**: If you need to upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp/web`` folder, and name it ``local_firmware.bin``. Refresh your node's *Administration* page and once the page detects the ``/tmp/web/local_firmware.bin`` file, then the *Apply Local Firmware* button will become active. Press this button to begin the update process using the firmware you previously uploaded.
 
 Package Management
-  Here you can install or remove software packages on the node. *Upload Package* allows you to install a package file by uploading it from your computer to your node. *Download Package* allows Internet-connected nodes to retrieve a package from the AREDN |trade| website. Clicking *Refresh* will update the list of packages available for download.
+  Here you can install or remove software packages on the node. **Upload Package** allows you to install a package file by uploading it from your computer to your node. **Download Package** allows Internet-connected nodes to retrieve a package from the AREDN |trade| website. Clicking *Refresh* will update the list of packages available for download.
+
+  The **Remove Package** list shows all packages currently installed on the node. Selecting a package and clicking *Remove* will uninstall the package. You will only be able to remove packages that you have added. All installed packages are shown, but the pre-installed packages cannot be deleted since they are necessary for proper operation of the node.
 
 .. image:: _images/admin-package.png
    :alt: Install/remove packages
@@ -377,7 +379,7 @@ Package Management
 
 |
 
-  The *Remove Package* list shows all packages currently installed on the node. Selecting a package and clicking *Remove* will uninstall the package. You will only be able to remove packages that you have added. All installed packages are shown, but the pre-installed packages cannot be deleted since they are necessary for proper operation of the node.
+  As of NB 20230916, when you install extra packages, your node will remember them in its package store where it keeps a *catalog* as well as a copy of the package code itself. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will wait for a few minutes and then automatically install the extra packages in its package store. Also, if you later remove one of your extra packages, it will be automatically removed from the package store.
 
 Authorized SSH Keys
   Uploading ssh keys allows computers to connect to a node via ssh without having to know the password. The ssh keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload its *public* key to your AREDN |trade| node. If you want to remove an installed key, select it and click the *Remove* button.

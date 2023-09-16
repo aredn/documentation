@@ -379,7 +379,7 @@ Package Management
 
 |
 
-  As of NB 20230916, when you install extra packages, your node will remember them in its package store where it keeps a *catalog* as well as a copy of the package code itself. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will wait for a few minutes and then automatically install the extra packages in its package store. Also, if you later remove one of your extra packages, it will be automatically removed from the package store.
+  As of NB 20230916, when you install extra packages, your node will remember them in its package store. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will wait for a few minutes and then automatically install the extra packages in its package store. If you *uploaded* the package to the node, then the package store keeps a copy of the package code itself. If you *downloaded* the package, then your node will attempt to redownload it. Also, if you later *remove* one of your extra packages, it will be automatically removed from the package store.
 
 Authorized SSH Keys
   Uploading ssh keys allows computers to connect to a node via ssh without having to know the password. The ssh keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload its *public* key to your AREDN |trade| node. If you want to remove an installed key, select it and click the *Remove* button.

@@ -27,6 +27,10 @@ Neighbor Status
 Super Mesh
   If you are running firmware ≥ Nightly Build 20230921, you may see a *Super Mesh* button. This allows you to navigate to the *Mesh Status* display of the closest Supernode available to your device. Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your node is part of a Supernode network, then you have the ability to view other nodes which are part of the Supernode network even if your local mesh is not otherwise linked to those networks. Further information is forthcoming in subsequent documentation.
 
+  .. image:: _images/supernode-mesh.png
+     :alt: Supernode mesh
+     :align: center
+
 WiFi Scan
    Displays a list of other 802.11 signals within range of your node. The 802.11 signals may include Access Points, neighbor nodes, and other mesh networks (foreign ad-hoc networks). WiFi Scan is described in more detail below.
 

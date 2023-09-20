@@ -561,6 +561,26 @@ Recent firmware improvements have made the *Mesh Status* display much more respo
 
 Currently the default low memory threshold is 10,000 KB, which if reached will limit the *Mesh Status* display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory.
 
+Supernode Settings
+^^^^^^^^^^^^^^^^^^
+
+Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your local node is part of a Supernode network then you have the ability to view other nodes which are part of the Supernode network. Further information is forthcoming in subsequent documentation.
+
+.. image:: _images/supermesh-btn.png
+  :alt: Super Mesh button
+  :align: center
+
+This feature is ``ON`` by default and results in a new button being displayed on your *Node Status* page. The **Super Mesh** button will navigate to the *Mesh Status* display of the closest Supernode available to your device.
+
+.. image:: _images/advConfig-supernode-support.png
+  :alt: Advanced Configuration - Supernode Support
+  :align: center
+
+|
+
+Use any Supernodes
+  This switch enables or disables support for viewing Supernode networks. The default value is ``ON`` which means Supernode networks are available and you can view other nodes via the **Super Mesh** button. Switching this value ``OFF`` will remove the **Super Mesh** button from your *Node Status* display.
+
 Network Tools
 ^^^^^^^^^^^^^
 

@@ -70,13 +70,14 @@ If you would like to see the documentation for a specific AREDN |trade| release,
 
    arednHow-toGuides/firmware_tips
    arednHow-toGuides/home-router-connection
+   arednHow-toGuides/poe
+   arednHow-toGuides/lqm
+   arednHow-toGuides/iperf
    arednHow-toGuides/siso-mimo
+   arednHow-toGuides/supernodes
    arednHow-toGuides/radio_mobile_settings
    arednHow-toGuides/dish-aiming
-   arednHow-toGuides/iperf
    arednHow-toGuides/max_tunnel_settings
-   arednHow-toGuides/lqm
-   arednHow-toGuides/poe
    arednHow-toGuides/puttygen_ssh_keys
    arednHow-toGuides/local-package-repo
    arednHow-toGuides/devtools

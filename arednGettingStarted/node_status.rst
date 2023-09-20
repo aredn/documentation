@@ -24,6 +24,9 @@ Mesh Status
 Neighbor Status
   If you have *Link Quality Manager* (LQM) enabled, you will also see a button which takes you to the **Neighbor Status** display. LQM is enabled/disabled from the **Advanced Configuration** page, and the settings for LQM are described in the **Configuration Deep Dive** section. The basic settings for *Link Quality Manager* are described below. The theory behind its operation is discussed in the AREDN |trade| *Link Quality Manager* section of the **How-To Guide**.
 
+Super Mesh
+  If you are running firmware ≥ Nightly Build 20230921, you may see a *Super Mesh* button. This allows you to navigate to the *Mesh Status* display of the closest Supernode available to your device. Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your node is part of a network with Supernodes, then you have the ability to view other nodes which are part of the Supernode network even if your local mesh is not otherwise linked to those networks. See **Configuring a Supernode** in the *How-To Guides* section for further information.
+
 WiFi Scan
    Displays a list of other 802.11 signals within range of your node. The 802.11 signals may include Access Points, neighbor nodes, and other mesh networks (foreign ad-hoc networks). WiFi Scan is described in more detail below.
 

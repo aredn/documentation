@@ -74,7 +74,6 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednHow-toGuides/lqm
    arednHow-toGuides/iperf
    arednHow-toGuides/siso-mimo
-   arednHow-toGuides/supernodes
    arednHow-toGuides/radio_mobile_settings
    arednHow-toGuides/dish-aiming
    arednHow-toGuides/max_tunnel_settings

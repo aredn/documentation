@@ -564,7 +564,7 @@ Currently the default low memory threshold is 10,000 KB, which if reached will l
 Supernode Settings
 ^^^^^^^^^^^^^^^^^^
 
-Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your local node is part of a Supernode network then you have the ability to view other nodes which are part of the Supernode network. Further information is forthcoming in subsequent documentation.
+Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your local node is part of a Supernode network then you have the ability to view other nodes which are part of the Supernode network. For further information see the *Supernode Architecture* section of the **Network Topologies** section in the **Network Design Guide**.
 
 .. image:: _images/supermesh-btn.png
   :alt: Super Mesh button

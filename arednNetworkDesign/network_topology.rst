@@ -8,7 +8,7 @@ Every AREDN |trade| node is capable of automatically joining an *ad hoc* mesh ne
    :alt: Mesh Topology
    :align: right
 
-Every AREDN |trade| node within radio range of other nodes will be able to participate in the network to extend its reach, provide route redundancy, or host services needed on the network at large. This simple mesh topology may serve its purpose perfectly for a short-term network deployed in support of a local event, or even for more permanent communication between nodes which are always within radio range. However, as mentioned in the previous chapter, the most important consideration for you network design is *"What is the purpose for this particular network?"* The specific requirements of your mission should drive the design of your data network.
+Every AREDN |trade| node within radio range of other nodes will be able to participate in the network to extend its reach, provide route redundancy, or host services needed on the network at large. This simple mesh topology may serve its purpose perfectly for a short-term network deployed in support of a local event, or even for more permanent communication between nodes which are always within radio range. However, as mentioned in the previous chapter, the most important consideration for you network design is, *"What is the purpose for this particular network?"* The specific requirements of your mission should drive the design of your data network.
 
 Types of Topologies
 -------------------
@@ -57,3 +57,18 @@ Endpoint Links
   Endpoint links are used to connect destination nodes to the network. Sometimes these links are called "last mile", "tactical", or "terminal" links. Usually the nodes at the far end will serve either as the originators or the final destinations for network traffic. Depending on local conditions, endpoint links typically operate over distances of 3 miles or less.
 
 Different types of radio links may be needed to connect all of the nodes that are required in order to fulfill the purposes for your network. The ultimate goal of your network topology is to have a reliable data network that accomplishes its purpose for providing services to the intended destinations and users.
+
+Supernode Architecture
+----------------------
+
+Once several local or regional networks have been created, there may be a need for communication between these "mesh islands." Often node owners have used direct Internet tunnel connections to accomplish this. However, this has the effect of merging the mesh islands into a single network with all of the routing traffic traversing all of the member networks. Many of the legacy nodes with older hardware/firmware are unable to handle the increased load.
+
+A more efficient solution is to use a Supernode network to provide access across mesh islands, without sharing all of the local routing traffic across the linked networks. A Supernode is a specialized, dedicated node whose sole purpose is to link with other Supernodes and to shield each local network from the aggregate routing traffic. *Mikrotik hAP ac2* hardware is recommended for Supernodes, along with an Internet connection that provides robust bandwidth .
+
+A Supernode network is a high-level mesh network --- ``super`` meaning *"above or higher."* The Supernode network sits above the isolated mesh networks and provides connectivity without increasing the routing load on the local networks.
+
+.. image:: ../_images/supernode-mesh.png
+  :alt: Supernode mesh
+  :align: center
+
+A new solution for Supernode networks is currently being tested, and more information will be forthcoming in future documentation.

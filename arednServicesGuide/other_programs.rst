@@ -25,6 +25,29 @@ Position your portable NTP server so that it maintains a clear view of the sky a
 
 You may choose to purchase an inexpensive off-the-shelf NTP appliance such as those offered by `Centerclick <https://centerclick.com/ntp/>`_ and others. There are also many sources of information for building your own off-grid NTP server (for example, this one using a Raspberry Pi: `G4WNC NTP <https://photobyte.org/raspberry-pi-stretch-gps-dongle-as-a-time-source-with-chrony-timedatectl/#>`_)
 
+|
+
+AREDN |trade| Alert Message Manager
+-----------------------------------
+
+AREDN |trade| Alert Messages were explained in the **Getting Started Guide** under the *Advanced Configuration* section. The example given there showed the Alert Message source running on a separate LAN-connected web server. It is also possible to provide Alert Messages using an application created by Gerard Hickey (WT0F) which runs directly on a node having adequate storage. The AREDN |trade| Alert Message Manager *(aamm)* provides a web interface for creating, updating, or deleting Alert Messages -- as well as actually hosting the message repository.
+
+.. image:: _images/aamm-display.png
+   :alt: AAMM Display
+   :align: center
+
+|
+
+The two advantages of using this application are 1) having the message management front-end shown above, and 2) having a node-hosted message source which eliminates the need for a separate LAN-connected web server. Alert Messages are presented as shown in the example below on the *Node Status* display.
+
+.. image:: _images/aamm-msg.png
+   :alt: AAMM Messages
+   :align: center
+
+|
+
+The recipient nodes are configured the same way as described in the **Getting Started Guide** under the *Advanced Configuration* section for AREDN |trade| Alert Messages. For additional information about the AREDN |trade| Alert Message Manager, visit this link: `aamm <https://gitlab.com/aredn-apps/aamm>`_. You may also download and install the latest *aamm* package files `here <https://gitlab.com/aredn-apps/aamm/-/packages>`_.
+
 weeWx Weather Service
 ---------------------
 

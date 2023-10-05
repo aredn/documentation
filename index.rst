@@ -72,6 +72,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednHow-toGuides/home-router-connection
    arednHow-toGuides/poe
    arednHow-toGuides/lqm
+   arednHow-toGuides/supernodes
    arednHow-toGuides/iperf
    arednHow-toGuides/command-line
    arednHow-toGuides/siso-mimo

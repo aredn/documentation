@@ -186,19 +186,23 @@ Mikrotik First Install Process
 
 Download the *Install Checklist* for Mikrotik devices. These devices require a **two-part install** process: First, boot the correct Mikrotik initramfs-kernel file, and then use that temporary AREDN |trade| Administration environment to complete the installation of the appropriate *sysupgrade* file.
 
-Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. You will need to install and configure a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Preparing Your Computer** section above.
-
-For most Mikrotik devices the steps below will work without issue. However, if your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface. Navigate to the *System > Routerboard* section. Verify that the *Boot Device* is set to ``try-ethernet-once-then-nand`` and uncheck or deselect ``Protected Routerboot`` as shown in the example below. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN |trade| firmware install checklist.
+Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. You will need to install and configure a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Preparing Your Computer** section above. For most Mikrotik devices the install steps below will work without issue.
 
 .. image:: _images/mikrotik-protectboot.png
   :alt: Uncheck Mikrotik Protected Boot
-  :align: center
+  :align: right
 
-|
+**Potential RouterOS Issue**
 
-.. attention:: OpenWRT firmware (and therefore AREDN |trade|) may experience a boot loop during installation of the *sysupgrade* file on Mikrotik devices with RouterOS v6.45.8 or newer. If your Mikrotik device came with a factory operating system newer than v6.45.8, you can follow the instructions on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing with AREDN |trade|. You should be able to find the earlier firmware on the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN |trade| firmware, and the MIPSBE version (routeros-mipsbe) for other AREDN |trade| devices.
+If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface. Navigate to the *System > Routerboard* section. Click the *Settings* button to verify that the *Boot Device* is set to ``try-ethernet-once-then-nand`` and uncheck or deselect ``Protected Routerboot`` as shown in the example image. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN |trade| firmware install checklist.
 
-Preparation
+.. image:: _images/mikrotik-factoryfw.png
+  :alt: Uncheck Mikrotik Protected Boot
+  :align: right
+
+You may experience an issue during installation of the *sysupgrade.bin* file on Mikrotik devices having RouterOS v7. If your Mikrotik device came with a *Current Firmware* version of v7.x you can follow the instructions on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN |trade| firmware. You can find the earlier firmware on the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN |trade| firmware, or download the MIPSBE version (routeros-mipsbe) for other Mikrotik devices. You need to download a v6 RouterOS version that is equal or newer than the RouterOS version shown in the *Factory Firmware* field on your device (as in the example image).
+
+Install Preparation
   - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the initramfs-kernel file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 
   - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your **PXE** server will avoid changing IP addresses on your computer during the install process. AREDN |trade| firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
@@ -270,7 +274,7 @@ Download the *Install Checklist* for TP-LINK devices. These devices may allow yo
 
 If the process above does not work or if you choose not to use the *PharOS* web interface, then you can install AREDN |trade| firmware on your device using steps similar to those described above for Mikrotik devices. TP-LINK devices are programmed to use `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ for downloading a boot image from an external source. If you already have a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer then you can use that. The example below uses *Tiny PXE*. It may also be possible to use a simple TFTP server instead. For more information, see the **Preparing Your Computer** section above.
 
-Preparation
+Install Preparation
   - Download the appropriate TP-LINK *factory* file and rename this file as ``recovery.bin``
 
   - Set your computer’s Ethernet network adapter to a static IP address of 192.168.0.100.

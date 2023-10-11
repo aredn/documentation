@@ -8,7 +8,7 @@ The **Mesh Status** page lists mesh nodes and link quality information, along wi
 
 - The **Auto** button sets the display to automatically refresh the node information every 10 seconds. To end auto-refresh mode, click **Stop** or **Quit**. *Stop* returns to the static *Mesh Status* display. *Quit* takes you back to the *Node Status* display, but clicking *Mesh Status* again from there will return you to auto-refresh mode on the *Mesh Status* display.
 
-- The **Super Mesh** button allows you to navigate to the *Mesh Status* display of the closest Supernode available to your device. Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your node is part of a Supernode network, then you have the ability to view other nodes which are part of the Supernode network even if your local mesh is not otherwise linked to those networks. For further information see the *Supernode Architecture* section of the **Network Topologies** section in the **Network Design Guide**.
+- The **Cloud Mesh** button allows you to navigate to the *Mesh Status* display of the closest Supernode available to your device. Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your local node is part of a network with a Supernode, then you have the ability to view other nodes which are part of the Cloud Mesh network even if your local mesh is not otherwise linked to those networks. For further information see the *Supernode Architecture* description in the **Network Topologies** section of the **Network Design Guide**.
 
 - The **Quit** button returns you to the *Node Status* display.
 

@@ -73,6 +73,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednHow-toGuides/poe
    arednHow-toGuides/lqm
    arednHow-toGuides/iperf
+   arednHow-toGuides/command-line
    arednHow-toGuides/siso-mimo
    arednHow-toGuides/radio_mobile_settings
    arednHow-toGuides/dish-aiming

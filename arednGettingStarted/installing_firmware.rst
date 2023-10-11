@@ -12,7 +12,7 @@ There are two cases for installing AREDN |trade| firmware:
   :alt: Firmware Install Connections
   :align: center
 
-The diagram above shows that your computer with the downloaded firmware image must be connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is helpful to connect the computer and node through a simple Ethernet switch so that the switch can maintain the computer's network link even when the node is rebooting.
+The diagram above shows that your computer with the downloaded firmware image must be connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is highly recommended that you connect the computer and node through a simple (dumb) Ethernet switch so that the switch can maintain the computer's network link even when the node is rebooting. Do *not* use a network router for this purpose -- only a dumb switch.
 
 Different radio hardware will require different methods for installing the AREDN |trade| firmware. For **Ubiquiti** 802.11n devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* will connect to the node's TFTP *server* in order to upload the firmware image. For Ubiquiti 802.11ac devices you will follow a separate procedure explained below. For **Mikrotik** and **TP-LINK** devices, your computer will run a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* and the node's remote boot *client* will download the boot image from your computer. For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
@@ -207,7 +207,7 @@ Install Preparation
 
   - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your **PXE** server will avoid changing IP addresses on your computer during the install process. AREDN |trade| firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
 
-  - Connect an Ethernet cable from your computer to the network switch, and another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a *Mikrotik hAP ac lite* that uses a separate AC adapter, connect the last Ethernet cable from the switch to the Mikrotik's WAN port (1).
+  - Connect an Ethernet cable from your computer to the network switch as described and shown in the graphic at the top of this document, then connect another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a device which uses a separate power adapter (such as a *Mikrotik hAP ac* family device), connect the last Ethernet cable from the switch to the device's WAN port [1].
 
 PXE Boot: *Linux Procedure*
   1. Create a directory on your computer called ``/tftp`` and copy the ``rb.elf`` file there.

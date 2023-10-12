@@ -127,6 +127,14 @@ Step 1: Preparing the device
 
   Once the upgrade has been completed, the device will return you to the login page. Log in using the username and password you created earlier (``admin`` / ``admin!23``). Once again you will see the System page and if everything has been successful, the firmware version will now read either WA.V8.7.0 or XC.V8.7.0 and you can move to **Step 2**.
 
+  **The upgrade can fail on newer hardware which requires firmware 8.7.4.** For these devices, follow the same firmware downgrade procedure but use the following firmware instead:
+
+  - `WA: https://dl.ubnt.com/firmwares/XC-fw/v8.7.4/WA.v8.7.4.45112.210415.1103.bin <https://dl.ubnt.com/firmwares/XC-fw/v8.7.4/WA.v8.7.4.45112.210415.1103.bin>`_
+
+  The rest of the process remains unchanged, so once the downgrade is successful you can move to **Step 2**.
+
+  **Note:** This problem has only been observed and tested on newer LiteBeam 5AC devices.
+
 Step 2: Copy the AREDN |trade| firmware to the device
   Before you can install AREDN |trade| firmware on the device, you first need to put the AREDN |trade| image in the device’s ``/tmp`` directory. Note that each 802.11ac model will have a *different* AREDN |trade| image name, as opposed to currently where one AREDN |trade| image may support multiple models. Be sure to download the correct firmware image from the AREDN |trade| download site. Copy the firmware to the device using the scp command with the username and password you created in **Step 1**.
 

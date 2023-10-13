@@ -247,7 +247,7 @@ PXE Boot: *Windows Procedure*
 
   4. With the unit powered off, press and hold the reset button on the node while powering on the device. Continue holding the reset button until you see ``TFTPd: DoReadFile: rb.elf`` in the *Tiny PXE* log window.
 
-  5. Release the node’s reset button and click the *Offline* button in *Tiny PXE*. You are finished using *Tiny PXE* when the **elf** image has been read by the node.
+  5. Release the node’s reset button and wait for the image to be transferred to the device. You are finished using *Tiny PXE* when the firmware image has been read by the node, so you can click the *Offline* button in *Tiny PXE*.
 
   6. The node will now automatically reboot with the temporary AREDN |trade| Administration image.
 
@@ -319,7 +319,7 @@ Windows Procedure
 
   4. With the unit powered off, press and hold the reset button on the node while powering on the device. Continue holding the reset button until you see ``TFTPd: DoReadFile: recovery.bin`` in the *Tiny PXE* log window.
 
-  5. Release the node’s reset button and click the *Offline* button in *Tiny PXE*. You are finished using *Tiny PXE* when the firmware image has been read by the node.
+  5. Release the node’s reset button and wait for the image to be transferred to the device. You are finished using *Tiny PXE* when the firmware image has been read by the node, so you can click the *Offline* button in *Tiny PXE*.
 
   6. The node will now automatically reboot with the new AREDN |trade| firmware image.
 

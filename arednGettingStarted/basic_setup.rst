@@ -40,13 +40,13 @@ Password
 Node Description
   This is not a required field, but it is a good place to describe the features or function of this device. Many operators use this field to list their contact information, the radio model and antenna specifications, or the tactical purpose for the node. There are no character restrictions in the field, but the maximum length allowed is 210 characters.
 
-Mesh RF
+Mesh
   The *IP Address, Netmask, and SSID* fields are automatically calculated for you based on the unique :abbr:`MAC (Media Access Control)` address of your node. Do not change these settings. Everything under the **LAN** and **WAN** columns can be left unchanged for now.
 
 Channel and Channel Width
   Nodes communicate only with other nodes that use the same SSID, channel and channel width. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks.
 
-See the **Configuration Deep Dive** section for more information about these and other settings in the *Mesh RF* column.
+See the **Configuration Deep Dive** section for more information about these and other settings in the *Mesh* column.
 
 Power & Distance Settings
   If you have *Link Quality Manager* disabled, you will see the *Power & Distance* settings.

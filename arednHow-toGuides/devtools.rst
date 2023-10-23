@@ -20,7 +20,7 @@ The following information is always returned in the JSON data stream:
 - *Node Details* section containing the firmware manufacturer and version, the radio model and board ID, WAN sharing status, and the node description text (if any)
 - *Sysinfo* section containing node uptime and load averages for the last one, five, and fifteen minutes
 - *Interfaces* section containing the name, MAC address, and IP address (if any) assigned to each of the node's network interfaces
-- *Mesh RF* section containing the SSID, channel, center frequency, channel width, and status of the mesh radio
+- *Mesh* section containing the SSID, channel, center frequency, channel width, and status of the mesh radio
 - *Tunnels* section showing whether the tunnel package is installed and the number of active tunnels (if any)
 
 The values returned by the API are represented in the following snippet of raw JSON. This is only a sample of the full data stream containing all of the values described above.

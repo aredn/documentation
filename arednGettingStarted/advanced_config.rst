@@ -42,7 +42,9 @@ Mesh Column
 **Mesh** is the node's *radio* interface. The AREDN |trade| firmware has been designed to simplify the process of configuring networking interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. You may need to change the *Channel* and possibly the *Channel Width* parameters to match those of your local AREDN |trade| mesh, as explained previously in the **Basic Radio Setup** section. Normally you will not need to change the other network settings on this page, so keep these values unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
 Channel Width Setting
-  AREDN |trade| devices have a choice of using 20 MHz, 10 MHz, or 5 MHz channel widths. As a general rule, a larger channel width will allow more data to be transferred, but it can only do this over shorter distances (as will be illustrated in the following section). One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB.
+  Most AREDN |trade| devices have a choice of using 20 MHz, 10 MHz, or 5 MHz channel widths. As a general rule, a larger channel width will allow more data to be transferred, but it may only do this over shorter distances. One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB.
+
+  .. note:: Some AREDN |trade| devices will only support specific channel widths. If the choice of channel width is limited, the device will only show its supported widths in the *Channel Width* dropdown selector.
 
   There may be several reasons why you might want to reduce the *Channel Width* setting:
 
@@ -58,16 +60,6 @@ Distance Setting
     :align: right
 
   The *Distance* setting is only applicable to nodes that can communicate directly over RF. This setting adjusts the RF retry timer to define how long the transmitter will wait for an acknowledgement from a neighbor station. If the distance parameter is too short, the transmitter will send duplicate data packets before an acknowledgement has time to be received. If the distance parameter is too long, the transmitter will wait extra time before considering the data lost and retransmitting the packets.
-
-  The maximum distance settings the ath9k wireless driver allows depends on the channel width:
-
-  =============  =================
-  Channel Width   Maximum Distance
-  =============  =================
-  20 MHz         46666 meters
-  10 MHz         103030 meters
-  5 MHz          215757 meters
-  =============  =================
 
   **Auto-Distance**: A value of zero will cause the radio to automatically determine the RF retry timer by measuring the actual time it takes acknowledgement packets to be received. The timer is set using an Exponential Weighted Moving Average (EWMA). The auto-distance setting is best used on high quality, long distance point-to-point links between backbone or relay nodes. Fifty percent performance increases have been observed on those links compared to using a static distance setting.
 

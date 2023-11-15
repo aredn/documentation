@@ -142,17 +142,17 @@ Step 2: Copy the AREDN |trade| firmware to the device
 
     scp <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
 
-  If you see the error “Unable to negotiate” please try the following:
+  If you see the error “Unable to negotiate” it means that the program you are using on your computer does not support the default security key type being used on the device. You can try the following:
 
   ::
 
-    scp -oHostKeyAlgorithms=+ssh-rsa <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
+    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
 
-  If you see an error “sftp-server: not found” please try the following:
+  If you see an error “sftp-server: not found” you can try the following:
 
   ::
 
-    scp -O -oHostKeyAlgorithms=+ssh-rsa <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
 
   Once this is successful, the AREDN |trade| firmware will be in ``/tmp`` on the device waiting to be installed.
 
@@ -167,7 +167,7 @@ Step3: Install the firmware
 
   ::
 
-    ssh -oHostKeyAlgorithms=+ssh-rsa admin@192.168.1.20
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa admin@192.168.1.20
 
   You will be asked for the password created in **Step 1** (for example, admin!23) and once entered you will be logged into the device and shown the shell prompt.
 

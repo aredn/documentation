@@ -8,8 +8,6 @@ Several open source software projects have been adapted and enhanced to create t
 
 The AREDN |trade| team builds specific firmware images tailored to each type of radio, and the current list of supported devices is found on the AREDN |trade| website. For a complete list of all supported hardware, including both *Stable Release* and *Nightly Build* firmware, refer to the `Supported Devices <http://downloads.arednmesh.org/snapshots/SUPPORTED_DEVICES.md>`_ list.
 
-There is additional guidance on the features and characteristics of specific devices in the `Device Selection Chart <https://www.arednmesh.org/content/device-selection-chart/>`_ on the AREDN |trade| website.
-
 When selecting a device for your AREDN |trade| hardware there are several things to consider in your decision.
 
 - Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN |trade| supports devices which operate in several bands. Check the `frequency and channel chart <https://arednmesh.readthedocs.io/en/latest/appendix/freq_charts.html>`_ on the AREDN |trade| website for the latest information.

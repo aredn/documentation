@@ -202,7 +202,7 @@ Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Exe
 
 **Potential RouterOS Issue**
 
-If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface. Navigate to the *System > Routerboard* section. Click the *Settings* button to verify that the *Boot Device* is set to ``try-ethernet-once-then-nand`` and uncheck or deselect ``Protected Routerboot`` as shown in the example image. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN |trade| firmware install checklist.
+If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface. Navigate to the *System > Routerboard* section. Click the *Settings* button to verify that the *Boot Device* is set to ``try-ethernet-once-then-nand`` and uncheck or deselect ``Protected Routerboot`` as shown in the example image. You can also verify that enough time is entered in the *Reformat Hold Button* field to complete the file transfer. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN |trade| firmware install checklist.
 
 .. image:: _images/mikrotik-factoryfw.png
   :alt: Uncheck Mikrotik Protected Boot

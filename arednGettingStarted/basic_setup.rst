@@ -88,6 +88,8 @@ There are several options for setting your node's location:
 
 - The **Upload Data to AREDN Servers** button will send your node information to an AREDN |trade| server on the Internet. By submitting this information you are agreeing to allow AREDN |trade| to publish your node location on a public mapping service and utilize the information for other purposes such as statistical analysis. No sensitive data such as passwords are sent to the AREDN |trade| servers. If you wish to remove your node location from the public mapping service, simply clear or erase your latitude/longitude values, click *Apply Location Settings* and then *Upload Data to AREDN Servers*.
 
+- **Antenna** information can also be entered for your node. The antenna type itself may be automatically populated based on your radio model. You may also enter the following deployment characteristics of your antenna: *Azimuth*, *Elevation* (up/down tilt), and *Height* (above ground level). Some values may not apply, such as azimuth and elevation if your node has an omnidirectional antenna.
+
 - Click the **Apply Location Settings** button after entering new location information on this page. The new settings become active without clicking the *Save Changes* button.
 
 Timezone and NTP Server

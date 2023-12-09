@@ -12,7 +12,7 @@ There are two cases for installing AREDN |trade| firmware:
   :alt: Firmware Install Connections
   :align: center
 
-The diagram above shows that your computer with the downloaded firmware image must be connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is highly recommended that you connect the computer and node through a simple (dumb) Ethernet switch so that the switch can maintain the computer's network link even when the node is rebooting. Do *not* use a network router for this purpose -- only a dumb switch.
+The diagram above shows that your computer with the downloaded firmware image must be connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is highly recommended that you connect the computer and node through a simple (dumb) Ethernet switch so that the switch can maintain the computer's network link even when the node is rebooting. Do *not* use a network router for this purpose -- only a dumb switch. This is not a requirement for the sake of the radio, but may be useful for your computer to maintain its Ethernet interface link.
 
 Different radio hardware will require different methods for installing the AREDN |trade| firmware. For **Ubiquiti** 802.11n devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* will connect to the node's TFTP *server* in order to upload the firmware image. For Ubiquiti 802.11ac devices you will follow a separate procedure explained below. For **Mikrotik** and **TP-LINK** devices, your computer will run a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* and the node's remote boot *client* will download the boot image from your computer. For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
@@ -63,8 +63,6 @@ The recommended method for installing AREDN |trade| firmware is to download and 
 
 :download:`Ubiquiti N First Install Checklist (PDF) <_images/Ubiquiti_N_First_Install_Checklist.pdf>`
 
-:download:`Ubiquiti AC First Install Checklist (PDF) <_images/Ubiquiti_AC_First_Install_Checklist.pdf>`
-
 Ubiquiti 802.11n First Install Process
 --------------------------------------
 
@@ -103,15 +101,15 @@ Download the appropriate *factory* file for your device by following the instruc
 Ubiquiti 802.11ac First Install Process
 ---------------------------------------
 
-Download the *Install Checklist* for Ubiquiti 802.11ac devices.
+.. note:: The install process for these devices requires detailed steps that are best followed using the procedure below, so no separate *Install Checklist* is provided for Ubiquiti 802.11ac devices.
 
 Prerequisites
   The installing computer must be capable of connecting to the command line of the target device. This will require that the computer support both the *ssh* and *scp* protocols. *SSH* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. For more information, see the **Preparing Your Computer** section above.
 
 Step 1: Preparing the device
-  Before you install AREDN |trade| firmware on a Ubiquiti 802.11ac device, you must first make sure it is running a specific version of the standard Ubiquiti AirOS software. This procedure will not work if the device is running any other version. Fortunately you can upgrade or downgrade the standard software.
+  Before you install AREDN |trade| firmware on a Ubiquiti 802.11ac device, you must first make sure it is running a specific version of the standard Ubiquiti AirOS software. This procedure will not work if the device is running any other version. Fortunately you can upgrade or downgrade the standard Ubiquiti software.
 
-  As described above, it is best to connect your computer to the device using a simple Ethernet switch so that your computer's network interface remains unaffected by reboots on the radio. The IP address for a new Ubiquiti device is 192.168.1.20. Set the IP address of your computer to 192.168.1.10 and, when the device is powered up, enter 192.168.1.20 in a web browser. For a brand new device you’ll be asked to select your country and agree to the EULA. Then click *Continue*. Next you will be prompted to create a user account and password on the radio. You can enter the username ``admin`` and the password ``admin!23`` (for example) and then click *Save*. Make a note of this username and password because you will use it in the following steps.
+  As described in the first paragraphs of this document, it is best to connect your computer to the device using a simple Ethernet switch so that your computer's network interface remains unaffected by reboots on the radio. The IP address for a new Ubiquiti device is 192.168.1.20. Set the IP address of your computer to 192.168.1.10 and, when the device is powered up, enter 192.168.1.20 in a web browser. For a brand new device you’ll be asked to select your country and agree to the EULA. Then click *Continue*. Next you will be prompted to create a user account and password on the radio. You can enter the username ``admin`` and the password ``admin!23`` (for example) and then click *Save*. Make a note of this username and password because you will use it in the following steps.
 
   You should now see the main Dashboard view in AirOS. On the left, click the *Gear* icon. This will take you to the System page. At the top of this page you will find the radio's current firmware version. For example, it might read ``FIRMWARE VERSION XC.V8.7.1``. If the firmware version shows either **XC.V8.7.0** or **WA.V8.7.0** then you have the correct AirOS software and can move on to **Step 2**.
 
@@ -127,22 +125,20 @@ Step 1: Preparing the device
 
   Once the upgrade has been completed, the device will return you to the login page. Log in using the username and password you created earlier (``admin`` / ``admin!23``). Once again you will see the System page and if everything has been successful, the firmware version will now read either WA.V8.7.0 or XC.V8.7.0 and you can move to **Step 2**.
 
-  .. attention:: The upgrade can fail on newer hardware which requires **8.7.4** firmware. This problem has only been observed and tested on newer LiteBeam 5AC devices.
-
-    For these devices, follow the same firmware downgrade procedure but use the following firmware instead:
+  .. attention:: The upgrade can fail on newer hardware which requires **8.7.4** firmware. This problem has only been observed and tested on newer LiteBeam 5AC devices. For these devices, follow the same firmware downgrade procedure but use the following firmware instead:
 
     - `WA: https://dl.ubnt.com/firmwares/XC-fw/v8.7.4/WA.v8.7.4.45112.210415.1103.bin <https://dl.ubnt.com/firmwares/XC-fw/v8.7.4/WA.v8.7.4.45112.210415.1103.bin>`_
 
     The rest of the process remains unchanged, so once the downgrade is successful you can move to **Step 2**.
 
 Step 2: Copy the AREDN |trade| firmware to the device
-  Before you can install AREDN |trade| firmware on the device, you first need to put the AREDN |trade| image in the device’s ``/tmp`` directory. Note that each 802.11ac model will have a *different* AREDN |trade| image name, as opposed to currently where one AREDN |trade| image may support multiple models. Be sure to download the correct firmware image from the AREDN |trade| download site. Copy the firmware to the device using the scp command with the username and password you created in **Step 1**.
+  Before you can install AREDN |trade| firmware on the device, you first need to put the AREDN |trade| image in the device’s ``/tmp`` directory. Note that each 802.11ac model will have a *different* AREDN |trade| image name, as opposed to past releases where one AREDN |trade| image supported multiple models. Be sure to download the correct firmware image from the AREDN |trade| download site. On your computer, open a terminal session (“CMD” in windows). Copy the firmware to the device using the scp command with the username and password you created in **Step 1**.
 
   ::
 
     scp <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
 
-  If you see the error “Unable to negotiate” it means that the program you are using on your computer does not support the default security key type being used on the device. You can try the following:
+  If you see the error “Unable to negotiate” it means that the SCP program you are using on your computer does not support the default security key type being used on the device. You should refer to the documentation for that SCP program to resolve the issue. You can try the following:
 
   ::
 
@@ -153,6 +149,12 @@ Step 2: Copy the AREDN |trade| firmware to the device
   ::
 
     scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
+
+  If you see an error “Remote host identification has changed” you can try the following:
+
+  ::
+
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa -oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no <aredn-image-factory.bin> admin@192.168.1.20:/tmp/factory.bin
 
   Once this is successful, the AREDN |trade| firmware will be in ``/tmp`` on the device waiting to be installed.
 

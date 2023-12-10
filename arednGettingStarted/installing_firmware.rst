@@ -132,7 +132,7 @@ Step 1: Preparing the device
     The rest of the process remains unchanged, so once the downgrade is successful you can move to **Step 2**.
 
 Step 2: Copy the AREDN |trade| firmware to the device
-  Before you can install AREDN |trade| firmware on the device, you first need to put the AREDN |trade| image in the device’s ``/tmp`` directory. Note that each 802.11ac model will have a *different* AREDN |trade| image name, as opposed to past releases where one AREDN |trade| image supported multiple models. Be sure to download the correct firmware image from the AREDN |trade| download site. On your computer, open a terminal session (“CMD” in windows). Copy the firmware to the device using the scp command with the username and password you created in **Step 1**.
+  Before you can install AREDN |trade| firmware on the device, you first need to put the AREDN |trade| image in the device’s ``/tmp`` directory. Note that each 802.11ac model will have a *different* AREDN |trade| image name, as opposed to past releases where one AREDN |trade| image supported multiple models. Be sure to download the correct firmware image from the AREDN |trade| download site. On your computer, open a terminal session (“CMD” in windows). Copy the firmware to the device using the scp command with the username and password you created in **Step 1**. The example command below shows the placeholder ``<aredn-image-factory.bin>`` for the firmware filename, but be sure to replace this with the actual filename of the firmware you are installing.
 
   ::
 
@@ -170,6 +170,12 @@ Step3: Install the firmware
   ::
 
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa admin@192.168.1.20
+
+  If you see an error “Remote host identification has changed” you can try the following:
+
+  ::
+
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa -oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no admin@192.168.1.20
 
   You will be asked for the password created in **Step 1** (for example, admin!23) and once entered you will be logged into the device and shown the shell prompt.
 

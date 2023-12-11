@@ -10,6 +10,26 @@ Configuring a Supernode
 
 |
 
+Coordinating Supernode Deployments
+----------------------------------
+
+Because Supernodes use the `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ protocol, multiple Supernodes can be connected to each other, each operating as a peer of the others. A local network can be connected to multiple Supernodes, but a single Supernode should only be connected to a single local network, although it may be connected at multiple points.
+
+By having only a single local network connected to each Supernode, the owners of each local network are responsible for their own Supernodes. This simplifies management and maintenance. There is also some fault isolation as a failed Supernode will only affect the link to one local network.
+
+The number of messages a Supernode receives will scale linearly with the total number of nodes in all connected local networks. A Supernode receives a management message from every node in the network (all nodes in all local networks) every 5 seconds. With a typical message size of 100 bytes, a Supernode receives about 20 bytes per second per node. At the time of initial testing, there were 4,300 AREDN |trade| nodes registered world-wide, so a Supernode for this network would receive ``84 KB/s`` or ``0.7 Mb/s``, which is a manageable bandwidth requirement.
+
+As more Supernodes are deployed linking more local networks, the overall performance of the *Cloud Mesh* will be impacted. Therefore, it is a good idea to coordinate the deployment of Supernodes among the Supernode owners at the time when tunnel links are requested for the *Cloud Mesh*.
+
+.. image:: _images/supernode-owners.png
+   :alt: Supernode owners
+   :align: center
+
+|
+
+Setting up a Supernode
+----------------------
+
 Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local sub-mesh network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Advanced Network* display (Port 5 by default).
 
 .. image:: _images/supernode-localDTD.png
@@ -17,9 +37,6 @@ Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole 
    :align: center
 
 |
-
-Setting up a Supernode
-----------------------
 
 The following steps are required to configure a Supernode.
 
@@ -68,20 +85,3 @@ Things to Avoid
   - Your Supernode must **not** have its *Mesh RF* interface ``enabled`` -- *Mesh RF* must be ``disabled`` as noted above
 
 Before proceeding, make sure all the previous steps have been completed successfully. Now you should be able to connect to another Supernode using a tunnel. The easiest way to do this is to ask another Supernode owner for a set of tunnel client credentials. Your node can use either a client or server tunnel link. Supernode tunnels use port ``5526`` rather than the usual tunnel port of ``5525``. Supernode owners can be identified from the `Supernode Network Map <https://arednmap.xojs.org>`_
-
-.. image:: _images/supernode-owners.png
-   :alt: Supernode owners
-   :align: center
-
-|
-
-Coordinating Supernode Deployments
-----------------------------------
-
-Because Supernodes use the `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ protocol, multiple Supernodes can be connected to each other, each operating as a peer of the others. A local network can be connected to multiple Supernodes, but a single Supernode should only be connected to a single local network, although it may be connected at multiple points.
-
-By having only a single local network connected to each Supernode, the owners of each local network are responsible for their own Supernodes. This simplifies management and maintenance. There is also some fault isolation as a failed Supernode will only affect the link to one local network.
-
-The number of messages a Supernode receives will scale linearly with the total number of nodes in all connected local networks. A Supernode receives a management message from every node in the network (all nodes in all local networks) every 5 seconds. With a typical message size of 100 bytes, a Supernode receives about 20 bytes per second per node. At the time of initial testing, there were 4,300 AREDN |trade| nodes registered world-wide, so a Supernode for this network would receive ``84 KB/s`` or ``0.7 Mb/s``, which is a manageable bandwidth requirement.
-
-As more Supernodes are deployed linking more local networks, the overall performance of the *Cloud Mesh* will be impacted. Therefore, it is a good idea to coordinate the deployment of Supernodes among the Supernode owners at the time when tunnel links are requested for the *Cloud Mesh*.

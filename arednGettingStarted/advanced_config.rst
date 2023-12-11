@@ -629,7 +629,11 @@ Alert Message Refresh
 Alert Message Local URL
   This field allows you to enter the URL for a local alert message repository. If you configure such a local repository then your nodes without Internet access can also receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.
 
-  A local message repository should be configured on a mesh-connected web server which allows nodes to query the URL you entered. No Internet access is required for this feature to work as designed. You can consult with your local web server administrator in order to obtain the correct URL for the local message repository. Use the following file naming convention on the web server:
+  A local message repository can be configured on a mesh-connected web server which allows nodes to query the URL you entered. No Internet access is required for this feature to work. You can consult with your local server administrator in order to obtain the correct URL for the local message repository. You can find more information about AREDN |trade| Alert Messages in the **Getting Started** guide under the *Node Status* section.
+
+  There is also a separate package called *AREDN Alert Message Manager* which allows the local message repository to be hosted on a node itself, rather than requiring a separate LAN-conneted web server. You can find out more about this application by looking for *AREDN Alert Message Manager* in the **Applications and Services Guide** under the *Other Services* section.
+
+  Use the following file naming convention on the web server:
 
   - Create text files for individual node messages by using only lowercase characters with the exact node name, followed by the ``.txt`` extension as shown below. Whitespace characters are not allowed in node names.
   - Create text files for group messages by using only lowercase characters with the group name, followed by the ``.txt`` extension. Whitespace characters are not allowed in group names.
@@ -638,7 +642,6 @@ Alert Message Local URL
   .. image:: _images/url-content.png
      :alt: Local Alert Message Repository Content
      :align: center
-
 
   It is possible to include HTML tags in your message text, such as using the ``<br />`` tag to display subsequent text on the next line. However, it is best practice to keep alert messages short in order to minimize the height of the alert banner displayed on node webpages.
 

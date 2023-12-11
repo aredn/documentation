@@ -30,7 +30,7 @@ You may choose to purchase an inexpensive off-the-shelf NTP appliance such as th
 AREDN |trade| Alert Message Manager
 -----------------------------------
 
-AREDN |trade| Alert Messages were explained in the **Getting Started Guide** under the *Advanced Configuration* section. The example given there showed the Alert Message source running on a separate LAN-connected web server. It is also possible to provide Alert Messages using an application created by Gerard Hickey (WT0F) which runs directly on a node having adequate storage. The AREDN |trade| Alert Message Manager *(aamm)* provides a web interface for creating, updating, or deleting Alert Messages -- as well as actually hosting the message repository.
+AREDN |trade| Alert Messages were explained in the **Getting Started Guide** under the *Node Status* and *Advanced Configuration* sections. The example given there showed the Alert Message source running on a separate LAN-connected web server. It is also possible to provide Alert Messages using an application created by Gerard Hickey (WT0F) which runs directly on a node having adequate storage. The AREDN |trade| Alert Message Manager *(aamm)* uses the node's web server to provide a web interface for creating, updating, or deleting Alert Messages -- as well as actually hosting the message repository on the node itself, so that no external LAN-connected web server is required.
 
 .. image:: _images/aamm-display.png
    :alt: AAMM Display

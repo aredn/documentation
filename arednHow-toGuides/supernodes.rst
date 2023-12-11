@@ -10,6 +10,18 @@ Configuring a Supernode
 
 |
 
+Criteria for Deploying a Supernode
+----------------------------------
+
+Before you consider deploying a Supernode, make sure you can adequately support the level of uptime that is desired for the Cloud Mesh network.
+
+1. Fast unlimited Internet connection. Fiber is preferable. Low latency between Supernodes is important as is available bandwidth. A Supernode can easily transfer 1 teraByte of data every month, so an unmetered connection is best.
+
+2. Uptime stability. The Supernode should be up 99.999% of the time. The location should ideally have backup power and network connectivity, both to the Internet and to the local mesh.
+
+3. Solid local mesh connectivity. As this is the path for all traffic between your local mesh and every other mesh, the connection to your mesh should be at a high-bandwidth location. If you are deploying a Supernode with any sort of high-bandwidth backbone, the Supernode should be connected to the backbone.
+
+
 Coordinating Supernode Deployments
 ----------------------------------
 

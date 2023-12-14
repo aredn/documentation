@@ -78,7 +78,6 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednHow-toGuides/siso-mimo
    arednHow-toGuides/radio_mobile_settings
    arednHow-toGuides/dish-aiming
-   arednHow-toGuides/max_tunnel_settings
    arednHow-toGuides/puttygen_ssh_keys
    arednHow-toGuides/local-package-repo
    arednHow-toGuides/xlinks

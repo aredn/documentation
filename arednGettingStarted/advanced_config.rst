@@ -519,18 +519,11 @@ These rows will only appear in the table if you have node hardware which support
 Tunnel Options
 ^^^^^^^^^^^^^^
 
-.. image:: _images/advConfig-maxTunValues.png
-  :alt: Advanced Configuration - tunnel max values
+.. image:: _images/advConfig-tunnelOptions.png
+  :alt: Advanced Configuration - tunnel options
   :align: center
 
 |
-
-Tunnel Server *maxclients* and Tunnel Client *maxservers*
-  These rows will appear in the table only if the AREDN |trade| tunneling package is installed on your node. By default a node is allowed to host up to 10 clients in its *Tunnel Server* display and connect with up to 10 servers in its *Tunnel Client* display. The *maxclients* and *maxservers* settings provide a method for adjusting the defaults.
-
-  .. important:: If you plan to change these settings, review **Changing Tunnel Max Settings** in the **How-To Guide** section.
-
-  Use caution when increasing the *maxclients* or *maxservers* values. Enter only *zero* or positive integers up to a maximum value for the number of active connections your node hardware can handle, since each active tunnel connection consumes system resources that the node may need for normal operation.
 
 Tunnel Weight
   This specifies the OLSR route cost of using a tunnel, with the default value set to ``1``. The higher the route cost weight, the less likely a tunnel will be chosen for routing traffic.

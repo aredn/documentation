@@ -514,6 +514,8 @@ PoE and USB Power Passthrough
   :alt: Advanced Configuration - passthrough
   :align: center
 
+|
+
 These rows will only appear in the table if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack, as well as PoE power passthrough on Ethernet port 5. You are allowed to enable or disable power passthrough on nodes with ports that support this feature. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
 
 Tunnel Options
@@ -531,12 +533,32 @@ Tunnel Weight
 Tunnel WAN Only Setting
   This setting is enabled by default and it prevents tunnel traffic from being routed over the Mesh network. It limits tunnels to using the WAN interface, which is typically the intended route. If in your situation you need tunnel traffic to be routed over RF to a node with WAN access, then you can disable this setting to allow that traffic to pass.
 
-Memory Thresholds
+Watchdog Settings
 ^^^^^^^^^^^^^^^^^
+
+.. image:: _images/advConfig-watchdog.png
+  :alt: Advanced Configuration - watchdog settings
+  :align: center
+
+|
+
+Watchdog
+  *Watchdog* is a background monitor that keeps track of core node processes. If any of the processes is having issues, *Watchdog* will reboot the node. This feature is ``OFF`` by default, but it can be enabled by moving the slide switch to the ``ON`` position and clicking the *Save Setting* button. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund (if tunneling is enabled).
+
+Watchdog IP Addresses
+  You may also include one or more IP addresses, one of which should always be pingable. Your node will be rebooted if none of the IP addresses are reachable across the network. Enter IP addresses as a whitespace-delimited list.
+
+Daily Watchdog Hour
+  Enter an integer between 0 - 23 which represents the hour of each day that you would like *Watchdog* to automatically reboot your node. The default is an empty field, in which case *Watchdog* will not auto-reboot your node.
+
+Memory Settings
+^^^^^^^^^^^^^^^
 
 .. image:: _images/advConfig-lowMem.png
   :alt: Advanced Configuration - low memory thresholds
   :align: center
+
+|
 
 As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's *Mesh Status* display. For older nodes with limited memory resources, the mesh status display may become very sluggish on large mesh networks.
 
@@ -582,6 +604,8 @@ Remote Logging URL
   :alt: Advanced Configuration - Remote Logging
   :align: center
 
+|
+
 This field allows you to enter the URL for a remote syslog server. If this URL is provided, then your node will send log messages to the remote server using the specified IP address, port, and protocol.
 
 
@@ -591,6 +615,8 @@ Map Tile and Script Paths
 .. image:: _images/advConfig-leaflet.png
   :alt: Advanced Configuration - map paths
   :align: center
+
+|
 
 These fields contain the external URLs for map tiles and `leafletjs <https://leafletjs.com/>`_ *css* and *javascript* files used for interactive maps.
 

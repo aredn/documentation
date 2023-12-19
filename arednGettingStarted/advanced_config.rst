@@ -612,7 +612,7 @@ This field allows you to enter the URL for a remote syslog server. If this URL i
 Map Tile and Script Paths
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: _images/advConfig-leaflet.png
+.. image:: _images/advConfig-mapPaths.png
   :alt: Advanced Configuration - map paths
   :align: center
 

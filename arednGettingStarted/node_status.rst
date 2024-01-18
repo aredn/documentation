@@ -101,7 +101,7 @@ Neighbor
   The remote neighbor node name with a clickable link to open that node's *Status* display.
 
 Link
-  The type of link your node has with each remote node. Valid link types are ``RF`` for a radio link, ``DtD`` for a direct device-to-device connection, ``Xlink`` for a connection over cross-linked devices, and ``Tunnel`` for a tunnel link.
+  The type of link your node has with each remote node. Valid link types are ``RF`` for a radio link, ``DtD`` for a direct device-to-device connection, ``Xlink`` for a connection over cross-linked devices, and ``Tunnel`` or ``Wireguard`` for tunnel links.
 
 SNR
   The Signal-to-Noise ratio in dB for both sides of any radio links (local SNR / remote SNR).

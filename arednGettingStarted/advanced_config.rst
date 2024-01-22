@@ -232,6 +232,25 @@ DNS Aliases
 
   Once an alias is defined, the **DNS Aliases** become available for creating *Advertised Services*. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
 
+Advanced DHCP Options
+^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: _images/dhcp-options.png
+   :alt: Ports - Advanced DHCP Options
+   :align: center
+
+The **Advanced DHCP Options** section allows you to specify option codes and values which are sent to devices on your node's LAN network at boot time. This provides an easy way to configure network clients during their boot process. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client device joining the network can request specific DHCP options in addition to its IP address. These *Advanced DHCP Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
+
+The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is the source for information about all DHCP options. Specific vendor equipment may or may not support all of the options, so you can verify which options are supported by referring to the manufacturer's documentation for your LAN device.
+
+Tags for Advanced DHCP Options
+  The *Tags for Advanced DHCP Options* table allows the administrator to define DHCP tags that will be assigned to clients which are identified by specific values or properties such as Vendor Class or MAC address.
+
+Advanced DHCP Options
+  The *Advanced DHCP Options* table allows the administrator to specify DHCP options that will be sent to any client, or only to clients matching a specific tag. Option numbers can be entered directly or chosen from a list of well-known options. Option values are manually entered in the "with Value" field on each row.
+
+Field data validation is implemented for any input field with easily recognizable content such as host name, MAC address, port and option numbers. Placeholders are also supplied for input fields that might otherwise be difficult to describe (such as MAC addresses) using wildcard matching. Once the appropriate values are entered, click the *Add* button to include the settings which were defined. You may also delete a row by clicking the *Del* button for that row. After you have added, changed, or deleted your Advanced DHCP Options, click the *Save Changes* button at the top of the page.
+
 NAT Mode Operation
 ^^^^^^^^^^^^^^^^^^
 

@@ -49,6 +49,17 @@ Mikrotik and TP-LINK Installs
   These devices are programmed to download a boot image from an external source. Your computer can run a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* which can give the node an IP address via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ as well as providing the firmware image via `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_.
 
   If you have a Windows computer you will need to install and configure a PXE *server*. The examples below use *Tiny PXE* which can be downloaded from `erwan.labalec.fr <https://erwan.labalec.fr/tinypxeserver/>`_. There may be other alternative Windows programs that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_ or `Serva <https://www.vercot.com/~serva/>`_. For TP-LINK devices you may be able to run a simple TFTP server such as `Tftpd64 <https://pjo2.github.io/tftpd64/>`_ as explained in the TP-LINK section below.
+ 
+X86_64 and Virtual Machine Installs 
+ **These installs is designed for advanced users.** Most users using AREDN |trade| are strongly encouraged to use a Mikrotik hAP3 lite to achieve similar functionality. The X86_64 image has been tested on QEMU and VMware-based hypervisors/virtualization platforms, usage on other virtualization platforms may not work as expected.  
+  
+ It is expected that you understand your virtualization platform, and are comfortable creating images and uploading virtual disks.
+ 
+ For VMware, You will need to the QEMU software or some other V2V converter installed somewhere in order to convert the image to vmdk format Only the tools part is required. SSH to the esxi server is required. Below is some example software
+ - `QEMU for Windows binaries (Unoffical) <https://qemu.weilnetz.de/w64/>`_
+ - `QEMU Official downloads <https://www.qemu.org/download/#windows>`_
+ - `Starwind Converter <https://www.starwindsoftware.com/starwind-v2v-converter>`_
+
 
 Firmware First Install Checklists
 ---------------------------------
@@ -344,6 +355,93 @@ After the GL-iNet device is first booted and configured, navigate to the **Upgra
 
 The node will automatically reboot with the new AREDN |trade| firmware image. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNet debrick procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_
+
+
+
+x86_64/VM First Install Process
+-------------------------------
+
+Warnings
+
+.. attention:: The install process for X86_64 / Virtual Machines is for advanced users. All x86_64 installs/images experimental and is not officially supported. *DO NOT use the x86_64 image for your first AREDN node.*
+
+.. note:: There is a bug in the x86_64 firmware before 3.23.12.0 when using more than one ethernet interface. It's recommended to use a newer version.
+
+ The x86_64 image is designed for advanced users. Most users using AREDN |trade| are strongly encouraged to use a Mikrotik hAP3 lite. The X86_64 image has been tested on QEMU and VMware-based hypervisors/virtualization platforms, usage on other virtualization platforms may not work as expected. 
+ 
+ It is expected that you're already familiar with AREDN, you understand your virtualization platform, and are comfortable creating images and uploading virtual disks.
+ 
+ Examples of known tested/working platforms
+ - VMware ESXi 
+ - Proxmox (Qemu)
+ - Unraid (Qemu)
+
+Prerequisites / Image information
+
+  Minimum VM Specs:
+  
+  - 2 virtual cpus
+  - 128mb memory
+  - ~200mb free storage
+  
+  Providing more CPU is generally not needed on modern hardware. Extra memory can be useful for a supernode/large tunnel server; however more than 1GB is not needed.
+  
+  .. note:: The images do not include any vm tools; however it does contain drivers for all of the standard QEMU/Vmware paravirtualized storage and network. It is recommended to utilize the paravirtualized devices. 
+
+  For networking there is two modes - single port, or multiple port. This is automatically selected based on the detected number of network interfaces. You will need to choose how you want this configured **before** powering the VM on the first time
+  
+  *Single port mode*
+    All traffic utilizes Vlans as described in the Advanced config section of the documentation. This requires your virtual interface to be vlan aware, or a passthrough ethernet interface. 
+	
+  *Multi-port mode*
+    Each port can be assigned as-needed to the LAN, DtD or WAN links. If your virtual interface to be vlan aware, you can tag vlans; otherwise it should be untagged *This is the recommended configuration*
+	In this mode the following ports are automatically assigned:
+	- First interface: WAN
+	- Second interface: DtD
+	- Third and beyond: LAN
+
+QEMU Install process
+
+   1. Download the latest firmware here: <https://www.arednmesh.org/content/current-software>
+   2. Extract the .gz image
+
+     .. note:: 7zip on windows has issues with the .gz file due to how it's made. You may need to download the windows gzip, or extract it on a Linux or MAC computer/VM.
+
+   3. upload/copy the .img to your server. You can re-name the disk image if you would like
+   4. create VM/Domain on your server, assign it the existing .img file.
+   5. Boot and proceed with the after-firmware install steps.
+
+VMware Install process
+
+   1. Download the latest firmware here: <https://www.arednmesh.org/content/current-software> 
+   2. Extract the .gz image 
+
+      .. note:: 7zip on windows has issues with the .gz file due to how it's made. You may need to download the windows gzip, or extract it on a Linux or MAC computer/VM.
+   3.  Convert the .img to a .vmdk using your software of choice. If you're using QEMU open a terminal/command prompt, and  on windows navigate to where QEMU is installed (Normally c:\Program Files\qemu\). run the following command to convert the .img to .vmdk, replacing "aredn.vmdk" and "aredn.img" with the appropriate files.
+
+       ::
+	   qemu-img convert -f raw -O vmdk aredn.img aredn.vmdk
+   
+     If you're using Virtualbox, below is the built-in command, replacing "aredn.vmdk" and "aredn.img" with the appropriate files.
+
+       ::
+        VBoxManage internalcommands createrawvmdk -filename "aredn.vmdk" -rawdisk "aredn.img"
+   
+   4. create VM/Domain on your server, *do not assign it a disk*
+   
+   5. upload/copy the .VMDK to your server. You can re-name the disk image if you would like
+   6. SSH to the ESXi host, navigate to where the disk was uploaded and run the following command to verify/fix any conversion issues (If you don't you may get boot errors): vmkfstools -i uploaded.vmdk fixed.vmdk
+
+     :: 
+      vmkfstools -i uploaded.vmdk fixed.vmdk
+   
+    Below is an example:
+     ::
+      [root@esxi:~] cd /vmfs/volumes/Local\ SAS/Aredn-Hub/ 
+      [root@esxi:/vmfs/volumes/6230471-24992046-1ecc-44a842445baf/Aredn-Hub] vmkfstools -i aredn-20240204-9e94c01.vmdk  aredn-hub1.vmdk
+
+   7. create VM/Domain on your server, assign it the existing .img file.
+   8. Boot and proceed with the after-firmware install steps.
 
 After the Firmware Install
 --------------------------

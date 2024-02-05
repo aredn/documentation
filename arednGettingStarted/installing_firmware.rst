@@ -50,8 +50,8 @@ Mikrotik and TP-LINK Installs
 
   If you have a Windows computer you will need to install and configure a PXE *server*. The examples below use *Tiny PXE* which can be downloaded from `erwan.labalec.fr <https://erwan.labalec.fr/tinypxeserver/>`_. There may be other alternative Windows programs that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_ or `Serva <https://www.vercot.com/~serva/>`_. For TP-LINK devices you may be able to run a simple TFTP server such as `Tftpd64 <https://pjo2.github.io/tftpd64/>`_ as explained in the TP-LINK section below.
  
-X86_64 and Virtual Machine Installs 
- **These installs is designed for advanced users.** Most users using AREDN |trade| are strongly encouraged to use a Mikrotik hAP3 lite to achieve similar functionality. The X86_64 image has been tested on QEMU and VMware-based hypervisors/virtualization platforms, usage on other virtualization platforms may not work as expected.  
+x86 and Virtual Machine Installs 
+ **These installs is designed for advanced users.** Most users using AREDN |trade| are strongly encouraged to use a Mikrotik hAP3 lite to achieve similar functionality. The X86_64 image has been tested and are considered stable on Proxmox, Unraid and Vmware, usage on other virtualization/x86 hardware platforms may not work as expected.  
   
  It is expected that you understand your virtualization platform, and are comfortable creating images and uploading virtual disks.
  
@@ -358,16 +358,16 @@ The node will automatically reboot with the new AREDN |trade| firmware image. If
 
 
 
-x86_64/VM First Install Process
+x86/VM First Install Process
 -------------------------------
 
 Warnings
 
-.. attention:: The install process for X86_64 / Virtual Machines is for advanced users. All x86_64 installs/images experimental and is not officially supported. *DO NOT use the x86_64 image for your first AREDN node.*
+.. attention:: The install process for X864 / Virtual Machines is for advanced users. Please check [`AREDN Github <https://github.com/aredn/aredn/blob/main/SUPPORTED_DEVICES.md>`_  *DO NOT use the x86_64 image for your first AREDN node.*
 
 .. note:: There is a bug in the x86_64 firmware before 3.23.12.0 when using more than one ethernet interface. It's recommended to use a newer version.
 
- The x86_64 image is designed for advanced users. Most users using AREDN |trade| are strongly encouraged to use a Mikrotik hAP3 lite. The X86_64 image has been tested on QEMU and VMware-based hypervisors/virtualization platforms, usage on other virtualization platforms may not work as expected. 
+ The x86_64 image is designed for advanced users. Most users using AREDN |trade| are strongly encouraged to use a Mikrotik hAP3 lite. The X86_64 image has been tested on Proxmox, Unraid and VMware-based hypervisors/virtualization platforms, usage on other virtualization/hardware platforms may not work as expected. 
  
  It is expected that you're already familiar with AREDN, you understand your virtualization platform, and are comfortable creating images and uploading virtual disks.
  
@@ -381,7 +381,7 @@ Prerequisites / Image information
   Minimum VM Specs:
   
   - 2 virtual cpus
-  - 128mb memory
+  - 64mb memory
   - ~200mb free storage
   
   Providing more CPU is generally not needed on modern hardware. Extra memory can be useful for a supernode/large tunnel server; however more than 1GB is not needed.

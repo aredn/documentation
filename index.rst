@@ -81,6 +81,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednHow-toGuides/puttygen_ssh_keys
    arednHow-toGuides/local-package-repo
    arednHow-toGuides/xlinks
+   arednHow-toGuides/vm-install
    arednHow-toGuides/devtools
 
 .. toctree::

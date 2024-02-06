@@ -394,11 +394,7 @@ Prerequisites / Image information
     All traffic utilizes Vlans as described in the Advanced config section of the documentation. This requires your virtual interface to be vlan aware, or a passthrough ethernet interface. 
 	
   *Multi-port mode*
-    Each port can be assigned as-needed to the LAN, DtD or WAN links. If your virtual interface to be vlan aware, you can tag vlans; otherwise it should be untagged *This is the recommended configuration*
-	In this mode the following ports are automatically assigned:
-	- First interface: WAN
-	- Second interface: DtD
-	- Third and beyond: LAN
+    Each port can be assigned as-needed to the LAN, DtD or WAN links. If your virtual interface to be vlan aware, you can tag vlans; otherwise it should be untagged Upon completing the post-install tasks,  you will need to go into advanced networking and assign the ports as needed. *This is the recommended configuration due to ease of configuration/compatability*
 
 QEMU Install process
 

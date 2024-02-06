@@ -388,13 +388,15 @@ Prerequisites / Image information
   
   .. note:: The images do not include any vm tools; however it does contain drivers for all of the standard QEMU/Vmware paravirtualized storage and network. It is recommended to utilize the paravirtualized devices. 
 
-  For networking there is two modes - single port, or multiple port. This is automatically selected based on the detected number of network interfaces. You will need to choose how you want this configured **before** powering the VM on the first time
+  For networking there is two modes - single port, or multiple port. This is automatically selected based on the detected number of network interfaces. You will need to choose how you want this configured **before** powering the VM on the first time.
+  
+  .. note:: With VMware you will need to enable Forged Transmits, Allow MAC Changes and Promiscuous mode on the port groups and/or vswitches in order to pass traffic.
   
   *Single port mode*
     All traffic utilizes Vlans as described in the Advanced config section of the documentation. This requires your virtual interface to be vlan aware, or a passthrough ethernet interface. 
 	
   *Multi-port mode*
-    Each port can be assigned as-needed to the LAN, DtD or WAN links. If your virtual interface to be vlan aware, you can tag vlans; otherwise it should be untagged Upon completing the post-install tasks,  you will need to go into advanced networking and assign the ports as needed. *This is the recommended configuration due to ease of configuration/compatability*
+    Each port can be assigned as-needed to the LAN, DtD or WAN links. If your virtual interface to be vlan aware, you can tag vlans; otherwise it should be untagged Upon completing the post-install tasks,  you will need to go into advanced networking and assign the ports as needed. DtD still runs tagged vlan 2 in this mode. *This is the recommended configuration due to ease of configuration/compatability*
 
 QEMU Install process
 

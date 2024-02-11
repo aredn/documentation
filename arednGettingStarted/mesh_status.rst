@@ -52,7 +52,7 @@ Link Quality Statistics
 In addition to the neighbor node name, there are text abbreviations in parentheses that tells how the neighbor node is connected and the status of the link.
 
 Link Type
-  - ``rf``: Note that there is no link type identifier for radio links, so links without one of the identifiers below can be considered ``rf`` links.
+  - Note: There is no link type identifier for radio links, so links without one of the identifiers below can be considered a radio link.
   - ``dtd``: indicates a direct *Device to Device* connection (typically using an Ethernet cable) between the nodes.
   - ``tun``: indicates the path to the neighbor node is over an Internet tunnel. ``(tun*?)`` next to a mesh node in the *Remote Nodes* column indicates the node has tunnel links over the Internet to connect mesh islands together. ``?`` is a number indicating the number of tunnel connections on that node.
   - ``xlink``: indicates a connection between the nodes that traverses cross-linked devices.
@@ -70,9 +70,7 @@ Link Status
   - ``blocked - dup``: LQM blocks a link in cases when your node has an RF link to other nodes which themselves connect to each other via DtD. This can occur when there are multiple radios at a site using the same channel. The best remote node is chosen as the RF link for your node but the other possible RF connections are blocked as duplicates.
   - ``blocked - user``: LQM will block any node which you enter in the *User Blocked Nodes* field described in the *Advanced Configuration* section.
   - ``hidden``: LQM will display nodes that are out of range of your node but which are able to access a common intermediary node.
-  - ``exposed``: LQM will display nodes that can reach other nodes which are hidden from your node.
   - ``idle``: LQM has determined that the link is usable and would be ``active`` but the node routing table does not yet have a route for sending traffic across the link.
-  - ``disconnected``: This RF Neighbor is no longer online.
 
   You can refresh the *Link Status* values by pressing the *Refresh* button or by selecting the *Auto* button to automatically refresh the display. Links whose quality has improved may be activated, while links whose quality has worsened may be blocked.
 

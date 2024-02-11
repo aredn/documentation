@@ -49,18 +49,20 @@ Link Quality Statistics
 
   - ``Service Name`` is the column which displays any available services on the neighbor node or its LAN hosts. You can click on service links to navigate to the webpage for those services.
 
-In addition to the neighbor node name, there are text abbreviations in parentheses that tells how the neighbor node is connected and the status of the link.
+In addition to the neighbor node name, there are text abbreviations in parentheses that tell how the neighbor node is connected and the status of the link.
 
 Link Type
-  - Note: There is no link type identifier for radio links, so links without one of the identifiers below can be considered a radio link.
-  - ``dtd``: indicates a direct *Device to Device* connection (typically using an Ethernet cable) between the nodes.
-  - ``tun``: indicates the path to the neighbor node is over an Internet tunnel. ``(tun*?)`` next to a mesh node in the *Remote Nodes* column indicates the node has tunnel links over the Internet to connect mesh islands together. ``?`` is a number indicating the number of tunnel connections on that node.
+  - ``rf``: indicates a radio link to this node.
+  - ``dtd``: indicates a *Device to Device* connection (typically using an Ethernet cable) to this node.
+  - ``wg``: indicates a Wireguard tunnel link over the Internet.
+  - ``tun``: indicates a legacy Internet tunnel link.
   - ``xlink``: indicates a connection between the nodes that traverses cross-linked devices.
 
 Link Status
   - ``wan``: the node has been configured as a *Mesh Gateway*. Typically this is a gateway to the Internet, but it may also be to another isolated network.
+  - ``active``: LQM determined that the link is viable and is being used.
   - ``pending``: LQM is collecting data and evaluating the link.
-  - ``active``: LQM determined that the link is viable and can be used.
+  - ``idle``: LQM has determined that the link is usable and would be ``active`` but the node routing table does not yet have a route for sending traffic across the link.
   - ``blocked``: LQM determined that the link is unusable and has blocked it from use.
   - ``blocked - distance``: LQM determined that the remote node is either too close or too distant, based on the Min and Max Distance settings described in the *Advanced Configuration* section.
   - ``blocked - signal``: LQM determined that the SNR on the link is too low to reliably pass data, based on the Min SNR setting described in the *Advanced Configuration* section.
@@ -69,8 +71,6 @@ Link Status
   - ``blocked - dtd``: LQM blocks the RF interface on any nodes to which a DtD link also exists.
   - ``blocked - dup``: LQM blocks a link in cases when your node has an RF link to other nodes which themselves connect to each other via DtD. This can occur when there are multiple radios at a site using the same channel. The best remote node is chosen as the RF link for your node but the other possible RF connections are blocked as duplicates.
   - ``blocked - user``: LQM will block any node which you enter in the *User Blocked Nodes* field described in the *Advanced Configuration* section.
-  - ``hidden``: LQM will display nodes that are out of range of your node but which are able to access a common intermediary node.
-  - ``idle``: LQM has determined that the link is usable and would be ``active`` but the node routing table does not yet have a route for sending traffic across the link.
 
   You can refresh the *Link Status* values by pressing the *Refresh* button or by selecting the *Auto* button to automatically refresh the display. Links whose quality has improved may be activated, while links whose quality has worsened may be blocked.
 
@@ -81,3 +81,7 @@ Remote Nodes
 ^^^^^^^^^^^^
 
 This section lists the other nodes on the network that are two or more hops away from your node. Advertised services on nodes and their LAN hosts are also listed. Remote Nodes are sorted by their ``ETX`` or *Expected Transmission* metric. :abbr:`ETX (Expected TX metric)` is an estimate of the number of :abbr:`OLSR (Optimized Link State Routing protocol)` packets that must be sent in order to receive a round trip acknowledgement, and it is often referred to as *link cost*. When sending data the :abbr:`OLSR (Optimized Link State Routing)` protocol selects the least cost route based on the lowest :abbr:`ETX (Expected TX metric)` in the direction of the final destination.
+
+Link Status
+  - ``wan`` indicates the node has been configured as a *Mesh Gateway*. Typically this is a gateway to the Internet, but it may also be to another isolated network.
+  - ``(tun*?)`` indicates the node has tunnel links, with ``?`` indicating the number of tunnels on that node.

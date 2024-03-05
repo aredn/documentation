@@ -21,8 +21,11 @@ Although MeshChat is a commonly deployed service, it is a third party package wh
 
 As originally designed, MeshChat uses the Perl programming language and is able to run either on an AREDN |trade| node or on a LAN-connected Debian or Raspberry Pi computer. After the retirement of Perl on AREDN |trade| nodes, there are now alternative MeshChat packages which use the Lua programming language for running on nodes. If you are running the original Perl version on an external computer, you can still use the new Lua API on your node to provide the computer with the list of MeshChat nodes. These packages are available at the following links:
 
-- `Lua version of Meshchat for AREDN ≥3.22.6.0 <https://github.com/kn6plv/meshchat>`_
-- `Perl version of Meshchat for AREDN ≤3.22.1.0 or for running Meshchat on a Raspbian or Debian computer <https://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
+- `Latest Lua version of Meshchat at the new package maintainer's repository <https://github.com/hickey/meshchat/releases>`_
+
+- `Older Lua version of Meshchat for AREDN ≥3.22.6.0 (no longer maintained) <https://github.com/kn6plv/meshchat>`_
+
+- `Original Perl version of Meshchat for AREDN ≤3.22.1.0 or for running Meshchat on a Raspbian or Debian computer (no longer maintained) <https://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface

@@ -409,7 +409,7 @@ Support Data
 Advanced Network
 ----------------
 
-If you have a supported multiport device (currently *Mikrotik hAP ac lite*, *ac2*, or *ac3* only), then you will see a menu option for **Advanced Network**. This provides a way for you to configure the ports on your multiport node. For more information on the AREDN |trade| VLANs being used, refer to the *Node VLANs* description in the **Basic Setup** section above.
+If you have a supported multiport device (currently *Mikrotik ac2*, or *ac3* only), then you will see a menu option for **Advanced Network**. This provides a way for you to configure the ports on your multiport node. For more information on the AREDN |trade| VLANs being used, refer to the *Node VLANs* description in the **Basic Setup** section above.
 
 
 .. image:: _images/advnet.png

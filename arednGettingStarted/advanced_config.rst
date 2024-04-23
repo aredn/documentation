@@ -566,7 +566,7 @@ Watchdog Settings
 |
 
 Watchdog
-  *Watchdog* is a background monitor that keeps track of core node processes. If any of the processes is having issues, *Watchdog* will reboot the node. This feature is ``OFF`` by default, but it can be enabled by moving the slide switch to the ``ON`` position and clicking the *Save Setting* button. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund (if tunneling is enabled).
+  *Watchdog* is a background monitor that keeps track of core node processes. If any of the processes is having issues, *Watchdog* will reboot the node. This feature is ``OFF`` by default, but it can be enabled by moving the slide switch to the ``ON`` position and clicking the *Save Setting* button. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund (if tunneling is enabled). Any watchdog events are logged in the /tmp/manager.log file on your node.
 
 Watchdog IP Addresses
   You may also include one or more IP addresses, one of which should always be pingable. Your node will be rebooted if none of the IP addresses are reachable across the network. Enter IP addresses as a whitespace-delimited list.

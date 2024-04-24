@@ -25,9 +25,9 @@ copyright = f'{date.today().year}, Amateur Radio Emergency Data Network, Inc. Li
 author = u'Amateur Radio Emergency Data Network, Inc.'
 
 # The short X.Y version
-version = u'latest'
+version = u'3.24.4.0'
 # The full version, including alpha/beta/rc tags
-release = u'latest'
+release = u'3.24.4.0'
 
 # -- General configuration ---------------------------------------------------
 

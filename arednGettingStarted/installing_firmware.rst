@@ -210,15 +210,7 @@ For Mikrotik devices you will use what is called *Etherboot* mode, and there are
   :alt: Uncheck Mikrotik Protected Boot
   :align: right
 
-**Potential RouterOS Issue**
-
 If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface or command line. Navigate to *System > Routerboard > Settings > Boot Device* to uncheck or deselect ``Protected Routerboot``. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN |trade| firmware install checklist.
-
-.. image:: _images/mikrotik-factoryfw.png
-  :alt: Uncheck Mikrotik Protected Boot
-  :align: right
-
-You may experience an issue during installation of the *sysupgrade.bin* file on Mikrotik devices having RouterOS v7. If your Mikrotik device came with a *Current Firmware* version of v7.x you can follow the instructions on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN |trade| firmware. You can find the earlier firmware on the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN |trade| firmware, or download the MIPSBE version (routeros-mipsbe) for other Mikrotik devices. You need to download a v6 RouterOS version that is equal or newer than the RouterOS version shown in the *Factory Firmware* field on your device (as in the example image).
 
 Install Preparation
   - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the initramfs-kernel file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
@@ -260,6 +252,8 @@ PXE Boot: *Windows Procedure*
   5. Release the node’s reset button and wait for the image to be transferred to the device. You are finished using *Tiny PXE* when the firmware image has been read by the node, so you can click the *Offline* button in *Tiny PXE*.
 
   6. The node will now automatically reboot with the temporary AREDN |trade| Administration image.
+
+.. tip:: If you have followed the install procedure above but your Mikrotik device does not boot the AREDN |trade| *initramfs-kernel* file, you may be able to try the procedure on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN |trade| firmware. You can find earlier versions in the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN |trade| firmware, or download the MIPSBE version (routeros-mipsbe) for other Mikrotik devices. You need to download a RouterOS version that is equal or newer than the RouterOS version shown in the *Factory Firmware* field on your device (as in the example image).
 
 Install the *sysupgrade* Firmware Image
   1. After booting the **elf** image the node will have a default IP address of 192.168.1.1. Your computer should already have a static IP address on this subnet, but if not then give your computer an IP address on this subnet.

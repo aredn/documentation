@@ -20,7 +20,7 @@ from datetime import date
 
 # -- Project information -----------------------------------------------------
 
-project = u'AREDN Documentation'
+project = u'AREDN® Documentation'
 copyright = f'{date.today().year}, Amateur Radio Emergency Data Network, Inc. Licensed under the terms of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International'
 author = u'Amateur Radio Emergency Data Network, Inc.'
 
@@ -44,7 +44,7 @@ extensions = [
 ]
 
 rst_epilog = """
-`Link: AREDN Webpage <https://www.arednmesh.org>`_
+`Link: AREDN® Webpage <https://www.arednmesh.org>`_
 """
 
 # Include the trademark symbol in the prolog
@@ -141,7 +141,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'AREDN_Documentation.tex', u'AREDN Documentation',
+    (master_doc, 'AREDN_Documentation.tex', u'AREDN® Documentation',
      u'AREDN', 'manual'),
 ]
 
@@ -151,7 +151,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'aredn_documentation', u'AREDN Documentation',
+    (master_doc, 'aredn_documentation', u'AREDN® Documentation',
      [author], 1)
 ]
 
@@ -162,8 +162,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'AREDN_Documentation', u'AREDN Documentation',
-     author, 'AREDN_Documentation', 'A guide for AREDN software.',
+    (master_doc, 'AREDN_Documentation', u'AREDN® Documentation',
+     author, 'AREDN_Documentation', 'A guide for AREDN® software.',
      'Miscellaneous'),
 ]
 

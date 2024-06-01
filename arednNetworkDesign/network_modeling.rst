@@ -24,7 +24,7 @@ Most computer modeling software will be able to estimate the link characteristic
 Ubiquiti AirLink Tool
 +++++++++++++++++++++
 
-If you are using Ubiquiti radios there is a free modeling tool available on the Ubiquiti website (http://link.ubnt.com). This tool will ask you to locate your node endpoints by clicking on a map display. It allows you to select the radio frequency and model from a dropdown list, as well as having you specify the antenna heights, antenna gain, and transmit power. With this information it will calculate and display the coverage area and the link quality.
+If you are using Ubiquiti radios there is a free modeling tool available on the Ubiquiti website (http://ui.com). This tool will ask you to locate your node endpoints by clicking on a map display. It allows you to select the radio frequency and model from a dropdown list, as well as having you specify the antenna heights, antenna gain, and transmit power. With this information it will calculate and display the coverage area and the link quality.
 
 The path profile is color coded to indicate whether the link quality is adequate. It displays the link distance, line of sight, as well as the Fresnel Zone and 60% clearance area. It also estimates the signal levels at each endpoint and the predicted throughput for the link. An example *AirLink* path profile is shown below.
 

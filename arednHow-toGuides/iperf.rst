@@ -34,7 +34,7 @@ Installing and Using IperfSpeed
 
 The **IperfSpeed** package provides a web-based control interface for running network tests between nodes, and it was written by Trevor Paskett K7FPV using the Perl programming language. With the project to retire Perl on AREDN |trade| nodes, there is now an alternative *IperfSpeed* package which uses the Lua programming language. The original Perl and new Lua packages are available at the following links:
 
-- `Original Perl version of IperfSpeed <https://aredn.s3.amazonaws.com/iperfspeed_0.5.1_all.ipk>`_
+- Original Perl version of IperfSpeed [No longer available]
 
 - `New Lua version of IperfSpeed <https://github.com/kn6plv/iperfspeed>`_
 

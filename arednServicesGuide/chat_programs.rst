@@ -9,7 +9,7 @@ Chat programs are one of the least network-intensive types of communication prog
 MeshChat
 --------
 
-MeshChat has become the primary chat service for AREDN |trade| networks because it was written by Trevor Paskett K7FPV specifically for mesh communication. Users access MeshChat via web browser, and the service can run on the mesh node itself or on a LAN-connected Debian or Raspberry Pi computer. After logging in by entering a call sign, you can send a message by typing into a text box and clicking the *Submit* button. The list of active users is displayed, and every message is visible to all participants on the chat service. Multiple *Zones* and *Channels* are supported for categorizing and filtering message traffic.
+MeshChat has become the primary chat service for AREDN |trade| networks because it was written specifically for mesh communication by Trevor Paskett K7FPV. Users access MeshChat via web browser, and the service can run on the mesh node itself or on a LAN-connected Debian or Raspberry Pi computer. After logging in by entering a call sign, you can send a message by typing into a text box and clicking the *Submit* button. The list of active users is displayed, and every message is visible to all participants on the chat service. Multiple *Zones* and *Channels* are supported for categorizing and filtering message traffic.
 
 A copy of the message database is stored on every device where MeshChat is running. Nodes may have intermittent network connectivity, but as long as at least one node is available the MeshChat database remains intact. Once nodes come online they immediately sync by retrieving a full copy of the message database. If any new messages are found, they are appended to the local message database.
 
@@ -25,7 +25,7 @@ As originally designed, MeshChat uses the Perl programming language and is able 
 
 - `Older Lua version of Meshchat for AREDN ≥3.22.6.0 (no longer maintained) <https://github.com/kn6plv/meshchat>`_
 
-- `Original Perl version of Meshchat for AREDN ≤3.22.1.0 or for running Meshchat on a Raspbian or Debian computer (no longer maintained) <https://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
+- `Original Perl version of Meshchat for AREDN ≤3.22.1.0 or for running Meshchat on a Raspbian or Debian computer (no longer maintained) 
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface

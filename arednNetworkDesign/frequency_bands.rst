@@ -57,7 +57,7 @@ Disadvantages
 3.4 GHz Characteristics
 -----------------------
 
-.. note:: Late in 2020 the `FCC ruled <https://docs.fcc.gov/public/attachments/FCC-20-138A1.pdf>`_ to sunset secondary Amateur allocations in the 9 cm *(3.3-3.5 GHz)* band. Although existing Amateur operations *"may continue while the Commission finalizes plans to reallocate spectrum,"* be aware that future FCC actions could remove Amateur operations altogether. Consider this before investing in or implementing new AREDN |trade| devices in this band.
+.. note:: Late in 2020 the FCC ruled to sunset secondary Amateur allocations in the 9 cm *(3.3-3.5 GHz)* band. Although existing Amateur operations *"may continue while the Commission finalizes plans to reallocate spectrum,"* be aware that future FCC actions could remove Amateur operations altogether. Consider this before investing in or implementing new AREDN |trade| devices in this band.
 
 Advantages
   Equipment in the 9 cm band is appropriate for *Backbone Links* since there is less potential for interference from other devices sharing these frequencies at tower sites. With clear line of sight and well-aligned antennas, 3.4 GHz signals can propagate across very long distances. You can select channel widths of 5, 10, or 20 MHz, with larger channel widths providing higher data rates. Remember that reducing the channel width may increase the SNR to improve signal quality if that is an issue for a marginal link.

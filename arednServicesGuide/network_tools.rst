@@ -38,6 +38,17 @@ The AREDN |trade| ``prometheus-exporter`` simply makes these metrics available f
 
 |
 
+KN6PLV Mesh Map
+---------------
+
+`Tim KN6PLV <https://www.qrz.com/db/KN6PLV>`_ created these programs to discover and visualize your mesh network. They can be installed on one of your LAN-attached computers that is running a web server. This software is available for download here: `KN6PLV NewMeshMap <https://github.com/kn6plv/NewMeshMap>`_. Once you have followed the install instructions and have a working mapper, you will be able to view your mesh network in a web browser (as shown in the example below).
+
+.. image:: _images/kn6plv-newMeshMap.png
+   :alt: KN6PLV MeshMap Display
+   :align: center
+
+|
+
 KN6PLV Network Waterfall Scanner
 --------------------------------
 

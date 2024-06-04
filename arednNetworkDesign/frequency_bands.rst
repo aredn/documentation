@@ -69,7 +69,7 @@ Advantages
 |
 
 Disadvantages
-  Equipment for the 9 cm band is less readily available and is typically more expensive due to less consumer demand. Care must be taken when selecting radios so as not to confuse them with the more common WiMAX devices which are designed for the 3.65 GHz range and are not supported for use with AREDN |trade| firmware. As mentioned previously, there must be clear line of sight and the Fresnel Zone between nodes also must be clear. For a link in the 9 cm band with 10 miles between nodes the first Fresnel Zone radius will be 62 feet, which is less than the 13 cm band discussed below. However, the 60% no blockage radius is still about 37 feet. Consider node AGL and terrain in order to minimize obstructions.
+  Equipment for the 9 cm band is no longer being manufactured and used devices are becoming difficult to find. Care must be taken when selecting radios so as not to confuse them with the more common WiMAX devices which are designed for the 3.65 GHz range and are not supported for use with AREDN |trade| firmware. As mentioned previously, there must be clear line of sight and the Fresnel Zone between nodes also must be clear. For a link in the 9 cm band with 10 miles between nodes the first Fresnel Zone radius will be 62 feet, which is less than the 13 cm band discussed below. However, the 60% no blockage radius is still about 37 feet. Consider node AGL and terrain in order to minimize obstructions.
 
 2.4 GHz Characteristics
 -----------------------
@@ -105,7 +105,7 @@ Advantages
 Disadvantages
   The entire 33 cm band is shared between several FCC authorized radio services. The disadvantage of using this band for AREDN |trade| networking is that in all but the most remote areas the RF noise floor may be very high, which reduces the :abbr:`SNR (Signal to Noise Ratio)` and results in packet loss, retransmission delays, and lower usable link quality.
 
-  Another disadvantage is that the equipment can be more expensive than devices that operate in the 2.4 and 5.8 GHz bands. Also the entire band is quite narrow (25 MHz) which means that only one, two, or four radio channels can exist in this shared frequency range, depending on the channel width that is selected.
+  Equipment for the 9 cm band is no longer being manufactured and used devices are becoming difficult to find. Also the entire band is quite narrow (25 MHz) which means that only one, two, or four radio channels can exist in this shared frequency range, depending on the channel width that is selected.
 
 ----------
 

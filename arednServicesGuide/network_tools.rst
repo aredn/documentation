@@ -1,6 +1,6 @@
-========================
-Network Management Tools
-========================
+================
+Networking Tools
+================
 
 There are several service programs that can assist in visualizing or mapping an AREDN |trade| network, as well as for viewing local RF conditions near your node. Some of these programs are discussed below.
 
@@ -8,32 +8,6 @@ Manage Extra Static Routes
 --------------------------
 
 There may be cases when you need to create extra static routes to control the flow of network traffic through your node. You can maintain your extra routes by entering them into the ``/etc/aredn_include/static_routes`` file. You must login to your node at the command line and use the ``vi`` editor to manage the routes in this file. A helpful example is provided in the file, and you can view the `OpenWRT Static Routes <https://openwrt.org/docs/guide-user/network/routing/routes_configuration>`_ page for additional information about managing static routes.
-
-KG6WXC MeshMap Network Visualizer
----------------------------------
-
-`Eric KG6WXC <https://www.qrz.com/db/KG6WXC>`_ created this useful tool and makes it available as an open source project. MeshMap can be installed on any mesh services computer having `LAMP <https://en.wikipedia.org/wiki/LAMP_(software_bundle)>`_ software, which allows it to run on a Raspberry Pi in your shack or in the field. MeshMap runs continuously and discovers/polls live nodes to display their current configuration, services, and network link information. It maintains a persistent database of all nodes that have been discovered.
-
-For additional information visit this link: `KG6WXC MeshMap <https://gitlab.kg6wxc.net/mesh/meshmap>`_.
-
-.. image:: _images/meshmap-kg6wxc.png
-   :alt: KG6WXC MeshMap Display
-   :align: center
-
-|
-
-KP4MSR MeshMap Network Visualizer
----------------------------------
-
-`Manuel KP4MSR <https://www.qrz.com/db/KP4MSR>`_ originally created this software for the Puerto Rico AREDN |trade| network, with a current fork and rewrite of the code maintained by `Tim KN6PLV <https://www.qrz.com/db/KN6PLV>`_. This program does *not* run continuously and does *not* maintain a persistent database of nodes, so it is less resource-intensive on the network. Once the static pages are built, it can be run on any device with a web server, including on a node with enough free memory.
-
-For additional information visit this link: `KN6PLV MeshMap <https://github.com/kn6plv/MeshMap>`_.
-
-.. image:: _images/meshmap-kn6plv.png
-   :alt: KN6PLV MeshMap Display
-   :align: center
-
-|
 
 AREDN |trade| Prometheus Exporter
 ---------------------------------

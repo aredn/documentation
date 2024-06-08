@@ -31,8 +31,8 @@ So if you determine there is a local node, how do you find out if you can reach 
 
 For these devices, line of sight is REALLY line of sight; they don’t do trees well at all. There are a number of on-line LOS calculators, ranging from simple to use to really complex. A simple one is at https://heywhatsthat.com. By entering your location, expected elevation of your node, and naming it, the site will generate a coverage plot for you. You can do this for your QTH and/or any existing local nodes. (See the *Network Design Guide* for other tools.)
 
-Alternate access to the network
-+++++++++++++++++++++++++++++++
+Alternative to RF network access
+++++++++++++++++++++++++++++++++
 
 If after doing your research you find that you don’t have any RF path to the network, don’t despair; there is an alternative. The nodes have the capability of ‘tunneling’ over the Internet to another node. While this isn’t a radio connection, it will let you get on the network until such time as the network has grown into your area.
 
@@ -113,13 +113,26 @@ Aiming High Gain Antennas
 
 Note that the higher the gain, the narrower the beamwidth and the trickier it is to aim these dishes accurately. Fortunately, some aiming tools have been added to the AREDN |trade| firmware that help in setting up the dish in the correct direction and elevation. Remember that the vertical beamwidth is as narrow as the horizontal beamwidth. Review the **Tips for Aiming Directional Antennas** document in the **How-To Guides** section for more information.
 
-Typical AREDN |trade| Node Deployments
---------------------------------------
+Typical Node Deployments
+------------------------
 
 Here are some typical deployment scenarios for connecting an AREDN |trade| node with PoE power adapters and computers.
 
-.. image:: _images/orv-basic-install.png
-   :alt:  Basic Installation
-   :align: center
+.. figure:: _images/orv-basic-install.png
+  :alt: Basic Deployment
+  :align: center
 
-Figure 1: Basic Installation
+  Figure 1: Basic Installation
+
+.. figure:: _images/orv-basic-install-eth.png
+  :alt: Basic Deployment with Ethernet switch
+  :align: center
+
+  Figure 2: Basic Installation with added Ethernet switch
+
+
+  .. figure:: _images/orv-basic-install-hap.png
+    :alt: Basic Deployment with Mikrotik hAP ac lite
+    :align: center
+
+    Figure 3: Basic Installation with Mikrotik hAP ac lite

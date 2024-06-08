@@ -19,7 +19,7 @@ How do you find out where the nearest network node is? There are several ways:
   - Central & Southern California: https://mapping.kg6wxc.net/meshmap
   - Yakima, WA: http://ka7hak.thatip.net:7773/meshmap
   - Oregon: https://arden.k9rcp.net/meshmap/map_display.php
-  - San Franciso: https://sfmap.xojs.org/
+  - San Franciso Bay Area: https://sfmap.xojs.org/
   - Hawaii: http://42561.noip.us:8888/meshmap
 
 - Create an account on arednmesh.org and see if there’s a Regional Forum for your area. Ask there for local information. If you don’t find a regional forum for your area, get it started by asking the webmaster, Randy WU2S, to create one for you. Search for his callsign using the search function, and by finding it you’ll be able to drop him a note. Once it’s created, create a post mentioning you’d like to get started and asking if there’s any activity near you.

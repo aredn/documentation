@@ -75,6 +75,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    :caption: How-to Guides
    :hidden:
 
+   arednHow-toGuides/beginner-guide
    arednHow-toGuides/firmware_tips
    arednHow-toGuides/home-router-connection
    arednHow-toGuides/poe

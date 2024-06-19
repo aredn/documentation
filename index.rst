@@ -38,7 +38,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednGettingStarted/selecting_devices
    arednGettingStarted/downloading_firmware
    arednGettingStarted/installing_firmware
-   arednGettingStarted/basic_setup
+   arednGettingStarted/firstboot_setup
    arednGettingStarted/node_status
    arednGettingStarted/mesh_status
    arednGettingStarted/advanced_config

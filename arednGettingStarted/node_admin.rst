@@ -1,43 +1,135 @@
-=======================
-Configuration Deep Dive
-=======================
+================
+Node Admin Guide
+================
 
-During your node's *Basic Setup* you used the configuration display by clicking the **Setup** button and typing your username and password. The configuration area has many additional features which will be described in more detail below. Clicking **Node Status** exits configuration mode without saving any changes, returning you to the *Node Status* display.
+You must login as the node administrator in order to perform node management tasks.
 
-.. image:: _images/admin-header.png
-   :alt: Admin Navigation Controls
-   :align: center
+|icon1| Click the user icon at the far right of the top nav bar. Select ``login`` and enter your node's admin password (which was configured when you installed the AREDN |trade| firmware).
 
-There are several control buttons below the configuration links section.
+|icon2| Upon successful authentication you will see the admin icon, and the label to the right of your node name should say *admin*.
 
-Help
-   Opens a new window or tab to display the node help page.
+In *admin* mode the sections on the **node status** display become editable, and there is a new section of options that appears at the top of the center column. This document will start from the top and work down each column of settings, starting with the left column. When you hover the cursor over a section and a light gray background appears, this identifies that section as being configurable.
 
-Save Changes
-  Click this button to save any configuration changes you have made. Saving changes will first do a basic validation of the new settings, saving them to flash memory if no errors are found. The new settings take effect in about 20 seconds and a reboot may or may not be required.
+Node Name and Security
+----------------------
 
-Reset Values
-  Click this button to reload the currently saved settings from flash memory, effectively undoing any changes that were made.
+The name and security section allows you to configure the following settings. Context-sensitive help is available by clicking the ``Help`` button.
 
-Default Values
-  Click this button to reset your node's basic settings to the default values. This action does not affect your existing node name.
-
-Reboot
-  Click this button to force your node to reboot.
-
-Basic Setup
------------
-
-You have already configured many of the basic settings, but there are several additional features that will be explained below.
-
-.. image:: _images/basic-setup.png
-   :alt: Basic Setup Options
-   :align: center
+.. image:: _images/admin-name-security.png
+  :alt: Admin Name and Security
+  :align: center
 
 |
 
-Mesh Column
-^^^^^^^^^^^^^^
+Node Name
+  Begin the node name with your callsign, followed by unique identifying information of your choice. Node names may contain up to 63 letters, numbers, and dashes, but cannot begin or end with a dash. Underscores, spaces, or any other characters are not allowed. Node names are not case sensitive, but the case will be preserved on the node status display. Amateur radio operators are required to identify all transmitting stations. The AREDN |trade| node name is beaconed automatically by the node every five minutes, so the node name must contain your callsign. Recommended names follow the (callsign)-(label) format, such as AD5BC-MOBILE or AD5BC-120SE. As a general rule node names should be kept as short as possible, while clearly and uniquely identifying the node.
+
+Description
+  This is not a required field, but it is a good place to describe the features or function of this device. Many operators use this field to list their contact information or the tactical purpose for the node. There are no character restrictions in the field, but the maximum length allowed is 210 characters.
+
+Password
+  Typically passwords may contain the characters ``a-z``, ``A-Z``, ``0-9``, period ``.``, dash ``-``, underscore ``_``, exclamation ``!``, and tilde ``~``. Avoid Linux-reserved characters, including but not limited to ``#``, ``$``, ``&``, ``*``, ``<``, ``>``. Enter the new password again in the *Retype Password* box to verify it is correct. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text. Be sure to remember or record the new password so you can use it for any future administrative tasks on the node.
+
+By clicking **Advanced Options** you can configure additional node security settings.
+
+Upload SSH Key
+  Uploading SSH keys allows computers to connect to the node via SSH without having to know the password. The SSH keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload the *public* key to your AREDN |trade| node. Click the ``Browse`` button and locate the *public* key file, then click the ``Upload Key`` button at the lower right.
+
+Remove SSH Key
+  To remove an existing SSH key, click in the field at the right and select the key from the dropdown list. Then click the ``Remove Key`` button at the lower right.
+
+When you are finished with your changes, you can click the ``Cancel`` button to ignore any changes you made. Click the ``Done`` button to continue with applying your changes. You will then be returned to your node's *admin* view where you will see a new item in the top nav bar.
+
+.. image:: _images/admin-chg-pending.png
+  :alt: Admin change pending
+  :align: center
+
+Click the ``Commit`` button to apply the change(s) or the ``Revert`` button to ignore any changes and revert to the previous settings.
+
+Time Settings
+-------------
+
+Select your timezone from the dropdown list, where the default value is `UTC (Coordinated Universal Time)`. You can also enter the hostname for a `NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly].
+
+.. image:: _images/admin-time.png
+  :alt: Admin Time
+  :align: center
+
+Context-sensitive help is available by clicking the ``Help`` button. When you are finished with your changes, you can click the ``Cancel`` button to ignore any changes you made. Click the ``Done`` button to continue with applying your changes. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+
+Firmware Settings
+-----------------
+
+The top field displays the currently installed version of firmware on your node. There are three ways to update your node's firmware.
+
+.. image:: _images/admin-firmware-1.png
+  :alt: Admin Firmware
+  :align: center
+
+Download Firmware
+  If your node has Internet access you can click the refresh icon on the right side of the field in order to update the list of available images.  Select the image to download, click *Download*, and wait for the firmware to download and be installed.
+
+#) **Upload Firmware**: If you have a new firmware image that you have already downloaded to your computer from the AREDN |trade| website, click the *Browse* button and select the firmware file from the location on your computer where you saved it. Click *Upload* and the file will be uploaded and installed on the node.
+
+#)
+
+#) **Load Local Firmware**: If you need to upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp/web`` folder, and name it ``local_firmware.bin``. Refresh your node's *Administration* page and once the page detects the ``/tmp/web/local_firmware.bin`` file, then the *Apply Local Firmware* button will become active. Press this button to begin the update process using the firmware you previously uploaded.
+
+Advanced Options
+++++++++++++++++
+
+Keep Configuration
+  This is enabled by default and it allows you to retain your existing configuration settings during the firmware upgrade process.
+
+Firmware URL
+  This is the source URL that is queried by the *Download Firmware* process in order to refresh the list of available firmware for your node.
+
+
+Package Settings
+----------------
+
+
+Network Settings
+----------------
+
+
+Location Settings
+-----------------
+
+
+Internal Services
+-----------------
+
+
+Local Services
+--------------
+
+
+Neighbor Devices
+----------------
+
+
+Radios and Antennas
+-------------------
+
+
+Mesh Memory Settings
+--------------------
+
+
+DHCP Settings
+-------------
+
+
+Tunnel Settings
+---------------
+
+
+Admin Tools
+-----------
+
+
+
 
 **Mesh** is the node's *radio* interface. The AREDN |trade| firmware has been designed to simplify the process of configuring networking interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. You may need to change the *Channel* and possibly the *Channel Width* parameters to match those of your local AREDN |trade| mesh, as explained previously in the **Basic Radio Setup** section. Normally you will not need to change the other network settings on this page, so keep these values unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
@@ -133,18 +225,11 @@ WAN WiFi Client
 
   The mesh node uses "WPA2 PSK" encryption to connect to the wifi AP. The password length must be between zero and 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A single quote character must not be used in the passphrase.
 
-  To the right of the *WAN WiFi Client* label is an icon with hover text indicating the status of the WAN WiFi connection.  |icon1| indicates no wifi connection to the local access point.  |icon2| indicates a wifi connection but no Internet connection.  |icon3| indicates both a wifi connection to the local access point and a connection to the Internet.
+  To the right of the *WAN WiFi Client* label is an icon with hover text indicating the status of the WAN WiFi connection.  indicates no wifi connection to the local access point.   indicates a wifi connection but no Internet connection.   indicates both a wifi connection to the local access point and a connection to the Internet.
 
   After you *Save Changes* and reboot, the node will have Internet access via wifi rather than requiring a cable plugged into the node's WAN port. In fact, enabling the *WAN Wifi Client* will disable VLAN1, so Internet access will no longer be possible through the physical WAN port. Also, on the *Node Status* display you will see the **WiFi WAN Address** label and IP address to indicate that your WAN connection is using the WAN WiFi Client.
 
-  .. |icon1| image:: _images/wifi-noConn.png
-    :alt: No WiFi onnection
 
-  .. |icon2| image:: _images/wifi-noInternet.png
-    :alt: WiFi connection without Internet
-
-  .. |icon3| image:: _images/wifi-internet.png
-    :alt: WiFi connection and Internet access
 
 
 Node VLANs
@@ -365,19 +450,6 @@ Administration
 Click the **Administration** link to navigate to these settings. There are four sections that provide ways for you to manage the firmware, packages, security keys, and support data on your node.
 
 Firmware Update
-  There are currently three ways to update the firmware on your node. No matter which method you choose, you can retain your existing configuration settings by selecting the *Keep Settings* checkbox.
-
-.. image:: _images/admin-firmware.png
-   :alt: Upgrade firmware
-   :align: center
-
-|
-
-  #) **Upload Firmware**: If you have a new firmware image that you have already downloaded to your computer from the AREDN |trade| website, click the *Browse* button and select the firmware file from the location on your computer where you saved it. Click *Upload* and the file will be uploaded and installed on the node.
-
-  #) **Download Firmware**: If your node has Internet access you can use the *Download Firmware* option. Click *Refresh* to update the list of available images. The source URLs that are queried are those listed on the *Advanced Configuration* page of your node. Select the image to download, click *Download*, and wait for the firmware to download and be installed.
-
-  #) **Load Local Firmware**: If you need to upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp/web`` folder, and name it ``local_firmware.bin``. Refresh your node's *Administration* page and once the page detects the ``/tmp/web/local_firmware.bin`` file, then the *Apply Local Firmware* button will become active. Press this button to begin the update process using the firmware you previously uploaded.
 
 Package Management
   Here you can install or remove software packages on the node. **Upload Package** allows you to install a package file by uploading it from your computer to your node. **Download Package** allows Internet-connected nodes to retrieve a package from the AREDN |trade| website. Clicking *Refresh* will update the list of packages available for download.
@@ -718,3 +790,10 @@ With the node powered on and fully booted:
 * **Hold for 15 seconds to return the node to “just-flashed” condition**
 
 On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.
+
+
+.. |icon1| image:: _images/account-outline-custom.png
+  :alt: Normal user view
+
+.. |icon2| image:: _images/account-cog-outline-custom.png
+  :alt: Admin user view

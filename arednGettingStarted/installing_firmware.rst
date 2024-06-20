@@ -352,4 +352,4 @@ After the node reboots, it should have a default IP address of 192.168.1.1. Make
 
 Once your device is running AREDN |trade| firmware, you can display its web interface by navigating to either ``http://192.168.1.1`` or ``http://localnode.local.mesh``.  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address. You may need to clear your web browser's cache in order to remove any cached pages.
 
-You can use your web browser to configure the new node with your callsign, admin password, and other settings as described in the **Basic Radio Setup** section of the documentation.
+You can use your web browser to configure the new node with your callsign, admin password, and other settings as described in the **Firstboot Node Setup** section of the documentation.

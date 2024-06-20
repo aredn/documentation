@@ -31,6 +31,8 @@ Using the icons on the left side bar you can navigate to various displays.
 
   |icon5| navigates to the *Cloud Mesh* view through the Supernode network (if available).
 
+  |icon6| navigates to the world map on the AREDN |trade| website.
+
 Left Column
 -----------
 
@@ -105,3 +107,6 @@ Tunnel Information
 
 .. |icon5| image:: _images/cloud-arrow-right-outline-custom.png
   :alt: Cloud Mesh View
+
+.. |icon6| image:: _images/map-outline-custom.png
+  :alt: World map

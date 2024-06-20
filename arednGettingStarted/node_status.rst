@@ -94,19 +94,19 @@ Tunnel Information
 -------------------
 
 .. |icon1| image:: _images/account-outline-custom.png
-  :alt: Normal user account view
+  :alt: Normal user view
 
 .. |icon2| image:: _images/account-cog-outline-custom.png
-  :alt: Admin account view
+  :alt: Admin user view
 
 .. |icon3| image:: _images/information-outline-custom.png
-  :alt: Node Information
+  :alt: Node information
 
 .. |icon4| image:: _images/grid-custom.png
-  :alt: Mesh View
+  :alt: Local mesh view
 
 .. |icon5| image:: _images/cloud-arrow-right-outline-custom.png
-  :alt: Cloud Mesh View
+  :alt: Cloud mesh view
 
 .. |icon6| image:: _images/map-outline-custom.png
-  :alt: World map
+  :alt: World map view

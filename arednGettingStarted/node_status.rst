@@ -45,7 +45,7 @@ Node Time, Uptime, Load Average, and Free Memory
   The node time is displayed, as well as the ``uptime``, which is the time since the last reboot. If an Internet connection or a local :abbr:`NTP (Network Time Protocol)` server is available, your node's NTP client will sync its time with that time source. The ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash`` and ``free ram`` shows how much storage space is remaining on your node. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
 
 Firmware Information
-  This displays the node's current firmware version. A badge on the right indicates the status of the firmware.
+  This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``.
 
 Network Information
   The Mesh IP address/netmask is displayed using `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ notation, followed by the :abbr:`LAN (Local Area Network)` IP address/netmask. If the :abbr:`WAN (Wide Area Network)` interface is enabled, the WAN IP address/netmask is displayed along with whether this address was obtained via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ or assigned as a static IP address. The WAN gateway IP address is also displayed along with the IP(s) of the WAN `DNS servers <https://en.wikipedia.org/wiki/Domain_Name_System>`_.
@@ -107,20 +107,20 @@ Tunnel Information
 
 -------------------
 
-.. |icon1| image:: _images/account-outline-custom.png
+.. |icon1| image:: ../_icons/login.png
   :alt: Normal user view
 
-.. |icon2| image:: _images/account-cog-outline-custom.png
+.. |icon2| image:: ../_icons/login-auth.png
   :alt: Admin user view
 
-.. |icon3| image:: _images/information-outline-custom.png
-  :alt: Node information
+.. |icon3| image:: ../_icons/status.png
+  :alt: Node status view
 
-.. |icon4| image:: _images/grid-custom.png
+.. |icon4| image:: ../_icons/mesh.png
   :alt: Local mesh view
 
-.. |icon5| image:: _images/cloud-arrow-right-outline-custom.png
+.. |icon5| image:: ../_icons/cloudmesh.png
   :alt: Cloud mesh view
 
-.. |icon6| image:: _images/map-outline-custom.png
+.. |icon6| image:: ../_icons/map.png
   :alt: World map view

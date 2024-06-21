@@ -38,7 +38,7 @@ Upload SSH Key
 Remove SSH Key
   To remove an existing SSH key, click in the field at the right and select the key from the dropdown list. Then click the ``Remove Key`` button at the lower right.
 
-When you are finished with your changes, you can click the ``Cancel`` button to ignore any changes you made. Click the ``Done`` button to continue with applying your changes. You will then be returned to your node's *admin* view where you will see a new item in the top nav bar.
+When you are finished with your changes, you can click the ``Cancel`` button to ignore any changes you made. Click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will see a new item in the top nav bar.
 
 .. image:: _images/admin-chg-pending.png
   :alt: Admin change pending
@@ -55,54 +55,229 @@ Select your timezone from the dropdown list, where the default value is `UTC (Co
   :alt: Admin Time
   :align: center
 
-Context-sensitive help is available by clicking the ``Help`` button. When you are finished with your changes, you can click the ``Cancel`` button to ignore any changes you made. Click the ``Done`` button to continue with applying your changes. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+Context-sensitive help is available by clicking the ``Help`` button. When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
 
 Firmware Settings
 -----------------
 
-The top field displays the currently installed version of firmware on your node. There are three ways to update your node's firmware.
+The top field displays the currently installed version of firmware on your node. Context-sensitive help is available by clicking the ``Help`` button. There are three ways to update your node's firmware.
 
 .. image:: _images/admin-firmware-1.png
   :alt: Admin Firmware
   :align: center
 
+|
+
 Download Firmware
-  If your node has Internet access you can click the refresh icon on the right side of the field in order to update the list of available images.  Select the image to download, click *Download*, and wait for the firmware to download and be installed.
+  If your node has Internet access you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to download, click the ``Fetch and Update`` button, and wait for the firmware to download and be installed. A progress bar at the bottom of the display will show the status of the download and update.
 
-#) **Upload Firmware**: If you have a new firmware image that you have already downloaded to your computer from the AREDN |trade| website, click the *Browse* button and select the firmware file from the location on your computer where you saved it. Click *Upload* and the file will be uploaded and installed on the node.
+Upload Firmware
+  If you have a new firmware image that you already downloaded from the AREDN |trade| website to your local computer, click the ``Browse`` button and navigate to the location where you saved the firmware file. After selecting the firmware file, click the ``Fetch and Update`` button and wait for the firmware to upload and be installed. A progress bar at the bottom of the display will show the status of the process.
 
-#)
+Sideload Local Firmware
+  If you need to upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp/web`` folder, and name it ``local_firmware.bin``. Once the node detects the ``/tmp/web/local_firmware.bin`` file is present, then the filename in the field at the right will be active. Click the ``Fetch and Update`` button and wait for the firmware to be installed. A progress bar at the bottom of the display will show the status of the process.
 
-#) **Load Local Firmware**: If you need to upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp/web`` folder, and name it ``local_firmware.bin``. Refresh your node's *Administration* page and once the page detects the ``/tmp/web/local_firmware.bin`` file, then the *Apply Local Firmware* button will become active. Press this button to begin the update process using the firmware you previously uploaded.
+By clicking **Advanced Options** you can configure additional settings.
 
-Advanced Options
-++++++++++++++++
+.. image:: _images/admin-firmware-2.png
+  :alt: Admin Firmware Advanced Options
+  :align: center
+
+|
 
 Keep Configuration
   This is enabled by default and it allows you to retain your existing configuration settings during the firmware upgrade process.
 
+Dangerous Upgrade
+  This setting allows you to disable the normal firmware compatibility safety checks that typically prevent you from loading the wrong firmware image on your node. The default setting is *OFF* which means that the safety checks remain active, and this setting should not be changed unless you have a specific reason to disable the firmware compatibility checks. One example for using this setting would be if you mistakenly installed an incorrect firmware image and would like to correct that mistake by installing the correct firmware image.
+
 Firmware URL
   This is the source URL that is queried by the *Download Firmware* process in order to refresh the list of available firmware for your node.
-
 
 Package Settings
 ----------------
 
+This display allows you to install or remove software packages on the node. When you install packages, your node will remember them in its package store. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will automatically reinstall any packages in its package store. If you *uploaded* the package to the node, then the package store keeps a copy of the package code itself. If you *downloaded* the package, then your node will attempt to re-download it. Also, if you later *remove* one of your extra packages, it will be automatically removed from the package store. Context-sensitive help is available by clicking the ``Help`` button.
+
+.. image:: _images/admin-packages.png
+ :alt: Admin Packages
+ :align: center
+
+|
+
+Download Package
+  If the node has a connection to the Internet, it may retrieve a package from the AREDN |trade| website. Click the *refresh* icon at the right of the field to update the list of packages available for download. Select the package you want to install, click the ``Fetch and Install`` button, and wait for the package to be installed. A progress bar at the bottom of the display will show the status of the process.
+
+Upload Package
+  If you have a package file that you already downloaded from a package repository to your local computer, click the ``Browse`` button and navigate to the location where you saved the package file. After selecting the package, click the ``Fetch and Update`` button and wait for the package to be uploaded and installed. A progress bar at the bottom of the display will show the status of the upload and install.
+
+Remove Package
+  Click in the field at the right to show a list of packages currently installed on the node. Select a package and click the ``Remove Package`` button to uninstall the selected package. You will only be able to remove packages that you have added.
+
+By clicking **Advanced Options** you can configure additional settings.
+
+Package URL
+  This field contains the URL which your node will use to download packages from the AREDN |trade| web server.
 
 Network Settings
 ----------------
 
+This display allows you to update the network settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+
+.. image:: _images/admin-network-1.png
+ :alt: Admin Network
+ :align: center
+
+|
+
+Mesh Address
+  This is the primary IP address of your node. The AREDN |trade| firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. Normally you will not need to change this, so keep this value unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
+
+LAN Size
+  This allows you to set the number of devices your node will be able to host on its Local Area Network (LAN). Click in the field at the right to see the dropdown list of options for the size of your node's LAN. The default value is ``5`` hosts.
+
+  It is important not to select a size that is larger than necessary because the chance of an IP address conflict on the mesh increases with the size of the subnet. The LAN subnet parameters are automatically calculated and depend on the IP address of the *Mesh* interface. If a conflict does occur it can be fixed by changing the *Mesh* IP address.
+
+  Since the LAN address space is automatically managed, you cannot configure network settings in *Direct* mode. The only option available in *Direct* mode is the size of the LAN subnet which can accommodate either 1, 5, 13, or 29 LAN hosts. A one host subnet can be useful for either a single server or a separate network router using its own NAT which is capable of more advanced routing functions than those available on a mesh node. In *Direct* mode every host on the LAN has direct access to and from the mesh. This mode was designed to minimize the amount of manual effort needed to provide services to the mesh, since many services do not work well if they are hosted behind a :abbr:`NAT (Network Address Translation)` router. In *Direct* mode the LAN shares the same address space as the mesh at large.
+
+  Another choice is ``NAT`` and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node itself. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed through port forwarding rules.
+
+  Finally, you may also ``disable`` your node's ability to provide a LAN network.
+
+WAN Enable
+  This switch allows you to enable or disable your node's WAN interface, which is typically used to connect to the Internet. The WAN interface is enabled by default.
+
+WAN Mode
+  This specifies how your node's WAN interface gets its IP address. The default is to use :abbr:`DHCP (Dynamic Host Control Protocol)`, so the WAN IP address is assigned to your node by your Internet router. If you select ``Static`` you will see several new fields which allow you to specify the IP address, netmask in dotted decimal format, and gateway IP address.
+
+DNS
+  These two fields allow you to enter the IP addresses of the `DNS (Domain Name System)` servers of your choice. By default Google's DNS servers are listed because their name resolution servers are configured to detect error conditions properly and to report them correctly.
+
+  When you connect a device to your node's LAN, not only should it have an IP address in the LAN IP address range, but it is best practice for LAN devices to obtain their DNS Server information automatically from the node. Be aware that if a LAN device does not use the DNS Server entry provided by the node to which it is connected, then that device will be unable to resolve hostnames on the mesh network. Also, hard-coding a device's DNS Server entry with the mesh node's IP address could result in unexpected failures if that device is moved to another mesh node or network.
+
+By clicking **Advanced Options** you can configure additional settings.
+
+.. image:: _images/admin-network-2.png
+  :alt: Admin Network Advanced Options
+  :align: center
+
+|
+
+WAN VLAN Number
+  Many of the devices used as AREDN |trade| nodes have only one Ethernet port, but more than one type of network traffic must share that single port. The AREDN |trade| firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong. By default the WAN uses an *untagged* VLAN on multi-port devices, and ``VLAN 1`` on single port devices. This can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *untagged*. If you change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+
+  The following VLANs are preconfigured in the AREDN |trade| firmware:
+
+  - VLAN 1: these packets will be identified as WAN traffic from the Internet or another external network.
+
+  - VLAN 2: these packets will be identified as traffic from a :abbr:`DtD (Device to Device)` node directly connected to your node.
+
+  - No VLAN tag: these packets will be identified as LAN traffic from devices on the local area network.
+
+  It is important to understand AREDN |trade| VLANs when configuring network smart switches for Internet access, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN |trade| website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_. Also, on the AREDN |trade| GitHub site there is more information about node VLANs that have been preconfigured in the firmware images for specific types of radio hardware. For additional information visit this link: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_
+
+Mesh to WAN
+  Enabling this switch will allow your node to route traffic from its Mesh interface to/from its WAN interface. This allows any device on the local mesh network to use the WAN on your node, typically for accessing the Internet. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN |trade| is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway. The default value is ``disabled`` and it is recommended that you use this default unless there is a special reason to enable it.
+
+LAN to WAN
+  The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network.
+
+LAN default route
+  Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121 and require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network, care should be taken to understand how the device will deal with default routes to more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
+
+When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
 
 Location Settings
 -----------------
 
+This display allows you to update the location settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+
+.. image:: _images/admin-location-1.png
+ :alt: Admin Location
+ :align: center
+
+|
+
+Any values you enter should be in decimal format (for example, 30.5432 and -95.1234). This information is used to determine the distance between this node and others and is required to optimize connection latency and bandwidth. A Maidenhead grid square is a 6 character designation of the node's location. A grid square identifier consists of two uppercase letters, two digits, two lowercase letters. Each grid square is approximately 3x4 miles in size.
+
+You can also change the GPS coordinates by clicking on the map and panning around to set your pin in any location on the map. As you pan the map, the location values will follow your movements automatically.
+
+By clicking **Advanced Options** you can configure additional settings.
+
+.. image:: _images/admin-location-2.png
+  :alt: Admin Location Advanced Options
+  :align: center
+
+|
+
+Map URL
+  The map URL is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get the map data from the AREDN |trade| server. The (lat) and (lon) parameters in the URL are expanded before the map is rendered.
+
+When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
 
 Internal Services
 -----------------
 
+This display allows you to configure some of the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+
+.. image:: _images/admin-internal-svc-1.png
+ :alt: Admin Internal Services
+ :align: center
+
+|
+
+Cloud Mesh
+  This switch allows your node to use any available Supernode on your local mesh.
+
+  |icon5| The default is ``enabled`` so you may click your node's Cloud Mesh icon to connect to any node on the worldwide mesh. Disable this option if you never want your node to provide a method of accessing devices on the worldwide mesh network.
+
+iPerf3 Server
+  This switch enables the included iperf3 client and server tools on your node. This makes it easy to perform bandwidth tests between arbitrary nodes in the network. The client and server are only invoked on demand, so there is no performance impact on the node except when tests are performed. The default value is ``enabled``.
+
+Remote Logging
+  The limited amount of memory for local node logs means that older information will roll off, and all log information is lost when your node is rebooted. By entering the URI for a remote log server, you can send your node's log info to a server using the syslog protocol. The format for this option is ``udp://ip-address:port`` or ``tcp://ip-adress:port``. Leave this field blank if no remote logging is desired.
+
+WAN ssh
+  This switch enables SSH access to your node on its WAN interface. Disabling this option will not prevent SSH access to your node from the Mesh and LAN interfaces.
+
+WAN telnet
+  This switch enables *telnet* access to your node on its WAN interface. Disabling this option will not prevent *telnet* access to your node from the Mesh and LAN interfaces.
+
+WAN web
+  This switch enables http/https access to your node on its WAN interface. Disabling this option will not prevent http/https access to your node from the Mesh and LAN interfaces.
+
+Watchdog
+  Enables the hardware watchdog timer. This timer will reboot the device if it becomes unresponsive or various critical AREDN components stop running correctly. Because the watchdog is in the hardware, even if the kernel crashes, the device will still reboot itself.
+
+.. image:: _images/admin-internal-svc-2.png
+ :alt: Admin Internal Services 2
+ :align: center
+
+|
+
+Message Updates
+  The AREDN |trade| development team may post messages which Internet-connected nodes will automatically download and display. You may also use a local message source to display messages on your node's status page. Enter an integer in this field for the number of hours you want your node to wait before refreshing its messages. The default value is ``1`` hour between updates.
+
+Local Message URL
+  This field allows you to enter the URL for a local message source. If you configure a local message server, then your nodes without Internet access can also receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.
+
+  A local message server can be configured on a mesh-connected web server which allows nodes to query the URL you entered. There is also a separate package called *AREDN Alert Message Manager* which allows the local message repository to be hosted on a node itself, rather than requiring a separate LAN-conneted web server. You can find out more about this application by looking for *AREDN Alert Message Manager* in the **Applications and Services Guide** under the *Other Services* section.
+
+Message Groups
+  In addition to local messages addressed by node name, it is possible to subscribe to group messages. Multiple group names can be added to this field as a comma separated list. Group messages are retrieved from the web server specified in the *Local Message URL* field. The following are example grouping ideas:
+
+  - Geographic regions (State, county, ARRL section, neighborhood)
+  - Connection types (backbone, leaf nodes, tunnels)
+  - Infrastructure *Change Management* notices
+  - Weather alerts
+  - Wildfire, flooding, tsunami or volcano alerts
+  - SKYWARN activations, DHS threat level
+
+When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
 
 Local Services
 --------------
+
 
 
 Neighbor Devices
@@ -113,12 +288,20 @@ Radios and Antennas
 -------------------
 
 
+
+
+If you enabled the **LAN Access Point** feature mentioned previously, edit the access point's SSID, channel, encryption method, and password. Select an AP channel that is within the range supported by your WiFi client devices. Click *Save Changes* to write your information to the node's configuration, and a node reboot will also be required. Now wireless devices can connect to your node's LAN wirelessly, and their DHCP IP address will be assigned by the node's LAN DHCP server. If your node hardware has more than one unused radio, for example the *Mikrotik hAP ac* family with both 2.4 and 5.8 GHz radios in a single unit, the *LAN Access Point* section will always be visible whether or not your *Mesh* interface is enabled.
+
+
 Mesh Memory Settings
 --------------------
 
 
 DHCP Settings
 -------------
+
+
+By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server for its LAN interface, which lets the node assign IP addresses automatically for devices connected to the node's local area network. The last octet of the start/end range for host IP addresses is shown in the LAN column. If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
 
 
 Tunnel Settings
@@ -131,7 +314,6 @@ Admin Tools
 
 
 
-**Mesh** is the node's *radio* interface. The AREDN |trade| firmware has been designed to simplify the process of configuring networking interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. You may need to change the *Channel* and possibly the *Channel Width* parameters to match those of your local AREDN |trade| mesh, as explained previously in the **Basic Radio Setup** section. Normally you will not need to change the other network settings on this page, so keep these values unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
 Channel Width Setting
   Most AREDN |trade| devices have a choice of using 20 MHz, 10 MHz, or 5 MHz channel widths. As a general rule, a larger channel width will allow more data to be transferred, but it may only do this over shorter distances. One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB.
@@ -188,37 +370,9 @@ Enable/Disable Mesh
 
 |
 
-LAN Column
-^^^^^^^^^^
-
-The LAN column contains the settings for the Local Area Network hosted by the AREDN |trade| node. There are several options under the *LAN Mode* dropdown.
-
-The default mode is ``5 Host Direct``. In this mode every host on the LAN has direct access to and from the mesh. This mode was created to reduce the amount of manual configuration needed to provide services to the mesh, since many services do not work well if they are hosted behind a :abbr:`NAT (Network Address Translation)` router. With *Direct* mode the LAN shares the same address space as the mesh at large. Port forwarding is not needed because NAT is not used, and there is no firewall between the LAN and the mesh.
-
-The mesh address space is automatically managed, so you cannot configure the LAN network settings in *Direct* mode. The only configurable option available in *Direct* mode is the size of the LAN subnet which can accommodate either 1, 5, 13, or 29 LAN hosts. A one host subnet can be used for either a single server or a separate network router using its own NAT which is capable of more advanced routing functions than those available on a mesh node.
-
-It is important not to use a subnet larger than is necessary because the chance of an IP address conflict on the mesh increases with the size of the subnet. The LAN subnet parameters are automatically calculated and depend on the IP address of the *Mesh* interface. If a conflict does occur it can be fixed by changing the *Mesh* IP address.
-
-The other LAN Mode is ``NAT``, and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed through port forwarding rules. A single :abbr:`DMZ (DeMilitarized Zone)` server can be used to accept all incoming traffic that is not already handled by other rules or by the node itself.
-
-By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server for its LAN interface, which lets the node assign IP addresses automatically for devices connected to the node's local area network. The last octet of the start/end range for host IP addresses is shown in the LAN column. If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
-
-When you connect a device to your node's LAN, not only should it have an IP address in the LAN IP address range, but it is best practice for LAN devices to obtain their DNS Server information *automatically* from the node. Be aware that if a LAN device does not use the DNS Server entry provided by the node to which it is connected, then that device will be unable to resolve hostnames on the mesh network. Also, hard-coding a device's DNS Server entry with the mesh node's IP address could result in unexpected failures if that device is moved to another mesh node or network.
-
-If you enabled the **LAN Access Point** feature mentioned previously, edit the access point's SSID, channel, encryption method, and password. Select an AP channel that is within the range supported by your WiFi client devices. Click *Save Changes* to write your information to the node's configuration, and a node reboot will also be required. Now wireless devices can connect to your node's LAN wirelessly, and their DHCP IP address will be assigned by the node's LAN DHCP server. If your node hardware has more than one unused radio, for example the *Mikrotik hAP ac* family with both 2.4 and 5.8 GHz radios in a single unit, the *LAN Access Point* section will always be visible whether or not your *Mesh* interface is enabled.
 
 WAN Column
-^^^^^^^^^^
 
-.. image:: _images/wifi-as-wan.png
-   :alt: WiFi as WAN
-   :align: right
-
-The :abbr:`WAN (Wide Area Network)` interface on your node is typically used to connect it to the Internet or to another external network. By default the WAN interface is set to obtain an IP address via DHCP from your upstream network. The :abbr:`DNS (Domain Name System)` servers are set by default to use Google's DNS services and should not be changed under normal circumstances. Google's name resolution servers are configured properly to detect error conditions and report them correctly.
-
-If you are not going to use the WAN interface on your node, you can select *disabled* from the *Protocol* dropdown list. If you will be using your node as a *Tunnel Server*, you should reserve an IP address on your router for the node's WAN interface. This will be explained in the *Tunnel Server* section below. When a node has Internet access on its WAN interface, that access is available to the node itself and to any computers connected via the LAN port by default.
-
-.. note:: The *Advanced WAN Access* settings have been moved to the **Advanced Configuration** display.
 
 WAN WiFi Client
   As mentioned above in the *Mesh* section, if your node has a radio on which you have *disabled* Mesh and you are not using it as a LAN AP, you can enable this available radio as a WAN interface by checking the **WAN Wifi Client** checkbox. Enter the SSID and authentication string for the wifi AP that you want to connect through for Internet access.
@@ -229,24 +383,6 @@ WAN WiFi Client
 
   After you *Save Changes* and reboot, the node will have Internet access via wifi rather than requiring a cable plugged into the node's WAN port. In fact, enabling the *WAN Wifi Client* will disable VLAN1, so Internet access will no longer be possible through the physical WAN port. Also, on the *Node Status* display you will see the **WiFi WAN Address** label and IP address to indicate that your WAN connection is using the WAN WiFi Client.
 
-
-
-
-Node VLANs
-^^^^^^^^^^
-
-Many of the devices used as AREDN |trade| nodes have only one Ethernet port, but more than one type of network traffic must share that single port. The AREDN |trade| firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong.
-
-VLAN 1
-  Packets received by the node that are tagged for VLAN 1 will be identified as WAN traffic from the Internet or another external network.
-
-VLAN 2
-  Packets received by the node that are tagged for VLAN 2 will be identified as traffic from a :abbr:`DtD (Device to Device)` node directly connected via Ethernet cable.
-
-No VLAN tag
-  Packets received by the node that are untagged will be identified as LAN traffic from computers on the local area network.
-
-It is important to understand AREDN |trade| VLANs when configuring network smart switches for Internet access, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN |trade| website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_. Also, on the AREDN |trade| GitHub site there is more information about node VLANs that have been preconfigured in the firmware images for specific types of radio hardware. For additional information visit this link: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_
 
 Port Forwarding, DHCP, Services, and DNS Aliases
 ------------------------------------------------
@@ -452,17 +588,6 @@ Click the **Administration** link to navigate to these settings. There are four 
 Firmware Update
 
 Package Management
-  Here you can install or remove software packages on the node. **Upload Package** allows you to install a package file by uploading it from your computer to your node. **Download Package** allows Internet-connected nodes to retrieve a package from the AREDN |trade| website. Clicking *Refresh* will update the list of packages available for download.
-
-  The **Remove Package** list shows all packages currently installed on the node. Selecting a package and clicking *Remove* will uninstall the package. You will only be able to remove packages that you have added. All installed packages are shown, but the pre-installed packages cannot be deleted since they are necessary for proper operation of the node.
-
-.. image:: _images/admin-package.png
-   :alt: Install/remove packages
-   :align: center
-
-|
-
-  As of NB 20230916, when you install extra packages, your node will remember them in its package store. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will wait for a few minutes and then automatically install the extra packages in its package store. If you *uploaded* the package to the node, then the package store keeps a copy of the package code itself. If you *downloaded* the package, then your node will attempt to redownload it. Also, if you later *remove* one of your extra packages, it will be automatically removed from the package store.
 
 Authorized SSH Keys
   Uploading ssh keys allows computers to connect to a node via ssh without having to know the password. The ssh keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload its *public* key to your AREDN |trade| node. If you want to remove an installed key, select it and click the *Remove* button.
@@ -565,39 +690,7 @@ WAN Settings
 
 Several WAN access settings can be adjusted in this section. It is recommended that these settings be left at their default values, but specific use cases may require you to change them.
 
-Allow MESH nodes to use my WAN
-  The default value is ``OFF`` and it is recommended that you use this default unless there is a special reason to enable it. Setting the value to ``ON`` will allow this node to route traffic from its Mesh interface to/from your WAN interface. Since the WAN interface typically provides a gateway to the Internet, it is not desirable to route Internet traffic over your Mesh interface. AREDN |trade| is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway.
 
-  In older firmware releases there was a checkbox on the *Basic Setup* display for this setting. In the past if you checked "Allow others to use my WAN" then here is what your slider would look like in the current firmware:
-
-  .. image:: _images/advConfig-wanAllow.png
-    :alt: Advanced Configuration - Allow WAN
-    :align: center
-
-  Remember that the default value is ``OFF`` and you should not turn it on unless you have a special use case.
-
-Allow my LAN devices to access my WAN
-  The default value is ``ON`` which allows your LAN-connected devices to access your node's WAN network. Setting this value to ``OFF`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network.
-
-  In older firmware releases there was a checkbox on the *Basic Setup* display for this setting. In the past if you checked "Prevent LAN devices from accessing the WAN" then here is what your slider would look like in the current firmware:
-
-  .. image:: _images/advConfig-wanPrevent.png
-    :alt: Advanced Configuration - Prevent WAN
-    :align: center
-
-  Remember that the default value is ``ON`` and you should not turn it off unless you have a special reason to do so.
-
-Provide my LAN devices with a default route
-  Your node's DHCP server provides routes to LAN devices so they can access its available networks. A default route is required for WAN access, and that is provided automatically if "Allow my LAN devices to access my WAN" is ``ON`` as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121 and will require a default route in order to access the mesh network. Setting this value to ``ON`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network, care should be taken to understand how the device will deal with default routes to more than one network.
-
-  Remember that the default value is ``OFF`` and you should not turn it on unless you have a special reason to do so.
-
-WAN VLAN Number
-  .. important:: This feature only applies to node hardware which requires a VLAN tag for the WAN interface. It will not appear on hardware where the Ethernet ports are on a switch chip, since changing the default VLAN number is not supported on those devices at the present time. It will appear as a ``blank`` field on devices that have a dedicated WAN port and therefore do not need a VLAN tag for their WAN interface.
-
-  If you have node hardware that uses a VLAN tag for the WAN interface, then the default WAN VLAN identifier is ``1``. In some cases this default VLAN may be in use already or may be reserved by other equipment on your network. This field allows you to change the VLAN number being used on your node's WAN interface.
-
-  .. warning:: If you plan to change this setting, do not use single digit identifiers or any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
 
 Enable Web, SSH, or Telnet Access
   HTTP, SSH, and Telnet access to your node is enabled by default on your node's WAN interface. If you need to restrict this access to your node from the WAN, then you can turn it ``OFF`` here.
@@ -726,7 +819,7 @@ Firmware and Package Download Paths
 
 These fields contain the URLs used by the node for downloading firmware and package files during upgrades. By default they point to the AREDN |trade| downloads server available across the Internet. You can change these paths to point to a local mesh package server in order to upgrade nodes that do not have Internet access. If you plan to create a local software repository for your mesh network, review **Creating a Local Package Server** in the **How-To Guide** section.
 
-The **Dangerous Upgrade** setting allows you to disable the normal firmware compatibility safety checks that typically prevent you from loading the wrong firmware image on your node. The default setting is *OFF* which means that the safety checks remain enabled, and this setting should not be changed unless you have a specific reason to disable the firmware compatibility checks. One example for using this setting would be if you mistakenly installed an incorrect firmware image and would like to correct that mistake by installing the correct firmware image (e.g., you installed the Mikrotik LHG version when you meant to install the LHG XL version).
+
 
 AREDN |trade| Alert Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -792,8 +885,23 @@ With the node powered on and fully booted:
 On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.
 
 
-.. |icon1| image:: _images/account-outline-custom.png
+.. |icon1| image:: ../_icons/login.png
   :alt: Normal user view
 
-.. |icon2| image:: _images/account-cog-outline-custom.png
+.. |icon2| image:: ../_icons/login-auth.png
+  :alt: Admin user view
+
+.. |icon3| image:: ../_icons/status.png
+  :alt: Node status view
+
+.. |icon4| image:: ../_icons/mesh.png
+  :alt: Local mesh view
+
+.. |icon5| image:: ../_icons/cloudmesh.png
+  :alt: Cloud mesh view
+
+.. |icon6| image:: ../_icons/map.png
+  :alt: World map view
+
+.. |icon7| image:: ../_icons/tools.png
   :alt: Admin user view

@@ -2,7 +2,7 @@
 Mesh Status Display
 ===================
 
-|icon4| You navigate to the **mesh status** page by clicking the mesh icon in the left nav bar.
+|icon1| You navigate to the **mesh status** page by clicking the mesh icon in the left nav bar.
 
 .. image:: _images/mesh-status-columns.png
    :alt: Mesh Status display
@@ -21,5 +21,5 @@ Each node block will show the node name followed by a number that represents the
 The display shows each node as well as any connected :abbr:`LAN (Local Area Network)` devices, as well as the advertised services available on the node and its hosts. You can click any available web links to navigate to the nodes or services listed.
 
 
-.. |icon4| image:: _images/grid-custom.png
+.. |icon1| image:: ../_icons/mesh.png
   :alt: Local mesh view

@@ -37,6 +37,9 @@ Node Name
 Description
   This is not a required field, but it is a good place to describe the features or function of this device. Many operators use this field to list their contact information or the tactical purpose for the node. There are no character restrictions in the field, but the maximum length allowed is 210 characters.
 
+Theme
+  Click in the field at the right to select a theme from the dropdown list. Your node will immediately display your page in the selected theme.
+
 Password
   Typically passwords may contain the characters ``a-z``, ``A-Z``, ``0-9``, period ``.``, dash ``-``, underscore ``_``, exclamation ``!``, and tilde ``~``. Avoid Linux-reserved characters, including but not limited to ``#``, ``$``, ``&``, ``*``, ``<``, ``>``. Enter the new password again in the *Retype Password* box to verify it is correct. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text. Be sure to remember or record the new password so you can use it for any future administrative tasks on the node.
 
@@ -48,7 +51,7 @@ Upload SSH Key
 Remove SSH Key
   To remove an existing SSH key, click in the field at the right and select the key from the dropdown list. Then click the ``Remove Key`` button at the lower right.
 
-When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Time Settings
 -------------
@@ -61,7 +64,7 @@ Select your timezone from the dropdown list, where the default value is :abbr:`U
 
 |
 
-Context-sensitive help is available by clicking the ``Help`` button. When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
+Context-sensitive help is available by clicking the ``Help`` button. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Firmware Settings
 -----------------
@@ -195,7 +198,7 @@ LAN to WAN
 LAN default route
   Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network, care should be taken to understand how the device will deal with default routes to more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
 
-When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Location Settings
 -----------------
@@ -223,7 +226,7 @@ By clicking **Advanced Options** you can configure additional settings.
 Map URL
   The map URL is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get the map data from the AREDN |trade| server. The (lat) and (lon) parameters in the URL are substitutes with your GPS coordinates before the map is rendered.
 
-When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Internal Services
 -----------------
@@ -289,16 +292,70 @@ Message Groups
   - Wildfire, flooding, tsunami or volcano alerts
   - SKYWARN activations, DHS threat level
 
-When you are finished with your changes, click the ``Done`` button to continue. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. You can click the ``Cancel`` button to ignore any changes you made on this display.
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Local Services
 --------------
 
+The **Node Services** display allows you to manage the services which will be available on your node. The purpose of the network is to transport data for the services which are being used. Network services may include keyboard-to-keyboard chat or email programs, document sharing applications, Voice over IP phone or video conferencing services, streaming video from surveillance cameras, and a variety of other network-enabled features. Services can run on the node itself or on any of its LAN-connected devices. Context-sensitive help is available by clicking the ``Help`` button.
 
+.. image:: _images/admin-localsvc-1.png
+ :alt: Admin Local Services
+ :align: center
+
+|
+
+Adding a Service
+  To add a service, click in the field to the right and select the type of service you want to add. Then click the [+] icon to add a row to your services list for the new service of the selected type. You may need to provide different parameters for the new entry based on the type of service selected.
+
+  .. image:: _images/admin-localsvc-2.png
+   :alt: Admin Local Services Generic Example
+   :align: center
+
+  For example, for a *Generic URL* service you should edit the *service name* field (currently called "Generic URL") to clearly identify your service. Click in the field to the right of the *service name* to select from the dropdown list the type of icon that will be displayed for this service (if any).
+
+  In the *protocol* field on the next row, enter the `protocol to use <https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers>`_ for this service. Common protocols include ``http`` for website services and ``ftp`` for file transfer services. Other services may use other protocols. From the dropdown list in the next field, select the node or host on which this service is running. If you have defined *Host Aliases* (described below), you will see these host aliases in the dropdown list.
+
+  In the next field enter the network port on which the host is listening for service connections. There may be several applications provided through a single web server on a node or host using a single port, and in that case a valid application *Path* must be entered after the port number. In other cases the network port alone may uniquely identify the application or program that is listening for user connections to that service. You can find additional information on ports at the following link: `Network Ports <https://en.wikipedia.org/wiki/Port_(computer_networking)>`_.
+
+  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+
+Viewing, Editing, and Deleting Services
+  On the **Node Services** display your services are listed as a series of rows. You can change any of the fields for any of the services in this list. If you want to delete a service row, click the [-] icon on the right side of that row.
+
+  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+
+Managing Host Aliases
+  *Host Aliases* provide a way for you to create a hostname alias for a device on your node's LAN. This can be useful if you want a computer or device on your LAN to be identified by something other than its actual hostname. Your Host Alias will be propagated across the network even if the actual hostname has *Do Not Propagate* checked in its DHCP Reservation, allowing you to hide the actual hostname while still advertising the alias on the mesh. Once an alias is defined, it will become available for creating local services (described above).
+
+  To create an alias, click the [+] icon on the right and enter an alias name in the first field. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the network. Then use the dropdown selector to choose the name or IP Address of the existing host for which you are defining the alias. Once you have entered these values, you can change any of the fields in any of the aliases. If you want to delete an alias, click the [-] icon on the right side of that row.
+
+  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Neighbor Devices
 ----------------
 
+As described in the **Node Status** documentation section, this area shows a list of neighbor devices that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a neighbor node in that list. If you click in the neighbor row while the gray background is visible, the **Neighbor Device** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
+
+.. image:: _images/admin-neighbor.png
+ :alt: Admin Neighbor Statistics
+ :align: center
+
+|
+
+This display provides more detailed information about your node's connection to this neighbor device. To the right of the neighbor node's name there is a field that shows the current link status. Clicking in this field will give you several options for handling the link to this node, including the ability to block that node's traffic from reaching your node. The following details for this node's connection to your node are displayed (from top to bottom & left to right):
+
+- :abbr:`type (RF, cross-link, tunnel)`, mac address, and ip address
+- Latitude, Longitude, and Distance
+- :abbr:`lq (link quality or receive success)`, :abbr:`nlq (neighbor link quality or transmit success)`, and :abbr:`etx (Expected Transmission metric)`
+- ping time, ping success rate, and average packets per second
+- local :abbr:`snr (signal to noise ratio)', neighbor :abbr:`snr (signal to noise ratio)`, and transmit failures
+- physical receive bitrate, physical transmit bitrate, and retransmissions
+- link state and active routes
+
+These details should provide an excellent troubleshooting tool for diagnosing issues with node connections. Below the metrics is a graph of the signal level and noise level on this link over the last hour of history (approximately). Hovering over the graph lines will display the instantaneous values which were plotted at each point on the graph.
+
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
 Radios and Antennas
 -------------------
@@ -425,26 +482,7 @@ DHCP Address Reservations
   Once you have entered the values for your DHCP Reservation, click *Add* to add it to the list. You may also remove an existing reservation by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
 
 Advertised Services
-  *Advertised Services* include the applications, programs, or functions that are available to devices on the mesh network. The purpose of the network is to transport data for the services which are being used. Network services may include keyboard-to-keyboard chat or email programs, document sharing applications, Voice over IP phone or video conferencing services, streaming video from surveillance cameras, and a variety of other network-enabled features.
 
-  Services can run on the node itself or on any of its LAN-connected devices. Remember that AREDN |trade| nodes have limited system resources with which to run services, so installing add-on services directly on the node should be avoided because the node could become unstable if sufficient resources are not available for normal operation, particularly on devices with only 32 MB of memory. It is best practice to run services on an external computer connected to the node's LAN network. In the example above you can see that an external host has been given a reserved DHCP address, and it is also running the *MeshChat* program as a service that is advertised on the network through this node. Use the following steps to create an Advertised Service.
-
-  Name
-    Enter a service name in the *Name* field.
-
-  Link
-    Check this box if your want your advertised service to display an active link in the web browser. This allows mesh users to navigate to your service by clicking the link in their web browser.
-
-  Protocol
-    Enter the `protocol to use <https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers>`_ in the field between *Link* and *URL*. Common protocols include ``http`` for website services and ``ftp`` for file transfer services. Other services may use other protocols.
-
-  URL
-    From the dropdown list select the node or host on which this service is running. If you defined DNS Aliases as described below, you can also select a host alias from the dropdown list.
-
-  Port
-    Enter the network port on which the host is listening for service connections. There may be several applications provided through a single web server on a node or host using a single port, and in that case a valid application *Path* must be entered after the port number (as in the example above). In other cases the network port alone uniquely identifies the application or program that is listening for user connections to that service. You can find additional information at the following link: `Network Ports <https://en.wikipedia.org/wiki/Port_(computer_networking)>`_.
-
-  Once you have entered the values for your advertised service, click *Add* to add the service to the **Advertised Services** list. You may also remove an existing advertised service by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration. A reboot is not required, and your new settings should take effect within thirty seconds.
 
   Service Advertisement Process
     `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ propagates service entries to other nodes across the network. Once every hour your node will verify that its own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions:
@@ -460,11 +498,7 @@ Port Forwarding
   In Direct mode you will only be allowed to select the WAN interface so Port Forwarding is only meaningful for WAN-connected nodes. Enter the Outside Port being passed to your node from its upstream gateway, select a LAN host to process the requests, and enter the LAN Port on that host which is listening for those requests. Finally, click *Add* to add the port forwarding rule. You may also remove an existing rule by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your port forwarding changes to the node's configuration. More information can be found at this link for `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
 
 DNS Aliases
-  **DNS Aliases** provide a way for you to create a hostname alias for a services computer. This can be useful if you want a computer or device on your node's LAN network to be identified by something other than its actual hostname. Your DNS Alias will be propagated across the network even if the actual hostname has *Do Not Propagate* checked in its DHCP Reservation, allowing you to hide the actual hostname while still advertising the alias on the mesh.
-
-  To create an alias, enter an **Alias Name**. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the network. Then use the dropdown selector to choose the name or *IP Address* of the existing host for which you are defining the alias. Once you have entered these values, click *Add* to add the alias to the list. You may also remove an existing alias by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
-
-  Once an alias is defined, the **DNS Aliases** become available for creating *Advertised Services*. This feature can be used for virtual domain email servers, virtual machine identifiers, virtual web site URLs, and many other services.
+  **DNS Aliases**
 
 Advanced DHCP Options
 ^^^^^^^^^^^^^^^^^^^^^

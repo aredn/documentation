@@ -46,7 +46,9 @@ Password
 By clicking **Advanced Options** you can configure additional settings.
 
 Upload SSH Key
-  Uploading SSH keys allows computers to connect to the node via SSH without having to know the password. The SSH keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload the *public* key to your AREDN |trade| node. Click the ``Browse`` button and locate the *public* key file, then click the ``Upload Key`` button at the lower right.
+  Uploading SSH keys allows computers to connect to the node via SSH without having to know the password. The SSH keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload the *public* key to your AREDN |trade| node. Click the ``Browse`` button and locate the *public* key file, then click the ``Upload Key`` button at the lower right. SSH keys are only valid if they contain a string in the form of ``<USER>@<SOMEWHERE>`` in the comment section of the key. SSH keys generated with the above tools add this comment by default.
+
+  .. note:: If you plan to use ssh keys you may want to review **Use PuTTYGen to Make SSH Keys** in the **How-To Guide** section which describes this process in detail for users of Microsoft Windows computers.
 
 Remove SSH Key
   To remove an existing SSH key, click in the field at the right and select the key from the dropdown list. Then click the ``Remove Key`` button at the lower right.
@@ -369,6 +371,13 @@ If you enabled the **LAN Access Point** feature mentioned previously, edit the a
 Mesh Memory Settings
 --------------------
 
+As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's *Mesh Status* display. For older nodes with limited memory resources, the mesh status display may become very sluggish on large mesh networks.
+
+Recent firmware improvements have made the *Mesh Status* display much more responsive, but two **Advanced Configuration** values have been included for setting the *Low Memory Threshold* and maximum number of routes to be displayed.
+
+Currently the default low memory threshold is 10,000 KB, which if reached will limit the *Mesh Status* display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory.
+
+
 
 DHCP Settings
 -------------
@@ -384,7 +393,8 @@ Tunnel Settings
 Admin Tools
 -----------
 
-
+Support Data
+  There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| team in order to get help with a problem. Click the *Support Data* icon to save a compressed archive file to your local computer.
 
 
 
@@ -627,30 +637,9 @@ If your tunnel server administrator used the envelope icon to create an email to
 
 To allow your client to connect to the tunnel server, select the *Enabled* checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active. Depending on the timing of the webpage refresh, you may need to press the **Refresh** button to see the active icon.
 
-Administration
---------------
 
-Click the **Administration** link to navigate to these settings. There are four sections that provide ways for you to manage the firmware, packages, security keys, and support data on your node.
 
-Firmware Update
 
-Package Management
-
-Authorized SSH Keys
-  Uploading ssh keys allows computers to connect to a node via ssh without having to know the password. The ssh keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload its *public* key to your AREDN |trade| node. If you want to remove an installed key, select it and click the *Remove* button.
-
-.. image:: _images/admin-sshkeys.png
-   :alt: Manage authorized ssh keys
-   :align: center
-
-|
-
-  .. note:: If you plan to use ssh keys you may want to review **Use PuTTYGen to Make SSH Keys** in the **How-To Guide** section which describes this process in detail for users of Microsoft Windows computers.
-
-  ssh keys are only valid if they contain a string in the form of ``<USER>@<SOMEWHERE>`` in the comment section of the key. ssh keys generated with the above tools add this comment by default.
-
-Support Data
-  There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| team in order to get help with a problem. Click the *Download Support Data* button to save a compressed archive file to your local computer.
 
 Advanced Network
 ----------------
@@ -678,12 +667,6 @@ Xlinks
 
 When you have finished making configuration changes to the ports and cross-links, click the *Save Changes* button. You will be notified if a reboot is required to activate your changes, and you can then click the *Reboot* button.
 
-Advanced Configuration
-----------------------
-
-The **Advanced Configuration** section allows you to change settings for various items that may be available on the type of hardware you are using. Not all hardware can support every value. These settings are best left as default unless you have a clear understanding of why you need to change the defaults for your node or network.
-
-Above the settings table there are links that allow you to view the node help file, reboot the node, or reset the node to a firstboot or "NOCALL" configuration. You can edit or select a setting and then click the *Save Setting* button at the right side of the row to implement the change. You may also reset an item to default values by clicking the *Set to Default* button. For some settings you may need to reboot your node to apply the change, and in that case a message will be displayed notifying you that a reboot is required.
 
 Link Quality Manager (LQM) Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -752,22 +735,6 @@ Tunnel Weight
 
 Tunnel WAN Only Setting
   This setting is enabled by default and it prevents tunnel traffic from being routed over the Mesh network. It limits tunnels to using the WAN interface, which is typically the intended route. If in your situation you need tunnel traffic to be routed over RF to a node with WAN access, then you can disable this setting to allow that traffic to pass.
-
-
-Memory Settings
-^^^^^^^^^^^^^^^
-
-.. image:: _images/advConfig-lowMem.png
-  :alt: Advanced Configuration - low memory thresholds
-  :align: center
-
-|
-
-As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's *Mesh Status* display. For older nodes with limited memory resources, the mesh status display may become very sluggish on large mesh networks.
-
-Recent firmware improvements have made the *Mesh Status* display much more responsive, but two **Advanced Configuration** values have been included for setting the *Low Memory Threshold* and maximum number of routes to be displayed.
-
-Currently the default low memory threshold is 10,000 KB, which if reached will limit the *Mesh Status* display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory.
 
 
 

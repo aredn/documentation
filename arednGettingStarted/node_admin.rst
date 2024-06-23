@@ -195,10 +195,10 @@ Mesh to WAN
   Enabling this switch will allow your node to route traffic from its Mesh interface to/from its WAN interface. This allows any device on the local mesh network to use the WAN on your node, typically for accessing the Internet. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN |trade| is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway. The default value is ``disabled`` and it is recommended that you keep this default unless there is a special reason to enable it.
 
 LAN to WAN
-  The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network.
+  The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
 
 LAN default route
-  Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a WiFi connection to a local served agency network, care should be taken to understand how the device will deal with default routes to more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
+  Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes to more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -233,9 +233,17 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Internal Services
 -----------------
 
-This display allows you to configure some of the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+When you are logged in as *admin* you will see an Internal Services status display. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status simply indicates whether this node is being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status indicates whether this node is configured as a Supernode.
 
 .. image:: _images/admin-internal-svc-1.png
+ :alt: Admin Internal Services Status
+ :align: center
+
+|
+
+The **Internal Services** configuration display allows you to manage the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+
+.. image:: _images/admin-internal-svc-2.png
  :alt: Admin Internal Services
  :align: center
 
@@ -270,8 +278,8 @@ Watchdog
   Daily Watchdog hour
     Enter an integer between 0 - 23 which represents the hour of each day that you would like Watchdog to automatically reboot your node. The default is an empty field, in which case Watchdog will not auto-reboot your node.
 
-.. image:: _images/admin-internal-svc-2.png
- :alt: Admin Internal Services 2
+.. image:: _images/admin-internal-svc-3.png
+ :alt: Admin Internal Services continued
  :align: center
 
 |
@@ -362,29 +370,179 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Radios and Antennas
 -------------------
 
+The **Radios & Antennas** display allows you to configure the radios on your node. If your device has more than one radio, you can configure them separately. Context-sensitive help is available by clicking the ``Help`` button.
 
+.. image:: _images/admin-radio-1.png
+ :alt: Admin Radio Settings
+ :align: center
 
+Click in the first field on the right to set the radio's purpose. You can choose one of several different radio functions from the dropdown list.
 
-If you enabled the **LAN Access Point** feature mentioned previously, edit the access point's SSID, channel, encryption method, and password. Select an AP channel that is within the range supported by your WiFi client devices. Click *Save Changes* to write your information to the node's configuration, and a node reboot will also be required. Now wireless devices can connect to your node's LAN wirelessly, and their DHCP IP address will be assigned by the node's LAN DHCP server. If your node hardware has more than one unused radio, for example the *Mikrotik hAP ac* family with both 2.4 and 5.8 GHz radios in a single unit, the *LAN Access Point* section will always be visible whether or not your *Mesh* interface is enabled.
+Off
+  Disables the radio.
 
+Mesh Radio Settings
++++++++++++++++++++
+
+This option configures the radio to link with other nodes via RF across the mesh network.
+
+Channel
+  Click in the field on the right to select a channel for mesh RF communication. Nodes communicate only with other nodes that use the same channel, channel width, and SSID. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks. The options in this list show the channel number as well as the center frequency of each channel.
+
+  .. attention:: You are responsible for using frequencies, channels, bandwidths, and power levels that comply with your country’s Amateur radio license requirements.
+
+Channel Width Setting
+  Click in the field at the right to select from the channel widths supported on your device. Most hardware will support 5 MHz, 10 MHz, or 20 MHz channel widths.
+
+  .. note:: Some AREDN |trade| devices will only support specific channel widths. If the choice of channel width is limited, the device will only show its supported widths in the dropdown list.
+
+  As a general rule, a larger channel width will allow more data to be transferred, but it may only do so over shorter distances. One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB. There may be several reasons for reducing the channel width setting:
+
+  - To achieve a better SNR on a marginal link.
+  - To extend the usable distance between remote nodes.
+  - To increase the number of available channels in a crowded RF coverage area.
+
+  Please review the **Network Design** section for more information about designing a network that meets the specific requirements of your applications and services.
+
+Transmit Power
+  Click in the field at the right to select from the power settings that are supported on your device.
+
+SSID Setting
+  The default SSID is provided in the field at the right. Typically you will not need to change this default unless you have a specific reason for putting radios on a non-default SSID to isolate their traffic.
+
+Minimum SNR
+  This is the minimum Signal-to-Noise ratio that you require in order to reliably pass radio data between nodes. The default is 15 dB, but you can lower this value if you require your node to continue passing data even on links that have reduced signal characteristics.
+
+Maximum Distance
+  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. Local conditions may dictate a shorter distance based, for example, on dense tree cover or other terrain features which impact line of sight communication. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes.
+
+Minimum Quality
+  This is the minimum link quality required in order to reliably pass data between nodes. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if a node must send every packet twice for it to be successfully received, the link quality would be 50%.
+
+LAN Hotspot Radio Settings
+++++++++++++++++++++++++++
+
+This option configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ wifi hotspot for your node's LAN network. Any device that connects to your node using its wifi hotspot will receive an IP address on your node's LAN subnet.
+
+.. image:: _images/admin-radio-2.png
+ :alt: Admin Radio Settings 2
+ :align: center
+
+SSID
+  A default SSID is provided, but you should change this value to a unique name that identifies the hotspot for potential users who will connect to it locally.
+
+Channel
+  Click in the field to the right to select a valid wifi channel. You are responsible for using a channel that complies with your region's wifi requirements (for example, FCC Part 15).
+
+Encryption
+  Click in the field to the right to select a wifi encryption method.
+
+Password
+  Click in the field to the right to enter a valid wifi password for accessing your node's hotspot.
+
+WAN Client Radio Settings
++++++++++++++++++++++++++
+
+This option configures the radio as a wifi WAN client to an available Internet gateway. This can be useful to provide Internet access for your node via wifi rather than requiring an Ethernet cable plugged into the node's WAN port. Enabling a radio as a *WAN Client* will disable VLAN1 on your node, so Internet access will no longer be possible through the physical WAN port.
+
+.. image:: _images/admin-radio-3.png
+ :alt: Admin Radio Settings 3
+ :align: center
+
+SSID
+  Click in the field at the right to enter the SSID of the local wifi access point you are connecting to for Internet access.
+
+Password
+  Enter the authentication password for the wifi AP to which you are connecting. Your node uses *WPA2 PSK* encryption to connect to external wifi APs. The password length must be between zero and 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A ``single quote`` character must not be used in the passphrase.
+
+Antenna Settings
+++++++++++++++++
+
+The antenna type is provided automatically based on your hardware model. Various devices may have differing antenna configurations, so the appropriate fields will be displayed depending on your radio type.
+
+.. image:: _images/admin-radio-4.png
+ :alt: Admin Radio Settings 4
+ :align: center
+
+Height
+  Click in the field at the right to enter a height in meters above ground level where you have your antenna mounted.
+
+Elevation
+  Click in the field at the right to enter an angle (in degrees) of uptilt or downtilt that you have set on your antenna.
+
+Advanced Radio Options
+++++++++++++++++++++++
+
+By clicking **Advanced Options** you can configure additional settings.
+
+.. image:: _images/admin-radio-5.png
+ :alt: Admin Radio Settings 5
+ :align: center
+
+|
+
+LQM Enable
+  This switch enables **Link Quality Manager** functionality on your node, and the default value is ``enabled``.
+
+Minimum Distance
+  The minimum distance that must exist between nodes in order for a link to be considered for activation. The default value is ``0``. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes each of which should have an RF link only with other distant nodes.
+
+RTS Threshold
+  The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is 1.
+
+Maximum Packet Size
+  The maximum size of a packet which is sent over wifi. The value is between 256 and 1500 with a default of ``1500`` bytes. Decreasing this value can improve link quality in some cases, especially in noisy environments with long distance connections.
+
+SNR Margin
+  The margin above the *Minimum SNR* that must be detected in order for a node to be returned to the active list based on signal level. The default value is ``1`` dB.
+
+Quality Margin
+  The margin above the *Minimum Quality* that must be detected in order for a node to be returned to the active list based on quality. The default value is ``1`` percent.
+
+Ping Penalty
+  The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is ``5`` percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
+
+Default Distance
+  The distance (in meters) to use when the actual distance between nodes cannot be calculated from their GPS coordinates. The default value is zero, which causes the node to treat nodes as being collocated.
+
+Minimum Routes
+  The minimum number of routes on a link that are required to disable blocking.
+
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
 Mesh Memory Settings
 --------------------
 
-As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's *Mesh Status* display. For older nodes with limited memory resources, the mesh status display may become very sluggish on large mesh networks.
+As the number of nodes increases in a mesh network, the processing requirements also increase for displaying all of the mesh routes on your node's mesh status display. For older nodes with limited memory resources, the mesh status display may become sluggish on large mesh networks. These values allow you to set the low memory threshold and the maximum number of routes to be displayed. Currently the default low memory threshold is 10,000 KB, which if reached will limit the mesh status display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory. Context-sensitive help is available by clicking the ``Help`` button.
 
-Recent firmware improvements have made the *Mesh Status* display much more responsive, but two **Advanced Configuration** values have been included for setting the *Low Memory Threshold* and maximum number of routes to be displayed.
+.. image:: _images/admin-mesh-memory.png
+ :alt: Admin Mesh Memory Thresholds
+ :align: center
 
-Currently the default low memory threshold is 10,000 KB, which if reached will limit the *Mesh Status* display to the 1,000 closest routes. These values can be adjusted to lower values if your node has limited memory.
+|
 
-
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
 DHCP Settings
 -------------
 
+By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server to provide client IP addresses for devices joining its LAN network. LAN devices connecting to your node will be assigned an IP address automatically.
 
-By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server for its LAN interface, which lets the node assign IP addresses automatically for devices connected to the node's local area network. The last octet of the start/end range for host IP addresses is shown in the LAN column. If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
+Context-sensitive help is available by clicking the ``Help`` button.
 
+.. image:: _images/admin-dhcp-1.png
+ :alt: Admin DHCP Settings
+ :align: center
+
+|
+
+
+
+
+If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
+
+
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
 Tunnel Settings
 ---------------
@@ -398,70 +556,10 @@ Support Data
 
 
 
-Channel Width Setting
-  Most AREDN |trade| devices have a choice of using 20 MHz, 10 MHz, or 5 MHz channel widths. As a general rule, a larger channel width will allow more data to be transferred, but it may only do this over shorter distances. One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB.
-
-  .. note:: Some AREDN |trade| devices will only support specific channel widths. If the choice of channel width is limited, the device will only show its supported widths in the *Channel Width* dropdown selector.
-
-  There may be several reasons why you might want to reduce the *Channel Width* setting:
-
-  - To achieve a better SNR on a marginal link.
-  - To extend the usable distance between neighbor nodes.
-  - To increase the number of available channels in a crowded RF coverage area.
-
-  Please review the **Network Design** section for more information about designing a network that meets the specific requirements of your applications and services.
-
-Distance Setting
-  .. image:: _images/basic-pwr-dist.png
-    :alt: Basic Power and Distance Settings
-    :align: right
-
-  The *Distance* setting is only applicable to nodes that can communicate directly over RF. This setting adjusts the RF retry timer to define how long the transmitter will wait for an acknowledgement from a neighbor station. If the distance parameter is too short, the transmitter will send duplicate data packets before an acknowledgement has time to be received. If the distance parameter is too long, the transmitter will wait extra time before considering the data lost and retransmitting the packets.
-
-  **Auto-Distance**: A value of zero will cause the radio to automatically determine the RF retry timer by measuring the actual time it takes acknowledgement packets to be received. The timer is set using an Exponential Weighted Moving Average (EWMA). The auto-distance setting is best used on high quality, long distance point-to-point links between backbone or relay nodes. Fifty percent performance increases have been observed on those links compared to using a static distance setting.
-
-  Since auto-distance causes the node to calculate the best value based on actual data flow, it will require both time and adequate data traffic to arrive at the optimal setting. The node may not be able to arrive at the optimal values if a link is not being used to send a significant amount of data, because it starts at the max value and then drops down to the optimal setting. Over time the auto-distance setting should stabilize around the best value.
-
-  .. attention:: The auto-distance setting does **not** work well when nodes are in close proximity, when link quality is marginal, or when there are many nodes sharing the channel. In these cases the round-trip packet timing has a very wide range of values, so the timeout value becomes inflated and inconsistent. Static settings should be used in these situations.
-
-  A basic rule of thumb is when nodes are within five kilometers of each other you should test several *static* distance settings to see which one works best. The best way to test each distance setting is to use the **iperf3** package between endpoint nodes to measure the throughput of the RF channel under different distance settings. See *Test Network Links with iperf3* in the **How-To Section** for additional information.
-
-Configuring LQM Settings
-  .. image:: _images/lqm-basic-settings.png
-    :alt: LQM Basic Settings
-    :align: right
-
-  When *Link Quality Manager* is enabled, the **Basic Setup** page will show a slightly different group of settings for *Power & Link Quality* under the **Mesh** column.
-
-  Max Distance
-    The maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with closer nodes. Local conditions may dictate a shorter distance based, for example, on dense tree cover or other terrain features which impact line of sight communication. You can lower this value if you want to limit your node to linking only with nearby nodes.
-
-  Min SNR
-    The minimum Signal-to-Noise ratio that you require in order to reliably pass data between nodes. The default is 15 dB, but you can adjust this value if you require your node to continue passing data even on links that have reduced signal characteristics.
-
-  Min Quality
-    The minimum Link Quality required in order to reliably pass data between nodes. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if the node had to send every packet twice for it to be successfully received, the link quality would be 50%. An additional penalty is subtracted from Link Quality if the neighbor node is unpingable, and this is explained below under *Ping Penalty* in the *Advanced Configuration* section.
-
-The **Power & Distance** settings can be adjusted and applied without saving changes or rebooting your node. However, they will return to their original values after a reboot unless you click *Save Changes*.
-
-Enable/Disable Mesh
-  You can disable your node's radio interface by deselecting the *Enable* checkbox, saving your changes, and rebooting the node. With the Mesh interface disabled the *Power & Distance* settings no longer apply and will be hidden. Since your node now has an unused RF interface, you will notice that a new section appears which allows you to use the node's radio as an FCC Part 15 *LAN Access Point*. You can enable or disable the LAN AP using the *Enable* checkbox. See the details below for configuring the LAN Access Point.
-
-.. image:: _images/advConfig-lanAP.png
-   :alt: LAN AP Settings
-   :align: center
-
-|
 
 
-WAN WiFi Client
-  As mentioned above in the *Mesh* section, if your node has a radio on which you have *disabled* Mesh and you are not using it as a LAN AP, you can enable this available radio as a WAN interface by checking the **WAN Wifi Client** checkbox. Enter the SSID and authentication string for the wifi AP that you want to connect through for Internet access.
 
-  The mesh node uses "WPA2 PSK" encryption to connect to the wifi AP. The password length must be between zero and 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A single quote character must not be used in the passphrase.
 
-  To the right of the *WAN WiFi Client* label is an icon with hover text indicating the status of the WAN WiFi connection.  indicates no wifi connection to the local access point.   indicates a wifi connection but no Internet connection.   indicates both a wifi connection to the local access point and a connection to the Internet.
-
-  After you *Save Changes* and reboot, the node will have Internet access via wifi rather than requiring a cable plugged into the node's WAN port. In fact, enabling the *WAN Wifi Client* will disable VLAN1, so Internet access will no longer be possible through the physical WAN port. Also, on the *Node Status* display you will see the **WiFi WAN Address** label and IP address to indicate that your WAN connection is using the WAN WiFi Client.
 
 
 Port Forwarding, DHCP, Services, and DNS Aliases
@@ -470,7 +568,7 @@ Port Forwarding, DHCP, Services, and DNS Aliases
 Click the **Port Forwarding, DHCP, and Services** link to navigate to these settings. This provides a way for you to configure LAN network address reservations and service advertisements on your node. The page works differently based on the LAN Mode (Direct or NAT) that you are using on your node.
 
 Direct Mode Operation
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++
 
 .. image:: _images/ports-direct-mode.png
    :alt: Ports - Direct Mode Operation
@@ -511,7 +609,7 @@ DNS Aliases
   **DNS Aliases**
 
 Advanced DHCP Options
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++
 
 .. image:: _images/dhcp-options.png
    :alt: Ports - Advanced DHCP Options
@@ -530,7 +628,7 @@ Advanced DHCP Options
 Field data validation is implemented for any input field with easily recognizable content such as host name, MAC address, port and option numbers. Placeholders are also supplied for input fields that might otherwise be difficult to describe (such as MAC addresses) using wildcard matching. Once the appropriate values are entered, click the *Add* button to include the settings which were defined. You may also delete a row by clicking the *Del* button for that row. After you have added, changed, or deleted your Advanced DHCP Options, click the *Save Changes* button at the top of the page.
 
 NAT Mode Operation
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 .. image:: _images/ports-nat-mode.png
    :alt: Ports - NAT Mode Operation
@@ -538,17 +636,17 @@ NAT Mode Operation
 
 |
 
-If you are using ``NAT`` for your LAN mode, then hosts on the LAN are isolated from both the Wifi and WAN interfaces by a firewall. This makes them inaccessible from either of these interfaces unless Port Forwarding is configured. In this mode all outgoing LAN traffic has its source address modified to be the Mesh IP address of the node. This is the same way that most home routers use an ISP Internet connection.
+If you are using ``NAT`` for your LAN mode, then hosts on the LAN are isolated from both the wifi and WAN interfaces by a firewall. This makes them inaccessible from either of these interfaces unless Port Forwarding is configured. In this mode all outgoing LAN traffic has its source address modified to be the Mesh IP address of the node. This is the same way that most home routers use an ISP Internet connection.
 
 Port Forwarding
-  Port forwarding rules can redirect inbound connections from the Wifi, WAN, or both interfaces and forward them to an IP address and port on the LAN. The destination port need not be the same unless you are forwarding a range of ports as explained below.
+  Port forwarding rules can redirect inbound connections from the wifi, WAN, or both interfaces and forward them to an IP address and port on the LAN. The destination port need not be the same unless you are forwarding a range of ports as explained below.
 
   To create a port forwarding rule, select the network *Interface* on which the traffic will enter your node. Select the *Protocol Type* used by the incoming packets (TCP, UDP, or Both). Enter the *Outside Port* number that the external request is using to connect to your service. When your node receives traffic on the selected interface, protocol, and port then that request will be routed to the *LAN IP* address and *LAN Port* of the host which is listening for incoming requests for that service.
 
   Once you have entered these values, click *Add* to add the rule to the **Port Forwarding** list. You may also remove an existing rule by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your port forwarding changes to the node's configuration.
 
   Example:
-    On the LAN of a mesh node called ``ad5oo-mobile`` there is an IP camera with an IP address of 172.27.0.240 which is running its own web display. To make that camera available to everyone on the mesh, create a port forwarding rule on the WiFi interface whose Outside Port is any unused port on your node (for example ``8100``) with an LAN IP of 172.27.0.240 and LAN Port of ``80``. This takes all connections to port ``8100`` on ``ad5oo-mobile`` and redirects them to port ``80`` on 172.27.0.240. In a web browser on a remote computer connected to the mesh you could go to ``http://ad5oo-mobile:8100`` to view the IP camera.
+    On the LAN of a mesh node called ``ad5oo-mobile`` there is an IP camera with an IP address of 172.27.0.240 which is running its own web display. To make that camera available to everyone on the mesh, create a port forwarding rule on the wifi interface whose Outside Port is any unused port on your node (for example ``8100``) with an LAN IP of 172.27.0.240 and LAN Port of ``80``. This takes all connections to port ``8100`` on ``ad5oo-mobile`` and redirects them to port ``80`` on 172.27.0.240. In a web browser on a remote computer connected to the mesh you could go to ``http://ad5oo-mobile:8100`` to view the IP camera.
 
   If you want to forward a range of ports, the *Outside Port* field will accept a hyphen-separated range in the form "xxxx-xxxx". When doing this, set the LAN Port to the low value of the port range.
 
@@ -573,7 +671,7 @@ Tunnel Links
 Tunnels are typically used as a means of connecting mesh islands if RF links cannot be established. Before using the AREDN |trade| tunnel feature, be aware of how this type of connection could impact your local mesh network. If your node participates in a local mesh, then adding one or more tunnel connections on that node will cause the nodes and hosts on the far side of the tunnel(s) to appear on your local *Mesh Status* display. This adds complexity and makes everyone's display a little more difficult to navigate. If you want to participate in remote mesh networks via tunnel, consider establishing those tunnels from one of your nodes that is *not* connected to your local mesh network. Also, remember that AREDN |trade| is first and foremost an emergency communication resource, so it's possible that Internet-dependent links and the assets they provide will not be available during a disaster.
 
 Internet Connectivity Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++++++++++
 In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you will need to configure Internet access. The following diagram shows an example of tunnel services between two nodes using the Legacy Tunneling Protocol described below.
 
 .. image:: _images/tunneling-diagram.png
@@ -585,7 +683,7 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 If you are using *Mikrotik hAP ac* family devices or *GL.iNET* devices then these nodes have built-in switches with the appropriate VLANs preconfigured in the AREDN |trade| firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with "VLAN 1" before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet connection on its WAN interface. See the equipment manual for your smart switch to determine how to configure these settings.
 
 Tunnel Server
-^^^^^^^^^^^^^
++++++++++++++
 
 Click the **Tunnel Server** link to navigate to these settings. This section provides a way for you to configure node-to-node connections across the Internet. The heading area displays information for both types of tunneling protocols. The legacy tunneling service provides an *unencrypted* connection between the linked nodes, while the Wireguard tunneling service provides an *encrypted* connection over the Internet. Tunnel network address ranges are calculated automatically and it is not necessary to change these settings unless there is a specific reason why the defaults will not work for your situation. The *Tunnel Server DNS Name* is the public IP Address or the *Dynamic DNS* name by which Internet-connected nodes can reach your network.
 
@@ -621,7 +719,7 @@ Supernode Tunneling
 Once the client information has been entered, click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active. Depending on the timing of the webpage refresh, you may need to press the **Refresh** button to see the active icon.
 
 Tunnel Client
-^^^^^^^^^^^^^
++++++++++++++
 
 Click the **Tunnel Client** link to navigate to these settings. In this section you can configure your node to connect over the Internet to another node running as a *Tunnel Server*. You should already have your VLAN-capable network switch configured as explained in the *Internet Connectivity Requirements* section above, if it is needed.
 
@@ -636,9 +734,6 @@ Contact the amateur operator who controls the tunnel server and request client c
 If your tunnel server administrator used the envelope icon to create an email to send you the credentials, you can simply highlight/select the credentials from the email, copy the selection, and then paste that selection into any of the blank fields for a new Tunnel Client row. Your node will correctly populate each of the separate fields with the credentials you were sent.
 
 To allow your client to connect to the tunnel server, select the *Enabled* checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active. Depending on the timing of the webpage refresh, you may need to press the **Refresh** button to see the active icon.
-
-
-
 
 
 Advanced Network
@@ -668,50 +763,9 @@ Xlinks
 When you have finished making configuration changes to the ports and cross-links, click the *Save Changes* button. You will be notified if a reboot is required to activate your changes, and you can then click the *Reboot* button.
 
 
-Link Quality Manager (LQM) Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: _images/advConfig-lqm.png
-  :alt: Advanced Configuration - Link Quality Manager
-  :align: center
-
-|
-
-The basic LQM settings were described above under the **Mesh Column**, but additional LQM settings are also available here in the **Advanced Configuration** section.
-
-Enable
-  Enable or disable the LQM feature in its entirety.
-
-SNR Margin
-  The margin above the *Minimum SNR* that must be detected in order for a node to be returned to the active list based on signal level. The default value is 1 dB.
-
-Minimum Distance
-  The minimum distance (in meters) that must exist between nodes in order for a link to be considered for activation. The default value is 0 meters. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes designed to link only with other distant nodes.
-
-Default Distance
-  The distance (in meters) to use when the actual distance between nodes cannot be calculated from their GPS coordinates. The default value is zero, which causes the node to treat nodes as being collocated.
-
-Quality Margin
-  The margin above the *Minimum Quality* that must be detected in order for a node to be returned to the active list based on quality. The default value is 1 percent.
-
-Ping Penalty
-  The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is 5 percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
-
-RTS Threshold
-  The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is 1.
-
-Maximum Packet Size
-  The maximum size of a packet which is sent over WiFi. The value is between 256 and 1500 with a default of 1500 bytes. Decreasing this value can improve link quality in some cases, especially in noisy environments with long distance connections.
-
-User Blocked Nodes
-  A comma-separated list of MAC addresses which you desire to block from your neighbors list. This feature allows you to "blacklist" specific nodes. RF nodes are blocked by their Wifi MAC address, while DtD nodes are blocked by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.
-
-User Allowed Nodes
-  A comma-separated list of MAC addresses which you always want to allow. This feature allows you to "whitelist" specific nodes. RF nodes are allowed by their Wifi MAC address, while DtD nodes are allowed by their LAN MAC address. MAC addresses are typically entered as uppercase characters with the hex pairs separated by colons.
-
 
 PoE and USB Power Passthrough
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++
 
 .. image:: _images/advConfig-passthrough.png
   :alt: Advanced Configuration - passthrough
@@ -722,7 +776,7 @@ PoE and USB Power Passthrough
 These rows will only appear in the table if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack, as well as PoE power passthrough on Ethernet port 5. You are allowed to enable or disable power passthrough on nodes with ports that support this feature. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
 
 Tunnel Options
-^^^^^^^^^^^^^^
+++++++++++++++
 
 .. image:: _images/advConfig-tunnelOptions.png
   :alt: Advanced Configuration - tunnel options

@@ -304,6 +304,11 @@ Message Groups
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
+
+DHCP Server ???
+  If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
+
+
 Local Services
 --------------
 
@@ -338,12 +343,38 @@ Viewing, Editing, and Deleting Services
 Managing Host Aliases
   *Host Aliases* provide a way for you to create a hostname alias for a device on your node's LAN. This can be useful if you want a computer or device on your LAN to be identified by something other than its actual hostname. Your Host Alias will be propagated across the network even if the actual hostname has *Do Not Propagate* checked in its DHCP Reservation, allowing you to hide the actual hostname while still advertising the alias on the mesh. Once an alias is defined, it will become available for creating local services (described above).
 
+  .. image:: _images/admin-localsvc-3.png
+   :alt: Admin Local Services Host Aliases
+   :align: center
+
   To create an alias, click the [+] icon on the right and enter an alias name in the first field. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the network. Then use the dropdown selector to choose the name or IP Address of the existing host for which you are defining the alias. Once you have entered these values, you can change any of the fields in any of the aliases. If you want to delete an alias, click the [-] icon on the right side of that row.
 
-  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+  To delete an alias, click the [-] icon on the right of the existing row for the alias you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
-Neighbor Devices
-----------------
+Port Forwarding
+  There may be situations where your node must act as an intermediary, typically between a client device and a server device on your node's LAN network. More information can be found at this link for `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
+
+  .. image:: _images/admin-localsvc-4.png
+   :alt: Admin Local Services Port Forwarding
+   :align: center
+
+  To create a port forwarding rule, click the [+] icon on the right. In *Direct* mode port forwarding is only meaningful for WAN-connected nodes, so you will only be allowed to create rules for the WAN interface. For inbound port, enter a single port number or a range of ports separated by the dash character. Click in the *protocol* field to select TCP, UDP, or both. Use the switch on the right to enable or disable this port forwarding rule. On the next row, click in the IP address / hostname field to select from the dropdown list a LAN host to process the requests. In the next field, enter the *port* on that host which is listening for those requests.
+
+  To delete a port forwarding rule, click the [-] icon on the right of the existing row for the rule you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+
+Local Devices
+-------------
+
+
+
+Local Nodes
+-----------
+
+
+
+
+Neighborhood Nodes
+------------------
 
 As described in the **Node Status** documentation section, this area shows a list of neighbor devices that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a neighbor node in that list. If you click in the neighbor row while the gray background is visible, the **Neighbor Device** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
 
@@ -464,11 +495,14 @@ The antenna type is provided automatically based on your hardware model. Various
  :alt: Admin Radio Settings 4
  :align: center
 
+Azimuth
+  Click in the field at the right to enter the direction (in degrees) toward which your directional antenna is aimed. This field will not appear if your device uses an omnidirectional antenna.
+
 Height
-  Click in the field at the right to enter a height in meters above ground level where you have your antenna mounted.
+  Click in the field at the right to enter a height in meters above ground level at which you have your antenna mounted.
 
 Elevation
-  Click in the field at the right to enter an angle (in degrees) of uptilt or downtilt that you have set on your antenna.
+  Click in the field at the right to enter an angle (in degrees) of uptilt or downtilt that you have set on your antenna. Note that some omnidirectional antennas have a built-in downtilt, and that value can be entered here.
 
 Advanced Radio Options
 ++++++++++++++++++++++
@@ -526,9 +560,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 DHCP Settings
 -------------
 
-By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server to provide client IP addresses for devices joining its LAN network. LAN devices connecting to your node will be assigned an IP address automatically.
-
-Context-sensitive help is available by clicking the ``Help`` button.
+By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server to provide client IP addresses for devices joining its LAN network. LAN devices connecting to your node will be assigned an IP address automatically. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-dhcp-1.png
  :alt: Admin DHCP Settings
@@ -536,11 +568,59 @@ Context-sensitive help is available by clicking the ``Help`` button.
 
 |
 
+Active Leases
+  Devices which are currently connected to your node's LAN network will be displayed in the table of *Active Leases*. The first field displays the hostname, followed by the IP address that was assigned by your node's DHCP server. The third field displays the device's MAC address.
+
+  Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. You can reserve that host's DHCP address by clicking the [+] icon at the right of the row. You will see that host now appears in the *Address Reservations* list.
+
+Address Reservations
+  Devices which were added to the *Address Reservations* list will display their hostname, IP address, and MAC address. The hostname of every device connected to the mesh at large should be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to give it a unique name on the network.
+
+  There may be some devices on which you are not able to set the hostname, so once you add that device to your *Address Reservations* you can edit the hostname by clicking in the *hostname* field. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. If you have a device which needs to be reachable on its host node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
+
+Advanced Options
+  By clicking **Advanced Options** you can configure additional settings. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
+
+  The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is the source for information about all DHCP options. Specific vendor equipment may or may not support all of the options, so you should verify which options are supported by referring to the manufacturer's documentation for your LAN device.
 
 
+  .. image:: _images/admin-dhcp-2.png
+   :alt: Admin DHCP Advanced Options
+   :align: center
 
-If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
+  |
 
+  Tags
+    The tags for advanced DHCP options allow you to define labels for values that will be assigned to clients that match specific values or properties such as Vendor Class or MAC address. Click the [+] icon to add a new tag. Enter a tag label in the first field, then click in the second field to select a tag type from the dropdown list. Finally, enter a text string which will be used to match device's tag type, such as Vendor Class or MAC address. To delete an existing tag, click the [-] at the right side of the row you wish to remove.
+
+  Options
+    The options entries allow you to specify which devices will receive the DHCP options. Click in the first field to select whether you want this option to be sent to [all] clients or only to clients which match a specific tag. Option numbers can be entered directly in the second field or you can select one from the dropdowm list of well-known options. In the third field enter the specific value that will be sent in this option. A checkbox allows you to specify whether or not this option will always be sent.
+
+  To delete a tag or option, click the [-] icon on the right of the existing row for the item you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
+
+Ethernet Ports and Xlinks
+-------------------------
+
+If you have a supported multiport device, then you will see an *Ethernet Ports and Xlinks* section. This provides a way for you to configure the ports on your multiport node. For more information on the AREDN |trade| VLANs being used, refer to the *VLAN* description in the **Network Settings** section above. Context-sensitive help is available by clicking the ``Help`` button.
+
+
+.. image:: _images/admin-ports-xlinks.png
+  :alt: Admin Ethernet Ports and Xlinks
+  :align: center
+
+|
+
+Ports
+  The *Ports* section at the top shows the available ports and the possible configurations along the left side. A typical configuration is as follows:
+
+  - The first port is configured as a WAN port. The data entry field to the right of the *vlan* label can contain any valid vlan identifier if it is required, typically in the range between 1 and 4094. The default for these multiport devices is no vlan (untagged), so leave the default unless there is a specific reason why it is required in your situation.
+  - The middle ports are configured as LAN ports with no vlan (untagged).
+  - The last port is configured for DtD linking to another AREDN |trade| node using vlan2 (tagged).
+
+  If you want to change a port's configuration, simply check or uncheck the settings desired on each port.
+
+Xlinks
+  A cross-link allows your node to pass AREDN |trade| traffic across non-AREDN |trade| point-to-point links. To add a cross-link click the [+] icon, enter an unused VLAN number for the link, the IP address of the near-side device, the IP address of the far-side device, a weighting factor, and the port to which the near-side device is connected on your node. The *Weight* will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN |trade| traffic. If you want to remove a cross-link, simply click the [-] icon on the right side of the row to remove it.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
@@ -565,7 +645,6 @@ Support Data
 Port Forwarding, DHCP, Services, and DNS Aliases
 ------------------------------------------------
 
-Click the **Port Forwarding, DHCP, and Services** link to navigate to these settings. This provides a way for you to configure LAN network address reservations and service advertisements on your node. The page works differently based on the LAN Mode (Direct or NAT) that you are using on your node.
 
 Direct Mode Operation
 +++++++++++++++++++++
@@ -581,11 +660,7 @@ In ``Direct`` mode the LAN hosts are directly accessible from the mesh since no 
 DHCP Address Reservations
   If your node has its DHCP server enabled, it will automatically provide IP addresses to connected hosts. Look under the **Current DHCP Leases** heading to see the existing hosts and their assigned IP addresses.
 
-  .. attention:: The hostnames of every device connected to the mesh at large must be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to have the best chance of it being unique on the mesh network.
 
-  Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. You can permanently reserve that host's DHCP address by clicking the *Add* button at the right of the row in the *Current DHCP Leases* list. You will see that host now appears in the list under the **DHCP Address Reservations** heading above the list of leases.
-
-  There may be some devices on which you are not able to set the hostname prefixed by your callsign. Once you add that device to your **DHCP Address Reservations**, however, click the *Hostname* box to edit the hostname what will be propagated across the mesh network by your node. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. If you have a device which needs to be reachable on its host node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information to the mesh.
 
   Once you have entered the values for your DHCP Reservation, click *Add* to add it to the list. You may also remove an existing reservation by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
 
@@ -602,30 +677,6 @@ Advertised Services
 
     The node's *Advertised Services* list will still show the defined service (with an alert icon and hover text marking it as non-advertised), but your node will not actually *advertise* that service to the network. If the service URL becomes reachable in the future or if the dependent package is later installed, then your node will resume advertising the service across the network.
 
-Port Forwarding
-  In Direct mode you will only be allowed to select the WAN interface so Port Forwarding is only meaningful for WAN-connected nodes. Enter the Outside Port being passed to your node from its upstream gateway, select a LAN host to process the requests, and enter the LAN Port on that host which is listening for those requests. Finally, click *Add* to add the port forwarding rule. You may also remove an existing rule by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your port forwarding changes to the node's configuration. More information can be found at this link for `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
-
-DNS Aliases
-  **DNS Aliases**
-
-Advanced DHCP Options
-+++++++++++++++++++++
-
-.. image:: _images/dhcp-options.png
-   :alt: Ports - Advanced DHCP Options
-   :align: center
-
-The **Advanced DHCP Options** section allows you to specify option codes and values which are sent to devices on your node's LAN network at boot time. This provides an easy way to configure network clients during their boot process. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client device joining the network can request specific DHCP options in addition to its IP address. These *Advanced DHCP Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
-
-The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is the source for information about all DHCP options. Specific vendor equipment may or may not support all of the options, so you can verify which options are supported by referring to the manufacturer's documentation for your LAN device.
-
-Tags for Advanced DHCP Options
-  The *Tags for Advanced DHCP Options* table allows the administrator to define DHCP tags that will be assigned to clients which are identified by specific values or properties such as Vendor Class or MAC address.
-
-Advanced DHCP Options
-  The *Advanced DHCP Options* table allows the administrator to specify DHCP options that will be sent to any client, or only to clients matching a specific tag. Option numbers can be entered directly or chosen from a list of well-known options. Option values are manually entered in the "with Value" field on each row.
-
-Field data validation is implemented for any input field with easily recognizable content such as host name, MAC address, port and option numbers. Placeholders are also supplied for input fields that might otherwise be difficult to describe (such as MAC addresses) using wildcard matching. Once the appropriate values are entered, click the *Add* button to include the settings which were defined. You may also delete a row by clicking the *Del* button for that row. After you have added, changed, or deleted your Advanced DHCP Options, click the *Save Changes* button at the top of the page.
 
 NAT Mode Operation
 ++++++++++++++++++
@@ -739,28 +790,7 @@ To allow your client to connect to the tunnel server, select the *Enabled* check
 Advanced Network
 ----------------
 
-If you have a supported multiport device (currently *Mikrotik ac2*, or *ac3* only), then you will see a menu option for **Advanced Network**. This provides a way for you to configure the ports on your multiport node. For more information on the AREDN |trade| VLANs being used, refer to the *Node VLANs* description in the **Basic Setup** section above.
 
-
-.. image:: _images/advnet.png
-  :alt: Advanced Networking
-  :align: center
-
-|
-
-Ports
-  The **Ports** section shows the available ports across the top and the possible configurations along the left side. The default configuration is as follows:
-
-  - The first port is configured as a WAN port. The data entry field to the right of the *vlan* label can contain any valid vlan identifier if it is required, typically in the range between 1 and 4094. The default for these multiport devices is no vlan (untagged), so leave the default unless there is a specific reason why it is required in your situation.
-  - The middle ports are configured as LAN ports with no vlan (untagged).
-  - The last port is configured for DtD linking to another AREDN |trade| node with vlan2 (tagged).
-
-  You should only have one box checked for each port. If you want to change a port's configuration, simply uncheck the existing box and check the box for the new setting on that port.
-
-Xlinks
-  A cross-link allows your node to pass AREDN |trade| traffic across non-AREDN |trade| point-to-point RF links. To add a cross-link click the *plus* icon, enter an unused VLAN number for the link, the IP address of the near-side radio, the IP address of the far-side radio, a weighting factor, and the port to which the near-side radio is connected on your node. The *Weight* will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN |trade| traffic. If you want to remove a cross-link, simply click the *minus* icon on the right side of the row to remove.
-
-When you have finished making configuration changes to the ports and cross-links, click the *Save Changes* button. You will be notified if a reboot is required to activate your changes, and you can then click the *Reboot* button.
 
 
 

@@ -20,7 +20,7 @@ Configure the AREDN |trade| nodes at both ends
 
 You can use either a *Mikrotik hAP ac2* or *ac3* as the AREDN |trade| device on each end of the cross-link. Navigate to the **Administration > Advanced Network** page of the node on one side of the link. To add a cross-link click the *plus* icon, enter an unused VLAN number for the link, an IP address for the near-side radio, an IP address for the far-side radio, a weighting factor, and the available port to which the near-side radio is connected on your node. The *Weight* will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN |trade| traffic.
 
-.. image:: ../arednGettingStarted/_images/advnet.png
+.. image:: ../arednGettingStarted/_images/admin-ports-xlinks.png
   :alt: Advanced Networking
   :align: center
 

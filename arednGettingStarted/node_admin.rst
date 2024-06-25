@@ -80,13 +80,15 @@ The top field displays the currently installed version of firmware on your node.
 |
 
 Download Firmware
-  If your node has Internet access or access to a firmware repository on your local network, you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to download, click the ``Fetch and Update`` button, and wait for the firmware to download and be installed. A progress bar at the bottom of the display will show the status of the download and update.
+  If your node has Internet access or access to a firmware repository on your local network, you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
 Upload Firmware
-  If you have a new firmware image that you already downloaded to your local computer from the AREDN |trade| website or a local firmware repository, click the ``Browse`` button and navigate to the location where you saved the firmware file. After selecting the firmware file, click the ``Fetch and Update`` button and wait for the firmware to upload and be installed. A progress bar at the bottom of the display will show the status of the process.
+  If you have a new firmware image that you already downloaded to your local computer from the AREDN |trade| website or a local firmware repository, click the ``Browse`` button and navigate to the location where you saved the firmware file. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
 Sideload Local Firmware
-  If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp/web`` folder, and name it ``local_firmware.bin``. Once the node detects the presence of ``/tmp/web/local_firmware.bin``, then the filename in the field at the right will be active. Click the ``Fetch and Update`` button and wait for the firmware to be installed. A progress bar at the bottom of the display will show the status of the process.
+  If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp/web`` folder, and name it ``local_firmware.bin``. Once the node detects the presence of ``/tmp/web/local_firmware.bin``, then the filename in the field at the right will be active. Click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
+
+A progress bar at the bottom of the display will show the status of any your download or upload. You should then see a message that the image is being installed, along with a timer indicating its progress.
 
 By clicking **Advanced Options** you can configure additional settings.
 
@@ -304,11 +306,6 @@ Message Groups
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
-
-DHCP Server ???
-  If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
-
-
 Local Services
 --------------
 
@@ -365,13 +362,12 @@ Port Forwarding
 Local Devices
 -------------
 
-
+This section displays any devices that are directly connected to your node's LAN network. There is no *admin* action available.
 
 Local Nodes
 -----------
 
-
-
+This section displays any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node. There is no *admin* action available.
 
 Neighborhood Nodes
 ------------------
@@ -423,9 +419,7 @@ Channel
   .. attention:: You are responsible for using frequencies, channels, bandwidths, and power levels that comply with your country’s Amateur radio license requirements.
 
 Channel Width Setting
-  Click in the field at the right to select from the channel widths supported on your device. Most hardware will support 5 MHz, 10 MHz, or 20 MHz channel widths.
-
-  .. note:: Some AREDN |trade| devices will only support specific channel widths. If the choice of channel width is limited, the device will only show its supported widths in the dropdown list.
+  Click in the field at the right to select from the channel widths supported on your device. Most hardware will support 5 MHz, 10 MHz, or 20 MHz channel widths, but some devices will only support specific channel widths. If the choice of channel width is limited, the device will only show its supported widths in the dropdown list.
 
   As a general rule, a larger channel width will allow more data to be transferred, but it may only do so over shorter distances. One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB. There may be several reasons for reducing the channel width setting:
 
@@ -578,6 +572,8 @@ Address Reservations
 
   There may be some devices on which you are not able to set the hostname, so once you add that device to your *Address Reservations* you can edit the hostname by clicking in the *hostname* field. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. If you have a device which needs to be reachable on its host node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
 
+  You can also create a manual *Address Reservation* by clicking the [+] icon at the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
+
 Advanced Options
   By clicking **Advanced Options** you can configure additional settings. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
 
@@ -597,6 +593,12 @@ Advanced Options
     The options entries allow you to specify which devices will receive the DHCP options. Click in the first field to select whether you want this option to be sent to [all] clients or only to clients which match a specific tag. Option numbers can be entered directly in the second field or you can select one from the dropdowm list of well-known options. In the third field enter the specific value that will be sent in this option. A checkbox allows you to specify whether or not this option will always be sent.
 
   To delete a tag or option, click the [-] icon on the right of the existing row for the item you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
+
+
+  DHCP Server Enable/Disable ???
+    If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
+
+
 
 Ethernet Ports and Xlinks
 -------------------------

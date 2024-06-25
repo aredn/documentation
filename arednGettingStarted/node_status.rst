@@ -62,18 +62,16 @@ Local Services
   This section displays the service links for any mesh services on your node or its locally-connected devices. These service links are displayed side by side in two columns. Clicking any of the links will navigate to the selected service.
 
 Local Devices
-  This section displays any devices that are directly connected to your node. This includes devices that are connected to your node's :abbr:`LAN (Local Area Network)` via Ethernet cable (such as :abbr:`VoIP (Voice over IP)` phones, IP cameras, or service computers). If a device is reachable from your node, you can click on the device name link to navigate to that device.
+  This section displays any devices that are directly connected to your node. This includes devices that are connected to your node's :abbr:`LAN (Local Area Network)` via Ethernet cable (such as :abbr:`VoIP (Voice over IP)` phones, IP cameras, or service computers). If a device is reachable from your node, you can click on the device name link to navigate to that device. Be aware that DHCP devices with *Do Not Propagate* checked will not be displayed under the *Local Devices* section.
 
-  .. note::
-    ? IS THIS IMPLEMENTED ? --- If you have any hosts for which you selected *Do Not Propagate* in the **DHCP Reservations List**, those hosts will be displayed in a light gray color only on your node's *LAN Hostname* column. If you created any **DNS Aliases** for your hosts, those aliases will be displayed in a light orange color only on your node's *LAN Hostname* column. All other hosts will be displayed in the default color for the theme that you are using.
+Local Nodes
+  This section displays any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node, typically via Ethernet cable. If you hover the cursor over the node name, a popup will appear showing the relative link quality of the connection to that node. To the right of the node name there will be connectivity statistics, including :abbr:`lq (link quality)`, :abbr:`nlq (neighbor link quality)`, :abbr:`snr (signal to noise ratio)`, :abbr:`n snr (neighbor signal to noise ratio)`, :abbr:`errors (retransmission errors)`, :abbr:`mbps (kilobit/megabit per second throughput)`, and :abbr:`miles (distance from the node)`. Clicking the node name will navigate to that node's status page. Not all fields will be populated for *Local Nodes*.
 
-  If you hover the cursor over the device name, a popup will appear showing the relative link quality of the connection to that device. To the right of the device name there will be connectivity statistics, including :abbr:`lq (link quality)`, :abbr:`nlq (neighbor link quality)`, :abbr:`snr (signal to noise ratio)`, :abbr:`n snr (neighbor signal to noise ratio)`, :abbr:`errors (retransmission errors)`, :abbr:`mbps (kilobit/megabit per second throughput)`, and :abbr:`miles (distance from the device)`.
+Neighborhood Nodes
+  This section displays any nodes that are direct neighbors of your node, whether via :abbr:`RF (radio frequency)` (as indicated by the small radio signal icon to the right of the device name), a cross-link, or a tunnel over an Internet connection. If a node is reachable from your node, you can click on the node name to navigate to that node. If you hover the cursor over the node name, a popup will appear showing the relative link quality of the connection to that node. To the right of the node name there will be connectivity statistics, including :abbr:`lq (link quality)`, :abbr:`nlq (neighbor link quality)`, :abbr:`snr (signal to noise ratio)`, :abbr:`n snr (neighbor signal to noise ratio)`, :abbr:`errors (retransmission errors)`, :abbr:`mbps (kilobit/megabit per second throughput)`, and :abbr:`miles (distance from the node)`. Not all fields will be populated for *Neighborhood Nodes*.
 
-Neighbor Devices
-  This section displays any nodes that are direct neighbors of your node, whether via :abbr:`RF (radio frequency)` (as indicated by the small radio signal icon to the right of the device name), :abbr:`DtD (Device to Device)` nodes connected via Ethernet cable (as indicated by the small double arrow icon to the right of the device name), a cross-link, or a tunnel over an Internet connection. If a device is reachable from your node, you can click on the device name to navigate to that device. If you hover the cursor over the device name, a popup will appear showing the relative link quality of the connection to that device. To the right of the device name there will be connectivity statistics, including :abbr:`lq (link quality)`, :abbr:`nlq (neighbor link quality)`, :abbr:`snr (signal to noise ratio)`, :abbr:`n snr (neighbor signal to noise ratio)`, :abbr:`errors (retransmission errors)`, :abbr:`mbps (kilobit/megabit per second throughput)`, and :abbr:`miles (distance from the device)`.
-
-Link Quality Statistics
-  There are several link quality statistics displayed for each connected node.
+Link Quality Descriptions
+  Several link quality statistics may be displayed for each connected node.
 
   - ``lq`` or Link Quality is your node's view of the percent of `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ packets received from the neighbor node. These packets exchange mesh routing and advertised services information, and they include a sequence number that is used to identify missing packets. For example, if 7 of 10 packets sent by the neighbor were received, then the probability for a successful packet transmission from this neighbor is 7/10 = 0.7 = 70%. ``nlq`` or Neighbor Link Quality is the neighbor node's view of the percent of :abbr:`OLSR (Optimized Link State Routing protocol)` packets received from your node.
 
@@ -82,6 +80,8 @@ Link Quality Statistics
   - ``errors`` represents the number of retransmission errors detected on the link.
 
   - ``mbps`` is an estimate of the data rate achieved across any radio (RF) link. This column may show zero if the data being transmitted between these nodes is not sufficient for the metric to be calculated.
+
+  - ``dist`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes.
 
 Right Column
 ------------

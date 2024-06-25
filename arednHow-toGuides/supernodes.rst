@@ -98,3 +98,8 @@ Things to Avoid
   - Your Supernode must **not** have its *Mesh RF* interface ``enabled`.` *Mesh RF* must be ``disabled`` as noted above.
 
 Before proceeding, make sure all the previous steps have been completed successfully. Now you should be able to connect to another Supernode using a tunnel. The easiest way to do this is to ask another Supernode owner for a set of tunnel client credentials. Your node can use either a client or server tunnel link. Supernode owners can be identified from the `Supernode Network Map <https://worldmap.arednmesh.org/>`_
+
+Configuring the Supernode Tunnel
+--------------------------------
+
+Supernode tunneling uses the Wireguard tunneling protocol, but the port range begins with port ``6526``. On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``6526``, which will provide for one supernode tunnel connection. If you want to allow up to 10 Supernode tunnel links (for example), then you would permit UDP traffic on the range of ports between ``6526-6535``. Configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your Supernode's WAN interface.

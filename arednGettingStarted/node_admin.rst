@@ -636,7 +636,7 @@ If you want to participate in remote mesh networks, consider using the *Cloud Me
 Internet Connectivity Requirements
 ++++++++++++++++++++++++++++++++++
 
-In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you will need to configure Internet access. The following diagram shows an example of tunnel services between two nodes using the Legacy Tunneling Protocol described below.
+In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you will need to configure Internet access. The following diagram shows an example of tunnel stages between two nodes using network port ``5525`` as an example.
 
 .. image:: _images/tunneling-diagram.png
    :alt: Tunneling Diagram
@@ -657,68 +657,102 @@ Tunnel Server
 
 If you want to use your node as a tunnel server, then your node must be reachable from the Internet. Enter the public IP address (obtained from your :abbr:`ISP (Internet Service Provider)`) or `DDNS <https://en.wikipedia.org/wiki/Dynamic_DNS>`_ hostname in the field at the right. Context-sensitive help is available by clicking the ``Help`` button.
 
-The legacy tunneling protocol provides an *unencrypted* :abbr:`TCP (Transmission Control Protocol)` connection over the Internet, while the Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection. Wireguard is preferred since it is more efficient and secure, however, it only encrypts the traffic as it traverses the Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements. Tunnel network address ranges are calculated automatically and it is not necessary to change these unless there is a specific reason why the defaults will not work for your situation.
+The legacy tunneling protocol provides an *unencrypted* :abbr:`TCP (Transmission Control Protocol)` connection over the Internet, while the Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection. Wireguard is preferred since it is more efficient and secure, and it only encrypts the traffic as it traverses the Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
 
+Advanced Options
+  The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel.
 
+Networking Requirements
+  In order for remote tunnel clients to reach your tunnel server, your firewall must allow their traffic to enter your network and it must also forward that traffic to your tunnel server node. In order for your Internet-connected router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
 
-Adding a Tunnel
-+++++++++++++++
+  On your Internet-connected router/firewall set the firewall rules to permit TCP/UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``5525``, which will provide for one Wireguard tunnel client connection as well as multiple Legacy tunnel client connections. If you want to allow up to 10 Wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
 
-To add a tunnel connection, click in the field at the right to select the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and seccure. If you have your network configured so that you can host a tunnel server, then you can choose one of the *Server* options. Otherwise, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` entry for the tunnel server field, the password/key you are to use, and the network IP address:port for your client node. Enter these values into the appropriate fields on your node. The ``enabled`` switch on the right is
+Add Tunnel
+++++++++++
 
+To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure. If you have your network configured so that you can host a tunnel server as described above, then you can choose one of the *Server* options. Otherwise, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` entry for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. Enter these values into the appropriate fields on your node. The state switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established at which time it will be green.
 
+Wireguard Client
+  Select *Wireguard Client* from the dropdown list and click the [+] icon. If the tunnel server owner has sent you the client credentials in an email or text file (as described below), you can highlight and copy them, click in one of the fields in your new Client row, and paste the credentials there. Each field will be populated with the correct settings provided to you. If that method does not work for some reason, simply enter the values in each field: ``Server Name`` *(IP address or DDNS hostname)*, ``Wireguard security key string``, ``network IP address:port``.
 
+Wireguard Server
+  Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. The security key, network, and port settings are automatically generated and displayed.
 
-Wireguard Tunneling Protocol
-  In the *Client* field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Contact Info/Comment* field. To allow the client to connect to your tunnel server, select the *Enabled* checkbox.
+  .. attention:: If you change the *Node Name* on one of your existing Wireguard clients, the security key will be automatically retired and replaced with a new key.
 
-  The entry for the *Key* field will be auto-generated when the *Add* button is pressed. You will also see the port which was assigned to the entry in the *Client* field at the end of the IP address.  copy the client settings which allows you to quickly and easily send credentials to the owners of the client nodes.
+  To the right of the *Notes* field you can click the *copy* icon to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
-  .. note:: If you change the *Node Name* on one of your existing Wireguard clients, the existing security key will be automatically retired and a new key will be generated. This may occur if the client node owner has changed its name.
+Legacy Client
+  Select *Legacy Client* from the dropdown list and click the [+] icon. If the tunnel server owner has sent you the client credentials in an email or text file (as described previously), you can highlight and copy them, click in one of the fields in your new client row, and paste the credentials there. Each field will be populated with the correct settings provided to you. If that method does not work for some reason, simply enter the values in each field: ``Server Name`` *(IP address or DDNS hostname)*, ``Password``, ``network IP address``.
 
-  In order for your Internet-connected router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
+Legacy Server
+  Select *Legacy Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. A default password will appear in the *Password* field, but you may change that as desired. The network IP address is automatically generated and displayed.
 
-  On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``5525``, which will provide for one wireguard tunnel connection. If you want to allow up to 10 wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
+  To the right of the *Notes* field you can click the *copy* icon to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
-Legacy Tunneling Protocol
-  The top section is for entering tunnel clients for the AREDN |trade| legacy tunneling protocol which uses TCP and is unencrypted. In the *Client* field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. In the *Client Password* field enter a password that the client node will use to connect to your node over the tunnel. Use only uppercase and lowercase characters and numbers in your password. You may also enter other optional information in the *Contact Info/Comment* field. To allow the client to connect to your tunnel server, select the *Enabled* checkbox.
-
-  Once these settings are correct, click *Add* to add the new client to the list of authorized tunnel clients. On the right of each entry there is an envelope icon which will automatically open your computer's email program and copy the client settings into a new email which allows you to quickly and easily send credentials to the owners of the client nodes.
-
-  In order for your Internet-connected router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
-
-  On your Internet-connected router/firewall set the firewall rules to permit TCP traffic from the Internet on port ``5525``. Then configure a port forwarding rule to send any traffic from the Internet on port ``5525`` to the IP address of your node's WAN interface.
-
-Supernode Tunneling
-  Supernode tunneling uses the Wireguard tunneling protocol, but the port range begins with port ``6526``. On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``6526``, which will provide for one supernode tunnel connection. If you want to allow up to 10 supernode tunnel links (for example), then you would permit UDP traffic on the range of ports between ``6526-6535``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
-
-Once the client information has been entered, click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active. Depending on the timing of the webpage refresh, you may need to press the **Refresh** button to see the active icon.
-
-Tunnel Client
-+++++++++++++
-
-Click the **Tunnel Client** link to navigate to these settings. In this section you can configure your node to connect over the Internet to another node running as a *Tunnel Server*. You should already have your VLAN-capable network switch configured as explained in the *Internet Connectivity Requirements* section above, if it is needed.
-
- and click *Add* to create a client entry in the list.
-
-.. image:: _images/tunnel-client.png
-   :alt: Tunnel Client Settings
-   :align: center
-
-|
-
-If your tunnel server administrator used the envelope icon to create an email to send you the credentials, you can simply highlight/select the credentials from the email, copy the selection, and then paste that selection into any of the blank fields for a new Tunnel Client row. Your node will correctly populate each of the separate fields with the credentials you were sent.
-
-To allow your client to connect to the tunnel server, select the *Enabled* checkbox and click the **Save Changes** button. When a tunnel connection becomes active, the cloud icon at the right of each row will change to indicate that the tunnel is active. Depending on the timing of the webpage refresh, you may need to press the **Refresh** button to see the active icon.
-
-Tunnel Weight
-  This specifies the OLSR route cost of using a tunnel, with the default value set to ``1``. The higher the route cost weight, the less likely a tunnel will be chosen for routing traffic.
-
-Tunnel WAN Only Setting
-  This setting is enabled by default and it prevents tunnel traffic from being routed over the Mesh network. It limits tunnels to using the WAN interface, which is typically the intended route. If in your situation you need tunnel traffic to be routed over RF to a node with WAN access, then you can disable this setting to allow that traffic to pass.
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
 Admin Tools
 -----------
+
+|icon7| Click the **Tools** icon at the bottom of the left nav bar and select one of the tools from the popup menu.
+
+WiFi Scan
+  This initiates a *passive* scan for wifi signals that are within range and are on the same channel width as your node. When installing a node at a new location it is best practice to scan on 5, 10, and 20 MHz channel widths to find all other 802.11 signals within range. This information will help you to pick a channel clear of interference. Several scans may be necessary to find all devices in range. When multiple ad-hoc networks are visible (using different SSIDs or channels), the ID of each 802.11 *network* is displayed but not the individual nodes. A passive scan does not transmit probes, so there is no risk that unintended transmissions will interfere with radar stations on DFS channels.
+
+  .. image:: _images/admin-wifi-scan.png
+   :alt: WiFi Scan
+   :align: center
+
+  |
+
+  Context-sensitive help is available by clicking the ``Help`` button. With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi.   The scan results from your last scan are retained, along with the relative time since that scan was completed. If you only want to see the results from your last scan, you can go to the **Wifi Scan** page to view those results without having to initiate a fresh scan. Once a scan has finished, you can click the ``Scan`` button to start a new scan. When you are finished studying the scan results, click the ``Done`` button to return to the status display.
+
+WiFi Signal
+  This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list, and the graph will be redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
+
+  .. image:: _images/admin-wifi-signal.png
+    :alt: WiFi Signal
+    :align: center
+
+  |
+
+  The colored bar graph on the left displays the worst and best signal values that have been seen during the monitoring interval. The instantaneous signal value is represented as a bar that moves between the upper and lower values over time.
+
+  Below the line graph there are controls that allow you to enable an audio representation of the instantaneous signal value. Click in the field to the right of the *Sound* label and select OFF or ON to enable or disable the sound. You can control the volume and pitch of the tone using the horizontal sliders. The higher the pitch, the better the signal level. When you are finished studying the results, click the ``Done`` button to return to the status display.
+
+Ping
+  This tool allows you to perform a ping test between two devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
+
+  .. image:: _images/admin-ping.png
+    :alt: Ping Test
+    :align: center
+
+  |
+
+  You can click the down arrow icon at the right of the *Target Address* and *Source Address* fields to select the desired nodes from a dropdown list. If your desired device is not shown, you can click in the fields to enter or edit the device name that you want to test. After selecting the *Target* and *Source* devices, click the ``Go`` button to the bottom right of the results field to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices. When you are finished studying the results, click the ``Done`` button to return to the status display.
+
+Traceroute
+  This tool allows you to perform a traceroute between two devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
+
+  .. image:: _images/admin-traceroute.png
+   :alt: Traceroute Test
+   :align: center
+
+  |
+
+  You can click the down arrow icon at the right of the *Target Address* and *Source Address* fields to select the desired nodes from a dropdown list. If your desired device is not shown, you can click in the fields to enter or edit the device name that you want to test. After selecting the *Target* and *Source* devices, click the ``Go`` button to the bottom right of the results field to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices. When you are finished studying the results, click the ``Done`` button to return to the status display.
+
+iPerf3
+  This tool allows you to perform throughput test between two devices on your network using iPerf3. Context-sensitive help is available by clicking the ``Help`` button.
+
+  .. image:: _images/admin-iperf3.png
+   :alt: iPerf3 Test
+   :align: center
+
+  |
+
+  You can click the down arrow icon at the right of the *Target Address* and *Source Address* fields to select the desired nodes from a dropdown list. If your desired device is not shown, you can click in the fields to enter or edit the device name that you want to test. After selecting the *Target* and *Source* devices, click the ``Go`` button to the bottom right of the results field to view the results. You may want to test network throughput in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Support Data
   There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN |trade| team in order to get help with a problem. Click the *Support Data* icon to save a compressed archive file to your local computer.
@@ -727,89 +761,23 @@ Support Data
 ---------------------------------------------------------------------
 
 
-Direct Mode Operation
-+++++++++++++++++++++
+Service Advertisement Process ???
+  `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ propagates service entries to other nodes across the network. Once every hour your node will verify that its own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions:
 
-.. image:: _images/ports-direct-mode.png
-   :alt: Ports - Direct Mode Operation
-   :align: center
+  1. The host is not pingable across the network
+  2. There is no service listening on the specified port
+  3. The HTTP link does not return a *success* status code
+  4. The package for this service is not yet installed
 
-|
-
-In ``Direct`` mode the LAN hosts are directly accessible from the mesh since no address translation or port forwarding is involved.
-
-DHCP Address Reservations
-  If your node has its DHCP server enabled, it will automatically provide IP addresses to connected hosts. Look under the **Current DHCP Leases** heading to see the existing hosts and their assigned IP addresses.
+  The node's *Advertised Services* list will still show the defined service (with an alert icon and hover text marking it as non-advertised), but your node will not actually *advertise* that service to the network. If the service URL becomes reachable in the future or if the dependent package is later installed, then your node will resume advertising the service across the network.
 
 
-
-  Once you have entered the values for your DHCP Reservation, click *Add* to add it to the list. You may also remove an existing reservation by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration.
-
-Advertised Services
+PoE and USB Power Passthrough  ???
+  These rows will only appear in the table if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack, as well as PoE power passthrough on Ethernet port 5. You are allowed to enable or disable power passthrough on nodes with ports that support this feature. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
 
 
-  Service Advertisement Process
-    `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ propagates service entries to other nodes across the network. Once every hour your node will verify that its own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions:
-
-    1. The host is not pingable across the network
-    2. There is no service listening on the specified port
-    3. The HTTP link does not return a *success* status code
-    4. The package for this service is not yet installed
-
-    The node's *Advertised Services* list will still show the defined service (with an alert icon and hover text marking it as non-advertised), but your node will not actually *advertise* that service to the network. If the service URL becomes reachable in the future or if the dependent package is later installed, then your node will resume advertising the service across the network.
-
-
-NAT Mode Operation
-++++++++++++++++++
-
-.. image:: _images/ports-nat-mode.png
-   :alt: Ports - NAT Mode Operation
-   :align: center
-
-|
-
-If you are using ``NAT`` for your LAN mode, then hosts on the LAN are isolated from both the wifi and WAN interfaces by a firewall. This makes them inaccessible from either of these interfaces unless Port Forwarding is configured. In this mode all outgoing LAN traffic has its source address modified to be the Mesh IP address of the node. This is the same way that most home routers use an ISP Internet connection.
-
-Port Forwarding
-  Port forwarding rules can redirect inbound connections from the wifi, WAN, or both interfaces and forward them to an IP address and port on the LAN. The destination port need not be the same unless you are forwarding a range of ports as explained below.
-
-  To create a port forwarding rule, select the network *Interface* on which the traffic will enter your node. Select the *Protocol Type* used by the incoming packets (TCP, UDP, or Both). Enter the *Outside Port* number that the external request is using to connect to your service. When your node receives traffic on the selected interface, protocol, and port then that request will be routed to the *LAN IP* address and *LAN Port* of the host which is listening for incoming requests for that service.
-
-  Once you have entered these values, click *Add* to add the rule to the **Port Forwarding** list. You may also remove an existing rule by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your port forwarding changes to the node's configuration.
-
-  Example:
-    On the LAN of a mesh node called ``ad5oo-mobile`` there is an IP camera with an IP address of 172.27.0.240 which is running its own web display. To make that camera available to everyone on the mesh, create a port forwarding rule on the wifi interface whose Outside Port is any unused port on your node (for example ``8100``) with an LAN IP of 172.27.0.240 and LAN Port of ``80``. This takes all connections to port ``8100`` on ``ad5oo-mobile`` and redirects them to port ``80`` on 172.27.0.240. In a web browser on a remote computer connected to the mesh you could go to ``http://ad5oo-mobile:8100`` to view the IP camera.
-
-  If you want to forward a range of ports, the *Outside Port* field will accept a hyphen-separated range in the form "xxxx-xxxx". When doing this, set the LAN Port to the low value of the port range.
-
-  If you want to forward every port that is not already in use to a single computer on the LAN, choose that host's IP Address from the **DMZ Server** dropdown. There can be only one DMZ Server. Be aware that this bypasses the firewall in the node, so the DMZ server should run its own firewall to prevent unauthorized access.
-
-  Note that port forwarding to an FTP server, which uses both ports 20 and 21, can be done with a single rule using port 21 if the ftp client is capable of using passive ftp mode. Web browsers are able to do this and handle ftp downloads seamlessly.
-
-Advertised Services
-  In ``NAT`` mode Advertised Services will not be accessible until at least one port forwarding rule or a DMZ server has been defined as described above. Advertised Services are entered as they are for Direct mode, except that the URL field is always that of your node which is handling network address translation. The port number should be the one used as the *Outside Port* in the forwarding rule through which the service will be accessed. In the last field you can enter an optional path if needed, such as the name of a specific folder on a web server or a directory on an ftp server.
-
-  Click *Add* to add the service to the **Advertised Services** list. You may also remove an existing service by clicking the *Del* button. Click the **Save Changes** button to write your changes to the node's configuration.
-
-DHCP Address Reservations
-  DHCP Address Reservations make a LAN device's IP address permanent so it can be used consistently when defining Port Forwarding rules, and they are added the same way as in Direct mode. If a LAN device is currently connected and has been given an IP address by DHCP then it will appear under *Current DHCP Leases*. If you click the *Add* button next to the lease then it will be added to the DHCP Reservations list. You may also remove an existing reservation by clicking the *Del* button to delete it from the list. Click the **Save Changes** button to write your changes to the node's configuration. When using ``NAT`` mode the IP addresses of LAN devices are **never** propagated across the mesh, so the *Do Not Propagate* checkbox will not appear on this page.
-
-DNS Aliases
-  DNS Aliases work differently in ``NAT`` mode. Aliases **cannot** be propagated across the mesh, and they **cannot** be used when defining an *Advertised Service*. They can only be used as an alternate name for a device on the nodes’ LAN.
-
-Tunnel Links
-------------
-
-
-
-
-
-
-PoE and USB Power Passthrough
-+++++++++++++++++++++++++++++
-
-.These rows will only appear in the table if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack, as well as PoE power passthrough on Ethernet port 5. You are allowed to enable or disable power passthrough on nodes with ports that support this feature. Move the slider to **ON** and click *Save Setting* to enable power passthrough.
-
+Tunnel WAN Only Setting  ???
+  This setting is enabled by default and it prevents tunnel traffic from being routed over the Mesh network. It limits tunnels to using the WAN interface, which is typically the intended route. If in your situation you need tunnel traffic to be routed over RF to a node with WAN access, then you can disable this setting to allow that traffic to pass.
 
 
 

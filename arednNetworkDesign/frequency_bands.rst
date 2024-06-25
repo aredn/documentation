@@ -105,7 +105,7 @@ Advantages
 Disadvantages
   The entire 33 cm band is shared between several FCC authorized radio services. The disadvantage of using this band for AREDN |trade| networking is that in all but the most remote areas the RF noise floor may be very high, which reduces the :abbr:`SNR (Signal to Noise Ratio)` and results in packet loss, retransmission delays, and lower usable link quality.
 
-  Equipment for the 9 cm band is no longer being manufactured and used devices are becoming difficult to find. Also the entire band is quite narrow (25 MHz) which means that only one, two, or four radio channels can exist in this shared frequency range, depending on the channel width that is selected.
+  Equipment for the 33 cm band is no longer being manufactured and used devices are becoming difficult to find. Also the entire band is quite narrow (25 MHz) which means that only one, two, or four radio channels can exist in this shared frequency range, depending on the channel width that is selected.
 
 ----------
 

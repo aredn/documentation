@@ -25,7 +25,7 @@ Node Name and Security
 
 The Name & Security section allows you to configure the following settings. Context-sensitive help is available by clicking the ``Help`` button.
 
-.. image:: _images/admin-name-security.png
+.. image:: _images/admin-name-security-1.png
   :alt: Admin Name and Security
   :align: center
 
@@ -44,6 +44,12 @@ Password
   Typically passwords may contain the characters ``a-z``, ``A-Z``, ``0-9``, period ``.``, dash ``-``, underscore ``_``, exclamation ``!``, and tilde ``~``. Avoid Linux-reserved characters, including but not limited to ``#``, ``$``, ``&``, ``*``, ``<``, ``>``. Enter the new password again in the *Retype Password* box to verify it is correct. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text. Be sure to remember or record the new password so you can use it for any future administrative tasks on the node.
 
 By clicking **Advanced Options** you can configure additional settings.
+
+.. image:: _images/admin-name-security-2.png
+  :alt: Admin Name and Security Advanced Options
+  :align: center
+
+|
 
 Upload SSH Key
   Uploading SSH keys allows computers to connect to the node via SSH without having to know the password. The SSH keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload the *public* key to your AREDN |trade| node. Click the ``Browse`` button and locate the *public* key file, then click the ``Upload Key`` button at the lower right. SSH keys are only valid if they contain a string in the form of ``<USER>@<SOMEWHERE>`` in the comment section of the key. SSH keys generated with the above tools add this comment by default.

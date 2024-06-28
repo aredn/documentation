@@ -27,6 +27,7 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    :caption: What is AREDN®
    :hidden:
 
+   aredn_overview
    why_aredn
 
 .. toctree::
@@ -34,7 +35,6 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    :caption: Getting Started Guide
    :hidden:
 
-   arednGettingStarted/aredn_overview
    arednGettingStarted/selecting_devices
    arednGettingStarted/downloading_firmware
    arednGettingStarted/installing_firmware

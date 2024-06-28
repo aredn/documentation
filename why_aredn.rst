@@ -1,5 +1,5 @@
 ==================
-Why AREDN |trade|?
+Why AREDN |trade|
 ==================
 
 AREDN |trade| provides a way for amateur radio operators to create high-speed data networks for use in emergency and community service communication. At a high level, an Amateur Radio Emergency Data Network is simply another tool for your EmComm toolbox. As an amateur radio operator involved in emergency communication, you already have quite a few RF resources that you use on a regular basis. AREDN |trade| is yet another tool that you might want to have available if it meets an important EmComm requirement, which we’ll see in a moment.

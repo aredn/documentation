@@ -435,7 +435,7 @@ This option configures the radio to link with other nodes via RF across the mesh
 Channel
   Click in the field on the right to select a channel for mesh RF communication. Nodes communicate only with other nodes that use the same channel, channel width, and SSID. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks. The options in this list show the channel number as well as the center frequency of each channel.
 
-  .. attention:: You are responsible for using frequencies, channels, bandwidths, and power levels that comply with your country’s Amateur radio license requirements.
+  .. warning:: You are responsible for using frequencies, channels, bandwidths, and power levels that comply with your country’s Amateur radio license requirements.
 
 Channel Width Setting
   Click in the field at the right to select from the channel widths supported on your device. Most hardware will support 5 MHz, 10 MHz, or 20 MHz channel widths, but some devices will only support specific channel widths. If the choice of channel width is limited, the device will only show its supported widths in the dropdown list.
@@ -697,7 +697,7 @@ Wireguard Client
 Wireguard Server
   Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. The security key, network, and port settings are automatically generated and displayed.
 
-  .. attention:: If you change the *Node Name* on one of your existing Wireguard clients, the security key will be automatically retired and replaced with a new key.
+  .. warning:: If you change the *Node Name* on one of your existing Wireguard clients, the security key will be automatically retired and replaced with a new key.
 
   To the right of the *Notes* field you can click the *copy* icon to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 

@@ -59,24 +59,12 @@ Once the software is available via your web server, you can begin pointing the n
 Point nodes to the local server
 ===============================
 
-To point a node to the local software repository, navigate to **Setup > Advanced Configuration > Firmware**. The table on this page has a row for each type of software that can be installed on AREDN |trade| nodes. It might be a good idea to take a screenshot of these settings so you can refer to them later. The default URL for *firmwarepath* is ``http://downloads.arednmesh.org/firmware``
+To point a node to the local software repository while in *admin* mode, navigate to the *firmware* section and click on *Advanced Options*. The default Firmware URL is ``http://downloads.arednmesh.org`` so you must change this to the URL of your local software server. It is good practice to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ so the node will be able to resolve the domain portion of the URL to the mesh host's IP address. The URL you enter should match the alias or path you created and tested on your web server as described in the previous section and shown in the example below.
 
-Simply replace this URL with the one that you configured on your local software host, then click the *Save Setting* button on that row. It is good practice to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ so the node will be able to resolve the domain portion of the URL to the mesh host's IP address. The URL you enter should match the alias or path you created and tested on your web server as described in the previous section.
-
-.. image:: _images/set-software-host.png
-   :alt:  Advanced Configuration - set software URL
+.. image:: _images/admin-local-firmware-path.png
+   :alt:  Admin set local firmware URL
    :align: center
 
 |
 
-To restore the default entry, click the *Set to Default* button followed by *Save Settings*.
-
-Once the node has been pointed to the local software repository, you can navigate to **Setup > Administration**. In the firmware section you can click the **Refresh** button to get the list of available software from the local software repository.
-
-.. image:: _images/refresh-software-list.png
-   :alt:  Administration - refresh software list
-   :align: center
-
-|
-
-Click the **Select firmware** dropdown list to see the software available for download from the local software server. Select a firmware image and click the **Download** button. Status information will appear showing the actions that were taken to install the software from the local software host. A message may appear that a reboot is required to refresh and restart all services, but this is a normal status message and does not indicate an error condition.
+When you are finished with your changes, click the ``Done`` button. You will then be returned to your node’s admin view where you will be able to ``Commit`` or ``Revert`` your changes. Once the node has been pointed to the local software server, you can navigate to the *firmware* section and click the *refresh* icon to select and install the available software from your local software repository.

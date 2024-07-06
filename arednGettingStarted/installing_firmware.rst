@@ -2,19 +2,19 @@
 Installing AREDN |trade| Firmware
 =================================
 
-There are two cases for installing AREDN |trade| firmware:
-
-1. If you already have an existing version of AREDN |trade| running on your device, then you can use your computer's web browser and navigate to **Setup > Administration > Firmware Update** to install your new firmware. This process will be explained in more detail in the **Configuration Deep Dive** section of this guide. Also, see *Firmware Upgrade Tips* in the **How-to Guides** section for additional information.
-
-2. If you are installing AREDN |trade| firmware on a device for the first time, each hardware platform may require a unique procedure.
+The diagram below shows your computer with the downloaded firmware image connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is highly recommended that you connect the computer and node through a simple (dumb) Ethernet switch so that the switch can maintain the computer's network link even when the node is rebooting. Do *not* use a network router for this purpose -- only a dumb switch. This is not for the sake of the radio, but it allows your computer to maintain its Ethernet interface link even when the node reboots.
 
 .. image:: _images/firmware-install.png
   :alt: Firmware Install Connections
   :align: center
 
-The diagram above shows that your computer with the downloaded firmware image must be connected to the node using Ethernet cables in order to install the AREDN |trade| image. It is highly recommended that you connect the computer and node through a simple (dumb) Ethernet switch so that the switch can maintain the computer's network link even when the node is rebooting. Do *not* use a network router for this purpose -- only a dumb switch. This is not a requirement for the sake of the radio, but may be useful for your computer to maintain its Ethernet interface link.
+Different radio hardware will require different methods for installing the AREDN |trade| firmware.
 
-Different radio hardware will require different methods for installing the AREDN |trade| firmware. For **Ubiquiti** 802.11n devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* will connect to the node's TFTP *server* in order to upload the firmware image. For Ubiquiti 802.11ac devices you will follow a separate procedure explained below. For **Mikrotik** and **TP-LINK** devices, your computer will run a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* and the node's remote boot *client* will download the boot image from your computer. For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
+- For **Ubiquiti** 802.11n devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* will connect to the node's TFTP *server* in order to upload the firmware image. For Ubiquiti 802.11ac devices you will follow a separate procedure explained below.
+
+- For **Mikrotik** and **TP-LINK** devices, your computer will run a `Preboot eXecution Environment (PXE) <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ and the node's remote boot *client* will download the boot image from your computer.
+
+- For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
 In the *Firmware Tips* section of the **How-To Guide** you will find assistance if you experience an issue uploading firmware to your device. The **How-To Guide** also contains a *Virtual Machine Installs* section for help installing x86_64 firmware images on a VM for a virtualized node.
 
@@ -26,18 +26,18 @@ Setting a Static IP Address on your Computer
 
   As mentioned above, AREDN |trade| recommends that you connect your computer to the node through an intermediary network switch. This allows your computer to activate its Ethernet interface with the static IP address even when the node is not powered on. Since node hardware needs to be powered on/off or rebooted during the install process, the network switch will keep your computer's network interface active on its static IP address.
 
-  If you choose not to use an intermediary network switch, then you will be responsible for making sure your computer maintains an active interface with the static IP address. You may need to power on the node temporarily in order for your computer to bring up its interface, but then immediately power off the node in order to follow the installation instructions for your model. Having an intermediary network switch eliminates these headaches.
+  If you choose not to use an intermediary network switch, then you will be responsible for making sure your computer maintains an active interface with the static IP address. You may need to power on the node temporarily in order for your computer to bring up its interface, but then immediately power off the node in order to follow the installation instructions for your model. Having an intermediary network switch eliminates these steps.
 
-Depending on your device model you may need to have various command line tools available on your computer. The required tools are native to both Linux and MacOS computers. For Windows computers you may need to enable specific features or install appropriate programs.
+Depending on your computer operating system you may not have various command line tools available on your computer. The required tools are native to both Linux and MacOS computers. For Windows computers you may need to enable specific features or install appropriate programs as noted below.
 
-Ubiquiti 802.11n Installs
-  Your computer should have `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* software available. If you have a Windows computer, use a web search engine to find information for your specific operating system (for example search "tftp client for windows 10"). There is a wealth of information available online for configuring your Windows computer with a TFTP client program.
+For Ubiquiti 802.11n Installs
+  Your computer should have `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* software available. If you have a Windows computer, use a web search engine to find information for your specific operating system (for example search "tftp client for windows"). There is a wealth of information available online for configuring your Windows computer with a TFTP client program.
 
   - `Example 1 <https://www.thewindowsclub.com/enable-tftp-windows-10>`_
   - `Example 2 <https://www.sysprobs.com/install-test-tftp-client-on-windows-10>`_
 
-Ubiquiti 802.11ac Installs
-  Your computer should have `ssh <https://en.wikipedia.org/wiki/Secure_Shell>`_ and `scp <https://en.wikipedia.org/wiki/Secure_copy_protocol>`_ software available. *Ssh* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. Use a web search engine to find information for your specific operating system (for example search "openssh for windows 10"). Here are some examples for enabling OpenSSH on Windows computers:
+For Ubiquiti 802.11ac Installs
+  Your computer should have `ssh <https://en.wikipedia.org/wiki/Secure_Shell>`_ and `scp <https://en.wikipedia.org/wiki/Secure_copy_protocol>`_ software available. *Ssh* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. Use a web search engine to find information for your specific operating system (for example search "openssh for windows"). Here are some examples for enabling OpenSSH on Windows computers:
 
   - `Example for Windows 10 <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_
   - `Example for Windows 11 <https://technoresult.com/how-to-install-and-use-openssh-server-in-windows-11/>`_
@@ -45,10 +45,12 @@ Ubiquiti 802.11ac Installs
 
   On Windows computers you may also use programs such as `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ and `WinSCP <https://winscp.net>`_ to connect to your device.
 
-Mikrotik and TP-LINK Installs
-  These devices are programmed to download a boot image from an external source. Your computer can run a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* which can give the node an IP address via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ as well as providing the firmware image via `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_.
+For Mikrotik and TP-LINK Installs
+  These devices are programmed to download a boot image from an external source. Your computer will provide the `Preboot eXecution Environment (PXE) <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ which will give the node an IP address via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ as well as providing the firmware image via `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_.
 
-  If you have a Windows computer you will need to install and configure a PXE *server*. The examples below use *Tiny PXE* which can be downloaded from `erwan.labalec.fr <https://erwan.labalec.fr/tinypxeserver/>`_. There may be other alternative Windows programs that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_ or `Serva <https://www.vercot.com/~serva/>`_. For TP-LINK devices you may be able to run a simple TFTP server such as `Tftpd64 <https://pjo2.github.io/tftpd64/>`_ as explained in the TP-LINK section below.
+  - If you have a Windows computer you must install and configure a PXE *server*. The examples below use *Tiny PXE* which can be downloaded from `erwan.labalec.fr <https://erwan.labalec.fr/tinypxeserver/>`_. There may be other alternative Windows programs that accomplish the same goal, such as `ERPXE <https://erpxe.com/>`_ or `Serva <https://www.vercot.com/~serva/>`_. For TP-LINK devices you may be able to run a simple TFTP server such as `Tftpd64 <https://pjo2.github.io/tftpd64/>`_ as explained in the TP-LINK section below.
+
+  - If you have a Linux or MacOS computer, your "Preboot eXecution Environment (PXE)" will be provided by the native ``dnsmasq`` program, as described in the Linux procedures below.
 
 Firmware First Install Checklists
 ---------------------------------
@@ -200,9 +202,9 @@ Step3: Install the firmware
 Mikrotik First Install Process
 ------------------------------
 
-Download the *Install Checklist* for Mikrotik devices. These devices require a **two-part install** process: First, boot the correct Mikrotik initramfs-kernel file, and then use that temporary AREDN |trade| Administration environment to complete the installation of the appropriate *sysupgrade* file.
+Download the *Install Checklist* for Mikrotik devices. These devices require a **two-part install** process: First, boot the correct Mikrotik *initramfs-kernel* file, and then use that temporary AREDN |trade| environment to complete the installation of the appropriate *sysupgrade* file.
 
-Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. You will need to install and configure a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Preparing Your Computer** section above. For most Mikrotik devices the install steps below will work without issue.
+Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. See the **Preparing Your Computer** section above for an explanation. The Windows example below uses *Tiny PXE*, while the Linux example uses the native ``dnsmasq`` program.
 
 For Mikrotik devices you will use what is called *Etherboot* mode, and there are several ways to put your device into *Etherboot* mode (depending on the version of the manufacturer's firmware it is running). The easiest way is to use the device's reset button as described in the procedure below. If for some reason this does not work, then you can try logging into the Mikrotik RouterOS and setting *System > Routerboard > Settings > Boot Device* to ``try-ethernet-once-then-nand`` (either through the RouterOS web interface or via command line). Next time the device boots it will try *Etherboot* once before defaulting back to regular boot mode.
 
@@ -213,13 +215,15 @@ For Mikrotik devices you will use what is called *Etherboot* mode, and there are
 If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface or command line. Navigate to *System > Routerboard > Settings > Boot Device* to uncheck or deselect ``Protected Routerboot``. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN |trade| firmware install checklist.
 
 Install Preparation
-  - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the initramfs-kernel file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
+  - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN |trade| website. Rename the *initramfs-kernel* file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 
-  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your **PXE** server will avoid changing IP addresses on your computer during the install process. AREDN |trade| firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
+  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your server will avoid having to change IP addresses on your computer during the install process. AREDN |trade| firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
 
-  - Connect an Ethernet cable from your computer to the network switch as described and shown in the graphic at the top of this document, then connect another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a device which uses a separate power adapter (such as a *Mikrotik hAP ac* family device), connect the last Ethernet cable from the switch to the device's WAN port [1].
+  - Connect an Ethernet cable from your computer to the network switch as described at the top of this document, then connect another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a device which uses a separate power adapter (such as a *Mikrotik hAP ac* family device), connect the last Ethernet cable from the switch to the device's WAN port [1].
 
-PXE Boot: *Linux Procedure*
+Linux Procedure
+  If you are using a Linux or MacOS computer, use the following steps.
+
   1. Create a directory on your computer called ``/tftp`` and copy the ``rb.elf`` file there.
 
   2. Determine your computer’s Ethernet *interface name* with ``ifconfig``. It will be the interface you set to 192.168.1.10 above. You will use this interface name in the command below as the name after ``-i`` and you must substitute your login user name after ``-u`` below. Use a ``dhcp-range`` of IP addresses that are also on the same subnet as the computer: for example 192.168.1.100,192.168.1.200 as shown below.
@@ -234,7 +238,9 @@ PXE Boot: *Linux Procedure*
 
   5. The node will now automatically reboot with the temporary AREDN |trade| Administration image.
 
-PXE Boot: *Windows Procedure*
+Windows Procedure
+  If you are using a Windows computer, use the following steps.
+
   Configure the PXE Server on your Windows computer. The example below uses *Tiny PXE*. For more information, see the **Preparing Your Computer** section above.
 
   1. Navigate to the folder where you extracted the *Tiny PXE* software and edit the ``config.ini`` file.  Directly under the ``[dhcp]`` tag, add the following line: ``rfc951=1`` then save and close the file.
@@ -253,12 +259,12 @@ PXE Boot: *Windows Procedure*
 
   6. The node will now automatically reboot with the temporary AREDN |trade| Administration image.
 
-.. tip:: If you have followed the install procedure above but your Mikrotik device does not boot the AREDN |trade| *initramfs-kernel* file, you may be able to try the procedure on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN |trade| firmware. You can find earlier versions in the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN |trade| firmware, or download the MIPSBE version (routeros-mipsbe) for other Mikrotik devices. You need to download a RouterOS version that is equal or newer than the RouterOS version shown in the *Factory Firmware* field on your device.
+  .. tip:: If you have followed the install procedure above but your Mikrotik device does not boot the AREDN |trade| *initramfs-kernel* file, you may be able to try the procedure on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN |trade| firmware. You can find earlier versions in the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN |trade| firmware, or download the MIPSBE version (routeros-mipsbe) for other Mikrotik devices. You need to download a RouterOS version that is equal or newer than the RouterOS version shown in the *Factory Firmware* field on your device.
 
 Install the *sysupgrade* Firmware Image
   1. After booting the **elf** image the node will have a default IP address of 192.168.1.1. Your computer should already have a static IP address on this subnet, but if not then give your computer an IP address on this subnet.
 
-    .. attention:: For the *Mikrotik hAP ac* family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.
+    .. warning:: For the *Mikrotik hAP ac* family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.
 
     You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 

@@ -21,9 +21,9 @@ Single-port mode
 Multi-port mode
   Ports can be assigned as needed to be LAN, DtD or WAN links. If your virtual interface is VLAN aware, you can tag VLANs; otherwise the interface should be untagged, which is the recommended setting. In this mode the following ports are automatically assigned:
 
-    - First interface: WAN
-    - Second interface: DtD
-    - Third and beyond: LAN
+  - First interface: WAN
+  - Second interface: DtD
+  - Third and beyond: LAN
 
 .. note:: The images do not include any *vmtools* but they do contain drivers for the standard QEMU/VMware paravirtualized storage and networking. Using the paravirtualized devices is recommended.
 
@@ -45,9 +45,9 @@ VMware Install Process
 
 For VMware you will need to use QEMU tools or another V2V converter in order to convert the image to ``vmdk`` format. Some example software is listed below:
 
- - `QEMU for Windows binaries (Unoffical) <https://qemu.weilnetz.de/w64/>`_
- - `QEMU Official downloads <https://www.qemu.org/download/#windows>`_
- - `Starwind Converter <https://www.starwindsoftware.com/starwind-v2v-converter>`_
+- `QEMU for Windows binaries (Unoffical) <https://qemu.weilnetz.de/w64/>`_
+- `QEMU Official downloads <https://www.qemu.org/download/#windows>`_
+- `Starwind Converter <https://www.starwindsoftware.com/starwind-v2v-converter>`_
 
 1. Download the latest firmware image from the AREDN |trade| downloads website.
 
@@ -55,15 +55,15 @@ For VMware you will need to use QEMU tools or another V2V converter in order to 
 
 3. Convert the ``.img`` to ``.vmdk`` using your V2V converter of choice. For example, if you are using QEMU, open a terminal/command prompt and on Windows navigate to where QEMU is installed (normally ``c:\Program Files\qemu\``). Run the following command, replacing "aredn.vmdk" and "aredn.img" with the filenames you have chosen.
 
-  ::
+::
 
-    qemu-img convert -f raw -O vmdk aredn.img aredn.vmdk
+  qemu-img convert -f raw -O vmdk aredn.img aredn.vmdk
 
-  If you are using Virtualbox, below is the built-in command, replacing "aredn.vmdk" and "aredn.img" with the filenames you have chosen.
+If you are using Virtualbox, below is the built-in command, replacing "aredn.vmdk" and "aredn.img" with the filenames you have chosen.
 
-  ::
+::
 
-    VBoxManage internalcommands createrawvmdk -filename aredn.vmdk -rawdisk aredn.img
+  VBoxManage internalcommands createrawvmdk -filename aredn.vmdk -rawdisk aredn.img
 
 4. Create the VM/Domain on your server, but *do not assign it a disk*.
 
@@ -71,9 +71,9 @@ For VMware you will need to use QEMU tools or another V2V converter in order to 
 
 6. ``ssh`` to the ESXi host, navigate to where the ``.vmdk`` file was uploaded and run the following command to verify/fix any conversion issues. This step helps to identify and fix potential image errors.
 
-  ::
+::
 
-    vmkfstools -i uploaded.vmdk verified.vmdk
+  vmkfstools -i uploaded.vmdk verified.vmdk
 
 7. Assign the verified ``.vmdk`` disk to the VM.
 

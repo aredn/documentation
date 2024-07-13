@@ -75,13 +75,13 @@ If you would like to see the documentation for a specific AREDN |trade| release,
    arednHow-toGuides/firmware_tips
    arednHow-toGuides/home-router-connection
    arednHow-toGuides/poe
-   arednHow-toGuides/lqm
-   arednHow-toGuides/supernodes
    arednHow-toGuides/command-line
-   arednHow-toGuides/siso-mimo
-   arednHow-toGuides/radio_mobile_settings
    arednHow-toGuides/dish-aiming
+   arednHow-toGuides/lqm
    arednHow-toGuides/puttygen_ssh_keys
+   arednHow-toGuides/radio_mobile_settings
+   arednHow-toGuides/siso-mimo
+   arednHow-toGuides/supernodes
    arednHow-toGuides/local-software-source
    arednHow-toGuides/xlinks
    arednHow-toGuides/vm-install

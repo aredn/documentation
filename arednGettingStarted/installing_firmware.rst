@@ -74,36 +74,32 @@ Different TFTP client programs may have different command line options or flags 
 
 Download the appropriate *factory* file for your device by following the instructions in the **Downloading AREDN Firmware** section of this documentation.
 
-1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. For example, set your Ethernet adapter to a static IP address of 192.168.1.10.
-
-  You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet but does not conflict with the default IP of the device.
+1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. For example, set your Ethernet adapter to a static IP address of 192.168.1.10. You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet but does not conflict with the default IP of the device.
 
 2. Connect an Ethernet cable from your computer to the dumb switch, and another cable from the LAN port of the PoE adapter to the switch.
 
 3. Put the Ubiquiti device into TFTP mode by holding the reset button while plugging your node's Ethernet cable into the *POE* port on the PoE adapter. Continue holding the device's reset button for approximately 30 to 45 seconds until you see the LEDs on the node alternating in a 1-3, 2-4, 1-3, 2-4 pattern, then release the reset button.
 
-4. Open a command window on your computer and execute a file transfer command to send the AREDN |trade| firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 (or 192.168.1.1 for AirRouters). The following is one example of TFTP commands that transfer the firmware image to a node:
+4. Open a command window on your computer and execute a file transfer command to send the AREDN |trade| firmware to your device. Target the default IP address of your Ubiquiti node, such as 192.168.1.20 (or 192.168.1.1 for AirRouters). The TFTP client should indicate that data is being transferred and eventually completes. The following is one example of TFTP commands that transfer the firmware image to a node:
 
-  ::
+::
 
-    [Linux/Mac]
-    > tftp 192.168.1.20
-    > bin                 [Transfer in "binary" mode]
-    > trace on            [Show the transfer in progress]
-    > put <full path to the firmware file>
-      [For example, put /tmp/aredn-<release>-factory.bin]
-    -----------------------------------
-    [Windows with command on a single line]
-    > tftp.exe -i 192.168.1.20 put C:\temp\aredn-<release>-factory.bin
-
-  The TFTP client should indicate that data is being transferred and eventually completes.
+  [Linux/Mac]
+  > tftp 192.168.1.20
+  > bin                 [Transfer in "binary" mode]
+  > trace on            [Show the transfer in progress]
+  > put <full path to the firmware file>
+    [For example, put /tmp/aredn-<release>-factory.bin]
+  -----------------------------------
+  [Windows with command on a single line]
+  > tftp.exe -i 192.168.1.20 put C:\temp\aredn-<release>-factory.bin
 
 5. The node will now automatically reboot with the new AREDN |trade| firmware image.
 
 Ubiquiti 802.11ac First Install Process
 ---------------------------------------
 
-.. note:: The install process for these devices requires detailed steps that are best followed using the procedure below, so no separate *Install Checklist* is provided for Ubiquiti 802.11ac devices.
+.. attention:: The install process for these devices requires detailed steps that are best followed using the procedure below, so no separate *Install Checklist* is provided for Ubiquiti 802.11ac devices.
 
 Prerequisites
   The installing computer must be capable of connecting to the command line of the target device. This will require that the computer support both the *ssh* and *scp* protocols. *SSH* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. For more information, see the **Preparing Your Computer** section above.
@@ -249,9 +245,9 @@ Windows Procedure
 
   3. Start the *Tiny PXE* server exe and select your computer's Ethernet IP address from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``rb.elf`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
 
-    .. image:: _images/tiny-pxe-mik.png
-      :alt: Tiny PXE Display for Mikrotik
-      :align: center
+  .. image:: _images/tiny-pxe-mik.png
+    :alt: Tiny PXE Display for Mikrotik
+    :align: center
 
   4. With the unit powered off, press and hold the reset button on the node while powering on the device. Continue holding the reset button until you see ``TFTPd: DoReadFile: rb.elf`` in the *Tiny PXE* log window.
 
@@ -264,26 +260,26 @@ Windows Procedure
 Install the *sysupgrade* Firmware Image
   1. After booting the **elf** image the node will have a default IP address of 192.168.1.1. Your computer should already have a static IP address on this subnet, but if not then give your computer an IP address on this subnet.
 
-    .. warning:: For the *Mikrotik hAP ac* family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.
+  .. warning:: For the *Mikrotik hAP ac* family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.
 
-    You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
+  2. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
-  2. In a web browser, open the node’s Administration page ``http://192.168.1.1/cgi-bin/admin`` (user = 'root', password = 'hsmm') and immediately navigate to the *Firmware Update* section. Browse to find the *sysupgrade* **bin** file you previously downloaded and click the *Upload* button.
+  3. In a web browser, open the node’s Administration page ``http://192.168.1.1/cgi-bin/admin`` (user = 'root', password = 'hsmm') and immediately navigate to the *Firmware Update* section. Browse to find the *sysupgrade* **bin** file you previously downloaded and click the *Upload* button.
 
-    As an alternative to using the node's web interface, you can manually copy the *sysupgrade* **bin** file to the node and run a command line program to install the firmware. This will allow you to see any error messages that may not appear when using the web interface. Note that devices running AREDN |trade| firmware images use port 2222 for secure copy/shell access.
+  As an alternative to using the node's web interface, you can manually copy the *sysupgrade* **bin** file to the node and run a command line program to install the firmware. This will allow you to see any error messages that may not appear when using the web interface. Note that devices running AREDN |trade| firmware images use port 2222 for secure copy/shell access.
 
-    Execute the following commands from a Linux computer:
+  Execute the following commands from a Linux computer:
 
-    ::
+  ::
 
-      my-computer:$ scp -P 2222 <aredn-firmware-filename>.bin root@192.168.1.1:/tmp
-      my-computer:$ ssh -p 2222 root@192.168.1.1
-      ~~~~~~~ after logging into the node with ssh ~~~~~~~
-      node:# sysupgrade -n /tmp/<aredn-firmware-filename>.bin
+    my-computer:$ scp -P 2222 <aredn-firmware-filename>.bin root@192.168.1.1:/tmp
+    my-computer:$ ssh -p 2222 root@192.168.1.1
+    ~~~~~~~ after logging into the node with ssh ~~~~~~~
+    node:# sysupgrade -n /tmp/<aredn-firmware-filename>.bin
 
-    To transfer the image from a Windows computer you can use a *Secure Copy* program such as *WinSCP*. Then use a terminal program such as *PuTTY* to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
+  To transfer the image from a Windows computer you can use a *Secure Copy* program such as *WinSCP*. Then use a terminal program such as *PuTTY* to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
 
-  3. The node will now automatically reboot with the new AREDN |trade| firmware image.
+  The node will now automatically reboot with the new AREDN |trade| firmware image.
 
 TP-LINK First Install Process
 -----------------------------
@@ -306,9 +302,9 @@ Linux Procedure
 
   3. Open a terminal window to execute the following dnsmasq command with escalated privileges:
 
-    ::
+  ::
 
-      > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.0.110,192.168.0.120 -d -p0 -K --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
+    > sudo dnsmasq -i eth0 -u joe --log-dhcp --bootp-dynamic --dhcp-range=192.168.0.110,192.168.0.120 -d -p0 -K --dhcp-boot=recovery.bin --enable-tftp --tftp-root=/tftp/
 
   4. With the unit powered off, press and hold the reset button on the radio while powering on the device. Continue to hold the reset button until you see output information from the computer window where you ran the dnsmasq command, which should happen after 20-30 seconds. Release the reset button when you see the "sent" message, which indicates success, and you can now <ctrl>-C or end dnsmasq.
 
@@ -323,9 +319,9 @@ Windows Procedure
 
   3. Start the *Tiny PXE* server exe and select your computer's Ethernet IP address from the dropdown list called ``Option 54 [DHCP Server]``, making sure to check the ``Bind IP`` checkbox. Under the "Boot File" section, enter ``recovery.bin`` into the the *Filename* field, and uncheck the checkbox for "Filename if user-class = gPXE or iPXE". Click the *Online* button at the top of the *Tiny PXE* window.
 
-    .. image:: _images/tiny-pxe-tpl.png
-      :alt: Tiny PXE Display for TP_LINK
-      :align: center
+  .. image:: _images/tiny-pxe-tpl.png
+    :alt: Tiny PXE Display for TP_LINK
+    :align: center
 
   4. With the unit powered off, press and hold the reset button on the node while powering on the device. Continue holding the reset button until you see ``TFTPd: DoReadFile: recovery.bin`` in the *Tiny PXE* log window.
 
@@ -340,7 +336,7 @@ Download the *Install Checklist* for GL-iNet devices. These devices allow you to
 
 After the GL-iNet device is first booted and configured, navigate to the **Upgrade** section and click *Local Upgrade* to select the AREDN |trade| *sysupgrade.bin* file you downloaded for your device.
 
-.. attention:: Be sure to uncheck the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN |trade| firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
+.. warning:: Be sure to uncheck the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN |trade| firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
 
 The node will automatically reboot with the new AREDN |trade| firmware image. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNet debrick procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_

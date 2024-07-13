@@ -25,13 +25,13 @@ Left Nav Bar
 
 Using the icons on the left side bar you can navigate to various displays.
 
-  |icon3| navigates to this **node status** display.
+|icon3| navigates to this **node status** display.
 
-  |icon4| navigates to the local mesh status page showing the nodes visible on the local mesh network, as well as any services are provided by those nodes.
+|icon4| navigates to the local mesh status page showing the nodes visible on the local mesh network, as well as any services are provided by those nodes.
 
-  |icon5| navigates to the *Cloud Mesh* view through the Supernode network (if available).
+|icon5| navigates to the *Cloud Mesh* view through the Supernode network (if available).
 
-  |icon6| navigates to the world map on the AREDN |trade| website.
+|icon6| navigates to the world map on the AREDN |trade| website.
 
 Left Column
 -----------

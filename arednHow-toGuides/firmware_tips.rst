@@ -72,15 +72,17 @@ However, there is a difference if you are downgrading the firmware on a node whi
 
 1. Use the `AREDN Firmware Selector <http://downloads.arednmesh.org/afs/www/>`_ to download the previous release's install files. For example, if your Ubiquiti Rocket M5 XW is currently running version ``3.23.4.0``, then download the files required for a First Install from release ``3.22.12.0`` which used *ar71xx* (as shown below).
 
-  .. image:: _images/downgrade.png
-     :alt: Downgrading across target architectures
-     :align: center
+.. image:: _images/downgrade.png
+   :alt: Downgrading across target architectures
+   :align: center
+
+|
 
 2. Review the **Installing AREDN Firmware** documentation and follow the steps for the *First Install* procedure that is appropriate for your node model.
 
-  - For Ubiquiti and TP-LINK models you will be uploading the *FACTORY* firmware.
-  - For Mikrotik models you will boot using the *KERNEL* file (which you rename to *rb.elf*) and then immediately apply the *SYSUPGRADE* firmware image.
-  - For GL.iNet models you will use the `recovery procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_ to upload the *SYSUPGRADE* firmware image.
+- For Ubiquiti and TP-LINK models you will be uploading the *FACTORY* firmware.
+- For Mikrotik models you will boot using the *KERNEL* file (which you rename to *rb.elf*) and then immediately apply the *SYSUPGRADE* firmware image.
+- For GL.iNet models you will use the `recovery procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_ to upload the *SYSUPGRADE* firmware image.
 
 Another possible way to downgrade firmware between architectures is to enable **Dangerous Upgrade** under the *Advanced Configuration* settings. Setting this to *ON* will disable the normal firmware compatibility checks that are done automatically during the firmware install process. This should allow your node to install a firmware image that uses a legacy architecture.
 

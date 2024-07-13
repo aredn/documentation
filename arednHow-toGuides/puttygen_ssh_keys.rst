@@ -20,15 +20,13 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
 
 |
 
-2. Select the *Generate key pair* menu item or click the *Generate* button and you will be asked to make some random mouse movements. After a short while you get a message asking you to wait while the keys are generated. Once it finishes you now have a new key pair.
+2. Select the *Generate key pair* menu item or click the *Generate* button and you will be asked to make some random mouse movements. After a short while you get a message asking you to wait while the keys are generated. Once it finishes you now have a new key pair. Give the key pair a suitable comment so that you will remember what the keys are used for. Here we just entered ``testkey@wu2s.com`` for an example. Whatever you enter in the "Key Comment" field must look like an email address with no spaces and the "@" present. Normally this field is used to identify a specific *username@hostname*. You can also password protect the SSH login by providing a passphrase if you desire. Record this passphrase so you will remember it for future use.
 
 .. image:: _images/02-puttygen.png
    :alt:  Label key pair and create pass phrase
    :align: center
 
 |
-
-  Give the key pair a suitable comment so that you will remember what the keys are used for. Here we just entered ``testkey@wu2s.com`` for an example. Whatever you enter in the "Key Comment" field must look like an email address with no spaces and the "@" present. Normally this field is used to identify a specific *username@hostname*. You can also password protect the SSH login by providing a passphrase if you desire. Record this passphrase so you will remember it for future use.
 
 3. In PuTTYGen you can save your new keys to separate files for later use. To save the public key to a suitable location, click the *Save Public Key* button and enter a filename with a **.pub** extension. Then click the *Save Private Key* button to save your private key to the same location. Give your private key a **.ppk** file extension. Many people save their keys on a USB flash drive to maintain physical possession of them at all times.
 
@@ -46,27 +44,27 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
 
 |
 
-  If you saved your public key file by clicking the *Save Public Key* button in PuTTYGen you may notice that it contains a header, footer, and lots of end of line characters. Your AREDN |trade| node will not accept the file with these extra characters. The easiest way to resolve this is to go back to PuTTYGen and highlight/select the entire contents of the text area titled "Public key for pasting into OpenSSH authorized_keys file." Copy this text using the CTRL-C keys on your keyboard.
+If you saved your public key file by clicking the *Save Public Key* button in PuTTYGen you may notice that it contains a header, footer, and lots of end of line characters. Your AREDN |trade| node will not accept the file with these extra characters. The easiest way to resolve this is to go back to PuTTYGen and highlight/select the entire contents of the text area titled "Public key for pasting into OpenSSH authorized_keys file." Copy this text using the CTRL-C keys on your keyboard.
 
-  .. image:: _images/04b-puttygen.png
-    :alt: Puttygen copy key text
-    :align: center
-
-|
-
-  Now go to Notepad++ and paste the copied text into a new window. You should see your public key text on a single line without any header/footer or line termination characters.
-
-  .. image:: _images/04c-puttygen.png
-    :alt: Puttygen copy key text
-    :align: center
+.. image:: _images/04b-puttygen.png
+  :alt: Puttygen copy key text
+  :align: center
 
 |
 
-  Save this Notepad++ window to a suitable filename with the **.pub** file extension.
+Now go to Notepad++ and paste the copied text into a new window. You should see your public key text on a single line without any header/footer or line termination characters.
 
-  .. image:: _images/04d-puttygen.png
-    :alt: Save the public key
-    :align: center
+.. image:: _images/04c-puttygen.png
+  :alt: Puttygen copy key text
+  :align: center
+
+|
+
+Save this Notepad++ window to a suitable filename with the **.pub** file extension.
+
+.. image:: _images/04d-puttygen.png
+  :alt: Save the public key
+  :align: center
 
 |
 

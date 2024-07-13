@@ -4,7 +4,7 @@ Radio Spectrum Characteristics
 
 AREDN |trade| networks operate in the microwave radio spectrum, and licensed Amateur radio operators have unique access to some of these frequencies. For bands in which Amateur operators share the spectrum, there is more chance for RF interference which may make some frequencies unusable for AREDN |trade| data networking. For best results, select frequencies that are not being heavily used within the coverage area.
 
-.. attention:: **You are responsible for using frequencies, channels, bandwidths, and power levels that comply with your country's Amateur radio license requirements.**
+.. warning:: **You are responsible for using frequencies, channels, bandwidths, and power levels that comply with your country's Amateur radio license requirements.**
 
 Channel Information
   Each band is divided into channels, each of which consists of a 5 MHz frequency offset identified by the center frequency of the channel and assigned a numerical label. In the example below you can see that a selected channel may use more or less of the frequency range based on the chosen channel width. The wider the channel, the more overlap there will be with adjacent channels. Wide channels have the effect of reducing the number of non-overlapping or non-interfering channels that will be available for use. When selecting channels and widths, be sure to use non-overlapping channels. Devices using channels or channel widths that overlap will interfere with one another and cannot communicate to coordinate the sharing of bandwidth.
@@ -15,14 +15,14 @@ Channel Information
 
 Some or all of the bands shown below are shared with other authorized users. For example, all of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` users in the US. The following table shows examples of the Amateur radio bands, frequency ranges, and number of channels that are available for AREDN |trade| networking in the US.
 
-  =======  =================  ========
-  Band     Frequency Range    Channels
-  =======  =================  ========
-  5 cm     5650-5925 MHz      54
-  9 cm     3300-3445 MHz      14
-  13 cm    2390-2450 MHz      10
-  33 cm    902-928   MHz      4
-  =======  =================  ========
+=======  =================  ========
+Band     Frequency Range    Channels
+=======  =================  ========
+5 cm     5650-5925 MHz      54
+9 cm     3300-3445 MHz      14
+13 cm    2390-2450 MHz      10
+33 cm    902-928   MHz      4
+=======  =================  ========
 
 The choice of a frequency band for AREDN |trade| networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width.
 

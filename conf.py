@@ -40,7 +40,7 @@ release = u'latest'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx_rtd_theme',
+###    'sphinx_rtd_theme',
 ]
 
 rst_epilog = """

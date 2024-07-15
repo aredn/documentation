@@ -101,15 +101,17 @@ In its most basic configuration for two collocated nodes, an Ethernet cable is c
 
 One added benefit of DtD linking is that you can link nodes which are operating on different bands and channels. Nodes that are using *Channel Separation* to segment traffic can still pass data at high speeds through their DtD link and be members of a single network. At a tower site like the one shown here, you could link 2.4 GHz and 5.8 GHz nodes to the same network. In fact, at a busy site like this it is best practice to use DtD linking, because otherwise RF channel contention could make the network unusable.
 
-Ideally you should configure your collocated nodes to use different bands and channels, then set up DtD links between the nodes to ensure that traffic is routed efficiently without generating RF contention or delays. :abbr:`OLSR (Optimized Link State Routing protocol)` will always choose the DtD path first when passing traffic between linked nodes. Each AREDN |trade| node recognizes incoming packets tagged with :abbr:`VLAN (Virtual Local Area Network)` 2 as DtD traffic. In the simple example shown here, the switch will share all traffic across all ports and every node will receive it on its DtD link.
+Ideally you should configure your collocated nodes to use different bands and channels, then set up DtD links between the nodes to ensure that traffic is routed efficiently without generating RF contention or delays. :abbr:`OLSR (Optimized Link State Routing protocol)` will always choose the DtD path first when passing traffic between linked nodes. Each AREDN |trade| node recognizes incoming packets tagged with :abbr:`VLAN (Virtual Local Area Network)` 2 as DtD traffic. In the simple example shown here, the switch will share all traffic across all ports and every node will receive the traffic on its DtD link.
 
-If you want to partition traffic even further, you can configure VLANs on a managed switch to isolate port traffic so that only the nodes which should receive specific traffic will see it. For example, you may have a video surveillance system (5) or a :abbr:`VoIP (Voice over IP)` PBX system (6), and traffic from those devices should only be passed to a specific set of links as shown in the diagram below. The port-based VLANs will ensure that traffic is controlled and routed, rather than being broadcast across every link.
+Be aware that if several nodes are connected through a network switch (as shown in the diagrams) and then you connect your laptop to an open port on that switch, your laptop may receive a DHCP IP address from any of the nodes' DHCP servers. This may not be an issue for a laptop doing periodic maintenance activities at the site. However, if you deploy another device which must receive a consistent DHCP IP address, then it is best practice to disable the DHCP server on all but one of the nodes which will be the primary DHCP server for any local devices connected to that network switch.
 
 .. image:: _images/vlan-isolation.png
    :alt: Traffic Isolation with VLANs
    :align: center
 
 |
+
+If you want to partition traffic even further, you can configure VLANs on a managed switch to isolate port traffic so that only the nodes which should receive specific traffic will see it. For example, you may have a video surveillance system (5) or a :abbr:`VoIP (Voice over IP)` PBX system (6), and traffic from those devices should only be passed to a specific set of links as shown in the diagram below. The port-based VLANs will ensure that traffic is controlled and routed, rather than being broadcast across every link.
 
 Antenna Polarization
 ++++++++++++++++++++

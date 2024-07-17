@@ -79,3 +79,4 @@ List of acronyms used in this documentation.
 :VoIP: Voice over IP
 :WAN: Wide Area Network
 :WISP: Wireless Internet Service Provider
+:XLINK: link configured to pass AREDN® data between non-AREDN® devices

@@ -41,16 +41,16 @@ extensions = [
     'sphinx.ext.autodoc',
 ]
 
-rst_epilog = """
-`Link: AREDN® Webpage <https://www.arednmesh.org>`_
-"""
+###rst_epilog = """
+###`Link: AREDN® Webpage <https://www.arednmesh.org>`_
+###"""
 
 # Include the trademark symbol in the prolog
-rst_prolog = """
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:
-
-"""
+###rst_prolog = """
+###.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
+###   :ltrim:
+###
+###"""
 
 # Add any paths that contain templates here, relative to this directory.
 #templates_path = ['_templates']

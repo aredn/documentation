@@ -4,7 +4,7 @@ Tips for Aiming Directional Antennas
 
 *Contributor: Brett Popovich KG7GDB*
 
-AREDN |trade| nodes with directional antennas can be challenging to align, especially if they have very narrow beam widths. The goal is to achieve the closest alignment in order to pass RF signals efficiently.
+AREDN® nodes with directional antennas can be challenging to align, especially if they have very narrow beam widths. The goal is to achieve the closest alignment in order to pass RF signals efficiently.
 
 Practice with Nearby Nodes
 --------------------------

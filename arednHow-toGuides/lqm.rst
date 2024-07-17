@@ -4,7 +4,7 @@ Link Quality Manager (LQM)
 
 *Contributor: Tim Wilkerson KN6PLV*
 
-AREDN |trade| mesh networks often lack the bandwidth you might expect. Here we look at what may be happening, a proposal to fix it, and results from these fixes.
+AREDN® mesh networks often lack the bandwidth you might expect. Here we look at what may be happening, a proposal to fix it, and results from these fixes.
 
 Introduction
 ------------
@@ -14,7 +14,7 @@ Low SNR links between nodes break the Linux “auto distance” algorithm result
 Expected link speed vs. actual link speeds
 ------------------------------------------
 
-We’ve all pointed an AREDN |trade| node at another node, found the sweet spot for the best SNR, and then been underwhelmed by how much bandwidth there seems to be. WiFi is famous for over-reporting how much bandwidth is available vs. what you actually get (think 1/6th in many cases), but somehow we all expect a 2 mile link with SNR > 20 to do more than 1 Mbps. Unfortunately actual performance data is difficult to come by, and experiments to see what might improve are difficult to coordinate. Several theories are described below.
+We’ve all pointed an AREDN® node at another node, found the sweet spot for the best SNR, and then been underwhelmed by how much bandwidth there seems to be. WiFi is famous for over-reporting how much bandwidth is available vs. what you actually get (think 1/6th in many cases), but somehow we all expect a 2 mile link with SNR > 20 to do more than 1 Mbps. Unfortunately actual performance data is difficult to come by, and experiments to see what might improve are difficult to coordinate. Several theories are described below.
 
 Performance theories
 --------------------
@@ -22,23 +22,23 @@ Performance theories
 Hidden nodes
 ^^^^^^^^^^^^
 
-The classic problem with CSMA networks like AREDN |trade| is that of “hidden nodes”. CSMA works by nodes listening for transmitters before themselves transmitting. This can fail when nodes are spread out so only some nodes can hear others resulting in many transmitting simultaneously, corrupting data, requiring retransmissions, and wasting bandwidth.
+The classic problem with CSMA networks like AREDN® is that of “hidden nodes”. CSMA works by nodes listening for transmitters before themselves transmitting. This can fail when nodes are spread out so only some nodes can hear others resulting in many transmitting simultaneously, corrupting data, requiring retransmissions, and wasting bandwidth.
 
-While this could be a real issue for AREDN |trade| networks, it only has an effect when there are a lot of collisions. For there to be a lot of collisions there has to be a lot of traffic ... but AREDN |trade| networks are largely idle. Probably the biggest traffic generator is OLSRD, and on the SF Bay Area network (for example) OLSR accounts for only a few kilobytes/second. Statistically it is difficult to ascribe the bandwidth problems to hidden nodes.
+While this could be a real issue for AREDN® networks, it only has an effect when there are a lot of collisions. For there to be a lot of collisions there has to be a lot of traffic ... but AREDN® networks are largely idle. Probably the biggest traffic generator is OLSRD, and on the SF Bay Area network (for example) OLSR accounts for only a few kilobytes/second. Statistically it is difficult to ascribe the bandwidth problems to hidden nodes.
 
 Bandwidth decimation
 ^^^^^^^^^^^^^^^^^^^^
 
 Bandwidth decimation occurs when too many radios are using the same channel at similar locations, and so rather than adding bandwidth each radio ends up with a share of the original.
 
-As noted above, AREDN |trade| doesn’t currently use much of its available bandwidth. There is some overhead in having multiple radios on the same channel, even if they are not very active, but it is not significant. Compare this to a home wifi setup: if many devices are constantly using a lot of bandwidth then it is definitely noticeable.
+As noted above, AREDN® doesn’t currently use much of its available bandwidth. There is some overhead in having multiple radios on the same channel, even if they are not very active, but it is not significant. Compare this to a home wifi setup: if many devices are constantly using a lot of bandwidth then it is definitely noticeable.
 
 Checking the status of various omnidirectional antennas on the SF Bay Area network (for example), there are rarely more than five neighbors on each node and never more than ten. If everyone were transmitting constantly there would be a problem, but this does not occur often.
 
 CSMA vs. TDMA
 ^^^^^^^^^^^^^
 
-TDMA is more efficient than CSMA and avoids many of its problems. However, Linux currently has no implementation of the protocol; it is restricted to proprietary radios. This means that AREDN |trade| as currently envisaged cannot support TDMA. While TDMA radios can have a place in an AREDN |trade| network, they seem better suited for backbone operation.
+TDMA is more efficient than CSMA and avoids many of its problems. However, Linux currently has no implementation of the protocol; it is restricted to proprietary radios. This means that AREDN® as currently envisaged cannot support TDMA. While TDMA radios can have a place in an AREDN® network, they seem better suited for backbone operation.
 
 That said, racing to embrace TDMA without understanding why the current CSMA network is failing is problematic. If hidden nodes aren’t the issue, and network utilization is too low for bandwidth decimation, how would TDMA fix this? What actually is the problem?
 
@@ -53,9 +53,9 @@ The WiFi standard (IEEE Std 802.11TM-2007, Part 11) briefly discusses “Coverag
 Auto-distance
 ^^^^^^^^^^^^^
 
-AREDN |trade| provides a “Distance to FARTHEST Neighbor” setting which, indirectly, allows the Coverage Class to be set (the Linux kernel calculates the coverage class from the distance setting). An “auto” option is provided and enabled by default. “Auto” uses a “dynamic ack” algorithm in the kernel which automatically adjusts the Coverage Class. The adjustment is based on the timing of packets sent to and acknowledged from other devices. The class will always be large enough to handle the most distant device.
+AREDN® provides a “Distance to FARTHEST Neighbor” setting which, indirectly, allows the Coverage Class to be set (the Linux kernel calculates the coverage class from the distance setting). An “auto” option is provided and enabled by default. “Auto” uses a “dynamic ack” algorithm in the kernel which automatically adjusts the Coverage Class. The adjustment is based on the timing of packets sent to and acknowledged from other devices. The class will always be large enough to handle the most distant device.
 
-AREDN |trade| is an open, ad hoc, network allowing any node to associate with any other node as long as it uses the same channel and bandwidth. This results in distant nodes with very low SNRs being associated with each other. Unfortunately the dynamic-ack algorithm does not know that these links are essentially unusable, but it still adjusts the Coverage Class to accommodate them. The result is a higher Coverage Class than is required for optimal network operation, resulting in longer delays in packet retransmission. This compounds the already increased retransmissions inherent in longer links and further reduces the throughput.
+AREDN® is an open, ad hoc, network allowing any node to associate with any other node as long as it uses the same channel and bandwidth. This results in distant nodes with very low SNRs being associated with each other. Unfortunately the dynamic-ack algorithm does not know that these links are essentially unusable, but it still adjusts the Coverage Class to accommodate them. The result is a higher Coverage Class than is required for optimal network operation, resulting in longer delays in packet retransmission. This compounds the already increased retransmissions inherent in longer links and further reduces the throughput.
 
 Link Quality Manager (LQM)
 --------------------------
@@ -82,7 +82,7 @@ What does this mean?
 What LQM does not do
 ^^^^^^^^^^^^^^^^^^^^
 
-LQM blocks nodes by blocking traffic from the appropriate MAC addresses. What it does not do is prevent nodes from associating with the radio. It would be ideal to either ban “poorly performing” nodes from associating with a radio, or alternatively telling the node not to associate with distant radios. However, the ad-hoc wifi mode used in AREDN |trade| does not currently support this.
+LQM blocks nodes by blocking traffic from the appropriate MAC addresses. What it does not do is prevent nodes from associating with the radio. It would be ideal to either ban “poorly performing” nodes from associating with a radio, or alternatively telling the node not to associate with distant radios. However, the ad-hoc wifi mode used in AREDN® does not currently support this.
 
 Test Results
 ------------

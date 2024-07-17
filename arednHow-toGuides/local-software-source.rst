@@ -1,31 +1,31 @@
 ==============================================
-Creating a Local AREDN |trade| Software Server
+Creating a Local AREDN® Software Server
 ==============================================
 
-There may be cases where your mesh nodes have no way to access the AREDN |trade| servers for installing new software. One way to resolve this is to create your own software server on the local mesh and then point your nodes to this local service. The following sections describe the high-level tasks required to implement such a software service. In order to accomplish this, you may need to consult with someone who has System Administration skills for the specific platform you will be using to host your local software repository.
+There may be cases where your mesh nodes have no way to access the AREDN® servers for installing new software. One way to resolve this is to create your own software server on the local mesh and then point your nodes to this local service. The following sections describe the high-level tasks required to implement such a software service. In order to accomplish this, you may need to consult with someone who has System Administration skills for the specific platform you will be using to host your local software repository.
 
 Configure your software server
 ==============================
 
-Your software server must be connected to the mesh as a host on your local node's LAN network, using a node that also has Internet access via its WAN interface. The reason this node is connected to the Internet is to allow the web server to download updated files from the AREDN |trade| downloads server. You should add this host to the node's *DHCP Reservation List*. You do not need to add the software host to the *Advertised Services List* of the node to which it is connected. The software server should be given a hostname that is unique on your mesh, typically prefixed with the callsign of the server owner. You can use any operating system platform you desire *(Windows, Linux, Mac)*, as long as it has the ability to function as a web server. The following are the two main tasks required of the local software server:
+Your software server must be connected to the mesh as a host on your local node's LAN network, using a node that also has Internet access via its WAN interface. The reason this node is connected to the Internet is to allow the web server to download updated files from the AREDN® downloads server. You should add this host to the node's *DHCP Reservation List*. You do not need to add the software host to the *Advertised Services List* of the node to which it is connected. The software server should be given a hostname that is unique on your mesh, typically prefixed with the callsign of the server owner. You can use any operating system platform you desire *(Windows, Linux, Mac)*, as long as it has the ability to function as a web server. The following are the two main tasks required of the local software server:
 
-- Obtain the set of AREDN |trade| software files from ``downloads.arednmesh.org``
+- Obtain the set of AREDN® software files from ``downloads.arednmesh.org``
 
 - Make those files available via its web server so nodes can query the software URLs
 
-There are several ways to accomplish these tasks, and the best approach may vary depending on the platform you implement for your software server. Downloading the AREDN |trade| software files can be done manually as needed, or the process could be automated and executed on a regular schedule. The recommended method is to use the `rsync <https://en.wikipedia.org/wiki/Rsync>`_ program which supports recursive copying of only the changed files on the source. An example *rsync* command is shown below:
+There are several ways to accomplish these tasks, and the best approach may vary depending on the platform you implement for your software server. Downloading the AREDN® software files can be done manually as needed, or the process could be automated and executed on a regular schedule. The recommended method is to use the `rsync <https://en.wikipedia.org/wiki/Rsync>`_ program which supports recursive copying of only the changed files on the source. An example *rsync* command is shown below:
 
 ::
 
   /usr/bin/rsync -rv --delete --size-only downloads.arednmesh.org::aredn_firmware /var/www/html/arednSoftware/
 
-Once you have a local duplicate of the AREDN |trade| files, you need to verify that your copy of the files have the correct path pointing to your local software repository. In the example above, the local repository was placed in /var/www/html/arednSoftware, so you will navigate to that directory.
+Once you have a local duplicate of the AREDN® files, you need to verify that your copy of the files have the correct path pointing to your local software repository. In the example above, the local repository was placed in /var/www/html/arednSoftware, so you will navigate to that directory.
 
 ::
 
   cd /var/www/html/arednSoftware
 
-Under this directory you should see the ``afs`` subdirectory which contains all of the information used by the AREDN |trade| Firmware Selector. Navigate into the ``afs/www`` subdirectory and use the editor of your choice to edit the ``config.js`` file. Locate the *Image download URL* section and change the default value of the *image_url* variable to point to your local download server. The default value is ``image_url: "http://downloads.arednmesh.org"`` and the example below shows the line edited to point to our example server.
+Under this directory you should see the ``afs`` subdirectory which contains all of the information used by the AREDN® Firmware Selector. Navigate into the ``afs/www`` subdirectory and use the editor of your choice to edit the ``config.js`` file. Locate the *Image download URL* section and change the default value of the *image_url* variable to point to your local download server. The default value is ``image_url: "http://downloads.arednmesh.org"`` and the example below shows the line edited to point to our example server.
 
 ::
 
@@ -43,7 +43,7 @@ Since you will already be in the *arednSoftware* directory, you can use relative
   cd /var/www/html/arednSoftware
   ./afs/misc/collect.py  .  ./afs/www/
 
-Now your local AREDN |trade| software source is configured to serve its files to any local nodes which want to update their firmware from your repository.
+Now your local AREDN® software source is configured to serve its files to any local nodes which want to update their firmware from your repository.
 
 Next make these files available to network nodes via your web server. The steps for accomplishing this task will vary based on the specific web server software you are using. For example, using the `Apache Web Server <https://en.wikipedia.org/wiki/Apache_HTTP_Server>`_, you could store the software files under the web server's *DocumentRoot* (as in the example above) or you could create an *Alias* to allow web access to parts of the filesystem that are not under the Apache *DocumentRoot* (as described `here <https://http
 d.apache.org/docs/2.4/urlmapping.html>`_). Once the software has been made available via the web server, you should be able to enter that URL in a web browser to see the entire software tree as shown in the example below.

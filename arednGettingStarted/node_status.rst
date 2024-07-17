@@ -2,7 +2,7 @@
 Node Status Display
 ===================
 
-Once you have completed the initial setup on your AREDN |trade| node, you can connect your computer to a :abbr:`LAN (Local Area Network)` port on the device or the :abbr:`PoE (Power over Ethernet)` and use a web browser to navigate to the **node status** page.
+Once you have completed the initial setup on your AREDN® node, you can connect your computer to a :abbr:`LAN (Local Area Network)` port on the device or the :abbr:`PoE (Power over Ethernet)` and use a web browser to navigate to the **node status** page.
 ``http://localnode.local.mesh`` or ``http://<your-nodename>.local.mesh``
 
 .. image:: _images/node-status-columns.png
@@ -14,7 +14,7 @@ This display has been designed to present all of the important information about
 Top Nav Bar
 -----------
 
-From left to right, after the AREDN |trade| logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display.
+From left to right, after the AREDN® logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display.
 
 |icon1| At the far right is the default icon indicating that you are viewing the page as a normal user. Clicking this icon will allow you to login as the node administrator.
 
@@ -31,7 +31,7 @@ Using the icons on the left side bar you can navigate to various displays.
 
 |icon5| navigates to the *Cloud Mesh* view through the Supernode network (if available).
 
-|icon6| navigates to the world map on the AREDN |trade| website.
+|icon6| navigates to the world map on the AREDN® website.
 
 Left Column
 -----------
@@ -45,7 +45,7 @@ Node Time, Uptime, Load Average, and Free Memory
   The node time is displayed, as well as the ``uptime``, which is the time since the last reboot. If an Internet connection or a local :abbr:`NTP (Network Time Protocol)` server is available, your node's NTP client will sync its time with that time source. The ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash`` and ``free ram`` shows how much storage space is remaining on your node. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
 
 Firmware Information
-  This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``. If your node has access to the Internet you can also click on the *issues* label below the firmware version, and this will open the AREDN |trade| `Issues <https://github.com/aredn/aredn/issues>`_ page on GitHub. Clicking the *release notes* label will open the `Changelog <https://downloads.arednmesh.org/snapshots/CHANGELOG.md>`_ page on the AREDN |trade| website.
+  This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``. If your node has access to the Internet you can also click on the *issues* label below the firmware version, and this will open the AREDN® `Issues <https://github.com/aredn/aredn/issues>`_ page on GitHub. Clicking the *release notes* label will open the `Changelog <https://downloads.arednmesh.org/snapshots/CHANGELOG.md>`_ page on the AREDN® website.
 
 Network Information
   The Mesh IP address/netmask is displayed using `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ notation, followed by the :abbr:`LAN (Local Area Network)` IP address/netmask. If the :abbr:`WAN (Wide Area Network)` interface is enabled, the WAN IP address/netmask is displayed along with whether this address was obtained via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ or assigned as a static IP address. The WAN gateway IP address is also displayed along with the IP(s) of the WAN `DNS servers <https://en.wikipedia.org/wiki/Domain_Name_System>`_.

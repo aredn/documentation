@@ -1,12 +1,12 @@
 ===========================
-AREDN |trade| Documentation
+AREDN® Documentation
 ===========================
 
 :Release: |release|
 
 This documentation set consists of several sections which are shown in the navigation list.
 
-* The **Getting Started Guide** walks through the process of configuring an AREDN |trade| radio node to be part of a mesh network.
+* The **Getting Started Guide** walks through the process of configuring an AREDN® radio node to be part of a mesh network.
 * The **Network Design Guide** provides background information and tips for planning and deploying a robust mesh network.
 * The **Applications and Services Guide** discusses the types of programs or services that can be used across a mesh network.
 * The **How-to Guides** provide tips and techniques for various tasks.
@@ -14,9 +14,9 @@ This documentation set consists of several sections which are shown in the navig
 
 If you wish to locate specific topics within the documentation, you can type keywords into the *Search docs* field to display a list of items which match your search.
 
-If you would like to see the documentation for a specific AREDN |trade| release, click on the **Read the Docs** label at the bottom of the navigation bar. This label shows the version you are currently viewing, but clicking the label bar opens a panel with several other options. Here you may choose to view another version of the documentation, and you can also download the entire documentation set in any of several formats *(PDF, ePub, HTML)* for offline use.
+If you would like to see the documentation for a specific AREDN® release, click on the **Read the Docs** label at the bottom of the navigation bar. This label shows the version you are currently viewing, but clicking the label bar opens a panel with several other options. Here you may choose to view another version of the documentation, and you can also download the entire documentation set in any of several formats *(PDF, ePub, HTML)* for offline use.
 
-.. note:: AREDN |trade| is a registered trademark of *Amateur Radio Emergency Data Network, Inc.* and may not be used without permission.
+.. note:: AREDN® is a registered trademark of *Amateur Radio Emergency Data Network, Inc.* and may not be used without permission.
 
 .. toctree::
    :maxdepth: 1

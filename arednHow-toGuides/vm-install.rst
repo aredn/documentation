@@ -4,9 +4,9 @@ Virtual Machine Installs
 
 *Contributor: Trevor Raty KG6MDW*
 
-The use of virtual machines as AREDN |trade| nodes is for advanced users. Most users should use *Mikrotik ac2* or *ac3* hardware to achieve similar functionality. These instructions are provided with the assumption that you understand your virtualization platform and are familiar with creating images and uploading virtual disks. The x86_64 image has been tested and is considered stable on the Proxmox, Unraid, and VMware ESXi platforms, so usage on other virtualization platforms may not work as expected.
+The use of virtual machines as AREDN® nodes is for advanced users. Most users should use *Mikrotik ac2* or *ac3* hardware to achieve similar functionality. These instructions are provided with the assumption that you understand your virtualization platform and are familiar with creating images and uploading virtual disks. The x86_64 image has been tested and is considered stable on the Proxmox, Unraid, and VMware ESXi platforms, so usage on other virtualization platforms may not work as expected.
 
-In order to have the most current features, it is recommended that you install a Nightly Build image of the AREDN |trade| firmware. For example, there is a known issue in the x86_64 firmware before 3.23.12.0 when using more than one Ethernet interface, but this was resolved in subsequent releases.
+In order to have the most current features, it is recommended that you install a Nightly Build image of the AREDN® firmware. For example, there is a known issue in the x86_64 firmware before 3.23.12.0 when using more than one Ethernet interface, but this was resolved in subsequent releases.
 
 Prerequisites / Image information
 ---------------------------------
@@ -30,7 +30,7 @@ Multi-port mode
 QEMU Install Process
 --------------------
 
-1. Download the latest firmware image from the AREDN |trade| downloads website.
+1. Download the latest firmware image from the AREDN® downloads website.
 
 2. Extract the .gz file. *7zip* on Windows may have issues with the .gz file, so you may need to download *gzip* for Windows or extract it on a Linux or Mac computer/VM.
 
@@ -38,7 +38,7 @@ QEMU Install Process
 
 4. Create the VM/Domain on your server and assign the ``.img`` file to it.
 
-5. Boot the VM and proceed with the AREDN |trade| node configuration steps.
+5. Boot the VM and proceed with the AREDN® node configuration steps.
 
 VMware Install Process
 ----------------------
@@ -49,7 +49,7 @@ For VMware you will need to use QEMU tools or another V2V converter in order to 
 - `QEMU Official downloads <https://www.qemu.org/download/#windows>`_
 - `Starwind Converter <https://www.starwindsoftware.com/starwind-v2v-converter>`_
 
-1. Download the latest firmware image from the AREDN |trade| downloads website.
+1. Download the latest firmware image from the AREDN® downloads website.
 
 2. Extract the .gz file. *7zip* on Windows may have issues with the .gz file, so you may need to download *gzip* for Windows or extract it on a Linux or Mac computer/VM.
 
@@ -77,4 +77,4 @@ If you are using Virtualbox, below is the built-in command, replacing "aredn.vmd
 
 7. Assign the verified ``.vmdk`` disk to the VM.
 
-8. Boot the VM and proceed with the AREDN |trade| node configuration steps.
+8. Boot the VM and proceed with the AREDN® node configuration steps.

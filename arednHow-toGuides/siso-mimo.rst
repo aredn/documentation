@@ -2,7 +2,7 @@
 Comparing SISO and MIMO Hardware
 ================================
 
-SISO (Single Input Single Output) device hardware has a single transceiver-antenna chain, while `MIMO (Multiple Input Multiple Output) <https://en.wikipedia.org/wiki/MIMO>`_ devices have multiple chains coordinated through the `Digital Signal Processor (DSP) <https://en.wikipedia.org/wiki/Digital_signal_processor>`_. The MIMO devices supported by AREDN |trade| have dual chains for both transmit and receive, and they support dual data streams [2x2:2].
+SISO (Single Input Single Output) device hardware has a single transceiver-antenna chain, while `MIMO (Multiple Input Multiple Output) <https://en.wikipedia.org/wiki/MIMO>`_ devices have multiple chains coordinated through the `Digital Signal Processor (DSP) <https://en.wikipedia.org/wiki/Digital_signal_processor>`_. The MIMO devices supported by AREDN® have dual chains for both transmit and receive, and they support dual data streams [2x2:2].
 
 .. image:: _images/siso-mimo-overview.png
    :alt:  SISO and MIMO radio chains

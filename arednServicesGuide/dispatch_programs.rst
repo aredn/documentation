@@ -4,7 +4,7 @@ Computer Aided Dispatch
 
 `Computer Aided Dispatch <https://en.wikipedia.org/wiki/Computer-aided_dispatch>`_ provides an automated way for emergency services agencies to keep track of incidents, activities, information, tasks, messages, and the status of deployed resources. Command staff are able to see the big picture, while at the same time maintaining detailed records of plans and actions for future reference. Deployed resources are able to clearly communicate in realtime, while having much better situational awareness of surrounding events.
 
-Served agencies have been using Computer Aided Dispatch (CAD) software for quite some time, and it has become their preferred method for managing events and incidents within their jurisdiction. In emergencies when electrical power or mission-critical facilities become unavailable and agencies are forced to operate off-grid, AREDN |trade| operators with portable power for mesh networks and computing resources can bridge the gap by providing :abbr:`CAD (Computer Aided Dispatch)` solutions for personnel at key sites.
+Served agencies have been using Computer Aided Dispatch (CAD) software for quite some time, and it has become their preferred method for managing events and incidents within their jurisdiction. In emergencies when electrical power or mission-critical facilities become unavailable and agencies are forced to operate off-grid, AREDN® operators with portable power for mesh networks and computing resources can bridge the gap by providing :abbr:`CAD (Computer Aided Dispatch)` solutions for personnel at key sites.
 
 There is a wide variety of :abbr:`CAD (Computer Aided Dispatch)` software in use today. Many of the sophisticated commercial packages have integrated `automatic vehicle location (AVL) <https://en.wikipedia.org/wiki/Automatic_vehicle_location>`_ and `geographic information systems (GIS) <https://en.wikipedia.org/wiki/Geographic_information_system>`_ which require large amounts of network bandwidth and dedicated computing resources that might not be accessible during an emergency.
 
@@ -13,7 +13,7 @@ The programs described in this section can help you to provision :abbr:`CAD (Com
 EmComMap
 --------
 
-EmComMap was designed by an `Amateur Radio Emergency Service <https://en.wikipedia.org/wiki/Amateur_Radio_Emergency_Service>`_ operator for use on AREDN |trade| mesh networks during deployments. It leverages modern technologies for interactive maps and sync-able web browser databases to enable map-based situational awareness and emergency communication across IP networks. Based on this architecture, EmComMap is one of the more mesh-friendly :abbr:`CAD (Computer Aided Dispatch)` programs with additional features in progress for data distribution.
+EmComMap was designed by an `Amateur Radio Emergency Service <https://en.wikipedia.org/wiki/Amateur_Radio_Emergency_Service>`_ operator for use on AREDN® mesh networks during deployments. It leverages modern technologies for interactive maps and sync-able web browser databases to enable map-based situational awareness and emergency communication across IP networks. Based on this architecture, EmComMap is one of the more mesh-friendly :abbr:`CAD (Computer Aided Dispatch)` programs with additional features in progress for data distribution.
 
 .. image:: _images/emcommap.png
    :alt: EmComMap Display

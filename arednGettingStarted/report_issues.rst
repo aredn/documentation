@@ -2,9 +2,9 @@
 Reporting Problems or Issues
 ============================
 
-If you experience issues with building or using AREDN |trade| devices, there are several sources of help. There is an active user community that regularly contributes to the AREDN |trade| `Forum <https://www.arednmesh.org/forum>`_, and you can post your experience there to receive help and feedback.
+If you experience issues with building or using AREDN® devices, there are several sources of help. There is an active user community that regularly contributes to the AREDN® `Forum <https://www.arednmesh.org/forum>`_, and you can post your experience there to receive help and feedback.
 
-However, if you have issues that you think should be investigated by the AREDN |trade| development team, you can follow the steps below for engaging with the software developers.
+However, if you have issues that you think should be investigated by the AREDN® development team, you can follow the steps below for engaging with the software developers.
 
 Download a Support Data File
   .. image:: _images/admin-support-data.png
@@ -19,7 +19,7 @@ Create a GitHub account
   1. Open your web browser and navigate to the `GitHub URL <https://github.com>`_.
   2. Click the ``Sign Up`` button and enter the required information. We suggest using your callsign as the username.
   3. On the GitHub website, click the ``Sign In`` button and authenticate to GitHub with the credentials you created.
-  4. Navigate on GitHub to the AREDN |trade| code repository: ``https://github.com/aredn/aredn``
+  4. Navigate on GitHub to the AREDN® code repository: ``https://github.com/aredn/aredn``
 
 Open a new issue on GitHub
   .. image:: _images/github-issues.png

@@ -161,15 +161,15 @@ This display allows you to update the network settings on your node. Context-sen
 
 |
 
-Mesh Address
-++++++++++++
+Mesh
+++++
 
-This is the primary IP address of your node. The AREDN® firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. Normally you will not need to change this, so keep this value unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
+The **Mesh Address** is the primary IP address of your node. The AREDN® firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. Normally you will not need to change this, so keep this value unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
-LAN Size
-++++++++
+LAN
++++
 
-This allows you to set the number of devices your node will be able to host on its Local Area Network (LAN). Click in the field at the right to see the dropdown list of options for the size of your node's LAN. The default value is ``5`` hosts. You may also ``disable`` your node's ability to provide a LAN network. If the LAN is disabled then the node's DHCP server will also be disabled.
+The **LAN Size** allows you to set the number of devices your node will be able to host on its Local Area Network (LAN). Click in the field at the right to see the dropdown list of options for the size of your node's LAN. The default value is ``5 hosts``. You may also ``disable`` your node's ability to provide a LAN network. If the LAN is disabled then the node's DHCP server will also be disabled.
 
 It is important not to select a size that is larger than necessary because the chance of an IP address conflict on the mesh increases with the size of the subnet. The LAN subnet parameters are automatically calculated and depend on the IP address of the *Mesh* interface. If a conflict does occur it can be fixed by changing the *Mesh* IP address above.
 
@@ -182,10 +182,11 @@ NAT Mode
 
 
 
-WAN Enable
-++++++++++
+WAN
++++
 
-This switch allows you to enable or disable your node's WAN interface, which is typically used to connect to the Internet or some other external network. The WAN interface is ``enabled`` by default, and the *Mode* setting below will be displayed. If you ``disable`` the WAN interface, the *Mode* setting will not appear.
+WAN Enable
+  This switch allows you to enable or disable your node's WAN interface, which is typically used to connect to the Internet or some other external network. The WAN interface is ``enabled`` by default, and the *Mode* setting below will be displayed. If you ``disable`` the WAN interface, the *Mode* setting will not appear.
 
 WAN Mode
   This specifies how your node's WAN interface gets its IP address. The default is to use :abbr:`DHCP (Dynamic Host Control Protocol)`, so the WAN IP address is assigned to your node by your Internet router. If you select ``Static`` you will see several new fields which allow you to specify the IP address, netmask in dotted decimal format, and gateway IP address.
@@ -440,8 +441,8 @@ These details should provide an excellent troubleshooting tool for diagnosing is
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
-Radios and Antennas
--------------------
+Radios & Antennas
+-----------------
 
 The **Radios & Antennas** display allows you to configure the radios on your node. If your device has more than one radio, you can configure them separately. Context-sensitive help is available by clicking the ``Help`` button.
 
@@ -449,10 +450,9 @@ The **Radios & Antennas** display allows you to configure the radios on your nod
  :alt: Admin Radio Settings
  :align: center
 
-Click in the first field on the right to set the radio's purpose. You can choose one of several different radio functions from the dropdown list.
+|
 
-Off
-  Disables the radio.
+Click in the first field on the right to set the radio's purpose. You can choose one of several different radio functions from the dropdown list. ``Off`` disables the radio.
 
 Mesh Radio settings
 +++++++++++++++++++
@@ -524,7 +524,7 @@ SSID
   Click in the field at the right to enter the SSID of the local wifi access point you are connecting to for Internet access.
 
 Password
-  Enter the authentication password for the wifi AP to which you are connecting. Your node uses *WPA2 PSK* encryption to connect to external wifi APs. The password length must be between zero and 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A ``single quote`` character must not be used in the passphrase.
+  Enter the authentication password for the wifi AP to which you are connecting. Your node uses *WPA2 PSK* encryption to connect to external wifi APs. The password length must be between zero and 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A single-quote character (``'``) must not be used in the passphrase.
 
 Antenna settings
 ++++++++++++++++
@@ -587,7 +587,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 LAN DHCP settings
 -----------------
 
-By default each node runs a :abbr:`DHCP (Dynamic Host Control Protocol)` server to provide client IP addresses for devices joining its LAN network. LAN devices connecting to your node will be assigned an IP address automatically. Context-sensitive help is available by clicking the ``Help`` button.
+By default each node runs a `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ (DHCP) server to provide client IP addresses for devices joining its LAN network. LAN devices connecting to your node will be assigned an IP address automatically. Be aware that if your *LAN Size* is ``disabled`` in the **Network** settings, then your node's DHCP server is also ``disabled``. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-dhcp-1.png
  :alt: Admin DHCP Settings
@@ -627,16 +627,10 @@ Advanced Options
 
   To delete a tag or option, click the [-] icon on the right of the existing row for the item you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
-
-  DHCP Server Enable/Disable ???
-    If you choose to disable the DHCP server, you must manually configure the host IP addresses to be within the LAN network range. There should be only one DHCP server for each IP address scope or range, so you may need to disable your node's DHCP server if there is already another device providing DHCP services on your node's local area network. Click this link for additional information on `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_.
-
-
-
 Ethernet Ports & Xlinks
 -----------------------
 
-If you have a supported multiport device, then you will see an *Ethernet Ports and Xlinks* section. This provides a way for you to configure the ports on your multiport node. For more information on the AREDN® VLANs being used, refer to the *VLAN* description in the **Network Settings** section above. Context-sensitive help is available by clicking the ``Help`` button.
+If you have a supported multiport device, then the *Ethernet Ports and Xlinks* section will be displayed. This provides a way for you to configure the ports on your multiport device. For more information on the VLANs being used, refer to the *VLAN* description in the *Advanced Options* section of **Network** settings. Context-sensitive help is available by clicking the ``Help`` button.
 
 
 .. image:: _images/admin-ports-xlinks.png
@@ -655,7 +649,7 @@ Ports
   If you want to change a port's configuration, simply check or uncheck the settings desired on each port.
 
 Xlinks
-  A cross-link allows your node to pass AREDN® traffic across non-AREDN® point-to-point links. To add a cross-link click the [+] icon, enter an unused VLAN number for the link, the IP address of the near-side device, the IP address of the far-side device, a weighting factor, the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask, and the port to which the near-side device is connected on your node. The *Weight* will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN® traffic. If you want to remove a cross-link, simply click the [-] icon on the right side of the row to remove it.
+  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® point-to-point links. To add an xlink click the [+] icon, enter an unused VLAN number for the link, the IP address of the near-side device, the IP address of the far-side device, a weighting factor, the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask, and the port to which the near-side device is connected on your node. The *Weight* will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN® traffic. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

@@ -70,7 +70,7 @@ Downgrading AREDN® firmware is typically accomplished using the same procedure 
 
 However, there is a difference if you are downgrading the firmware on a node which previously used a different target architecture. As explained in the **Downloading AREDN® Firmware** section, the legacy ``ar71xx`` target has been retired and replaced by the ``ath79`` target. For example, you may have a node that was previously running an ``ar71xx`` firmware version but you installed the latest Stable Release or Nightly Build which upgraded it to an ``ath79`` firmware target. In this case you will need to do a fresh First Install using the legacy architecture's firmware.
 
-1. Use the `AREDN® Firmware Selector <http://downloads.arednmesh.org/afs/www/>`_ to download the previous release's install files. For example, if your Ubiquiti Rocket M5 XW is currently running version ``3.23.4.0``, then download the files required for a First Install from release ``3.22.12.0`` which used *ar71xx* (as shown below).
+1. Use the `AREDN® Firmware Selector <http://downloads.arednmesh.org/afs/www/>`_ to download the previous release's install files. For example, if your Ubiquiti Rocket M5 XW is currently running version ``3.23.4.0``, then download the files required for release ``3.22.12.0`` which used *ar71xx* (as shown below).
 
 .. image:: _images/downgrade.png
    :alt: Downgrading across target architectures
@@ -78,7 +78,7 @@ However, there is a difference if you are downgrading the firmware on a node whi
 
 |
 
-2. Review the **Installing AREDN® Firmware** documentation and follow the steps for the *First Install* procedure that is appropriate for your node model.
+2. Review the **Installing AREDN® Firmware** documentation and follow the steps for the install procedure that is appropriate for your node model.
 
 - For Ubiquiti and TP-LINK models you will be uploading the *FACTORY* firmware.
 - For Mikrotik models you will boot using the *KERNEL* file (which you rename to *rb.elf*) and then immediately apply the *SYSUPGRADE* firmware image.

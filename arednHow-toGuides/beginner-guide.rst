@@ -106,7 +106,7 @@ GL-iNet
 Configuring your node
 ---------------------
 
-After you have your equipment in hand, you need to install the AREDN® firmware, configure its settings, and put it up in the air. Installation and configuration of the firmware is covered in the **Installing AREDN® Firmware** and **Basic Radio Setup** sections of the *Getting Started Guide*.
+After you have your equipment in hand, you need to install the AREDN® firmware, configure its settings, and put it up in the air. Installation and configuration of the firmware is covered in the **Installing AREDN® Firmware** and **Firstboot Node Setup** sections of the *Getting Started Guide*.
 
 Aiming High Gain Antennas
 -------------------------

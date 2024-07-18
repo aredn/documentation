@@ -59,7 +59,7 @@ Once the software is available via your web server, you can begin pointing the n
 Point nodes to the local server
 ===============================
 
-To point a node to the local software repository while in *admin* mode, navigate to the *firmware* section and click on *Advanced Options*. The default Firmware URL is ``http://downloads.arednmesh.org`` so you must change this to the URL of your local software server. It is good practice to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ so the node will be able to resolve the domain portion of the URL to the mesh host's IP address. The URL you enter should match the alias or path you created and tested on your web server as described in the previous section and shown in the example below.
+To point a node to the local software repository while in *admin* mode, navigate to the **Firmware** section and click on *Advanced Options*. The default Firmware URL is ``http://downloads.arednmesh.org`` but you can change this to the URL of your local software server. It is good practice to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ so the node will be able to resolve the domain portion of the URL to the mesh host's IP address. The URL you enter should match the alias or path you created and tested on your web server as described in the previous section and shown in the example below.
 
 .. image:: _images/admin-local-firmware-path.png
    :alt:  Admin set local firmware URL
@@ -67,4 +67,4 @@ To point a node to the local software repository while in *admin* mode, navigate
 
 |
 
-When you are finished with your changes, click the ``Done`` button. You will then be returned to your node’s admin view where you will be able to ``Commit`` or ``Revert`` your changes. Once the node has been pointed to the local software server, you can navigate to the *firmware* section and click the *refresh* icon to select and install the available software from your local software repository.
+When you are finished with your changes, click the ``Done`` button. You will then be returned to your node’s *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. Once the node has been pointed to the local software server, you can navigate to the **Firmware** section and click the *refresh* icon to select and install the available software from your local software repository.

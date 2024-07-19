@@ -444,7 +444,9 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Radios & Antennas
 -----------------
 
-The **Radios & Antennas** display allows you to configure the radios on your node. If your device has more than one radio, you can configure them separately. Context-sensitive help is available by clicking the ``Help`` button.
+The **Radios & Antennas** display allows you to configure the radios on your node. Context-sensitive help is available by clicking the ``Help`` button.
+
+If your device has two radios, you can configure them separately but you cannot put them both into the same mode. For example, you can use one radio for Mesh RF while the second radio functions as a LAN Hotspot or a WAN Client (as described below). Some devices may not have any available radios, but some of the radio options will still be shown if they are applicable to the device.
 
 .. image:: _images/admin-radio-1.png
  :alt: Admin Radio Settings
@@ -485,10 +487,10 @@ Minimum SNR
   This is the minimum Signal-to-Noise ratio that you require in order to reliably pass radio data between nodes. The default is 15 dB, but you can lower this value if you require your node to continue passing data even on links that have reduced signal characteristics.
 
 Maximum Distance
-  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. Local conditions may dictate a shorter distance based, for example, on dense tree cover or other terrain features which impact line of sight communication. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes.
+  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in atmospheric (or other) conditions. Communicating with these distant nodes uses a lot more radio time and can negatively impact local communications.
 
 Minimum Quality
-  This is the minimum link quality required in order to reliably pass data between nodes. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if a node must send every packet twice for it to be successfully received, the link quality would be 50%.
+  This is the minimum link quality required in order to reliably pass data between nodes, and the default value is 35%. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if a node must send every packet twice for it to be successfully received, the link quality would be 50%.
 
 LAN Hotspot Radio settings
 ++++++++++++++++++++++++++
@@ -529,7 +531,7 @@ Password
 Antenna settings
 ++++++++++++++++
 
-The antenna type is provided automatically based on your hardware model. Various devices may have differing antenna configurations, so the appropriate fields will be displayed depending on your radio type.
+Various devices may have differing antenna configurations, so the appropriate fields will be displayed depending on your radio hardware. If there are multiple antenna types available for your hardware model, then you can select one from a dropdown list.
 
 .. image:: _images/admin-radio-4.png
  :alt: Admin Radio Settings 4
@@ -562,7 +564,7 @@ Minimum Distance
   The minimum distance that must exist between nodes in order for a link to be considered for activation. The default value is ``0``. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes each of which should have an RF link only with other distant nodes.
 
 RTS Threshold
-  The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is 1.
+  The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is ``1`` which means all packets will trigger RTS/CTS.
 
 Maximum Packet Size
   The maximum size of a packet which is sent over wifi. The value is between 256 and 1500 with a default of ``1500`` bytes. Decreasing this value can improve link quality in some cases, especially in noisy environments with long distance connections.
@@ -575,9 +577,6 @@ Quality Margin
 
 Ping Penalty
   The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is ``5`` percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
-
-Default Distance
-  The distance (in meters) to use when the actual distance between nodes cannot be calculated from their GPS coordinates. The default value is zero, which causes the node to treat nodes as being collocated.
 
 Minimum Routes
   The minimum number of routes on a link that are required to disable blocking.
@@ -595,17 +594,19 @@ By default each node runs a `Dynamic Host Control Protocol <https://en.wikipedia
 
 |
 
+Address Reservations
+  Devices which are added to the *Address Reservations* list will display their hostname, IP address, and MAC address. The hostname of every device connected to the mesh at large should be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to give it a unique name on the network.
+
+  You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable on its host node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
+
+  There may be some devices on which you are not able to set the hostname, so once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated on the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
+
+  In addition to adding an address reservation manually, you can also click the [+] icon at the right of any of the devices which have active DHCP leases as described below. You will see that host appear in the *Address Reservations* list.
+
 Active Leases
   Devices which are currently connected to your node's LAN network will be displayed in the table of *Active Leases*. The first field displays the hostname, followed by the IP address that was assigned by your node's DHCP server. The third field displays the device's MAC address.
 
-  Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. You can reserve that host's DHCP address by clicking the [+] icon at the right of the row. You will see that host now appears in the *Address Reservations* list.
-
-Address Reservations
-  Devices which were added to the *Address Reservations* list will display their hostname, IP address, and MAC address. The hostname of every device connected to the mesh at large should be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to give it a unique name on the network.
-
-  There may be some devices on which you are not able to set the hostname, so once you add that device to your *Address Reservations* you can edit the hostname by clicking in the *hostname* field. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. If you have a device which needs to be reachable on its host node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
-
-  You can also create a manual *Address Reservation* by clicking the [+] icon at the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
+  Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. As mentioned above, you can reserve that host's DHCP address by clicking the [+] icon at the right of the row. You will see that host now appear in the *Address Reservations* list.
 
 Advanced Options
   Addition options will be displayed when you click **Advanced Options**. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
@@ -630,7 +631,7 @@ Advanced Options
 Ethernet Ports & Xlinks
 -----------------------
 
-If you have a supported multiport device, then the *Ethernet Ports and Xlinks* section will be displayed. This provides a way for you to configure the ports on your multiport device. For more information on the VLANs being used, refer to the *VLAN* description in the *Advanced Options* section of **Network** settings. Context-sensitive help is available by clicking the ``Help`` button.
+If you have a multiport node or one which supports xlinks, then the *Ethernet Ports & Xlinks* section will be displayed. This provides a way for you to configure the ports on your node and/or the configuration of xlinks. Context-sensitive help is available by clicking the ``Help`` button.
 
 
 .. image:: _images/admin-ports-xlinks.png
@@ -639,17 +640,21 @@ If you have a supported multiport device, then the *Ethernet Ports and Xlinks* s
 
 |
 
-Ports
-  The *Ports* section at the top shows the available ports and the possible configurations along the left side. A typical configuration is as follows:
+Ports (if available)
+  The *Ports* section shows a table of the available port names at the top of each column, with configuration labels for each row along the left side, and checkboxes beneath the ports to show which settings have been assigned on each port. For more information about the standard AREDN® VLANs, refer to the *VLAN* description in the *Advanced Options* section of **Network** settings.
 
-  - The first port is configured as a WAN port. The data entry field to the right of the *vlan* label can contain any valid vlan identifier if it is required, typically in the range between 1 and 4094. The default for these multiport devices is no vlan (untagged), so leave the default unless there is a specific reason why it is required in your situation.
-  - The middle ports are configured as LAN ports with no vlan (untagged).
-  - The last port is configured for DtD linking to another AREDN® node using vlan2 (tagged).
+  The example configuration above is for a *Mikrotik hAP ac2*.
+
+  - The first port is configured with the WAN checkbox selected. The data entry field to the right of the *vlan* label can contain any valid vlan identifier if it is required. The default for the multiport node in this example is no vlan (untagged). Leave the default value unless there is a specific reason why it must be changed for your situation.
+
+  - The remaining ports in this example are identified as LAN ports. The middle ports have no special settings (untagged), but the last LAN port is configured as a DtD link port. It will have an Ethernet cable connecting it to another AREDN® node.
 
   If you want to change a port's configuration, simply check or uncheck the settings desired on each port.
 
 Xlinks
-  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® point-to-point links. To add an xlink click the [+] icon, enter an unused VLAN number for the link, the IP address of the near-side device, the IP address of the far-side device, a weighting factor, the port to which the near-side device is connected on your node, and the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask. The *Weight* will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN® traffic. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
+  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® links. To add an xlink click the [+] icon, enter an unused VLAN number for the link. Enter the IP address of the near-side device, the IP address of the far-side device, and a weighting factor which will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN® traffic.
+
+  In the example above on a multiport device, you also enter the port to which the near-side device is connected on your node, as well as the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
@@ -671,7 +676,12 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 
 |
 
-If you are using *Mikrotik hAP ac* or *GL.iNET* devices, those multiport nodes have the appropriate VLANs preconfigured by the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure these settings.
+If you are using *Mikrotik hAP ac* or *GL.iNET* devices, those multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure these settings.
+
+Tunnel configuration
+++++++++++++++++++++
+
+Click on the **Tunnels** section to open the tunnel configuration display as shown below. The following discussion moves from top to bottom to describe each option. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-tunnel-1.png
    :alt: Admin Tunnel Settings 1
@@ -680,9 +690,15 @@ If you are using *Mikrotik hAP ac* or *GL.iNET* devices, those multiport nodes h
 |
 
 Tunnel Server
-+++++++++++++
+  This first setting is relevant if you will be using your node as a tunnel server
+  -- otherwise you can skip to the next section. A tunnel server node must be reachable from the Internet. Enter the public IP address (obtained from your :abbr:`ISP (Internet Service Provider)`) or `DDNS <https://en.wikipedia.org/wiki/Dynamic_DNS>`_ hostname in the field at the right.
 
-If you want to use your node as a tunnel server, then your node must be reachable from the Internet. Enter the public IP address (obtained from your :abbr:`ISP (Internet Service Provider)`) or `DDNS <https://en.wikipedia.org/wiki/Dynamic_DNS>`_ hostname in the field at the right. Context-sensitive help is available by clicking the ``Help`` button.
+Add Tunnel
+++++++++++
+
+This section covers adding tunnel credentials for both types of tunneling protocols (Legacy & Wireguard), as well as configuring both types of tunnels (Client & Server).
+
+
 
 The legacy tunneling protocol provides an *unencrypted* :abbr:`TCP (Transmission Control Protocol)` connection over the Internet, while the Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection. Wireguard is preferred since it is more efficient and secure, and it only encrypts the traffic as it traverses the Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
 
@@ -694,8 +710,6 @@ Networking Requirements
 
   On your Internet-connected router/firewall set the firewall rules to permit TCP/UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``5525``, which will provide for one Wireguard tunnel client connection as well as multiple Legacy tunnel client connections. If you want to allow up to 10 Wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
 
-Add Tunnel
-++++++++++
 
 To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure. If you have your network configured so that you can host a tunnel server as described above, then you can choose one of the *Server* options. Otherwise, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` entry for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. Enter these values into the appropriate fields on your node. The state switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established at which time it will be green.
 

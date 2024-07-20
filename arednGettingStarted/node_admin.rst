@@ -658,15 +658,15 @@ Xlinks
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
-Tunnel settings
----------------
+Tunnels
+-------
 
 Tunnels are typically used as a means of connecting mesh islands if RF links cannot be established. Before using the AREDN® tunnel feature, be aware of how this type of connection could impact your local mesh network. If your node participates in a local mesh, then adding one or more tunnel connections will cause the nodes and hosts on the far side of the tunnel(s) to appear as part of your local mesh network. This essentially joins the two networks into a single large network, increasing the total network traffic across the entire range of devices.
 
 If you want to participate in remote mesh networks, consider using the *Cloud Mesh* network established through worldwide Supernodes. If your local network does not have a Supernode and you need to connect to another remote network, consider establishing a tunnel from one of your nodes that is *not* connected to your local mesh. Remember that AREDN® is first and foremost an emergency communication resource, so it's possible that Internet-dependent links and the assets they provide will not be available during a disaster.
 
-Internet Connectivity Requirements
-++++++++++++++++++++++++++++++++++
+Internet Networking Requirements
+++++++++++++++++++++++++++++++++
 
 In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you will need to configure Internet access. The following diagram shows an example of tunnel stages between two nodes using network port ``5525`` as an example.
 
@@ -678,10 +678,17 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 
 If you are using *Mikrotik hAP ac* or *GL.iNET* devices, those multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure these settings.
 
-Tunnel configuration
-++++++++++++++++++++
+**Tunnels** allows you to configure connections for both types of tunneling protocols (Legacy *vtun* & Wireguard) as well as both tunnel directions (Client & Server). The legacy *vtun* protocol provides an *unencrypted* :abbr:`TCP (Transmission Control Protocol)` connection over the Internet, while the Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection. Wireguard is preferred since it is more efficient and secure, and it only encrypts the traffic as it traverses the Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
 
-Click on the **Tunnels** section to open the tunnel configuration display as shown below. The following discussion moves from top to bottom to describe each option. Context-sensitive help is available by clicking the ``Help`` button.
+Networking for Tunnel Servers
+  In order for remote tunnel clients to reach your tunnel server node, your Internet-connected firewall must allow that traffic to enter your network and it must also forward that traffic to your tunnel server node. In order for your router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
+
+  On your Internet-connected router/firewall set the firewall rules to permit TCP/UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``5525``, which will provide for one Wireguard tunnel client connection as well as multiple Legacy tunnel client connections. If you want to allow up to 10 Wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
+
+Tunnel settings
++++++++++++++++
+
+Click on the **Tunnels** section to open the tunnel configuration display as shown below. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-tunnel-1.png
    :alt: Admin Tunnel Settings 1
@@ -696,30 +703,13 @@ Tunnel Server
 Add Tunnel
 ++++++++++
 
-This section covers adding tunnel credentials for both types of tunneling protocols (Legacy & Wireguard), as well as configuring both types of tunnels (Client & Server).
-
-
-
-The legacy tunneling protocol provides an *unencrypted* :abbr:`TCP (Transmission Control Protocol)` connection over the Internet, while the Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection. Wireguard is preferred since it is more efficient and secure, and it only encrypts the traffic as it traverses the Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
-
-Advanced Options
-  The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel.
-
-Networking Requirements
-  In order for remote tunnel clients to reach your tunnel server, your firewall must allow their traffic to enter your network and it must also forward that traffic to your tunnel server node. In order for your Internet-connected router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
-
-  On your Internet-connected router/firewall set the firewall rules to permit TCP/UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``5525``, which will provide for one Wireguard tunnel client connection as well as multiple Legacy tunnel client connections. If you want to allow up to 10 Wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
-
-
-To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure. If you have your network configured so that you can host a tunnel server as described above, then you can choose one of the *Server* options. Otherwise, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` entry for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. Enter these values into the appropriate fields on your node. The state switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established at which time it will be green.
+To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure. Otherwise, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` entry for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. Enter these values into the appropriate fields on your node. The state switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established at which time it will be green.
 
 Wireguard Client
   Select *Wireguard Client* from the dropdown list and click the [+] icon. If the tunnel server owner has sent you the client credentials in an email or text file (as described below), you can highlight and copy them, click in one of the fields in your new Client row, and paste the credentials there. Each field will be populated with the correct settings provided to you. If that method does not work for some reason, simply enter the values in each field: ``Server Name`` *(IP address or DDNS hostname)*, ``Wireguard security key string``, ``network IP address:port``.
 
 Wireguard Server
   Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. The security key, network, and port settings are automatically generated and displayed.
-
-  .. warning:: If you change the *Node Name* on one of your existing Wireguard clients, the security key will be automatically retired and replaced with a new key.
 
   To the right of the *Notes* field you can click the *copy* icon to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
@@ -731,10 +721,13 @@ Legacy Server
 
   To the right of the *Notes* field you can click the *copy* icon to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
+Advanced Options
+  The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel.
+
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
-Admin tools
------------
+Tools
+-----
 
 |icon7| Click the **Tools** icon at the bottom of the left nav bar and select one of the tools from the popup menu.
 

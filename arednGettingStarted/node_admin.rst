@@ -255,7 +255,7 @@ Addition options will be displayed when you click **Advanced Options**.
 |
 
 Map URL
-  The map URL is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get the map data from the AREDN® server. The (lat) and (lon) parameters in the URL are substitutes with your GPS coordinates before the map is rendered.
+  The map URL is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get the map data from the AREDN® server. The (lat) and (lon) parameters in the URL are substitutes with your GPS coordinates before the map is rendered. If there is a local map tile server available on your mesh network, then you can point your node to the local server for its map data.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -697,29 +697,30 @@ Click on the **Tunnels** section to open the tunnel configuration display as sho
 |
 
 Tunnel Server
-  This first setting is relevant if you will be using your node as a tunnel server
-  -- otherwise you can skip to the next section. A tunnel server node must be reachable from the Internet. Enter the public IP address (obtained from your :abbr:`ISP (Internet Service Provider)`) or `DDNS <https://en.wikipedia.org/wiki/Dynamic_DNS>`_ hostname in the field at the right.
+  This first setting is relevant if you will be using your node as a tunnel server. Otherwise you can skip to the next section. A tunnel server node must be reachable from the Internet. Enter the public IP address (obtained from your :abbr:`ISP (Internet Service Provider)`) or `DDNS <https://en.wikipedia.org/wiki/Dynamic_DNS>`_ hostname in the field at the right.
 
 Add Tunnel
 ++++++++++
 
-To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure. Otherwise, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or :abbr:`DDNS (Dynamic Domain Name Service)` entry for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. Enter these values into the appropriate fields on your node. The state switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established at which time it will be green.
+To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure.
 
 Wireguard Client
-  Select *Wireguard Client* from the dropdown list and click the [+] icon. If the tunnel server owner has sent you the client credentials in an email or text file (as described below), you can highlight and copy them, click in one of the fields in your new Client row, and paste the credentials there. Each field will be populated with the correct settings provided to you. If that method does not work for some reason, simply enter the values in each field: ``Server Name`` *(IP address or DDNS hostname)*, ``Wireguard security key string``, ``network IP address:port``.
+  Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
 
 Wireguard Server
   Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. The security key, network, and port settings are automatically generated and displayed.
 
-  To the right of the *Notes* field you can click the *copy* icon to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
+  Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
 Legacy Client
-  Select *Legacy Client* from the dropdown list and click the [+] icon. If the tunnel server owner has sent you the client credentials in an email or text file (as described previously), you can highlight and copy them, click in one of the fields in your new client row, and paste the credentials there. Each field will be populated with the correct settings provided to you. If that method does not work for some reason, simply enter the values in each field: ``Server Name`` *(IP address or DDNS hostname)*, ``Password``, ``network IP address``.
+  Select *Legacy Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
 
 Legacy Server
   Select *Legacy Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. A default password will appear in the *Password* field, but you may change that as desired. The network IP address is automatically generated and displayed.
 
-  To the right of the *Notes* field you can click the *copy* icon to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
+  Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
+
+The state switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established, at which time it will be green.
 
 Advanced Options
   The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel.
@@ -732,7 +733,9 @@ Tools
 |icon7| Click the **Tools** icon at the bottom of the left nav bar and select one of the tools from the popup menu.
 
 WiFi Scan
-  This initiates a *passive* scan for wifi signals that are within range and are on the same channel width as your node. When installing a node at a new location it is best practice to scan on 5, 10, and 20 MHz channel widths to find all other 802.11 signals within range. This information will help you to pick a channel clear of interference. Several scans may be necessary to find all devices in range. When multiple ad-hoc networks are visible (using different SSIDs or channels), the ID of each 802.11 *network* is displayed but not the individual nodes. A passive scan does not transmit probes, so there is no risk that unintended transmissions will interfere with radar stations on DFS channels.
+  This displays the *wifi scan* page which will show the results of the most recent scan (if any). Context-sensitive help is available by clicking the ``Help`` button.
+
+  Click the ``Scan`` button in the lower right corner to initiate a new scan which looks for wifi signals that are using the same channel width as your node. It is best practice to scan on 5, 10, and 20 MHz channel widths to find any 802.11 signals within range. Several scans may be necessary to find as many local devices as possible.
 
   .. image:: _images/admin-wifi-scan.png
    :alt: WiFi Scan
@@ -740,10 +743,10 @@ WiFi Scan
 
   |
 
-  Context-sensitive help is available by clicking the ``Help`` button. With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi.   The scan results from your last scan are retained, along with the relative time since that scan was completed. If you only want to see the results from your last scan, you can go to the **Wifi Scan** page to view those results without having to initiate a fresh scan. Once a scan has finished, you can click the ``Scan`` button to start a new scan. When you are finished studying the scan results, click the ``Done`` button to return to the status display.
+  With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi. The most recent scan results are retained. When you are finished studying the scan results, click the ``Done`` button to return to the status display.
 
 WiFi Signal
-  This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list, and the graph will be redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
+  This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list. The graph will be cleared and redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
 
   .. image:: _images/admin-wifi-signal.png
     :alt: WiFi Signal
@@ -751,12 +754,12 @@ WiFi Signal
 
   |
 
-  The colored bar graph on the left displays the worst and best signal values that have been seen during the monitoring interval. The instantaneous signal value is represented as a bar that moves between the upper and lower values over time.
+  The colored bar graph on the left displays the worst and best signal values that are seen during the monitoring interval. The instantaneous signal value is shown above the colored bars on the left. All of these values will be adjust over time as new data is obtained.
 
   Below the line graph there are controls that allow you to enable an audio representation of the instantaneous signal value. Click in the field to the right of the *Sound* label and select OFF or ON to enable or disable the sound. You can control the volume and pitch of the tone using the horizontal sliders. The higher the pitch, the better the signal level. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Ping
-  This tool allows you to perform a ping test between two devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
+  This tool allows you to perform a ping test between devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
 
   .. image:: _images/admin-ping.png
     :alt: Ping Test
@@ -764,7 +767,13 @@ Ping
 
   |
 
-  You can click the down arrow icon at the right of the *Target Address* and *Source Address* fields to select the desired nodes from a dropdown list. If your desired device is not shown, you can click in the fields to enter or edit the device name that you want to test. After selecting the *Target* and *Source* devices, click the ``Go`` button to the bottom right of the results field to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices. When you are finished studying the results, click the ``Done`` button to return to the status display.
+  Target Address
+    Click the down arrow icon at the right of the *Target Address* to select a target device from the dropdown list. If your desired device is not shown, you can click in the field to enter or edit the hostname or IP address that you want to use as the target. This can be any device or address which is capable of responding to pings.
+
+  Source Address
+    The *source* must always be an AREDN® node, and by default the current node name is automatically entered. Click the down arrow icon at the right of *Source Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the source.
+
+  After selecting the *Target* and *Source*, click the ``Go`` button in the bottom right corner to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices, remembering that your *source* must always be an AREDN® node. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Traceroute
   This tool allows you to perform a traceroute between two devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
@@ -775,10 +784,16 @@ Traceroute
 
   |
 
-  You can click the down arrow icon at the right of the *Target Address* and *Source Address* fields to select the desired nodes from a dropdown list. If your desired device is not shown, you can click in the fields to enter or edit the device name that you want to test. After selecting the *Target* and *Source* devices, click the ``Go`` button to the bottom right of the results field to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices. When you are finished studying the results, click the ``Done`` button to return to the status display.
+  Target Address
+    Click the down arrow icon at the right of the *Target Address* to select a target device from the dropdown list. If your desired device is not shown, you can click in the field to enter or edit the hostname or IP address that you want to use as the target.
+
+  Source Address
+    The *source* must always be an AREDN® node, and by default the current node name is automatically entered. Click the down arrow icon at the right of *Source Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the source.
+
+  After selecting the *Target* and *Source*, click the ``Go`` button in the bottom right corner to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices, remembering that your *source* must always be an AREDN® node. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 iPerf3
-  This tool allows you to perform throughput test between two devices on your network using iPerf3. Context-sensitive help is available by clicking the ``Help`` button.
+  This tool allows you to perform throughput tests between two AREDN® nodes on your network using iPerf3. Context-sensitive help is available by clicking the ``Help`` button.
 
   .. image:: _images/admin-iperf3.png
    :alt: iPerf3 Test
@@ -786,22 +801,16 @@ iPerf3
 
   |
 
-  You can click the down arrow icon at the right of the *Target Address* and *Source Address* fields to select the desired nodes from a dropdown list. If your desired device is not shown, you can click in the fields to enter or edit the device name that you want to test. After selecting the *Target* and *Source* devices, click the ``Go`` button to the bottom right of the results field to view the results. You may want to test network throughput in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices. When you are finished studying the results, click the ``Done`` button to return to the status display.
+  Server Address
+    Click the down arrow icon at the right of *Server Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the iperf3 server.
+
+  Client Address
+    By default the current node name is automatically entered as the client, but you can click the down arrow icon at the right to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the client.
+
+  After selecting the *Server* and *Client* nodes, click the ``Go`` button at the lower right corner to view the results. You may want to test network throughput in both directions by clicking the double-arrow icon to swap the *Server* and *Client* nodes. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Support Data
   There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN® team in order to get help with a problem. Click the *Support Data* icon to save a compressed archive file to your local computer.
-
-Node Reset button actions
--------------------------
-
-The reset button on an AREDN® node has two built-in functions based on the length of time the button is pressed.
-
-With the node powered on and fully booted:
-
-* **Hold for 5 seconds to reset the password and DHCP service**
-* **Hold for 15 seconds to return the node to “just-flashed” condition**
-
-On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.
 
 
 .. |icon1| image:: ../_icons/login.png

@@ -22,7 +22,7 @@ Preparing Your Computer
 -----------------------
 
 Setting a Static IP Address on your Computer
-  For all of the device models discussed below you will be asked to set a static IP address on your computer as part of the install process. Various computer operating systems have different ways of accomplishing this, and there is a wealth of information in computer manuals, publications, and online resources to walk you through the steps for your specific computer.
+  For all of the device models discussed below you will be asked to set a static IP address on your computer as part of the install process. Various computer operating systems have different ways of accomplishing this, so you should check your computer manuals, publications, and online resources to walk you through the steps for your specific computer.
 
   As mentioned above, AREDN® recommends that you connect your computer to the node through an intermediary network switch. This allows your computer to activate its Ethernet interface with the static IP address even when the node is not powered on. Since node hardware needs to be powered on/off or rebooted during the install process, the network switch will keep your computer's network interface active on its static IP address.
 
@@ -349,3 +349,15 @@ After the node reboots, it should have a default IP address of 192.168.1.1. Make
 Once your device is running AREDN® firmware, you can display its web interface by navigating to either ``http://192.168.1.1`` or ``http://localnode.local.mesh``.  Some computers may have DNS search paths configured that require you to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ to resolve *localnode* to the mesh node's IP address. You may need to clear your web browser's cache in order to remove any cached pages.
 
 You can use your web browser to configure the new node with your callsign, admin password, and other settings as described in the **Firstboot Node Setup** section of the documentation.
+
+Node Reset button actions
+-------------------------
+
+The reset button on an AREDN® node has two built-in functions based on the length of time the button is pressed. This may be helpful if you need to recover a lost *admin* password, or if you want to reconfigure you node by starting with a fresh "just flashed" state.
+
+With the node powered on and fully booted:
+
+* To reset only the node admin password and DHCP service, hold the reset button for **5 seconds**. The default *admin* password is ``hsmm``.
+* To reset the entire configuration to "firstboot" state, hold the reset button for **15 seconds**.
+
+On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.

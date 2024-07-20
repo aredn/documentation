@@ -51,7 +51,7 @@ Network Information
   The Mesh IP address/netmask is displayed using `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ notation, followed by the :abbr:`LAN (Local Area Network)` IP address/netmask. If the :abbr:`WAN (Wide Area Network)` interface is enabled, the WAN IP address/netmask is displayed along with whether this address was obtained via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ or assigned as a static IP address. The WAN gateway IP address is also displayed along with the IP(s) of the WAN `DNS servers <https://en.wikipedia.org/wiki/Domain_Name_System>`_.
 
 Node Location Information
-  At the bottom of the left column is the node location information. If the latitude, longitude, and grid square have been entered for this node, a thumbnail map will show its location and coordinates, with the latitude, longitude, and grid square printed below it. Initially there will be no map display since the latitude, longitude, and grid square will not yet have been entered.
+  At the bottom of the left column is the node location information. Initially there will be no location values since the latitude, longitude, and grid square have not yet been entered. After the latitude, longitude, and grid square have been entered (as described in the **Node Admin** guide), your node will attempt to display a thumbnail map with its location in the center. If your node has no access to the Internet or to a local map tile server, then the map will not be displayed. The latitude, longitude, and grid square values will be shown below the map thumbnail.
 
 Center Column
 -------------

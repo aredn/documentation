@@ -18,18 +18,17 @@ If you would like to see the documentation for a specific AREDN® release, click
 
 .. note:: AREDN® is a registered trademark of *Amateur Radio Emergency Data Network, Inc.* and may not be used without permission.
 
+Site Map
+--------
+
 .. toctree::
-   :maxdepth: 1
    :caption: What is AREDN®
-   :hidden:
 
    aredn_overview
    why_aredn
 
 .. toctree::
-   :maxdepth: 1
    :caption: Getting Started Guide
-   :hidden:
 
    arednGettingStarted/selecting_devices
    arednGettingStarted/downloading_firmware
@@ -41,9 +40,7 @@ If you would like to see the documentation for a specific AREDN® release, click
    arednGettingStarted/report_issues
 
 .. toctree::
-   :maxdepth: 1
    :caption: Network Design Guide
-   :hidden:
 
    arednNetworkDesign/networking_overview
    arednNetworkDesign/network_topology
@@ -52,9 +49,7 @@ If you would like to see the documentation for a specific AREDN® release, click
    arednNetworkDesign/network_modeling
 
 .. toctree::
-   :maxdepth: 1
    :caption: Applications and Services Guide
-   :hidden:
 
    arednServicesGuide/services_overview
    arednServicesGuide/chat_programs
@@ -67,9 +62,7 @@ If you would like to see the documentation for a specific AREDN® release, click
    arednServicesGuide/other_programs
 
 .. toctree::
-   :maxdepth: 1
    :caption: How-to Guides
-   :hidden:
 
    arednHow-toGuides/beginner-guide
    arednHow-toGuides/firmware_tips
@@ -88,9 +81,7 @@ If you would like to see the documentation for a specific AREDN® release, click
    arednHow-toGuides/devtools
 
 .. toctree::
-   :maxdepth: 1
    :caption: Appendix
-   :hidden:
 
    appendix/known_issues
    appendix/more_info

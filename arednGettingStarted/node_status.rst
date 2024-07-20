@@ -9,6 +9,8 @@ Once you have completed the initial setup on your AREDN® node, you can connect 
    :alt: Node status display
    :align: center
 
+|
+
 This display has been designed to present all of the important information about your node in one place. Someone navigating to your node's status display will be able to see all of the key elements of interest without having to click to multiple pages. This display consists of a top bar, a left side bar, and three columns of information about your node.
 
 Top Nav Bar
@@ -64,20 +66,21 @@ Local Services
 Local Devices
   This section displays any devices that are directly connected to your node. This includes devices that are connected to your node's :abbr:`LAN (Local Area Network)` via Ethernet cable (such as :abbr:`VoIP (Voice over IP)` phones, IP cameras, or service computers). Be aware that DHCP devices with *Do Not Propagate* checked will not be displayed under the *Local Devices* section.
 
-Basic Link Quality Metrics
-  Several link quality statistics can be displayed for different types of connections that are mentioned below. Before introducing those link types, here is a brief explanation of the link quality metrics that may be displayed.
+  .. admonition:: Basic Link Quality Metrics
 
-  - ``lq`` or Link Quality is your node's view of the percent of `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ packets received from the neighbor node. These packets exchange mesh routing and advertised services information, and they include a sequence number that is used to identify missing packets. For example, if 7 of 10 packets sent by the neighbor were received, then the probability for a successful packet transmission from this neighbor is 7/10 = 0.7 = 70%.
+    Several link quality statistics can be displayed for different types of connections that are mentioned below. Before introducing those link types, here is a brief explanation of the link quality metrics that may be displayed.
 
-  - ``nlq`` or Neighbor Link Quality is the neighbor node's view of the percent of :abbr:`OLSR (Optimized Link State Routing protocol)` packets received from your node.
+    - ``lq`` or Link Quality is your node's view of the percent of `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ packets received from the neighbor node. These packets exchange mesh routing and advertised services information, and they include a sequence number that is used to identify missing packets. For example, if 7 of 10 packets sent by the neighbor were received, then the probability for a successful packet transmission from this neighbor is 7/10 = 0.7 = 70%.
 
-  - ``snr`` or Signal-to-Noise Ratio is expressed in decibels (dB). This metric only applies to RF links and represents the level of signal which is detected above the noise floor. *SNR* is shown for both sides of the radio link (:abbr:`snr (signal to noise ratio)` and :abbr:`n snr (neighbor signal to noise ratio)`).
+    - ``nlq`` or Neighbor Link Quality is the neighbor node's view of the percent of :abbr:`OLSR (Optimized Link State Routing protocol)` packets received from your node.
 
-  - ``errors`` is calculated as the moving average of (total sent packets) divided by (total sent packets plus retransmissions) and expressed as a percent. For example, if the node had to send every packet twice for it to be successfully received, the error rate would be 50%. An additional penalty is subtracted if the neighbor node is unpingable.
+    - ``snr`` or Signal-to-Noise Ratio is expressed in decibels (dB). This metric only applies to RF links and represents the level of signal which is detected above the noise floor. *SNR* is shown for both sides of the radio link (:abbr:`snr (signal to noise ratio)` and :abbr:`n snr (neighbor signal to noise ratio)`).
 
-  - ``mbps`` is a rolling average of the data rate achieved across any radio (RF) link. This column may show zero if the data being transmitted between these nodes is not sufficient for the metric to be calculated.
+    - ``errors`` is calculated as the moving average of (total sent packets) divided by (total sent packets plus retransmissions) and expressed as a percent. For example, if the node had to send every packet twice for it to be successfully received, the error rate would be 50%. An additional penalty is subtracted if the neighbor node is unpingable.
 
-  - ``dist`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes.
+    - ``mbps`` is a rolling average of the data rate achieved across any radio (RF) link. This column may show zero if the data being transmitted between these nodes is not sufficient for the metric to be calculated.
+
+    - ``dist`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes.
 
 Local Nodes
   This section displays any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node, typically via Ethernet cable. If you hover the cursor over the node name, a popup will appear showing the relative link quality of the connection to that node. Clicking the node name will navigate to that node's status page. For *Local Nodes* the snr, nsnr, mbps, and distance columns will always be blank.
@@ -99,12 +102,12 @@ Mesh section
 LAN DHCP section
   By default each node runs a `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ server which is capable of automatically providing IP addresses for any LAN-connected devices. This section shows whether the :abbr:`DHCP (Dynamic Host Configuration Protocol)` server is enabled, and if so it displays the IP address/netmask of your node functioning as the gateway for its LAN-connected devices. It also shows the IP address range served by your node, any active leases, and any IP addresses that have been reserved for specific devices on its :abbr:`LAN (Local Area Network)`. In addition, counts are displayed for the number of active and reserved DHCP leases, as well as for the number of DHCP tags and options that are defined on your node.
 
+Ethernet Ports & Xlinks
+  If you have a multiport node or one which supports xlinks, then the *Ethernet Ports & Xlinks* section will be displayed. This shows the number of Ethernet ports on the device, as well as how many of them are actively in use. You will also see the number of xlinks that you have defined on this node.
+
 Tunnels section
-   This section displays statistics on any tunnel connections you may have on your node. The *Wireguard* section shows information for Wireguard tunnels, while the *Legacy* section shows information for the older vtun tunnels. Counts are displayed for active / allocated tunnel client connections as well as for active / allocated tunnel server connections on your node.
+  This section displays statistics on any tunnel connections you may have on your node. The *Wireguard* section shows information for Wireguard tunnels, while the *Legacy* section shows information for the older vtun tunnels. Counts are displayed for active / allocated tunnel client connections as well as for active / allocated tunnel server connections on your node.
 
-
-
--------------------
 
 .. |icon1| image:: ../_icons/login.png
   :alt: Normal user view

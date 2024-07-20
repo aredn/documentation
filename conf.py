@@ -95,6 +95,7 @@ html_theme_options = {
     'logo_only': True,
     "toc_title": "Page Navigation",
     "use_download_button": False,
+    "show_toc_level": 3,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

@@ -22,13 +22,13 @@ Site Map
 --------
 
 .. toctree::
-   :caption: What is AREDN®
+   :caption: WHAT IS AREDN®
 
    aredn_overview
    why_aredn
 
 .. toctree::
-   :caption: Getting Started Guide
+   :caption: GETTING STARTED GUIDE
 
    arednGettingStarted/selecting_devices
    arednGettingStarted/downloading_firmware
@@ -40,7 +40,7 @@ Site Map
    arednGettingStarted/report_issues
 
 .. toctree::
-   :caption: Network Design Guide
+   :caption: NETWORK DESIGN GUIDE
 
    arednNetworkDesign/networking_overview
    arednNetworkDesign/network_topology
@@ -49,7 +49,7 @@ Site Map
    arednNetworkDesign/network_modeling
 
 .. toctree::
-   :caption: Applications and Services Guide
+   :caption: APPLICATIONS AND SERVICES GUIDE
 
    arednServicesGuide/services_overview
    arednServicesGuide/chat_programs
@@ -62,7 +62,7 @@ Site Map
    arednServicesGuide/other_programs
 
 .. toctree::
-   :caption: How-to Guides
+   :caption: HOW-TO GUIDES
 
    arednHow-toGuides/beginner-guide
    arednHow-toGuides/firmware_tips
@@ -81,7 +81,7 @@ Site Map
    arednHow-toGuides/devtools
 
 .. toctree::
-   :caption: Appendix
+   :caption: APPENDIX
 
    appendix/known_issues
    appendix/more_info

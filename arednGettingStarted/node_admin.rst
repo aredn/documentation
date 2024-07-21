@@ -596,22 +596,21 @@ By default each node runs a `Dynamic Host Control Protocol <https://en.wikipedia
 Address Reservations
   Devices which are added to the *Address Reservations* list will display their hostname, IP address, and MAC address. The hostname of every device connected to the mesh at large should be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to give it a unique name on the network.
 
-  You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable on its host node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
+  You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable via your node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
 
-  There may be some devices on which you are not able to set the hostname, so once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated on the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
+  There may be some devices on which you are not able to set the hostname, so once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated across the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
 
-  In addition to adding an address reservation manually, you can also click the [+] icon at the right of any of the devices which have active DHCP leases as described below. You will see that host appear in the *Address Reservations* list.
+  In addition to adding an address reservation manually, you can also click the [+] icon at the right of any of the devices which have active DHCP leases as described below. You will then see that host appear in the *Address Reservations* list.
 
 Active Leases
-  Devices which are currently connected to your node's LAN network will be displayed in the table of *Active Leases*. The first field displays the hostname, followed by the IP address that was assigned by your node's DHCP server. The third field displays the device's MAC address.
+  Devices which are currently assigned an IP address by your node will be displayed in the table of *Active Leases*. The first field displays the hostname, followed by the IP address that was assigned by your node's DHCP server. The third field displays the device's MAC address.
 
   Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. As mentioned above, you can reserve that host's DHCP address by clicking the [+] icon at the right of the row. You will see that host now appear in the *Address Reservations* list.
 
 Advanced Options
   Additional options will be displayed when you click **Advanced Options**. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
 
-  The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is the source for information about all DHCP options. Specific vendor equipment may or may not support all of the options, so you should verify which options are supported by referring to the manufacturer's documentation for your LAN device.
-
+  The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is a good source of information about DHCP options. Specific vendor equipment may or may not support all of the options, so you should verify which options are supported by referring to the manufacturer's documentation for your LAN device.
 
   .. image:: _images/admin-dhcp-2.png
    :alt: Admin DHCP Advanced Options
@@ -620,10 +619,10 @@ Advanced Options
   |
 
   Tags
-    The tags for advanced DHCP options allow you to define labels for values that will be assigned to clients that match specific values or properties such as Vendor Class or MAC address. Click the [+] icon to add a new tag. Enter a tag label in the first field, then click in the second field to select a tag type from the dropdown list. Finally, enter a text string which will be used to match device's tag type, such as Vendor Class or MAC address. To delete an existing tag, click the [-] at the right side of the row you wish to remove.
+    The tags for advanced DHCP options allow you to define labels for values that will be assigned to clients which match specific properties such as Vendor Class or MAC address. Click the [+] icon to add a new tag. Enter a tag label in the first field, then click in the second field to select a tag type from the dropdown list. Finally, enter a text string which will be used to match a property on the device, such as the Vendor Class or MAC address. To delete an existing tag, click the [-] at the right side of the row you wish to remove.
 
   Options
-    The options entries allow you to specify which devices will receive the DHCP options. Click in the first field to select whether you want this option to be sent to [all] clients or only to clients which match a specific tag. Option numbers can be entered directly in the second field or you can select one from the dropdowm list of well-known options. In the third field enter the specific value that will be sent in this option. A checkbox allows you to specify whether or not this option will always be sent.
+    The options entries allow you to specify which devices will receive the DHCP options. Click in the first field to select whether you want this option to be sent to [all] clients or only to clients which match a specific tag. Option numbers can be entered directly in the second field or you can select them from the dropdowm list of well-known options. In the third field enter the specific value that will be sent in this option. A checkbox allows you to specify whether or not this option will always be sent.
 
   To delete a tag or option, click the [-] icon on the right of the existing row for the item you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
@@ -631,7 +630,6 @@ Ethernet Ports & Xlinks
 -----------------------
 
 If you have a multiport node or one which supports xlinks, then the *Ethernet Ports & Xlinks* section will be displayed. This provides a way for you to configure the ports on your node and/or the configuration of xlinks. Context-sensitive help is available by clicking the ``Help`` button.
-
 
 .. image:: _images/admin-ports-xlinks.png
   :alt: Admin Ethernet Ports and Xlinks
@@ -642,11 +640,11 @@ If you have a multiport node or one which supports xlinks, then the *Ethernet Po
 Ports (if available)
   The *Ports* section shows a table of the available port names at the top of each column, with configuration labels for each row along the left side, and checkboxes beneath the ports to show which settings have been assigned on each port. For more information about the standard AREDN® VLANs, refer to the *VLAN* description in the *Advanced Options* section of **Network** settings.
 
-  The example configuration above is for a *Mikrotik hAP ac2*.
+  The example configuration shown above is for a *Mikrotik hAP ac2*.
 
   - The first port is configured with the WAN checkbox selected. The data entry field to the right of the *vlan* label can contain any valid vlan identifier if it is required. The default for the multiport node in this example is no vlan (untagged). Leave the default value unless there is a specific reason why it must be changed for your situation.
 
-  - The remaining ports in this example are identified as LAN ports. The middle ports have no special settings (untagged), but the last LAN port is configured as a DtD link port. It will have an Ethernet cable connecting it to another AREDN® node.
+  - The remaining ports in this example are identified as LAN ports. The middle ports have no special settings (untagged), but the last LAN port is configured as a DtD link port which will have an Ethernet cable connecting it to another AREDN® node.
 
   If you want to change a port's configuration, simply check or uncheck the settings desired on each port.
 
@@ -662,12 +660,12 @@ Tunnels
 
 Tunnels are typically used as a means of connecting mesh islands if RF links cannot be established. Before using the AREDN® tunnel feature, be aware of how this type of connection could impact your local mesh network. If your node participates in a local mesh, then adding one or more tunnel connections will cause the nodes and hosts on the far side of the tunnel(s) to appear as part of your local mesh network. This essentially joins the two networks into a single large network, increasing the total network traffic across the entire range of devices.
 
-If you want to participate in remote mesh networks, consider using the *Cloud Mesh* network established through worldwide Supernodes. If your local network does not have a Supernode and you need to connect to another remote network, consider establishing a tunnel from one of your nodes that is *not* connected to your local mesh. Remember that AREDN® is first and foremost an emergency communication resource, so it's possible that Internet-dependent links and the assets they provide will not be available during a disaster.
+If you want to participate in remote mesh networks, consider using the *Cloud Mesh* network established through worldwide Supernodes. If your local network does not have a Supernode and you need to connect to another remote network, consider establishing a tunnel from a standalone node that is *not* connected to your local mesh. Remember that AREDN® is first and foremost an emergency communication resource, so it's possible that Internet-dependent links and the assets they provide will not be available during a disaster or deployment.
 
 Internet Networking Requirements
 ++++++++++++++++++++++++++++++++
 
-In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you will need to configure Internet access. The following diagram shows an example of tunnel stages between two nodes using network port ``5525`` as an example.
+In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you will need to configure Internet access. The following diagram shows an example of tunnel connectivity between two nodes using network port ``5525`` as an example.
 
 .. image:: _images/tunneling-diagram.png
    :alt: Tunneling Diagram
@@ -675,9 +673,9 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 
 |
 
-If you are using *Mikrotik hAP ac* or *GL.iNET* devices, those multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure these settings.
+If you are using *Mikrotik hAP ac* or *GL.iNET* devices, those multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure VLAN settings.
 
-**Tunnels** allows you to configure connections for both types of tunneling protocols (Legacy *vtun* & Wireguard) as well as both tunnel directions (Client & Server). The legacy *vtun* protocol provides an *unencrypted* :abbr:`TCP (Transmission Control Protocol)` connection over the Internet, while the Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection. Wireguard is preferred since it is more efficient and secure, and it only encrypts the traffic as it traverses the Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
+**Tunnels** allows you to configure connections for both types of tunneling protocols (Legacy *vtun* & Wireguard) as well as both tunnel directions (Client & Server). The legacy *vtun* protocol provides an *unencrypted* :abbr:`TCP (Transmission Control Protocol)` connection over the Internet, while the Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection. Wireguard is preferred since it is more efficient and secure, and it only encrypts the traffic as it traverses the public Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
 
 Networking for Tunnel Servers
   In order for remote tunnel clients to reach your tunnel server node, your Internet-connected firewall must allow that traffic to enter your network and it must also forward that traffic to your tunnel server node. In order for your router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
@@ -704,7 +702,7 @@ Add Tunnel
 To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure.
 
 Wireguard Client
-  Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
+  Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described below for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
 
 Wireguard Server
   Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. The security key, network, and port settings are automatically generated and displayed.
@@ -712,14 +710,14 @@ Wireguard Server
   Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
 Legacy Client
-  Select *Legacy Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the password/key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
+  Select *Legacy Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the password you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
 
 Legacy Server
   Select *Legacy Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. You may also enter other optional information in the *Notes* field. A default password will appear in the *Password* field, but you may change that as desired. The network IP address is automatically generated and displayed.
 
   Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
-The state switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established, at which time it will be green.
+The switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established, at which time it will be green.
 
 Advanced Options
   The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel.
@@ -742,7 +740,7 @@ WiFi Scan
 
   |
 
-  With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi. The most recent scan results are retained. When you are finished studying the scan results, click the ``Done`` button to return to the status display.
+  With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi. The most recent scan results are retained. When you are finished studying the scan results, click the ``Done`` button to return to the *admin* display.
 
 WiFi Signal
   This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list. The graph will be cleared and redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
@@ -753,9 +751,9 @@ WiFi Signal
 
   |
 
-  The colored bar graph on the left displays the worst and best signal values that are seen during the monitoring interval. The instantaneous signal value is shown above the colored bars on the left. All of these values will be adjust over time as new data is obtained.
+  The colored bars on the left display the worst and best signal values that are seen during the monitoring interval. The instantaneous signal value is shown above the colored bars on the left. All of these values will be adjust over time as new data is obtained.
 
-  Below the line graph there are controls that allow you to enable an audio representation of the instantaneous signal value. Click in the field to the right of the *Sound* label and select OFF or ON to enable or disable the sound. You can control the volume and pitch of the tone using the horizontal sliders. The higher the pitch, the better the signal level. When you are finished studying the results, click the ``Done`` button to return to the status display.
+  Below the line graph there are controls that allow you to enable an audio representation of the instantaneous signal value. Click in the field to the right of the *Sound* label and select ``OFF`` or ``ON`` to enable or disable the sound. You can control the volume and pitch of the tone using the horizontal sliders. The higher the pitch, the better the signal level. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Ping
   This tool allows you to perform a ping test between devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
@@ -804,7 +802,7 @@ iPerf3
     Click the down arrow icon at the right of *Server Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the iperf3 server.
 
   Client Address
-    By default the current node name is automatically entered as the client, but you can click the down arrow icon at the right to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the client.
+    By default the current node name is automatically entered as the client, but you can click the down arrow icon at the right to select any node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the client.
 
   After selecting the *Server* and *Client* nodes, click the ``Go`` button at the lower right corner to view the results. You may want to test network throughput in both directions by clicking the double-arrow icon to swap the *Server* and *Client* nodes. When you are finished studying the results, click the ``Done`` button to return to the status display.
 

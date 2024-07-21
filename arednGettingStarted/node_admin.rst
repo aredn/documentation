@@ -363,7 +363,7 @@ Adding a Service
     This template allows you to create an informational label which is not clickable. Enter a descriptive label (currently "Simple text" as a placeholder). Click in the field to the right of the text label to select from the dropdown list the type of icon that will be displayed for this label (if any). The icon you choose will be displayed to the right of the service name on **mesh status** pages. From the dropdown list in the next field, select the node or host with which this label is associated. If you defined *Host Aliases* (described below), you will see these host aliases in the dropdown list.
 
   Additional service templates
-    Additional templates have been created for common services, with the goal of making it easier to define these services on your nodes. These templates fill in some of the fields with typical values, while allowing you to customize the information appropriately. Templates exist for several types of IP cameras as well as NTP, Winlink, MeshChat, Mapping, Proxmox, and web servers.
+    Additional templates have been created for common services, with the goal of making it easier to define these services on your nodes. These templates fill in some of the fields with typical values, while allowing you to customize the information appropriately. Templates exist for several types of IP cameras as well as NTP, Winlink, MeshChat, Mapping, Proxmox, and web services.
 
   You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -372,7 +372,8 @@ Viewing, Editing, and Deleting Services
 
   You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
-  Service Advertisement Process
+  .. admonition:: Service Advertisement Process
+
     `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ propagates service entries to other nodes across the network. Once every hour your node will verify that its own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions after three attempts:
 
     1. The LAN host is not pingable from your node
@@ -390,7 +391,7 @@ Managing Host Aliases
 
   To create an alias, click the [+] icon on the right and enter an alias name in the first field. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the network. Then use the dropdown selector to choose the name or IP Address of the existing host for which you are defining the alias. Once you have entered these values, you can change any of the fields in any of the aliases. If you want to delete an alias, click the [-] icon on the right side of that row.
 
-  To delete an alias, click the [-] icon on the right of the existing row for the alias you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Port Forwarding
   There may be situations where your node must act as an intermediary, typically between a client device and a server device on your node's LAN network. More information can be found at this link for `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
@@ -416,7 +417,7 @@ This section displays any local :abbr:`DtD (Device to Device)` nodes that are di
 Neighborhood Nodes
 ------------------
 
-As described in the **Node Status** documentation section, this area shows a list of neighbor devices that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a neighbor node in that list. If you click in the neighbor row while the gray background is visible, the **Neighbor Device** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
+As described in the **Node Status** documentation section, this area shows a list of neighbor devices that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a neighbor node. If you click in the neighbor row while the gray background is visible, the **Neighborhood Device** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-neighbor.png
  :alt: Admin Neighbor Statistics
@@ -435,7 +436,7 @@ This display provides more detailed information about your node's connection to 
 - link state and active routes
 - For RF nodes there is a graph of the signal level and noise floor on this link over the last hour of history (approximately). Hovering over the graph lines will display the instantaneous values which were plotted at each point on the graph.
 
-These details should provide an excellent troubleshooting tool for diagnosing issues with node connections.
+This provides an excellent troubleshooting tool for diagnosing issues with node connections.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
@@ -467,7 +468,7 @@ Channel
 Channel Width
   Click in the field at the right to select from the channel widths supported on your device. Most hardware will support 5 MHz, 10 MHz, or 20 MHz channel widths, but some devices will only support specific channel widths. If the choice of channel width is limited, the device will only show its supported widths in the dropdown list.
 
-  As a general rule, a larger channel width will allow more data to be transferred, but it may only do so over shorter distances. One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB. There may be several reasons for reducing the channel width setting:
+  As a general rule, a larger channel width will allow more data to be transferred, but it may only do this over shorter distances. One suggestion is to start with the largest channel width that yields a *Signal to Noise Ratio* (SNR) of at least 15 dB. There may be several reasons for reducing the channel width setting:
 
   - To achieve a better SNR on a marginal link.
   - To extend the usable distance between remote nodes.
@@ -488,12 +489,12 @@ Maximum Distance
   This is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in atmospheric (or other) conditions. Communicating with these distant nodes uses a lot more radio time and can negatively impact local communications.
 
 Minimum Quality
-  This is the minimum link quality required in order to reliably pass data between nodes, and the default value is 35%. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if a node must send every packet twice for it to be successfully received, the link quality would be 50%.
+  This is the minimum link quality required in order to reliably pass data between nodes, and the default value is ``35%``. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if a node must send every packet twice for it to be successfully received, the link quality would be 50%.
 
 LAN Hotspot Radio settings
 ++++++++++++++++++++++++++
 
-This option configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ wifi hotspot for your node's LAN network. Any device that connects to your node using its wifi hotspot will receive an IP address on your node's LAN subnet.
+This option configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi hotspot for your node's LAN network. Any device that connects to your node using its wifi hotspot will receive an IP address on your node's LAN subnet.
 
 .. image:: _images/admin-radio-2.png
  :alt: Admin Radio Settings 2

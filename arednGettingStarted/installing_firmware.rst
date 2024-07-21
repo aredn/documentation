@@ -211,7 +211,7 @@ For Mikrotik devices you will use what is called *Etherboot* mode, and there are
 If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface or command line. Navigate to *System > Routerboard > Settings > Boot Device* to uncheck or deselect ``Protected Routerboot``. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN® firmware install checklist.
 
 Install Preparation
-  - Download *both* of the appropriate Mikrotik *factory* and *sysupgrade* files from the AREDN® website. Rename the *initramfs-kernel* file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
+  - Download *both* of the appropriate Mikrotik *kernel* and *sysupgrade* files from the AREDN® website. Rename the *initramfs-kernel* file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 
   - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your server will avoid having to change IP addresses on your computer during the install process. AREDN® firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
 
@@ -260,7 +260,7 @@ Windows Procedure
 Install the *sysupgrade* Firmware Image
   1. After booting the **elf** image the node will have a default IP address of 192.168.1.1. Your computer should already have a static IP address on this subnet, but if not then give your computer an IP address on this subnet.
 
-  .. warning:: For the *Mikrotik hAP ac* family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.
+  .. warning:: **For the Mikrotik hAP ac family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.**
 
   2. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
@@ -336,7 +336,7 @@ Download the *Install Checklist* for GL-iNet devices. These devices allow you to
 
 After the GL-iNet device is first booted and configured, navigate to the **Upgrade** section and click *Local Upgrade* to select the AREDN® *sysupgrade.bin* file you downloaded for your device.
 
-.. warning:: Be sure to uncheck the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN® firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
+.. warning:: Be sure to **uncheck** the *Keep Settings* checkbox, since GL.iNet settings are incompatible with AREDN® firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
 
 The node will automatically reboot with the new AREDN® firmware image. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNet debrick procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_
@@ -357,7 +357,8 @@ The reset button on an AREDN® node has two built-in functions based on the leng
 
 With the node powered on and fully booted:
 
-* To reset only the node admin password and DHCP service, hold the reset button for **5 seconds**. The default *admin* password is ``hsmm``.
-* To reset the entire configuration to "firstboot" state, hold the reset button for **15 seconds**.
+- To reset only the node admin password and DHCP service, hold the reset button for **5 seconds**. The default *admin* password is ``hsmm``.
+
+- To reset a node to "firstboot" state, hold the reset button for **15 seconds**.
 
 On some equipment models it may be possible to accomplish these reset procedures by pressing the *Reset* button on the PoE unit.

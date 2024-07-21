@@ -11,7 +11,7 @@ Once you have completed the initial setup on your AREDN® node, you can connect 
 
 |
 
-This display has been designed to present all of the important information about your node in one place. Someone navigating to your node's status display will be able to see all of the key elements of interest without having to click to multiple pages. This display consists of a top bar, a left side bar, and three columns of information about your node.
+This display has been designed to present all of the important information about your node in one place. Someone navigating to your node's status display will be able to see all of the key elements of interest without having to click to multiple pages. This display consists of a top navigation bar, a left navigation bar, and three columns of information about your node.
 
 Top Nav Bar
 -----------
@@ -50,7 +50,7 @@ Firmware Information
   This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``. If your node has access to the Internet you can also click on the *issues* label below the firmware version, and this will open the AREDN® `Issues <https://github.com/aredn/aredn/issues>`_ page on GitHub. Clicking the *release notes* label will open the `Changelog <https://downloads.arednmesh.org/snapshots/CHANGELOG.md>`_ page on the AREDN® website.
 
 Network Information
-  The Mesh IP address/netmask is displayed using `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ notation, followed by the :abbr:`LAN (Local Area Network)` IP address/netmask. If the :abbr:`WAN (Wide Area Network)` interface is enabled, the WAN IP address/netmask is displayed along with whether this address was obtained via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ or assigned as a static IP address. The WAN gateway IP address is also displayed along with the IP(s) of the WAN `DNS servers <https://en.wikipedia.org/wiki/Domain_Name_System>`_.
+  The Mesh IP address/netmask is displayed using `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ notation, followed by the :abbr:`LAN (Local Area Network)` IP address/netmask. If the :abbr:`WAN (Wide Area Network)` interface is enabled, the WAN IP address/netmask is displayed along with whether this address was obtained via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ or assigned as a static IP address. The WAN gateway IP address is also displayed.
 
 Node Location Information
   At the bottom of the left column is the node location information. Initially there will be no location values since the latitude, longitude, and grid square have not yet been entered. After the latitude, longitude, and grid square have been entered (as described in the **Node Admin** guide), your node will attempt to display a thumbnail map with its location in the center. If your node has no access to the Internet or to a local map tile server, then the map will not be displayed. The latitude, longitude, and grid square values will be shown below the map thumbnail.
@@ -58,13 +58,13 @@ Node Location Information
 Center Column
 -------------
 
-The center column has three main sections (listed from top to bottom).
+The center column has four main sections (listed from top to bottom).
 
 Local Services
   This section displays the service links for any mesh services on your node or its locally-connected devices. These service links are displayed side by side in two columns. Clicking any of the links will navigate to the selected service.
 
 Local Devices
-  This section displays any devices that are directly connected to your node. This includes devices that are connected to your node's :abbr:`LAN (Local Area Network)` via Ethernet cable (such as :abbr:`VoIP (Voice over IP)` phones, IP cameras, or service computers). Be aware that DHCP devices with *Do Not Propagate* checked will not be displayed under the *Local Devices* section.
+  This section displays any devices that are directly connected to your node. This includes devices that are connected to your node's :abbr:`LAN (Local Area Network)` via Ethernet cable (such as :abbr:`VoIP (Voice over IP)` phones, IP cameras, or service computers). Be aware that DHCP devices with *Do Not Propagate* checked will not be displayed.
 
   .. admonition:: Basic Link Quality Metrics
 
@@ -94,19 +94,19 @@ Right Column
 The right column displays additional details about your node (listed from top to bottom).
 
 Radio section
-  Your radio manufacturer and model are displayed at the top of the column. Next is the channel number and frequency range set on your radio, followed by the channel width (in :abbr:`MHz (Megahertz)`). Below that is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) set for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, including the azimuth, height above ground level, and tilt angle / elevation (if directional).
+  Your radio manufacturer and model are displayed at the top of the column. Next is the channel number and frequency range set on your radio, followed by the channel width (in :abbr:`MHz (Megahertz)`). Below that is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) set for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
 
 Mesh section
   Next there are summary statistics showing how many nodes are currently visible on the network, as well as the total number of devices that exist on the mesh.
 
 LAN DHCP section
-  By default each node runs a `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ server which is capable of automatically providing IP addresses for any LAN-connected devices. This section shows whether the :abbr:`DHCP (Dynamic Host Configuration Protocol)` server is enabled, and if so it displays the IP address/netmask of your node functioning as the gateway for its LAN-connected devices. It also shows the IP address range served by your node, any active leases, and any IP addresses that have been reserved for specific devices on its :abbr:`LAN (Local Area Network)`. In addition, counts are displayed for the number of active and reserved DHCP leases, as well as for the number of DHCP tags and options that are defined on your node.
+  By default each node runs a `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ server which is capable of automatically providing IP addresses for any LAN-connected devices. This section shows the :abbr:`DHCP (Dynamic Host Configuration Protocol)` server status, the IP address/netmask of your node functioning as the gateway for its LAN-connected devices, and the IP address range served by your node. It also shows the number of active leases and IP addresses reserved for specific devices on its :abbr:`LAN (Local Area Network)`. In addition, counts are displayed for the number of DHCP tags and options that are defined on your node.
 
 Ethernet Ports & Xlinks
   If you have a multiport node or one which supports xlinks, then the *Ethernet Ports & Xlinks* section will be displayed. This shows the number of Ethernet ports on the device, as well as how many of them are actively in use. You will also see the number of xlinks that you have defined on this node.
 
 Tunnels section
-  This section displays statistics on any tunnel connections you may have on your node. The *Wireguard* section shows information for Wireguard tunnels, while the *Legacy* section shows information for the older vtun tunnels. Counts are displayed for active / allocated tunnel client connections as well as for active / allocated tunnel server connections on your node.
+  This section displays statistics on any tunnel connections you may have on your node. The *Wireguard* section shows information for Wireguard tunnels, while the *Legacy* section shows information for the older *vtun* tunnels. Counts are displayed for active / allocated tunnel client connections as well as for active / allocated tunnel server connections on your node.
 
 
 .. |icon1| image:: ../_icons/login.png

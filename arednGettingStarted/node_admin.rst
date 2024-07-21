@@ -11,7 +11,7 @@ You must login as the node administrator in order to perform node management tas
 Admin navigation & actions
 --------------------------
 
-In *admin* mode the sections on the **node status** display become editable and new sections with additional options will appear. When you hover the cursor over a section and a light gray background appears, this identifies that section as being configurable. When you click a section, a new settings dialog display will be opened. The title at the top of the display tells you what settings you are configuring. There is also a ``Help`` button in the upper right corner which will enable extended context-sensitive descriptions of each option which has additional help text.
+In *admin* mode the sections on the **node status** display become editable and new sections with additional options will appear. When you hover the cursor over a section and a gray background appears which identifies that section as being configurable. When you click a section, a new settings dialog display will be opened. The title at the top of the display tells you what settings you are configuring. There is also a ``Help`` button in the upper right corner which will enable extended context-sensitive descriptions of each option which has additional help text.
 
 Settings can be edited or selected from dropdown lists by clicking in each of the fields. If a section has **Advanced Options** you can view and configure them by clicking *Advanced Options* to display those additional settings. After making any changes to the configuration settings on each display, you will typically click the ``Done`` button. Your changes have been recorded but they have not yet been committed or saved to your node. You may also click the ``Cancel`` button to discard any changes you have made and return to the *admin* view.
 
@@ -37,7 +37,7 @@ The Name & Security section allows you to configure the following settings. Cont
 |
 
 Node Name
-  Begin the node name with your CALLSIGN in all capital letters followed by a dash character and some unique identifying information of your choice. Node names may contain up to 63 letters, numbers, and dashes, but cannot begin or end with a dash. Underscores, spaces, or any other characters are not allowed. Amateur radio operators are required to identify all transmitting stations, so your node name is beaconed automatically by the node every five minutes. Recommended names follow the (CALLSIGN)-(label) format, such as AD5BC-MOBILE or AD5BC-120SE. As a general rule node names should be kept as short as possible, while clearly and uniquely identifying the node.
+  Begin the node name with your CALLSIGN in all capital letters followed by a dash character and some unique identifying information of your choice. Node names may contain up to 63 letters, numbers, and dashes, but cannot begin or end with a dash. Underscores, spaces, or any other special characters are not allowed. Amateur radio operators are required to identify all transmitting stations, so your node name is beaconed automatically by the node every five minutes. Recommended names follow the (CALLSIGN)-(label) format, such as AD5BC-MOBILE or AD5BC-120SE. As a general rule node names should be kept as short as possible, while clearly and uniquely identifying the node.
 
 Description
   This is not a required field, but it is a good place to describe the features or function of this device. Many operators use this field to list their contact information or the tactical purpose for the node. There are no character restrictions in the field, but the maximum length allowed is 210 characters.
@@ -51,7 +51,7 @@ Theme
 Password
   Typically passwords may contain the characters ``a-z``, ``A-Z``, ``0-9``, period ``.``, dash ``-``, underscore ``_``, exclamation ``!``, and tilde ``~``. Avoid Linux-reserved characters, including but not limited to ``#``, ``$``, ``&``, ``*``, ``<``, ``>``. Enter the new password again in the *Retype Password* box to verify it is correct. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text. Be sure to remember or record the new password so you can use it for any future administrative tasks on the node.
 
-Addition options will be displayed when you click **Advanced Options**.
+Additional options will be displayed when you click **Advanced Options**.
 
 .. image:: _images/admin-name-security-2.png
   :alt: Admin Name and Security Advanced Options
@@ -62,7 +62,7 @@ Addition options will be displayed when you click **Advanced Options**.
 Upload SSH Key
   Uploading SSH keys allows computers to connect to the node via SSH without having to know the password. The SSH keys are generated on your computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload the *public* key to your AREDN® node. Click the ``Browse`` button and locate the *public* key file, then click the ``Upload Key`` button at the lower right.
 
-  .. note:: If you plan to use ssh keys you may want to review **Use PuTTYGen to Make SSH Keys** in the **How-To Guide** section which describes this process in detail for users of Microsoft Windows computers.
+  .. note:: If you plan to use ssh keys you may want to review **Use PuTTYGen to Make SSH Keys** in the **How-To Guide** section which describes this process for users of Microsoft Windows computers.
 
 Remove SSH Key
   To remove an existing SSH key, click in the field at the right and select the key from the dropdown list. Then click the ``Remove Key`` button at the lower right.
@@ -94,17 +94,17 @@ The top field displays the currently installed version of firmware on your node.
 |
 
 Download Firmware
-  If your node has Internet access or access to a firmware repository on your local network, you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
+  If your node has Internet access or access to a firmware server on your local network, you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
 Upload Firmware
   If you have a new firmware image that you already downloaded to your local computer from the AREDN® website or a local firmware repository, click the ``Browse`` button and navigate to the location where you saved the firmware file. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
 Sideload Local Firmware
-  If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp`` folder, and name it ``local_firmware.bin``. Once the node detects the presence of ``/tmp/local_firmware.bin``, then the filename in the field at the right will be active. Click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
+  If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp`` folder, and name it ``local_firmware.bin``. Once the node detects the presence of ``/tmp/local_firmware.bin``, then the filename in the field at the right will become active. Click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
-A progress bar at the bottom of the display will show the status of any your download or upload. You should then see a message that the image is being installed, along with a timer indicating its progress. Any error messages will also be displayed in a message bar at the top of this display.
+A progress bar at the bottom of the display will show the status of any your download or upload. Any error messages will also be displayed in a message bar at the top of this display. You should then see a display showing that the image is being installed, along with a timer and progress indicator.
 
-Addition options will be displayed when you click **Advanced Options**.
+Additional options will be displayed when you click **Advanced Options**.
 
 .. image:: _images/admin-firmware-2.png
   :alt: Admin Firmware Advanced Options
@@ -113,20 +113,20 @@ Addition options will be displayed when you click **Advanced Options**.
 |
 
 Keep Configuration
-  This is enabled by default and will allow you to retain your existing configuration settings during the firmware upgrade process. If you do not want any existing configuration settings to be retained, you can ``disable`` this setting.
+  This is enabled by default and will allow you to retain your existing configuration settings during the firmware upgrade process. If you do not want any existing configuration settings to be retained, you can ``disable`` this setting and the node will come up in "firstboot" state.
 
 Dangerous Upgrade
   This setting allows you to disable the normal firmware compatibility safety checks that typically prevent you from loading the wrong firmware image on your node. The default setting is ``disabled`` which means that the safety checks remain active, and this setting should not be changed unless you have a specific reason to bypass the firmware compatibility checks. One example for using this setting would be if you mistakenly installed an incorrect firmware image and would like to correct that mistake by installing the correct firmware image.
 
 Firmware URL
-  This is the source URL that is queried by the *Download Firmware* process in order to refresh the list of available firmware for your node. The default value is ``https://downloads.arednmesh.org`` which allows your Internet-connected node to retrieve firmware from the AREDN® website. You can also set this firmware URL to a local network server which provides firmware images.
+  This is the source URL that is queried by the *Download Firmware* process in order to refresh the list of available firmware for your node. The default value is ``https://downloads.arednmesh.org`` which allows your Internet-connected node to retrieve firmware from the AREDN® website. You can also set this firmware URL to a local server which provides firmware images.
 
 If you are only making changes to firmware settings, you will click the ``Done`` button. You are then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. However, if you are updating the node's firmware as described in the previous sections, then the ``Fetch and Update`` process will begin immediately and you are not required to click the *Done* button.
 
 Package settings
 ----------------
 
-This display allows you to install or remove software packages on the node. When you install packages, your node will remember them in its package store. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will automatically reinstall any packages in its package store. If you *uploaded* the package to the node, then the package store keeps a copy of the package code itself. If you *downloaded* the package, then your node will attempt to re-download it. Also, if you later *remove* one of your extra packages, it will be automatically removed from the package store. Context-sensitive help is available by clicking the ``Help`` button.
+This display allows you to install or remove software packages on the node. When you install packages, your node will remember them in its package store. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will automatically reinstall any packages in its package store. If you originally *uploaded* the package to the node, then the package store keeps a copy of the package code itself. If you originally *downloaded* the package, then your node will attempt to re-download it. Also, if you later *remove* one of your extra packages, it will be automatically removed from the package store. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-packages.png
  :alt: Admin Packages
@@ -135,7 +135,7 @@ This display allows you to install or remove software packages on the node. When
 |
 
 Download Package
-  If the node has a connection to the Internet, it can retrieve a package from the AREDN® website. Click the *refresh* icon at the right of the field to update the list of packages available for download. Select the package you want to install, click the ``Fetch and Install`` button, and wait for the package to be installed. A progress bar at the bottom of the display will show the status of the process. A status message will appear at the top of the display to indicate whether the package was installed successfully.
+  If the node has a connection to the Internet or to a local package server, it can retrieve a package from the AREDN® website or from the local server. Click the *refresh* icon at the right of the field to update the list of packages available for download. Select the package you want to install, click the ``Fetch and Install`` button, and wait for the package to be installed. A progress bar at the bottom of the display will show the status of the process. A status message will appear at the top of the display to indicate whether the package was installed successfully.
 
 Upload Package
   If you have a package file that you already downloaded to your local computer from a package repository, click the ``Browse`` button and navigate to the location where you saved the package file. After selecting the package, click the ``Fetch and Update`` button and wait for the package to be uploaded and installed. A progress bar at the bottom of the display will show the status of the upload and install. A status message will appear at the top of the display to indicate whether the package was installed successfully.
@@ -143,10 +143,10 @@ Upload Package
 Remove Package
   Click in the field at the right to show a list of packages currently installed on the node. Select a package and click the ``Remove`` button to uninstall the selected package. You will only be able to remove packages that you have added to your node. A progress bar at the bottom of the display will show the status of the remove process. A status message will appear at the top of the display to indicate whether the package was removed successfully.
 
-Addition options will be displayed when you click **Advanced Options**.
+Additional options will be displayed when you click **Advanced Options**.
 
 Package URL
-  This field contains the URL which your node will use to download packages. The default value is ``https://downloads.arednmesh.org`` which allows your Internet-connected node to retrieve packages from the AREDN® website. You can also set this package URL to a local network server which provides packages.
+  This field contains the URL which your node will use to download packages. The default value is ``https://downloads.arednmesh.org`` which allows your Internet-connected node to retrieve packages from the AREDN® website. You can also set this package URL to a local server which provides packages.
 
 If you are only making changes to package settings, you will click the ``Done`` button. You are then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. However, if you are installing or removing a package as described in the previous sections, then the install or remove process will begin immediately and you are not required to click the *Done* button.
 
@@ -164,7 +164,7 @@ This display allows you to update the network settings on your node. Context-sen
 Mesh
 ++++
 
-The **Mesh Address** is the primary IP address of your node. The AREDN® firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses of your node. Normally you will not need to change this, so keep this value unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
+The **Mesh Address** is the primary IP address of your node. The AREDN® firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses on your node. Normally you will not need to change this, so keep this value unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
 LAN
 +++
@@ -178,7 +178,7 @@ The most common configuration is to have the LAN address space managed automatic
 When you connect a device to your node's LAN, not only will it have an IP address in the LAN IP address range, but it is best practice for LAN device to obtain its DNS Server information automatically from the node. Be aware that if a LAN device does not use the DNS Server entry provided by the node to which it is connected, then that device will be unable to resolve hostnames on the mesh network. Also, hard-coding a device's DNS Server entry with the mesh node's IP address could result in unexpected failures if that IP address changes.
 
 NAT Mode
-  Another choice for *LAN Size* is ``NAT`` and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node itself. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed through port forwarding rules.
+  UPDATE THIS SECTION FOR THE NEW UI <<< Another choice for *LAN Size* is ``NAT`` and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node itself. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed through port forwarding rules.
 
 
 
@@ -197,7 +197,7 @@ DNS
 Advanced Options
 ++++++++++++++++
 
-Addition options will be displayed when you click **Advanced Options**.
+Additional options will be displayed when you click **Advanced Options**.
 
 .. image:: _images/admin-network-2.png
   :alt: Admin Network Advanced Options
@@ -225,7 +225,7 @@ LAN to WAN
   The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
 
 LAN default route
-  Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes to more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
+  Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes for more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -244,9 +244,7 @@ Any values you enter should be in decimal format, and the values in these three 
 
 Location information is used to determine the distance between your node and others, and it is required for optimizing connection latency and bandwidth. A Maidenhead grid square is a six character designation of a node's location. A grid square identifier consists of two uppercase letters, two digits, two lowercase letters. Each grid square is approximately 3x4 miles in size.
 
-
-
-Addition options will be displayed when you click **Advanced Options**.
+Additional options will be displayed when you click **Advanced Options**.
 
 .. image:: _images/admin-location-2.png
   :alt: Admin Location Advanced Options
@@ -255,7 +253,7 @@ Addition options will be displayed when you click **Advanced Options**.
 |
 
 Map URL
-  The map URL is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get the map data from the AREDN® server. The (lat) and (lon) parameters in the URL are substitutes with your GPS coordinates before the map is rendered. If there is a local map tile server available on your mesh network, then you can point your node to the local server for its map data.
+  The map URL is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get map data from the AREDN® server. The (lat) and (lon) parameters in the URL are substitutes with your GPS coordinates before the map is rendered. If there is a local map tile server available on your mesh network, then you can point your node to the local server for its map data.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -284,10 +282,10 @@ Cloud Mesh
   |icon5| You may connect to any node on the worldwide mesh by clicking your node's Cloud Mesh icon on the left nav bar. Disable this option if you never want your node to provide a method of accessing devices on the worldwide mesh network.
 
 iPerf3 Server
-  This switch enables the built-in iperf3 client and server tools on your node. This makes it easy to perform bandwidth tests between arbitrary nodes in the network. The client and server are only invoked on demand, so there is no performance impact on the node except when tests are performed. The default value is ``enabled``. Testing with iperf3 is described in the "Test Network Links with iperf3" section of the **How-To Guide**. If you do not want your node to participate in any remote iperf3 tests then you can ``disable`` its ability to respond to those queries.
+  This switch enables the built-in iperf3 tools on your node. This makes it easy to perform throughput tests between nodes in the network. The client and server are only invoked on demand, so there is no performance impact on the node except during testing. The default value is ``enabled``. If you do not want your node to participate in any remote iperf3 tests then you can ``disable`` its ability to respond to those queries.
 
 Remote Logging
-  The limited amount of memory for local node logs means that older information will roll off, and all log information is lost when your node is rebooted. By entering the URI for a remote log server, you can send your node's log info to a server using the syslog protocol. The format for this option is ``udp://ip-address:port`` or ``tcp://ip-adress:port``. Leave this field blank if no remote logging is desired.
+  The limited amount of memory for local node logs means that older information will roll off, and all log history is lost when your node is rebooted. By entering the URI for a remote log server, you can send your node's log info to a server using the syslog protocol. The format for this option is ``udp://ip-address:port`` or ``tcp://ip-adress:port``. Leave this field blank if no remote logging is desired.
 
 WAN ssh
   This switch enables SSH access to your node on its WAN interface. Disabling this option will not prevent SSH access to your node from the Mesh and LAN interfaces.
@@ -299,7 +297,7 @@ WAN web
   This switch enables http/https access to your node on its WAN interface. Disabling this option will not prevent http/https access to your node from the Mesh and LAN interfaces.
 
 Watchdog
-  Watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, Watchdog will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund (if tunneling is enabled). Watchdog events are logged in the standard syslog on the node. Because the watchdog is in the hardware, even if the kernel crashes, the device will still reboot itself. If Watchdog is enabled, the following two fields will also be displayed.
+  Watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, Watchdog will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Watchdog events are logged in the standard syslog on the node. Because the watchdog is part of the hardware, the device will still reboot itself even if the kernel crashes. If Watchdog is enabled, the following two fields will also be displayed.
 
   Watchdog IP address
     You may also include one or more IP addresses, at least one of which should always be pingable. Your node will be rebooted if none of the IP addresses are reachable across the network. Enter IP addresses as a whitespace-delimited list. It is strongly recommended that you keep this list to the absolute minimum. Too many address can take a long time to check, especially if several are unavailable. This can result in reboots if the testing is not performed before the watchdog timer expires. Ideally use only one address.
@@ -320,7 +318,7 @@ Message Updates
   |
 
 Local Message URL
-  This field allows you to enter the URL for a local message source. If you configure a local message server, then your nodes without Internet access can also receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.
+  This field allows you to enter the URL for a local message source. If you configure a local message server, then even nodes without Internet access can receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.
 
   A local message server can be configured on a mesh-connected web server which allows nodes to query the URL you entered. There is also a separate package called *AREDN® Alert Message Manager* which allows the local message repository to be hosted on the node itself, rather than requiring a separate LAN-conneted web server. You can find out more about this application by reading *AREDN® Alert Message Manager* in the **Applications and Services Guide** under the *Other Services* section.
 
@@ -549,7 +547,7 @@ Elevation
 Advanced Radio Options
 ++++++++++++++++++++++
 
-Addition options will be displayed when you click **Advanced Options**.
+Additional options will be displayed when you click **Advanced Options**.
 
 .. image:: _images/admin-radio-5.png
  :alt: Admin Radio Settings 5
@@ -609,7 +607,7 @@ Active Leases
   Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. As mentioned above, you can reserve that host's DHCP address by clicking the [+] icon at the right of the row. You will see that host now appear in the *Address Reservations* list.
 
 Advanced Options
-  Addition options will be displayed when you click **Advanced Options**. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
+  Additional options will be displayed when you click **Advanced Options**. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
 
   The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is the source for information about all DHCP options. Specific vendor equipment may or may not support all of the options, so you should verify which options are supported by referring to the manufacturer's documentation for your LAN device.
 

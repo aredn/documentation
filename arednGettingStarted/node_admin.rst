@@ -186,7 +186,7 @@ NAT Mode
 
   |
 
-  In ``NAT`` mode you are responsible for managing the IP address space of your node's LAN network. Enter the LAN IP address and netmask in dotted decimal format. Specify the last octet of the IP address that your node's DHCP service will use as its starting address, as well as the last octet of the ending address which limits the DHCP range which will be provided by your node for its LAN devices.
+  In ``NAT`` mode you are responsible for managing the IP address space of your node's LAN network. Enter the LAN IP address and netmask in dotted decimal format. Specify the final octet of the IP address that your node's DHCP service will use as its *DHCP Start* address as well as the *DHCP End* address, which defines the IP address range that will be provided via DHCP for LAN devices.
 
 WAN
 +++

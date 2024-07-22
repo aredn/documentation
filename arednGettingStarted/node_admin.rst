@@ -178,9 +178,15 @@ The most common configuration is to have the LAN address space managed automatic
 When you connect a device to your node's LAN, not only will it have an IP address in the LAN IP address range, but it is best practice for LAN device to obtain its DNS Server information automatically from the node. Be aware that if a LAN device does not use the DNS Server entry provided by the node to which it is connected, then that device will be unable to resolve hostnames on the mesh network. Also, hard-coding a device's DNS Server entry with the mesh node's IP address could result in unexpected failures if that IP address changes.
 
 NAT Mode
-  UPDATE THIS SECTION FOR THE NEW UI <<< Another choice for *LAN Size* is ``NAT`` and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node itself. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed through port forwarding rules.
+  Another choice for *LAN Size* is ``NAT`` and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node itself. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed from the mesh using port forwarding rules.
 
+  .. image:: _images/admin-network-nat.png
+   :alt: Admin Network - NAT
+   :align: center
 
+  |
+
+  In ``NAT`` mode you are responsible for managing the IP address space of your node's LAN network. Enter the LAN IP address and netmask in dotted decimal format. Specify the last octet of the IP address that your node's DHCP service will use as its starting address, as well as the last octet of the ending address which limits the DHCP range which will be provided by your node for its LAN devices.
 
 WAN
 +++

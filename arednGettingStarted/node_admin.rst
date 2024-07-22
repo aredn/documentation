@@ -649,9 +649,9 @@ Ports (if available)
   If you want to change a port's configuration, simply check or uncheck the settings desired on each port.
 
 Xlinks
-  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® links. To add an xlink click the [+] icon, enter an unused VLAN number for the link. Enter the IP address of the near-side device, the IP address of the far-side device, and a weighting factor which will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN® traffic.
+  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® links. To add an xlink click the [+] icon, enter an unused VLAN number for the link. Enter the IP address of the near-side device, the IP address of the far-side device, the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask, and a weighting factor which will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to determine the best route for AREDN® traffic.
 
-  In the example above on a multiport device, you also enter the port to which the near-side device is connected on your node, as well as the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
+  In the example above on a multiport device, you also enter the port to which the near-side device is connected on your node. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

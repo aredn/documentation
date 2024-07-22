@@ -94,10 +94,10 @@ Right Column
 The right column displays additional details about your node (listed from top to bottom).
 
 Radio section
-  Your radio manufacturer and model are displayed at the top of the column. Next is the channel number and frequency range set on your radio, followed by the channel width (in :abbr:`MHz (Megahertz)`). Below that is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) set for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
+  Your device manufacturer and model are displayed at the top of the column. If a radio is configured as a ``Mesh`` radio then you will see the channel number and frequency range, followed by the channel width (in :abbr:`MHz (Megahertz)`). Next is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
 
 Mesh section
-  Next there are summary statistics showing how many nodes are currently visible on the network, as well as the total number of devices that exist on the mesh.
+  Next there are summary statistics showing how many nodes are currently visible on the network, as well as the total number of devices on the mesh.
 
 LAN DHCP section
   By default each node runs a `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ server which is capable of automatically providing IP addresses for any LAN-connected devices. This section shows the :abbr:`DHCP (Dynamic Host Configuration Protocol)` server status, the IP address/netmask of your node functioning as the gateway for its LAN-connected devices, and the IP address range served by your node. It also shows the number of active leases and IP addresses reserved for specific devices on its :abbr:`LAN (Local Area Network)`. In addition, counts are displayed for the number of DHCP tags and options that are defined on your node.

@@ -98,13 +98,13 @@ Neighborhood Nodes
 
     In the example above, the node name and statistics are displayed in red, and hovering over the node name displays status text indicating that the RF status is "bad". The following list shows how the text colors are mapped to link quality.
 
-    - green = excellent
-    - dark green = good
-    - blue = okay
-    - orange = poor
-    - red = bad
-    - gray = idle
-    - strikethrough = blocked
+    :green: excellent
+    :dark green: good
+    :blue: okay
+    :orange: poor
+    :red: bad
+    :gray: idle
+    :strikethrough: blocked
 
 Right Column
 ------------

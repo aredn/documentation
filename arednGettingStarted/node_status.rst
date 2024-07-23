@@ -88,13 +88,31 @@ Local Nodes
 Neighborhood Nodes
   This section displays any nodes that are direct neighbors of your node, whether via :abbr:`RF (radio frequency)`, an xlink, or a tunnel over an Internet connection. Each type of connection will display a different icon to the right of the node name, and this indicates the type of link (for example, the small radio signal icon in the screenshot above indicates an RF link). If a node is reachable from your node, you can click the node name to navigate to that node. Not all the columns for link quality statistics will be populated for *Neighborhood Nodes*. If you hover the cursor over the node name, a popup will appear showing the relative link quality of the connection to that node.
 
+  .. admonition:: Node Status Indicators
+
+    For nodes in the *Local Nodes* and *Neighborhood Nodes* sections, different colors, styles, and hover text may be displayed based on the quality of the connection to each node.
+
+    .. image:: _images/node-status-indicators.png
+       :alt: Node status indicators
+       :align: center
+
+    In the example above, the node name and statistics are displayed in red, and hovering over the node name displays status text indicating that the RF status is "bad". The following list shows how the text colors are mapped to link quality.
+
+    - green = excellent
+    - dark green = good
+    - blue = okay
+    - orange = poor
+    - red = bad
+    - gray = idle
+    - strikethrough = blocked
+
 Right Column
 ------------
 
 The right column displays additional details about your node (listed from top to bottom).
 
 Radio section
-  Your device manufacturer and model are displayed at the top of the column. If a radio is configured as a ``Mesh`` radio then you will see the channel number and frequency range, followed by the channel width (in :abbr:`MHz (Megahertz)`). Next is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
+  Your device manufacturer and model are displayed at the top of the column. Additional information is displayed only if a radio is configured as a ``Mesh`` radio. You will see the channel number and frequency range, followed by the channel width (in :abbr:`MHz (Megahertz)`). Next is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
 
 Mesh section
   Next there are summary statistics showing how many nodes are currently visible on the network, as well as the total number of devices on the mesh.

@@ -99,6 +99,8 @@ Download the appropriate *factory* file for your device by following the instruc
 Ubiquiti 802.11ac First Install Process
 ---------------------------------------
 
+*Contributor: Tim Wilkinson KN6PLV*
+
 .. attention:: The install process for these devices requires detailed steps that are best followed using the procedure below, so no separate *Install Checklist* is provided for Ubiquiti 802.11ac devices.
 
 Prerequisites

@@ -80,7 +80,7 @@ Local Devices
 
     - ``mbps`` is a rolling average of the data rate achieved across any radio (RF) link. This column may show zero if the data being transmitted between these nodes is not sufficient for the metric to be calculated.
 
-    - ``miles`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes.
+    - ``dist`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes. This value will be expressed in *miles* or *kilometers* based on the locale settings in the web browser.
 
 Local Nodes
   This section displays any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node, typically via Ethernet cable. If you hover the cursor over the node name, a popup will appear showing the relative link quality of the connection to that node. Clicking the node name will navigate to that node's status page. For *Local Nodes* the snr, nsnr, mbps, and distance columns will always be blank.
@@ -112,7 +112,7 @@ Right Column
 The right column displays additional details about your node (listed from top to bottom).
 
 Radio section
-  Your device manufacturer and model are displayed at the top of the column. Additional information is displayed only if a radio is configured as a ``Mesh`` radio. You will see the channel number and frequency range, followed by the channel width (in :abbr:`MHz (Megahertz)`). Next is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
+  Your device manufacturer and model are displayed at the top of the column. Additional information is displayed only if a radio is configured as a ``Mesh`` radio. You will see the channel number and frequency range, followed by the channel width (in :abbr:`MHz (Megahertz)`). Next is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles or kilometers), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) for communication with other :abbr:`RF (radio frequency)` nodes. Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
 
 Mesh section
   Next there are summary statistics showing how many nodes are currently visible on the network, as well as the total number of devices on the mesh.

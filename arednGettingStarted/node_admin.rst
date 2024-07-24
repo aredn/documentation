@@ -40,7 +40,7 @@ Node Name
   Begin the node name with your CALLSIGN in all capital letters followed by a dash character and some unique identifying information of your choice. Node names may contain up to 63 letters, numbers, and dashes, but cannot begin or end with a dash. Underscores, spaces, or any other special characters are not allowed. Amateur radio operators are required to identify all transmitting stations, so your node name is beaconed automatically by the node every five minutes. Recommended names follow the (CALLSIGN)-(label) format, such as AD5BC-MOBILE or AD5BC-120SE. As a general rule node names should be kept as short as possible, while clearly and uniquely identifying the node.
 
 Description
-  This is not a required field, but it is a good place to describe the features or function of this device. Many operators use this field to list their contact information or the tactical purpose for the node. There are no character restrictions in the field, but the maximum length allowed is 210 characters.
+  This is not a required field, but it is a good place to describe the features or function of this device. Many operators use this field to list their contact information or the tactical purpose for the node. If you want to display information about your node, but that information here in the description rather than making it part of the node name. There are no character restrictions in the field, but the maximum length allowed is 210 characters.
 
 Notes
   This optional field allows you to enter notes about this node which are only visible to the node admin. For example, you may enter information about special settings or configurations for links to nearby devices.
@@ -486,7 +486,7 @@ Transmit Power
   Click in the field at the right to select from the power settings that are supported on your device.
 
 SSID Setting
-  The default SSID is provided in the field at the right. Typically you will not need to change this default unless you have a specific reason for putting radios on a non-default SSID to isolate their traffic.
+  The default SSID is provided in the field at the right. Typically you will not need to change this default unless you have a specific reason for putting radios on a non-default SSID to isolate their traffic. The SSID is analogous to a CTCSS tone; radios with different SSIDs but using the same channel may generate RF energy that causes interference, even though the radios will not be decoding each other's signals.
 
 Minimum SNR
   This is the minimum Signal-to-Noise ratio that you require in order to reliably pass radio data between nodes. The default is 15 dB, but you can lower this value if you require your node to continue passing data even on links that have reduced signal characteristics.
@@ -549,7 +549,7 @@ Height
   Click in the field at the right to enter a height in meters above ground level at which you have your antenna mounted.
 
 Elevation
-  Click in the field at the right to enter an angle (in degrees) of uptilt or downtilt that you have set on your antenna. Note that some omnidirectional antennas have a built-in downtilt, and that value can be entered here.
+  Click in the field at the right to enter an angle (in degrees) of uptilt or downtilt that you have set on your antenna. Note that some omnidirectional and sector antennas have a built-in downtilt, and that value can be entered here.
 
 Advanced Radio Options
 ++++++++++++++++++++++

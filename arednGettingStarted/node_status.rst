@@ -80,7 +80,7 @@ Local Devices
 
     - ``mbps`` is a rolling average of the data rate achieved across any radio (RF) link. This column may show zero if the data being transmitted between these nodes is not sufficient for the metric to be calculated.
 
-    - ``dist`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes.
+    - ``miles`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes.
 
 Local Nodes
   This section displays any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node, typically via Ethernet cable. If you hover the cursor over the node name, a popup will appear showing the relative link quality of the connection to that node. Clicking the node name will navigate to that node's status page. For *Local Nodes* the snr, nsnr, mbps, and distance columns will always be blank.

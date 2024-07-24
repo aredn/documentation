@@ -2,11 +2,11 @@
 Selecting Radio Hardware
 ========================
 
-The amateur radio community has recognized the benefits of using inexpensive commercial :abbr:`WISP (Wireless Internet Service Provider)` radios to create AREDN® networks. Each of these devices come with the vendor's firmware pre-installed, but by following a few simple steps this firmware can be replaced with an AREDN® firmware image.
+The amateur radio community has recognized the benefits of using inexpensive commercial :abbr:`WISP (Wireless Internet Service Provider)` radios to create AREDN® networks. Each of these devices come with the vendor's firmware pre-installed, but by following a few instructions this firmware can be replaced with an AREDN® firmware image.
 
 Several open source software projects have been adapted and enhanced to create the AREDN® firmware, including `OpenWRT (Open Wireless Router) <https://en.wikipedia.org/wiki/OpenWRT>`_ and `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_.
 
-The AREDN® team builds specific firmware images tailored to each type of radio, and the current list of supported devices is found on the AREDN® website. For a complete list of all supported hardware, including both *Stable Release* and *Nightly Build* firmware, refer to the `Supported Devices <http://downloads.arednmesh.org/snapshots/SUPPORTED_DEVICES.md>`_ list.
+The AREDN® team builds specific firmware images tailored to each type of radio, and the current list of supported devices is found on the AREDN® website. For a complete list of all supported hardware, including both *Stable Release* and *Nightly Build* firmware, refer to the `Supported Devices <http://downloads.arednmesh.org/snapshots/SUPPORTED_DEVICES.md>`_ list. If at all possible try to avoid using devices listed under the *Sunset* heading, since those older devices are being retired.
 
 When selecting a device for your AREDN® hardware there are several things to consider in your decision.
 

@@ -6,7 +6,7 @@ After you have installed the AREDN® firmware and rebooted the device, the node 
 
 The firstboot status page will be displayed, instructing you to configure your node by entering a node name and password for administrative access to your node.
 
-.. image:: _images/basic-firstboot.png
+.. image:: _images/install-firstboot.png
    :alt: Setup node at firstboot
    :align: center
 

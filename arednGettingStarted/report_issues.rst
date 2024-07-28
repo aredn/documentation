@@ -6,12 +6,12 @@ If you experience issues with building or using AREDN® devices, there are sever
 
 However, if you have issues that you think should be investigated by the AREDN® development team, you can follow the steps below for engaging with the software developers.
 
-Download a Support Data File
-  .. image:: _images/admin-support-data.png
-    :alt: Administration - Support Data Download
-    :align: right
+.. image:: _images/admin-support-data.png
+  :alt: Administration - Support Data Download
+  :align: right
 
-  Every node has a built-in tool that allows you to download a support data file containing information that is helpful for troubleshooting. To download a support data file from your node, login as your node *admin* and click the tools icon in the left nav bar. In the list of available tools, click the **Support Data** link and the support file will be downloaded to your computer. 
+Download a Support Data File
+    Every node has a built-in tool that allows you to download a support data file containing information that is helpful for troubleshooting. To download a support data file from your node, login as your node *admin* and click the tools icon in the left nav bar. In the list of available tools, click the **Support Data** link and the support file will be downloaded to your computer.
 
 Create a GitHub account
   To open an issue on GitHub you first must create your own GitHub account. This is free and easy to do by following these steps:

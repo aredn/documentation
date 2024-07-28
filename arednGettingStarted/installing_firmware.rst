@@ -213,11 +213,16 @@ For Mikrotik devices you will use what is called *Etherboot* mode, and there are
 If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface or command line. Navigate to *System > Routerboard > Settings > Boot Device* to uncheck or deselect ``Protected Routerboot``. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN® firmware install checklist.
 
 Install Preparation
-  - Download *both* of the appropriate Mikrotik *kernel* and *sysupgrade* files from the AREDN® website. Rename the *initramfs-kernel* file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
++++++++++++++++++++
 
-  - Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your server will avoid having to change IP addresses on your computer during the install process. AREDN® firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
+- Download *both* of the appropriate Mikrotik *kernel* and *sysupgrade* files from the AREDN® website. Rename the *initramfs-kernel* file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 
-  - Connect an Ethernet cable from your computer to the network switch as described at the top of this document, then connect another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a device which uses a separate power adapter (such as a *Mikrotik hAP ac* family device), connect the last Ethernet cable from the switch to the device's WAN port [1].
+- Set your computer’s Ethernet network adapter to a static IP address on the subnet you will be using for the new device. This can be any network number of your choice, but it is recommended that you use the 192.168.1.x subnet. Using the 192.168.1.x network on your server will avoid having to change IP addresses on your computer during the install process. AREDN® firmware uses the 192.168.1.x network once it is loaded, so using it all the way through the process will simplify things for you. For example, you can give your computer a static IP such as 192.168.1.10 with a netmask of 255.255.255.0. You can choose any number for the fourth octet, as long as it is *not* within the range of DHCP addresses you will be providing as shown below.
+
+- Connect an Ethernet cable from your computer to the network switch as described at the top of this document, then connect another cable from the LAN port of the PoE adapter to the switch. Finally connect an Ethernet cable from the *POE* port to the node, but leave the device powered off for now. If you are flashing a device which uses a separate power adapter (such as a *Mikrotik hAP ac* family device), connect the last Ethernet cable from the switch to the device's WAN port [1].
+
+Boot the *kernel* image
++++++++++++++++++++++++
 
 Linux Procedure
   If you are using a Linux or MacOS computer, use the following steps.
@@ -259,33 +264,35 @@ Windows Procedure
 
   .. tip:: If you have followed the install procedure above but your Mikrotik device does not boot the AREDN® *initramfs-kernel* file, you may be able to try the procedure on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN® firmware. You can find earlier versions in the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN® firmware, or download the MIPSBE version (routeros-mipsbe) for other Mikrotik devices. You need to download a RouterOS version that is equal or newer than the RouterOS version shown in the *Factory Firmware* field on your device.
 
-Install the *sysupgrade* Firmware Image
-  1. After booting the **kernel** image the node will have a default IP address of 192.168.1.1. Your computer should already have a static IP address on this subnet, but if not then give your computer an IP address on this subnet.
+Install the *sysupgrade* firmware image
++++++++++++++++++++++++++++++++++++++++
 
-  .. warning:: **For the Mikrotik hAP ac family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.**
+1. After booting the **kernel** image the node will have a default IP address of 192.168.1.1. Your computer should already have a static IP address on this subnet, but if not then give your computer an IP address on this subnet.
 
-  2. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
+.. warning:: **For the Mikrotik hAP ac family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.**
 
-  .. image:: _images/install-mikrotik.png
-    :alt: Mikrotik sysupgrade file install
-    :align: center
+2. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
-  3. In a web browser, enter the URL ``http://192.168.1.1`` to display the page for selecting the **sysupgrade** file. Browse to find the *sysupgrade* file you previously downloaded to your computer, select it, and click the ``Upload & Reboot`` button.
+.. image:: _images/install-mikrotik.png
+  :alt: Mikrotik sysupgrade file install
+  :align: center
 
-  As an alternative to using the node's web interface, you can manually copy the *sysupgrade* file to the node and run a command line program to install the firmware. This will allow you to see any error messages that may not appear when using the web interface. Note that devices running AREDN® firmware images use port 2222 for secure copy/shell access.
+3. In a web browser, enter the URL ``http://192.168.1.1`` to display the page for selecting the **sysupgrade** file. Browse to find the *sysupgrade* file you previously downloaded to your computer, select it, and click the ``Upload & Reboot`` button.
 
-  Execute the following commands from a Linux computer:
+As an alternative to using the node's web interface, you can manually copy the *sysupgrade* file to the node and run a command line program to install the firmware. This will allow you to see any error messages that may not appear when using the web interface. Note that devices running AREDN® firmware images use port 2222 for secure copy/shell access.
 
-  ::
+Execute the following commands from a Linux computer:
 
-    my-computer:$ scp -P 2222 <aredn-firmware-filename>.bin root@192.168.1.1:/tmp
-    my-computer:$ ssh -p 2222 root@192.168.1.1
-    ~~~~~~~ after logging into the node with ssh ~~~~~~~
-    node:# sysupgrade -n /tmp/<aredn-firmware-filename>.bin
+::
 
-  To transfer the image from a Windows computer you can use a *Secure Copy* program such as *WinSCP*. Then use a terminal program such as *PuTTY* to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
+  my-computer:$ scp -P 2222 <aredn-firmware-filename>.bin root@192.168.1.1:/tmp
+  my-computer:$ ssh -p 2222 root@192.168.1.1
+  ~~~~~~~ after logging into the node with ssh ~~~~~~~
+  node:# sysupgrade -n /tmp/<aredn-firmware-filename>.bin
 
-  The node will now automatically reboot with the new AREDN® firmware image.
+To transfer the image from a Windows computer you can use a *Secure Copy* program such as *WinSCP*. Then use a terminal program such as *PuTTY* to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
+
+The node will now automatically reboot with the new AREDN® firmware image.
 
 TP-LINK First Install Process
 -----------------------------

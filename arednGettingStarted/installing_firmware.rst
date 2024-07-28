@@ -204,11 +204,11 @@ Download the *Install Checklist* for Mikrotik devices. These devices require a *
 
 Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. See the **Preparing Your Computer** section above for an explanation. The Windows example below uses *Tiny PXE*, while the Linux example uses the native ``dnsmasq`` program.
 
-For Mikrotik devices you will use what is called *Etherboot* mode, and there are several ways to put your device into *Etherboot* mode (depending on the version of the manufacturer's firmware it is running). The easiest way is to use the device's reset button as described in the procedure below. If for some reason this does not work, then you can try logging into the Mikrotik RouterOS and setting *System > Routerboard > Settings > Boot Device* to ``try-ethernet-once-then-nand`` (either through the RouterOS web interface or via command line). Next time the device boots it will try *Etherboot* once before defaulting back to regular boot mode.
-
 .. image:: _images/mikrotik-protectboot.png
   :alt: Uncheck Mikrotik Protected Boot
   :align: right
+
+For Mikrotik devices you will use what is called *Etherboot* mode, and there are several ways to put your device into *Etherboot* mode (depending on the version of the manufacturer's firmware it is running). The easiest way is to use the device's reset button as described in the procedure below. If for some reason this does not work, then you can try logging into the Mikrotik RouterOS and setting *System > Routerboard > Settings > Boot Device* to ``try-ethernet-once-then-nand`` (either through the RouterOS web interface or via command line). Next time the device boots it will try *Etherboot* once before defaulting back to regular boot mode.
 
 If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface or command line. Navigate to *System > Routerboard > Settings > Boot Device* to uncheck or deselect ``Protected Routerboot``. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN® firmware install checklist.
 

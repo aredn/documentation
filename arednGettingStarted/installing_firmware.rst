@@ -262,8 +262,6 @@ Windows Procedure
 
   6. The node will now automatically reboot with the temporary AREDN® Administration image.
 
-  .. tip:: If you have followed the install procedure above but your Mikrotik device does not boot the AREDN® *initramfs-kernel* file, you may be able to try the procedure on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN® firmware. You can find earlier versions in the `Mikrotik Download Archive <https://mikrotik.com/download/archive>`_. Download the ARM version (routeros-arm) for devices that use the *ipq40xx* AREDN® firmware, or download the MIPSBE version (routeros-mipsbe) for other Mikrotik devices. You need to download a RouterOS version that is equal or newer than the RouterOS version shown in the *Factory Firmware* field on your device.
-
 Install the *sysupgrade* firmware image
 +++++++++++++++++++++++++++++++++++++++
 
@@ -292,7 +290,10 @@ Execute the following commands from a Linux computer:
 
 To transfer the image from a Windows computer you can use a *Secure Copy* program such as *WinSCP*. Then use a terminal program such as *PuTTY* to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
 
-The node will now automatically reboot with the new AREDN® firmware image.
+.. tip:: There may be cases when your Mikrotik device boots the AREDN® *kernel* file but its RouterOS version does not allow the *sysupgrade* file to be installed. You can try the procedure on this page (`OpenWRT - downgrading RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_) to downgrade Mikrotik RouterOS prior to flashing the AREDN® firmware. Earlier versions of RouterOS and their NetInstall utilities can be found on the `Mikrotik website <https://mikrotik.com/download/archive>`_. Download an ARM version (``routeros-arm``) for devices that use the *ipq40xx* AREDN® firmware, or download a MIPSBE version (``routeros-mipsbe``) for other Mikrotik devices. Typically you can install a RouterOS version that is equal to or newer than the RouterOS version shown in the *Factory Firmware* field on the Mikrotik web display.
+
+
+After successfully installing the *sysupgrade* file the node will automatically reboot to the new AREDN® firmware image.
 
 TP-LINK First Install Process
 -----------------------------

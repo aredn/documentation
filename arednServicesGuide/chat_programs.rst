@@ -23,9 +23,9 @@ As originally designed, MeshChat uses the Perl programming language and is able 
 
 - `Latest Lua version of Meshchat at the new package maintainer's repository <https://github.com/hickey/meshchat/releases>`_
 
-- `Older Lua version of Meshchat for AREDN ≥3.22.6.0 (no longer maintained) <https://github.com/kn6plv/meshchat>`_
+- `Older Lua version of Meshchat (no longer maintained) <https://github.com/kn6plv/meshchat>`_
 
-- Original Perl version of Meshchat for AREDN ≤3.22.1.0 or for running Meshchat on a Raspbian or Debian computer (no longer maintained) 
+- Original Perl version for running Meshchat on a Raspbian or Debian computer (no longer maintained) 
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface

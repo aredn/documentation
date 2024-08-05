@@ -43,7 +43,7 @@ As more Supernodes are deployed linking more local networks, the overall perform
 Setting up a Supernode
 ----------------------
 
-Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Advanced Network* display (Port 5 by default).
+Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Ethernet Ports & Xlinks* display (Port 5 by default).
 
 .. image:: _images/supernode-localDTD.png
    :alt: DtD Link Example
@@ -57,11 +57,11 @@ The following steps are required to configure a Supernode.
 
 #. Configure the Supernode with a nodename prefixed with your callsign followed by a location identifier as well as the word "SUPERNODE." For example you could use ``AB2CD-NYC-SUPERNODE`` or ``AB6CD-LAX-SUPERNODE``
 
-#. Ensure that *Mesh RF* is ``disabled``
+#. Ensure that the *Mesh* radio is ``off``
 
 #. Provide a reserved or static IP address for the device's WAN connection to your Internet routing device.
 
-#. Do not add any other configuration settings at this point or you may encounter problems later in this process. At this point simply *Save Changes* and *Reboot* the device.
+#. Do not add any other configuration settings at this point or you may encounter problems later in this process. At this point you can ``Commit`` your changes and *reboot* the device.
 
 #. Login to the rebooted device via *ssh* or *telnet* to get a command line prompt, and then manually type and execute each of these commands:
 
@@ -93,9 +93,9 @@ If you do not see these lines, please start this process again from the beginnin
 Things to Avoid
   Here are several things **NOT** to do when configuring your Supernode.
 
-  - Your Supernode must **not** use any Cross-links (Xlinks) to other nodes.
+  - Your Supernode must **not** use any cross-links (xlinks) to other nodes.
   - Your Supernode must **not** have tunnel links to any non-Supernode devices.
-  - Your Supernode must **not** have its *Mesh RF* interface ``enabled`.` *Mesh RF* must be ``disabled`` as noted above.
+  - Your Supernode must **not** have its *Mesh* radio interface enabled.
 
 Before proceeding, make sure all the previous steps have been completed successfully. Now you should be able to connect to another Supernode using a tunnel. The easiest way to do this is to ask another Supernode owner for a set of tunnel client credentials. Your node can use either a client or server tunnel link. Supernode owners can be identified from the `Supernode Network Map <https://worldmap.arednmesh.org/>`_
 

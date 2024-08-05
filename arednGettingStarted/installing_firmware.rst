@@ -72,7 +72,7 @@ Download the *Install Checklist* for Ubiquiti 802.11n devices. These devices hav
 
 Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 
-Download the appropriate *factory* file for your device by following the instructions in the **Downloading AREDN Firmware** section of this documentation.
+Download the appropriate *factory* file for your device by following the instructions in the **Downloading AREDN® Firmware** section of this documentation.
 
 1. Set your computer’s Ethernet network adapter to a static IP address that is a member of the correct subnet for your device. Check the documentation for your specific hardware to determine the correct network number. As in the example below, most Ubiquiti devices have a default IP address of 192.168.1.20, so you can give your computer a static IP on the 192.168.1.x network with a netmask of 255.255.255.0. For example, set your Ethernet adapter to a static IP address of 192.168.1.10. You can choose any number for the fourth octet, as long as it is not the same as the IP address of the node. Of course you must also avoid using 192.168.1.0 and 192.168.1.255, which are reserved addresses that identify the network itself and the broadcast address for that network. Other devices may have different default IP addresses or subnets, so select a static IP for your computer which puts it on the same subnet but does not conflict with the default IP of the device.
 

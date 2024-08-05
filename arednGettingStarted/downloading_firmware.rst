@@ -12,7 +12,7 @@ Types of Firmware
 Choosing Firmware to Download
 -----------------------------
 
-The first step is to choose the AREDN® firmware image for your specific hardware. You can find the available firmware images for your device by using the `AREDN Firmware Selector (AFS) <http://downloads.arednmesh.org/afs/www/>`_.
+The first step is to choose the AREDN® firmware image for your specific hardware. You can find the available firmware images for your device by using the `AREDN® Firmware Selector (AFS) <http://downloads.arednmesh.org/afs/www/>`_.
 
 .. image:: _images/afs-1.png
    :alt: AREDN Firmware Selector

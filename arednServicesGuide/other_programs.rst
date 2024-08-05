@@ -30,7 +30,7 @@ You may choose to purchase an inexpensive off-the-shelf NTP appliance such as th
 AREDN® Alert Message Manager
 -----------------------------------
 
-AREDN® Alert Messages were explained in the **Getting Started Guide** under the *Node Status* and *Advanced Configuration* sections. The example given there showed the Alert Message source running on a separate LAN-connected web server. It is also possible to provide Alert Messages using an application created by Gerard Hickey (WT0F) which runs directly on a node having adequate storage. The AREDN® Alert Message Manager *(aamm)* uses the node's web server to provide a web interface for creating, updating, or deleting Alert Messages -- as well as actually hosting the message repository on the node itself, so that no external LAN-connected web server is required.
+AREDN® Alert Message Manager is an application created by Gerard Hickey (WT0F) which runs directly on a node having adequate storage. The *(aamm)* package uses the node's web server to provide a web interface for creating, updating, or deleting Alert Messages -- as well as actually hosting the message repository on the node itself, so that no external LAN-connected web server is required.
 
 .. image:: _images/aamm-display.png
    :alt: AAMM Display
@@ -46,7 +46,7 @@ The two advantages of using this application are 1) having the message managemen
 
 |
 
-The recipient nodes are configured the same way as described in the **Getting Started Guide** under the *Advanced Configuration* section for AREDN® Alert Messages. For additional information about the AREDN® Alert Message Manager, visit this link: `aamm <https://gitlab.com/aredn-apps/aamm>`_. You may also download and install the latest *aamm* package files `here <https://gitlab.com/aredn-apps/aamm/-/packages>`_.
+The recipient nodes are configured as described in the *Internal Services* section of the **Node Admin Guide**. For additional information about AREDN® Alert Message Manager, visit this link: `aamm <https://gitlab.com/aredn-apps/aamm>`_. You may also download and install the latest *aamm* package files `here <https://gitlab.com/aredn-apps/aamm/-/packages>`_.
 
 weeWx Weather Service
 ---------------------

@@ -2,7 +2,7 @@
 Selecting Radio Hardware
 ========================
 
-The amateur radio community has recognized the benefits of using inexpensive commercial :abbr:`WISP (Wireless Internet Service Provider)` radios to create AREDN® networks. Each of these devices come with the vendor's firmware pre-installed, but by following a few instructions this firmware can be replaced with an AREDN® firmware image.
+The amateur radio community has recognized the benefits of using inexpensive commercial :abbr:`WISP (Wireless Internet Service Provider)` radios to create AREDN® networks. Each of these devices comes with the vendor's firmware preinstalled, but by following documented procedures this firmware can be replaced with an AREDN® firmware image.
 
 Several open source software projects have been adapted and enhanced to create the AREDN® firmware, including `OpenWRT (Open Wireless Router) <https://en.wikipedia.org/wiki/OpenWRT>`_ and `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_.
 
@@ -10,15 +10,13 @@ The AREDN® team builds specific firmware images tailored to each type of radio,
 
 When selecting a device for your AREDN® hardware there are several things to consider in your decision.
 
-- Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN® supports devices which operate in several bands. Check the `frequency and channel chart <https://arednmesh.readthedocs.io/en/latest/appendix/freq_charts.html>`_ on the AREDN® website for the latest information.
-
-- Many devices have an integrated dual-polarity :abbr:`MIMO (Multiple Input-Multiple Output)` antenna which helps to leverage multipath propagation. AREDN® has always supported and recommended using MIMO hardware, since these devices typically outperform single chain radios when used as mesh nodes.
+- Radios should be purchased for the specific frequency band on which they will operate. Currently AREDN® supports devices which operate in several bands. Check the `frequency and channel chart <https://docs.arednmesh.org/en/latest/appendix/freq_charts.html>`_ on the AREDN® website for the latest information.
 
 - Radios can be purchased separately from the antenna, so it is possible to have more than one antenna option for a radio in order to optimize AREDN® nodes for varying deployment conditions.
 
 - Costs of devices range from $25 to several hundred dollars for a complete node/antenna system, so there are many options even for the budget-conscious operator.
 
-- Some older or lower cost devices have a limited amount of onboard memory, but firmware images continue to grow in size and functionality. Consider purchasing a device with more memory over one with less memory.
+- Some older or lower cost devices have a limited amount of onboard memory. Consider purchasing a device with more memory over one with less memory.
 
 - Check the maximum power output of the device, since some devices have lower power capabilities.
 

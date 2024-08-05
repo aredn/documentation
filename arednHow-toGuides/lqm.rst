@@ -68,6 +68,8 @@ The *Link Quality Manager* can be enabled on any node running 3.22.12.0 or newer
 4. Blocks radio links with too many retransmission errors
 5. Sets the node’s Coverage Class based on the most distant non-blocked node that is a direct, routable neighbor.
 
+The *Link Quality Manager* refreshes its state every minute and adjusts the blocked nodes and Coverage Class calculations.
+
 What does this mean?
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -76,8 +78,6 @@ What does this mean?
 3. LQM limits how far a node can be from a neighbor and still have a reliable link, even if there is a high SNR. The more distant a node, the lower the throughput of the link. In addition, the total throughput on a node is affected by the most distant node it communicates with. LQM automatically determines the distance between nodes using the latitude and longitude information available from each node’s sysinfo.json api.
 4. Some links can have high SNR, not be far away, but still have terrible performance due to excessive retransmission errors. While some retransmissions are to be expected, if this rate becomes large then performance suffers. LQM blocks links with poor link quality.
 5. LQM disables automatic distance detection and takes over the job of managing the Coverage Class. LQM evaluates the non-blocked links and determines whether there is at least one route which uses this link. It then selects the link with the largest distance and uses this to calculate the Coverage Class.
-
-The *Link Quality Manager* refreshes its state every minute and adjusts the blocked nodes and Coverage Class calculations. The *Neighbor Status* display shows the state of each link, while the LQM settings can be adjusted on the **Basic Setup** or **Advanced Confugiration** displays.
 
 What LQM does not do
 ^^^^^^^^^^^^^^^^^^^^

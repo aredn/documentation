@@ -11,7 +11,7 @@ Once you have completed the initial setup on your AREDN® node, you can connect 
 
 |
 
-This display has been designed to present all of the important information about your node in one place. Someone navigating to your node's status display will be able to see all of the key elements of interest without having to click to multiple pages. This display consists of a top navigation bar, a left navigation bar, and three columns of information about your node.
+This display has been designed to present all of the important information about your node in one view. Someone navigating to your node's status display will be able to see all of the key elements of interest without having to click to multiple pages. This display consists of a top navigation bar, a left navigation bar, and three columns of information about your node.
 
 Top Nav Bar
 -----------
@@ -44,7 +44,7 @@ Node Description
   This is not a required field, but node owners typically use it to list their contact information or the tactical purpose for the node.
 
 Node Time, Uptime, Load Average, and Free Memory
-  The node time is displayed, as well as the ``uptime``, which is the time since the last reboot. If an Internet connection or a local :abbr:`NTP (Network Time Protocol)` server is available, your node's NTP client will sync its time with that time source. The ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash`` and ``free ram`` shows how much storage space is remaining on your node. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
+  The node time is displayed along with the source in parentheses. If an Internet connection or a local `NTP <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ server is available, your node's NTP client will sync its time with that source. If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, you node can update its time from that source if you install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. The ``uptime`` is also displayed, which is the time since the last reboot. ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash`` and ``free ram`` shows how much storage space is remaining on your node. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
 
 Firmware Information
   This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``. If your node has access to the Internet you can also click on the *issues* label below the firmware version, and this will open the AREDN® `Issues <https://github.com/aredn/aredn/issues>`_ page on GitHub. Clicking the *release notes* label will open the `Changelog <https://downloads.arednmesh.org/snapshots/CHANGELOG.md>`_ page on the AREDN® website.

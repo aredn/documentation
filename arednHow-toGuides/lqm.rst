@@ -68,8 +68,6 @@ Link Quality Manager (LQM)
 4. Blocks radio links with too many retransmission errors
 5. Sets the node’s Coverage Class based on the most distant non-blocked node that is a direct, routable neighbor.
 
-The *Link Quality Manager* refreshes its state every minute and adjusts the blocked nodes and Coverage Class calculations.
-
 What does this mean?
 ^^^^^^^^^^^^^^^^^^^^
 

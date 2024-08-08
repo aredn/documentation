@@ -48,14 +48,3 @@ KN6PLV Mesh Map
    :align: center
 
 |
-
-KN6PLV Network Waterfall Scanner
---------------------------------
-
-`Tim KN6PLV <https://www.qrz.com/db/KN6PLV>`_ created this program to assist with discovering the RF conditions around your node. It is installed as a node package which is available here: `KN6PLV Waterfall <https://github.com/kn6plv/waterfall>`_. Once installed, a new ``Waterfall`` button will appear on your *Node Status* page if the hardware supports it (the Waterfall scanner is not currently available on AC devices). It will disconnect your node from the mesh while it continuously scans for nearby RF signals, so it does require authentication with the node's login credentials in order to run. The *Spectral View* shows the strength of nearby signals, while the *Waterfall* maintains a record over time of the RF environment. This package does *not* work on node hardware having ``802.11ac`` chipsets.
-
-.. image:: _images/waterfall-kn6plv.png
-   :alt: KN6PLV Waterfall Display
-   :align: center
-
-|

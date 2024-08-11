@@ -72,13 +72,15 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Time settings
 -------------
 
-Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly].
+Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly]. If you have mesh based NTP servers, advertise them as services to ensure time synchronization across your mesh network even if the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
 
 .. image:: _images/admin-time.png
   :alt: Admin Time
   :align: center
 
 |
+
+If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, you node can use that source after you install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. If you plan to use Wireguard tunneling, make sure that an NTP or GPS time source is reachable when the node boots so that the key exchange between the client and server will happen. Without proper time syncronization, Wireguard will not establish tunnels.
 
 Context-sensitive help is available by clicking the ``Help`` button. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 

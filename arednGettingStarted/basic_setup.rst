@@ -95,7 +95,7 @@ There are several options for setting your node's location:
 Timezone and NTP Server
   Here you select the timezone for your node's system clock, and the default value is ``UTC``. You can also enter the hostname for a `Network Time Protocol (NTP) <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node's clock by selecting a value from the dropdown list. The default is once per day [``daily``] but you may also select once per hour [``hourly``].
 
-  If you plan to use WireGuard tunnels/servers, make sure that the NTP server is reachable from the boot to ensure that key exchange between the tunnel clients and servers will hapen. It is recommended an Internet based or local NTP server. For mesh based NTP servers, when Internet is not available, it is recommended to advertise the services as instructed below. Without proper time sync, WireGuard will not establish tunnels.
+  If you plan to use Wireguard tunneling, make sure that an NTP server is reachable when the nodes are booted so that the key exchange between the client and server will happen. Without proper time syncronization, Wireguard will not establish tunnels. Use an Internet based NTP server or use a local NTP server when the Internet is not available. Follow the instructions below to advertise an NTP service on your local mesh network. 
 
   .. image:: _images/basic-time.png
     :alt: Optional Settings - Time

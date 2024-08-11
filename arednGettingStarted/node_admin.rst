@@ -370,8 +370,11 @@ Adding a Service
   Simple Text service template
     This template allows you to create an informational label which is not clickable. Enter a descriptive label (currently "Simple text" as a placeholder). Click in the field to the right of the text label to select from the dropdown list the type of icon that will be displayed for this label (if any). The icon you choose will be displayed to the right of the service name on **mesh status** pages. From the dropdown list in the next field, select the node or host with which this label is associated. If you defined *Host Aliases* (described below), you will see these host aliases in the dropdown list.
 
+  Network time service template
+    To advertise a local NTP server, select the *NTP Server* template. The required field values are all filled for you. You can change any of the defaults that are not appropriate for your situation.
+
   Additional service templates
-    Additional templates have been created for common services, with the goal of making it easier to define these services on your nodes. These templates fill in some of the fields with typical values, while allowing you to customize the information appropriately. Templates exist for several types of IP cameras as well as NTP, Winlink, MeshChat, Mapping, Proxmox, and web services.
+    Additional templates have been created for common services, with the goal of making it easier to define these services on your nodes. These templates fill in some of the fields with typical values, while allowing you to customize the information appropriately. Templates exist for several types of IP cameras as well as Winlink, MeshChat, Mapping, Proxmox, and web-based services.
 
   You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -707,7 +710,7 @@ Tunnel Server
 Add Tunnel
 ++++++++++
 
-To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure.
+To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. The newer Wireguard protocol is superseding the legacy *vtun* protocol because it is more efficient and secure. Be aware that without proper time synchronization, Wireguard will not establish tunnels. If you plan to use Wireguard tunneling, make sure that an NTP or GPS time source is reachable at boot time so that the key exchange between the client and server will happen correctly. If mesh based NTP servers are available, ask the owners to advertise them as services to ensure that time synchronization happens across your mesh network even if the Internet is not available. Review the **Local Services** section above for instructions on advertising a local NTP server.
 
 Wireguard Client
   Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described below for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node. To the right of the network IP address is the *Wgt* or tunnel weight field. The global default tunnel weight is configured under *Advanced Options* as described below, but you can override this value on a per tunnel basis. Leave this field empty to accept the global default, or enter a tunnel weight to override the default if you desire.

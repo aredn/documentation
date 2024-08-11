@@ -337,6 +337,8 @@ Wireguard Tunneling Protocol
 
   On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``5525``, which will provide for one wireguard tunnel connection. If you want to allow up to 10 wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
 
+  .. attention:: Wireguard will not establish tunnels if the clocks on the client and server nodes are out of sync. Ensure that all nodes configured to use Wireguard have a reachable NTP server when they are booted. It is recommended to use the default ``pool.ntp.org`` value. If you have mesh based NTP servers, advertise them as services to ensure time synchronisation across your mesh network even if the Internet is not available.
+
 Supernode Tunneling
   Supernode tunneling uses the Wireguard tunneling protocol, but the port range begins with port ``6526``. On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``6526``, which will provide for one supernode tunnel connection. If you want to allow up to 10 supernode tunnel links (for example), then you would permit UDP traffic on the range of ports between ``6526-6535``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
 

@@ -80,7 +80,7 @@ Select your timezone from the dropdown list, where the default value is :abbr:`U
 
 |
 
-If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, you node can use that source after you install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. If you plan to use Wireguard tunneling, make sure that an NTP or GPS time source is reachable when the node boots so that the key exchange between the client and server will happen. Without proper time syncronization, Wireguard will not establish tunnels.
+If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, you node can use that source after you install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. If you plan to use Wireguard tunneling, make sure that an NTP or GPS time source is reachable when the node boots so that the key exchange between the client and server will happen correctly. Without proper time synchronization, Wireguard will not establish tunnels.
 
 Context-sensitive help is available by clicking the ``Help`` button. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 

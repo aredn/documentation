@@ -5,7 +5,7 @@ Node Status Display
 Once you have completed the initial setup on your AREDN® node, you can connect your computer to a :abbr:`LAN (Local Area Network)` port on the device or the :abbr:`PoE (Power over Ethernet)` and use a web browser to navigate to the **node status** page.
 ``http://localnode.local.mesh`` or ``http://<your-nodename>.local.mesh``
 
-.. image:: _images/node-status-columns.png
+.. image:: _images/node-status.png
    :alt: Node status display
    :align: center
 

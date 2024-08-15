@@ -16,7 +16,7 @@ This display has been designed to present all of the important information about
 Top Nav Bar
 -----------
 
-From left to right, after the AREDN® logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display.
+From left to right, after the AREDN® logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display. On the right side there is a button which will switch the display to the old user interface. Click the ``Old UI`` button to see the legacy web interface for your node. From the old user interface you can also click the ``New UI`` button to return to the new user interface.
 
 |icon1| At the far right is the default icon indicating that you are viewing the page as a normal user. Clicking this icon will open a dropdown menu that allows you to login as the node administrator.
 

@@ -2,7 +2,7 @@
 Command Line Access to Your Node
 ================================
 
-There may be times when it would be useful to have command line access to your node. AREDN |trade| nodes support both `Secure Shell (ssh) <https://en.wikipedia.org/wiki/Secure_Shell>`_ and `Telnet <https://en.wikipedia.org/wiki/Telnet>`_. Both access methods will require a set of login credentials (*root* username & password). Linux and MacOS computers have native tools for both *SSH* and *Telnet*.
+There may be times when it would be useful to have command line access to your node. AREDN® nodes support both `Secure Shell (ssh) <https://en.wikipedia.org/wiki/Secure_Shell>`_ and `Telnet <https://en.wikipedia.org/wiki/Telnet>`_. Both access methods will require a set of login credentials (*root* username & password). Linux and MacOS computers have native tools for both *SSH* and *Telnet*.
 
 The *OpenSSH* package can be enabled on Windows computers. Use a web search engine to find information for your specific operating system (for example search "openssh for windows 10"). Here are some examples for enabling OpenSSH on Windows computers:
 
@@ -27,7 +27,7 @@ Telnet
     :align: center
 
 SSH
-  *SSH* requires you to specify the port, *root* username, and password on the command line. This is because AREDN |trade| nodes do not use the default well-known *ssh* port [22], but nodes use port ``2222`` for *ssh* connections. An example *SSH* command string is
+  *SSH* requires you to specify the port, *root* username, and password on the command line. This is because AREDN® nodes do not use the default well-known *ssh* port [22], but nodes use port ``2222`` for *ssh* connections. An example *SSH* command string is
 
   ::
 

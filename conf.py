@@ -15,8 +15,18 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sphinx_rtd_theme
 from datetime import date
+
+import os
+
+# Define the canonical URL if you are using a custom domain on Read the Docs
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
+
+# Tell Jinja2 templates the build is running on Read the Docs
+if os.environ.get("READTHEDOCS", "") == "True":
+    if "html_context" not in globals():
+        html_context = {}
+    html_context["READTHEDOCS"] = True
 
 # -- Project information -----------------------------------------------------
 
@@ -37,22 +47,10 @@ release = u'latest'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx_rtd_theme',
-]
-
-rst_epilog = """
-`Link: AREDN® Webpage <https://www.arednmesh.org>`_
-"""
-
-# Include the trademark symbol in the prolog
-rst_prolog = """
-.. |trade|  unicode:: U+00AE .. Registered Trademark SIGN
-   :ltrim:
-
-"""
+#### ones.
+###extensions = [
+###    'sphinx.ext.autodoc',
+###]
 
 # Add any paths that contain templates here, relative to this directory.
 #templates_path = ['_templates']
@@ -81,19 +79,24 @@ exclude_patterns = [u'_build', u'Thumbs.db', u'.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_book_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_logo = "_images/AREDN-Logo.png"
+html_theme_options = {
+    'logo_only': True,
+    "toc_title": "Page Navigation",
+    "use_download_button": False,
+    "show_toc_level": 3,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

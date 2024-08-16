@@ -2,18 +2,16 @@
 Reporting Problems or Issues
 ============================
 
-If you experience issues with building or using AREDN |trade| devices, there are several sources of help. There is an active user community that regularly contributes to the AREDN |trade| `Forum <https://www.arednmesh.org/forum>`_, and you can post your experience there to receive help and feedback.
+If you experience issues with building or using AREDN® devices, there are several sources of help. There is an active user community that regularly contributes to the AREDN® `Forum <https://www.arednmesh.org/forum>`_, and you can post your experience there to receive help and feedback.
 
-However, if you have issues that you think should be investigated by the AREDN |trade| development team, you can follow the steps below for engaging with the software developers.
+However, if you have issues that you think should be investigated by the AREDN® development team, you can follow the steps below for engaging with the software developers.
+
+.. image:: _images/admin-support-data.png
+  :alt: Administration - Support Data Download
+  :align: right
 
 Download a Support Data File
-  Every node has a built-in tool that allows you to download a support data file containing information that is helpful for troubleshooting. To download a support data file from your node, navigate to the **Administration** page and scroll to the bottom. Click the *Download Support Data* link and your support file will be downloaded to your computer. If you are unable to navigate to the **Administration** page, you can simply enter this URL in your web browser to initiate the support data download:
-  
-  | ``http://your-nodename-or-ip/cgi-bin/supporttool``
-
-  .. image:: _images/admin-support-data.png
-    :alt: Administration - Support Data Download
-    :align: center
+    Every node has a built-in tool that allows you to download a support data file containing information that is helpful for troubleshooting. To download a support data file from your node, login as your node *admin* and click the tools icon in the left nav bar. In the list of available tools, click the **Support Data** link and the support file will be downloaded to your computer.
 
 Create a GitHub account
   To open an issue on GitHub you first must create your own GitHub account. This is free and easy to do by following these steps:
@@ -21,7 +19,7 @@ Create a GitHub account
   1. Open your web browser and navigate to the `GitHub URL <https://github.com>`_.
   2. Click the ``Sign Up`` button and enter the required information. We suggest using your callsign as the username.
   3. On the GitHub website, click the ``Sign In`` button and authenticate to GitHub with the credentials you created.
-  4. Navigate on GitHub to the AREDN |trade| code repository: ``https://github.com/aredn/aredn``
+  4. Navigate on GitHub to the AREDN® code repository: ``https://github.com/aredn/aredn``
 
 Open a new issue on GitHub
   .. image:: _images/github-issues.png

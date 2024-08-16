@@ -2,12 +2,12 @@
 Tools for Developers
 ====================
 
-This section of the AREDN |trade| documentation contains information useful for developers who want to retrieve information from one or more nodes for use in any of several applications. For example, a developer may want to write a program which periodically polls a set of nodes to gather link quality or signal values to insert them into a network management or historian system for trending and analysis. The popular KG6WXC MeshMap application uses these tools to create and update a comprehensive mesh network map.
+This section of the AREDN® documentation contains information useful for developers who want to retrieve information from one or more nodes for use in any of several applications. For example, a developer may want to write a program which periodically polls a set of nodes to gather link quality or signal values to insert them into a network management or historian system for trending and analysis. The popular KG6WXC MeshMap application uses these tools to create and update a comprehensive mesh network map.
 
 SYSINFO.JSON
 ============
 
-The **sysinfo.json** `API (Application Programming Interface) <https://en.wikipedia.org/wiki/Application_programming_interface>`_ has been included in AREDN |trade| firmware for several releases, and each release includes an *api_version* tag which can be used to track the feature set supported by that version of the API. As new features are added, the *api_version* number is incremented.
+The **sysinfo.json** `API (Application Programming Interface) <https://en.wikipedia.org/wiki/Application_programming_interface>`_ has been included in AREDN® firmware for several releases, and each release includes an *api_version* tag which can be used to track the feature set supported by that version of the API. As new features are added, the *api_version* number is incremented.
 
 The basic API retrieves general node information in JSON format, and it can be invoked using the following URL:
 ``http://<nodename>.local.mesh/cgi-bin/sysinfo.json``

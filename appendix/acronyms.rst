@@ -8,7 +8,7 @@ List of acronyms used in this documentation.
 :AGL: Above Ground Level
 :AP: Access Point
 :API: Application Programming Interface
-:AREDN: Amateur Radio Emergency Data Network
+:AREDN®: Amateur Radio Emergency Data Network
 :CCA: Clear Channel Assessment
 :CGI: Common Gateway Interface
 :CSMA/CA: Carrier Sense Multiple Access / Collision Avoidance
@@ -79,3 +79,4 @@ List of acronyms used in this documentation.
 :VoIP: Voice over IP
 :WAN: Wide Area Network
 :WISP: Wireless Internet Service Provider
+:XLINK: Link configured to pass AREDN® data between non-AREDN® devices

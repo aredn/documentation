@@ -4,7 +4,7 @@ Use PuTTYGen to Make SSH Keys
 
 *Contributor: Randy Smith WU2S*
 
-This How-to will show you a method for generating SSH key pairs on a Windows computer, saving them to a USB flash drive, installing the SSH key on an AREDN |trade| node and using the SSH keys with a PuTTY terminal session. The use of Secure Shell (SSH) keys when using PuTTY or another SSH client is a useful aid to managing a group of AREDN |trade| nodes.
+This How-to will show you a method for generating SSH key pairs on a Windows computer, saving them to a USB flash drive, installing the SSH key on an AREDN® node and using the SSH keys with a PuTTY terminal session. The use of Secure Shell (SSH) keys when using PuTTY or another SSH client is a useful aid to managing a group of AREDN® nodes.
 
 - First, obtain the PuTTY suite of applications from the `PuTTY Download Page <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ and install them on your computer.
 
@@ -20,15 +20,13 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
 
 |
 
-2. Select the *Generate key pair* menu item or click the *Generate* button and you will be asked to make some random mouse movements. After a short while you get a message asking you to wait while the keys are generated. Once it finishes you now have a new key pair.
+2. Select the *Generate key pair* menu item or click the *Generate* button and you will be asked to make some random mouse movements. After a short while you get a message asking you to wait while the keys are generated. Once it finishes you now have a new key pair. Give the key pair a suitable comment so that you will remember what the keys are used for. Here we just entered ``testkey@wu2s.com`` for an example. Whatever you enter in the "Key Comment" field must look like an email address with no spaces and the "@" present. Normally this field is used to identify a specific *username@hostname*. You can also password protect the SSH login by providing a passphrase if you desire. Record this passphrase so you will remember it for future use.
 
 .. image:: _images/02-puttygen.png
    :alt:  Label key pair and create pass phrase
    :align: center
 
 |
-
-  Give the key pair a suitable comment so that you will remember what the keys are used for. Here we just entered ``testkey@wu2s.com`` for an example. Whatever you enter in the "Key Comment" field must look like an email address with no spaces and the "@" present. Normally this field is used to identify a specific *username@hostname*. You can also password protect the SSH login by providing a passphrase if you desire. Record this passphrase so you will remember it for future use.
 
 3. In PuTTYGen you can save your new keys to separate files for later use. To save the public key to a suitable location, click the *Save Public Key* button and enter a filename with a **.pub** extension. Then click the *Save Private Key* button to save your private key to the same location. Give your private key a **.ppk** file extension. Many people save their keys on a USB flash drive to maintain physical possession of them at all times.
 
@@ -38,7 +36,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
 
 |
 
-4. In order for your new public key to be installed on an AREDN |trade| node you will need to verify that there are no extra characters which Windows typically adds to text files. You can accomplish this using a text editor which allows you to view and remove the unwanted characters. This example shows opening `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ and navigating to *View > Show Symbol > Show End of Line*. Now you can see the line termination characters inserted by Windows.
+4. In order for your new public key to be installed on an AREDN® node you will need to verify that there are no extra characters which Windows typically adds to text files. You can accomplish this using a text editor which allows you to view and remove the unwanted characters. This example shows opening `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ and navigating to *View > Show Symbol > Show End of Line*. Now you can see the line termination characters inserted by Windows.
 
 .. image:: _images/04a-puttygen.png
   :alt: Notepad view EOL
@@ -46,31 +44,31 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
 
 |
 
-  If you saved your public key file by clicking the *Save Public Key* button in PuTTYGen you may notice that it contains a header, footer, and lots of end of line characters. Your AREDN |trade| node will not accept the file with these extra characters. The easiest way to resolve this is to go back to PuTTYGen and highlight/select the entire contents of the text area titled "Public key for pasting into OpenSSH authorized_keys file." Copy this text using the CTRL-C keys on your keyboard.
+If you saved your public key file by clicking the *Save Public Key* button in PuTTYGen you may notice that it contains a header, footer, and lots of end of line characters. Your AREDN® node will not accept the file with these extra characters. The easiest way to resolve this is to go back to PuTTYGen and highlight/select the entire contents of the text area titled "Public key for pasting into OpenSSH authorized_keys file." Copy this text using the CTRL-C keys on your keyboard.
 
-  .. image:: _images/04b-puttygen.png
-    :alt: Puttygen copy key text
-    :align: center
-
-|
-
-  Now go to Notepad++ and paste the copied text into a new window. You should see your public key text on a single line without any header/footer or line termination characters.
-
-  .. image:: _images/04c-puttygen.png
-    :alt: Puttygen copy key text
-    :align: center
+.. image:: _images/04b-puttygen.png
+  :alt: Puttygen copy key text
+  :align: center
 
 |
 
-  Save this Notepad++ window to a suitable filename with the **.pub** file extension.
+Now go to Notepad++ and paste the copied text into a new window. You should see your public key text on a single line without any header/footer or line termination characters.
 
-  .. image:: _images/04d-puttygen.png
-    :alt: Save the public key
-    :align: center
+.. image:: _images/04c-puttygen.png
+  :alt: Puttygen copy key text
+  :align: center
 
 |
 
-5. In order to use your new SSH key pair, login to your AREDN |trade| node and go to the **Setup -> Administration** screen. At the bottom you will see the *Authorized SSH Keys* section where you can install the public keys to use on this node.
+Save this Notepad++ window to a suitable filename with the **.pub** file extension.
+
+.. image:: _images/04d-puttygen.png
+  :alt: Save the public key
+  :align: center
+
+|
+
+5. In order to use your new SSH key pair, login to your AREDN® node and go to the **Setup -> Administration** screen. At the bottom you will see the *Authorized SSH Keys* section where you can install the public keys to use on this node.
 
 .. image:: _images/05-puttygen.png
    :alt: Node Administration page
@@ -78,7 +76,7 @@ This How-to will show you a method for generating SSH key pairs on a Windows com
 
 |
 
-6. Press the *Choose File* button to locate the *public* SSH key you want to install. After choosing the desired *public* key file, click the *Upload* button to install the key on the AREDN |trade| node.
+6. Press the *Choose File* button to locate the *public* SSH key you want to install. After choosing the desired *public* key file, click the *Upload* button to install the key on the AREDN® node.
 
 .. image:: _images/06-puttygen.png
    :alt: Select key to install
@@ -111,7 +109,7 @@ SAVE the session definition again.
 
 |
 
-10. Now you can use the session information you saved by clicking the *Load* or *Open* button in the main PuTTY session screen. This will open a terminal window as shown below. Login to the AREDN |trade| node as `root`. If you configured the PuTTY session correctly, it will find your private key file and ask you for the passphrase (if any). If PuTTY cannot find the private key file, it will revert to prompting you for the `root` password that you normally use to login on the node.
+10. Now you can use the session information you saved by clicking the *Load* or *Open* button in the main PuTTY session screen. This will open a terminal window as shown below. Login to the AREDN® node as `root`. If you configured the PuTTY session correctly, it will find your private key file and ask you for the passphrase (if any). If PuTTY cannot find the private key file, it will revert to prompting you for the `root` password that you normally use to login on the node.
 
 .. image:: _images/10-puttygen.png
    :alt: Enter passphrase to use SSH key

@@ -30,7 +30,7 @@ Because Supernodes use the `OLSR (Optimized Link State Routing) <https://en.wiki
 
 By having each Supernode connected to only a single local network, the owners of each local network are responsible for their own Supernodes. This simplifies management and maintenance. There is also some fault isolation as a failed Supernode will only impact the one local network to which it is connected.
 
-The number of messages a Supernode receives will scale linearly with the total number of nodes in all connected local networks. A Supernode receives a management message from every node in the network (all nodes in all local networks) every 5 seconds. With a typical message size of 100 bytes, a Supernode receives about 20 bytes per second per node. At the time of initial testing, there were 4,300 AREDN |trade| nodes registered world-wide, so a Supernode for this network would receive ``84 KB/s`` or ``0.7 Mb/s``, which is a manageable bandwidth requirement.
+The number of messages a Supernode receives will scale linearly with the total number of nodes in all connected local networks. A Supernode receives a management message from every node in the network (all nodes in all local networks) every 5 seconds. With a typical message size of 100 bytes, a Supernode receives about 20 bytes per second per node. At the time of initial testing, there were 4,300 AREDN® nodes registered world-wide, so a Supernode for this network would receive ``84 KB/s`` or ``0.7 Mb/s``, which is a manageable bandwidth requirement.
 
 As more Supernodes are deployed linking more local networks, the overall performance of the *Cloud Mesh* will be impacted. Therefore, it is a good idea to coordinate the deployment of Supernodes among the Supernode owners at the time when tunnel links are requested for the *Cloud Mesh*.
 
@@ -43,7 +43,7 @@ As more Supernodes are deployed linking more local networks, the overall perform
 Setting up a Supernode
 ----------------------
 
-Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Advanced Network* display (Port 5 by default).
+Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Ethernet Ports & Xlinks* display (Port 5 by default).
 
 .. image:: _images/supernode-localDTD.png
    :alt: DtD Link Example
@@ -57,21 +57,21 @@ The following steps are required to configure a Supernode.
 
 #. Configure the Supernode with a nodename prefixed with your callsign followed by a location identifier as well as the word "SUPERNODE." For example you could use ``AB2CD-NYC-SUPERNODE`` or ``AB6CD-LAX-SUPERNODE``
 
-#. Ensure that *Mesh RF* is ``disabled``
+#. Ensure that the *Mesh* radio is ``off``
 
 #. Provide a reserved or static IP address for the device's WAN connection to your Internet routing device.
 
-#. Do not add any other configuration settings at this point or you may encounter problems later in this process. At this point simply *Save Changes* and *Reboot* the device.
+#. Do not add any other configuration settings at this point or you may encounter problems later in this process. At this point you can ``Commit`` your changes and *reboot* the device.
 
 #. Login to the rebooted device via *ssh* or *telnet* to get a command line prompt, and then manually type and execute each of these commands:
 
-  ::
+::
 
-    # uci -c /etc/config.mesh add aredn supernode
-    # uci -c /etc/config.mesh set aredn.@supernode[0].enable=1
-    # uci -c /etc/config.mesh commit aredn
-    # /usr/local/bin/node-setup -a mesh
-    # reboot
+  # uci -c /etc/config.mesh add aredn supernode
+  # uci -c /etc/config.mesh set aredn.@supernode[0].enable=1
+  # uci -c /etc/config.mesh commit aredn
+  # /usr/local/bin/node-setup -a mesh
+  # reboot
 
 Your node should now be functioning as a Supernode. To validate this you can do the following:
 
@@ -93,8 +93,13 @@ If you do not see these lines, please start this process again from the beginnin
 Things to Avoid
   Here are several things **NOT** to do when configuring your Supernode.
 
-  - Your Supernode must **not** use any Cross-links (Xlinks) to other nodes.
+  - Your Supernode must **not** use any cross-links (xlinks) to other nodes.
   - Your Supernode must **not** have tunnel links to any non-Supernode devices.
-  - Your Supernode must **not** have its *Mesh RF* interface ``enabled`.` *Mesh RF* must be ``disabled`` as noted above.
+  - Your Supernode must **not** have its *Mesh* radio interface enabled.
 
 Before proceeding, make sure all the previous steps have been completed successfully. Now you should be able to connect to another Supernode using a tunnel. The easiest way to do this is to ask another Supernode owner for a set of tunnel client credentials. Your node can use either a client or server tunnel link. Supernode owners can be identified from the `Supernode Network Map <https://worldmap.arednmesh.org/>`_
+
+Configuring the Supernode Tunnel
+--------------------------------
+
+Supernode tunneling uses the Wireguard tunneling protocol, but the port range begins with port ``6526``. On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``6526``, which will provide for one supernode tunnel connection. If you want to allow up to 10 Supernode tunnel links (for example), then you would permit UDP traffic on the range of ports between ``6526-6535``. Configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your Supernode's WAN interface.

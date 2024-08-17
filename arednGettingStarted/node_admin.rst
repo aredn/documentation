@@ -84,7 +84,7 @@ By default the time on your node will be shown as a 12-hour clock with *am/pm*. 
 
 Additional options are displayed when you click **Advanced Options**.
 
-By default your node can use a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ time source if one is available. To disable this behavior, slide the switch to the *off* position.
+By default your node can use a local **GPS Time** source if one is available. To disable this behavior, slide the switch to the *off* position.
 
 If you want your node to function as a GPS time *server* you will need to install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. This third party package allows a node with adequate processing power and memory to have a USB GPS dongle connected so that it can provide GPS time for itself and other local DtD linked devices. Further information is available on the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package website.
 
@@ -250,7 +250,7 @@ Location settings
 
 This display allows you to update the location settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
-.. image:: _images/admin-location-1.png
+.. image:: _images/admin-location.png
  :alt: Admin Location
  :align: center
 
@@ -262,14 +262,9 @@ Location information is used to determine the distance between your node and oth
 
 Additional options will be displayed when you click **Advanced Options**.
 
-.. image:: _images/admin-location-2.png
-  :alt: Admin Location Advanced Options
-  :align: center
+By default your node will attempt to set its location from a local GPS source. If you want to disable this behavior, slide the **GPS Location** switch to the *off* position.
 
-|
-
-Map URL
-  The map URL is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get map data from the AREDN® server. The (lat) and (lon) parameters in the URL are substitutes with your GPS coordinates before the map is rendered. If there is a local map tile server available on your mesh network, then you can point your node to the local server for its map data.
+The **Map URL** is used to embed maps in your node's displays. The default value is ``https://worldmap.arednmesh.org/#12/(lat)/(lon)`` which attempts to get map data from the AREDN® server. The (lat) and (lon) parameters in the URL are substitutes with your GPS coordinates before the map is rendered. If there is a local map tile server available on your mesh network, then you can point your node to the local server for its map data.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 

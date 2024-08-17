@@ -72,7 +72,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Time settings
 -------------
 
-Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly]. If you have mesh based NTP servers, advertise them as services to ensure time synchronization across your mesh network even when the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
+Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly]. If you have mesh based NTP servers, advertise them as services to ensure time synchronization across your mesh network when the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
 
 .. image:: _images/admin-time.png
   :alt: Admin Time
@@ -80,7 +80,15 @@ Select your timezone from the dropdown list, where the default value is :abbr:`U
 
 |
 
-If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, you node can use that source after you install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. If you plan to use Wireguard tunneling, make sure that an NTP or GPS time source is reachable when the node boots so that the key exchange between the client and server will happen correctly. Without proper time synchronization, Wireguard will not establish tunnels.
+By default the time on your node will be shown as a 12-hour clock with *am/pm*. To display node time using a 24-hour clock, enable the *24-Hour Clock* switch.
+
+Additional options are displayed when you click **Advanced Options**.
+
+By default your node can use a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ time source if one is available. To disable this behavior, slide the switch to the *off* position.
+
+If you want your node to function as a GPS time *server* you will need to install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. This third party package allows a node with adequate processing power and memory to have a USB GPS dongle connected so that it can provide GPS time for itself and other local DtD linked devices. Further information is available on the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package website.
+
+If you plan to use Wireguard tunneling, make sure that a GPS or NTP time source is reachable when the node boots so that the key exchange between the client and server will happen correctly. Without proper time synchronization, Wireguard will not establish tunnels.
 
 Context-sensitive help is available by clicking the ``Help`` button. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -609,7 +617,7 @@ Address Reservations
 
   You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable via your node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
 
-  There may be some devices on which you are not able to set the hostname, so once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated across the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
+  There may be some devices on which you are not able to set the hostname, but once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated across the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
 
   In addition to adding an address reservation manually, you can also click the [+] icon at the right of any of the devices which have active DHCP leases as described below. You will then see that host appear in the *Address Reservations* list.
 

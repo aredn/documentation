@@ -20,7 +20,7 @@ From left to right, after the AREDN® logo, the node name is displayed along wit
 
 |icon1| At the far right is the default icon indicating that you are viewing the page as a normal user. Clicking this icon will open a dropdown menu that allows you to login as the node administrator.
 
-|icon2| If this icon is displayed at the far right, then you are viewing the page as the node administrator. Clicking this icon will open a dropdown menu that allows you to logout, reboot the node, or display help.
+|icon2| If this icon is displayed at the far right, then you are viewing the page as the node administrator. Clicking this icon will open a dropdown menu that allows you to logout, reboot the node, display help, or open the AREDN® website.
 
 Left Nav Bar
 ------------
@@ -29,7 +29,7 @@ Using the icons on the left side bar you can navigate to various displays.
 
 |icon3| navigates to this **node status** display.
 
-|icon4| navigates to the local mesh status page showing the nodes visible on the local mesh network, as well as any services are provided by those nodes.
+|icon4| navigates to the local mesh status page showing the nodes visible on the local mesh network, as well as any services provided by those nodes.
 
 |icon5| navigates to the *Cloud Mesh* view through the Supernode network (if available).
 
@@ -44,12 +44,12 @@ Node Description
   This is not a required field, but node owners typically use it to list their contact information or the tactical purpose for the node.
 
 Node Time, Uptime, Load Average, and Free Memory
-  The node time is displayed along with the source in parentheses. If an Internet connection or a local `NTP <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ server is available, your node's NTP client will sync its time with that source. If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, you node can use that source.
+  The node time is displayed along with the source in parentheses. If an Internet connection or a local `NTP <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ server is available, your node's NTP client will sync its time with that source. If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, your node can use that source.
 
   The ``uptime`` is also displayed, which is the time since the last reboot. ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash`` and ``free ram`` shows how much storage space is remaining on your node. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
 
 Firmware Information
-  This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``. If your node has access to the Internet you can also click on the *issues* label below the firmware version, and this will open the AREDN® `Issues <https://github.com/aredn/aredn/issues>`_ page on GitHub. Clicking the *release notes* label will open the `Changelog <https://downloads.arednmesh.org/snapshots/CHANGELOG.md>`_ page on the AREDN® website.
+  This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``. If your node has access to the Internet you can also click the *issues* label below the firmware version, and this will open the AREDN® `Issues <https://github.com/aredn/aredn/issues>`_ page on GitHub. Clicking the *release notes* label will open the `Changelog <https://downloads.arednmesh.org/snapshots/CHANGELOG.md>`_ page on the AREDN® website.
 
 Network Information
   The Mesh IP address/netmask is displayed using `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ notation, followed by the :abbr:`LAN (Local Area Network)` IP address/netmask. If the :abbr:`WAN (Wide Area Network)` interface is enabled, the WAN IP address/netmask is displayed along with whether this address was obtained via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ or assigned as a static IP address. The WAN gateway IP address is also displayed.

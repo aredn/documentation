@@ -536,7 +536,7 @@ This option configures the radio as a wifi WAN client to an available Internet g
  :align: center
 
 SSID
-  Click in the field at the right to enter the SSID of the local wifi access point you are connecting to for Internet access.
+  Click in the field at the right to enter the SSID of the local wifi access point you are connecting to for Internet access. Set your node's WAN interface to receive an IP address via DHCP from the wifi AP which will provide Internet connectivity.
 
 Password
   Enter the authentication password for the wifi AP to which you are connecting. Your node uses *WPA2 PSK* encryption to connect to external wifi APs. The password length must be between zero and 64 characters. If the key length is 64, it is treated as hex encoded. If the length is 0, then no encryption will be used to connect to an open AP. A single-quote character (``'``) must not be used in the passphrase. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text.

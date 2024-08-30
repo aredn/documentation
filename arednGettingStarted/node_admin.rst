@@ -25,10 +25,12 @@ After clicking ``Done`` you will be returned to your node's *admin* view where y
 
 For some configuration changes there may be additional action buttons that are displayed. For example, if you want to upload or remove an SSH security key you will press the ``Upload or Remove Key`` button. Or you can press the ``Fetch and Update`` button to install a firmware image, or press the ``Remove`` button to remove a package installed on your node. In some cases you may need to scroll down on the configuration display in order to see these buttons.
 
+The sections of the **admin** display will be described below, beginning in the upper left corner of the left column and working down that column before moving to the center and right columns of the display, working from top to bottom on each column.
+
 Node Name & Security
 ----------------------
 
-The Name & Security section allows you to configure the following settings. Context-sensitive help is available by clicking the ``Help`` button.
+Starting at the top of the left column, highlight and click the section which contains the description and notes. This *Name & Security* section allows you to configure the following settings. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-name-security-1.png
   :alt: Admin Name and Security
@@ -72,7 +74,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Time settings
 -------------
 
-Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly]. If you have mesh based NTP servers, advertise them as services to ensure time synchronization across your mesh network when the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
+Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly]. If you have mesh based NTP servers, advertise them as services to ensure time synchronization across your mesh network when the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
 
 .. image:: _images/admin-time.png
   :alt: Admin Time
@@ -95,7 +97,7 @@ Context-sensitive help is available by clicking the ``Help`` button. You can cli
 Firmware settings
 -----------------
 
-The top field displays the currently installed version of firmware on your node. Context-sensitive help is available by clicking the ``Help`` button. There are three ways to update your node's firmware.
+Highlight and click the section displaying your node's firmware version. The top field displays the currently installed version of firmware on your node. Context-sensitive help is available by clicking the ``Help`` button. There are three ways to update your node's firmware.
 
 .. image:: _images/admin-firmware-1.png
   :alt: Admin Firmware
@@ -136,7 +138,7 @@ If you are only making changes to firmware settings, you will click the ``Done``
 Package settings
 ----------------
 
-This display allows you to install or remove software packages on the node. When you install packages, your node will remember them in its package store. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will automatically reinstall any packages in its package store. If you originally *uploaded* the package to the node, then the package store keeps a copy of the package code itself. If you originally *downloaded* the package, then your node will attempt to re-download it. Also, if you later *remove* one of your extra packages, it will be automatically removed from the package store. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's installed package count. This display allows you to install or remove software packages on the node. When you install packages, your node will remember them in its package store. When you next upgrade your node's firmware, the package store will be retained. After the firmware upgrade your node will automatically reinstall any packages in its package store. If you originally *uploaded* the package to the node, then the package store keeps a copy of the package code itself. If you originally *downloaded* the package, then your node will attempt to re-download it. Also, if you later *remove* one of your extra packages, it will be automatically removed from the package store. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-packages.png
  :alt: Admin Packages
@@ -163,7 +165,7 @@ If you are only making changes to package settings, you will click the ``Done`` 
 Network settings
 ----------------
 
-This display allows you to update the network settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's network settings. This display allows you to update the network configuration on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-network-1.png
  :alt: Admin Network
@@ -248,7 +250,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Location settings
 -----------------
 
-This display allows you to update the location settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's location. This display allows you to update the location settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-location.png
  :alt: Admin Location
@@ -271,7 +273,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Internal Services
 -----------------
 
-When you are logged in as *admin* you will see an Internal Services status display. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status is informational only, and it simply indicates whether this node is being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status is informational only and indicates whether this node is configured as a Supernode.
+When you are logged in as *admin* you will see an Internal Services status display at the top of the center column. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status is informational only, and it simply indicates whether this node is being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status is informational only and indicates whether this node is configured as a Supernode.
 
 .. image:: _images/admin-internal-svc-1.png
  :alt: Admin Internal Services Status
@@ -279,7 +281,7 @@ When you are logged in as *admin* you will see an Internal Services status displ
 
 |
 
-The **Internal Services** configuration display allows you to manage the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's **Internal Services**, which allows you to manage the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-internal-svc-2.png
  :alt: Admin Internal Services
@@ -348,7 +350,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Local Services
 --------------
 
-The **Local Services** display allows you to manage the services which will be available on your node. The purpose of the network is to transport data for the services which are being used. Network services may include keyboard-to-keyboard chat or email programs, document sharing applications, Voice over IP phone or video conferencing services, streaming video from surveillance cameras, and a variety of other network-enabled features. Services can run on the node itself or on any of its LAN-connected devices. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's local services. The **Local Services** display allows you to manage the services which will be available on your node. The purpose of the network is to transport data for the services which are being used. Network services may include keyboard-to-keyboard chat or email programs, document sharing applications, Voice over IP phone or video conferencing services, streaming video from surveillance cameras, and a variety of other network-enabled features. Services can run on the node itself or on any of its LAN-connected devices. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-localsvc-1.png
  :alt: Admin Local Services
@@ -457,7 +459,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Radios & Antennas
 -----------------
 
-The **Radios & Antennas** display allows you to configure the radios on your node. Context-sensitive help is available by clicking the ``Help`` button.
+At the top of the right-hand column, highlight and click the section displaying your node's radio information. The **Radios & Antennas** display allows you to configure the radios on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
 If your device has two radios, you can configure them separately but you cannot put them both into the same mode. For example, you can use one radio for Mesh RF while the second radio functions as a LAN Hotspot or a WAN Client (as described below). Some devices may not have any available radios, but some of the radio options will still be shown if they are applicable to the device.
 
@@ -599,7 +601,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 LAN DHCP settings
 -----------------
 
-By default each node runs a `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ (DHCP) server to provide client IP addresses for devices joining its LAN network. LAN devices connecting to your node will be assigned an IP address automatically. Be aware that if your *LAN Size* is ``disabled`` in the **Network** settings, then your node's DHCP server is also ``disabled``. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's *LAN DHCP* settings. By default each node runs a `Dynamic Host Control Protocol <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ (DHCP) server to provide client IP addresses for devices joining its LAN network. LAN devices connecting to your node will be assigned an IP address automatically. Be aware that if your *LAN Size* is ``disabled`` in the **Network** settings, then your node's DHCP server is also ``disabled``. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-dhcp-1.png
  :alt: Admin DHCP Settings
@@ -699,7 +701,7 @@ Networking for Tunnel Servers
 Tunnel settings
 +++++++++++++++
 
-Click on the **Tunnels** section to open the tunnel configuration display as shown below. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's **Tunnels** to open the tunnel configuration display as shown below. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-tunnels.png
    :alt: Admin Tunnel Settings 1

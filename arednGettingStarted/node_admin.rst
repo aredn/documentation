@@ -428,15 +428,30 @@ This section displays any devices that are directly connected to your node's LAN
 Local Nodes
 -----------
 
-This section displays any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node. There is no *admin* action available.
+As described in the **Node Status** section, this area shows any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a node. If you click in the row while the gray background is visible, the **Local Node** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
+
+.. image:: _images/admin-localnode.png
+ :alt: Admin Local Node Statistics
+ :align: center
+
+|
+
+This display provides more detailed information about your node's connection to this local node. To the right of the node's name there is a field that shows the current link status. Clicking in this field will give you several options for handling the link to this node, including the ability to ``always block`` or ``never block`` that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
+
+- :abbr:`type (DTD)`, mac address, and ip address
+- model and firmware version
+- Latitude, Longitude, and Distance
+- :abbr:`lq (link quality or receive success)`, :abbr:`nlq (neighbor link quality or transmit success rate)`, and :abbr:`etx (Expected Transmission metric)`
+- ping time, ping success rate, and average packets per second
+- link state and active routes
 
 Neighborhood Nodes
 ------------------
 
-As described in the **Node Status** documentation section, this area shows a list of neighbor devices that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a neighbor node. If you click in the neighbor row while the gray background is visible, the **Neighborhood Device** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
+As described in the **Node Status** section, this area shows a list of neighbor devices that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a neighbor node. If you click in the neighbor row while the gray background is visible, the **Neighborhood Node** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
 
-.. image:: _images/admin-neighbor.png
- :alt: Admin Neighbor Statistics
+.. image:: _images/admin-neighbornode.png
+ :alt: Admin Neighbor Node Statistics
  :align: center
 
 |

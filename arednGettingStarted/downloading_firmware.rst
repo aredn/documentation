@@ -18,9 +18,7 @@ The first step is to choose the AREDN® firmware image for your specific hardwar
    :alt: AREDN Firmware Selector
    :align: center
 
-|
-
-Enter the first few characters of the hardware manufacturer in the *Model* search field (case insensitive), then click the firmware image dropdown on the right to choose the firmware release that you want to download. Next, find your device model in the search results list and click the row for your hardware.
+Enter the first few characters of the hardware manufacturer in the *Model* search field (case insensitive), then click the firmware image dropdown on the right to choose the firmware release that you want to download. Next, find your device model in the search results list and click the row for your hardware. As shown below, this display will have links for all of the firmware images that are available to download for your device.
 
 .. image:: _images/afs-2.png
    :alt: AREDN Firmware Selector
@@ -35,6 +33,8 @@ TP-LINK or Ubiquiti
 
 Mikrotik
   If you are loading firmware on Mikrotik devices for the first time you must download **both** the *KERNEL* and *SYSUPGRADE* images. Otherwise download only the *SYSUPGRADE* firmware image.
+
+  As noted in the Mikrotik install instructions, if you determine that your device is running RouterOS ``v7.x`` you can try to install the *SYSUPGRADE-V7* image or you can follow the procedure to downgrade RouterOS and then install the regular *SYSUPGRADE* image.
 
 GL.iNET
   For GL.iNet devices you will only see the *SYSUPGRADE* image for both first-time installs and firmware upgrades.

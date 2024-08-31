@@ -16,7 +16,7 @@ This display has been designed to present all of the important information about
 Top Nav Bar
 -----------
 
-From left to right, after the AREDN® logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display. On the right side there is a button which will switch the display to the old user interface. Click the ``Old UI`` button to see the legacy web interface for your node. From the old user interface you can also click the ``New UI`` button to return to the new user interface.
+From left to right, after the AREDN® logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display. If you click the AREDN® logo you will be taken back to ``localnode.local.mesh``. On the right side there is a button which will switch the display to the old user interface. Click the ``Old UI`` button to see the legacy web interface for your node. From the old user interface you can also click the ``New UI`` button to return to the new user interface.
 
 |icon1| At the far right is the default icon indicating that you are viewing the page as a normal user. Clicking this icon will open a dropdown menu that allows you to login as the node administrator.
 
@@ -44,7 +44,7 @@ Node Description
   This is not a required field, but node owners typically use it to list their contact information or the tactical purpose for the node.
 
 Node Time, Uptime, Load Average, and Free Memory
-  The node time is displayed along with the source in parentheses. If an Internet connection or a local `NTP <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ server is available, your node's NTP client will sync its time with that source. If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, your node can use that source.
+  The node time is displayed and if an NTP or GPS time source is available, that source will be displayed in parentheses. If an Internet connection or a local `NTP <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ server is available, your node's NTP client will sync its time with that source. If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, your node can use that source.
 
   The ``uptime`` is also displayed, which is the time since the last reboot. ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash`` and ``free ram`` shows how much storage space is remaining on your node. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
 
@@ -98,7 +98,7 @@ Neighborhood Nodes
        :alt: Node status indicators
        :align: center
 
-    In the example above, the node name and statistics are displayed in red, and hovering over the node name displays status text indicating that the RF status is "bad". The following list shows how the text colors are mapped to link quality.
+    In the example above, the node name and statistics are displayed in red, and hovering over the node name displays status text indicating that the RF status is "bad". The following list shows how the standard theme text colors are mapped to link quality.
 
     :green: excellent
     :dark green: good

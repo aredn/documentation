@@ -27,10 +27,10 @@ For some configuration changes there may be additional action buttons that are d
 
 The sections of the **admin** display will be described below, beginning in the upper left corner of the left column and working down that column before moving to the center and right columns of the display, working from top to bottom on each column.
 
-Node Name & Security
-----------------------
+Basics
+------
 
-Starting at the top of the left column, highlight and click the section which contains the description and notes. This *Name & Security* section allows you to configure the following settings. Context-sensitive help is available by clicking the ``Help`` button.
+Starting at the top of the left column, highlight and click the section which contains the description and notes. This *Basics* section allows you to configure the following settings. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-name-security-1.png
   :alt: Admin Name and Security

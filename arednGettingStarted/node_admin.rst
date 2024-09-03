@@ -760,6 +760,8 @@ Tools
 
 |icon7| Click the **Tools** icon at the bottom of the left nav bar and select one of the tools from the popup menu.
 
+For any tools with dropdown selection lists, you may filter the list by typing characters in the search box. This will limit the list to include only items which match the text you enter. As you type each character from your keyboard into the search field, the list will change to show only the entries that match your character string. The filter is case insensitive, so it will find both uppercase and lowercase entries for the characters you enter.
+
 WiFi Scan
   This displays the *wifi scan* page which will show the results of the most recent scan (if any). Context-sensitive help is available by clicking the ``Help`` button.
 

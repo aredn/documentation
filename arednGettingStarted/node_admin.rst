@@ -50,6 +50,9 @@ Notes
 Theme
   Click in the field at the right to select a theme from the dropdown list. Your node will immediately display your page in the selected theme.
 
+Portable Theme
+  This switch allows you to enable theme portability. When *Portable Theme* is enabled, the theme on your localnode will be the theme used when viewing any node on the mesh. By default this setting is disabled, which means that the remote node owner's theme will appear in your browser.
+
 Password
   Typically passwords may contain the characters ``a-z``, ``A-Z``, ``0-9``, period ``.``, dash ``-``, underscore ``_``, exclamation ``!``, and tilde ``~``. Avoid Linux-reserved characters, including but not limited to ``#``, ``$``, ``&``, ``*``, ``<``, ``>``. Enter the new password again in the *Retype Password* box to verify it is correct. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text. Be sure to remember or record the new password so you can use it for any future administrative tasks on the node.
 

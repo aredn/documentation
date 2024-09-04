@@ -77,7 +77,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Time settings
 -------------
 
-Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly]. If you have mesh based NTP servers, advertise them as services to ensure time synchronization across your mesh network when the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
+Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. You can also enter the hostname for a :abbr:`NTP (Network Time Protocol)` source if your node is connected to a network which has a network time server. In the *NTP Server* field you should enter a valid hostname for the network time source, for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly] or you can have your node run the NTP program [continuously]. If you have mesh based NTP servers, advertise them as services to ensure time synchronization across your mesh network when the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
 
 .. image:: _images/admin-time.png
   :alt: Admin Time
@@ -465,7 +465,8 @@ This display provides more detailed information about your node's connection to 
 - Latitude, Longitude, and Distance
 - :abbr:`lq (link quality or receive success)`, :abbr:`nlq (neighbor link quality or transmit success rate)`, and :abbr:`etx (Expected Transmission metric)`
 - ping time, ping success rate, and average packets per second
-- local :abbr:`snr (signal to noise ratio)', neighbor :abbr:`snr (signal to noise ratio)`, and transmit failure rate
+- neighbor ping time, ping success, errors
+- local :abbr:`snr (signal to noise ratio)`, neighbor snr, and transmit failure rate
 - physical receive bitrate, physical transmit bitrate, and retransmissions
 - link state and active routes
 - For RF nodes there is a graph of the signal level and noise floor on this link over the last hour of history (approximately). Hovering over the graph lines will display the instantaneous values which were plotted at each point on the graph.
@@ -766,7 +767,7 @@ Tools
 For any tools with dropdown selection lists, you may filter the list by typing characters in the search box. This will limit the list to include only items which match the text you enter. As you type each character from your keyboard into the search field, the list will change to show only the entries that match your character string. The filter is case insensitive, so it will find both uppercase and lowercase entries for the characters you enter.
 
 WiFi Scan
-  This displays the *wifi scan* page which will show the results of the most recent scan (if any). Context-sensitive help is available by clicking the ``Help`` button.
+  This displays the *wifi scan* page which will show the results of the most recent scan (if any). It will only appear if the radio is in Mesh mode. Context-sensitive help is available by clicking the ``Help`` button.
 
   Click the ``Scan`` button in the lower right corner to initiate a new scan which looks for wifi signals that are using the same channel width as your node. It is best practice to scan on 5, 10, and 20 MHz channel widths to find any 802.11 signals within range. Several scans may be necessary to find as many local devices as possible.
 
@@ -779,7 +780,7 @@ WiFi Scan
   With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi. The most recent scan results are retained. When you are finished studying the scan results, click the ``Done`` button to return to the *admin* display.
 
 WiFi Signal
-  This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list. The graph will be cleared and redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
+  This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. It will only appear if the radio is in Mesh mode. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list. The graph will be cleared and redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
 
   .. image:: _images/admin-wifi-signal.png
     :alt: WiFi Signal

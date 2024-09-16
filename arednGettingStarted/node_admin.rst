@@ -419,7 +419,9 @@ Port Forwarding
    :alt: Admin Local Services Port Forwarding
    :align: center
 
-  To create a port forwarding rule, click the [+] icon on the right. Unless the LAN is in NAT mode, port forwarding is only meaningful for WAN-connected nodes so you will only be allowed to create rules for the WAN interface. For inbound port, enter a single port number or a range of ports separated by the dash character. Click in the *protocol* field to select TCP, UDP, or both. Use the switch on the right to enable or disable this port forwarding rule. On the next row, click in the IP address / hostname field to select from the dropdown list a LAN host to process the requests. In the next field, enter the *port* or the first port in the range on which that host is listening for those requests.
+  To create a port forwarding rule, click the [+] icon on the right. Unless the LAN is in NAT mode, port forwarding is only meaningful for WAN-connected nodes so you will only be allowed to create rules for the WAN interface. If in NAT mode you may select the WAN, Mesh, or both Mesh & WAN interfaces when defining your port forwarding rule.
+
+  For inbound port, enter a single port number or a range of ports separated by the dash character. Click in the *protocol* field to select TCP, UDP, or both. Use the switch on the right to enable or disable this port forwarding rule. On the next row, click in the IP address / hostname field to select from the dropdown list a LAN host to process the requests. In the next field, enter the *port* or the first port in the range on which that host is listening for those requests.
 
   To delete a port forwarding rule, click the [-] icon on the right of the existing row for the rule you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 

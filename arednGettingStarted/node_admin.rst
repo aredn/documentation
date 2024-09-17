@@ -777,7 +777,7 @@ WiFi Scan
    :alt: WiFi Scan
    :align: center
 
-  |
+  .. note:: The BSSID column shows the IEEE 802.11 wireless *Basic Service Set ID*. This is a 48-bit label that conforms to the MAC-48 convention, but it is not an actual MAC address. More information about the BSSID can be found `here <https://en.wikipedia.org/wiki/Service_set_(802.11_network)>`_.
 
   With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi. The most recent scan results are retained. When you are finished studying the scan results, click the ``Done`` button to return to the *admin* display.
 

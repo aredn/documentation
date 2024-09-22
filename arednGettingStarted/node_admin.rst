@@ -461,7 +461,9 @@ As described in the **Node Status** section, this area shows a list of neighbor 
 
 |
 
-This display provides more detailed information about your node's connection to this neighbor device. To the right of the neighbor node's name there is a field that shows the current link status. Clicking in this field will give you several options for handling the link to this node, including the ability to ``always block`` or ``never block`` that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
+To the right of the neighbor node's name there is a field that shows the current link status. Clicking in this field will give you options for handling the link to this node. Select ``always block`` if you want LQM to disable the link. Select ``never block`` if you want LQM to keep it enabled even if the link is marginal.
+
+The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
 
 - :abbr:`type (RF, xlink, tunnel)`, mac address, and ip address
 - Latitude, Longitude, and Distance
@@ -518,6 +520,8 @@ Transmit Power
 
 SSID Setting
   The default SSID is provided in the field at the right. Typically you will not need to change this default unless you have a specific reason for putting radios on a non-default SSID to filter their traffic. The SSID is analogous to a CTCSS tone; radios with different SSIDs but using the same channel may generate RF energy that causes interference, even though the radios will not be decoding each other's signals.
+
+All of the following settings will be visible when LQM is enabled. If LQM is disabled, only the *Maximum Distance* setting will be visible.
 
 Minimum SNR
   This is the minimum Signal-to-Noise ratio that you require in order to reliably pass radio data between nodes. The default is 15 dB, but you can lower this value if you require your node to continue passing data even on links with reduced signal characteristics.
@@ -595,6 +599,8 @@ Additional options will be displayed when you click **Advanced Options**.
 
 LQM Enable
   This switch enables **Link Quality Manager** functionality on your node, and the default value is ``enabled``.
+
+All of the following settings will be visible when LQM is enabled. If LQM is disabled, these settings will not be visible.
 
 Minimum Distance
   The minimum distance that must exist between nodes in order for a link to be considered for activation. The default value is ``0``. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes each of which should have an RF link only with other distant nodes.

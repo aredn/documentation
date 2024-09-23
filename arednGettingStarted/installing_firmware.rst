@@ -125,7 +125,7 @@ Step 1: Preparing the device
 
   Once the upgrade has been completed, the device will return you to the login page. Log in using the username and password you created earlier (``admin`` / ``admin!23``). Once again you will see the System page and if everything has been successful, the firmware version will now read either WA.V8.7.0 or XC.V8.7.0 and you can move to **Step 2**.
 
-  .. attention:: The upgrade can fail on newer hardware which requires **8.7.4** firmware. This problem has only been observed and tested on newer LiteBeam 5AC devices. For these devices, follow the same firmware downgrade procedure but use the following firmware instead:
+  .. attention:: The upgrade can fail on newer hardware which requires **8.7.4** firmware. This problem has been observed and tested on newer LiteBeam AC, PowerBeam AC and NanoBeam AC devices. For these devices, follow the same firmware downgrade procedure but use the following firmware instead:
 
     - `WA: https://dl.ubnt.com/firmwares/XC-fw/v8.7.4/WA.v8.7.4.45112.210415.1103.bin <https://dl.ubnt.com/firmwares/XC-fw/v8.7.4/WA.v8.7.4.45112.210415.1103.bin>`_
 

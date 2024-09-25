@@ -430,7 +430,7 @@ This section displays any devices that are directly connected to your node's LAN
 Local Nodes
 -----------
 
-As described in the **Node Status** section, this area shows any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a node. If you click in the row while the gray background is visible, the **Local Node** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
+As described in **Node Status**, this section shows any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node. In order to be considered "local" the GPS coordinates entered in the *Location* section must be within 100 meters of the local neighbor. In *admin* mode you will see a gray background when hovering over a node. If you click in the row while the gray background is visible, the **Local Node** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-localnode.png
  :alt: Admin Local Node Statistics

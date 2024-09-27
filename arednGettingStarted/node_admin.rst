@@ -11,7 +11,7 @@ You must login as the node administrator in order to perform node management tas
 Admin navigation & actions
 --------------------------
 
-In *admin* mode the sections on the **node status** display become editable and new sections with additional options will appear. When you hover the cursor over a section, a gray background appears which identifies that section as being configurable. When you click a section, a new settings dialog display will be opened. The title at the top of the display tells you what settings you are configuring. There is also a ``Help`` button in the upper right corner which will enable extended context-sensitive descriptions of each option which has additional help text.
+In *admin* mode the sections on the **node status** display become editable and new sections with additional options will appear. When you hover the cursor over a section, a gray background appears which identifies that section as being configurable. When you click in a highlighted section, a new settings dialog display will be opened. The title at the top of the display tells you what settings you are configuring. There is also a ``Help`` button in the upper right corner which will enable extended context-sensitive descriptions of each option which has additional help text.
 
 Settings can be edited or selected from dropdown lists by clicking in each of the fields. If a section has **Advanced Options** you can view and configure them by clicking the *Advanced Options* label to display those additional settings. After making any changes to the configuration settings on each display, you will typically click the ``Done`` button. Your changes have been recorded but they have not yet been committed or saved to your node. You may also click the ``Cancel`` button to discard any changes you have made and return to the *admin* view.
 
@@ -430,7 +430,9 @@ This section displays any devices that are directly connected to your node's LAN
 Local Nodes
 -----------
 
-As described in **Node Status**, this section shows any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node. In order to be considered "local" the GPS coordinates entered in the *Location* section must be within 100 meters of the local neighbor. In *admin* mode you will see a gray background when hovering over a node. If you click in the row while the gray background is visible, the **Local Node** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
+As described in **Node Status**, this section shows any local :abbr:`DtD (Device to Device)` nodes that are directly connected to your node. In order to be considered "local" the GPS coordinates entered in the *Location* section must be within 100 meters of the local neighbor. Context-sensitive help is available by clicking the ``Help`` button.
+
+The node name of each Local Node is a clickable link which will navigate to that node's status page. When you hover over the row of any Local Node, a gray background appears which indicates that row is selected. If you click in the selected row (but not directly on the node name link), the **Local Node** popup will be displayed which provides more detailed information about your node's connection to the selected local node.
 
 .. image:: _images/admin-localnode.png
  :alt: Admin Local Node Statistics
@@ -438,7 +440,7 @@ As described in **Node Status**, this section shows any local :abbr:`DtD (Device
 
 |
 
-This display provides more detailed information about your node's connection to this local node. To the right of the node's name there is a field that shows the current link status. Clicking in this field will give you several options for handling the link to this node, including the ability to ``always block`` or ``never block`` that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
+To the right of the node's name there is a field that shows the current link status. Clicking in this field will give you several options for handling the link to this node, including the ability to ``always block`` or ``never block`` that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
 
 - :abbr:`type (DTD)`, mac address, and ip address
 - model and firmware version
@@ -450,7 +452,9 @@ This display provides more detailed information about your node's connection to 
 Neighborhood Nodes
 ------------------
 
-As described in the **Node Status** section, this area shows a list of neighbor devices that are directly connected to your node. In *admin* mode you will see a gray background when hovering over a neighbor node. If you click in the neighbor row while the gray background is visible, the **Neighborhood Node** display will appear. Context-sensitive help is available by clicking the ``Help`` button.
+As described in the **Node Status** section, this area shows a list of neighbor devices that are directly connected to your node. Context-sensitive help is available by clicking the ``Help`` button.
+
+The node name of each Neighborhood Node is a clickable link which will navigate to that node's status page. When you hover over the row of any Neighborhood Node, a gray background appears which indicates that row is selected. If you click in the selected row (but not directly on the node name link), the **Neighborhood Node** popup will be displayed which provides more detailed information about your node's connection to the selected local node.
 
 .. image:: _images/admin-neighbornode.png
  :alt: Admin Neighbor Node Statistics

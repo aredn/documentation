@@ -117,7 +117,13 @@ Upload Firmware
 Sideload Local Firmware
   If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp`` folder, and name it ``local_firmware.bin``. Once the node detects the presence of ``/tmp/local_firmware.bin``, then the filename in the field at the right will become active. Click the ``Update`` button to begin the process. You may need to scroll down in the display to see the button.
 
-A progress bar at the bottom of the display will show the status of any your download or upload. Any error messages will also be displayed in a message bar at the top of this display. You should then see a display showing that the image is being installed, along with a timer and progress indicator.
+Backup Configuration
+  Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware.
+
+Restore Configuration
+  Once you have generated and saved a backup configuration, you can restore that previous backup to your node. This will replace the node's configuration with the settings in the backup file. Be aware that no attempt is made to validate the backup file. Also, restoring to a different type of hardware could result in unexpected behavior.
+
+A progress bar at the bottom of the display will show the status of your download or upload. Any error messages will also be displayed in a message bar at the top of this display. You should then see a display showing that the image is being installed, along with a timer and progress indicator.
 
 Additional options will be displayed when you click **Advanced Options**.
 

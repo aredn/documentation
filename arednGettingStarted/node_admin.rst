@@ -805,7 +805,7 @@ WiFi Signal
 
   |
 
-  The colored bars on the left display the worst and best signal values that are seen during the monitoring interval. The instantaneous signal value is shown above the colored bars on the left. All of these values will be adjust over time as new data is obtained.
+  The colored bars on the left display the worst and best signal values that are seen during the monitoring interval. The instantaneous signal value is shown above the colored bars on the left. Both the local node and remote node view of the signal levels will be displayed on the bars and the graph. All of these values will be adjusted over time as new data is obtained.
 
   Below the line graph there are controls that allow you to enable an audio representation of the instantaneous signal value. Click in the field to the right of the *Sound* label and select ``OFF`` or ``ON`` to enable or disable the sound. You can control the volume and pitch of the tone using the horizontal sliders. The higher the pitch, the better the signal level. When you are finished studying the results, click the ``Done`` button to return to the status display.
 

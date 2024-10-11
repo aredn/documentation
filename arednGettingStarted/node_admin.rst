@@ -330,7 +330,7 @@ PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
 
 Message Updates
-  The AREDN® development team may post messages which Internet-connected nodes will automatically download and display. You may also use a local message source to display messages on your node's status page. Enter an integer in this field for the number of hours you want your node to wait before refreshing its messages. The default value is ``1`` hour between updates.
+  The AREDN® development team may post messages which Internet-connected nodes will automatically download and display. You may also use a local message source to display messages on your node's status page. Enter an integer in this field for the number of hours you want your node to wait before refreshing its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.
 
   .. image:: _images/admin-internal-svc-3.png
    :alt: Admin Internal Services continued

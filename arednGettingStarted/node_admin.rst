@@ -316,15 +316,17 @@ WAN web
   This switch enables http/https access to your node on its WAN interface. Disabling this option will not prevent http/https access to your node from the Mesh and LAN interfaces.
 
 Watchdog
-  Watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, Watchdog will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Watchdog events are logged in the standard log on the node. Because the watchdog is part of the hardware, the device will still reboot itself even if the kernel crashes. Be aware that you must disable Watchdog and reboot your node before you can upgrade the firmware, since Watchdog may interfere with the normal upgrade process.
+  Watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, Watchdog will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Watchdog events are logged in the standard log on the node. Because the watchdog is part of the hardware, the device will still reboot itself even if the kernel crashes.
+
+  .. attention:: Be aware that you must disable Watchdog and reboot your node before you can upgrade the firmware, since Watchdog may interfere with the normal upgrade process.
 
   If Watchdog is enabled, the following two fields will also be displayed.
 
-  Watchdog IP address
-    You may also include one or more IP addresses, at least one of which should always be pingable. Your node will be rebooted if none of the IP addresses are reachable across the network. Enter IP addresses as a whitespace-delimited list. It is strongly recommended that you keep this list to the absolute minimum. Too many address can take a long time to check, especially if several are unavailable. This can result in reboots if the testing is not performed before the watchdog timer expires. Ideally use only one address.
+  Watchdog IP addresses
+    You may include one or more IP addresses, at least one of which should always be pingable. Your node will be rebooted if none of the IP addresses are reachable across the network. Enter IP addresses as a whitespace-delimited list. It is strongly recommended that you keep this list to the absolute minimum. Too many address can take a long time to check, especially if several are unavailable. This can result in reboots if the testing is not performed before the watchdog timer expires. Ideally use addresses that respond quickly to pings.
 
-  Daily Watchdog hour
-    Enter an integer between 0 - 23 which represents the hour of each day that you would like Watchdog to automatically reboot your node. The default is an empty field, in which case Watchdog will not auto-reboot your node.
+  Daily Watchdog time
+    Set a specific time of the day (between 00:00 and 23:59) that you would like Watchdog to automatically reboot your node. The default is an empty field, in which case Watchdog will not auto-reboot your node.
 
 PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.

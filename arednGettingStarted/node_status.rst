@@ -16,11 +16,19 @@ This display has been designed to present all of the important information about
 Top Nav Bar
 -----------
 
-From left to right, after the AREDN® logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display. If you click the AREDN® logo you will be taken back to ``localnode.local.mesh``.
+The AREDN® logo is displayed in the upper left corner. If you click the AREDN® logo you will be taken back to ``localnode.local.mesh``. After the AREDN® logo, the node name is displayed along with a label indicating whether you are viewing the *status* or *admin* display. On the far right is the user status icon.
 
-|icon1| At the far right is the default icon indicating that you are viewing the page as a normal user. Clicking this icon will open a dropdown menu that allows you to login as the node administrator.
+.. image:: _images/menu-guest.png
+   :alt: Guest icon and menu
+   :align: left
 
-|icon2| If this icon is displayed at the far right, then you are viewing the page as the node administrator. Clicking this icon will open a dropdown menu that allows you to logout, reboot the node, display help, or open the AREDN® website.
+.. image:: _images/menu-admin.png
+  :alt: Admin icon and menu
+  :align: right
+
+The default icon indicates that you are viewing the page as a normal user. Clicking this icon will open a dropdown menu that allows you to login as the node administrator.
+
+If the user icon is displayed within a circle, then you are viewing the page as the node administrator. Clicking this icon will open a dropdown menu that allows you to logout, reboot the node, display help, or open the AREDN® website.
 
 Left Nav Bar
 ------------

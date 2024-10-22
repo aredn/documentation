@@ -16,7 +16,7 @@ At a minimum the VM must have two virtual CPUs, 64mb memory, and approximately 2
 There are two modes for networking: single-port and multi-port. This is automatically selected based on the number of available network interfaces detected. Set the number of interfaces *before* powering on the VM for the first time.
 
 Single-port mode
-  All traffic utilizes VLANs as described in the *Node VLANs* section of the **Configuration Deep Dive** documentation. This requires your virtual interface to be VLAN aware or to be set as a passthrough interface.
+  All traffic utilizes VLANs as described in the *Advanced Options* section of the **Node Admin** documentation. This requires your virtual interface to be VLAN aware or to be set as a passthrough interface.
 
 Multi-port mode
   Ports can be assigned as needed to be LAN, DtD or WAN links. If your virtual interface is VLAN aware, you can tag VLANs; otherwise the interface should be untagged, which is the recommended setting. In this mode the following ports are automatically assigned:

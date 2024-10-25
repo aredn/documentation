@@ -21,7 +21,7 @@ Before you consider deploying a Supernode, make sure you can adequately support 
 
 2. **Uptime stability.** The Supernode should be up 99.999% of the time. The location should ideally have backup power and network connectivity, both to the Internet and to the local mesh.
 
-3. **Solid local mesh connectivity.** As this is the path for all traffic between your local mesh and every other mesh, the connection to your mesh should be at a high-bandwidth location. If you are deploying a Supernode with any sort of high-bandwidth backbone, the Supernode should be connected to the backbone.
+3. **Solid local mesh connectivity.** As this will be the path for all traffic between your local mesh and every other mesh, the connection to your mesh should be at a high-bandwidth location. If you are deploying a Supernode with any sort of high-bandwidth backbone, the Supernode should be connected to the backbone.
 
 Coordinating Supernode Deployments
 ----------------------------------
@@ -43,7 +43,7 @@ As more Supernodes are deployed linking more local networks, the overall perform
 Setting up a Supernode
 ----------------------
 
-Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Ethernet Ports & Xlinks* display (Port 5 by default).
+Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Ethernet Ports & Xlinks* display (Port 5 by default). The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a gateway.
 
 .. image:: _images/supernode-localDTD.png
    :alt: DtD Link Example
@@ -57,7 +57,7 @@ The following steps are required to configure a Supernode.
 
 #. Configure the Supernode with a nodename prefixed with your callsign followed by a location identifier as well as the word "SUPERNODE." For example you could use ``AB2CD-NYC-SUPERNODE`` or ``AB6CD-LAX-SUPERNODE``
 
-#. Ensure that the *Mesh* radio is ``off``
+#. Ensure that the Supernode's radio is ``off``
 
 #. Provide a reserved or static IP address for the device's WAN connection to your Internet routing device.
 
@@ -95,7 +95,7 @@ Things to Avoid
 
   - Your Supernode must **not** use any cross-links (xlinks) to other nodes.
   - Your Supernode must **not** have tunnel links to any non-Supernode devices.
-  - Your Supernode must **not** have its *Mesh* radio interface enabled.
+  - Your Supernode must **not** have its radio(s) enabled.
 
 Before proceeding, make sure all the previous steps have been completed successfully. Now you should be able to connect to another Supernode using a tunnel. The easiest way to do this is to ask another Supernode owner for a set of tunnel client credentials. Your node can use either a client or server tunnel link. Supernode owners can be identified from the `Supernode Network Map <https://worldmap.arednmesh.org/>`_
 

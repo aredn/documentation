@@ -328,17 +328,23 @@ Watchdog
   Daily Watchdog time
     Set a specific time of the day (between 00:00 and 23:59) that you would like Watchdog to automatically reboot your node. The default is an empty field, in which case Watchdog will not auto-reboot your node.
 
+.. image:: _images/admin-internal-svc-3.png
+  :alt: Admin Internal Services continued
+  :align: center
+
+|
+
+Wireless Watchdog
+  This background monitor will restart the mesh radio if it becomes unresponsive. If Wireless Watchdog is enabled, the following field will also be displayed.
+
+  Daily Wireless Watchdog Time
+    You may enter a time of day in this field (between 00:00 and 23:59) to have the Wireless Watchdog automatically restart the mesh radio.
+
 PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
 
 Message Updates
   The AREDN® development team may post messages which Internet-connected nodes will automatically download and display. You may also use a local message source to display messages on your node's status page. Enter an integer in this field for the number of hours you want your node to wait before refreshing its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.
-
-  .. image:: _images/admin-internal-svc-3.png
-   :alt: Admin Internal Services continued
-   :align: center
-
-  |
 
 Local Message URL
   This field allows you to enter the URL for a local message source. If you configure a local message server, then even nodes without Internet access can receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.

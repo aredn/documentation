@@ -12,9 +12,9 @@ There may be cases when you need to create extra static routes to control the fl
 AREDN® Prometheus Exporter
 ---------------------------------
 
-`Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_ is an open-source monitoring and alerting toolkit which collects and stores metrics as time series data. At given intervals it can collect metrics from AREDN® nodes having the ``prometheus-exporter`` package installed. Prometheus evaluates rule expressions, displays the results, and can trigger alerts when specified conditions are detected.
+`Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_ is an open-source monitoring and alerting toolkit which collects and stores metrics as time series data. Prometheus evaluates rule expressions, displays the results, and can trigger alerts when specified conditions are detected. It can collect metrics from AREDN® nodes running a recent firmware version.
 
-AREDN® metrics in the ``prometheus-exporter`` package include the following:
+Examples of AREDN® metrics include:
 
 - Node details (name, model, firmware, description, Lat/Lon, grid square, band, channel, width, frequency, SSID)
 - Memory, storage, CPU, and networking metrics
@@ -22,7 +22,7 @@ AREDN® metrics in the ``prometheus-exporter`` package include the following:
 - LQM metrics
 - OLSR link info
 
-In order for Prometheus to pull metrics from a node it will use the following target URL: ``http://<NODE>.local.mesh/cgi-bin/metrics`` and metrics are returned by the node as standard *text/plain* content. Minimal node resources are required to support Prometheus data collection since the node only uses minimal resources whenever this URL is queried.
+In order for Prometheus to pull metrics from a node it will use the following target URL: ``http://<NODE>.local.mesh/cgi-bin/metrics``, and metrics are returned by the node as standard *text/plain* content. Minimal node resources are required to support Prometheus data collection since the node runs no metrics service and uses minimal resources when its URL is queried.
 
 .. image:: _images/prometheus-exporter.png
    :alt: Prometheus Exporter metrics in text format
@@ -30,7 +30,7 @@ In order for Prometheus to pull metrics from a node it will use the following ta
 
 |
 
-The AREDN® ``prometheus-exporter`` simply makes these metrics available for Prometheus to pull. For additional information about Prometheus itself, visit `their website here <https://prometheus.io/>`_. The following image shows Prometheus metrics for an AREDN® node being displayed by the `Grafana <https://en.wikipedia.org/wiki/Grafana>`_ visualization application.
+The AREDN® node simply makes these metrics available for Prometheus to pull. For additional information about Prometheus itself, visit `their website here <https://prometheus.io/>`_. The following image shows Prometheus metrics for an AREDN® node being displayed by the `Grafana <https://en.wikipedia.org/wiki/Grafana>`_ visualization application.
 
 .. image:: _images/grafana.png
    :alt: Prometheus Exporter metrics in Grafana

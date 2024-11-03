@@ -2,7 +2,7 @@
 Virtual Machine Installs
 ========================
 
-*Contributor: Trevor Raty KG6MDW*
+*Contributors: Trevor Raty KG6MDW and Tim Wilkinson KN6PLV*
 
 The use of virtual machines as AREDN® nodes is for advanced users. Most users should use *Mikrotik ac2* or *ac3* hardware to achieve similar functionality. These instructions are provided with the assumption that you understand your virtualization platform and are familiar with creating images and uploading virtual disks. The x86_64 image has been tested and is considered stable on the Proxmox, Unraid, and VMware ESXi platforms, so usage on other virtualization platforms may not work as expected.
 
@@ -27,8 +27,13 @@ Multi-port mode
 
 .. note:: The images do not include any *vmtools* but they do contain drivers for the standard QEMU/VMware paravirtualized storage and networking. Using the paravirtualized devices is recommended.
 
-QEMU Install Process
---------------------
+Proxmox Installs
+----------------
+
+*Proxmox Virtual Environment* is an open-source server management platform for virtualization. There is an updated checklist of steps for Proxmox installs on the `Bay Area Mesh Wiki <https://wiki.bayareamesh.us/index.php/AREDN_on_Proxmox>`_.
+
+QEMU Installs
+-------------
 
 1. Download the latest firmware image from the AREDN® downloads website.
 
@@ -40,8 +45,8 @@ QEMU Install Process
 
 5. Boot the VM and proceed with the AREDN® node configuration steps.
 
-VMware Install Process
-----------------------
+VMware Installs
+---------------
 
 For VMware you will need to use QEMU tools or another V2V converter in order to convert the image to ``vmdk`` format. Some example software is listed below:
 

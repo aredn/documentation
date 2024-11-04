@@ -4,9 +4,7 @@ Virtual Machine Installs
 
 *Contributors: Trevor Raty KG6MDW and Tim Wilkinson KN6PLV*
 
-The use of virtual machines as AREDN® nodes is for advanced users. Most users should use *Mikrotik ac2* or *ac3* hardware to achieve similar functionality. These instructions are provided with the assumption that you understand your virtualization platform and are familiar with creating images and uploading virtual disks. The x86_64 image has been tested and is considered stable on the Proxmox, Unraid, and VMware ESXi platforms, so usage on other virtualization platforms may not work as expected.
-
-In order to have the most current features, it is recommended that you install a Nightly Build image of the AREDN® firmware. For example, there is a known issue in the x86_64 firmware before 3.23.12.0 when using more than one Ethernet interface, but this was resolved in subsequent releases.
+The use of virtual machines as AREDN® nodes is for advanced users. Most users should use *Mikrotik ac2* or *ac3* hardware to achieve similar functionality. These instructions are provided with the assumption that you understand your virtualization platform and are familiar with creating images and uploading virtual disks. The x86_64 image has been tested and is considered stable on the Proxmox, Unraid, QEMU, and VMware ESXi platforms, so usage on other virtualization platforms may not work as expected.
 
 Prerequisites / Image information
 ---------------------------------
@@ -19,7 +17,7 @@ Single-port mode
   All traffic utilizes VLANs as described in the *Advanced Options* section of the **Node Admin** documentation. This requires your virtual interface to be VLAN aware or to be set as a passthrough interface.
 
 Multi-port mode
-  Ports can be assigned as needed to be LAN, DtD or WAN links. If your virtual interface is VLAN aware, you can tag VLANs; otherwise the interface should be untagged, which is the recommended setting. In this mode the following ports are automatically assigned:
+  Ports can be assigned as needed to be LAN, DtD or WAN links. If your virtual interface is VLAN aware, you can tag VLANs; otherwise the interface should be untagged, which is the recommended setting. In this mode the following ports may be assigned:
 
   - First interface: WAN
   - Second interface: DtD

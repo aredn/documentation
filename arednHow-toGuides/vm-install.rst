@@ -14,7 +14,7 @@ At a minimum the VM must have two virtual CPUs, 64mb memory, and 128mb of storag
 There are two modes for networking: single-port and multi-port. Set the number of interfaces *before* powering on the VM for the first time. Regardless of the number of interfaced created, the node will initially be configured in 'single-port mode'. This can be changed later in the AREDN UI.
 
 Single-port mode
-  All traffic utilizes VLANs as described in the *Advanced Options* section of the **Network Settings** dialog in the Node Admin documentation. This requires your virtual interface to be VLAN aware or to be set as a passthrough interface.
+  All traffic utilizes VLANs as described in the *Advanced Options* section of the *Network Settings* dialog in the **Node Admin** documentation. This requires your virtual interface to be VLAN aware or to be set as a passthrough interface.
 
 Multi-port mode
   Ports can be assigned as needed to be LAN, DtD or WAN links. If your virtual interface is VLAN aware, you can tag VLANs; otherwise the interface should be untagged, which is the recommended setting. As an example, if you have three interfaces defined, you might assign ports as follows:

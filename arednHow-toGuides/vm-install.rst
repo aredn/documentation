@@ -21,7 +21,7 @@ Multi-port mode
 
   - First interface: WAN
   - Second interface: DtD
-  - Third and beyond: LAN
+  - Third interface: LAN
 
 .. note:: The images do not include any *vmtools* but they do contain drivers for the standard QEMU/VMware paravirtualized storage and networking. Using the paravirtualized devices is recommended.
 

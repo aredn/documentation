@@ -9,15 +9,15 @@ The use of virtual machines as AREDN® nodes is for advanced users. Most users s
 Prerequisites / Image information
 ---------------------------------
 
-At a minimum the VM must have two virtual CPUs, 64mb memory, and approximately 200mb free storage. Providing more CPU is generally not needed on modern hardware. Extra memory can be useful for a Supernode or large tunnel server, however more than 1gb is not needed.
+At a minimum the VM must have two virtual CPUs, 64mb memory, and 128mb of storage. Providing more CPU is generally not needed on modern hardware.
 
-There are two modes for networking: single-port and multi-port. This is automatically selected based on the number of available network interfaces detected. Set the number of interfaces *before* powering on the VM for the first time.
+There are two modes for networking: single-port and multi-port. Set the number of interfaces *before* powering on the VM for the first time. Regardless of the number of interfaced created, the node will initially be configured in 'single-port mode'. This can be changed later in the AREDN UI.
 
 Single-port mode
   All traffic utilizes VLANs as described in the *Advanced Options* section of the **Node Admin** documentation. This requires your virtual interface to be VLAN aware or to be set as a passthrough interface.
 
 Multi-port mode
-  Ports can be assigned as needed to be LAN, DtD or WAN links. If your virtual interface is VLAN aware, you can tag VLANs; otherwise the interface should be untagged, which is the recommended setting. In this mode the following ports may be assigned:
+  Ports can be assigned as needed to be LAN, DtD or WAN links. If your virtual interface is VLAN aware, you can tag VLANs; otherwise the interface should be untagged, which is the recommended setting. As an example, if you have three interfaces defined, you might assign ports as follows:
 
   - First interface: WAN
   - Second interface: DtD

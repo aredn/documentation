@@ -41,6 +41,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :CPU: Central Processing Unit
 :CSMA/CA: Carrier Sense Multiple Access / Collision Avoidance
 :CSS: Cascading Style Sheets (computer graphics)
+:CSV: Comma Separated Values
 :CTR: Center
 :CTRL: Control (a keyboard key)
 :CTS: Clear to Send
@@ -105,6 +106,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :LOS: Line of Sight
 :LQ: Link Quality
 :LQM: Link Quality Manager, Link Quality Management
+:LUCI: OpenWRT web interface toolkit
 :MA: Milliamp (10E-3 amp)
 :MAC: Media Access Control
 :MACOS: Apple Computer Operating System
@@ -126,6 +128,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :MSG: Message
 :NAT: Network Address Translation
 :NAV: Navigation
+:NB: Nightly Build
 :NC: Non-commercial
 :NLOS: Near Line of Sight
 :NLQ: Neighbor Link Quality
@@ -142,6 +145,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :PDF: Portable Document Format
 :PEP: Peak Envelope Power
 :PHP: Perl Hypertext Pre-Processor
+:PKT: Packet(s)
 :PPK: Private Key File Extension
 :POE: Power Over Ethernet
 :POP: Post Office Protocol
@@ -188,8 +192,9 @@ List of acronyms sometimes encountered in the AREDN® project.
 :TFTP: Trivial File Transfer Protocol
 :TMP: temporary
 :TN: True North
-:TX/RX: Transmit/Receive
-:UCI: Unified Configuration Interface
+:TOH: OpenWRT Table of Hardware
+:TX: Transmit, Transmitter
+:UCI: OpenWRT Unified Configuration Interface
 :UDP: User Datagram Protocol
 :UI: User Interface
 :URL: Universal Resource Locator
@@ -205,6 +210,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :W: Watt (unit of power)
 :WAN: Wide Area Network
 :WEBRTC: Web Real-Time Communication - open-source project to facility web communications
+:WG: WireGuard
 :WGT: Weight
 :WIFI: Family of wireless networking protocols based on IEEE 802.11 standard
 :WIMAX: Family of wireless communication protocols based on IEEE 802.16 standard

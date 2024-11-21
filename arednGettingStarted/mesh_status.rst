@@ -18,7 +18,7 @@ Within each group the nodes are displayed side by side in two columns. The node 
 
 Each node block will show the node name followed by a number that represents the :abbr:`ETX (Expected TX metric)`, which is an estimate of the number of :abbr:`OLSR (Optimized Link State Routing protocol)` packets that must be sent in order to receive a round trip acknowledgment, which is often referred to as *link cost*. The :abbr:`OLSR (Optimized Link State Routing)` protocol selects the least cost route based on the lowest :abbr:`ETX (Expected TX metric)` in the direction of the final destination. Nodes are put into groups based on their :abbr:`ETX (Expected TX metric)`.
 
-The display shows each node, any connected :abbr:`LAN (Local Area Network)` devices, and any advertised services available on the node and its hosts. Small icons appear at the right of each service which indicate the type of service, and the definition of these service types is described in the *Node Services* section of the **Node Admin** guide. You can click any available web links to navigate to the nodes or services shown on the **mesh status** display.
+The display shows each node, any connected :abbr:`LAN (Local Area Network)` devices, and any advertised services available on the node and its hosts. Small icons appear at the right of each service which indicate the type of service, and the definition of these service types is described in the *Local Services* section of the **Node Admin** guide. You can click any available web links to navigate to the nodes or services shown on the **mesh status** display.
 
 
 .. |icon1| image:: ../_icons/mesh.png

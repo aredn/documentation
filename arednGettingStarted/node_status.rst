@@ -95,6 +95,14 @@ Local Nodes
 
     - ``dist`` is the line of sight distance between your node and the remote node, calculated from the GPS coordinates if they are entered for both nodes. This value will be expressed in *miles* or *kilometers* based on the locale settings in the web browser.
 
+  When you hover over the row of any Local Node, a gray background appears which indicates that row is selected. If you click in the selected row (but not directly on the node name link), the **Local Node** popup will be displayed which provides more detailed information about your node's connection to the selected node.
+
+  .. image:: _images/localnode.png
+   :alt: Local Node Statistics
+   :align: center
+
+|
+
 Neighborhood Nodes
   This section displays any nodes that are direct neighbors of your node, whether via :abbr:`RF (radio frequency)`, an xlink, or a tunnel over an Internet connection. Each type of connection will display a different icon to the right of the node name, and this indicates the type of link (for example, the small radio signal icon in the screenshot above indicates an RF link). If a node is reachable from your node, you can click the node name to navigate to that node. Not all the columns for link quality statistics will be populated for *Neighborhood Nodes*. If you hover the cursor over the node name, a popup will appear showing the relative link quality of the connection to that node.
 
@@ -115,6 +123,12 @@ Neighborhood Nodes
     :red: bad
     :gray: idle
     :strikethrough: blocked
+
+  When you hover over the row of any Neighborhood Node, a gray background appears which indicates that row is selected. If you click in the selected row (but not directly on the node name link), the **Neighborhood Node** popup will be displayed which provides more detailed information about your node's connection to the selected node.
+
+  .. image:: _images/neighbornode.png
+   :alt: Neighborhood Node Statistics
+   :align: center
 
 Right Column
 ------------

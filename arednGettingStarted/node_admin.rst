@@ -118,7 +118,12 @@ Sideload Local Firmware
   If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp`` folder, and name it ``local_firmware.bin``. Once the node detects the presence of ``/tmp/local_firmware.bin``, then the filename in the field at the right will become active. Click the ``Update`` button to begin the process. You may need to scroll down in the display to see the button.
 
 Backup Configuration
-  Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware.
+  Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware. It is also possible to generate a node backup file from the command line of your node:
+
+  ::
+
+    # /usr/local/bin/backup
+    Generated backup file: /tmp/node-backup.backup
 
 Restore Configuration
   Once you have generated and saved a backup configuration, you can restore that previous backup to your node. This will replace the node's configuration with the settings in the backup file. Be aware that no attempt is made to validate the backup file. Also, restoring to a different type of hardware could result in unexpected behavior.
@@ -870,8 +875,22 @@ iPerf3
 
   After selecting the *Server* and *Client* nodes, click the ``Go`` button at the lower right corner to view the results. You may want to test network throughput in both directions by clicking the double-arrow icon to swap the *Server* and *Client* nodes. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
+Syslog
+  This tool allows you to view the log file on your node. You can scroll up and down through the log entries as needed. When you are finished studying the results, click the ``Done`` button.
+
+  .. image:: _images/admin-syslog.png
+   :alt: View Syslog
+   :align: center
+
+|
+
 Support Data
-  There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN® team in order to get help with a problem. Click the *Support Data* icon to save a compressed archive file to your local computer.
+  There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN® team in order to get help with a problem. Click the *Support Data* icon to save a compressed archive file to your local computer. It is also possible to generate a support data file from the command line of your node:
+
+  ::
+
+    # /usr/local/bin/supportdata
+    Generated support data file: /tmp/supportdata.tar.gz
 
 
 .. |icon1| image:: ../_icons/login.png

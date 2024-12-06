@@ -11,7 +11,7 @@ Once you have completed the initial setup on your AREDN® node, you can connect 
 
 |
 
-This display has been designed to present all of the important information about your node in one view. Someone navigating to your node's status display will be able to see all of the key elements of interest without having to click to multiple pages. This display consists of a top navigation bar, a left navigation bar, and three columns of information about your node.
+This display has been designed to present all of the important information about your node in one view. Someone navigating to your node's status display will be able to see all of the key elements of interest without having to click to multiple pages. This display consists of a top navigation bar, a left navigation bar, and typically shows three columns of information about your node. The information is displayed adaptively based on the width of the browser or screen you are using. If you are using a narrow display such as a smartphone or tablet, the information may be shown in a single column. If you are using a width-limited display, the information may be shown in two columns. On wider displays the information will be shown in three columns (as depicted above).
 
 Top Nav Bar
 -----------
@@ -43,8 +43,8 @@ Using the icons on the left side bar you can navigate to various displays.
 
 |icon6| navigates to the world map on the AREDN® website. This is only displayed if your node has valid latitude and longitude values, since this feature is designed to display your node in the center of the map. If your node has no latitude and longitude values, then this icon will not appear on the nav bar.
 
-Left Column
------------
+Left Section
+------------
 
 Several sections of node information are presented here (listed from top to bottom).
 
@@ -65,8 +65,8 @@ Network Information
 Node Location Information
   At the bottom of the left column is the node location information. Initially there will be no location values since the latitude, longitude, and grid square have not yet been entered. After the latitude, longitude, and grid square have been entered (as described in the **Node Admin** guide), your node will attempt to display a thumbnail map with its location in the center. If your node has no access to the Internet or to a local map tile server, then the map will not be displayed. The latitude, longitude, and grid square values will be shown below the map thumbnail.
 
-Center Column
--------------
+Center Section
+--------------
 
 The center column has four main sections (listed from top to bottom).
 
@@ -130,8 +130,8 @@ Neighborhood Nodes
    :alt: Neighborhood Node Statistics
    :align: center
 
-Right Column
-------------
+Right Section
+-------------
 
 The right column displays additional details about your node (listed from top to bottom).
 

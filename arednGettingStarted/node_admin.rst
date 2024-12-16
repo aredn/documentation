@@ -320,33 +320,29 @@ WAN telnet
 WAN web
   This switch enables http/https access to your node on its WAN interface. Disabling this option will not prevent http/https access to your node from the Mesh and LAN interfaces.
 
-Watchdog
-  Watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, Watchdog will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Watchdog events are logged in the standard log on the node. Because the watchdog is part of the hardware, the device will still reboot itself even if the kernel crashes.
+Hardware Watchdog
+  Hardware watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, it will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Hardware watchdog events are logged in the standard log on the node. Because the watchdog is part of the hardware, the device will still reboot itself even if the kernel crashes.
 
-  .. attention:: Be aware that you must disable Watchdog and reboot your node before you can upgrade the firmware, since Watchdog may interfere with the normal upgrade process.
+  .. attention:: Be aware that you must disable Hardware Watchdog and reboot your node before you can upgrade the firmware, since Watchdog may interfere with the normal upgrade process.
 
-  If Watchdog is enabled, the following two fields will also be displayed.
+Wireless Watchdog
+  This background monitor will restart the mesh radio if it becomes unresponsive. If Wireless Watchdog is enabled, the following fields will also be displayed.
 
-  Watchdog IP addresses
-    You may include one or more IP addresses, at least one of which should always be pingable. Your node will be rebooted if none of the IP addresses are reachable across the network. Enter IP addresses as a whitespace-delimited list. It is strongly recommended that you keep this list to the absolute minimum. Too many address can take a long time to check, especially if several are unavailable. This can result in reboots if the testing is not performed before the watchdog timer expires. Ideally use addresses that respond quickly to pings.
+  Daily Wireless Watchdog Time
+    This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the wifi automatically.
 
-  Daily Watchdog time
-    Set a specific time of the day (between 00:00 and 23:59) that you would like Watchdog to automatically reboot your node. The default is an empty field, in which case Watchdog will not auto-reboot your node.
+  Wireless Watchdog LQM
+    This switch enables restarting the Link Quality Manager (LQM) whenever the Wireless Watchdog restarts the radio. This feature is ``disabled`` by default.
+
+PoE and USB Power Passthrough
+  These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
+
+|
 
 .. image:: _images/admin-internal-svc-3.png
   :alt: Admin Internal Services continued
   :align: center
 
-|
-
-Wireless Watchdog
-  This background monitor will restart the mesh radio if it becomes unresponsive. If Wireless Watchdog is enabled, the following field will also be displayed.
-
-  Daily Wireless Watchdog Time
-    You may enter a time of day in this field (between 00:00 and 23:59) to have the Wireless Watchdog automatically restart the mesh radio.
-
-PoE and USB Power Passthrough
-  These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
 
 Message Updates
   The AREDN® development team may post messages which Internet-connected nodes will automatically download and display. You may also use a local message source to display messages on your node's status page. Enter an integer in this field for the number of hours you want your node to wait before refreshing its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.

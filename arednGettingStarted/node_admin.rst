@@ -321,18 +321,26 @@ WAN web
   This switch enables http/https access to your node on its WAN interface. Disabling this option will not prevent http/https access to your node from the Mesh and LAN interfaces.
 
 Hardware Watchdog
-  Hardware watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, it will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Hardware watchdog events are logged in the standard log on the node. Because the watchdog is part of the hardware, the device will still reboot itself even if the kernel crashes.
+  Hardware watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, it will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Hardware watchdog events are logged in the standard log on the node. Because the watchdog operates at the hardware level, the node will still reboot itself even if the kernel crashes.
 
-  .. attention:: Be aware that you must disable Hardware Watchdog and reboot your node before you can upgrade the firmware, since Watchdog may interfere with the normal upgrade process.
+  .. attention:: Be aware that you must disable Hardware Watchdog and reboot your node before you can upgrade the firmware, since Hardware Watchdog may interfere with the normal upgrade process.
+
+  If Hardware Watchdog is enabled, the following fields will also be displayed.
+
+  Watchdog IP Addresses
+    You may include one or more IP addresses, at least one of which should always be pingable. Watchdog will be reboot the node if none of the IP addresses is reachable across the network. Enter IP addresses as a whitespace-delimited list. It is strongly recommended that you keep this list to an absolute minimum. Too many addresses can take a long time to check, especially if several are unavailable. This can result in reboots if the testing is not performed before the watchdog timer expires. Ideally use only one address.
+
+  Daily Watchdog Time
+    This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the node automatically. The node must get its time from NTP or GPS in order for this reboot to occur.
 
 Wireless Watchdog
   This background monitor will restart the mesh radio if it becomes unresponsive. If Wireless Watchdog is enabled, the following fields will also be displayed.
 
   Daily Wireless Watchdog Time
-    This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the wifi automatically.
+    This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the radio automatically.
 
   Wireless Watchdog LQM
-    This switch enables restarting the Link Quality Manager (LQM) whenever the Wireless Watchdog restarts the radio. This feature is ``disabled`` by default.
+    This switch enables restarting Link Quality Manager (LQM) whenever the Wireless Watchdog restarts the radio. This feature is ``disabled`` by default.
 
 PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.

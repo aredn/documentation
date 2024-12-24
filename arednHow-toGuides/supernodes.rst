@@ -67,10 +67,9 @@ The following steps are required to configure a Supernode.
 
 ::
 
-  # uci -c /etc/config.mesh add aredn supernode
   # uci -c /etc/config.mesh set aredn.@supernode[0].enable=1
   # uci -c /etc/config.mesh commit aredn
-  # /usr/local/bin/node-setup -a mesh
+  # /usr/local/bin/node-setup
   # reboot
 
 Your node should now be functioning as a Supernode. To validate this you can do the following:

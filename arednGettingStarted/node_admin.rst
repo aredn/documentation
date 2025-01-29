@@ -77,7 +77,9 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Time settings
 -------------
 
-Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. Two fields are provided for entering the hostnames of :abbr:`NTP (Network Time Protocol)` servers if your node is connected to a network with network time services. You can enter valid hostnames in the *NTP Server* fields: for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [daily] but you may also select once per hour [hourly] or you can have your node run the NTP program [continuously]. If you have mesh-based NTP servers, advertise them as services to ensure time synchronization across your mesh network when the Internet is not available. Review the **Local Services** section below for instructions on advertising a local NTP server.
+Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. Two fields are provided for entering the hostnames of :abbr:`NTP (Network Time Protocol)` servers if your node is connected to a network with network time services. You can enter valid hostnames in the *NTP Server* fields: for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [Daily] but you may also select once per hour [Hourly] or you can have your node run the NTP program [Continually].
+
+If you run NTP on your node *Continually* then a new switch will appear which allows you to use your node as an NTP Server for any of your LAN-connected devices. The *NTP Server* switch is ``disabled`` by default.
 
 .. image:: _images/admin-time.png
   :alt: Admin Time

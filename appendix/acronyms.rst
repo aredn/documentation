@@ -18,10 +18,10 @@ List of acronyms sometimes encountered in the AREDN® project.
 :AM: Amplitude Modulation
 :AP: Access Point
 :API: Application Programming Interface
+:APRS: Automatic Packet Reporting System
 :AREDN: Amateur Radio Emergency Data Network
 :ARES: Amateur Radio Emergency Service
 :ARP: Address Resolution Protocol
-:ARPS: Automatic Packet Reporting System
 :ARRL: American Radio Relay League
 :ASF: Apache Software Foundation
 :ATA: Analog Telephone Adapter
@@ -139,6 +139,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :OLSRD: Optimized Link State Routing Daemon
 :ONVIF: Open Network Video Interface Forum
 :OPENWRT: An open-source project for embedded operating systems based on Linux upon which AREDN® is based
+:OPKG: OpenWRT package management utility
 :OS: Operating System
 :PBX: Private Branch Exchange
 :PC: Personal Computer

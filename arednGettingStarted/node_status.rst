@@ -130,6 +130,22 @@ Neighborhood Nodes
    :alt: Neighborhood Node Statistics
    :align: center
 
+|
+
+Node Icons
+  Each node in the *Local Nodes* or *Neighborhood Nodes* lists may have an icon that indicates its status.
+
+  |icon7| indicates an RF link
+
+  |icon8| indicates a tunnel link
+
+  |icon9| indicates a DTD link
+
+  |icon10| indicates a Cross-link
+
+  |icon11| indicates the node is routed using the new Babel protocol
+
+
 Right Section
 -------------
 
@@ -170,3 +186,18 @@ Tunnels section
 
 .. |icon6| image:: ../_icons/map.png
   :alt: World map view
+
+.. |icon7| image:: ../_icons/wifi.png
+  :alt: RF link
+
+.. |icon8| image:: ../_icons/globe.png
+  :alt: Legacy tunnel link
+
+.. |icon9| image:: ../_icons/twoarrow.png
+  :alt: DTD link
+
+.. |icon10| image:: ../_icons/plane.png
+  :alt: Cross-link
+
+.. |icon11| image:: ../_icons/babel.png
+  :alt: Babel route icon

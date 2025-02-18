@@ -535,9 +535,23 @@ If your device has two radios, you can configure them separately but you cannot 
 
 |
 
-Click in the first field on the right to set the radio's purpose. You can choose one of several different radio functions from the dropdown list. ``Off`` disables the radio.
+Click in the first field on the right to set the radio's purpose. You can choose one of several different radio functions from the dropdown list.
 
-Mesh Radio settings
+  :Mesh: Typical AREDN® mesh mode which uses wifi *ad hoc* peer-to-peer networking to create a mesh network.
+
+  :Mesh PtMP: Uses wifi *infrastructure* networking to limit communication between a centralized **AP** and one or more **Station** nodes.
+
+  :Mesh PtP: Uses wifi *infrastructure* networking to limit communication to a single **AP - Station** pair.
+
+  :Mesh Station: Allows you to define a wifi *infrastructure* mode **Station** that will communicate to either type of **AP** defined above.
+
+  :LAN Hotspot: Configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi AP on your node's LAN network.
+
+  :WAN Client: Configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi client which accesses a wifi Internet gateway for its WAN.
+
+  :Off: Disables the radio
+
+Mesh settings
 +++++++++++++++++++
 
 This option configures the radio to link with other nodes via RF across the mesh network.
@@ -564,21 +578,36 @@ Transmit Power
 SSID Setting
   The default SSID is provided in the field at the right. Typically you will not need to change this default unless you have a specific reason for putting radios on a non-default SSID to filter their traffic. The SSID is analogous to a CTCSS tone; radios with different SSIDs but using the same channel may generate RF energy that causes interference, even though the radios will not be decoding each other's signals.
 
-All of the following settings will be visible when LQM is enabled. If LQM is disabled, only the *Maximum Distance* setting will be visible.
+Maximum Distance
+  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in atmospheric (or other) conditions. Communicating with these distant nodes uses more radio time and can negatively impact local communications.
+
+The following settings will be visible when LQM is enabled.
 
 Minimum SNR
   This is the minimum Signal-to-Noise ratio that you require in order to reliably pass radio data between nodes. The default is 15 dB, but you can lower this value if you require your node to continue passing data even on links with reduced signal characteristics.
 
-Maximum Distance
-  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in atmospheric (or other) conditions. Communicating with these distant nodes uses more radio time and can negatively impact local communications.
-
 Minimum Quality
   This is the minimum link quality required in order to reliably pass data between nodes, and the default value is ``35%``. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if a node must send every packet twice for it to be successfully received, the link quality would be 50%.
 
-LAN Hotspot Radio settings
+Mesh PtMP settings
+++++++++++++++++++
+
+This configures the radio as a wifi *infrastructure* mode **AP** which can be accessed by one or more designated **Station** nodes. In this mode the SSID will include the channel being used for the links. **Station** nodes cannot communicate directly with each other but must go through the **AP**.
+
+Mesh PtP settings
++++++++++++++++++
+
+This configures the radio as a wifi *infrastructure* mode **AP** which can be accessed by a single designated **Station** node. In this mode the SSID will include the channel being used for the link, and a field appears which specifies the MAC Address of the **Station** node that is allowed to peer with this PtP **AP**.
+
+Mesh Station settings
++++++++++++++++++++++
+
+This configures the radio as a wifi *infrastructure* mode **Station** which can connect to a designated PtMP or PtP **AP** node. In this mode the SSID will include the channel being used for the link.
+
+LAN Hotspot settings
 ++++++++++++++++++++++++++
 
-This option configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi hotspot for your node's LAN network. Any device that connects to your node using its wifi hotspot will receive an IP address on your node's LAN subnet.
+This configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi hotspot on your node's LAN network. Any device that connects to your node using this wifi AP will receive an IP address on your node's LAN subnet.
 
 .. image:: _images/admin-radio-2.png
  :alt: Admin Radio Settings 2
@@ -596,10 +625,10 @@ Encryption
 Password
   Click in the field to the right to enter a valid wifi password for accessing your node's hotspot. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text.
 
-WAN Client Radio settings
+WAN Client settings
 +++++++++++++++++++++++++
 
-This option configures the radio as a wifi WAN client to an available Internet gateway. This can be useful for providing Internet access to your node via wifi rather than requiring an Ethernet cable plugged into the node's WAN port. Enabling a radio as a *WAN Client* will disable VLAN1 on your node, so Internet access will no longer be possible through the physical WAN port.
+This configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi client which can connect to a wifi AP. This is used to provide WAN Internet access to your node via wifi rather than requiring an Ethernet cable plugged into the node's WAN port. Enabling a radio as a *WAN Client* will disable VLAN1 on your node, so Internet access will no longer be possible through the physical WAN port.
 
 .. image:: _images/admin-radio-3.png
  :alt: Admin Radio Settings 3
@@ -651,7 +680,7 @@ Minimum Distance
 RTS Threshold
   The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is ``1`` which means all packets will trigger RTS/CTS.
 
-Maximum Packet Size
+Max Packet Size
   The maximum size of a packet which is sent over wifi. The value is between 256 and 1500 with a default of ``1500`` bytes. Decreasing this value can improve link quality in some cases, especially in noisy environments with long distance connections.
 
 SNR Margin

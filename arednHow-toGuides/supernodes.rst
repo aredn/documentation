@@ -102,3 +102,17 @@ Configuring the Supernode Tunnel
 --------------------------------
 
 Supernode tunneling uses the Wireguard tunneling protocol, but the port range begins with port ``6526``. On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``6526``, which will provide for one supernode tunnel connection. If you want to allow up to 10 Supernode tunnel links (for example), then you would permit UDP traffic on the range of ports between ``6526-6535``. Configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your Supernode's WAN interface.
+
+44Net and Supernodes
+--------------------
+
+44Net addresses from ARDC can now be used within an AREDN mesh for LAN devices. To allow these to be accessible across the supernode
+network, supernode will automatically route 44.0.0.0/9 and 44.128.0.0/10. However, if you are using 44Net address for other things
+in your network, this can cause problems. To disable this feature on your supernode do the following:
+
+::
+
+  # uci -c /etc/config.mesh set aredn.@supernode[0].44net=0
+  # uci -c /etc/config.mesh commit aredn
+  # /usr/local/bin/node-setup
+  # reboot

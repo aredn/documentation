@@ -552,9 +552,12 @@ Click in the first field on the right to set the radio's purpose. You can choose
   :Off: Disables the radio
 
 Mesh settings
-+++++++++++++++++++
++++++++++++++
 
 This option configures the radio to link with other nodes via RF across the mesh network.
+
+MAC Address
+  This displays the MAC address of the radio interface. This can be used when defining a **Mesh Station** as mentioned above and described in *Mesh Station* settings below.
 
 Channel
   Click in the field on the right to select a channel for mesh RF communication. Nodes communicate only with other nodes that use the same channel, channel width, and SSID. You can determine the correct settings by talking with other local node operators to find out which settings are required for joining their networks. The options in this list show the channel number as well as the center frequency of each channel.
@@ -592,20 +595,20 @@ Minimum Quality
 Mesh PtMP settings
 ++++++++++++++++++
 
-This configures the radio as a wifi *infrastructure* mode **AP** which can be accessed by one or more designated **Station** nodes. In this mode the SSID will include the channel being used for the links. **Station** nodes cannot communicate directly with each other but must go through the **AP**.
+This configures the radio as a wifi *infrastructure* mode **AP** which can be accessed by one or more nodes configured as **Stations**. In this mode the SSID will include the channel being used for the links. **Station** nodes cannot communicate directly with each other but must go through the **AP**. Be aware that these links may take several minutes to initialize.
 
 Mesh PtP settings
 +++++++++++++++++
 
-This configures the radio as a wifi *infrastructure* mode **AP** which can be accessed by a single designated **Station** node. In this mode the SSID will include the channel being used for the link, and a field appears which specifies the MAC Address of the **Station** node that is allowed to peer with this PtP **AP**.
+This configures the radio as a wifi *infrastructure* mode **AP** which can be accessed by a single designated **Station** node. In this mode the SSID will include the channel being used for the link, and a field appears which specifies the MAC Address of the **Station** node that is allowed to peer with this PtP **AP**. Be aware that these links may take several minutes to initialize.
 
 Mesh Station settings
 +++++++++++++++++++++
 
-This configures the radio as a wifi *infrastructure* mode **Station** which can connect to a designated PtMP or PtP **AP** node. In this mode the SSID will include the channel being used for the link.
+This configures the radio as a wifi *infrastructure* mode **Station** which can connect to a designated PtMP or PtP **AP** node. In this mode the SSID will include the channel being used for the link. Be aware that these links may take several minutes to initialize.
 
 LAN Hotspot settings
-++++++++++++++++++++++++++
+++++++++++++++++++++
 
 This configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi hotspot on your node's LAN network. Any device that connects to your node using this wifi AP will receive an IP address on your node's LAN subnet.
 
@@ -626,7 +629,7 @@ Password
   Click in the field to the right to enter a valid wifi password for accessing your node's hotspot. You can click the *eye* icon at the right of the password fields to toggle between hidden and visible text.
 
 WAN Client settings
-+++++++++++++++++++++++++
++++++++++++++++++++
 
 This configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi client which can connect to a wifi AP. This is used to provide WAN Internet access to your node via wifi rather than requiring an Ethernet cable plugged into the node's WAN port. Enabling a radio as a *WAN Client* will disable VLAN1 on your node, so Internet access will no longer be possible through the physical WAN port.
 

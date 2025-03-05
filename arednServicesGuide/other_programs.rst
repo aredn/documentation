@@ -21,32 +21,8 @@ Position your portable NTP server so that it maintains a clear view of the sky a
    :alt: OffGrid NTP Server
    :align: right
 
-|
 
 You may choose to purchase an inexpensive off-the-shelf NTP appliance such as those offered by `Centerclick <https://centerclick.com/ntp/>`_ and others. There are also many sources of information for building your own off-grid NTP server (for example, this one using a Raspberry Pi: `G4WNC NTP <https://photobyte.org/raspberry-pi-stretch-gps-dongle-as-a-time-source-with-chrony-timedatectl/#>`_)
-
-|
-
-AREDN® Alert Message Manager
------------------------------------
-
-AREDN® Alert Message Manager is an application created by Gerard Hickey (WT0F) which runs directly on a node having adequate storage. The *(aamm)* package uses the node's web server to provide a web interface for creating, updating, or deleting Alert Messages -- as well as actually hosting the message repository on the node itself, so that no external LAN-connected web server is required.
-
-.. image:: _images/aamm-display.png
-   :alt: AAMM Display
-   :align: center
-
-|
-
-The two advantages of using this application are 1) having the message management front-end shown above, and 2) having a node-hosted message source which eliminates the need for a separate LAN-connected web server. Alert Messages are presented as shown in the example below on the *Node Status* display.
-
-.. image:: _images/aamm-msg.png
-   :alt: AAMM Messages
-   :align: center
-
-|
-
-The recipient nodes are configured as described in the *Internal Services* section of the **Node Admin Guide**. For additional information about AREDN® Alert Message Manager, visit this link: `aamm <https://gitlab.com/aredn-apps/aamm>`_. You may also download and install the latest *aamm* package files `here <https://gitlab.com/aredn-apps/aamm/-/packages>`_.
 
 weeWx Weather Service
 ---------------------

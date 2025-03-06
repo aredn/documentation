@@ -352,9 +352,6 @@ Wireless Watchdog
   Daily Wireless Watchdog Time
     This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the radio automatically.
 
-  Wireless Watchdog LQM
-    This switch enables restarting Link Quality Monitor (LQM) whenever the Wireless Watchdog restarts the radio. This feature is ``disabled`` by default.
-
 PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
 

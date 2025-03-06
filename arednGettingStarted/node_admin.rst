@@ -353,7 +353,7 @@ Wireless Watchdog
     This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the radio automatically.
 
   Wireless Watchdog LQM
-    This switch enables restarting Link Quality Manager (LQM) whenever the Wireless Watchdog restarts the radio. This feature is ``disabled`` by default.
+    This switch enables restarting Link Quality Monitor (LQM) whenever the Wireless Watchdog restarts the radio. This feature is ``disabled`` by default.
 
 PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
@@ -482,7 +482,7 @@ The node name of each Local Node is a clickable link which will navigate to that
 
 |
 
-To the right of the node's name there is a field that shows the current link status. Clicking in this field will give you several options for handling the link to this node, including the ability to ``always block`` or ``never block`` that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
+To the right of the node's name there is a field that shows the current link status. Clicking in this field will display options for handling the link to this node, including the ability to block that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
 
 - :abbr:`type (DTD)`, mac address, and ip address
 - model and firmware version
@@ -504,9 +504,7 @@ The node name of each Neighborhood Node is a clickable link which will navigate 
 
 |
 
-To the right of the neighbor node's name there is a field that shows the current link status. Clicking in this field will give you options for handling the link to this node. Select ``always block`` if you want LQM to disable the link. Select ``never block`` if you want LQM to keep it enabled even if the link is marginal.
-
-The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
+To the right of the neighbor node's name there is a field that shows the current link status. Clicking in this field will display options for handling the link to this node. Select ``user block`` if you want to block that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
 
 - :abbr:`type (RF, xlink, tunnel)`, mac address, and ip address
 - Latitude, Longitude, and Distance
@@ -582,15 +580,7 @@ SSID Setting
   The default SSID is provided in the field at the right. Typically you will not need to change this default unless you have a specific reason for putting radios on a non-default SSID to filter their traffic. The SSID is analogous to a CTCSS tone; radios with different SSIDs but using the same channel may generate RF energy that causes interference, even though the radios will not be decoding each other's signals.
 
 Maximum Distance
-  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in atmospheric (or other) conditions. Communicating with these distant nodes uses more radio time and can negatively impact local communications.
-
-The following settings will be visible when LQM is enabled.
-
-Minimum SNR
-  This is the minimum Signal-to-Noise ratio that you require in order to reliably pass radio data between nodes. The default is 15 dB, but you can lower this value if you require your node to continue passing data even on links with reduced signal characteristics.
-
-Minimum Quality
-  This is the minimum link quality required in order to reliably pass data between nodes, and the default value is ``35%``. This is calculated as the moving average of total sent packets over total sent packets plus retransmissions. For example, if a node must send every packet twice for it to be successfully received, the link quality would be 50%.
+  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in local conditions. Communicating with these distant nodes uses more radio time and can negatively impact local communications.
 
 Mesh PtMP settings
 ++++++++++++++++++
@@ -660,43 +650,6 @@ Height
 
 Elevation
   Click in the field at the right to enter an angle (in degrees) of uptilt or downtilt that you have set on your antenna. Note that some omnidirectional and sector antennas have a built-in downtilt, and that value can be entered here.
-
-Advanced Radio Options
-++++++++++++++++++++++
-
-Additional options will be displayed when you click **Advanced Options**.
-
-.. image:: _images/admin-radio-5.png
- :alt: Admin Radio Settings 5
- :align: center
-
-|
-
-LQM Enable
-  This switch enables **Link Quality Manager** functionality on your node, and the default value is ``enabled``.
-
-All of the following settings will be visible when LQM is enabled. If LQM is disabled, these settings will not be visible.
-
-Minimum Distance
-  The minimum distance that must exist between nodes in order for a link to be considered for activation. The default value is ``0``. This value can be increased if you do not want your node to pass traffic with nearby nodes, for example at a tower site with collocated backbone nodes each of which should have an RF link only with other distant nodes.
-
-RTS Threshold
-  The packet size in bytes triggering RTS/CTS when LQM detects hidden nodes. The default value is ``1`` which means all packets will trigger RTS/CTS.
-
-Max Packet Size
-  The maximum size of a packet which is sent over wifi. The value is between 256 and 1500 with a default of ``1500`` bytes. Decreasing this value can improve link quality in some cases, especially in noisy environments with long distance connections.
-
-SNR Margin
-  The margin above the *Minimum SNR* that must be detected in order for a node to be returned to the active list based on signal level. The default value is ``1`` dB.
-
-Quality Margin
-  The margin above the *Minimum Quality* that must be detected in order for a node to be returned to the active list based on quality. The default value is ``1`` percent.
-
-Ping Penalty
-  The Link Quality penalty that is imposed on calculations if a remote node does not respond to a ping request. The default value is ``5`` percent. This setting may be helpful for cases when a link would otherwise be marked *active* but the remote node is currently unreachable on the network.
-
-Minimum Routes
-  The minimum number of routes on a link that are required to disable blocking.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

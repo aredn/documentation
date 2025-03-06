@@ -105,7 +105,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :LON: Longitude
 :LOS: Line of Sight
 :LQ: Link Quality
-:LQM: Link Quality Manager, Link Quality Management
+:LQM: Link Quality Monitor
 :LUCI: OpenWRT web interface toolkit
 :MA: Milliamp (10E-3 amp)
 :MAC: Media Access Control

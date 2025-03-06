@@ -71,7 +71,6 @@ Site Map
    arednHow-toGuides/command-line
    arednHow-toGuides/dish-aiming
    arednHow-toGuides/babel
-   arednHow-toGuides/lqm
    arednHow-toGuides/puttygen_ssh_keys
    arednHow-toGuides/radio_mobile_settings
    arednHow-toGuides/siso-mimo

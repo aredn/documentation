@@ -167,53 +167,44 @@ An *lqm* section will be included in the JSON data stream showing the current LQ
 
   ...
   "lqm": {
-  "enabled": true,
-  "config": {
-    "min_quality": 50,
-    "min_distance": 0,
-    "max_distance": 16093,
-    "min_snr": 12,
-    "ping_penalty": 5,
-    "auto_distance": 1610,
-    "margin_snr": 1,
-    "margin_quality": 1
-  },
-  "info": {
-    "coverage": -1,
-    "trackers": {
-      "94:83:C4:03:A8:89": {
-        "snr": 42,
-        "ip": "10.3.168.137",
-        "firstseen": 166982,
-        "blocks": {
-          "dup": false,
-          "signal": false,
-          "user": false,
-          "pair": false,
-          "distance": false,
-          "dtd": false,
-          "quality": false
-        },
-        "hostname": "CALLSIGN-NODE-22",
-        "routable": true,
-        "tx_quality": 100,
-        "quality": 100,
-        "mac": "94:83:C4:03:A8:89",
-        "type": "RF",
-        "avg_snr": 40.5,
-        "device": "wlan0",
-        "pending": 167282,
-        "user_allow": false,
-        "rev_snr": 39,
-        "refresh": 168009,
-        "blocked": false,
-        "last_tx": 0,
-        "last_tx_total": 0,
-        "ping_quality": 100,
-        "lastseen": 167109
+    "enabled": true,
+    "config": [],
+    "info": {
+      "coverage": 179,
+      "trackers": {
+        "02:7f:bd:83:e1:99": {
+          "lon": -111.50478,
+          "rev_ping_success_time": 0.07908412751042744,
+          "babel_metric": 97,
+          "ip": "10.204.12.202",
+          "firstseen": 154,
+          "ping_success_time": 0.021141793170887754,
+          "localarea": true,
+          "hostname": "ab7pa-hub",
+          "rev_lastseen": 6194,
+          "routable": true,
+          "quality": 100,
+          "user_blocks": false,
+          "type": "DtD",
+          "ping_quality": 100,
+          "device": "br-dtdlink",
+          "distance": 0,
+          "lastseen": 6919,
+          "babel_route_count": 2,
+          "node_route_count": 149,
+          "rev_ping_quality": 100,
+          "refresh": 7095,
+          "model": "MikroTik hAP ac2",
+          "lat": 33.383020000000002,
+          "rev_quality": 100,
+          "mac": "02:7f:bd:83:e1:99",
+          "firmware_version": "20250301-0bef22a0"
+        }
       },
-      "now": 167109,
-       "distance": 0
-     }
-   },
+      "now": 6919,
+      "total_node_route_count": 149,
+      "distance": 80550,
+      "hidden_nodes": []
+    }
+  }
   ...

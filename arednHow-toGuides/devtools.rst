@@ -158,10 +158,10 @@ A *link_info* section will be included in the JSON data stream containing an ent
 Add LQM Information
 -------------------
 
-To retrieve Link Quality Manager information, invoke the API using the following flag on the URL:
+To retrieve Link Quality Monitor information, invoke the API using the following flag on the URL:
 ``http://<nodename>.local.mesh/cgi-bin/sysinfo.json?lqm=1``
 
-An *lqm* section will be included in the JSON data stream containing a section showing the current LQM configuration settings as well as an entry for each node that is reachable via RF, :abbr:`DTD (Device To Device)`, or :abbr:`TUN (Tunnel)` from the node being queried. Each entry will be identified by the MAC address of the reachable node, and a variety of parameters will be displayed showing the tracked status of each link. The values returned by the *lqm* flag are represented in the following snippet of raw JSON.
+An *lqm* section will be included in the JSON data stream showing the current LQM configuration settings as well as an entry for each node that is reachable via RF, :abbr:`DTD (Device To Device)`, or :abbr:`TUN (Tunnel)` from the node being queried. Each entry will be identified by the MAC address of the reachable node, and a variety of parameters will be displayed showing the tracked status of each link. The values returned by the *lqm* flag are represented in the following snippet of raw JSON.
 
 ::
 

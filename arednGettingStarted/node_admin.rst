@@ -361,26 +361,39 @@ PoE and USB Power Passthrough
   :alt: Admin Internal Services continued
   :align: center
 
+|
 
 Message Updates
-  The AREDN® development team may post messages which Internet-connected nodes will automatically download and display. You may also use a local message source to display messages on your node's status page. Enter an integer in this field for the number of hours you want your node to wait before refreshing its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.
+  AREDN® Alert Messages can be displayed on the status page of nodes. The AREDN® development team may post messages which Internet-connected nodes download and display at the interval specified here. Enter a number in this field which represents the number of hours you want your node to wait before pulling its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.
 
 Local Message URL
-  This field allows you to enter the URL for a local message source. If you configure a local message server, then even nodes without Internet access can receive alert messages pertinent to your local mesh. Enter the URL without a trailing backslash.
-
-  A local message server can be configured on a mesh-connected web server which allows nodes to query the URL you entered. There is also a separate package called *AREDN® Alert Message Manager* which allows the local message repository to be hosted on the node itself, rather than requiring a separate LAN-conneted web server. You can find out more about this application by reading *AREDN® Alert Message Manager* in the **Applications and Services Guide** under the *Other Services* section.
+  You may also use a local message source to host messages, and this field allows you to enter the URL for your local message source. If you configure a local message server, then even nodes without Internet access can receive alert messages pertinent to your local situation. The message source consists of a mesh-connected web server which allows nodes to query the URL you enter here. You can consult your local mesh web server administrator to obtain the correct URL for the local message repository.  Enter the URL without a trailing backslash.
 
 Message Groups
-  In addition to local messages addressed by node name, it is possible to subscribe to group messages. Multiple group names can be added to this field as a comma delimited list. Group messages are retrieved from the web server specified in the *Local Message URL* field. The following are example grouping ideas:
+  In addition to local messages addressed by name to specific nodes, it is possible to subscribe to group messages. Multiple group names can be added to this field as a comma delimited list. Group messages are retrieved from the web server specified in the *Local Message URL* field. The following are example grouping ideas:
 
-  - Geographic regions (State, county, ARRL section, neighborhood)
-  - Connection types (backbone, leaf nodes, tunnels)
-  - Infrastructure *Change Management* notices
+  - Geographic regions (county or neighborhood)
   - Weather alerts
-  - Wildfire, flooding, tsunami or volcano alerts
+  - Wildfire, flooding, or other emergency alerts
   - SKYWARN activations, DHS threat level
 
-You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+The following file naming convention should be used for the web server's message repository:
+
+- Create text files for individual node messages by using only lowercase characters with the exact node name followed by ``.txt``. Whitespace characters are not allowed in node names, and do not append ``.local.mesh`` to the node name. An example node-specific message might be contained in ``ab7pa-test.txt``.
+
+- Create text files for group messages by using only lowercase characters with the group name followed by ``.txt`` extension. Whitespace characters are not allowed in group names. An example group message for the current weather conditions (group name = wx) might be contained in ``wx.txt``.
+
+- To create a broadcast message intended for all local nodes, enter your message text in a file named ``all.txt`` using only lowercase characters for the filename.
+
+Alert messages are displayed in a highlighted text box at the top of the node status page.
+
+.. image:: _images/admin-internal-svc-aam.png
+  :alt: AREDN® Alert Messages
+  :align: center
+
+|
+
+After reviewing the **Internal Services** display, you can click the ``Cancel`` button to ignore any changes you made. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Local Services
 --------------

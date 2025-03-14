@@ -133,7 +133,7 @@ Neighborhood Nodes
 |
 
 Node Icons
-  Each node in the *Local Nodes* or *Neighborhood Nodes* lists may have an icon that indicates its status.
+  Each node in *Neighborhood Nodes* list may have an icon that indicates its status.
 
   |icon7| indicates an RF link
 
@@ -143,7 +143,7 @@ Node Icons
 
   |icon10| indicates a Cross-link
 
-  |icon11| indicates the node is routed using the new Babel protocol
+  |icon11| indicates the node is actively routed using the new Babel protocol (this is the only icon which can also appear on *Local Nodes*)
 
 
 Right Section

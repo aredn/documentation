@@ -14,11 +14,11 @@ Different radio hardware will require different methods for installing the AREDN
 
 - For **Mikrotik** and **TP-LINK** devices, your computer will run a `Preboot eXecution Environment (PXE) <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ and the node's remote boot *client* will download the boot image from your computer.
 
-- For **GL-iNet** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
+- For **GL-iNet** and **OpenWRT One** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
 In the *Firmware Tips* section of the **How-To Guide** you will find assistance if you experience an issue uploading firmware to your device. The **How-To Guide** also contains a *Virtual Machine Installs* section for help installing x86_64 firmware images on a VM for a virtualized node.
 
-Preparing Your Computer
+Preparing your computer
 -----------------------
 
 Setting a Static IP Address on your Computer
@@ -52,20 +52,22 @@ For Mikrotik and TP-LINK Installs
 
   - If you have a Linux or MacOS computer, your "Preboot eXecution Environment (PXE)" will be provided by the native ``dnsmasq`` program, as described in the Linux procedures below.
 
-Firmware First Install Checklists
----------------------------------
+First Install checklists
+------------------------
 
 The recommended method for installing AREDN® firmware is to download and follow the appropriate *Install Checklist* below which matches your device hardware. Additional descriptions are also provided in the sections that follow.
 
-:download:`GL.iNet First Install Checklist (PDF) <_images/GL.iNet_First_Install_Checklist.pdf>`
+:download:`Ubiquiti N first install checklist (PDF) <_images/Ubiquiti_N_First_Install_Checklist.pdf>`
 
-:download:`Mikrotik First Install Checklist (PDF) <_images/Mikrotik_First_Install_Checklist.pdf>`
+:download:`Mikrotik first install checklist (PDF) <_images/Mikrotik_First_Install_Checklist.pdf>`
 
-:download:`TP-LINK First Install Checklist (PDF) <_images/TP-LINK_First_Install_Checklist.pdf>`
+:download:`TP-LINK first install checklist (PDF) <_images/TP-LINK_First_Install_Checklist.pdf>`
 
-:download:`Ubiquiti N First Install Checklist (PDF) <_images/Ubiquiti_N_First_Install_Checklist.pdf>`
+:download:`GL.iNet first install checklist (PDF) <_images/GL.iNet_First_Install_Checklist.pdf>`
 
-Ubiquiti 802.11n First Install Process
+:download:`OpenWRT One first install checklist (PDF) <_images/OpenWRT_One_First_Install_Checklist.pdf>`
+
+Ubiquiti 802.11n first install process
 --------------------------------------
 
 Download the *Install Checklist* for Ubiquiti 802.11n devices. These devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *server* to which you can upload the AREDN® *factory* image. Your computer must have TFTP *client* software available. For more information, see the **Preparing Your Computer** section above.
@@ -96,7 +98,7 @@ Download the appropriate *factory* file for your device by following the instruc
 
 5. The node will now automatically reboot with the new AREDN® firmware image.
 
-Ubiquiti 802.11ac First Install Process
+Ubiquiti 802.11ac first install process
 ---------------------------------------
 
 *Contributor: Tim Wilkinson KN6PLV*
@@ -197,7 +199,7 @@ Step3: Install the firmware
 
   Do **not** unplug the device until the flashing process is complete and the device has rebooted. The device will install the AREDN® image, boot into it, and end up on IP address 192.168.1.1 as a normal AREDN® device. If you cannot connect to the device on its new IP address after five minutes, power cycle the device and try connecting to 192.168.1.1 again. You can then configure the device by following the steps in the **Basic Radio Setup** section of the documentation.
 
-Mikrotik First Install Process
+Mikrotik first install process
 ------------------------------
 
 Download the *Install Checklist* for Mikrotik devices. These devices require a **two-part install** process: First, boot the correct Mikrotik *initramfs-kernel* file, and then use that temporary AREDN® environment to complete the installation of the appropriate *sysupgrade* file.
@@ -214,7 +216,7 @@ If your Mikrotik device has "Protected Routerboot" enabled, then you will need t
 
 .. tip:: There may be cases when your Mikrotik device boots the AREDN® *kernel* file but its RouterOS version does not allow the *sysupgrade* file to be installed. You can read the instructions on this page (`OpenWRT - Procedures for RouterOS <https://openwrt.org/toh/mikrotik/common#make_sure_the_bootloader_is_compatible>`_) to determine which version of Mikrotik RouterOS your device has. If it is running version ``7.x`` then you can try installing the AREDN® *sysupgrade v7* firmware file. Or you can `downgrade Mikrotik RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_ prior to flashing the regular AREDN® *sysupgrade* file. Earlier versions of RouterOS and their NetInstall utilities can be found on the `Mikrotik website <https://mikrotik.com/download/archive>`_. Download an ARM version (``routeros-arm``) for devices that use the *ipq40xx* AREDN® firmware, or download a MIPSBE version (``routeros-mipsbe``) for other Mikrotik devices. Typically you can install a RouterOS version that is equal to or newer than the RouterOS version shown in the *Factory Firmware* field on the Mikrotik web display.
 
-Install Preparation
+Install preparation
 +++++++++++++++++++
 
 - Download *both* of the appropriate Mikrotik *kernel* and *sysupgrade* files from the AREDN® website. Rename the *initramfs-kernel* file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
@@ -269,7 +271,7 @@ Install the *sysupgrade* firmware image
 
 1. After booting the **kernel** image the node will have a default IP address of 192.168.1.1. Your computer should already have a static IP address on this subnet, but if not then give your computer an IP address on this subnet.
 
-.. warning:: **For the Mikrotik hAP ac family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.**
+.. important:: **For the Mikrotik hAP ac family of devices, disconnect the Ethernet cable from the WAN port (1) on the Mikrotik and insert it into one of the LAN ports (2,3,4) before you proceed.**
 
 2. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that your IP address has been reset. Also, you may need to clear your web browser's cache in order to remove cached pages remaining from your node's previous firmware version.
 
@@ -294,7 +296,7 @@ To transfer the image from a Windows computer you can use a *Secure Copy* progra
 
 After successfully installing the *sysupgrade* file the node will automatically reboot to the new AREDN® firmware image.
 
-TP-LINK First Install Process
+TP-LINK first install process
 -----------------------------
 
 Download the *Install Checklist* for TP-LINK devices. These devices may allow you to use the manufacturer's native *PharOS* web browser interface to apply new firmware images. If available, this is the most user-friendly way to install AREDN® firmware. Navigate to the system setup menu to select and upload new firmware. Check the TP-LINK documentation for your device if you have questions about using their built-in user interface. If this process works then you will have AREDN® firmware installed on your device and you skip all of the steps described below.
@@ -342,19 +344,42 @@ Windows Procedure
 
   6. The node will now automatically reboot with the new AREDN® firmware image.
 
-GL-iNet First Install Process
+GL-iNet first install process
 ------------------------------
 
-Download the *Install Checklist* for GL-iNet devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNet documentation for your device if you have questions about initial configuration. Both GL-iNet and AREDN® devices provide DHCP services, so you should be able to connect your computer and automatically receive an IP address on the correct subnet. GL-iNet devices usually have a default IP address of 192.168.8.1, so if for some reason you need to give your computer a static IP address you can use that subnet.
+Download the *Install Checklist* for GL-iNet devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNet documentation for your device if you have questions about initial configuration. GL-iNet devices provide DHCP services, so you should be able to connect your computer and automatically receive an IP address on the correct subnet. GL-iNet devices usually have a default IP address of 192.168.8.1, so if for some reason you need to give your computer a static IP address you can use that subnet.
 
-After the GL-iNet device is first booted and configured, navigate to the **Upgrade** section and click *Local Upgrade* to select the AREDN® *sysupgrade.bin* file you downloaded for your device.
+After the GL-iNet device is first booted and configured, navigate to the **Upgrade** section and click *Local Upgrade* to select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer.
 
-.. warning:: Be sure to **uncheck** the *Keep Settings* checkbox, since GL.iNet settings are incompatible with AREDN® firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
+.. important:: Be sure to **uncheck** the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN® firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
 
 The node will automatically reboot with the new AREDN® firmware image. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNet debrick procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_
 
-After the Firmware Install
+OpenWRT One first install process
+---------------------------------
+
+Download the *Install Checklist* for **OpenWRT One** devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the `OpenWRT One documentation <https://openwrt.org/toh/openwrt/one>`_ if you have questions. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet. *OpenWRT One* devices have a default IP address of 192.168.1.1, so if for some reason you need to give your computer a static IP address you can use the 192.168.1.x/24 subnet.
+
+.. important:: OpenWRT One devices have a boot mode switch. Be sure the boot mode is set to **NAND** (the normal operational setting) before following the example flashing procedure below.
+
+There are `several methods <https://openwrt.org/docs/guide-user/installation/generic.sysupgrade#upgrading_openwrt_firmware_using_luci_and_cli>`_ for upgrading OpenWRT. The *OpenWRT One* device also provides a `USB upgrade method <https://openwrt.org/toh/openwrt/one#upgrading_the_firmware_from_usb>`_. The example procedure below uses the OpenWRT web interface (LuCi GUI).
+
+- Cable your computer’s Ethernet port to the router’s LAN port and power on the *OpenWRT One*. Verify that your computer received an IP address from the device’s DHCP service and that you can ping the device at 192.168.1.1.
+
+- Open a web browser and navigate to ``http://192.168.1.1``. On a fresh device you can login using the default *root* username with an empty password field. If you have already changed the *root* password, then login using your own password.
+
+- Navigate to ``System`` > ``Backup/Flash Firmware``
+
+- Go to the ``Flash new firmware image`` section and **uncheck** the ``Keep settings`` checkbox
+
+- Click ``Choose File`` to select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer
+
+- Click ``Flash image`` to upload the new image, then verify the firmware file checksum and click ``Proceed``
+
+The node will automatically reboot after installing the AREDN® firmware image.
+
+After the firmware install
 --------------------------
 
 After the node reboots, it should have a default IP address of 192.168.1.1. Make sure your computer has an IP address on the 192.168.1.x network. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that it has a connection.

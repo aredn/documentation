@@ -371,13 +371,13 @@ There are `several methods <https://openwrt.org/docs/guide-user/installation/gen
 
 - Navigate to ``System`` > ``Backup/Flash Firmware``
 
-- Go to the ``Flash new firmware image`` section and **uncheck** the ``Keep settings`` checkbox
+- Go to the ``Flash new firmware image`` section and click the ``Flash image`` button
 
-- Click ``Choose File`` to select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer
+- Click ``Choose File`` to select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer, then click the ``Upload`` button to upload the new image
 
-- Click ``Flash image`` to upload the new image, then verify the firmware file checksum and click ``Proceed``
+- **UNCHECK** the ``Keep settings`` checkbox, then click ``Continue`` to flash the AREDN® firmware
 
-The node will automatically reboot after installing the AREDN® firmware image.
+The node will automatically reboot after installing AREDN®, and you may need to refresh your network interface to receive a new IP address before continuing.
 
 After the firmware install
 --------------------------

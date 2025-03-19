@@ -1,15 +1,6 @@
-======================
-Additional Information
-======================
-
-Additional information about the AREDN® project can be found at the links below.
-
-- `AREDN® homepage <https://www.arednmesh.org/>`_
-- `AREDN® forums <https://www.arednmesh.org/forum>`_
-
-
-Contributing AREDN® Documentation
-----------------------------------------
+=============================
+Contributing to Documentation
+=============================
 
 If you are interested in contributing to the rapidly growing set of AREDN® documentation you can easily do so on GitHub. To contribute to the AREDN® project you first must create your own GitHub account. This is free and easy to do by following these steps:
 
@@ -23,6 +14,8 @@ If you are interested in contributing to the rapidly growing set of AREDN® docu
 
 The workflow for contributing documentation is described in the file titled `How to Use GitHub for AREDN® <https://github.com/aredn/documentation/blob/master/How%20to%20Use%20GitHub%20for%20AREDN.md>`_, a copy of which you will have in your new local repository. Refer to that document for additional information about contributing AREDN® documentation.
 
-Your local editing branch name can be anything that makes sense to you as you add topics to the documentation. AREDN® documentation is written using the `reStructuredText <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html>`_ markup language and your text is saved in "rst" files. Before committing your changes, be sure to test your rst files locally using `Sphinx <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_ to ensure they will render correctly.
+Your local editing branch name can be anything that makes sense to you as you add topics to the documentation. AREDN® documentation is written using the `reStructuredText <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html>`_ markup language and your text is saved in "rst" files.
+
+.. note:: Before committing your changes, be sure to test your ``rst`` files locally using `Sphinx <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_ to ensure they will render correctly.
 
 After you create a Pull Request on GitHub, the AREDN® team will review your changes. Once your documentation contributions are committed to the AREDN® GitHub repository, a webhook automatically updates and builds the latest docs for viewing and exporting on ReadTheDocs.org. All contributions that are included by the AREDN® team in the documentation set will be covered by the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International license held by *Amateur Radio Emergency Data Network, Inc.*

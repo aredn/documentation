@@ -16,6 +16,11 @@ If you wish to locate specific topics within the documentation, you can type key
 
 If you would like to see the documentation for a specific AREDN® release, click on the **Read the Docs** label at the bottom of the navigation bar. This label shows the version you are currently viewing, but clicking the label bar opens a panel with several other options. Here you may choose to view another version of the documentation, and you can also download the entire documentation set in any of several formats *(PDF, ePub, HTML)* for offline use.
 
+Additional information about the AREDN® project can be found at the links below.
+
+- `AREDN® homepage <https://www.arednmesh.org/>`_
+- `AREDN® forums <https://www.arednmesh.org/forum>`_
+
 .. note:: AREDN® is a registered trademark of *Amateur Radio Emergency Data Network, Inc.* and may not be used without permission.
 
 Site Map
@@ -83,7 +88,6 @@ Site Map
 .. toctree::
    :caption: APPENDIX
 
-   appendix/known_issues
    appendix/more_info
    appendix/responsible_disclosure
    appendix/freq_charts

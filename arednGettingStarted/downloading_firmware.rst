@@ -5,7 +5,7 @@ Downloading AREDN® Firmware
 Types of Firmware
 -----------------
 
-**Stable Release** firmware has been tested and shown to work on the devices that were supported at the time of the release. This firmware is considered to be stable and suitable for production devices deployed in the field. Stable Release firmware is identified by numbers such as ``3.24.6.0``. In this example ``24.6`` indicates the year (2024) and month (June) of the Stable Release.
+**Stable Release** firmware has been tested and shown to work on the devices that were supported at the time of the release. This firmware is considered to be stable and suitable for production devices deployed in the field. Stable Release firmware is identified by numbers such as ``3.25.2.0``. In this example ``25.2`` indicates the year (2025) and month (Feb) of the release.
 
 **Nightly Build** firmware contains the latest bug fixes, features, and support for new devices. It allows the wider mesh community to test new code before it is included in a Stable Release. The Nightly Build is considered more experimental or cutting-edge and may not be suitable for production nodes. However, it might make sense to install the Nightly Build if you are having a specific issue that has been addressed in newly developed code or if you are loading AREDN® firmware onto a device that is newly supported. The Nightly Build filename shows the build date and the software commit identifier for that specific firmware build. Be aware that when a new nightly build appears, any older builds automatically become obsolete. If you want to install add-on packages for nodes running a nightly build, understand that specific packages are not available for an *older* build if a *newer* build has superseded it. Be sure to upgrade to the current nightly build before installing packages.
 
@@ -36,8 +36,8 @@ Mikrotik
 
   As noted in the Mikrotik install instructions, if you determine that your device is running RouterOS ``v7.x`` you can try to install the *SYSUPGRADE-V7* image or you can follow the procedure to downgrade RouterOS and then install the regular *SYSUPGRADE* image.
 
-GL.iNET
-  For GL.iNet devices you will only see the *SYSUPGRADE* image for both first-time installs and firmware upgrades.
+GL.iNET and OpenWRT One
+  For these devices you will only see the *SYSUPGRADE* image for both first-time installs and firmware upgrades.
 
 Click the appropriate button to download the image file to your local computer. Make a note of the download location on your computer, since you will use the downloaded image(s) to install the AREDN® firmware on your device.
 

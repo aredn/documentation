@@ -8,7 +8,7 @@ Error message when uploading firmware
   If you see an error message displayed when uploading new firmware to your node, verify that you are loading the correct file by referring to the `AREDN® Firmware Selector (AFS) <http://downloads.arednmesh.org/afs/www/>`_, then you can safely ignore the warning. The file naming standard recently changed from a non-standard naming convention to the standard naming convention used by OpenWRT.
 
 Web browser cache and sessions
-  One common issue can occur when installing firmware using a web browser. Your computer's browser cache stores data for the URLs that have been visited, but IP addresses and other parameters may change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing your computer's web browser cache will allow the latest URL settings to be registered so you can continue with the install process.
+  One issue can occur when installing firmware using a web browser. Your computer's browser cache stores data for the URLs that have been visited, but IP addresses and other parameters may change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection setup and display an ERR_CONNECTION_RESET message. Clearing your computer's web browser cache will allow the latest URL settings to be registered so you can continue with the install process.
 
   Instead of a *Connection Reset* message, sometimes a *Bad Gateway* message may appear. This is an `HTTP Status Code <https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>`_ that can mean any of several things. Often it indicates a network communication issue between a web browser and a web server. During AREDN® firmware installs you can usually resolve a *Bad Gateway* issue by doing one or more of the following things:
 
@@ -57,7 +57,7 @@ Tips for legacy nodes with low memory (32mb)
       my-computer:$ scp -P 2222 <aredn-firmware-filename>.bin root@192.168.1.1:/tmp
       my-computer:$ ssh -p 2222 root@192.168.1.1
       ~~~~~~~ after logging into the node with ssh ~~~~~~~
-      node:# sysupgrade /tmp/<aredn-firmware-filename>.bin
+      node:# sysupgrade -n /tmp/<aredn-firmware-filename>.bin
 
     To transfer the image from a Windows computer you can use a *Secure Copy* program such as `WinSCP <https://winscp.net>`_. Then use a terminal program such as `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
 
@@ -84,7 +84,7 @@ However, there is a difference if you are downgrading the firmware on a node whi
 
 - For Mikrotik models you will boot using the *KERNEL* file (which you rename to *rb.elf*) and then immediately apply the *SYSUPGRADE* firmware image.
 
-- For GL.iNet models you will use the `recovery procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_ to upload the *SYSUPGRADE* firmware image.
+- For GL.iNet devices you will use the `recovery procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_ to upload the *SYSUPGRADE* firmware image.
 
 Another possible way to downgrade firmware between architectures is to enable **Dangerous Upgrade** under the *Advanced Options* on the **Firmware** settings page. Setting this to *ON* will disable the normal firmware compatibility checks that are done automatically during the firmware install process. This should allow your node to install a firmware image that uses a legacy architecture.
 

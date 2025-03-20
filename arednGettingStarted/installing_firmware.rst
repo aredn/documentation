@@ -365,7 +365,7 @@ Download the *Install Checklist* for **OpenWRT One** devices. These devices allo
 
 There are `several methods <https://openwrt.org/docs/guide-user/installation/generic.sysupgrade#upgrading_openwrt_firmware_using_luci_and_cli>`_ for upgrading OpenWRT. The *OpenWRT One* device also provides a `USB upgrade method <https://openwrt.org/toh/openwrt/one#upgrading_the_firmware_from_usb>`_. The example procedure below uses the OpenWRT web interface (LuCi GUI).
 
-- Cable your computer’s Ethernet port to the router’s LAN port and power on the *OpenWRT One*. Verify that your computer received an IP address from the device’s DHCP service and that you can ping the device at 192.168.1.1.
+- Cable your computer’s Ethernet port to the router’s LAN port, which is the ``1G`` Ethernet port next to the Reset button. Power on the *OpenWRT One* and verify that your computer received an IP address from the device’s DHCP service. Verify that you can ping the device at 192.168.1.1.
 
 - Open a web browser and navigate to ``http://192.168.1.1``. On a fresh device you can login using the default *root* username with an empty password field. If you have already changed the *root* password, then login using your own password.
 

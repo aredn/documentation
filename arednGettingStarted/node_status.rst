@@ -39,6 +39,8 @@ Using the icons on the left side bar you can navigate to various displays.
 
 |icon4| navigates to the local mesh status page showing the nodes visible on the local mesh network, as well as any services provided by those nodes.
 
+|icon12| navigates to a view of the local mesh status page which shows only those nodes routed using the Babel protocol.
+
 |icon5| navigates to the *Cloud Mesh* view through the Supernode network (if available).
 
 |icon6| navigates to the world map on the AREDN® website. This is only displayed if your node has valid latitude and longitude values, since this feature is designed to display your node in the center of the map. If your node has no latitude and longitude values, then this icon will not appear on the nav bar.
@@ -201,3 +203,6 @@ Tunnels section
 
 .. |icon11| image:: ../_icons/babel.png
   :alt: Babel route icon
+
+.. |icon12| image:: ../_icons/babelmesh.png
+  :alt: Babel mesh icon

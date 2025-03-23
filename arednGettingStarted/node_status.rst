@@ -168,8 +168,7 @@ Ethernet Ports & Xlinks
   If you have a multiport node or one which supports xlinks, then the *Ethernet Ports & Xlinks* section will be displayed. This shows the number of Ethernet ports on the device, as well as how many of them are actively in use. You will also see the number of xlinks that you have defined on this node.
 
 Tunnels section
-  This section displays statistics on any tunnel connections you may have on your node. The *Wireguard* section shows information for Wireguard tunnels, while the *Legacy* section shows information for the older *vtun* tunnels. Counts are displayed for active / allocated tunnel client connections as well as for active / allocated tunnel server connections on your node.
-
+  This section displays statistics on any tunnel connections you may have on your node. Counts are displayed for active / allocated tunnel client connections as well as for active / allocated tunnel server connections on your node.
 
 .. |icon1| image:: ../_icons/login.png
   :alt: Normal user view
@@ -193,7 +192,7 @@ Tunnels section
   :alt: RF link
 
 .. |icon8| image:: ../_icons/globe.png
-  :alt: Legacy tunnel link
+  :alt: Tunnel link
 
 .. |icon9| image:: ../_icons/twoarrow.png
   :alt: DTD link

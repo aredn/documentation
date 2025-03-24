@@ -123,8 +123,10 @@ Neighborhood Nodes
     :blue: okay
     :orange: poor
     :red: bad
-    :gray: idle
+    :gray: idle or hidden
     :strikethrough: blocked
+
+    If hidden nodes are detected which your node cannot reach for some reason, they will be displayed in a subsection labeled *Hidden Nodes*. For more information about hidden nodes, see *Hidden and Exposed Nodes* in the **Channel Planning** section of the **Network Design Guide**.
 
   When you hover over the row of any Neighborhood Node, a gray background appears which indicates that row is selected. If you click in the selected row (but not directly on the node name link), the **Neighborhood Node** popup will be displayed which provides more detailed information about your node's connection to the selected node.
 

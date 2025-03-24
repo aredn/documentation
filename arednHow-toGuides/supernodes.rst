@@ -21,14 +21,12 @@ Before you consider deploying a Supernode, make sure you can adequately support 
 
 2. **Uptime stability.** The Supernode should be up 99.999% of the time. The location should ideally have backup power and network connectivity, both to the Internet and to the local mesh.
 
-3. **Solid local mesh connectivity.** As this will be the path for all traffic between your local mesh and every other mesh, the connection to your mesh should be at a high-bandwidth location. If you are deploying a Supernode with any sort of high-bandwidth backbone, the Supernode should be connected to the backbone.
+3. **Reliable local mesh connectivity.** As this will be the path for all traffic between your local mesh and every other mesh, the connection to your mesh should be at a high-bandwidth location. If you are deploying a Supernode with any sort of high-bandwidth backbone, the Supernode should be connected to the backbone.
 
 Coordinating Supernode Deployments
 ----------------------------------
 
-Because Supernodes use the `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ protocol, multiple Supernodes can be connected to each other, each operating as a peer of the others. A local network can be connected to multiple Supernodes, but a single Supernode should only be connected to a single local network, although it may be connected at multiple points.
-
-By having each Supernode connected to only a single local network, the owners of each local network are responsible for their own Supernodes. This simplifies management and maintenance. There is also some fault isolation as a failed Supernode will only impact the one local network to which it is connected.
+A local network can be connected to multiple Supernodes, but a single Supernode should only be connected to a single local network, although it may be connected at multiple points. By having each Supernode connected to only a single local network, the owners of each local network are responsible for their own Supernodes. This simplifies management and maintenance. There is also some fault isolation since a failed Supernode will only impact the one local network to which it is connected.
 
 The number of messages a Supernode receives will scale linearly with the total number of nodes in all connected local networks. A Supernode receives a management message from every node in the network (all nodes in all local networks) every 5 seconds. With a typical message size of 100 bytes, a Supernode receives about 20 bytes per second per node. At the time of initial testing, there were 4,300 AREDN® nodes registered world-wide, so a Supernode for this network would receive ``84 KB/s`` or ``0.7 Mb/s``, which is a manageable bandwidth requirement.
 
@@ -43,21 +41,21 @@ As more Supernodes are deployed linking more local networks, the overall perform
 Setting up a Supernode
 ----------------------
 
-Typically a Supernode is configured on a dedicated *Mikrotik hAP ac2*. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on one of its LAN ports which is configured for *dtdlink* on the *Ethernet Ports & Xlinks* display (Port 5 by default). The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a gateway.
+Typically a Supernode is configured on a dedicated **OpenWRT One**, a *Mikrotik hAP ac2/ac3*, or a Virtual Machine running AREDN® firmware. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on a LAN port. The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a gateway.
 
-.. image:: _images/supernode-localDTD.png
-   :alt: DtD Link Example
+.. image:: _images/supernode-connections.png
+   :alt: Supernode connections
    :align: center
 
 |
 
 The following steps are required to configure a Supernode.
 
-#. Start with a **Mikrotik hAP ac2** device that is newly flashed with the latest Nightly Build. If the node has been previously configured or used beforehand, please reflash and start fresh in order to avoid problems later in the setup process.
+#. Start with an **OpenWRT One** device that is newly flashed with the latest Nightly Build. If the node has been previously configured or used beforehand, please reflash and start fresh in order to avoid problems later in the setup process.
 
 #. Configure the Supernode with a nodename prefixed with your callsign followed by a location identifier as well as the word "SUPERNODE." For example you could use ``AB2CD-NYC-SUPERNODE`` or ``AB6CD-LAX-SUPERNODE``
 
-#. Ensure that the Supernode's radio is ``off``
+#. Ensure that the Supernode's radios are ``off`` | ``disabled``
 
 #. Provide a reserved or static IP address for the device's WAN connection to your Internet routing device.
 
@@ -92,9 +90,9 @@ If you do not see these lines, please start this process again from the beginnin
 Things to Avoid
   Here are several things **NOT** to do when configuring your Supernode.
 
-  - Your Supernode must **not** use any cross-links (xlinks) to other nodes.
-  - Your Supernode must **not** have tunnel links to any non-Supernode devices.
-  - Your Supernode must **not** have its radio(s) enabled.
+  - Your Supernode must **not** use any cross-links (xlinks) to other nodes
+  - Your Supernode must **not** have tunnel links to any non-Supernode devices
+  - Your Supernode must **not** have its radio(s) enabled
 
 Before proceeding, make sure all the previous steps have been completed successfully. Now you should be able to connect to another Supernode using a tunnel. The easiest way to do this is to ask another Supernode owner for a set of tunnel client credentials. Your node can use either a client or server tunnel link. Supernode owners can be identified from the `Supernode Network Map <https://worldmap.arednmesh.org/>`_
 
@@ -106,7 +104,7 @@ Supernode tunneling uses the Wireguard tunneling protocol, but the port range be
 44Net and Supernodes
 --------------------
 
-44Net addresses from ARDC can now be used within an AREDN mesh for LAN devices. To allow these to be accessible across the supernode
+44Net addresses from ARDC can now be used within an AREDN® mesh for LAN devices. To allow these to be accessible across the supernode
 network, supernode will automatically route 44.0.0.0/9 and 44.128.0.0/10. However, if you are using 44Net address for other things
 in your network, this can cause problems. To disable this feature on your supernode do the following:
 

@@ -52,8 +52,6 @@ d.apache.org/docs/2.4/urlmapping.html>`_). Once the software has been made avail
    :alt:  View the local software repository
    :align: center
 
-|
-
 Once the software is available via your web server, you can begin pointing the nodes to your local software repository.
 
 Point nodes to the local server
@@ -64,7 +62,5 @@ To point a node to the local software repository while in *admin* mode, navigate
 .. image:: _images/admin-local-firmware-path.png
    :alt:  Admin set local firmware URL
    :align: center
-
-|
 
 When you are finished with your changes, click the ``Done`` button. You will then be returned to your node’s *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. Once the node has been pointed to the local software server, you can navigate to the **Firmware** section and click the *refresh* icon to select and install the available software from your local software repository.

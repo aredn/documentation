@@ -36,8 +36,6 @@ Starting at the top of the left column, highlight and click the section which co
   :alt: Admin Name and Security
   :align: center
 
-|
-
 Node Name
   Begin the node name with your CALLSIGN in all capital letters followed by a dash character and some unique identifying information of your choice. Node names may contain up to 63 letters, numbers, and dashes, but cannot begin or end with a dash. Underscores, spaces, or any other special characters are not allowed. Amateur radio operators are required to identify all transmitting stations, so your node name is beaconed automatically by the node every five minutes. Recommended names follow the (CALLSIGN)-(label) format, such as AD5BC-MOBILE or AD5BC-BLACKMTN. As a general rule node names should be kept as short as possible, while clearly and uniquely identifying the node.
 
@@ -62,12 +60,16 @@ Additional options will be displayed when you click **Advanced Options**.
   :alt: Admin Name and Security Advanced Options
   :align: center
 
-|
-
 Upload SSH Key
-  Uploading SSH keys allows computers to connect to the node via SSH without having to know the password. The SSH keys are generated on your local computer using built-in utilities or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Once you have the key files on your computer, you can upload the *public* key to your AREDN® node. Click the ``Browse`` button and locate the *public* key file, then click the ``Upload Key`` button at the lower right.
+  Uploading SSH keys allows computers to connect from the command line to your node via SSH without having to know the password. SSH keys are generated on your local computer using native utilities such as *ssh-keygen* or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Currently AREDN® nodes support RSA and Ed25519 key types. RSA is the most widely supported type and is generally considered secure with a minimum key size of 2048 bits. Ed25519 is more efficient and has a smaller key size (255 bits) making it a good choice for resource-constrained devices.
 
-  .. note:: If you plan to use ssh keys you may want to review **Use PuTTYGen to Make SSH Keys** in the **How-To Guide** section which describes this process for users of Microsoft Windows computers.
+  If you plan to generate ssh keys on a Microsoft Windows computer, you may want to review the `PuTTY documentation <https://the.earth.li/~sgtatham/putty/0.83/htmldoc/Chapter8.html#pubkey>`_ which describes this process. The example below shows the generation of an Ed25519 key using the PuTTY Key Generator.
+
+  .. image:: _images/admin-name-security-3.png
+    :alt: Admin SSH keys
+    :align: center
+
+  Once you generate the key files on your computer, you can upload the *public* key to your AREDN® node. Click the ``Browse`` button to locate the *public* key file, then click the ``Upload Key`` button at the lower right.
 
 Remove SSH Key
   To remove an existing SSH key, click in the field at the right and select the key from the dropdown list. Then click the ``Remove Key`` button at the lower right.
@@ -108,8 +110,6 @@ Highlight and click the section displaying your node's firmware version. The top
   :alt: Admin Firmware
   :align: center
 
-|
-
 Download Firmware
   If your node has Internet access or access to a firmware server on your local network, you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
@@ -138,8 +138,6 @@ Additional options will be displayed when you click **Advanced Options**.
   :alt: Admin Firmware Advanced Options
   :align: center
 
-|
-
 Keep Configuration
   This is enabled by default and will allow you to retain your existing configuration settings during the firmware upgrade process. If you do not want any existing configuration settings to be retained, you can ``disable`` this setting and the node will come up in "firstboot" state.
 
@@ -159,8 +157,6 @@ Highlight and click the section displaying your node's installed package count. 
 .. image:: _images/admin-packages.png
  :alt: Admin Packages
  :align: center
-
-|
 
 Download Package
   If the node has a connection to the Internet or to a local package server, it can retrieve a package from the AREDN® website or from the local server. Click the *refresh* icon at the right of the field to update the list of packages available for download. Select the package you want to install, click the ``Fetch and Install`` button, and wait for the package to be installed. A progress bar at the bottom of the display will show the status of the process. A status message will appear at the top of the display to indicate whether the package was installed successfully.
@@ -186,8 +182,6 @@ Highlight and click the section displaying your node's network settings. This di
 .. image:: _images/admin-network-1.png
  :alt: Admin Network
  :align: center
-
-|
 
 Mesh
 ++++
@@ -238,8 +232,6 @@ Additional options will be displayed when you click **Advanced Options**.
 .. image:: _images/admin-network-2.png
   :alt: Admin Network Advanced Options
   :align: center
-
-|
 
 WAN VLAN
   Many of the devices used as AREDN® nodes have only one Ethernet port, but more than one type of network traffic must share that single port. The AREDN® firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong. By default the WAN uses an *untagged* VLAN on multi-port devices, and ``VLAN 1`` on single port devices. This can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *untagged*. If you change this setting and want to use a single digit identifier, use numbers greater than three, but do not use any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
@@ -303,15 +295,11 @@ When you are logged in as *admin* you will see an Internal Services status displ
  :alt: Admin Internal Services Status
  :align: center
 
-|
-
 Highlight and click the section displaying your node's **Internal Services**, which allows you to manage the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-internal-svc-2.png
  :alt: Admin Internal Services
  :align: center
-
-|
 
 Cloud Mesh
   This switch allows your node to use any available Supernode on your local mesh. Supernodes are a way to link multiple mesh island networks in a safe and efficient way. If your local node is part of a network with a Supernode then you have the ability to view other nodes which are part of the Cloud Mesh network. This feature is ``enabled`` by default. Clicking the Cloud Mesh icon will navigate to the mesh status display of the closest Supernode available to your device. For further information see the *Supernode Architecture* description in the **Network Topologies** section of the **Network Design Guide**.
@@ -361,8 +349,6 @@ PoE and USB Power Passthrough
   :alt: Admin Internal Services continued
   :align: center
 
-|
-
 Message Updates
   AREDN® Alert Messages can be displayed on the status page of nodes. The AREDN® development team may post messages which Internet-connected nodes download and display at the interval specified here. Enter a number in this field which represents the number of hours you want your node to wait before pulling its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.
 
@@ -403,8 +389,6 @@ Highlight and click the section displaying your node's local services. The **Loc
 .. image:: _images/admin-localsvc-1.png
  :alt: Admin Local Services
  :align: center
-
-|
 
 Adding a Service
   To add a service, click in the field to the right and select the type of service you want to add. Then click the [+] icon to add a row to your services list for the new service of the selected type. You will provide different parameters for the new entry based on the type of service selected.
@@ -490,8 +474,6 @@ The node name of each Local Node is a clickable link which will navigate to that
  :alt: Admin Local Node Statistics
  :align: center
 
-|
-
 To the right of the node's name there is a field that shows the current link status. Clicking in this field will display options for handling the link to this node, including the ability to block that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
 
 - :abbr:`type (DTD)`, mac address, and ip address
@@ -511,8 +493,6 @@ The node name of each Neighborhood Node is a clickable link which will navigate 
 .. image:: _images/admin-neighbornode.png
  :alt: Admin Neighbor Node Statistics
  :align: center
-
-|
 
 To the right of the neighbor node's name there is a field that shows the current link status. Clicking in this field will display options for handling the link to this node. Select ``user block`` if you want to block that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
 
@@ -672,8 +652,6 @@ Highlight and click the section displaying your node's *LAN DHCP* settings. By d
  :alt: Admin DHCP Settings
  :align: center
 
-|
-
 DHCP Server
   This option is ``enabled`` by default, which provides IP addresses to devices attached to this node's LAN network. If disabled, the LAN network is still active, but addresses will not be automatically provided. Multiple DHCP servers can be active on the same LAN network but it is not defined which DHCP server will provide an IP address to each device even when address reservations are configured. It is best practice to have only one DHCP server enabled on a LAN network in order to avoid confusion.
 
@@ -700,8 +678,6 @@ Advanced Options
    :alt: Admin DHCP Advanced Options
    :align: center
 
-  |
-
   Tags
     The tags for advanced DHCP options allow you to define labels for values that will be assigned to clients which match specific properties such as Vendor Class or MAC address. Click the [+] icon to add a new tag. Enter a tag label in the first field, then click in the second field to select a tag type from the dropdown list. Finally, enter a text string which will be used to match a property on the device, such as the Vendor Class or MAC address. To delete an existing tag, click the [-] at the right side of the row you wish to remove.
 
@@ -718,8 +694,6 @@ If you have a multiport node or one which supports xlinks, then the *Ethernet Po
 .. image:: _images/admin-ports-xlinks.png
   :alt: Admin Ethernet Ports and Xlinks
   :align: center
-
-|
 
 Ports (if available)
   The *Ports* section shows a table of the available port names at the top of each column, with configuration labels for each row along the left side, and checkboxes beneath the ports to show which settings have been assigned on each port. For more information about the standard AREDN® VLANs, refer to the *VLAN* description in the *Advanced Options* section of **Network** settings.
@@ -757,7 +731,7 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 
 |
 
-If you are using *Mikrotik hAP ac* or *GL.iNET* devices, those multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure VLAN settings.
+If you are using *Mikrotik hAP ac*, *GL.iNET*, or *OpenWRT One* devices, those multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure VLAN settings.
 
 **Tunnels** allows you to configure connections for tunnel roles (Client & Server). The Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection that is both efficient and secure. It only encrypts the traffic as it traverses the public Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
 
@@ -776,8 +750,6 @@ Highlight and click the section displaying your node's **Tunnels** to open the t
 .. image:: _images/admin-tunnels.png
    :alt: Admin Tunnel Settings 1
    :align: center
-
-|
 
 Tunnel Server
   This first setting is relevant if you will be using your node as a tunnel server. Otherwise you can skip to the next section. A tunnel server node must be reachable from the Internet. Enter the public IP address (obtained from your :abbr:`ISP (Internet Service Provider)`) or `DDNS <https://en.wikipedia.org/wiki/Dynamic_DNS>`_ hostname in the field at the right.

@@ -23,13 +23,11 @@ As originally designed, MeshChat uses the Perl programming language and is able 
 
 - `Latest Lua version of MeshChat <https://github.com/kn6plv/meshchat>`_
 
-- Original Perl version for running Meshchat on a Raspbian or Debian computer (no longer maintained) 
+- Original Perl version for running Meshchat on a Raspbian or Debian computer (no longer maintained)
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface
    :align: center
-
-|
 
 Internet Relay Chat
 -------------------
@@ -42,8 +40,6 @@ A wide variety of features and functions are available with these and similar ch
    :alt: IRC in KiwiChat Web Interface
    :align: center
 
-|
-
 Jabber/XMPP
 -----------
 
@@ -55,8 +51,6 @@ Two of the most popular XMPP servers are eJabberd and Prosody, but there are man
    :alt: Prosody XMPP Interface
    :align: center
 
-|
-
 Let's Chat
 ----------
 
@@ -65,8 +59,6 @@ Let's Chat
 .. image:: _images/letschat.png
    :alt: Let's Chat Interface
    :align: center
-
-|
 
 Mattermost
 ----------
@@ -79,8 +71,6 @@ Mattermost supports @mentions, and channels are available for organizing convers
    :alt: Mattermost Interface
    :align: center
 
-|
-
 Matrix - Synapse
 ----------------
 
@@ -91,8 +81,6 @@ Matrix services can provide one-to-one communication channels as well as group c
 .. image:: _images/matrix.png
    :alt: Matrix Chat Interface
    :align: center
-
-|
 
 Example Chat Service Comparison
 -------------------------------

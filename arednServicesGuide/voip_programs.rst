@@ -20,8 +20,6 @@ Asterisk Server
    :alt: Asterisk Diagram
    :align: center
 
-|
-
 FreePBX Server
   `FreePBX <https://en.wikipedia.org/wiki/FreePBX>`_ is a web-based graphical user interface (GUI) for managing Asterisk. However, it is most commonly deployed as part of the integrated `FreePBX Distro <https://en.wikipedia.org/wiki/FreePBX_Distro>`_, which installs a complete Linux operating system with Asterisk, FreePBX, and software dependencies included.
 
@@ -31,8 +29,6 @@ FreePBX Server
    :alt: FreePBX Diagram
    :align: center
 
-|
-
 VoIP Endpoints
 --------------
 
@@ -41,8 +37,6 @@ Once you have a VoIP PBX provisioned on your mesh network, you will need VoIP en
 .. image:: _images/linphone.png
    :alt: Linphone Softphone
    :align: right
-
-|
 
 Linphone Softphone
   `Linphone <https://en.wikipedia.org/wiki/Linphone>`_ is a software phone that is supported on Windows, Linux, MacOS, Raspberry Pi, iPhone, and Android. It can be used to place voice and video direct calls as well as calls through a VoIP PBX like those mentioned above. Users can transfer calls to other numbers, send chat messages, share pictures or files, and merge calls into a group conference. The softphone has the ability to manage contact lists, and call history is available for future reference.
@@ -55,8 +49,6 @@ Mumble
 .. image:: _images/mumble.png
   :alt: Mumble Group Conference
   :align: center
-
-|
 
 Video Conferencing Software
 ---------------------------
@@ -80,8 +72,6 @@ TeamTalk
 .. image:: _images/teamtalk.png
    :alt: TeamTalk Video Conference
    :align: center
-
-|
 
 Example VoIP Service Comparison
 -------------------------------

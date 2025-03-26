@@ -58,6 +58,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :DNS: Domain Name System
 :DSP: Digital Signal Processor
 :DTD: Device to Device
+:Ed25519: Security key type (Edwards-curve Digital Signature Algorithm )
 :EL: Elevation
 :EMCOMM: Emergency Communications
 :EPUB: Electronic Publication
@@ -166,6 +167,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :RF: Radio Frequency
 :ROM: Read-Only Memory
 :RPI: Raspberry Pi single-board computer
+:RSA: Security key type (Rivest–Shamir–Adleman)
 :RSSI: Received Signal Strength Indicator
 :RST: ReStructured Text file format
 :RTS: Request to Send

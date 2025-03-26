@@ -10,8 +10,6 @@ Configuring a Supernode
    :alt: Supernode mesh diagram
    :align: center
 
-|
-
 Criteria for Deploying a Supernode
 ----------------------------------
 
@@ -35,8 +33,6 @@ As more Supernodes are deployed linking more local networks, the overall perform
 .. image:: _images/supernode-owners.png
    :alt: Supernode owners
    :align: center
-
-|
 
 Setting up a Supernode
 ----------------------

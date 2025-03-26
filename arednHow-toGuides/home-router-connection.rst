@@ -2,7 +2,7 @@
 Connecting Nodes to Home Routers
 ================================
 
-There are several indoor AREDN® nodes that have more than one Ethernet port. The AREDN® firmware running on these types of nodes has the WAN port preconfigured for connecting to the Internet. You can get the latest information about the specific port configured as the node's WAN port from the AREDN® website here: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_
+There are several indoor AREDN® nodes that have more than one Ethernet port. The AREDN® firmware running on these types of nodes has the WAN port preconfigured for connecting to the Internet. You can get the latest information about the specific port configured as the node's WAN port from the AREDN® website here: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_. It is recommended that you use a label maker to clearly identify the ports on your multiport devices.
 
 .. image:: _images/home-router-connection.png
    :alt:  Connect nodes to Internet through home router

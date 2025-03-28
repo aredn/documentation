@@ -61,7 +61,7 @@ Additional options will be displayed when you click **Advanced Options**.
   :align: center
 
 Upload SSH Key
-  Uploading SSH keys allows computers to connect from the command line to your node via SSH without having to know the password. SSH keys are generated on your local computer using native utilities such as *ssh-keygen* or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Currently AREDN® nodes support RSA and Ed25519 key types. RSA is the most widely supported type and is generally considered secure with a minimum key size of 2048 bits. Ed25519 is more efficient and has a smaller key size (255 bits) making it a good choice for resource-constrained devices.
+  Uploading SSH keys allows computers to connect from the command line to your node via SSH without having to know the password. SSH keys are generated on your local computer using native utilities such as *ssh-keygen* or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Currently AREDN® nodes support RSA, ECDSA, and Ed25519 key types. RSA is the most widely supported type and is generally considered secure with a minimum key size of 2048 bits. Ed25519 is more recent and has a smaller key size (255 bits), but older devices using the *tiny-build* firmware do not support Ed25519 keys.
 
   If you plan to generate ssh keys on a Microsoft Windows computer, you may want to review the `PuTTY documentation <https://the.earth.li/~sgtatham/putty/0.83/htmldoc/Chapter8.html#pubkey>`_ which describes this process. The example below shows the generation of an Ed25519 key using the PuTTY Key Generator.
 

@@ -36,8 +36,6 @@ The AREDN® node simply makes these metrics available for Prometheus to pull. Fo
    :alt: Prometheus Exporter metrics in Grafana
    :align: center
 
-|
-
 KN6PLV Mesh Map
 ---------------
 

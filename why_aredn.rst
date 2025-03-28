@@ -12,8 +12,6 @@ When might you want to use AREDN® mesh networking? It depends on what type of c
    :alt: Intro 02
    :align: center
 
-|
-
 Traditionally we have used RF voice communication on a variety of radio bands. A typical message-passing scenario involved giving the message to a radio operator who would write or type it onto a standard ICS-213 form. The message would then be relayed by RF voice comms to another operator who would write or type it on another ICS-213 form at the receiving end. The form would typically be hand-delivered to the recipient who would read and acknowledge the message. Any reply would then be handled through the same process from the receiving end back to the originator. This tried-and-true method has worked well, and it continues to work for handling much emergency and event traffic.
 
 In recent years Digital RF communication was included in the EmComm toolkit, with the addition of things like Packet Radio and WinLink. These modes moved emergency message passing into the digital realm, and this minimized or eliminated some of the sources of error in the communication chain. Digital RF communication was mainly text-based and is relatively slow speed but very reliable.
@@ -23,8 +21,6 @@ When AREDN® became available it added several features which the served agency 
 .. image:: _images/intro-03.png
    :alt: Intro 03
    :align: center
-
-|
 
 This photo was taken at a recent Marine Corp Marathon in the Washington, DC area. It’s one of the largest marathons in the country, with around 100,000 participants and spectators. A group of amateur radio operators has been providing communication services for this event for many years.
 
@@ -36,8 +32,6 @@ For a couple of years they began experimenting with AREDN®, and recent deployme
    :alt: Intro 04
    :align: center
 
-|
-
 Devices that support AREDN® come in a wide variety of shapes and sizes because AREDN® firmware can be installed on many types of inexpensive “off the shelf” wifi radios. AREDN® allows us to repurpose commercially available radios as mesh network nodes, many of which can communicate on unshared frequencies set aside specifically for licensed amateurs. Most of these commercial radios are rugged and weather-proof for outdoor installations. They typically use Power over Ethernet (PoE) which makes them less complicated to deploy by having a single cable to the device. Many of them also have integrated high gain antennas.
 
 The frequency ranges that are currently supported are the 900 MHz, 2.4 GHz, and 5.8 GHz bands. These microwave frequencies do require direct line of sight for reliable communication. Depending on the type of radios and antennas that are deployed, it’s possible to achieve network links anywhere from a few miles to well over 30 miles between sites.
@@ -45,8 +39,6 @@ The frequency ranges that are currently supported are the 900 MHz, 2.4 GHz, and 
 .. image:: _images/intro-05.png
    :alt: Intro 05
    :align: center
-
-|
 
 There are many radio options for different use cases. Some nodes are small indoor-only devices that provide both Ethernet and standard WiFi coverage, as well as mesh RF coverage out to a limited distance. Other radios are intended to provide mesh RF coverage to a 90 or 120 degree sector for devices at longer distances. Still other radios are designed for narrow beam, high speed, point to point data transfer, typically between mountaintop or backbone locations.
 
@@ -56,8 +48,6 @@ From this you can see that different types of radios serve different functions w
    :alt: Intro 06
    :align: center
 
-|
-
 For our purposes in providing emergency or event communication as volunteers, we should focus on designing a network that is able to reliably transfer information to and from the locations where it is needed. A successful network is one that achieves its purpose, so design your networks to meet the specific requirements of a mission. We’ll see some good examples of this in a moment, but we should keep this as our main goal for using AREDN® to provide EmComms.
 
 In simplest terms, when you deploy AREDN® devices you are providing a high-speed digital data network. Keep in mind that the network itself doesn’t really accomplish your mission. The applications, programs, and services riding your network are the key to accomplishing the mission. Your group may or may not be responsible for providing those applications and services. But if you do provide a program or service, be sure that what you provide is simple and intuitive to use, both for other amateur operators as well as for served agency staff members. Let’s look at some specific examples.
@@ -66,16 +56,12 @@ In simplest terms, when you deploy AREDN® devices you are providing a high-spee
    :alt: Intro 08
    :align: center
 
-|
-
 Whenever possible, deploy services that people are already familiar with. These days anyone can pick up a telephone and call someone’s phone number. They’re used to chatting with friends and co-workers using their computer keyboard. Almost everyone can read and send an email, often with large files or photos as attachments. People are used to pulling up a photo or image in their web browser or watching a streaming video from a web site. These are the types of services that would be a good fit for AREDN® networks.
 In this example, several stations were set up as part of an EmComms exercise. Participants were able to pick up a standard telephone to dial or answer phone calls between distant locations, all transmitted by RF using an AREDN® network.
 
 .. image:: _images/intro-09.png
    :alt: Intro 09
    :align: center
-
-|
 
 In this example, an amateur radio group was given the mission to provide live video feeds across a specific area. AREDN® nodes with video cameras were deployed at key points along the route, and network connected computers displayed each video stream on different monitors in the Sheriff's mobile command post.
 
@@ -85,15 +71,11 @@ After this event someone from the served agency said, “This mesh camera system
    :alt: Intro 10
    :align: center
 
-|
-
 When a community-wide event or emergency occurs, one of the challenges is keeping track of deployed resources -- whether they are people, or places, or equipment. In this example, an AREDN® network is being used to track resources and display messages that are sent between sites. The map on the left is a great visualization tool, and the main goal of this application is to increase the team’s situational awareness. The specific software running on this mesh network was developed by Dan K6OAT for the Los Angeles ARES team. People at each location are able to see what is going on around them from their mesh-connected computer.
 
 .. image:: _images/intro-11.png
    :alt: Intro 11
    :align: center
-
-|
 
 In southern California some of the mountaintop AREDN® backbone sites were deployed with video surveillance cameras on the towers. In this example, one of these mountaintop cameras captured and recorded this image. It was the first view of the 2017 Thomas Fire. This recording was requested by the fire management authorities to be included in their after action reports.
 
@@ -103,15 +85,11 @@ The inset on the right is an image of the flight paths of tanker aircraft traver
    :alt: Intro 12
    :align: center
 
-|
-
 This example illustrates using small AREDN® nodes connected to agency laptops. Each computer then has access to the AREDN® network and has the ability to communicate with other network resources. This would provide local communication across a field or parking lot as shown here, but the laptops could also link to an intermediate AREDN® node on top of a mast in the center of the area. From there the data could be transferred across longer distances to sites that are coordinating the event or exercise.
 
 .. image:: _images/intro-13.png
    :alt: Intro 13
    :align: center
-
-|
 
 Almost any Internet-style program that operates across a standard TCP/IP network can be deployed using AREDN® devices. This includes all of the examples shown in this list. Just remember that the services deployed should align with the specific mission or purpose for the network you are creating. Just because you can add nodes or services to a network, doesn’t mean you should add them. Each new item added to a network will use part of the limited processing and bandwidth resources that are available. Make sure your network is successful by deploying exactly what is needed in order to accomplish your mission.
 

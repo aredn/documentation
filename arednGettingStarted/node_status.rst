@@ -134,8 +134,6 @@ Neighborhood Nodes
    :alt: Neighborhood Node Statistics
    :align: center
 
-|
-
 Node Icons
   Each node in *Neighborhood Nodes* list may have an icon that indicates its status.
 

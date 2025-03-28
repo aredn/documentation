@@ -27,7 +27,7 @@ Telnet
     :align: center
 
 SSH
-  *SSH* requires you to specify the port, *root* username, and password on the command line. This is because AREDN® nodes do not use the default well-known *ssh* port [22], but nodes use port ``2222`` for *ssh* connections. An example *SSH* command string is
+  *SSH* requires you to specify the port, *root* username, and password on the command line. This is because AREDN® nodes do not use the default well-known *ssh* port [22], but instead use port ``2222`` for *ssh* connections. An example *SSH* command string is
 
   ::
 

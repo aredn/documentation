@@ -127,8 +127,6 @@ The AREDN® web interface provides information that is helpful when aligning two
    :alt: Aligning Nodes for Best SNR
    :align: center
 
-|
-
 Channel Planning Tips
 ---------------------
 

@@ -53,8 +53,6 @@ In the lower right video stream on the iSpy display below you can see the smoke 
    :alt: iSpy Display
    :align: center
 
-|
-
 MotionEye
 +++++++++
 
@@ -65,8 +63,6 @@ The backend `Motion <https://motion-project.github.io/index.html>`_ engine is bu
 .. image:: _images/motioneye.png
    :alt: MotionEye Display
    :align: center
-
-|
 
 ZoneMinder
 ++++++++++
@@ -81,8 +77,6 @@ This robust feature set comes at the cost of some administrative complexity, mak
    :alt: ZoneMinder Display
    :align: center
 
-|
-
 Shinobi
 +++++++
 
@@ -95,8 +89,6 @@ Shinobi tends to conserve computing resources fairly well, so more cameras or hi
 .. image:: _images/shinobi.png
    :alt: Shinobi Display
    :align: center
-
-|
 
 Example Video Service Comparison
 --------------------------------

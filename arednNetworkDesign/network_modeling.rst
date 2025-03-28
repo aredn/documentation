@@ -32,8 +32,6 @@ The path profile is color coded to indicate whether the link quality is adequate
    :alt: Ubiquiti AirLink Modeling
    :align: center
 
-|
-
 VE2DBE's Radio Mobile Tool
 ++++++++++++++++++++++++++
 
@@ -44,8 +42,6 @@ With *Radio Mobile* you must first create a *Site* for each of your endpoints. T
 .. image:: _images/radioMobile-path.png
    :alt: Radio Mobile Path Profile
    :align: center
-
-|
 
 HeyWhatsThat Path Profiler
 ++++++++++++++++++++++++++
@@ -58,8 +54,6 @@ Simply click on the map at the bottom of the webpage to add an endpoint for each
    :alt: HeyWhatThat Path Profiler
    :align: center
 
-|
-
 Radio Fresnel Tool
 ++++++++++++++++++
 
@@ -70,8 +64,6 @@ Simply enter the required site information into the online form and click the *G
 .. image:: _images/radiofresnel.png
    :alt: Radio Fresnel Tool
    :align: center
-
-|
 
 Determining Node or Network Coverage
 ------------------------------------

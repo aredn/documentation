@@ -61,14 +61,18 @@ Different types of radio links may be needed to connect all of the nodes that ar
 Supernode Architecture
 ----------------------
 
-Once several local or regional networks have been created, there may be a need for communication between these "mesh islands." Often node owners have used direct Internet tunnel connections to accomplish this. However, this has the effect of merging the mesh islands into a single network with all of the routing traffic traversing all of the member networks. Many of the legacy nodes with older hardware/firmware are unable to handle the increased load.
+Once several local or regional networks have been created, there may be a need for access between these "mesh islands." In the past, node owners used direct Internet tunnel connections to accomplish this. However, this has the effect of merging the mesh islands into a single network with all of the routing traffic traversing all of the member networks. Many nodes were unable to handle the increased load.
 
-A more efficient solution is to use a Supernode network to provide access across mesh islands, without sharing all of the local routing traffic across the linked networks. A Supernode is a specialized, dedicated node whose sole purpose is to link with other Supernodes and to shield each local network from the aggregate routing traffic. **OpenWRT One** hardware is recommended for Supernodes, along with an Internet connection that provides robust bandwidth. It is also possible to implement a Supernode on a *Mikrotik hAP ac2/ac3* or a Virtual Machine running AREDN® firmware. For more information, refer to *Configuring a Supernode* in the **How-To** section of the documentation.
-
-A Supernode network is a high-level mesh network --- ``super`` meaning *"above or higher."* The Supernode network sits above the isolated mesh networks and provides connectivity without increasing the routing load on the local networks.
+A more efficient solution is to use the Supernode network to provide access across mesh islands, without sharing all of the local routing traffic across the linked networks. The Supernode network is a high-level mesh network --- ``super`` meaning *"above or higher."* The Supernode network sits above the isolated mesh networks and provides connectivity while insulating the local networks from the normal routing load.
 
 .. image:: ../_images/supernode-mesh.png
-  :alt: Supernode mesh
+  :alt: Supernode network
   :align: center
 
-A new solution for Supernode networks is currently being tested, and more information will be forthcoming in future documentation.
+Example Usage
+  If you need access to a service that is running on a remote network, click the Cloud mesh icon |icon1| to view services available across the Supernode network. You can use the search box at the top of the page to limit the display to a specific search string (such as a callsign or a service name). Once you have located the remote service you can click its link to open that service or node. This allows you to have full interaction with the remote service without requiring a dedicated network link between your mesh and the remote network.
+
+A Supernode is a specialized node whose sole purpose is to link with other Supernodes and to shield each local network from the aggregate routing traffic. **OpenWRT One** hardware is recommended for Supernodes, along with an Internet connection that provides robust bandwidth. It is also possible to implement a Supernode on a *Mikrotik hAP ac2/ac3* or a Virtual Machine running AREDN® firmware. For more information, refer to *Configuring a Supernode* in the **How-To** section of the documentation.
+
+.. |icon1| image:: ../_icons/cloudmesh.png
+  :alt: Cloud mesh view

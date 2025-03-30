@@ -281,19 +281,6 @@ Install the *sysupgrade* firmware image
 
 3. In a web browser, enter the URL ``http://192.168.1.1`` to display the page for selecting the **sysupgrade** file. Browse to find the *sysupgrade* file you previously downloaded to your computer, select it, and click the ``Upload & Reboot`` button.
 
-As an alternative to using the node's web interface, you can manually copy the *sysupgrade* file to the node and run a command line program to install the firmware. This will allow you to see any error messages that may not appear when using the web interface. Note that devices running AREDN® firmware images use port 2222 for secure copy/shell access.
-
-Execute the following commands from a Linux computer:
-
-::
-
-  my-computer:$ scp -P 2222 <aredn-firmware-filename>.bin root@192.168.1.1:/tmp
-  my-computer:$ ssh -p 2222 root@192.168.1.1
-  ~~~~~~~ after logging into the node with ssh ~~~~~~~
-  node:# sysupgrade -n /tmp/<aredn-firmware-filename>.bin
-
-To transfer the image from a Windows computer you can use a *Secure Copy* program such as *WinSCP*. Then use a terminal program such as *PuTTY* to connect to the node via ssh or telnet in order to run the sysupgrade command shown as the last line above.
-
 After successfully installing the *sysupgrade* file the node will automatically reboot to the new AREDN® firmware image.
 
 TP-LINK first install process

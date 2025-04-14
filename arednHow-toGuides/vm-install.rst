@@ -30,6 +30,8 @@ Proxmox Installs
 
 *Proxmox Virtual Environment* is an open-source server management platform for virtualization. There is an updated checklist of steps for Proxmox installs on the `Bay Area Mesh Wiki <https://wiki.bayareamesh.us/index.php/AREDN_on_Proxmox>`_.
 
+Additionally, for a more in-depth example install utiltizing pre-configured VLANs, check out this `RogueSecurity blog post <https://roguesecurity.dev/blog/aredn-vm>`_.
+
 QEMU Installs
 -------------
 

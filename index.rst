@@ -23,9 +23,6 @@ Additional information about the AREDN® project can be found at the links below
 
 .. note:: AREDN® is a registered trademark of *Amateur Radio Emergency Data Network, Inc.* and may not be used without permission.
 
-Site Map
---------
-
 .. toctree::
    :caption: WHAT IS AREDN®
 

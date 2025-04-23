@@ -216,8 +216,8 @@ If your Mikrotik device has "Protected Routerboot" enabled, then you will need t
 
 .. tip:: There may be cases when your Mikrotik device boots the AREDN® *kernel* file but its RouterOS version does not allow the *sysupgrade* file to be installed. You can read the instructions on this page (`OpenWRT - Procedures for RouterOS <https://openwrt.org/toh/mikrotik/common#make_sure_the_bootloader_is_compatible>`_) to determine which version of Mikrotik RouterOS your device has. If it is running version ``7.x`` then you can try installing the AREDN® *sysupgrade v7* firmware file. Or you can `downgrade Mikrotik RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_ prior to flashing the regular AREDN® *sysupgrade* file. Earlier versions of RouterOS and their NetInstall utilities can be found on the `Mikrotik website <https://mikrotik.com/download/archive>`_. Download an ARM version (``routeros-arm``) for devices that use the *ipq40xx* AREDN® firmware, or download a MIPSBE version (``routeros-mipsbe``) for other Mikrotik devices. Typically you can install a RouterOS version that is equal to or newer than the RouterOS version shown in the *Factory Firmware* field on the Mikrotik web display.
 
-Install preparation
-+++++++++++++++++++
+Mikrotik Install preparation
+++++++++++++++++++++++++++++
 
 - Download *both* of the appropriate Mikrotik *kernel* and *sysupgrade* files from the AREDN® website. Rename the *initramfs-kernel* file to ``rb.elf`` and keep the *sysupgrade* **bin** file available for later.
 

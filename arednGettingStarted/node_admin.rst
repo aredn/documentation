@@ -60,6 +60,9 @@ Additional options will be displayed when you click **Advanced Options**.
   :alt: Admin Name and Security Advanced Options
   :align: center
 
+SSH keys
+++++++++
+
 Upload SSH Key
   Uploading SSH keys allows computers to connect from the command line to your node via SSH without having to know the password. SSH keys are generated on your local computer using native utilities such as *ssh-keygen* or the `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ program's *Key Generator*. Currently AREDN® nodes support RSA, ECDSA, and Ed25519 key types. RSA is the most widely supported type and is generally considered secure with a minimum key size of 2048 bits. Ed25519 is more recent and has a smaller key size (255 bits), but older devices using the *tiny-build* firmware do not support Ed25519 keys.
 
@@ -111,28 +114,39 @@ Highlight and click the section displaying your node's firmware version. The top
   :align: center
 
 Download Firmware
-  If your node has Internet access or access to a firmware server on your local network, you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
++++++++++++++++++
+
+If your node has Internet access or access to a firmware server on your local network, you can click the *refresh* icon on the right side of the field in order to update the list of available images. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
 Upload Firmware
-  If you have a new firmware image that you already downloaded to your local computer from the AREDN® website or a local firmware repository, click the ``Browse`` button and navigate to the location where you saved the firmware file. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
++++++++++++++++
+
+If you have a new firmware image that you already downloaded to your local computer from the AREDN® website or a local firmware repository, click the ``Browse`` button and navigate to the location where you saved the firmware file. Select the image to install and click the ``Fetch and Update`` button to begin the process. You may need to scroll down in the display to see the ``Fetch and Update`` button.
 
 Sideload Local Firmware
-  If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp`` folder, and name it ``local_firmware``. Once the node detects the presence of ``/tmp/local_firmware``, then the filename in the field at the right will become active. Click the ``Update`` button to begin the process. You may need to scroll down in the display to see the button.
++++++++++++++++++++++++
+
+If you need to remotely upgrade the firmware on a node which has a marginal connection to the network, the standard web/http method may not reliably transfer the image to the node. In this situation you may want to use an independent means of uploading the firmware to the node before beginning the upgrade process. Choose an upload method such as ``scp`` (secure copy) with a long connection timeout, which may allow the file transfer to continue the upload in the event of a network interruption. Transfer the new firmware file to your node, place it in the ``/tmp`` folder, and name it ``local_firmware``. Once the node detects the presence of ``/tmp/local_firmware``, then the filename in the field at the right will become active. Click the ``Update`` button to begin the process. You may need to scroll down in the display to see the button.
 
 Backup Configuration
-  Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware. It is also possible to generate a node backup file from the command line of your node:
+++++++++++++++++++++
 
-  ::
+Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware. It is also possible to generate a node backup file from the command line of your node:
 
-    # /usr/local/bin/backup
-    Generated backup file: /tmp/node-backup.backup
+::
+
+  # /usr/local/bin/backup
+  Generated backup file: /tmp/node-backup.backup
 
 Restore Configuration
-  Once you have generated and saved a backup configuration, you can restore that previous backup to your node. This will replace the node's configuration with the settings in the backup file. Be aware that no attempt is made to validate the backup file. Also, restoring to a different type of hardware could result in unexpected behavior.
++++++++++++++++++++++
+
+Once you have generated and saved a backup configuration, you can restore that previous backup to your node. This will replace the node's configuration with the settings in the backup file. Be aware that no attempt is made to validate the backup file. Also, restoring to a different type of hardware could result in unexpected behavior.
 
 A progress bar at the bottom of the display will show the status of your download or upload. Any error messages will also be displayed in a message bar at the top of this display. You should then see a display showing that the image is being installed, along with a timer and progress indicator.
 
-Additional options will be displayed when you click **Advanced Options**.
+Advanced Firmware Options
++++++++++++++++++++++++++
 
 .. image:: _images/admin-firmware-2.png
   :alt: Admin Firmware Advanced Options
@@ -159,15 +173,22 @@ Highlight and click the section displaying your node's installed package count. 
  :align: center
 
 Download Package
-  If the node has a connection to the Internet or to a local package server, it can retrieve a package from the AREDN® website or from the local server. Click the *refresh* icon at the right of the field to update the list of packages available for download. Select the package you want to install, click the ``Fetch and Install`` button, and wait for the package to be installed. A progress bar at the bottom of the display will show the status of the process. A status message will appear at the top of the display to indicate whether the package was installed successfully.
+++++++++++++++++
+
+If the node has a connection to the Internet or to a local package server, it can retrieve a package from the AREDN® website or from the local server. Click the *refresh* icon at the right of the field to update the list of packages available for download. Select the package you want to install, click the ``Fetch and Install`` button, and wait for the package to be installed. A progress bar at the bottom of the display will show the status of the process. A status message will appear at the top of the display to indicate whether the package was installed successfully.
 
 Upload Package
-  If you have a package file that you already downloaded to your local computer from a package repository, click the ``Browse`` button and navigate to the location where you saved the package file. After selecting the package, click the ``Fetch and Update`` button and wait for the package to be uploaded and installed. A progress bar at the bottom of the display will show the status of the upload and install. A status message will appear at the top of the display to indicate whether the package was installed successfully.
+++++++++++++++
+
+If you have a package file that you already downloaded to your local computer from a package repository, click the ``Browse`` button and navigate to the location where you saved the package file. After selecting the package, click the ``Fetch and Update`` button and wait for the package to be uploaded and installed. A progress bar at the bottom of the display will show the status of the upload and install. A status message will appear at the top of the display to indicate whether the package was installed successfully.
 
 Remove Package
-  Click in the field at the right to show a list of packages currently installed on the node. Select a package and click the ``Remove`` button to uninstall the selected package. You will only be able to remove packages that you have added to your node. A progress bar at the bottom of the display will show the status of the remove process. A status message will appear at the top of the display to indicate whether the package was removed successfully.
+++++++++++++++
 
-Additional options will be displayed when you click **Advanced Options**.
+Click in the field at the right to show a list of packages currently installed on the node. Select a package and click the ``Remove`` button to uninstall the selected package. You will only be able to remove packages that you have added to your node. A progress bar at the bottom of the display will show the status of the remove process. A status message will appear at the top of the display to indicate whether the package was removed successfully.
+
+Advanced Package Options
+++++++++++++++++++++++++
 
 Package URL
   This field contains the URL which your node will use to download packages. The default value is ``http://downloads.arednmesh.org`` which allows your Internet-connected node to retrieve packages from the AREDN® website. You can also set this package URL to a local server which provides packages.
@@ -183,8 +204,8 @@ Highlight and click the section displaying your node's network settings. This di
  :alt: Admin Network
  :align: center
 
-Mesh
-++++
+Mesh address
+++++++++++++
 
 The **Mesh Address** is the primary IP address of your node. The AREDN® firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses on your node. Normally you will not need to change this, so keep this value unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
 
@@ -197,23 +218,27 @@ The most common configuration is to have the LAN address space managed automatic
 
 When you connect a device to your node's LAN, not only will it have an IP address in the LAN IP address range, but it is best practice for LAN device to obtain its DNS Server information automatically from the node. Be aware that if a LAN device does not use the DNS Server entry provided by the node to which it is connected, then that device will be unable to resolve hostnames on the mesh network. Also, hard-coding a device's DNS Server entry with the mesh node's IP address could result in unexpected failures if that IP address changes.
 
-NAT Mode
-  Another choice for *LAN Type* is ``NAT`` and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node itself. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed from the mesh using port forwarding rules.
+LAN NAT Mode
+^^^^^^^^^^^^
 
-  .. image:: _images/admin-network-nat.png
-   :alt: Admin Network - NAT
-   :align: center
+Another choice for *LAN Type* is ``NAT`` and in this mode the LAN is isolated from the mesh. All outgoing traffic has its source address modified to be the *Mesh* IP address of the node itself. This is the same way that most home routers use an Internet connection, and all services provided by computers on the LAN can only be accessed from the mesh using port forwarding rules.
 
-  In ``NAT`` mode you are responsible for managing the IP address space of your node's LAN network. Enter the LAN IP address and netmask in dotted decimal format. Specify the final octet of the IP address that your node's DHCP service will use as its *DHCP Start* address as well as the *DHCP End* address, which defines the IP address range that will be provided via DHCP for LAN devices.
+.. image:: _images/admin-network-nat.png
+  :alt: Admin Network - NAT
+  :align: center
+
+In ``NAT`` mode you are responsible for managing the IP address space of your node's LAN network. Enter the LAN IP address and netmask in dotted decimal format. Specify the final octet of the IP address that your node's DHCP service will use as its *DHCP Start* address as well as the *DHCP End* address, which defines the IP address range that will be provided via DHCP for LAN devices.
 
 44Net Mode
-  Another choice for *LAN Type* is ``44Net`` and this mode allows you to use IP addresses from the `AMPRnet <https://www.ardc.net/44net/>`_ address space (44.0.0.0/9 to 44.128.0.0/10).
+^^^^^^^^^^
 
-  .. image:: _images/admin-network-44net.png
-   :alt: Admin Network - 44Net
-   :align: center
+Another choice for *LAN Type* is ``44Net`` and this mode allows you to use IP addresses from the `AMPRnet <https://www.ardc.net/44net/>`_ address space (44.0.0.0/9 to 44.128.0.0/10).
 
-  Enter the **44Net IP Address** and **Netmask** in dotted decimal format. Specify the offset of the IP address that your node's DHCP service will use as its *DHCP Start* address as well as the offset for the *DHCP End* address, which defines the IP address range that will be provided via DHCP for LAN devices.
+.. image:: _images/admin-network-44net.png
+  :alt: Admin Network - 44Net
+  :align: center
+
+Enter the **44Net IP Address** and **Netmask** in dotted decimal format. Specify the offset of the IP address that your node's DHCP service will use as its *DHCP Start* address as well as the offset for the *DHCP End* address, which defines the IP address range that will be provided via DHCP for LAN devices.
 
 WAN
 +++
@@ -224,9 +249,6 @@ WAN Mode
 DNS
   These two fields allow you to enter the IP addresses of the :abbr:`DNS (Domain Name System)` servers of your choice. By default Google's DNS servers are listed because their name resolution servers are configured to detect error conditions properly and to report them correctly.
 
-Advanced Options
-++++++++++++++++
-
 Additional options will be displayed when you click **Advanced Options**.
 
 .. image:: _images/admin-network-2.png
@@ -234,34 +256,46 @@ Additional options will be displayed when you click **Advanced Options**.
   :align: center
 
 WAN VLAN
-  Many of the devices used as AREDN® nodes have only one Ethernet port, but more than one type of network traffic must share that single port. The AREDN® firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong. By default the WAN uses an *untagged* VLAN on multi-port devices, and ``VLAN 1`` on single port devices. This can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *untagged*. If you change this setting and want to use a single digit identifier, use numbers greater than three, but do not use any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+^^^^^^^^
 
-  The following VLANs are preconfigured in the AREDN® firmware:
+Many of the devices used as AREDN® nodes have only one Ethernet port, but more than one type of network traffic must share that single port. The AREDN® firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong. By default the WAN uses an *untagged* VLAN on multi-port devices, and ``VLAN 1`` on single port devices. This can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *untagged*. If you change this setting and want to use a single digit identifier, use numbers greater than three, but do not use any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
 
-  - VLAN 2 identifies traffic from a :abbr:`DtD (Device to Device)` node directly connected to your node.
+The following VLANs are preconfigured in the AREDN® firmware:
 
-  - No VLAN tag identifies LAN traffic from devices on the local area network.
+- VLAN 2 identifies traffic from a :abbr:`DtD (Device to Device)` node directly connected to your node.
 
-  - *For single-port nodes:* A VLAN 1 tag identifies WAN traffic to your node from the Internet or another external network.
+- No VLAN tag identifies LAN traffic from devices on the local area network.
 
-  It is important to understand AREDN® VLANs when configuring network smart switches for single-port nodes to access the Internet, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN® website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_.
+- *For single-port nodes:* A VLAN 1 tag identifies WAN traffic to your node from the Internet or another external network.
 
-  There are several indoor AREDN® nodes that have more than one Ethernet port. The AREDN® firmware running on these types of nodes has the WAN port preconfigured for connecting to the Internet. You can get the latest information about the specific port configured as the node's WAN port from the AREDN® website here: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_. It is recommended that you use a label maker to clearly identify the ports on your multiport devices.
+It is important to understand AREDN® VLANs when configuring network smart switches for single-port nodes to access the Internet, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN® website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_.
+
+There are several indoor AREDN® nodes that have more than one Ethernet port. The AREDN® firmware running on these types of nodes has the WAN port preconfigured for connecting to the Internet. You can get the latest information about the specific port configured as the node's WAN port from the AREDN® website here: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_. It is recommended that you use a label maker to clearly identify the ports on your multiport devices.
 
 Mesh to WAN
-  Enabling this switch will allow your node to route traffic from its Mesh interface to/from its WAN interface. This allows any device on the mesh network to use the WAN on your node, typically for accessing the Internet. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN® is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway. The default value is ``disabled`` and it is recommended that you keep this default unless there is a special reason to enable it.
+^^^^^^^^^^^
+
+Enabling this switch will allow your node to route traffic from its Mesh interface to/from its WAN interface. This allows any device on the mesh network to use the WAN on your node, typically for accessing the Internet. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN® is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway. The default value is ``disabled`` and it is recommended that you keep this default unless there is a special reason to enable it.
 
 LAN to WAN
-  The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
+^^^^^^^^^^
+
+The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
 
 LAN to Mesh WAN
-  There may be times when your node has its own LAN devices, but you node does not provide WAN Internet access for them. Enabling this option will allow your node's LAN devices to find and use an Internet connection that might be available from another node across the mesh network. This option is ``disabled`` by default.
+^^^^^^^^^^^^^^^
+
+There may be times when your node has its own LAN devices, but you node does not provide WAN Internet access for them. Enabling this option will allow your node's LAN devices to find and use an Internet connection that might be available from another node across the mesh network. This option is ``disabled`` by default.
 
 LAN to 44Net
-  The default value is ``enabled`` which provides a 44Net route for any LAN device on your node, even if your default route is disabled.
+^^^^^^^^^^^^
+
+The default value is ``enabled`` which provides a 44Net route for any LAN device on your node, even if your default route is disabled.
 
 LAN default route
-  Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes for more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
+^^^^^^^^^^^^^^^^^
+
+Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes for more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
@@ -393,72 +427,80 @@ Highlight and click the section displaying your node's local services. The **Loc
  :align: center
 
 Adding a Service
-  To add a service, click in the field to the right and select the type of service you want to add. Then click the [+] icon to add a row to your services list for the new service of the selected type. You will provide different parameters for the new entry based on the type of service selected.
+++++++++++++++++
 
-  .. image:: _images/admin-localsvc-2.png
-   :alt: Admin Local Services Generic Example
-   :align: center
+To add a service, click in the field to the right and select the type of service you want to add. Then click the [+] icon to add a row to your services list for the new service of the selected type. You will provide different parameters for the new entry based on the type of service selected.
 
-  Generic URL service template
-    This template allows you to enter a descriptive *service name* to clearly identify your service ("Generic URL" is a placeholder). Click in the field to the right of the *service name* to select from the dropdown list the type of icon that will be displayed for this service (if any). The icon you choose will be displayed to the right of the service name on **mesh status** pages.
+.. image:: _images/admin-localsvc-2.png
+  :alt: Admin Local Services Generic Example
+  :align: center
 
-    .. image:: _images/admin-iconlist-by-name.png
-     :alt: Admin Local Services Icons by Name
-     :align: center
+Generic URL service template
+  This template allows you to enter a descriptive *service name* to clearly identify your service ("Generic URL" is a placeholder). Click in the field to the right of the *service name* to select from the dropdown list the type of icon that will be displayed for this service (if any). The icon you choose will be displayed to the right of the service name on **mesh status** pages.
 
-    In the *protocol* field on the next row, enter the `protocol to use <https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers>`_ for this service. Common protocols include ``http`` for website services and ``ftp`` for file transfer services. Other services may use other protocols. From the dropdown list in the next field, select the node or host on which this service is running. If you defined *Host Aliases* (described below), you will see these host aliases in the dropdown list.
+  .. image:: _images/admin-iconlist-by-name.png
+    :alt: Admin Local Services Icons by Name
+    :align: center
 
-    In the next field enter the network port on which the host is listening for service connections. There may be several applications provided through a single web server on a node or host using a single port, and in that case a valid application *Path* must be entered after the port number. In other cases the network port alone will uniquely identify the application or program that is listening for user connections to that service. You can find additional information on ports at the following link: `Network Ports <https://en.wikipedia.org/wiki/Port_(computer_networking)>`_.
+  In the *protocol* field on the next row, enter the `protocol to use <https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers>`_ for this service. Common protocols include ``http`` for website services and ``ftp`` for file transfer services. Other services may use other protocols. From the dropdown list in the next field, select the node or host on which this service is running. If you defined *Host Aliases* (described below), you will see these host aliases in the dropdown list.
 
-  Simple text service template
-    This template allows you to create an informational label which is not clickable. Enter a descriptive label ("Simple text" is a placeholder). Click in the field to the right of the text label to select from the dropdown list the type of icon that will be displayed for this label (if any). The icon you choose will be displayed to the right of the service name on **mesh status** pages. From the dropdown list in the next field, select the node or host with which this label is associated. If you defined *Host Aliases* (described below), you will see these host aliases in the dropdown list.
+  In the next field enter the network port on which the host is listening for service connections. There may be several applications provided through a single web server on a node or host using a single port, and in that case a valid application *Path* must be entered after the port number. In other cases the network port alone will uniquely identify the application or program that is listening for user connections to that service. You can find additional information on ports at the following link: `Network Ports <https://en.wikipedia.org/wiki/Port_(computer_networking)>`_.
 
-  Network time service template
-    To advertise a local NTP server, select the *NTP Server* template. The required field values are all filled for you. You can change any of the defaults that are not appropriate for your situation.
+Simple text service template
+  This template allows you to create an informational label which is not clickable. Enter a descriptive label ("Simple text" is a placeholder). Click in the field to the right of the text label to select from the dropdown list the type of icon that will be displayed for this label (if any). The icon you choose will be displayed to the right of the service name on **mesh status** pages. From the dropdown list in the next field, select the node or host with which this label is associated. If you defined *Host Aliases* (described below), you will see these host aliases in the dropdown list.
 
-  Additional service templates
-    Additional templates have been created for common services, with the goal of making it easier to define these services on your nodes. These templates fill in some of the fields with typical values, while allowing you to customize the information appropriately. Templates exist for several types of IP cameras as well as Winlink, MeshChat, WeeWx, Mapping, Proxmox, and web-based services.
+Network time service template
+  To advertise a local NTP server, select the *NTP Server* template. The required field values are all filled for you. You can change any of the defaults that are not appropriate for your situation.
 
-  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+Additional service templates
+  Additional templates have been created for common services, with the goal of making it easier to define these services on your nodes. These templates fill in some of the fields with typical values, while allowing you to customize the information appropriately. Templates exist for several types of IP cameras as well as Winlink, MeshChat, WeeWx, Mapping, Proxmox, and web-based services.
+
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Viewing, Editing, and Deleting Services
-  On the **Local Services** display your services are listed as a series of rows. You can change any of the fields for any of the services in this list. If you want to delete a service row, click the [-] icon on the right side of that row.
++++++++++++++++++++++++++++++++++++++++
 
-  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+On the **Local Services** display your services are listed as a series of rows. You can change any of the fields for any of the services in this list. If you want to delete a service row, click the [-] icon on the right side of that row.
 
-  .. admonition:: Service Advertisement Process
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
-    `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ propagates service entries to other nodes across the network. Once every hour your node will verify that its own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions after three attempts:
+.. admonition:: Service Advertisement Process
 
-    1. The LAN host is not pingable from your node
-    2. There is no service listening on the specified port
-    3. An HTTP service does not return a *success* status code
+  `OLSR (Optimized Link State Routing) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ propagates service entries to other nodes across the network. Once every hour your node will verify that its own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions after three attempts:
 
-    The node's *Advertised Services* list will still show the defined service (with an alert icon and hover text marking it as non-advertised), but your node will not actually *advertise* that service to the network. If the service URL becomes reachable in the future or if the dependent package is later installed, then your node will resume advertising the service across the network.
+  1. The LAN host is not pingable from your node
+  2. There is no service listening on the specified port
+  3. An HTTP service does not return a *success* status code
+
+  The node's *Advertised Services* list will still show the defined service (with an alert icon and hover text marking it as non-advertised), but your node will not actually *advertise* that service to the network. If the service URL becomes reachable in the future or if the dependent package is later installed, then your node will resume advertising the service across the network.
 
 Managing Host Aliases
-  *Host Aliases* provide a way for you to create a hostname alias for a device on your node's LAN. This can be useful if you want a computer or device on your LAN to be identified by something other than its actual hostname. Your Host Alias will be propagated across the network even if the actual hostname has *Do Not Propagate* checked in its DHCP Reservation, allowing you to hide the actual hostname while still advertising the alias on the mesh. Once an alias is defined, it will become available for creating local services (described above).
++++++++++++++++++++++
 
-  .. image:: _images/admin-localsvc-3.png
-   :alt: Admin Local Services Host Aliases
-   :align: center
+*Host Aliases* provide a way for you to create a hostname alias for a device on your node's LAN. This can be useful if you want a computer or device on your LAN to be identified by something other than its actual hostname. Your Host Alias will be propagated across the network even if the actual hostname has *Do Not Propagate* checked in its DHCP Reservation, allowing you to hide the actual hostname while still advertising the alias on the mesh. Once an alias is defined, it will become available for creating local services (described above).
 
-  To create an alias, click the [+] icon on the right and enter an alias name in the first field. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the network. Then use the dropdown selector to choose the name or IP Address of the existing host for which you are defining the alias. Once you have entered these values, you can change any of the fields in any of the aliases. If you want to delete an alias, click the [-] icon on the right side of that row.
+.. image:: _images/admin-localsvc-3.png
+  :alt: Admin Local Services Host Aliases
+  :align: center
 
-  You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+To create an alias, click the [+] icon on the right and enter an alias name in the first field. The alias should be prefixed with your callsign in order to follow the naming convention used when defining any unique host on the network. Then use the dropdown selector to choose the name or IP Address of the existing host for which you are defining the alias. Once you have entered these values, you can change any of the fields in any of the aliases. If you want to delete an alias, click the [-] icon on the right side of that row.
+
+You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Port Forwarding
-  There may be situations where your node must act as an intermediary, typically between a remote client device and a server device on your node's LAN network. More information can be found at this link for `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
++++++++++++++++
 
-  .. image:: _images/admin-localsvc-4.png
-   :alt: Admin Local Services Port Forwarding
-   :align: center
+There may be situations where your node must act as an intermediary, typically between a remote client device and a server device on your node's LAN network. More information can be found at this link for `Port Forwarding <https://en.wikipedia.org/wiki/Port_forwarding>`_.
 
-  To create a port forwarding rule, click the [+] icon on the right. Unless the LAN is in NAT mode, port forwarding is only meaningful for WAN-connected nodes so you will only be allowed to create rules for the WAN interface. If in NAT mode you may select the WAN, Mesh, or both Mesh & WAN interfaces when defining your port forwarding rule.
+.. image:: _images/admin-localsvc-4.png
+  :alt: Admin Local Services Port Forwarding
+  :align: center
 
-  For inbound port, enter a single port number or a range of ports separated by the dash character. Click in the *protocol* field to select TCP, UDP, or both. Use the switch on the right to enable or disable this port forwarding rule. On the next row, click in the IP address / hostname field to select from the dropdown list a LAN host to process the requests. In the next field, enter the *port* or the first port in the range on which that host is listening for those requests.
+To create a port forwarding rule, click the [+] icon on the right. Unless the LAN is in NAT mode, port forwarding is only meaningful for WAN-connected nodes so you will only be allowed to create rules for the WAN interface. If in NAT mode you may select the WAN, Mesh, or both Mesh & WAN interfaces when defining your port forwarding rule.
 
-  To delete a port forwarding rule, click the [-] icon on the right of the existing row for the rule you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
+For inbound port, enter a single port number or a range of ports separated by the dash character. Click in the *protocol* field to select TCP, UDP, or both. Use the switch on the right to enable or disable this port forwarding rule. On the next row, click in the IP address / hostname field to select from the dropdown list a LAN host to process the requests. In the next field, enter the *port* or the first port in the range on which that host is listening for those requests.
+
+To delete a port forwarding rule, click the [-] icon on the right of the existing row for the rule you wish to delete. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 
 Local Devices
 -------------
@@ -655,30 +697,38 @@ Highlight and click the section displaying your node's *LAN DHCP* settings. By d
  :align: center
 
 DHCP Server
-  This option is ``enabled`` by default, which provides IP addresses to devices attached to this node's LAN network. If disabled, the LAN network is still active, but addresses will not be automatically provided. Multiple DHCP servers can be active on the same LAN network but it is not defined which DHCP server will provide an IP address to each device even when address reservations are configured. It is best practice to have only one DHCP server enabled on a LAN network in order to avoid confusion.
++++++++++++
+
+This option is ``enabled`` by default, which provides IP addresses to devices attached to this node's LAN network. If disabled, the LAN network is still active, but addresses will not be automatically provided. Multiple DHCP servers can be active on the same LAN network but it is not defined which DHCP server will provide an IP address to each device even when address reservations are configured. It is best practice to have only one DHCP server enabled on a LAN network in order to avoid confusion.
 
 Address Reservations
-  Devices which are added to the *Address Reservations* list will display their hostname, IP address, and MAC address. The hostname of every device connected to the mesh at large should be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to give it a unique name on the network.
+++++++++++++++++++++
 
-  You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable via your node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
+Devices which are added to the *Address Reservations* list will display their hostname, IP address, and MAC address. The hostname of every device connected to the mesh at large should be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to give it a unique name on the network.
 
-  There may be some devices on which you are not able to set the hostname, but once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated across the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
+You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable via your node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR from propagating that information across the mesh.
 
-  In addition to adding an address reservation manually, you can also click the [+] icon at the right of any of the devices which have active DHCP leases as described below. You will then see that host appear in the *Address Reservations* list.
+There may be some devices on which you are not able to set the hostname, but once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated across the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR from propagating the new device's information across the mesh.
+
+In addition to adding an address reservation manually, you can also click the [+] icon at the right of any of the devices which have active DHCP leases as described below. You will then see that host appear in the *Address Reservations* list.
 
 Active Leases
-  Devices which are currently assigned an IP address by your node will be displayed in the table of *Active Leases*. The first field displays the hostname, followed by the IP address that was assigned by your node's DHCP server. The third field displays the device's MAC address.
++++++++++++++
 
-  Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. As mentioned above, you can reserve that host's DHCP address by clicking the [+] icon at the right of the row. You will see that host now appear in the *Address Reservations* list.
+Devices which are currently assigned an IP address by your node will be displayed in the table of *Active Leases*. The first field displays the hostname, followed by the IP address that was assigned by your node's DHCP server. The third field displays the device's MAC address.
 
-Advanced Options
-  Additional options will be displayed when you click **Advanced Options**. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
+Since DHCP leases are dynamic and can change over time, there may be a reason why a host's assigned IP address should be made permanent. This is especially useful if that host will provide an application, program, or service through your node to the mesh network at large. As mentioned above, you can reserve that host's DHCP address by clicking the [+] icon at the right of the row. You will see that host now appear in the *Address Reservations* list.
 
-  The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is a good source of information about DHCP options. Specific vendor equipment may or may not support all of the options, so you should verify which options are supported by referring to the manufacturer's documentation for your LAN device.
+Advanced DHCP Options
++++++++++++++++++++++
 
-  .. image:: _images/admin-dhcp-2.png
-   :alt: Admin DHCP Advanced Options
-   :align: center
+Additional options will be displayed when you click **Advanced Options**. This section allows you to specify DHCP option codes and values which are sent to devices on your node's LAN network. In addition to providing an IP address, the DHCP protocol is able to send a large number of options for device configuration. Any LAN client joining the network can request specific DHCP options in addition to its IP address. These *Advanced Options* are especially helpful for configuring and provisioning VoIP phones on your node's LAN.
+
+The `Internet Assigned Numbers Authority (IANA) <https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml>`_ is a good source of information about DHCP options. Specific vendor equipment may or may not support all of the options, so you should verify which options are supported by referring to the manufacturer's documentation for your LAN device.
+
+.. image:: _images/admin-dhcp-2.png
+  :alt: Admin DHCP Advanced Options
+  :align: center
 
   Tags
     The tags for advanced DHCP options allow you to define labels for values that will be assigned to clients which match specific properties such as Vendor Class or MAC address. Click the [+] icon to add a new tag. Enter a tag label in the first field, then click in the second field to select a tag type from the dropdown list. Finally, enter a text string which will be used to match a property on the device, such as the Vendor Class or MAC address. To delete an existing tag, click the [-] at the right side of the row you wish to remove.
@@ -764,15 +814,21 @@ To add a tunnel connection, click in the field at the right to select from the d
 For each tunnel definition there is a *Wgt* or tunnel weight field. The global default tunnel weight is configured under *Advanced Options* as described below, but you can override this value on a per tunnel basis. Leave this field empty to accept the global default, or enter a tunnel weight to override the default if you desire. Each tunnel definition also has a *Notes* field in which you may enter helpful notes about the tunnel link.
 
 Wireguard Client
-  Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described below for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
+^^^^^^^^^^^^^^^^
+
+Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described below for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
 
 Wireguard Server
-  Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. The security key, network, and port settings are automatically generated and displayed. Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
+^^^^^^^^^^^^^^^^
+
+Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. The security key, network, and port settings are automatically generated and displayed. Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
 
 The switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established, at which time it will be green.
 
-Advanced Options
-  The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel weight by providing an individual per-tunnel value as described above.
+Advanced Tunnel Options
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel weight by providing an individual per-tunnel value as described above.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
@@ -784,98 +840,112 @@ Tools
 For any tools with dropdown selection lists, you may filter the list by typing characters in the search box. This will limit the list to include only items which match the text you enter. As you type each character from your keyboard into the search field, the list will change to show only the entries that match your character string. The filter is case insensitive, so it will find both uppercase and lowercase entries for the characters you enter.
 
 WiFi Scan
-  This displays the *wifi scan* page which will show the results of the most recent scan (if any). It will only appear if the radio is in Mesh mode. Context-sensitive help is available by clicking the ``Help`` button.
++++++++++
 
-  Click the ``Scan`` button in the lower right corner to initiate a new scan which looks for wifi signals that are using the same channel width as your node. It is best practice to scan on 5, 10, and 20 MHz channel widths to find any 802.11 signals within range. Several scans may be necessary to find as many local devices as possible.
+This displays the *wifi scan* page which will show the results of the most recent scan (if any). It will only appear if the radio is in Mesh mode. Context-sensitive help is available by clicking the ``Help`` button.
 
-  .. image:: _images/admin-wifi-scan.png
-   :alt: WiFi Scan
-   :align: center
+Click the ``Scan`` button in the lower right corner to initiate a new scan which looks for wifi signals that are using the same channel width as your node. It is best practice to scan on 5, 10, and 20 MHz channel widths to find any 802.11 signals within range. Several scans may be necessary to find as many local devices as possible.
 
-  .. note:: The BSSID column shows the IEEE 802.11 wireless *Basic Service Set ID*. This is a 48-bit label that conforms to the MAC-48 convention, but it is not an actual MAC address. More information about the BSSID can be found `here <https://en.wikipedia.org/wiki/Service_set_(802.11_network)>`_.
+.. image:: _images/admin-wifi-scan.png
+  :alt: WiFi Scan
+  :align: center
 
-  With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi. The most recent scan results are retained. When you are finished studying the scan results, click the ``Done`` button to return to the *admin* display.
+.. note:: The BSSID column shows the IEEE 802.11 wireless *Basic Service Set ID*. This is a 48-bit label that conforms to the MAC-48 convention, but it is not an actual MAC address. More information about the BSSID can be found `here <https://en.wikipedia.org/wiki/Service_set_(802.11_network)>`_.
+
+With some devices, a scan will momentarily disconnect the wifi from the mesh so the radio is available to perform the scan operation. It is recommended that you perform a scan when connected to the device in some other way than via WiFi. The most recent scan results are retained. When you are finished studying the scan results, click the ``Done`` button to return to the *admin* display.
 
 WiFi Signal
-  This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. It will only appear if the radio is in Mesh mode. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list. The graph will be cleared and redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
++++++++++++
 
-  .. image:: _images/admin-wifi-signal.png
-    :alt: WiFi Signal
-    :align: center
+This displays :abbr:`RF (Radio Frequency)` signal information as a realtime line graph. It will only appear if the radio is in Mesh mode. The default view shows the average signal of all connected stations in realtime. Click in the field to the right of the *Node* label to select a specific neighborhood node from the dropdown list. The graph will be cleared and redrawn using signal data from that node. Context-sensitive help is available by clicking the ``Help`` button.
 
-  |
+.. image:: _images/admin-wifi-signal.png
+  :alt: WiFi Signal
+  :align: center
 
-  The colored bars on the left display the worst and best signal values that are seen during the monitoring interval. The instantaneous signal value is shown above the colored bars on the left. Both the local node and remote node view of the signal levels will be displayed on the bars and the graph. All of these values will be adjusted over time as new data is obtained.
+|
 
-  Below the line graph there are controls that allow you to enable an audio representation of the instantaneous signal value. Click in the field to the right of the *Sound* label and select ``OFF`` or ``ON`` to enable or disable the sound. You can control the volume and pitch of the tone using the horizontal sliders. The higher the pitch, the better the signal level. When you are finished studying the results, click the ``Done`` button to return to the status display.
+The colored bars on the left display the worst and best signal values that are seen during the monitoring interval. The instantaneous signal value is shown above the colored bars on the left. Both the local node and remote node view of the signal levels will be displayed on the bars and the graph. All of these values will be adjusted over time as new data is obtained.
+
+Below the line graph there are controls that allow you to enable an audio representation of the instantaneous signal value. Click in the field to the right of the *Sound* label and select ``OFF`` or ``ON`` to enable or disable the sound. You can control the volume and pitch of the tone using the horizontal sliders. The higher the pitch, the better the signal level. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Ping
-  This tool allows you to perform a ping test between devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
+++++
 
-  .. image:: _images/admin-ping.png
-    :alt: Ping Test
-    :align: center
+This tool allows you to perform a ping test between devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
 
-  |
+.. image:: _images/admin-ping.png
+  :alt: Ping Test
+  :align: center
 
-  Target Address
-    Click the down arrow icon at the right of the *Target Address* to select a target device from the dropdown list. If your desired device is not shown, you can click in the field to enter or edit the hostname or IP address that you want to use as the target. This can be any device or address which is capable of responding to pings.
+|
 
-  Source Address
-    The *source* must always be an AREDN® node, and by default the current node name is automatically entered. Click the down arrow icon at the right of *Source Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the source.
+Target Address
+  Click the down arrow icon at the right of the *Target Address* to select a target device from the dropdown list. If your desired device is not shown, you can click in the field to enter or edit the hostname or IP address that you want to use as the target. This can be any device or address which is capable of responding to pings.
 
-  After selecting the *Target* and *Source*, click the ``Go`` button in the bottom right corner to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices, remembering that your *source* must always be an AREDN® node. When you are finished studying the results, click the ``Done`` button to return to the status display.
+Source Address
+  The *source* must always be an AREDN® node, and by default the current node name is automatically entered. Click the down arrow icon at the right of *Source Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the source.
+
+After selecting the *Target* and *Source*, click the ``Go`` button in the bottom right corner to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices, remembering that your *source* must always be an AREDN® node. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Traceroute
-  This tool allows you to perform a traceroute between two devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
+++++++++++
 
-  .. image:: _images/admin-traceroute.png
-   :alt: Traceroute Test
-   :align: center
+This tool allows you to perform a traceroute between two devices on your network. Context-sensitive help is available by clicking the ``Help`` button.
 
-  |
+.. image:: _images/admin-traceroute.png
+  :alt: Traceroute Test
+  :align: center
 
-  Target Address
-    Click the down arrow icon at the right of the *Target Address* to select a target device from the dropdown list. If your desired device is not shown, you can click in the field to enter or edit the hostname or IP address that you want to use as the target.
+|
 
-  Source Address
-    The *source* must always be an AREDN® node, and by default the current node name is automatically entered. Click the down arrow icon at the right of *Source Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the source.
+Target Address
+  Click the down arrow icon at the right of the *Target Address* to select a target device from the dropdown list. If your desired device is not shown, you can click in the field to enter or edit the hostname or IP address that you want to use as the target.
 
-  After selecting the *Target* and *Source*, click the ``Go`` button in the bottom right corner to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices, remembering that your *source* must always be an AREDN® node. When you are finished studying the results, click the ``Done`` button to return to the status display.
+Source Address
+  The *source* must always be an AREDN® node, and by default the current node name is automatically entered. Click the down arrow icon at the right of *Source Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the source.
+
+After selecting the *Target* and *Source*, click the ``Go`` button in the bottom right corner to view the results. You may want to test network connectivity in both directions by clicking the double-arrow icon to swap the *Target* and *Source* devices, remembering that your *source* must always be an AREDN® node. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 iPerf3
-  This tool allows you to perform throughput tests between two AREDN® nodes on your network using iPerf3. Context-sensitive help is available by clicking the ``Help`` button.
+++++++
 
-  .. image:: _images/admin-iperf3.png
-   :alt: iPerf3 Test
-   :align: center
+This tool allows you to perform throughput tests between two AREDN® nodes on your network using iPerf3. Context-sensitive help is available by clicking the ``Help`` button.
 
-  |
+.. image:: _images/admin-iperf3.png
+  :alt: iPerf3 Test
+  :align: center
 
-  Server Address
-    Click the down arrow icon at the right of *Server Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the iperf3 server.
+|
 
-  Client Address
-    By default the current node name is automatically entered as the client, but you can click the down arrow icon at the right to select any node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the client.
+Server Address
+  Click the down arrow icon at the right of *Server Address* to select a node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the iperf3 server.
 
-  After selecting the *Server* and *Client* nodes, click the ``Go`` button at the lower right corner to view the results. You may want to test network throughput in both directions by clicking the double-arrow icon to swap the *Server* and *Client* nodes. When you are finished studying the results, click the ``Done`` button to return to the status display.
+Client Address
+  By default the current node name is automatically entered as the client, but you can click the down arrow icon at the right to select any node from the dropdown list. If your desired node is not shown, you can click in the field to enter or edit the node name that you want to use as the client.
+
+After selecting the *Server* and *Client* nodes, click the ``Go`` button at the lower right corner to view the results. You may want to test network throughput in both directions by clicking the double-arrow icon to swap the *Server* and *Client* nodes. When you are finished studying the results, click the ``Done`` button to return to the status display.
 
 Syslog
-  This tool allows you to view the log file on your node. You can scroll up and down through the log entries as needed. When you are finished studying the results, click the ``Done`` button.
+++++++
 
-  .. image:: _images/admin-syslog.png
-   :alt: View Syslog
-   :align: center
+This tool allows you to view the log file on your node. You can scroll up and down through the log entries as needed. When you are finished studying the results, click the ``Done`` button.
+
+.. image:: _images/admin-syslog.png
+  :alt: View Syslog
+  :align: center
 
 |
 
 Support Data
-  There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN® team in order to get help with a problem. Click the *Support Data* icon to save a compressed archive file to your local computer. It is also possible to generate a support data file from the command line of your node:
+++++++++++++
 
-  ::
+There may be times when you want to view more detailed information about the configuration and operation of your node, or even forward this information to the AREDN® team in order to get help with a problem. Click the *Support Data* icon to save a compressed archive file to your local computer. It is also possible to generate a support data file from the command line of your node:
 
-    # /usr/local/bin/supportdata
-    Generated support data file: /tmp/supportdata.tar.gz
+::
+
+  # /usr/local/bin/supportdata
+  Generated support data file: /tmp/supportdata.tar.gz
 
 
 .. |icon1| image:: ../_icons/login.png

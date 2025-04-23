@@ -2,7 +2,7 @@
 Networking Overview
 ===================
 
-This **Network Design Guide** will discuss some of the useful principles for creating robust data networks as a service both to the amateur radio hobby and the community at large. An AREDN® network is able to serve as the transport mechanism for the applications people rely upon to communicate with each other in the normal course of their business and social interactions, including email, chat, phone service, document sharing, video conferencing, and many other useful programs. Depending on the characteristics of the implementation, this digital data network can operate at near-Internet speeds with many miles or kilometers between network nodes.
+This **Network Design Guide** will discuss some of the useful principles for creating robust radio networks as a service both to the amateur radio hobby and the community at large. An AREDN® network is able to serve as the transport mechanism for the applications people rely upon to communicate with each other in the normal course of their business and social interactions, including email, chat, phone service, document sharing, video conferencing, and many other useful programs. Depending on the characteristics of the implementation, this digital data network can operate at near-Internet speeds with many miles or kilometers between network nodes.
 
 There are a variety of ways to interconnect AREDN® nodes, but the most important question that should be answered is *"What is the purpose for this particular network?"* The specific requirements of your situation will drive the design of your data network. For example, consider the following issues.
 

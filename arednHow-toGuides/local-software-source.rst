@@ -5,7 +5,7 @@ Creating a Local AREDN® Software Server
 There may be cases where your mesh nodes have no way to access the AREDN® servers for installing new software. One way to resolve this is to create your own software server on the local mesh and then point your nodes to this local service. The following sections describe the high-level tasks required to implement such a software service. In order to accomplish this, you may need to consult with someone who has System Administration skills for the specific platform you will be using to host your local software repository.
 
 Configure your software server
-==============================
+------------------------------
 
 Your software server must be connected to the mesh as a host on your local node's LAN network, using a node that also has Internet access via its WAN interface. The reason this node is connected to the Internet is to allow the web server to download updated files from the AREDN® downloads server. You should add this host to the node's *DHCP Reservation List*. You do not need to add the software host to the *Advertised Services List* of the node to which it is connected. The software server should be given a hostname that is unique on your mesh, typically prefixed with the callsign of the server owner. You can use any operating system platform you desire *(Windows, Linux, Mac)*, as long as it has the ability to function as a web server. The following are the two main tasks required of the local software server:
 
@@ -55,7 +55,7 @@ d.apache.org/docs/2.4/urlmapping.html>`_). Once the software has been made avail
 Once the software is available via your web server, you can begin pointing the nodes to your local software repository.
 
 Point nodes to the local server
-===============================
+-------------------------------
 
 To point a node to the local software repository while in *admin* mode, navigate to the **Firmware** section and click on *Advanced Options*. The default Firmware URL is ``http://downloads.arednmesh.org`` but you can change this to the URL of your local software server. It is good practice to use the `fully qualified domain name (FQDN) <https://en.wikipedia.org/wiki/Fully_qualified_domain_name>`_ so the node will be able to resolve the domain portion of the URL to the mesh host's IP address. The URL you enter should match the alias or path you created and tested on your web server as described in the previous section and shown in the example below.
 

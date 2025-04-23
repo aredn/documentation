@@ -1,8 +1,8 @@
-====================
-Tools for Developers
-====================
+=====================
+Tools for Integrators
+=====================
 
-This section of the AREDN® documentation contains information useful for developers who want to retrieve information from one or more nodes for use in any of several applications. For example, a developer may want to write a program which periodically polls a set of nodes to gather link quality or signal values to insert them into a network management or historian system for trending and analysis. The popular KG6WXC MeshMap application uses these tools to create and update a comprehensive mesh network map.
+This section of the AREDN® documentation contains information useful for people who want to retrieve information from one or more nodes for use in different applications. For example, an integrator may want to periodically poll a set of nodes to gather link quality or signal values to insert them into a network management or historian system for trending and analysis.
 
 SYSINFO.JSON
 ============

@@ -614,7 +614,9 @@ SSID Setting
   The default SSID is provided in the field at the right. Typically you will not need to change this default unless you have a specific reason for putting radios on a non-default SSID to filter their traffic. The SSID is analogous to a CTCSS tone; radios with different SSIDs but using the same channel may generate RF energy that causes interference, even though the radios will not be decoding each other's signals.
 
 Maximum Distance
-  This is the maximum distance between nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can adjust this setting if your node is only able to maintain a usable radio link with nearby nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in local conditions. Communicating with these distant nodes uses more radio time and can negatively impact local communications.
+  This is the maximum distance between remote nodes at which you can expect to achieve a usable radio link. The default value is 50 miles / 80 kilometers, but you can lower this setting if your node is only able to maintain a usable radio link with closer nodes. The distance can be limited in order to prevent distant nodes from intermittently connecting to your node due to changes in local conditions. Communicating with these distant nodes uses more radio time and can negatively impact local communications.
+
+  This distance is used by the radio when it cannot determine how far a neighbor radio is or when no radios are connected. Setting this distance appropriately is extremely important when radios are initially connecting and their location is not yet known. In particular, a value that is too low can result in radios failing to connect when they otherwise should.
 
 Mesh PtMP settings
 ++++++++++++++++++

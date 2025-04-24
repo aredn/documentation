@@ -154,7 +154,7 @@ Right Section
 The right column displays additional details about your node (listed from top to bottom).
 
 Radio section
-  Your device manufacturer and model are displayed at the top of the column. If a radio is configured as a ``Mesh`` radio, you will see the channel number and frequency range, followed by the channel width (in :abbr:`MHz (Megahertz)`). Next is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the maximum distance (in miles or kilometers), and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) for communication with other :abbr:`RF (radio frequency)` nodes.
+  Your device manufacturer and model are displayed at the top of the column. If a radio is configured as a ``Mesh`` radio, you will see the channel number and frequency range, followed by the channel width (in :abbr:`MHz (Megahertz)`). Next is the transmit power (in :abbr:`dBm (decibels in millivolts)`), the actual maximum distance (in miles or kilometers) to nodes connected to this one, and the minimum :abbr:`snr (signal to noise ratio)` (in :abbr:`dB (decibels)`) for communication with other :abbr:`RF (radio frequency)` nodes.
 
   If a radio is configured as a ``LAN Hotspot``, you will see the channel number and the SSID that wifi clients can use to connect to your node's hotspot. If a radio is configured as a ``WAN Client`` you will see the SSID of the wifi AP to which your node connected, as well as the status of the connection (no connection, connected but no internet, connected with internet). Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
 

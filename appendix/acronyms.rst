@@ -74,6 +74,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :GPS: Global Positioning System
 :GUI: Graphical User Interface
 :GZ: A file format and software application (gzip) for file compression/decompression (g for GNU)
+:HaLow: Sub-gigahertz WiFi protocol providing long range at low power levels
 :HLS: HTTP Live Streaming
 :HSL: Hue, saturation, lightness (for image color representation)
 :HTML: HyperText Markup Language

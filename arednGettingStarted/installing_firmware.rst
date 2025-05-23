@@ -14,7 +14,7 @@ Different radio hardware will require different methods for installing the AREDN
 
 - For **Mikrotik** and **TP-LINK** devices, your computer will run a `Preboot eXecution Environment (PXE) <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ and the node's remote boot *client* will download the boot image from your computer.
 
-- For **GL-iNet** and **OpenWRT One** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
+- For **GL-iNet**, **MorseMicro**, and **OpenWRT One** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
 In the *Firmware Tips* section of the **How-To Guide** you will find assistance if you experience an issue uploading firmware to your device. The **How-To Guide** also contains a *Virtual Machine Installs* section for help installing x86_64 firmware images on a VM for a virtualized node.
 
@@ -66,6 +66,8 @@ The recommended method for installing AREDN® firmware is to download and follow
 :download:`GL.iNet first install checklist (PDF) <_images/GL.iNet_First_Install_Checklist.pdf>`
 
 :download:`OpenWRT One first install checklist (PDF) <_images/OpenWRT_One_First_Install_Checklist.pdf>`
+
+:download:`MorseMicro first install checklist (PDF) <_images/MorseMicro_First_Install_Checklist.pdf>`
 
 Ubiquiti 802.11n first install process
 --------------------------------------
@@ -363,6 +365,23 @@ There are `several methods <https://openwrt.org/docs/guide-user/installation/gen
 - Click ``Choose File`` to select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer, then click the ``Upload`` button to upload the new image
 
 - **UNCHECK** the ``Keep settings`` checkbox, then click ``Continue`` to flash the AREDN® firmware
+
+The node will automatically reboot after installing AREDN®, and you may need to refresh your network interface to receive a new IP address before continuing.
+
+MorseMicro first install process
+--------------------------------
+
+Download the *Install Checklist* for **MorseMicro** devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet. *MorseMicro* devices should have a default IP address of 192.168.1.1, so if for some reason you need to give your computer a static IP address you can use the 192.168.1.x/24 subnet.
+
+- Cable your computer’s Ethernet port to the radio's LAN port. Power on the *MorseMicro* device and verify that your computer received an IP address from the device’s DHCP service. Verify that you can ping the device at 192.168.1.1.
+
+- Open a web browser and navigate to ``http://192.168.1.1``. On a fresh device you can login using the default *root* username with an empty password field. If you have already changed the *root* password, then login using your own password.
+
+- Navigate to ``Advanced Config`` > ``Upgrade``
+
+- Go to ``Manually upload firmware file`` and select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer
+
+- **UNCHECK** the ``Keep settings`` checkbox, then click ``Update firmware`` to flash the AREDN® firmware
 
 The node will automatically reboot after installing AREDN®, and you may need to refresh your network interface to receive a new IP address before continuing.
 

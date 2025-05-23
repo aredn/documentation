@@ -36,7 +36,7 @@ Mikrotik
 
   As noted in the Mikrotik install instructions, if you determine that your device is running RouterOS ``v7.x`` you can try to install the *SYSUPGRADE-V7* image or you can follow the procedure to downgrade RouterOS and then install the regular *SYSUPGRADE* image.
 
-GL.iNET and OpenWRT One
+GL.iNET, MorseMicro, and OpenWRT One
   For these devices you will only see the *SYSUPGRADE* image for both first-time installs and firmware upgrades.
 
 Click the appropriate button to download the image file to your local computer. Make a note of the download location on your computer, since you will use the downloaded image(s) to install the AREDN® firmware on your device.

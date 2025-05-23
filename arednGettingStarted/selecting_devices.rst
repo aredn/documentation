@@ -18,7 +18,7 @@ When selecting a device for your AREDN® hardware there are several things to co
 
 - Check the maximum power output of the device, since some devices have lower power capabilities.
 
-One of the best sources of detailed hardware information is a manufacturer's datasheet, usually available for download from the manufacturer's website. Currently AREDN® supports dozens of device models from manufacturers including GL-iNet, Mikrotik, TP-LINK, and Ubiquiti Networks.
+One of the best sources of detailed hardware information is a manufacturer's datasheet, usually available for download from the manufacturer's website. Currently AREDN® supports dozens of device models from manufacturers including GL-iNet, Mikrotik, MorseMicro, TP-LINK, and Ubiquiti Networks.
 
 If you are just getting started with AREDN® you can easily begin with one of the low-cost devices that comes with an integrated antenna and a :abbr:`PoE (Power over Ethernet)` unit. If you are expanding your AREDN® network with more sophisticated equipment, you may choose a standalone radio attached to a high-gain antenna.
 

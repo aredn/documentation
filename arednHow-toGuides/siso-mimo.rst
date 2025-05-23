@@ -28,47 +28,6 @@ On MIMO devices the total transmit power is split between its two polarizations,
 
 Given the same channel width and link characteristics, MIMO tends to out-perform SISO in both reliability and throughput. A good test to verify this would be to compare the performance of SISO vs. MIMO between the same endpoints. MIMO can attain double the throughput because it is capable of using twice the :abbr:`MCS (Modulation and Coding Scheme)` rate. In the final analysis, the technology limitations of SISO will not allow it to match the throughput levels that are possible with MIMO.
 
-SISO - MIMO Combinations
-------------------------
-
-Today's mesh networks are likely to contain a mixture of single and multiple chain devices, so it is important to understand how different combinations of devices might perform.
-
-SISO to SISO
-  All transmit power is sent using a single polarization, but multipath signal combining does not occur. Only one data stream at a time can be sent at a rate that is limited by the protocol.
-
-.. image:: _images/siso-siso.png
-   :alt:  SISO to SISO
-   :align: center
-
-|
-
-SISO to MIMO
-  All transmit power is sent using a single polarization, and the MIMO receiver will enhance reception by combining multipath signals using `MRC <https://en.wikipedia.org/wiki/Maximal-ratio_combining>`_. Only one data stream at a time can be sent at a rate that is limited by the protocol.
-
-.. image:: _images/siso-mimo.png
-   :alt:  SISO to MIMO
-   :align: center
-
-|
-
-MIMO to SISO
-  The total transmit power is shared between MIMO chains, so the RF energy which is 90 degrees off-polarization from the receiving antenna may be lost. The SISO receiver cannot enhance multipath signals using `MRC <https://en.wikipedia.org/wiki/Maximal-ratio_combining>`_. Only one data stream at a time can be sent at a rate that is limited by the protocol.
-
-.. image:: _images/mimo-siso.png
-   :alt:  MIMO to SISO
-   :align: center
-
-|
-
-MIMO to MIMO
-  The total output power is shared between MIMO chains, but the full power from both polarizations can be processed by the receiver so that nothing is lost. The MIMO receiver can enhance reception by combining multipath signals using `MRC <https://en.wikipedia.org/wiki/Maximal-ratio_combining>`_. Simultaneous data streams can be sent using spatial multiplexing, effectively doubling data throughput.
-
-.. image:: _images/mimo-mimo.png
-   :alt:  MIMO to MIMO
-   :align: center
-
-|
-
 Troubleshooting Tips
 --------------------
 

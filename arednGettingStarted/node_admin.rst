@@ -518,39 +518,46 @@ The node name of each Local Node is a clickable link which will navigate to that
  :alt: Admin Local Node Statistics
  :align: center
 
-To the right of the node's name there is a field that shows the current link status. Clicking in this field will display options for handling the link to this node, including the ability to block that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
+The following details may be displayed if available for this node's connection to your node, from top to bottom & left to right:
 
 - :abbr:`type (DTD)`, mac address, and ip address
-- model and firmware version
-- Latitude, Longitude, and Distance
-- :abbr:`lq (link quality or receive success)`, :abbr:`nlq (neighbor link quality or transmit success rate)`, and :abbr:`etx (Expected Transmission metric)`
+- model, firmware version, and link address (IPv6 for Babel)
+- latitude, longitude, and distance
+- rx success rate, rx cost, tx cost
 - ping time, ping success rate, and average packets per second
-- link state and active routes
+- neighbor ping time, ping success rate, and errors
+- link state, number of Babel routes, Babel metric
+- last seen, number of OLSR routes or link uptime
 
 Neighborhood Nodes
 ------------------
 
 As described in the **Node Status** section, this area shows a list of neighbor devices that are directly connected to your node. Context-sensitive help is available by clicking the ``Help`` button.
 
-The node name of each Neighborhood Node is a clickable link which will navigate to that node's status page. When you hover over the row of any Neighborhood Node, a gray background appears which indicates that row is selected. If you click in the selected row (but not directly on the node name link), the **Neighborhood Node** popup will be displayed which provides more detailed information about your node's connection to the selected local node.
+The node name of each Neighborhood Node is a clickable link which will navigate to that node's status page. When you hover over the row of any Neighborhood Node, a gray background appears which indicates that row is selected. If you click in the selected row (but not directly on the node name link), the **Neighborhood Node** popup will be displayed which provides more detailed information about your node's connection to the selected local node. This provides an excellent troubleshooting tool for diagnosing issues with node connections, especially via RF.
 
 .. image:: _images/admin-neighbornode.png
  :alt: Admin Neighbor Node Statistics
  :align: center
 
-To the right of the neighbor node's name there is a field that shows the current link status. Clicking in this field will display options for handling the link to this node. Select ``user block`` if you want to block that node's traffic from reaching your node. The following details may be displayed (if available) for this node's connection to your node -- from top to bottom & left to right:
+The following details may be displayed if available for this node's connection to your node, from top to bottom & left to right:
 
 - :abbr:`type (RF, xlink, tunnel)`, mac address, and ip address
-- Latitude, Longitude, and Distance
-- :abbr:`lq (link quality or receive success)`, :abbr:`nlq (neighbor link quality or transmit success rate)`, and :abbr:`etx (Expected Transmission metric)`
+- model, firmware version, and link address (IPv6 for Babel)
+- latitude, longitude, and distance
+- rx success rate, rx cost, tx cost
 - ping time, ping success rate, and average packets per second
-- neighbor ping time, ping success, errors
+- neighbor ping time, ping success rate, errors
 - local :abbr:`snr (signal to noise ratio)`, neighbor snr, and transmit failure rate
 - physical receive bitrate, physical transmit bitrate, and retransmissions
-- link state and active routes
-- For RF nodes there is a graph of the signal level and noise floor on this link over the last hour of history (approximately). Hovering over the graph lines will display the instantaneous values which were plotted at each point on the graph.
+- link state, active routes, Babel metric
+- last seen, number of OLSR routes or link uptime
 
-This provides an excellent troubleshooting tool for diagnosing issues with node connections, especially via RF.
+.. image:: _images/admin-neighbornode-graph.png
+ :alt: Admin Neighbor Node Graph
+ :align: center
+
+For RF nodes there is a graph of the signal level and noise floor on this link over the last hour of history (approximately). Hovering over the graph lines will display the instantaneous values which were plotted at each point on the graph. If available, a map showing the location of the node will be displayed below the graph.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

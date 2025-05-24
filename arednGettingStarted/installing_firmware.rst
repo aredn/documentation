@@ -371,17 +371,19 @@ The node will automatically reboot after installing AREDN®, and you may need to
 MorseMicro first install process
 --------------------------------
 
-Download the *Install Checklist* for **MorseMicro** devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet. *MorseMicro* devices should have a default IP address of 192.168.1.1, so if for some reason you need to give your computer a static IP address you can use the 192.168.1.x/24 subnet.
+Download the *Install Checklist* for **MorseMicro** devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet.
 
-- Cable your computer’s Ethernet port to the radio's LAN port. Power on the *MorseMicro* device and verify that your computer received an IP address from the device’s DHCP service. Verify that you can ping the device at 192.168.1.1.
+- Cable your computer’s Ethernet port to the radio's LAN port. Power on the *MorseMicro* device and verify that your computer received an IP address from the device’s DHCP service.
 
-- Open a web browser and navigate to ``http://192.168.1.1``. On a fresh device you can login using the default *root* username with an empty password field. If you have already changed the *root* password, then login using your own password.
+- Open a web browser and navigate to ``http://192.168.x.1`` where ``x`` is the subnet on which your computer IP address was provided. On a fresh device you can login using the default username and password shown in your device's instructions. If you have already changed the password, then login using your own password.
 
-- Navigate to ``Advanced Config`` > ``Upgrade``
+- Navigate to ``System`` > ``Backup/Flash Firmware`` and go to ``Flash new firmware image``
 
-- Go to ``Manually upload firmware file`` and select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer
+- **UNCHECK** the ``Keep settings`` checkbox
 
-- **UNCHECK** the ``Keep settings`` checkbox, then click ``Update firmware`` to flash the AREDN® firmware
+-  Click ``Choose File`` to select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer
+
+- Click ``Flash image`` to upload the AREDN® firmware
 
 The node will automatically reboot after installing AREDN®, and you may need to refresh your network interface to receive a new IP address before continuing.
 

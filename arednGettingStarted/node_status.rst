@@ -161,7 +161,7 @@ Radio section
   If a radio is configured as a ``LAN Hotspot``, you will see the channel number and the SSID that wifi clients can use to connect to your node's hotspot. If a radio is configured as a ``WAN Client`` you will see the SSID of the wifi AP to which your node connected, as well as the status of the connection (no connection, connected but no internet, connected with internet). Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
 
 Mesh section
-  Next there are summary statistics showing how many nodes are currently visible on the network, as well as the total number of devices and services on the mesh. The display will show these metrics for both the OLSR and Babel protocols.
+  Next there are summary statistics showing how many nodes, devices, and services are currently visible from this node. The display will show these metrics for both the OLSR and Babel protocols (if available).
 
 LAN DHCP section
   By default each node runs a `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ server which is capable of automatically providing IP addresses for any LAN-connected devices. This section shows the :abbr:`DHCP (Dynamic Host Configuration Protocol)` server status, the IP address/netmask of your node functioning as the gateway for its LAN-connected devices, and the IP address range served by your node. It also shows the number of active leases and IP addresses reserved for specific devices on its :abbr:`LAN (Local Area Network)`. In addition, counts are displayed for the number of DHCP tags and options that are defined on your node.

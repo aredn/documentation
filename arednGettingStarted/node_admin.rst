@@ -696,6 +696,11 @@ Elevation
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
+Mesh section
+------------
+
+This section displays summary statistics that include the number of nodes, devices, and services currently visible from this node. The display will show these metrics for both the OLSR and Babel protocols (if available). When you hover over the *Mesh* section, a gray background appears which indicates that this section is selected. If you click in the section, you will be taken directly to the **Mesh Status** display.
+
 LAN DHCP settings
 -----------------
 

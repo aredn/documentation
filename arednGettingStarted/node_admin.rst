@@ -842,7 +842,9 @@ The switch on the right is ``enabled`` by default, but it appears gray until the
 Advanced Tunnel Options
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The **Tunnel Server Network** address is displayed under *Advanced Options*. It is calculated automatically and should not be changed unless there is a specific reason why the default will not work for your situation. The **Tunnel Weight** is the weighting factor used by :abbr:`OLSR (Optimized Link State Routing Protocol)` to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel weight by providing an individual per-tunnel value as described above.
+The **Tunnel Server Network** address is displayed under *Advanced Options*. This is the starting IP address for your tunnel server's network, and it is calculated automatically. It should not be changed unless there is a specific reason why the default will not work for your situation. The value is only editable when there are no existing server credentials being provided by your node.
+
+The **Tunnel Weight** is the weighting factor used by the routing protocols to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel weight by providing an individual per-tunnel value as described above.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

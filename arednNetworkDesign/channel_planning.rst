@@ -11,7 +11,7 @@ Wireless Network Operation
 
 A wireless network is a shared half-duplex medium on which only one station at a time should transmit. In that sense wireless operations are analogous to other types of radio transmissions. If two stations key up their transmitters at the same time, they will interfere with each other to the extent that neither of them will receive the other's message. That is why net control procedures are implemented to ensure controlled access to a radio channel during emergency communication.
 
-AREDN® firmware automatically mediates station access to the wireless medium by implementing `IEEE 802.11a/b/g/n <https://en.wikipedia.org/wiki/IEEE_802.11n-2009>`_ standards and `Carrier Sense Multiple Access / Collision Avoidance (CSMA/CA) <https://en.wikipedia.org/wiki/Carrier-sense_multiple_access>`_. This listen-before-talk technology helps nodes to determine whether a channel is busy. Each node performs a *Clear Channel Assessment (CCA)* as well as using `Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages to negotiate access to a channel. A negligible amount of network traffic is also required for `OLSR (Optimized Link State Routing protocol) <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ to maintain routes for the network as a whole, but this OLSR traffic is a very small fraction of the total.
+AREDN® firmware automatically mediates station access to the wireless medium by implementing `IEEE 802.11a/b/g/n <https://en.wikipedia.org/wiki/IEEE_802.11n-2009>`_ standards and `Carrier Sense Multiple Access / Collision Avoidance (CSMA/CA) <https://en.wikipedia.org/wiki/Carrier-sense_multiple_access>`_. This listen-before-talk technology helps nodes to determine whether a channel is busy. Each node performs a *Clear Channel Assessment (CCA)* as well as using `Request to Send / Clear to Send (RTS/CTS) <https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS>`_ messages to negotiate access to a channel. A negligible amount of network traffic is also required for routing protocols to maintain routes for the network as a whole, but this traffic is a very small fraction of the total.
 
 In a single-channel wireless network, any node that needs to transmit will automatically coordinate with the other nodes for a clear channel. This is by design, but as more devices try to gain access to the same channel there is an increased potential for each node to wait longer for its chance to transmit. This can result in increased latency and decreased network throughput as the number of network nodes increases.
 
@@ -51,17 +51,6 @@ Exposed Nodes
 
   Try to eliminate the exposed node problem by placing them onto different bands or channels along with the nodes you want them to communicate with. Since nodes using directional antennas are nearly invisible to others not positioned in the antenna's beam, directional antennas should be used with care when sharing a channel so that exposed nodes are not created unintentionally. If you have exposed nodes that are causing throughput degradation, segment each group of nodes by putting them on different bands or channels.
 
-Route Flapping
-++++++++++++++
-
-This is another issue that can lead to performance problems on a network. You may have parallel paths between two *Remote Nodes*, and these paths have similar :abbr:`ETX (Expected Transmit metric)` values which indicates that the cost of using either route is comparable. These two paths may appear to be functioning well most of the time.
-
-However, when a bandwidth-intensive application such as video conferencing begins sending traffic across one of the paths, you may notice that link getting bogged down and the :abbr:`ETX (Expected Transmit metric)` will drop below that of the other path. At this point :abbr:`OLSR (Optimized Link State Routing protocol)` switches to the alternate path which now has a lower cost. The video stream then bogs down its new path, which lowers the :abbr:`ETX (Expected Transmit metric)`, and :abbr:`OLSR (Optimized Link State Routing protocol)` switches back to the original link whose :abbr:`ETX (Expected Transmit metric)` is better again. This situation may continue indefinitely, with neither path being able to deliver the traffic adequately.
-
-This issue can happen on multi-hop links with similar :abbr:`ETX (Expected Transmit metric)` which seem to work fine until they are loaded with traffic. Then packet loss begins to occur, connections time out, and neither path is reliable during that cycle. One solution might be to improve the multi-hop link cost by increasing the signal quality of the links along one of the paths. Conversely, you could also turn down the power on the alternate path to increase its cost. If bandwidth-intensive traffic must be passed between two remote endpoints, the best approach would be to design a more robust path between those two endpoints to meet that need.
-
-Another case is when there is one poor quality link over which all traffic must be routed. The handshaking and data retransmissions may cause all the other nodes to wait. The entire network can be impacted by one low quality path which becomes a bottleneck. If at all possible you should increase the signal quality of that vital link or install a better link as an alternate path.
-
 Channel Plans and Frequency Coordination
 ----------------------------------------
 
@@ -93,7 +82,7 @@ Network performance degradation can occur if these nodes share an RF band and ch
 Device to Device (DtD) Linking
 ++++++++++++++++++++++++++++++
 
-In its most basic configuration for two collocated nodes, an Ethernet cable is connected between the PoE *LAN* port of each device. :abbr:`OLSR (Optimized Link State Routing protocol)` will assign a very low "link cost" (0.1) to the DtD connection and automatically route traffic between the nodes over Ethernet rather than causing the RF channel to become busy.
+In its most basic configuration for two collocated nodes, an Ethernet cable is connected between the PoE *LAN* port of each device. The routing protocol will assign a very low "link cost" to the DtD connection and automatically route traffic between the nodes over Ethernet rather than using the RF channel.
 
 .. image:: _images/dtd-linking.png
    :alt: DtD Linking
@@ -101,7 +90,7 @@ In its most basic configuration for two collocated nodes, an Ethernet cable is c
 
 One added benefit of DtD linking is that you can link nodes which are operating on different bands and channels. Nodes that are using *Channel Separation* to segment traffic can still pass data at high speeds through their DtD link and be members of a single network. At a tower site like the one shown here, you could link 2.4 GHz and 5.8 GHz nodes to the same network. In fact, at a busy site like this it is best practice to use DtD linking, because otherwise RF channel contention could make the network unusable.
 
-Ideally you should configure your collocated nodes to use different bands and channels, then set up DtD links between the nodes to ensure that traffic is routed efficiently without generating RF contention or delays. :abbr:`OLSR (Optimized Link State Routing protocol)` will always choose the DtD path first when passing traffic between linked nodes. Each AREDN® node recognizes incoming packets tagged with :abbr:`VLAN (Virtual Local Area Network)` 2 as DtD traffic. In the simple example shown here, the switch will share all traffic across all ports and every node will receive the traffic on its DtD link.
+Ideally you should configure your collocated nodes to use different bands and channels, then set up DtD links between the nodes to ensure that traffic is routed efficiently without generating RF contention or delays. The routing protocol should always choose the DtD path first when passing traffic between linked nodes. Each AREDN® node recognizes incoming packets tagged with :abbr:`VLAN (Virtual Local Area Network)` 2 as DtD traffic. In the simple example shown here, the switch will share all traffic across all ports and every node will receive the traffic on its DtD link.
 
 Be aware that if several nodes are connected through a network switch (as shown in the diagrams) and then you connect your laptop to an open port on that switch, your laptop may receive a DHCP IP address from any of the nodes' DHCP servers. This may not be an issue for a laptop doing periodic maintenance activities at the site. However, if you deploy another device which must receive a consistent DHCP IP address, then it is best practice to disable the DHCP server on all but one of the nodes which will be the primary DHCP server for any local devices connected to that network switch.
 

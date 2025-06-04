@@ -83,11 +83,13 @@ Local Nodes
 
   .. admonition:: Basic Link Quality Metrics
 
-    Several link quality statistics can be displayed for different types of connections that are mentioned below. Before introducing those link types, here is a brief explanation of the link quality metrics that may be displayed.
+    Several link quality statistics can be displayed for different types of connections that are mentioned below. Before introducing those link types, here is a brief explanation of the link quality metrics that may be displayed if they are available.
 
     - ``lq`` or Link Quality is your node's view of the percent of OLSR packets received from the neighbor node. These packets exchange mesh routing and advertised services information, and they include a sequence number that is used to identify missing packets. For example, if 7 of 10 packets sent by the neighbor were received, then the probability for a successful packet transmission from this neighbor is 7/10 = 0.7 = 70%. ``nlq`` or Neighbor Link Quality is the neighbor node's view of the percent of OLSR packets received from your node.
 
     - ``rx`` or receive success rate shows the percent of Babel packets received based on what was expected.
+
+    - ``rtt`` is the Babel round trip time or "two-way delay" which shows the link latency between two nodes.
 
     - ``snr`` or Signal-to-Noise Ratio is expressed in decibels (dB). This metric only applies to RF links and represents the level of signal which is detected above the noise floor. *SNR* is shown for both sides of a radio link (:abbr:`snr (signal to noise ratio)` and :abbr:`n snr (neighbor signal to noise ratio)`).
 

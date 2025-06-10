@@ -9,6 +9,11 @@ What it’s all about
 
 By loading the AREDN® firmware in a outdoor wireless access point, you can join a ham radio network. It’s like the Internet but runs on ham radio frequencies, mostly in the 5.8 GHz band. The network is growing steadily, but the number of accessible nodes in your area can range from plentiful to none within hundreds of miles. By joining this network you can find and use all sorts of applications (known as “services”). Anything running on a server, like weather stations, web sites showing site conditions, and email servers can be provided as a service. There are also services that don’t rely on a browser: video streams, chat servers, and VOIP PBXes. The network can also be used to connect Winlink stations, Dstar and DMR repeaters, and Allstar devices. Pretty much any kind of service you can put on the Internet you can put on the AREDN® network, subject to the restrictions of the ham radio regulations (FCC “Part 97”).
 
+Getting Started
+---------------
+
+The network is growing steadily, but the number of accessible nodes in your area can range from plentiful to none within hundreds of miles.
+
 RF access to the network
 ------------------------
 
@@ -38,9 +43,9 @@ Recommended equipment
 
 The following recommendations are for a home station. Recommendations for network nodes on hilltops are likely to be different and beyond the scope of this introductory article. In order to ensure good performance you need a strong RF link to the network. Like most other ham radio activities, more gain is better than less. And even if you have two nodes within range the node’s routing software will always pick the strongest one as your path into the network. Omnidirectional antennas are discouraged and dish antennas greatly preferred.
 
-All of the equipment using dish antennas supported by AREDN® use electronics integrated into the feedpoint: two transceivers, two modems, and an embedded computer with RAM, ROM, and a network interface. They are all POE-enabled (Power Over Ethernet). This avoids having to run both a network cable and a power cable up a mast to the node. A web interface is used to control and configure the device. Your equipment will need to be on the same band as the node you want to connect to. If there are both 2 GHz and 5 GHz nodes equidistant from you with similar path characteristics, choose 5 GHz. That band is quieter, there’s more bandwidth, more channels, and the gear is about the same cost.
+All of the equipment using dish antennas supported by AREDN® use electronics integrated into the feed point: two transceivers, two modems, and an embedded computer with RAM, ROM, and a network interface. They are all POE-enabled (Power Over Ethernet). This avoids having to run both a network cable and a power cable up a mast to the node. A web interface is used to control and configure the device. Your equipment will need to be on the same band as the node you want to connect to. If there are both 2 GHz and 5 GHz nodes equidistant from you with similar path characteristics, choose 5 GHz. That band is quieter, there’s more bandwidth, more channels, and the gear is about the same cost.
 
-Fortunately AREDN® now supports dozens devices (including new ones added in the nightly builds), so there are many options when choosing what to buy. The AREDN® team has flagged *Sunset devices* that are no longer recommended for new purchase in the `Supported Platform Matrix: <https://www.arednmesh.org/content/supported-devices-0>`_. The Mikrotik dishes may be slightly less durable than equivalent Ubiquiti dishes, so if you live where there’s severe icing choose more rugged equipment. Mikrotik dishes are lighter, making them more suitable for portable work (e.g., go boxes), but both brands work well.
+Fortunately AREDN® now supports dozens devices (including new ones added in the nightly builds), so there are many options when choosing what to buy. Purchasing legacy 802.11n devices, although many of them are still supported by AREDN, is no longer recommended.  Instead, consider 802.11ac devices – being a newer generation of hardware they have faster CPUs, more RAM and Gigabit Ethernet ports, resulting in faster throughput.
 
 Short haul options
 ++++++++++++++++++
@@ -55,6 +60,8 @@ Long haul options
 - Ubiquiti PowerBeam ac 500 25 dBi gain
 - Mikrotik RBLHGG-5acD 24.5 dBi gain
 - Mikrotik RBLHGG-5acD-XL 27 dBi gain
+
+The Mikrotik dishes may be slightly less durable than equivalent Ubiquiti dishes, so if you live where there’s severe icing choose more rugged equipment. Mikrotik dishes are lighter, making them more suitable for portable work (e.g., go boxes), but both brands work well. The AREDN® team has flagged *Sunset devices* that are no longer recommended for new purchase in the `Supported Platform Matrix: <https://www.arednmesh.org/content/supported-devices-0>`_.
 
 In the shack
 ++++++++++++
@@ -79,7 +86,7 @@ After you have your equipment in hand, you need to install the AREDN® firmware,
 Aiming high gain antennas
 -------------------------
 
-Note that the higher the gain, the narrower the beamwidth and the trickier it is to aim these dishes accurately. Fortunately, some aiming tools have been added to the AREDN® firmware that help in setting up the dish in the correct direction and elevation. Remember that the vertical beamwidth is as narrow as the horizontal beamwidth. Review the **Tips for Aiming Directional Antennas** document in the **How-To Guides** section for more information.
+Note that the higher the gain, the narrower the beamwidth and the trickier it is to aim these dishes accurately. Fortunately, some aiming tools have been added to the AREDN® firmware that help in setting up the dish in the correct direction and elevation. Remember that the vertical beamwidth is as narrow as the horizontal beamwidth. Review the **Tips for Aiming Directional Antennas** document in the **How-To Guides** section for more information. Do not stand in front of the antenna or dish for extended periods of time when it’s powered on.  NEVER look into the focus of the radio when it’s powered on. These small dishes have 80 - 100 watts of ERP at 5.8 Ghz! The Mikrotik Basebox 2 has 30 dBm of power output. When fed to a Mikrotik 30dBi gain dish, that’s 1 KW of ERP. Use caution!
 
 Tools for planning your network
 -------------------------------

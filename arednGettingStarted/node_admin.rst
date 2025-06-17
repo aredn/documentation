@@ -325,7 +325,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Internal Services
 -----------------
 
-When you are logged in as *admin* you will see an Internal Services status display at the top of the center column. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status is informational only, and it simply indicates whether this node is being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status is informational only and indicates whether this node is configured as a Supernode.
+When you are logged in as *admin* you will see an Internal Services status display at the top of the center column. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status is informational only and simply indicates whether this node is being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status is informational only and indicates whether this node is configured as a Supernode.
 
 .. image:: _images/admin-internal-svc-1.png
  :alt: Admin Internal Services Status
@@ -369,6 +369,9 @@ Hardware Watchdog
 
   Daily Watchdog Time
     This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the node automatically. The node must get its time from NTP or GPS in order for this reboot to occur.
+
+ID Beacon
+  This switch is ``enabled`` by default, which tells your node to send a beacon that contains your Amateur Radio callsign (as well as the node's location) every few minutes. Periodic Amateur Radio station identification is a requirement in many regions in order to comply with local regulations.
 
 Wireless Watchdog
   This background monitor will restart the mesh radio if it becomes unresponsive. If Wireless Watchdog is enabled, the following fields will also be displayed.

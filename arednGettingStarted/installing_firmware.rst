@@ -28,22 +28,13 @@ Setting a Static IP Address on your Computer
 
   If you choose not to use an intermediate network switch, then you will be responsible for making sure your computer maintains an active interface with the static IP address. You may need to power on the node temporarily in order for your computer to bring up its interface, but then immediately power off the node in order to follow the installation instructions for your model. Having an intermediate network switch eliminates these steps.
 
-Depending on your computer operating system you may not have various command line tools available on your computer. The required tools are native to both Linux and MacOS computers. For Windows computers you may need to enable specific features or install appropriate programs as noted below.
+Depending on your computer operating system you may not have various command line tools available on your computer. The required tools are available by default on Linux, MacOS, and Windows 11, but you may need to enable specific features or install appropriate programs as noted below.
 
 For Ubiquiti 802.11n Installs
   Your computer should have `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* software available. If you have a Windows computer, use a web search engine to find information for your specific operating system (for example search "tftp client for windows"). There is a wealth of information available online for configuring your Windows computer with a TFTP client program.
 
-  - `Example 1 <https://www.thewindowsclub.com/enable-tftp-windows-10>`_
-  - `Example 2 <https://www.sysprobs.com/install-test-tftp-client-on-windows-10>`_
-
 For Ubiquiti 802.11ac Installs
-  Your computer should have `ssh <https://en.wikipedia.org/wiki/Secure_Shell>`_ and `scp <https://en.wikipedia.org/wiki/Secure_copy_protocol>`_ software available. *Ssh* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. Use a web search engine to find information for your specific operating system (for example search "openssh for windows"). Here are some examples for enabling OpenSSH on Windows computers:
-
-  - `Example for Windows 10 <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_
-  - `Example for Windows 11 <https://technoresult.com/how-to-install-and-use-openssh-server-in-windows-11/>`_
-  - `Example for Windows 7 & 8 <https://linuxbsdos.com/2015/01/17/how-to-install-the-latest-openssh-on-windows-7-and-windows-8/>`_
-
-  On Windows computers you may also use programs such as `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ and `WinSCP <https://winscp.net>`_ to connect to your device.
+  Your computer should have `ssh <https://en.wikipedia.org/wiki/Secure_Shell>`_ and `scp <https://en.wikipedia.org/wiki/Secure_copy_protocol>`_ software available. *Ssh* and *scp* are available by default on Linux, MacOS, and Windows 11. On Windows computers you may also use programs such as `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ and `WinSCP <https://winscp.net>`_ to connect to your device.
 
 For Mikrotik and TP-LINK Installs
   These devices are programmed to download a boot image from an external source. Your computer will provide the `Preboot eXecution Environment (PXE) <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ which will give the node an IP address via `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ as well as providing the firmware image via `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_.

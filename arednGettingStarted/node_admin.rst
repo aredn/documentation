@@ -277,15 +277,23 @@ Mesh to WAN
 
 Enabling this switch will allow your node to route traffic from its Mesh interface to/from its WAN interface. This allows any device on the mesh network to use the WAN on your node, typically for accessing the Internet. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN® is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway. The default value is ``disabled`` and it is recommended that you keep this default unless there is a special reason to enable it.
 
-LAN to WAN
-^^^^^^^^^^
-
-The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
+.. image:: _images/admin-network-3.png
+  :alt: Admin Network Advanced Options
+  :align: center
 
 LAN to Mesh WAN
 ^^^^^^^^^^^^^^^
 
 There may be times when your node has its own LAN devices, but you node does not provide WAN Internet access for them. Enabling this option will allow your node's LAN devices to find and use an Internet connection that might be available from another node across the mesh network. This option is ``disabled`` by default.
+
+LAN to WAN
+^^^^^^^^^^
+
+The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
+
+.. image:: _images/admin-network-4.png
+  :alt: Admin Network Advanced Options
+  :align: center
 
 LAN to 44Net
 ^^^^^^^^^^^^

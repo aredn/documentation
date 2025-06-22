@@ -825,7 +825,7 @@ Tunnel settings
 Highlight and click the section displaying your node's **Tunnels** to open the tunnel configuration display as shown below. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-tunnels.png
-   :alt: Admin Tunnel Settings 1
+   :alt: Admin Tunnel Settings
    :align: center
 
 Tunnel Server
@@ -836,7 +836,7 @@ Add Tunnel
 
 To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. Be aware that without proper time synchronization, Wireguard will not establish tunnels. Make sure that an NTP or GPS time source is reachable at boot time so that the key exchange between the client and server will happen correctly. If mesh based NTP servers are available, ask the owners to advertise them as services to ensure that time synchronization happens across your mesh network even if the Internet is not available. Review the **Local Services** section above for instructions on advertising a local NTP server.
 
-For each tunnel definition there is a *Wgt* or tunnel weight field. The global default tunnel weight is configured under *Advanced Options* as described below, but you can override this value on a per tunnel basis. Leave this field empty to accept the global default, or enter a tunnel weight to override the default if you desire. Each tunnel definition also has a *Notes* field in which you may enter helpful notes about the tunnel link.
+For each tunnel definition there is a *Cost* or tunnel weight field. The global default tunnel cost is configured under *Advanced Options* as described below, but you can override this value on a per tunnel basis. Leave this field empty to accept the global default, or enter a tunnel cost to override the default if you desire. Each tunnel definition also has a *Notes* field in which you may enter helpful notes about the tunnel link.
 
 Wireguard Client
 ^^^^^^^^^^^^^^^^
@@ -850,12 +850,17 @@ Select *Wireguard Server* from the dropdown list and click the [+] icon. In the 
 
 The switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established, at which time it will be green.
 
+Tunnel Backup/Restore
+^^^^^^^^^^^^^^^^^^^^^
+
+If you want to keep a copy of all your tunnel settings you can click the ``Backup`` button to save them to a file. This will backup the tunnel credentials and settings as well as the DNS value and tunnel subnets. If you have a previously saved tunnel config backup, you can restore those settings to your node. Choose the tunnel backup file to restore and you will be returned to the *admin status* page where you can ``Commit`` or ``Revert`` the changes. The settings in the tunnel backup file will overwrite and replace any existing settings on your node.
+
 Advanced Tunnel Options
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The **Tunnel Server Network** address is displayed under *Advanced Options*. This is the starting IP address for your tunnel server's network, and it is calculated automatically. It should not be changed unless there is a specific reason why the default will not work for your situation. The value is only editable when there are no existing server credentials being provided by your node.
 
-The **Tunnel Weight** is the weighting factor used by the routing protocols to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel weight by providing an individual per-tunnel value as described above.
+The **Default Tunnel Cost** is the weighting factor used by the routing protocol to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel cost by providing an individual per-tunnel value as described above.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

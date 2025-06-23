@@ -853,7 +853,7 @@ The switch on the right is ``enabled`` by default, but it appears gray until the
 Tunnel Backup/Restore
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you want to keep a copy of all your tunnel settings you can click the ``Backup`` button to save them to a file. This will backup the tunnel credentials and settings as well as the DNS value and tunnel subnets. If you have a previously saved tunnel config backup, you can restore those settings to your node. Choose the tunnel backup file to restore and you will be returned to the *admin status* page where you can ``Commit`` or ``Revert`` the changes. The settings in the tunnel backup file will overwrite and replace any existing settings on your node.
+If you want to keep a copy of all your tunnel settings you can click the ``Backup`` button to save them to a file. This will backup the tunnel credentials and settings as well as the DNS value and tunnel subnets. If you have a previously saved tunnel backup file, you can restore those settings to your node. Choose the tunnel backup file to restore and those setting will be displayed. Click ``Done`` and you will be returned to the *admin status* page where you can ``Commit`` or ``Revert`` the changes. The settings in the tunnel backup file will overwrite and replace any existing settings on your node.
 
 Advanced Tunnel Options
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -587,13 +587,9 @@ If your device has two radios, you can configure them separately but you cannot 
 
 Click in the first field on the right to set the radio's purpose. You can choose one of several different radio functions from the dropdown list.
 
-  :Mesh: Typical AREDN® mesh mode which uses wifi *ad hoc* peer-to-peer networking to create a mesh network.
+  :Mesh: Normal AREDN® mesh mode which uses *ad hoc* peer-to-peer networking to create a mesh.
 
-  :Mesh PtMP: Uses wifi *infrastructure* networking to limit communication between a centralized **AP** and one or more **Station** nodes.
-
-  :Mesh PtP: Uses wifi *infrastructure* networking to limit communication to a single **AP - Station** pair.
-
-  :Mesh Station: Allows you to define a wifi *infrastructure* mode **Station** that will communicate to either type of **AP** defined above.
+  :PtP/PtMP: Uses *infrastructure* mode (point-to-point or point-to-multipoint) to limit communication between a single access point (AP) and one or more specified stations. **Mesh PtP** defines an AP that communicates with a single station. **Mesh PtMP** defines an AP that can communicate with multiple stations. **Mesh Station** defines a station that can communicate to either type of AP defined above.
 
   :LAN Hotspot: Configures the radio as a standard `802.11 <https://en.wikipedia.org/wiki/IEEE_802.11>`_ FCC Part 15 wifi AP on your node's LAN network.
 

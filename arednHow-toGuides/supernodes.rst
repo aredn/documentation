@@ -68,7 +68,7 @@ The following steps are required to configure a Supernode.
 
 Your node should now be functioning as a Supernode. To validate this you can do the following:
 
-- Login to the Supernode vi *ssh* or *telnet* and type the following command:
+- Login to the Supernode via *ssh* or *telnet* and type the following command:
 
   ::
 

@@ -165,6 +165,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :QTH: Radio Q-signal for “Location”
 :RACES: Radio Amateur Civil Emergency Service
 :RAM: Random Access Memory
+:REPO: Repository in GitHub
 :RF: Radio Frequency
 :ROM: Read-Only Memory
 :RPI: Raspberry Pi single-board computer

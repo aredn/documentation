@@ -424,6 +424,17 @@ Alert messages are displayed in a highlighted text box at the top of the node st
   :alt: AREDN® Alert Messages
   :align: center
 
+Advanced Internal Service Options
++++++++++++++++++++++++++++++++++
+
+Additional options will be displayed when you click **Advanced Options**. These options allow specific firmware processes to be restarted without having to perform a full reboot of your node.
+
+|icon8| Click the icon at the right side of any service to restart that service. The icon will spin briefly to indicate that the process has been restarted. Note that restarting some of the internal services may disconnect your node from the network, and it may require some time for the connections to be reestablished.
+
+.. image:: _images/admin-internal-svc-4.png
+ :alt: Admin Internal Services Advanced
+ :align: center
+
 |
 
 After reviewing the **Internal Services** display, you can click the ``Cancel`` button to ignore any changes you made. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
@@ -996,3 +1007,6 @@ There may be times when you want to view more detailed information about the con
 
 .. |icon7| image:: ../_icons/tools.png
   :alt: Admin user view
+
+.. |icon8| image:: ../_icons/refresh.png
+  :alt: refresh icon

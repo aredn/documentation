@@ -84,7 +84,7 @@ Time settings
 
 Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. Two fields are provided for entering the hostnames of :abbr:`NTP (Network Time Protocol)` servers if your node is connected to a network with network time services. You can enter valid hostnames in the *NTP Server* fields: for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [Daily] but you may also select once per hour [Hourly] or you can have your node run the NTP program [Continually].
 
-If you run NTP on your node *Continually* then a new switch will appear which allows you to use your node as an NTP Server for any of your LAN-connected devices. The *NTP Server* switch is ``disabled`` by default.
+If you run NTP on your node *Continually* then a new switch will appear which allows your node to function as an NTP Server for any of your LAN-connected devices. The *NTP Server* switch is ``disabled`` by default.
 
 .. image:: _images/admin-time.png
   :alt: Admin Time
@@ -249,28 +249,27 @@ WAN Mode
 DNS
   These two fields allow you to enter the IP addresses of the :abbr:`DNS (Domain Name System)` servers of your choice. By default Google's DNS servers are listed because their name resolution servers are configured to detect error conditions properly and to report them correctly.
 
+Advanced network options
+++++++++++++++++++++++++
+
 Additional options will be displayed when you click **Advanced Options**.
 
 .. image:: _images/admin-network-2.png
   :alt: Admin Network Advanced Options
   :align: center
 
-WAN VLAN
-^^^^^^^^
+WAN VLAN (single port nodes)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many of the devices used as AREDN® nodes have only one Ethernet port, but more than one type of network traffic must share that single port. The AREDN® firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong. By default the WAN uses an *untagged* VLAN on multi-port devices, and ``VLAN 1`` on single port devices. This can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *untagged*. If you change this setting and want to use a single digit identifier, use numbers greater than three, but do not use any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+Many of the devices used as AREDN® nodes have only one Ethernet port, so several types of network traffic must share that single port. The AREDN® firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong. By default the WAN uses ``VLAN 1`` on single port devices. This can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *untagged*. If you change this setting and want to use a single digit identifier, use numbers greater than three, but do not use any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
 
 The following VLANs are preconfigured in the AREDN® firmware:
 
-- VLAN 2 identifies traffic from a :abbr:`DtD (Device to Device)` node directly connected to your node.
+- No VLAN tag identifies LAN traffic from devices on the local area network
+- VLAN 1 identifies WAN traffic to your node from the Internet or another external network
+- VLAN 2 identifies traffic from a :abbr:`DtD (Device to Device)` node directly connected to your node
 
-- No VLAN tag identifies LAN traffic from devices on the local area network.
-
-- *For single-port nodes:* A VLAN 1 tag identifies WAN traffic to your node from the Internet or another external network.
-
-It is important to understand AREDN® VLANs when configuring network smart switches for single-port nodes to access the Internet, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN® website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_.
-
-There are several indoor AREDN® nodes that have more than one Ethernet port. The AREDN® firmware running on these types of nodes has the WAN port preconfigured for connecting to the Internet. You can get the latest information about the specific port configured as the node's WAN port from the AREDN® website here: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_. It is recommended that you use a label maker to clearly identify the ports on your multiport devices.
+It is important to understand AREDN® VLANs when configuring network smart switches for single-port nodes to access the Internet, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN® website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_. You can get the latest information about the specific port configured as the node's WAN port from the AREDN® website here: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_.
 
 Mesh to WAN
 ^^^^^^^^^^^
@@ -304,6 +303,22 @@ LAN default route
 ^^^^^^^^^^^^^^^^^
 
 Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes for more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
+
+Custom firewall rules
+^^^^^^^^^^^^^^^^^^^^^
+
+There may be cases when you want to create additional firewall rules to allow specific traffic through your node. You can define custom firewall rules by entering them into the ``/etc/config.mesh/firewall.user`` file on your node. This feature is for advanced users and assumes that you have the skills to construct *nftables* firewall rule statements. The example below is for a node that has its **NTP Server** switch enabled, which allows only LAN-connected devices to use your node as an NTP server. If you also want to allow local DTD-linked devices to use your node's NTP server, you could add a custom firewall rule as shown below.
+
+::
+
+  # This file is interpreted as shell script.
+  # Put your custom nft rules here, they will
+  # be executed with each firewall (re-)start.
+  nft insert rule ip fw4 input_dtdlink udp dport 123 accept
+
+After creating custom rules, you will need to reboot your node (or restart the node's firewall) for the rules to become active. The contents of ``firewall.user`` will be included automatically in the backup file when you perform a **Backup** of your node's configuration.
+
+|
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes.
 

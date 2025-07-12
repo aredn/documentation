@@ -13,7 +13,7 @@ Channel Information
    :alt: Channel Width Example
    :align: center
 
-Some or all of the bands shown below are shared with other authorized users. For example, all of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` users in the US. The following table shows examples of the Amateur radio bands, frequency ranges, and number of channels that are available for AREDN® networking in the US.
+Some or all of the bands shown below are shared with other authorized users. For example, all of the upper channels on the 13 cm band are shared with standard FCC Part 15 :abbr:`WiFi (IEEE 802.11x)` users in the US. The following table shows examples of the Amateur radio bands, frequency ranges, and number of 5 MHz wide channels that are available for AREDN® networking in the US.
 
 =======  =================  ========
 Band     Frequency Range    Channels
@@ -21,7 +21,7 @@ Band     Frequency Range    Channels
 5 cm     5650-5925 MHz      54
 9 cm     3300-3445 MHz      14
 13 cm    2390-2450 MHz      10
-33 cm    902-928   MHz      4
+33 cm    902-928   MHz      (varies)
 =======  =================  ========
 
 The choice of a frequency band for AREDN® networking depends on several different factors, but you can "mix and match" bands in your network design as long as both sides of a radio link use the same band, channel, and channel width.
@@ -94,20 +94,16 @@ Disadvantages
 -----------------------
 
 Advantages
-  The advantage of this frequency band is that its longer wavelength makes it better suited for penetrating some types of foliage which would normally block signals at higher frequencies. Its :abbr:`NLOS (Non Line of Sight)` propagation characteristics may be what is needed in order to establish an RF link between two difficult locations.
+  The advantage of this band is that its longer wavelength may make it better suited for penetrating some types of foliage which would normally block signals at higher frequencies. Its :abbr:`NLOS (Non Line of Sight)` propagation characteristics may be what is needed in order to establish an RF link between challenging locations. Legacy equipment for the 33 cm band provided only four 5 MHz wide channels (as shown below).
 
-  Recent advances in wireless technology have introduced devices which use the `Wifi HaLow (802.11ah) <https://en.wikipedia.org/wiki/IEEE_802.11ah>`_ protocol. This protocol provides relatively high data rates while minimizing media contention, extending coverage range, and using low power levels. These devices use the Babel routing protocol only, but they may provide coverage in challenging areas.
+  .. image:: ../_images/900mhz.png
+    :alt: 900 MHz Band
+    :align: center
 
-.. image:: ../_images/900mhz.png
-   :alt: 900 MHz Band
-   :align: center
-
-|
+  Recent advances in wireless technology have introduced devices which use the `Wifi HaLow (802.11ah) <https://en.wikipedia.org/wiki/IEEE_802.11ah>`_ protocol. This protocol provides relatively high data rates while minimizing media contention, extending coverage range, and using low power levels. These devices use the Babel routing protocol only, but they may provide coverage in challenging areas. The number of usable channels varies based on the selected channel width (1, 2, 4, or 8 MHz). For example, at 1 MHz width there are 23 channels, while at 8 MHz width there are only three channels.
 
 Disadvantages
-  The entire 33 cm band is shared between several FCC authorized radio services. The disadvantage of using this band for AREDN® networking is that in some areas the RF noise floor may be high, which may reduce the available :abbr:`SNR (Signal to Noise Ratio)`. The entire band is quite narrow (25 MHz) which means that only one, two, or four standard WiFi channels can exist in this shared frequency range, depending on the channel width that is selected.
-
-  The original equipment for the 33 cm band is no longer being manufactured and used devices are becoming difficult to find. However, the newer HaLow devices are available and may provide advantages over the older 802.11agbn radios.
+  The entire 33 cm band is shared between several FCC authorized radio services. The disadvantage of using this band for AREDN® networking is that the entire band is quite narrow (25 MHz), and in some areas the RF noise floor may be high which reduces the available :abbr:`SNR (Signal to Noise Ratio)`. Legacy equipment for the 33 cm band is no longer being manufactured and is becoming difficult to find. However, the newer HaLow devices provide significant advantages over the older 802.11agbn radios.
 
 ----------
 

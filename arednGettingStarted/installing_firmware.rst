@@ -359,10 +359,10 @@ There are `several methods <https://openwrt.org/docs/guide-user/installation/gen
 
 The node will automatically reboot after installing AREDN®, and you may need to refresh your network interface to receive a new IP address before continuing.
 
-MorseMicro first install process
---------------------------------
+MorseMicro device install process
+---------------------------------
 
-Download the *Install Checklist* for **MorseMicro** devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet.
+Download the *Install Checklist* for **MorseMicro** devices. Supported models are listed in the Babel `Supported Devices file <https://github.com/aredn/aredn/blob/babel/SUPPORTED_DEVICES.md>`_ and currently include HaLowLink 1, Heltec HT-HD01 & HT-HD7608, and Alfa Tube-AHM. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet.
 
 - Cable your computer’s Ethernet port to the radio's LAN port. Power on the *MorseMicro* device and verify that your computer received an IP address from the device’s DHCP service.
 

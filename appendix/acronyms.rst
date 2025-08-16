@@ -155,6 +155,8 @@ List of acronyms sometimes encountered in the AREDN® project.
 :PR: Pull Request (a GitHub mechanism)
 :PSK: Phase-Shift Keying
 :PSK: Protect Access Pre-Shared Key
+:PTMP: Point to multipoint
+:PTP: Point to point
 :PTZ: Pan, Tilt, and Zoom (video camera control)
 :PUB: Public Key File Extension
 :PUTTY: Communications tool for running interactive command-line sessions on other computers

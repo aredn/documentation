@@ -258,14 +258,16 @@ Additional options will be displayed when you click **Advanced Options**.
   :alt: Admin Network Advanced Options
   :align: center
 
-WAN VLAN (single port nodes)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+WAN & LAN VLANs for single port nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many of the devices used as AREDN® nodes have only one Ethernet port, so several types of network traffic must share that single port. The AREDN® firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong. By default the WAN uses ``VLAN 1`` on single port devices. This can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *untagged*. If you change this setting and want to use a single digit identifier, use numbers greater than three, but do not use any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
+Many of the devices used as AREDN® nodes have only one Ethernet port, and several types of network traffic must share that single port. The AREDN® firmware implements :abbr:`VLANs (Virtual Local Area Network)` in order to accomplish this. Different types of traffic are tagged to identify the network to which they belong.
+
+By default the WAN uses ``VLAN 1`` and the LAN is ``Untagged`` on single port devices. These can be changed if your network requires something different. Enter the VLAN number or leave the field blank for *Untagged*. If you change this setting and want to use a single digit identifier, use numbers ≥ 5 but do not use any number larger than can be supported by your network equipment. Different types of network equipment can support various numbers of VLANS, but the maximum number is limited by the `802.1Q standard <https://en.wikipedia.org/wiki/IEEE_802.1Q#Frame_format>`_ to no more than 4094.
 
 The following VLANs are preconfigured in the AREDN® firmware:
 
-- No VLAN tag identifies LAN traffic from devices on the local area network
+- Untagged identifies LAN traffic from devices on the local area network
 - VLAN 1 identifies WAN traffic to your node from the Internet or another external network
 - VLAN 2 identifies traffic from a :abbr:`DtD (Device to Device)` node directly connected to your node
 

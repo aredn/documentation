@@ -882,7 +882,9 @@ If you want to keep a copy of all your tunnel settings you can click the ``Backu
 Advanced Tunnel Options
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The **Tunnel Server Network** address is displayed under *Advanced Options*. This is the starting IP address for your tunnel server's network, and it is calculated automatically. It should not be changed unless there is a specific reason why the default will not work for your situation. The value is only editable when there are no existing server credentials being provided by your node.
+The **Tunnel Server Network** address is displayed under *Advanced Options*. This is the starting IP address for your tunnel server's network, and it is calculated automatically. It should not be changed unless there is a specific reason why the default will not work for your situation.
+
+.. attention:: This value is only editable when there are no existing server credentials being provided by your node. If you already have tunnels on your node then this field will be grayed out and uneditable.
 
 The **Default Tunnel Cost** is the weighting factor used by the routing protocol to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel cost by providing an individual per-tunnel value as described above.
 

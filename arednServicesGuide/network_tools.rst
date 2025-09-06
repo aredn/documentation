@@ -7,7 +7,7 @@ There are several service programs that can assist in visualizing or mapping an 
 Manage Extra Static Routes
 --------------------------
 
-There may be cases when you need to create extra static routes to control the flow of network traffic through your node. You can maintain your extra routes by entering them into the ``/etc/aredn_include/static_routes`` file. You must login to your node at the command line and use the ``vi`` editor to manage the routes in this file. A helpful example is provided in the file, and you can view the `OpenWRT Static Routes <https://openwrt.org/docs/guide-user/network/routing/routes_configuration>`_ page for additional information about managing static routes.
+There may be cases when you need to create extra static routes to control the flow of network traffic through your node. You can maintain your extra routes by entering them into the ``/etc/aredn_include/static_routes`` file. Login to your node at the command line to edit the routes in this file. After saving your changes you should run ``/usr/local/bin/node-setup`` to apply your changes, then reboot your node. You can view the `OpenWRT Static Routes <https://openwrt.org/docs/guide-user/network/routing/routes_configuration>`_ page for additional information about managing static routes.
 
 AREDN® Prometheus Exporter
 --------------------------

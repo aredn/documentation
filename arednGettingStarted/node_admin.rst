@@ -350,7 +350,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Internal Services
 -----------------
 
-When you are logged in as *admin* you will see an Internal Services status display at the top of the center column. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status is informational only and simply indicates whether this node is being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status is informational only and indicates whether this node is configured as a Supernode.
+When you are logged in as *admin* you will see an Internal Services status display at the top of the center column. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status is informational only and simply indicates whether this node is currently being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status is informational and will only appear on nodes capable of being a Supernode, indicating whether this node is currently configured as a Supernode.
 
 .. image:: _images/admin-internal-svc-1.png
  :alt: Admin Internal Services Status

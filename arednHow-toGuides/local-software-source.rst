@@ -17,30 +17,26 @@ There are several ways to accomplish these tasks, and the best approach may vary
 
 ::
 
-  /usr/bin/rsync -rv --delete --size-only downloads.arednmesh.org::aredn_firmware /var/www/html/arednSoftware/
+  /usr/bin/rsync -rv --delete --size-only downloads.arednmesh.org::aredn_firmware /var/www/html/
 
-Once you have a local duplicate of the AREDN® files, you need to verify that your copy of the files have the correct path pointing to your local software repository. In the example above, the local repository was placed in /var/www/html/arednSoftware, so you will navigate to that directory.
+Once you have a local duplicate of the AREDN® files, you need to verify that your copy of the files have the correct path pointing to your local software repository. In the example above, the local repository was placed in /var/www/html/, so you will navigate to that directory.
 
-::
-
-  cd /var/www/html/arednSoftware
-
-Under this directory you should see the ``afs`` subdirectory which contains all of the information used by the AREDN® Firmware Selector. Navigate into the ``afs/www`` subdirectory and use the editor of your choice to edit the ``config.js`` file. Locate the *Image download URL* section and change the default value of the *image_url* variable to point to your local download server. The default value is ``image_url: "http://downloads.arednmesh.org"`` and the example below shows the line edited to point to our example server.
+Under this directory you should see the ``afs`` subdirectory which contains all of the information used by the AREDN® Firmware Selector. Navigate into the ``afs/www`` subdirectory and use the editor of your choice to edit the ``config.js`` file. Locate the *Image download URL* section and change the default value of the *image_url* variable to point to your local download server. The default value is ``image_url: "http://downloads.arednmesh.org"`` and the example below shows the line edited to point to an example server.
 
 ::
 
-  image_url: "http://ab7pa-box2.local.mesh/arednSoftware/",
+  image_url: "http://my-software-server.local.mesh",
 
-Once the ``config.js`` file has the correct local URL, you must write the new path into all of the firmware selection entries. You accomplish this by running a `Python3 <https://en.wikipedia.org/wiki/Python_(programming_language)>`_ script that ensures all of the files receive the current configuration settings from ``config.js``. Navigate to the top level directory where you stored your copy of the arednmesh files (in our example the local repository was placed in /var/www/html/arednSoftware) and run the ``collect.py`` script to update the local URL path. It resides in the ``afs/misc`` directory and requires two arguments.
+Once the ``config.js`` file has the correct local URL, you will write the new path into all of the firmware selection entries. You accomplish this by running a `Python3 <https://en.wikipedia.org/wiki/Python_(programming_language)>`_ script that ensures all of the files receive the current configuration settings from ``config.js``. Navigate to the top level directory where you stored your copy of the firmware repository (in our example the local repository was placed in /var/www/html) and run the ``collect.py`` script to update the local URL path. It resides in the ``afs/misc`` directory and requires two arguments.
 
-1. the path to the top level directory where you stored the arednmesh files (in our example: /var/www/html/arednSoftware)
-2. the path to the AFS www directory (in our example: /var/www/html/arednSoftware/afs/www)
+1. the path to the top level directory where you stored the arednmesh files (in our example: /var/www/html)
+2. the path to the AFS www directory (in our example: /var/www/html/afs/www)
 
-Since you will already be in the *arednSoftware* directory, you can use relative paths as in the example below.
+If you are already in that directory, you can use relative paths as in the example below.
 
 ::
 
-  cd /var/www/html/arednSoftware
+  cd /var/www/html/
   ./afs/misc/collect.py  .  ./afs/www/
 
 Now your local AREDN® software source is configured to serve its files to any local nodes which want to update their firmware from your repository.
@@ -51,8 +47,6 @@ d.apache.org/docs/2.4/urlmapping.html>`_). Once the software has been made avail
 .. image:: _images/view-software-repo.png
    :alt:  View the local software repository
    :align: center
-
-Once the software is available via your web server, you can begin pointing the nodes to your local software repository.
 
 Point nodes to the local server
 -------------------------------

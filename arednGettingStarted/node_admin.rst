@@ -579,7 +579,9 @@ The node name of each Neighborhood Node is a clickable link which will navigate 
  :alt: Admin Neighbor Node Statistics
  :align: center
 
-To the right of the node’s name there is a field that shows the current link status. Clicking in this field will give you options for handling RF links to this node, including the ability to block or unblock that node’s traffic from reaching your node. The following details may be displayed if available for this node's connection to your node, from top to bottom & left to right:
+For nodes having multiple RF connections, there will be a field that shows the current link status to the right of the node name. Clicking in this field will give you options for handling the RF link to this node, including the ability to block or unblock that node’s traffic. You are not allowed to block a link that is your node's only connection to the network.
+
+The following details may be displayed if available for this node's connection to your node, from top to bottom & left to right:
 
 - :abbr:`type (RF, xlink, tunnel)`, mac address, and ip address
 - model, firmware version, and link address (IPv6 for Babel)

@@ -8,13 +8,9 @@ Web browser cache and sessions
   One issue can occur when installing firmware using a web browser. Your computer's browser cache stores data for the URLs that have been visited, but IP addresses and other parameters may change during the install process. It is possible for the cache to contain information that doesn’t match the latest settings for the URL, so the browser may block the connection. Clearing your computer's web browser cache will allow the latest URL settings to be registered so you can continue with the install process. During AREDN® firmware installs you can usually resolve a the issue with one or more of the following things:
 
   - Refresh or Reload the URL for your node.
-
   - Clear your browser cache and delete cookies.
-
   - Close your browser and restart a new session.
-
   - Use a different web browser program or a *Safe Mode / Incognito* browser window.
-
   - Unplug and reconnect the Ethernet cable from your computer to ensure that your machine has received a new DHCP IP address on the same subnet as the node's updated IP.
 
 PXE Server
@@ -32,12 +28,12 @@ In rare cases the upgrade process may fail due to lack of node resources, but su
 Try to Sideload Firmware
   The **Sideload Firmware** option is described in the *Node Admin* guide. This involves using a file copy utility on your computer to copy the firmware file to a specific directory and filename on your node. Once the new firmware file is available on the node, you can click the *Update* button to start the install process.
 
+  .. attention:: If you try to initiate a firmware install from your node's command line, do not use the legacy OpenWRT ``sysupgrade`` utility. That no longer accomplishes all of the correct steps to flash an AREDN® node. Instead you must use ``/usr/local/bin/aredn_sysupgrade`` to install a local firmware image from your node's command line.
+
 Tips for Downgrading Firmware
 -----------------------------
 
-Downgrading AREDN® firmware is typically accomplished using the same procedure as for uploading firmware to your node. You are simply uploading a previous version of the firmware rather than the latest version.
-
-.. attention:: If you are downgrading firmware on a node which previously used a different target architecture (``ar71xx`` vs. ``ath79``) or which previously ran a Babel-only firmware but you want to run OLSR+Babel firmware, you will need to do a fresh *First Install* using the appropriate firmware for that device.
+Downgrading AREDN® firmware is typically accomplished using the same procedure as for uploading firmware to your node. You are simply uploading a previous version of the firmware rather than the latest version. If you are downgrading firmware on a node which previously used a different target architecture (``ar71xx`` vs. ``ath79``) or which previously ran a Babel-only firmware but you want to run OLSR+Babel firmware, you will need to do a fresh *First Install* using the appropriate firmware for that device.
 
 Use the `AREDN® Firmware Selector <http://downloads.arednmesh.org/afs/www/>`_ to download the previous release's install files. For example, if your Ubiquiti Rocket M5 XW is currently running version ``3.23.4.0``, then download the files required for release ``3.22.12.0`` (as shown below).
 

@@ -121,11 +121,11 @@ Step 1: Preparing the device
 
   - `2WA: https://dl.ubnt.com/firmwares/XC-fw/v8.7.0/2WA.v8.7.0.42152.200203.1256.bin <https://dl.ubnt.com/firmwares/XC-fw/v8.7.0/2WA.v8.7.0.42152.200203.1256.bin>`_
 
-  Select the firmware appropriate for your device. If the radio's current firmware starts with *WA* download that version. If it starts *XC* download that version.
+  Select the firmware appropriate for your device. If the radio's current firmware starts with *WA* download that version. If it starts *XC* download that version. If it starts *2WA* download that version.
 
   On the top right of the System page you will see “UPLOAD FIRMWARE” and UPLOAD in blue. Clicking the blue UPLOAD text will open a dialog and let you select the **8.7.0** firmware you downloaded to your computer. Now that firmware will be uploaded to the device. Once completed a dialog in the top right will be displayed allowing you to either UPDATE or DISCARD the newly uploaded firmware. Click *UPDATE*. The upgrade process will now start. Do **not** unplug the device until this step is completed.
 
-  Once the upgrade has been completed, the device will return you to the login page. Log in using the username and password you created earlier (``admin`` / ``admin!23``). Once again you will see the System page and if everything has been successful, the firmware version will now read either WA.V8.7.0 or XC.V8.7.0 and you can move to **Step 2**.
+  Once the upgrade has been completed, the device will return you to the login page. Log in using the username and password you created earlier (``admin`` / ``admin!23``). Once again you will see the System page and if everything has been successful, the firmware version will now read either WA.V8.7.0, XC.V8.7.0 or 2WA.V8.7.0 and you can move to **Step 2**.
 
   .. attention:: The upgrade can fail on newer hardware which requires **8.7.4** firmware. This problem has been observed and tested on newer LiteBeam AC, PowerBeam AC and NanoBeam AC devices. For these devices, follow the same firmware downgrade procedure but use the following firmware instead:
 

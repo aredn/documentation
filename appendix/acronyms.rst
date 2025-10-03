@@ -63,6 +63,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :EMCOMM: Emergency Communications
 :EPUB: Electronic Publication
 :ETX: Expected Transmission
+:EULA: End user license agreement
 :EWMA: Exponential Weighted Moving Average
 :FCC: Federal Communications Commission
 :FLV: Flash video file container format

@@ -380,6 +380,9 @@ Remote Logging
 WAN ssh
   This switch enables SSH access to your node on its WAN interface. Disabling this option will not prevent SSH access to your node from the Mesh and LAN interfaces.
 
+SSH password authentication
+  This switch allows *ssh* password authentication, which is ``enabled`` by default. Disabling this option forces the use of previously uploaded ssh keys.
+
 WAN telnet
   This switch enables *telnet* access to your node on its WAN interface. Disabling this option will not prevent *telnet* access to your node from the Mesh and LAN interfaces.
 

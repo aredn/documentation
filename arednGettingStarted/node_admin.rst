@@ -372,7 +372,7 @@ Cloud Mesh
   |icon5| You may connect to any node on the worldwide mesh by clicking your node's Cloud Mesh icon on the left nav bar. Disable this option if you never want your node to provide a method of accessing devices on the worldwide mesh network.
 
 iPerf3 Server
-  This switch enables the built-in iperf3 tools on your node. This makes it easy to perform throughput tests between nodes in the network. The client and server are only invoked on demand, so there is no performance impact on the node except during testing. The default value is ``enabled``. If you do not want your node to participate in any remote iperf3 tests then you can ``disable`` its ability to respond to those queries.
+  This switch enables the built-in `iperf3 <https://software.es.net/iperf/>`_ tools on your node. This makes it easy to perform throughput tests between nodes in the network. The client and server are only invoked on demand, so there is no performance impact on the node except during testing. The default value is ``enabled``. If you do not want your node to participate in any remote iperf3 tests then you can ``disable`` its ability to respond to those queries.
 
 Remote Logging
   The limited amount of memory for local node logs means that older information will roll off, and all log history is lost when your node is rebooted. By entering the URI for a remote log server, you can send your node's log info to a server using the syslog protocol. The format for this option is ``udp://ip-address:port`` or ``tcp://ip-adress:port``. Leave this field blank if no remote logging is desired.
@@ -977,7 +977,7 @@ After selecting the *Target* and *Source*, click the ``Go`` button in the bottom
 iPerf3
 ++++++
 
-This tool allows you to perform throughput tests between two AREDN® nodes on your network using iPerf3. Context-sensitive help is available by clicking the ``Help`` button.
+This tool allows you to perform throughput tests between two AREDN® nodes on your network using `iperf3 <https://software.es.net/iperf/>`_. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-iperf3.png
   :alt: iPerf3 Test

@@ -451,9 +451,15 @@ Alert messages are displayed in a highlighted text box at the top of the node st
 Advanced Internal Service Options
 +++++++++++++++++++++++++++++++++
 
-Additional options will be displayed when you click **Advanced Options**. These options allow specific firmware processes to be restarted without having to perform a full reboot of your node.
+Additional options will be displayed when you click **Advanced Options**.
 
-|icon8| Click the icon at the right side of any service to restart that service. The icon will spin briefly to indicate that the process has been restarted. Note that restarting some of the internal services may disconnect your node from the network, and it may require some time for the connections to be reestablished.
+Set Babel buffer size
+  This field allows you to override the default Babel protocol buffer size. A larger or smaller buffer size may help to avoid lost packets on nodes or supernodes with many connections. The buffer size is measured in bytes.
+
+Restart firmware processes
+  Specific firmware processes can also be restarted without having to perform a full reboot of your node.
+
+  |icon8| Click the icon at the right side of any service to restart that service. The icon will spin briefly to indicate that the process has been restarted. Note that restarting some of the internal services may disconnect your node from the network, and it may require some time for the connections to be reestablished.
 
 .. image:: _images/admin-internal-svc-4.png
  :alt: Admin Internal Services Advanced

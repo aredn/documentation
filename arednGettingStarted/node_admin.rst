@@ -454,7 +454,7 @@ Advanced Internal Service Options
 Additional options will be displayed when you click **Advanced Options**.
 
 Set Babel buffer size
-  This field allows you to override the default Babel protocol buffer size. A larger or smaller buffer size may help to avoid lost packets on nodes or supernodes with many connections. The buffer size is measured in bytes.
+  This field allows you to override the default Babel protocol buffer size. A larger buffer size may help to avoid lost packets on nodes or supernodes with many connections. The buffer size is measured in bytes.
 
 Restart firmware processes
   Specific firmware processes can also be restarted without having to perform a full reboot of your node.

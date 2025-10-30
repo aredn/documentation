@@ -4,7 +4,7 @@ Configuring a Supernode
 
 *Contributor: Tim Wilkinson KN6PLV*
 
-**Supernodes** are a way to link multiple mesh island networks in a safe and efficient way. A Supernode network is a high-level mesh network --- **super** meaning *"above or higher."* The Supernode network sits above the individual mesh networks and provides connectivity without increasing the routing load on the local networks. Supernodes do not merge networks into one big mesh but instead isolate connections between discrete meshes. For further information see the *Supernode Architecture* section of the **Network Topologies** topic in the **Network Design Guide**.
+**Supernodes** are a way to link multiple mesh island networks in a safe and efficient way. A Supernode network is a high-level mesh network --- **super** meaning *"above or higher."* The Supernode network sits above the individual mesh networks and provides connectivity without increasing the routing load on the local networks. Supernodes do not merge networks into one big mesh but instead isolate connections between discrete mesh networks. For further information see the *Supernode Architecture* section of the **Network Topologies** topic in the **Network Design Guide**.
 
 .. image:: ../_images/supernode-mesh.png
    :alt: Supernode mesh diagram
@@ -24,11 +24,11 @@ Before you consider deploying a Supernode, make sure you can adequately support 
 Coordinating Supernode Deployments
 ----------------------------------
 
-A local network can be connected to multiple Supernodes, but a single Supernode should only be connected to a single local network, although it may be connected at multiple points. By having each Supernode connected to only a single local network, the owners of each local network are responsible for their own Supernodes. This simplifies management and maintenance. There is also some fault isolation since a failed Supernode will only impact the one local network to which it is connected.
+As more Supernodes are deployed linking more local networks, the overall performance of the *Cloud Mesh* will be impacted. Therefore, you should coordinate the deployment of Supernodes among the Supernode owners at the time when tunnel links are requested for the *Cloud Mesh*. Your goal should be to choose one or two Supernode peers for your Supernode so that you can establish primary and backup links to the worldwide mesh. Having more than three or four peer Supernode links will only add unnecessary traffic to the entire system without providing actual benefit.
 
 The number of messages a Supernode receives will scale linearly with the total number of nodes in all connected local networks. A Supernode receives a management message from every node in the network (all nodes in all local networks) every 5 seconds. With a typical message size of 100 bytes, a Supernode receives about 20 bytes per second per node. At the time of initial testing, there were 4,300 AREDN® nodes registered world-wide, so a Supernode for this network would receive ``84 KB/s`` or ``0.7 Mb/s``, which is a manageable bandwidth requirement.
 
-As more Supernodes are deployed linking more local networks, the overall performance of the *Cloud Mesh* will be impacted. Therefore, it is a good idea to coordinate the deployment of Supernodes among the Supernode owners at the time when tunnel links are requested for the *Cloud Mesh*.
+You may have multiple Supernodes on your local network, but each Supernode should only be connected to a single local network. By having each Supernode connected to only a single local network, the owners of each local network are responsible for their own Supernodes. This simplifies management and maintenance. There is also some fault isolation since a failed Supernode will only impact the one local network to which it is connected.
 
 .. image:: _images/supernode-owners.png
    :alt: Supernode owners
@@ -37,7 +37,7 @@ As more Supernodes are deployed linking more local networks, the overall perform
 Setting up a Supernode
 ----------------------
 
-Typically a Supernode is configured on a dedicated **OpenWRT One**, a *Mikrotik hAP ac2/ac3*, or a Virtual Machine running AREDN® firmware. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on a LAN port. The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a gateway.
+Typically a Supernode is configured on a dedicated **OpenWRT One** or **Virtual Machine**, although Supernodes can also run on *Mikrotik hAP ac2/ac3* hardware. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on a LAN port. The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a *Cloud Mesh* gateway.
 
 .. image:: _images/supernode-connections.png
    :alt: Supernode connections
@@ -47,7 +47,7 @@ Typically a Supernode is configured on a dedicated **OpenWRT One**, a *Mikrotik 
 
 The following steps are required to configure a Supernode.
 
-#. Start with an **OpenWRT One** device that is newly flashed with the latest Nightly Build. If the node has been previously configured or used beforehand, please reflash and start fresh in order to avoid problems later in the setup process.
+#. Start with a device that is newly flashed with the latest Nightly Build. If the node has been previously configured or used beforehand, please reflash and start fresh in order to avoid problems later in the setup process.
 
 #. Configure the Supernode with a nodename prefixed with your callsign followed by a location identifier as well as the word "SUPERNODE." For example you could use ``AB2CD-NYC-SUPERNODE`` or ``AB6CD-LAX-SUPERNODE``
 
@@ -92,8 +92,8 @@ Things to Avoid
 
 Before proceeding, make sure all the previous steps have been completed successfully. Now you should be able to connect to another Supernode using a tunnel. The easiest way to do this is to ask another Supernode owner for a set of tunnel client credentials. Your node can use either a client or server tunnel link. Supernode owners can be identified from the `Supernode Network Map <https://worldmap.arednmesh.org/>`_
 
-Configuring the Supernode Tunnel
---------------------------------
+Configuring a Supernode Peer Tunnel
+-----------------------------------
 
 Supernode tunneling uses the Wireguard tunneling protocol, but the port range begins with port ``6526``. On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``6526``, which will provide for one supernode tunnel connection. If you want to allow up to 10 Supernode tunnel links (for example), then you would permit UDP traffic on the range of ports between ``6526-6535``. Configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your Supernode's WAN interface.
 

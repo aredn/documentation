@@ -8,13 +8,13 @@ The diagram below shows your computer with the downloaded firmware image connect
   :alt: Firmware Install Connections
   :align: center
 
-Different radio hardware will require different methods for installing the AREDN® firmware.
+Different radio hardware may require different methods for installing the AREDN® firmware.
 
-- For **Ubiquiti** 802.11n devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* will connect to the node's TFTP *server* in order to upload the firmware image. For Ubiquiti 802.11ac devices you will follow a separate procedure explained below.
+- For **Ubiquiti 802.11n** devices, your computer's `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *client* will connect to the node's TFTP *server* in order to upload the firmware image. For Ubiquiti 802.11ac devices you will follow a separate procedure explained below.
 
 - For **Mikrotik** and **TP-LINK** devices, your computer will run a `Preboot eXecution Environment (PXE) <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ and the node's remote boot *client* will download the boot image from your computer.
 
-- For **GL-iNet**, **MorseMicro**, and **OpenWRT One** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
+- For **GL-iNet**, **MorseMicro**, **OpenWRT One**, and **Cudy** devices, your computer's web browser will connect to the node's web server to upload the firmware image. Refer to the specific procedures below for your node hardware.
 
 In the *Firmware Tips* section of the **How-To Guide** you will find assistance if you experience an issue uploading firmware to your device. The **How-To Guide** also contains a *Virtual Machine Installs* section for help installing x86_64 firmware images on a VM for a virtualized node.
 
@@ -43,27 +43,10 @@ For Mikrotik and TP-LINK Installs
 
   - If you have a Linux or MacOS computer, your "Preboot eXecution Environment (PXE)" will be provided by the native ``dnsmasq`` program, as described in the Linux procedures below.
 
-First Install checklists
-------------------------
-
-The recommended method for installing AREDN® firmware is to download and follow the appropriate *Install Checklist* below which matches your device hardware. Additional descriptions are also provided in the sections that follow.
-
-:download:`Ubiquiti N first install checklist (PDF) <_images/Ubiquiti_N_First_Install_Checklist.pdf>`
-
-:download:`Mikrotik first install checklist (PDF) <_images/Mikrotik_First_Install_Checklist.pdf>`
-
-:download:`TP-LINK first install checklist (PDF) <_images/TP-LINK_First_Install_Checklist.pdf>`
-
-:download:`GL.iNet first install checklist (PDF) <_images/GL.iNet_First_Install_Checklist.pdf>`
-
-:download:`OpenWRT One first install checklist (PDF) <_images/OpenWRT_One_First_Install_Checklist.pdf>`
-
-:download:`MorseMicro first install checklist (PDF) <_images/MorseMicro_First_Install_Checklist.pdf>`
-
 Ubiquiti 802.11n first install process
 --------------------------------------
 
-Download the *Install Checklist* for Ubiquiti 802.11n devices. These devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *server* to which you can upload the AREDN® *factory* image. Your computer must have TFTP *client* software available. For more information, see the **Preparing Your Computer** section above.
+These devices have a built-in `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ *server* to which you can upload the AREDN® *factory* image. Your computer must have TFTP *client* software available. For more information, see the **Preparing Your Computer** section above.
 
 Different TFTP client programs may have different command line options or flags that must be used, so be sure to study the command syntax for your TFTP client software. The example shown below may not include the specific options required by your client program.
 
@@ -95,8 +78,6 @@ Ubiquiti 802.11ac first install process
 ---------------------------------------
 
 *Contributor: Tim Wilkinson KN6PLV*
-
-.. attention:: The install process for these devices requires detailed steps that are best followed using the procedure below, so no separate *Install Checklist* is provided for Ubiquiti 802.11ac devices.
 
 Prerequisites
   The installing computer must be capable of connecting to the command line of the target device. This will require that the computer support both the *ssh* and *scp* protocols. *SSH* and *scp* are native to both Linux and MacOS. The OpenSSH package (which contains both commands) can be enabled on Windows computers. For more information, see the **Preparing Your Computer** section above.
@@ -197,7 +178,7 @@ Step3: Install the firmware
 Mikrotik first install process
 ------------------------------
 
-Download the *Install Checklist* for Mikrotik devices. These devices require a **two-part install** process: First, boot the correct Mikrotik *initramfs-kernel* file, and then use that temporary AREDN® environment to complete the installation of the appropriate *sysupgrade* file.
+These devices require a **two-part install** process: First, boot the correct Mikrotik *initramfs-kernel* file, and then use that temporary AREDN® environment to complete the installation of the appropriate *sysupgrade* file.
 
 Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. See the **Preparing Your Computer** section above for an explanation. The Windows example below uses *Tiny PXE*, while the Linux example uses the native ``dnsmasq`` program.
 
@@ -281,7 +262,7 @@ After successfully installing the *sysupgrade* file the node will automatically 
 TP-LINK first install process
 -----------------------------
 
-Download the *Install Checklist* for TP-LINK devices. These devices may allow you to use the manufacturer's native *PharOS* web browser interface to apply new firmware images. If available, this is the most user-friendly way to install AREDN® firmware. Navigate to the system setup menu to select and upload new firmware. Check the TP-LINK documentation for your device if you have questions about using their built-in user interface. If this process works then you will have AREDN® firmware installed on your device and you skip all of the steps described below.
+These devices may allow you to use the manufacturer's native *PharOS* web browser interface to apply new firmware images. If available, this is the most user-friendly way to install AREDN® firmware. Navigate to the system setup menu to select and upload new firmware. Check the TP-LINK documentation for your device if you have questions about using their built-in user interface. If this process works then you will have AREDN® firmware installed on your device and you skip all of the steps described below.
 
 If the process above does not work or if you choose not to use the *PharOS* web interface, then you can install AREDN® firmware on your device using steps similar to those described above for Mikrotik devices. TP-LINK devices are programmed to use `TFTP <https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol>`_ for downloading a boot image from an external source. If you already have a `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *server* on your Windows computer then you can use that. The example below uses *Tiny PXE*. It may also be possible to use a simple TFTP server instead. For more information, see the **Preparing Your Computer** section above.
 
@@ -329,19 +310,47 @@ Windows Procedure
 GL-iNet first install process
 ------------------------------
 
-Download the *Install Checklist* for GL-iNet devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNet documentation for your device if you have questions about initial configuration. GL-iNet devices provide DHCP services, so you should be able to connect your computer and automatically receive an IP address on the correct subnet. GL-iNet devices usually have a default IP address of 192.168.8.1, so if for some reason you need to give your computer a static IP address you can use that subnet.
+These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the GL-iNet documentation for your device if you have questions about initial configuration. GL-iNet devices provide DHCP services, so you should be able to connect your computer and automatically receive an IP address on the correct subnet. GL-iNet devices usually have a default IP address of 192.168.8.1, so if for some reason you need to give your computer a static IP address you can use that subnet.
 
 After the GL-iNet device is first booted and configured, navigate to the **Upgrade** section and click *Local Upgrade* to select the AREDN® *sysupgrade.bin* file you previously downloaded to your computer.
 
-.. important:: Be sure to **uncheck** the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN® firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
+.. warning:: Be sure to **uncheck** the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN® firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
 
 The node will automatically reboot with the new AREDN® firmware image. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
 `GL-iNet debrick procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_
 
+Cudy first install process
+--------------------------
+
+Cudy Travel Routers use a customized version of OpenWRT software, but the “Update Firmware” option in the Cudy web interface only accepts their RSA-signed images. At the present time Cudy provides a generic signed OpenWRT image so that customers can install another OpenWrt version of their choice. This situation adds an extra step to the normal OpenWRT upgrade process:
+
+#. Login to the stock Cudy web interface and use the “Upgrade Firmware” option to install the intermediate firmware image provided by Cudy to OpenWRT (for example, ``cudy_tr3000-v1-sysupgrade.bin``)
+#. Login to the newly installed intermediate OpenWRT firmware and use "System > Flash Firmware" to install the appropriate AREDN® firmware image
+
+Check the `Cudy documentation <https://openwrt.org/toh/cudy/>`_ for your specific device if you have questions.
+
+There are currently two models of Cudy Travel Router that are supported: `Cudy TR1200 v1 <https://openwrt.org/toh/cudy/tr1200>`_ and `Cudy TR3000 v1 <https://openwrt.org/toh/cudy/tr3000>`_. Since these models use different chipsets, be sure to obtain the correct installation files for your specific model.
+
+- Download the Cudy intermediate firmware image for your device and save it to your computer. At the present time there is a download link toward the bottom of `this Cudy FAQ <https://www.cudy.com/blogs/faq/openwrt-software-download>`_  post. Be sure to download the correct intermediate firmware for your specific model. Unzip this file to extract the Cudy intermediate image as a ``sysupgrade.bin`` file.
+
+- Download the appropriate AREDN® firmware image for your specific device and save the AREDN® ``sysupgrade.bin`` file to your computer.
+
+- Power on the Cudy router and connect your computer to the LAN port of the Cudy using an Ethernet cable. Your computer should receive an IP address on the 192.168.10.x network from the Cudy DHCP server. Using a web browser, navigate to ``http://192.168.10.1``. Follow the initial step to create an admin password for the router, then click ``Exit`` to display the Cudy web interface.
+
+- Navigate to **General Settings** and click the *Firmware* button in the left navigation bar. In the *Local Update* section, click the ``Browse`` button and select the Cudy intermediate firmware image you previously downloaded from their download link. For example: ``cudy_tr3000-v1-squashfs-sysupgrade.bin``. Click the ``Proceed`` button to flash the Cudy intermediate firmware.
+
+- After the device reboots, it will be running the intermediate "unlocked" version of OpenWRT using the stock IP network (192.168.1.x). Your computer will need to reconnect to the device in order to receive a new IP address from the OpenWRT DHCP service. You may now navigate to ``http://192.168.1.1`` and login using the root username without a password.
+
+- In the OpenWRT web interface, navigate to **System > Backup/Flash Firmware**. In the *Flash Firmware Image* section click the ``Flash Image`` button. Browse to select the AREDN® firmware you previously downloaded for your specific device, then click the ``Upload`` button.
+
+.. warning:: In the "Flash image?" box, be sure you **deselect/uncheck** the box for "Keep settings and retain the current configuration." Existing Cudy/OpenWRT settings are not compatible with the AREDN® firmware.
+
+The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section.
+
 OpenWRT One first install process
 ---------------------------------
 
-Download the *Install Checklist* for **OpenWRT One** devices. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the `OpenWRT One documentation <https://openwrt.org/toh/openwrt/one>`_ if you have questions. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet. *OpenWRT One* devices have a default IP address of 192.168.1.1, so if for some reason you need to give your computer a static IP address you can use the 192.168.1.x/24 subnet.
+These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. Check the `OpenWRT One documentation <https://openwrt.org/toh/openwrt/one>`_ if you have questions. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet. *OpenWRT One* devices have a default IP address of 192.168.1.1, so if for some reason you need to give your computer a static IP address you can use the 192.168.1.x/24 subnet.
 
 .. important:: OpenWRT One devices have a boot mode switch. Be sure the boot mode is set to **NAND** (the normal operational setting) before following the example flashing procedure below.
 
@@ -359,12 +368,12 @@ There are `several methods <https://openwrt.org/docs/guide-user/installation/gen
 
 - **UNCHECK** the ``Keep settings`` checkbox, then click ``Continue`` to flash the AREDN® firmware
 
-The node will automatically reboot after installing AREDN®, and you may need to refresh your network interface to receive a new IP address before continuing.
+The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section.
 
 MorseMicro device install process
 ---------------------------------
 
-Download the *Install Checklist* for **MorseMicro** devices. Supported models are listed in the Babel `Supported Devices file <https://github.com/aredn/aredn/blob/babel/SUPPORTED_DEVICES.md>`_ and currently include HaLowLink 1, Heltec HT-HD01 & HT-HD7608, and Alfa Tube-AHM. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet.
+Supported models are listed in the Babel `Supported Devices file <https://github.com/aredn/aredn/blob/babel/SUPPORTED_DEVICES.md>`_ and currently include HaLowLink 1, Heltec HT-HD01 & HT-HD7608, and Alfa Tube-AHM. These devices allow you to use the manufacturer's pre-installed *OpenWRT* web interface to upload and apply new firmware images. This device provides DHCP services, so you should be able to connect your computer to its LAN port to automatically receive an IP address on the correct subnet.
 
 - Cable your computer’s Ethernet port to the radio's LAN port. Power on the *MorseMicro* device and verify that your computer received an IP address from the device’s DHCP service.
 
@@ -378,7 +387,7 @@ Download the *Install Checklist* for **MorseMicro** devices. Supported models ar
 
 - Click ``Flash image`` to upload the AREDN® firmware
 
-The node will automatically reboot after installing AREDN®, and you may need to refresh your network interface to receive a new IP address before continuing.
+The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section.
 
 After the firmware install
 --------------------------

@@ -308,7 +308,7 @@ After the GL-iNet device is first booted and configured, navigate to the **Upgra
 
 .. warning:: Be sure to **uncheck** the **Keep Settings** checkbox, since GL.iNet settings are incompatible with AREDN® firmware. Also, the AR300M16 devices may have a *boot_dev* switch, so be sure to read the `GL.iNet boot documentation <https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/#control-which-firmware-you-are-booting-into>`_ to select the correct boot mode.
 
-The node will automatically reboot with the new AREDN® firmware image. If for some reason your GL-iNet device gets into an unusable state, you should be able to recover using the process documented here:
+The node will automatically reboot with the new AREDN® firmware image. If for some reason you need to recover your device to factory firmware, you can search the GL-iNet website for a recovery procedure such as the process documented here:
 `GL-iNet debrick procedure <https://docs.gl-inet.com/en/3/tutorials/debrick/>`_
 
 Cudy first install process
@@ -321,7 +321,7 @@ Cudy Travel Routers use a customized version of OpenWRT software, but the “Upd
 
 Check the `Cudy documentation <https://openwrt.org/toh/cudy/>`_ for your specific device if you have questions.
 
-There are currently two models of Cudy Travel Router that are supported: `Cudy TR1200 v1 <https://openwrt.org/toh/cudy/tr1200>`_ and `Cudy TR3000 v1 <https://openwrt.org/toh/cudy/tr3000>`_. Since these models use different chipsets, be sure to obtain the correct installation files for your specific model.
+There are currently two models of Cudy Travel Router that are supported: `Cudy TR1200 v1 <https://openwrt.org/toh/cudy/tr1200>`_ and `Cudy TR3000 v1 <https://openwrt.org/toh/cudy/tr3000>`_. Since these models use different chipsets, be sure to obtain the correct installation files for your specific model. The example below uses the TR1200.
 
 - Download the Cudy intermediate firmware image for your device and save it to your computer. At the present time there is a download link toward the bottom of `this Cudy FAQ <https://www.cudy.com/blogs/faq/openwrt-software-download>`_  post. Be sure to download the correct intermediate firmware for your specific model. Unzip this file to extract the Cudy intermediate image as a ``sysupgrade.bin`` file.
 
@@ -337,7 +337,8 @@ There are currently two models of Cudy Travel Router that are supported: `Cudy T
 
 .. warning:: In the "Flash image?" box, be sure you **deselect/uncheck** the box for "Keep settings and retain the current configuration." Existing Cudy/OpenWRT settings are not compatible with the AREDN® firmware.
 
-The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section.
+The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section. If for some reason you need to recover your device to factory firmware, you can search the Cudy website for a recovery procedure such as the process documented here:
+`Cudy recovery procedure <https://www.cudy.com/en-us/blogs/faq/how-to-recovery-the-cudy-router-from-openwrt-firmware-to-cudy-official-firmware>`_
 
 OpenWRT One first install process
 ---------------------------------

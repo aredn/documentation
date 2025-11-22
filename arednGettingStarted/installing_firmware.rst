@@ -321,7 +321,7 @@ Cudy Travel Routers use a customized version of OpenWRT software, but the “Upd
 
 Check the `Cudy documentation <https://openwrt.org/toh/cudy/>`_ for your specific device if you have questions.
 
-There are currently two models of Cudy Travel Router that are supported: `Cudy TR1200 v1 <https://openwrt.org/toh/cudy/tr1200>`_ and `Cudy TR3000 v1 <https://openwrt.org/toh/cudy/tr3000>`_. Since these models use different chipsets, be sure to obtain the correct installation files for your specific model. The example below uses the TR1200.
+There are currently two models of Cudy Travel Router that are supported: `Cudy TR1200 v1 <https://openwrt.org/toh/cudy/tr1200>`_ and `Cudy TR3000 v1 <https://openwrt.org/toh/cudy/tr3000>`_. Since these models use different chipsets, be sure to obtain the correct installation files for your specific model. The example below uses the TR3000 image.
 
 - Download the Cudy intermediate firmware image for your device and save it to your computer. At the present time there is a download link toward the bottom of `this Cudy FAQ <https://www.cudy.com/blogs/faq/openwrt-software-download>`_  post. Be sure to download the correct intermediate firmware for your specific model. Unzip this file to extract the Cudy intermediate image as a ``sysupgrade.bin`` file.
 

@@ -118,7 +118,7 @@ Neighborhood Nodes
        :alt: Node status indicators
        :align: center
 
-    In the example above, the node name and statistics are displayed in red, and hovering over the node name displays status text indicating that the RF status is "bad". The following list shows how the standard theme text colors are mapped to link quality.
+    In the example above, the node name and statistics are displayed in red, and hovering over the node name displays status text indicating that the RF status is "bad". Status colors may vary based on the display theme you have chosen. The following list shows how the standard theme text colors are mapped to link quality.
 
     :green: excellent
     :dark green: good

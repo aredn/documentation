@@ -24,7 +24,7 @@ Before you consider deploying a Supernode, make sure you can adequately support 
 Coordinating Supernode Deployments
 ----------------------------------
 
-As more Supernodes are deployed linking more local networks, the overall performance of the *Cloud Mesh* will be impacted. Therefore, you should coordinate the deployment of Supernodes among the Supernode owners at the time when tunnel links are requested for the *Cloud Mesh*. Your goal should be to choose one or two Supernode peers for your Supernode so that you can establish primary and backup links to the worldwide mesh. Having more than three or four peer Supernode links will only add unnecessary traffic to the entire system without providing actual benefit.
+As more Supernodes are deployed linking more local networks, the overall performance of the *Cloud Mesh* will be impacted. Therefore, you should coordinate the deployment of Supernodes among the Supernode owners at the time when tunnel links are requested for the *Cloud Mesh*. Your goal should be to choose **one** or **two** Supernode peers for your Supernode so that you can establish primary and backup links to the worldwide mesh. Having more than three or four peer Supernode links will only add unnecessary traffic to the entire system without providing actual benefit.
 
 The number of messages a Supernode receives will scale linearly with the total number of nodes in all connected local networks. A Supernode receives a management message from every node in the network (all nodes in all local networks) every 5 seconds. With a typical message size of 100 bytes, a Supernode receives about 20 bytes per second per node. At the time of initial testing, there were 4,300 AREDN® nodes registered world-wide, so a Supernode for this network would receive ``84 KB/s`` or ``0.7 Mb/s``, which is a manageable bandwidth requirement.
 
@@ -37,7 +37,7 @@ You may have multiple Supernodes on your local network, but each Supernode shoul
 Setting up a Supernode
 ----------------------
 
-Typically a Supernode is configured on a dedicated **OpenWRT One** or **Virtual Machine**, although Supernodes can also run on *Mikrotik hAP ac2/ac3* hardware. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on a LAN port. The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a *Cloud Mesh* gateway.
+Typically a Supernode is configured on a dedicated **OpenWRT One** or **Virtual Machine**, although Supernodes can also run on *Cudy TR3000v1* and *Mikrotik hAP ac2/ac3* hardware. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on a LAN port. The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a *Cloud Mesh* gateway.
 
 .. image:: _images/supernode-connections.png
    :alt: Supernode connections

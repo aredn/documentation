@@ -138,6 +138,19 @@ Once you have your node configured the way you want it, you can save those confi
   # /usr/local/bin/backup
   Generated backup file: /tmp/node-backup.backup
 
+Backing up custom files
+  There may be cases when you have added your own custom files on a node, and you want those files to be included in the backup archive. You can accomplish this by adding your own backup file list and placing it into the ``/etc/arednsysupgrade.d/`` directory on your node. For example, you could navigate to the *arednsysupgrade.d* directory and create a file called ``MYCALL-wxservice-files.conf``. This will be a simple text file containing the full paths of the custom files you want to have backed up. For example:
+
+  ::
+
+    # cat /etc/arednsysupgrade.d/MYCALL-wxservice-files.conf
+    /usr/local/wx-alert-checker.sh
+    /usr/local/wx-forecast-checker.sh
+    /tmp/wx-alerts.txt
+    /www/wx-forecast.html
+
+  With this file in place, when you generate a node backup then those custom files will be included in the backup archive.
+
 Restore Configuration
 +++++++++++++++++++++
 

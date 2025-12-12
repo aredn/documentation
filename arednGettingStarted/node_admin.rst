@@ -149,7 +149,7 @@ Backing up custom files
     /tmp/wx-alerts.txt
     /www/wx-forecast.html
 
-  With this file in place, when you generate a node backup then those custom files will be included in the backup archive.
+  .. note:: The file paths listed in the ``MYCALL-wxservice-files.conf`` file will be included in the backup archive, and they will also be reinstalled at the time the node firmware is upgraded.
 
 Restore Configuration
 +++++++++++++++++++++

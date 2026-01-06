@@ -78,6 +78,7 @@ Additional information about the AREDN® project can be found at the links below
    arednHow-toGuides/supernodes
    arednHow-toGuides/local-software-source
    arednHow-toGuides/xlinks
+   arednHow-toGuides/app-launcher
    arednHow-toGuides/vm-install
    arednHow-toGuides/devtools
 

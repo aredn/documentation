@@ -33,7 +33,7 @@ Try to Sideload Firmware
 Tips for Downgrading Firmware
 -----------------------------
 
-Downgrading AREDN® firmware is typically accomplished using the same procedure as for uploading firmware to your node. You are simply uploading a previous version of the firmware rather than the latest version. If you are downgrading firmware on a node which previously used a different target architecture (``ar71xx`` vs. ``ath79``) or which previously ran a Babel-only firmware but you want to run OLSR+Babel firmware, you will need to do a fresh *First Install* using the appropriate firmware for that device.
+Downgrading AREDN® firmware is typically accomplished using the same procedure as for uploading firmware to your node. You are simply uploading a previous version of the firmware rather than the latest version. If you are downgrading firmware on a node which previously used a different target architecture (``ar71xx`` vs. ``ath79``), you will need to do a fresh *First Install* using the appropriate firmware for that device.
 
 Use the `AREDN® Firmware Selector <http://downloads.arednmesh.org/afs/www/>`_ to download the previous release's install files. For example, if your Ubiquiti Rocket M5 XW is currently running version ``3.23.4.0``, then download the files required for release ``3.22.12.0`` (as shown below).
 

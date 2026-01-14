@@ -100,7 +100,7 @@ Advantages
     :alt: 900 MHz Band
     :align: center
 
-  Recent advances in wireless technology have introduced devices which use the `Wifi HaLow (802.11ah) <https://en.wikipedia.org/wiki/IEEE_802.11ah>`_ protocol. This protocol provides relatively high data rates while minimizing media contention, extending coverage range, and using low power levels. These devices use the Babel routing protocol only, but they may provide coverage in challenging areas. The number of usable channels varies based on the selected channel width (1, 2, 4, or 8 MHz). For example, at 1 MHz width there are 23 channels, while at 8 MHz width there are only three channels.
+  Recent advances in wireless technology have introduced devices which use the `Wifi HaLow (802.11ah) <https://en.wikipedia.org/wiki/IEEE_802.11ah>`_ protocol. This protocol provides relatively high data rates while minimizing media contention, extending coverage range, and using low power levels. These devices may provide coverage in challenging areas. The number of usable channels varies based on the selected channel width (1, 2, 4, or 8 MHz). For example, at 1 MHz width there are 23 channels, while at 8 MHz width there are only three channels.
 
 Disadvantages
   The entire 33 cm band is shared between several FCC authorized radio services. The disadvantage of using this band for AREDN® networking is that the entire band is quite narrow (25 MHz), and in some areas the RF noise floor may be high which reduces the available :abbr:`SNR (Signal to Noise Ratio)`. Legacy equipment for the 33 cm band is no longer being manufactured and is becoming difficult to find. However, the newer HaLow devices provide significant advantages over the older 802.11agbn radios.

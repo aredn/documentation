@@ -39,8 +39,6 @@ Using the icons on the left side bar you can navigate to various displays.
 
 |icon4| navigates to the local mesh status page showing the nodes visible on the local mesh network, as well as any services provided by those nodes.
 
-|icon12| navigates to a view of the local mesh status page which shows only those nodes routed using the Babel protocol.
-
 |icon5| navigates to the *Cloud Mesh* view through the Supernode network (if your local network has a Supernode). For more information, see **Supernode Architecture** in the *Network Topologies* section of the **Network Design Guide**.
 
 |icon6| navigates to the world map on the AREDN® website. This is only displayed if your node has valid latitude and longitude values, since this feature is designed to display your node in the center of the map. If your node has no latitude and longitude values, then this icon will not appear on the nav bar.
@@ -85,11 +83,9 @@ Local Nodes
 
     Several link quality statistics can be displayed for different types of connections that are mentioned below. Before introducing those link types, here is a brief explanation of the link quality metrics that may be displayed if they are available.
 
-    - ``lq`` or Link Quality is your node's view of the percent of OLSR packets received from the neighbor node. These packets exchange mesh routing and advertised services information, and they include a sequence number that is used to identify missing packets. For example, if 7 of 10 packets sent by the neighbor were received, then the probability for a successful packet transmission from this neighbor is 7/10 = 0.7 = 70%. ``nlq`` or Neighbor Link Quality is the neighbor node's view of the percent of OLSR packets received from your node.
+    - ``rx`` or receive success rate shows the percent of packets received based on what was expected.
 
-    - ``rx`` or receive success rate shows the percent of Babel packets received based on what was expected.
-
-    - ``rtt`` is the Babel round trip time or "two-way delay" which shows the link latency between two nodes.
+    - ``rtt`` is the round trip time or "two-way delay" which shows the link latency between two nodes.
 
     - ``snr`` or Signal-to-Noise Ratio is expressed in decibels (dB). This metric only applies to RF links and represents the level of signal which is detected above the noise floor. *SNR* is shown for both sides of a radio link (:abbr:`snr (signal to noise ratio)` and :abbr:`n snr (neighbor signal to noise ratio)`).
 
@@ -147,8 +143,6 @@ Node Icons
 
   |icon10| indicates a Cross-link
 
-  |icon11| indicates the node is actively routed using the new Babel protocol (this is the only icon which can also appear on *Local Nodes*)
-
 
 Right Section
 -------------
@@ -163,7 +157,7 @@ Radio section
   If a radio is configured as a ``LAN Hotspot``, you will see the channel number and the SSID that wifi clients can use to connect to your node's hotspot. If a radio is configured as a ``WAN Client`` you will see the SSID of the wifi AP to which your node connected, as well as the status of the connection (no connection, connected but no internet, connected with internet). Your node's antenna information is listed next, including the type of antenna, the azimuth, height above ground level, and tilt angle / elevation (if directional).
 
 Mesh section
-  Next there are summary statistics showing how many nodes, devices, and services are currently visible from this node. The display will show these metrics for both the OLSR and Babel protocols (if available).
+  Next there are summary statistics showing how many nodes, devices, and services are currently visible from this node.
 
 LAN DHCP section
   By default each node runs a `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ server which is capable of automatically providing IP addresses for any LAN-connected devices. This section shows the :abbr:`DHCP (Dynamic Host Configuration Protocol)` server status, the IP address/netmask of your node functioning as the gateway for its LAN-connected devices, and the IP address range served by your node. It also shows the number of active leases and IP addresses reserved for specific devices on its :abbr:`LAN (Local Area Network)`. In addition, counts are displayed for the number of DHCP tags and options that are defined on your node.
@@ -203,9 +197,3 @@ Tunnels section
 
 .. |icon10| image:: ../_icons/plane.png
   :alt: Cross-link
-
-.. |icon11| image:: ../_icons/babel.png
-  :alt: Babel route icon
-
-.. |icon12| image:: ../_icons/babelmesh.png
-  :alt: Babel mesh icon

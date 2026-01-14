@@ -4,12 +4,15 @@ The Babel Routing Protocol
 
 *Contributor: Tim Wilkerson KN6PLV*
 
-The AREDN® team introduced a new routing protocol with the ultimate goal of replacing OLSR. OLSR has many faults which AREDN® has lived with for a long time, so for the last couple of years we’ve been looking at alternatives and making incremental changes to the codebase to allow us to introduce something better. We have now added `Babel <https://www.irif.fr/~jch/software/babel/>`_ to AREDN®.
+The AREDN® team implemented a new routing protocol called `Babel <https://www.irif.fr/~jch/software/babel/>`_ which replaced the original and obsolete protocol called OLSR. Babel has a number of qualities which make it good for AREDN®.
 
-Babel has a number of qualities which make it good for AREDN®. First, it’s a loop free protocol so, regardless of how the network is changing, routing loops will never form in the network. Second, it’s primarily a reactive protocol which sends changes to neighbors when needed rather than broadcasting its state continually. Third, the protocol understands the difference between wired, wireless, and tunneled links – the three link types AREDN® utilizes. Fourth, it’s a layer-3 routing protocol, which integrates easily with how AREDN® already operates. Fifth, it’s highly configurable which will allow an optimal setup for our use case. Finally, it’s simple.
+1. It’s a loop free protocol so, regardless of how the network is changing, routing loops will never form in the network.
+2. It’s primarily a reactive protocol which sends changes to neighbors when needed rather than broadcasting its state continually.
+3. The protocol understands the difference between wired, wireless, and tunneled links – the three link types AREDN® utilizes.
+4. It’s a layer-3 routing protocol, which integrates easily with how AREDN® already operates.
+5. It’s highly configurable which will allow an optimal setup for our use case.
+6. Finally, it’s simple.
 
-We considered a number of options, and another contender was *BATMAN Advanced*. Unfortunately it is not a good fit for AREDN® as it primarily focuses on level-2 wireless networking. AREDN® needs a protocol which can do more. We evaluated how we could use BATMAN and it wasn’t simple, efficient, or pretty. If you’re interested in more comparisons between Babel and other options, there are many good presentations on YouTube. `This <https://www.youtube.com/watch?v=1zMDLVln3XM>`_ is a great primer on Babel itself.
+If you’re interested in more comparisons between Babel and other options, there are many good presentations on YouTube. `This <https://www.youtube.com/watch?v=1zMDLVln3XM>`_ is a great primer on Babel itself.
 
-Babel was initially deployed alongside OLSR with the two will operating in parallel. If there is a Babel path between two nodes in the network, then Babel routes will be used to send traffic. If not, then OLSR routes will be used. This allows us to deploy Babel and examine its performance in our networks without disturbing nodes which are not running Babel. Be aware that older radios with limited memory – the ones using the *tiny* firmware images – will not be able to support both protocols and should be replaced rather than upgraded.
-
-Evaluating success will depend on a few things, and the more feedback from the community the better. Our goals are to provide a more stable network, better routing decisions, and lower network overhead. Nodes running OLSR+Babel firmware will be able to link with both types of nodes, however they do not serve as a gateway between the two routing protocols. Nodes running OLSR-only firmware will still be able to link with other OLSR-capable nodes in their network, but they will be unable to route to nodes running Babel-only firmware.
+Babel was initially deployed alongside OLSR with the two operating in parallel. This allowed us to examine Babel's performance in our networks without disturbing nodes which were not running Babel. The results indicated that Babel outperformed OLSR in several areas, providing a more stable network, better routing decisions, and lower network overhead.

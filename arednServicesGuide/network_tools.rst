@@ -20,7 +20,7 @@ Examples of AREDN® metrics include:
 - Memory, storage, CPU, networking, and per-process metrics
 - RF metrics (signal, noise, MSC rate, TX/RX packets/rates)
 - LQM tracker metrics
-- OLSR and Babel link info
+- Link info
 
 In order for Prometheus to pull metrics from a node it will use the following target URL: ``http://<NODE>.local.mesh/cgi-bin/metrics``, and metrics are returned by the node as standard *text/plain* content. Minimal node resources are required to support Prometheus data collection since the node runs no metrics service and uses minimal resources when its URL is queried.
 

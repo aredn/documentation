@@ -37,7 +37,7 @@ You may have multiple Supernodes on your local network, but each Supernode shoul
 Setting up a Supernode
 ----------------------
 
-Typically a Supernode is configured on a dedicated **OpenWRT One** or **Virtual Machine**, although Supernodes can also run on *Cudy TR3000v1* and *Mikrotik hAP ac2/ac3* hardware. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on a LAN port. The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a *Cloud Mesh* gateway.
+Typically a Supernode is configured on a dedicated **Cudy TR3000**, **OpenWRT One**, or **Virtual Machine**, although Supernodes can also run on *Mikrotik hAP ac2/ac3* hardware. Its sole task is to serve as a node on the Supernode network. The local network is linked to the Supernode using a :abbr:`DtD (Device to Device)` link on a LAN port. The Supernode is dedicated to this task, so it should not be used for anything beyond its role as a *Cloud Mesh* gateway.
 
 .. image:: _images/supernode-connections.png
    :alt: Supernode connections

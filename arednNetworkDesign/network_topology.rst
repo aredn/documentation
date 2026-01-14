@@ -72,7 +72,7 @@ A more efficient solution is to use the Supernode network to provide access acro
 Example Usage
   If you need access to a service that is running on a remote network, click the Cloud mesh icon |icon1| to view services available across the Supernode network. You can use the search box at the top of the page to limit the display to a specific search string (such as a callsign or a service name). Once you have located the remote service you can click its link to open that service or node. This allows you to have full interaction with the remote service without requiring a dedicated network link between your mesh and the remote network.
 
-A Supernode is a specialized node whose sole purpose is to link with other Supernodes and to shield each local network from the aggregate routing traffic. **OpenWRT One** hardware is recommended for Supernodes, along with an Internet connection that provides robust bandwidth. It is also possible to implement a Supernode on a *Mikrotik hAP ac2/ac3* or a Virtual Machine running AREDN® firmware. For more information, refer to *Configuring a Supernode* in the **How-To** section of the documentation.
+A Supernode is a specialized node whose sole purpose is to link with other Supernodes and to shield each local network from the aggregate routing traffic. **Cudy TR3000** or **OpenWRT One** hardware is recommended for Supernodes, along with an Internet connection that provides robust bandwidth. It is also possible to implement a Supernode on a *Mikrotik hAP ac2/ac3* or a Virtual Machine running AREDN® firmware. For more information, refer to *Configuring a Supernode* in the **How-To** section of the documentation.
 
 .. |icon1| image:: ../_icons/cloudmesh.png
   :alt: Cloud mesh view

@@ -19,7 +19,7 @@ MeshChat *Action Scripts* also provide for functional extensions, such as sendin
 
 Although MeshChat is a commonly deployed service, it is a third party package which is not available in the AREDN® repositories. You can find additional information by visiting this link: `MeshChat at Trevor's Bench <http://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
 
-As originally designed, MeshChat was written in the Perl programming language. After the retirement of Perl on AREDN® nodes, an alternative was created using the Lua programming language. If you are running the original Perl version on an external computer, you can install the Lua API on your node to provide the computer with the list of MeshChat nodes. This package is available here: `Lua version of MeshChat <https://github.com/kn6plv/meshchat>`_ Since this package depends on Lua, it will need to be run on a node that has Lua installed. OpenWRT is moving away from Lua in favor of ucode, and since there is not currently a ucode version of MeshChat, the Lua dependencies may need to be installed manually.
+As originally designed, MeshChat was written in the Perl programming language. After the retirement of Perl on AREDN® nodes, an alternative was created using the Lua programming language. If you are running the original Perl version on an external computer, you can install the Lua API on your node to provide the computer with the list of MeshChat nodes. This package is available here: `Lua version of MeshChat <https://github.com/kn6plv/meshchat>`_ 
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface

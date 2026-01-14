@@ -528,7 +528,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 
 .. admonition:: Service Advertisement Process
 
-  OLSR (Optimized Link State Routing) and Babel propagate service entries to other nodes across the network. Once every hour your node will verify that their own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions after three attempts:
+  The routing protocol will propagate service entries to other nodes across the network. Once every hour your node will verify that their own service entries are valid. Your node will **not** propagate services across the network if it finds any of these conditions after three attempts:
 
   1. The LAN host is not pingable from your node
   2. There is no service listening on the specified port
@@ -583,13 +583,13 @@ The node name of each Local Node is a clickable link which will navigate to that
 The following details may be displayed if available for this node's connection to your node, from top to bottom & left to right:
 
 - :abbr:`type (DTD)`, mac address, and ip address
-- model, firmware version, and link address (IPv6 for Babel)
+- model, firmware version, and link address (Babel uses IPv6)
 - latitude, longitude, and distance
 - rx success rate, rx cost, tx cost
 - ping time, ping success rate, and average packets per second
 - neighbor ping time, ping success rate, and errors
 - link state, number of Babel routes, Babel metric
-- last seen, number of OLSR routes or link uptime
+- last seen, link uptime
 
 Neighborhood Nodes
 ------------------
@@ -615,7 +615,7 @@ The following details may be displayed if available for this node's connection t
 - local :abbr:`snr (signal to noise ratio)`, neighbor snr, and transmit failure rate
 - physical receive bitrate, physical transmit bitrate, and retransmissions
 - link state, active routes, Babel metric
-- last seen, number of OLSR routes or link uptime
+- last seen, link uptime
 
 .. image:: _images/admin-neighbornode-graph.png
  :alt: Admin Neighbor Node Graph
@@ -759,7 +759,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Mesh section
 ------------
 
-This section displays summary statistics that include the number of nodes, devices, and services currently visible from this node. The display will show these metrics for both the OLSR and Babel protocols (if available). When you hover over the *Mesh* section, a gray background appears which indicates that this section is selected. If you click in the section, you will be taken directly to the **Mesh Status** display.
+This section displays summary statistics that include the number of nodes, devices, and services currently visible from this node. When you hover over the *Mesh* section, a gray background appears which indicates that this section is selected. If you click in the section, you will be taken directly to the **Mesh Status** display.
 
 LAN DHCP settings
 -----------------
@@ -780,9 +780,9 @@ Address Reservations
 
 Devices which are added to the *Address Reservations* list will display their hostname, IP address, and MAC address. The hostname of every device connected to the mesh at large should be unique. It is best practice to prefix your Amateur Radio callsign to the hostname of each of your devices in order to give it a unique name on the network.
 
-You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable via your node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent OLSR or Babel from propagating that information across the mesh.
+You can create an *Address Reservation* by clicking the [+] icon to the right of the **Address Reservation** title. Click in the first field to enter the new device's hostname. In the second field select an unused IP address from the dropdown list. In the third field type the MAC address of the new device. If you have a device which needs to be reachable via your node, but which should not be accessed across the mesh network, click the *Do Not Propagate* checkbox to prevent the routing protocol from propagating that information across the mesh.
 
-There may be some devices on which you are not able to set the hostname, but once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated across the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent OLSR or Babel from propagating the new device's information across the mesh.
+There may be some devices on which you are not able to set the hostname, but once you add that device to your *Address Reservations* you can click in the *hostname* field to edit the hostname that will be propagated across the mesh. You may also want to assign a specific IP Address to the device by selecting it from the drop-down list. You can click the *Do Not Propagate* checkbox to prevent the routing protocol from propagating the new device's information across the mesh.
 
 In addition to adding an address reservation manually, you can also click the [+] icon at the right of any of the devices which have active DHCP leases as described below. You will then see that host appear in the *Address Reservations* list.
 
@@ -833,7 +833,7 @@ Ports (if available)
   If you want to change a port's configuration, simply check or uncheck the settings desired on each port.
 
 Xlinks
-  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® links. To add an xlink click the [+] icon, enter an unused VLAN number for the link. Enter the IP address of the near-side device, the IP address of the far-side device, the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask, and a weighting factor which will be used by `OLSR <https://en.wikipedia.org/wiki/Optimized_Link_State_Routing_Protocol>`_ or Babel to determine the best route for AREDN® traffic.
+  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® links. To add an xlink click the [+] icon, enter an unused VLAN number for the link. Enter the IP address of the near-side device, the IP address of the far-side device, the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask, and a weighting factor which will be used by the routing protocol to determine the best route for AREDN® traffic.
 
   In the example above on a multiport device, you also enter the port to which the near-side device is connected on your node. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
 
@@ -857,11 +857,11 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 
 |
 
-If you are using *Mikrotik hAP ac*, *GL.iNET*, or *OpenWRT One* devices, those multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure VLAN settings.
+Multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure VLAN settings.
 
 **Tunnels** allows you to configure connections for tunnel roles (Client & Server). The Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection that is both efficient and secure. It only encrypts the traffic as it traverses the public Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
 
-.. attention:: AREDN® is migrating to a new routing protocol called Babel. Unfortunately the older legacy *vtun* protocol is not compatible with Babel, so legacy tunnels should be migrated to Wireguard as soon as possible.
+.. attention:: Any older legacy *vtun* tunnels should be migrated to Wireguard as soon as possible.
 
 Networking for Tunnel Servers
   In order for remote tunnel clients to reach your tunnel server node, your Internet-connected firewall must allow that traffic to enter your network and it must also forward that traffic to your tunnel server node. In order for your router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.

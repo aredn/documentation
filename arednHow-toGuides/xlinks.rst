@@ -15,19 +15,17 @@ Xlinks
 Configure the AREDN® nodes at both ends
 ---------------------------------------
 
-You can use either a *Mikrotik hAP ac2* or *ac3* as the AREDN® device on each end of the xlink. Navigate to the **Ethernet Ports & Xlinks** page of the node on one side of the link. To add an xlink click the *plus* icon, enter an unused VLAN number for the link, an IP address for the near-side device, an IP address for the far-side device, a weighting factor, the available port to which the near-side device is connected on your node, and the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask. The *Weight* will be used by the routing protocol to determine the best route for AREDN® traffic.
+In this example a *Mikrotik hAP ac2* was used as the AREDN® device on each end of the xlink. Navigate to the **Ethernet Ports & Xlinks** page of the node on one side of the link. To add an xlink click the *plus* icon, enter an unused VLAN number for the link, the IP address for the link, the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask, a weighting factor, the port to which the near-side device is connected on your node, and . The *cost* will be used by the routing protocol to determine the best route for AREDN® traffic. You may also add a note to describe the link or provide contact information.
 
 .. image:: ../arednGettingStarted/_images/admin-ports-xlinks.png
   :alt: Ethernet Ports & Xlinks
   :align: center
 
-In this example VLAN ``20`` is not in use anywhere else on the network. We assigned an *IP Address* of ``172.16.1.1`` for the near-side node, and we assigned ``172.16.1.2`` as the *Peer Address* for the node on the other side of the link. The xlink knows nothing about the details or configuration of the intermediate transport devices. The *Weight* is set to ``1`` which is the same weight as would be used by a tunnel connection, but this can be increased if you want the cross-link to be chosen at a lower priority for routing traffic on the mesh. *Port* ``lan3`` was chosen because it is an open port on this node. After entering these values, click ``Done`` and ``Commit`` your changes. Now you can cable your near-side transport device to port 3 on your AREDN® node.
+In this example VLAN ``20`` is not in use anywhere else on the network. We assigned an *IP Address* of ``172.16.1.1`` with a netmask of /31. The xlink knows nothing about the details or configuration of the intermediate transport devices. The *cost* is set to ``150`` which is the same weight as would be used by a tunnel connection, but this can be increased if you want the cross-link to be chosen at a lower priority for routing traffic on the mesh. ``port3`` was chosen because it is an open port on this node. After entering these values, click ``Done`` and ``Commit`` your changes. Now you can cable your near-side transport device to port 3 on your AREDN® node.
 
 .. image:: _images/xlink.png
   :alt: xlink diagram
   :align: center
-
-Next, open the **Ethernet Ports & Xlinks** page on the node for the other side of the link. Set the *IP Address* for that node to ``172.16.1.2`` and the *Peer Address* to ``172.16.1.1``. The *Weight* is set to ``1`` and the *Port* is set to ``lan4`` because that is an open port on this node. After entering these values, click ``Done`` and ``Commit`` your changes. Now you can cable your far-side transport device to port 4 on that AREDN® node.
 
 Configure the intermediate transport link
 ----------------------------------------------

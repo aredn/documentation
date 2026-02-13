@@ -131,7 +131,7 @@ If you need to remotely upgrade the firmware on a node which has a marginal conn
 Backup Configuration
 ++++++++++++++++++++
 
-Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware. It is also possible to generate a node backup file from the command line of your node:
+Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button on the *Firmware* menu. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware. It is also possible to generate a node backup file from the command line of your node:
 
 ::
 

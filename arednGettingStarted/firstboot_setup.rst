@@ -18,6 +18,15 @@ Password
 
 After providing the new node name and password, click the *Save & Reboot* button. Once your node reboots it will have an IP address in the 10.x.x.x range, so you should set your computer to use `DHCP <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`_ to obtain a new IP address from your node. You may need to disconnect/reconnect or disable/enable your computer's Ethernet interface so that it connects using the new IP address.
 
+Advanced Options
+----------------
+
+The firstboot display also has **Advanced Options** which you can view by clicking the *Advanced Options* label. These are helpful when you have an existing node that has been reset to *firstboot* state, as described under the next heading in this document.
+
+- If you previously saved your node's settings in a *backup* file, you can apply those saved settings by choosing the *backup* file and clicking the **Restore** button.
+
+- If you want to update your node to a specific version of firmware, you can choose that firmware file and click the **Update** button.
+
 Resetting a node to *firstboot* state
 -------------------------------------
 

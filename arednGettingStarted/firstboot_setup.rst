@@ -21,11 +21,11 @@ After providing the new node name and password, click the *Save & Reboot* button
 Advanced Options
 ----------------
 
-The firstboot display also has **Advanced Options** which you can view by clicking the *Advanced Options* label. These are helpful when you have an existing node that has been reset to *firstboot* state, as described under the next heading in this document.
-
-- If you previously saved your node's settings in a *backup* file, you can apply those saved settings by choosing the *backup* file and clicking the **Restore** button.
+The firstboot display also has an **Advanced** section which you can view by clicking the *Advanced* label. These are helpful when you have an existing node that has been reset to *firstboot* state, as described under the next heading in this document.
 
 - If you want to update your node to a specific version of firmware, you can choose that firmware file and click the **Update** button.
+
+- If you previously saved your node's settings in a *backup* file, you can apply those saved settings by choosing the *backup* file and clicking the **Restore** button.
 
 Resetting a node to *firstboot* state
 -------------------------------------

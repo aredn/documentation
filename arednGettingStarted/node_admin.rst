@@ -390,7 +390,7 @@ iPerf3 Server
   This switch enables the built-in `iperf3 <https://software.es.net/iperf/>`_ tools on your node. This makes it easy to perform throughput tests between nodes in the network. The client and server are only invoked on demand, so there is no performance impact on the node except during testing. The default value is ``enabled``. If you do not want your node to participate in any remote iperf3 tests then you can ``disable`` its ability to respond to those queries.
 
 Remote Logging
-  The limited amount of memory for local node logs means that older information will roll off, and all log history is lost when your node is rebooted. By entering the URI for a remote log server, you can send your node's log info to a server using the syslog protocol. The format for this option is ``udp://ip-address:port`` or ``tcp://ip-adress:port``. Leave this field blank if no remote logging is desired.
+  The limited amount of memory for local node logs means that older information will roll off, and all log history is lost when your node is rebooted. By entering the URI for a remote log server, you can send your node's log info to a server using the syslog protocol. The format for this option is ``udp://ip-address:port`` or ``tcp://ip-address:port``. Leave this field blank if no remote logging is desired.
 
 WAN ssh
   This switch enables SSH access to your node on its WAN interface. Disabling this option will not prevent SSH access to your node from the Mesh and LAN interfaces.

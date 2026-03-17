@@ -18,6 +18,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :AM: Amplitude Modulation
 :AP: Access Point
 :API: Application Programming Interface
+:APK: A compressed archive used as the new OpenWRT Package format
 :APRS: Automatic Packet Reporting System
 :AREDN: Amateur Radio Emergency Data Network
 :ARES: Amateur Radio Emergency Service
@@ -89,7 +90,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :IIC: A synchronous master/slave single-ended, serial communications bus
 :IMAP: Internet Mail Access Protocol
 :IMG: Image file format
-:IPK: A compressed archive format used by the OpenWRT Package Management System (opkg) on AREDN® nodes
+:IPK: A compressed archive used as the original OpenWRT package format
 :IP: Internet Protocol, Internet Protocol address
 :IRC: Internet Relay Chat
 :IRCD: Internet Relay Chat Daemon

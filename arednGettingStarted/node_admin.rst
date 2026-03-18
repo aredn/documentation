@@ -98,7 +98,7 @@ Additional options are displayed when you click **Advanced Options**.
 
 By default your node can use a local **GPS Time** source if one is available. To disable this behavior, slide the switch to the *off* position.
 
-If you want your node to function as a GPS time *server* you will need to install the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package. This third party package allows a node with adequate processing power and memory to have a USB GPS dongle connected so that it can provide GPS time for itself and other local DtD linked devices. Further information is available on the `WhereAndWhen <https://github.com/kn6plv/WhereAndWhen>`_ package website.
+If you want your node to function as a GPS time *server* you will need to install the ``whenandwhere`` package. Select and install this package from the *Packages > Download Package* list on your node. This meta-package installs the required dependencies for a USB GPS dongle so your node can provide GPS time for itself and other local DtD linked devices. 
 
 If you plan to use Wireguard tunneling, make sure that a GPS or NTP time source is reachable when the node boots so that the key exchange between the client and server will happen correctly. Without proper time synchronization, Wireguard will not establish tunnels.
 

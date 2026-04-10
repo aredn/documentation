@@ -98,7 +98,7 @@ Additional options are displayed when you click **Advanced Options**.
 
 By default your node can use a local **GPS Time** source if one is available. To disable this behavior, slide the switch to the *off* position.
 
-If you want your node to function as a GPS time *server* you will need to install the ``whenandwhere`` package. Select and install this package from the *Packages > Download Package* list on your node. This meta-package installs the required dependencies for a USB GPS dongle so your node can provide GPS time for itself and other local DtD linked devices. 
+If you want your node to function as a GPS time *server* you will need to install the ``whenandwhere`` package. Select and install this package from the *Packages > Download Package* list on your node. This meta-package installs the required dependencies for a USB GPS dongle so your node can provide GPS time for itself and other local DtD linked devices.
 
 If you plan to use Wireguard tunneling, make sure that a GPS or NTP time source is reachable when the node boots so that the key exchange between the client and server will happen correctly. Without proper time synchronization, Wireguard will not establish tunnels.
 
@@ -304,7 +304,7 @@ Enabling this switch will allow your node to route traffic from its Mesh interfa
 LAN to Mesh WAN
 ^^^^^^^^^^^^^^^
 
-There may be times when your node has its own LAN devices, but you node does not provide WAN Internet access for them. Enabling this option will allow your node's LAN devices to find and use an Internet connection that might be available from another node across the mesh network. This option is ``disabled`` by default.
+There may be times when your node has its own LAN devices, but your node does not provide WAN Internet access for them. Enabling this option will allow your node's LAN devices to find and use an Internet connection that might be available from another node across the mesh network. This option is ``disabled`` by default.
 
 LAN to WAN
 ^^^^^^^^^^
@@ -335,7 +335,7 @@ There may be cases when you want to create additional firewall rules to allow sp
   # This file is interpreted as shell script.
   # Put your custom nft rules here, they will
   # be executed with each firewall (re-)start.
-  nft insert rule ip fw4 input_dtdlink udp dport 123 accept
+  nft insert rule inet fw4 input_dtdlink udp dport 123 accept
 
 After creating custom rules, you will need to reboot your node (or restart the node's firewall) for the rules to become active. The contents of ``firewall.user`` will be included automatically in the backup file when you perform a **Backup** of your node's configuration.
 

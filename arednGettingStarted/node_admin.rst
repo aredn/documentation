@@ -405,11 +405,11 @@ WAN web
   This switch enables http/https access to your node on its WAN interface. Disabling this option will not prevent http/https access to your node from the Mesh and LAN interfaces.
 
 Hardware Watchdog
-  Hardware watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, it will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include olsrd, dnsmasq, telnetd, dropbear, uhttpd, and vtund. Hardware watchdog events are logged in the standard log on the node. Because the watchdog operates at the hardware level, the node will still reboot itself even if the kernel crashes.
+  Hardware watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, it will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include dnsmasq, telnetd, dropbear, uhttpd, and babeld. Hardware watchdog events are logged in the standard log on the node. Because the watchdog operates at the hardware level, the node will still reboot itself even if the kernel crashes.
 
   .. attention:: Be aware that you must disable Hardware Watchdog and reboot your node before you can upgrade the firmware, since Hardware Watchdog may interfere with the normal upgrade process.
 
-  If Hardware Watchdog is enabled, the following fields will also be displayed.
+  If Hardware Watchdog is ``enabled`` the following fields will also be displayed, otherwise they will be hidden.
 
   Watchdog IP Addresses
     You may include one or more IP addresses, at least one of which should always be pingable. Watchdog will be reboot the node if none of the IP addresses is reachable across the network. Enter IP addresses as a whitespace-delimited list. It is strongly recommended that you keep this list to an absolute minimum. Too many addresses can take a long time to check, especially if several are unavailable. This can result in reboots if the testing is not performed before the watchdog timer expires. Ideally use only one address.
@@ -421,7 +421,7 @@ ID Beacon
   This switch is ``enabled`` by default, which tells your node to send a beacon that contains your Amateur Radio callsign (as well as the node's location) every few minutes. Periodic Amateur Radio station identification is a requirement in many regions in order to comply with local regulations.
 
 Wireless Watchdog
-  This background monitor will restart the mesh radio if it becomes unresponsive. If Wireless Watchdog is enabled, the following fields will also be displayed.
+  This background monitor will restart the mesh radio if it becomes unresponsive. If Wireless Watchdog is ``enabled`` the following field will also be displayed, otherwise it will be hidden.
 
   Daily Wireless Watchdog Time
     This field allows you to set a specific time of the day (between 00:00 and 23:59) to restart the radio automatically.

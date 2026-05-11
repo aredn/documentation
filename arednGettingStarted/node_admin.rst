@@ -429,17 +429,20 @@ Wireless Watchdog
 PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
 
-|
+AREDN® Alert Messages
++++++++++++++++++++++
+
+AREDN® Alert Messages are displayed on the status page of nodes. The AREDN® development team can post messages which Internet-connected nodes download and display, or you can implement your own local message server from which your nodes can pull their messages.
 
 .. image:: _images/admin-internal-svc-3.png
   :alt: Admin Internal Services continued
   :align: center
 
 Message Updates
-  AREDN® Alert Messages can be displayed on the status page of nodes. The AREDN® development team may post messages which Internet-connected nodes download and display at the interval specified here. Enter a number in this field which represents the number of hours you want your node to wait before pulling its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.
+  Enter a number in this field which represents the number of hours you want your node to wait before pulling its messages. Decimal fractions of an hour are allowed (for example, ``0.5`` for every 30 minutes). The default value is ``1`` hour between updates.
 
 Local Message URL
-  You may also use a local message source to host messages, and this field allows you to enter the URL for your local message source. If you configure a local message server, then even nodes without Internet access can receive alert messages pertinent to your local situation. The message source consists of a mesh-connected web server which allows nodes to query the URL you enter here. You can consult your local mesh web server administrator to obtain the correct URL for the local message repository.  Enter the URL without a trailing backslash.
+  This field allows you to enter the URL for a local message source. If you configure a local message server, then even nodes without Internet access can receive alert messages via RF or other local links. The message source consists of a mesh-connected web server which allows nodes to query the URL you enter here. You can consult your local mesh web server administrator to obtain the correct URL for the local message repository.  Enter the URL without a trailing backslash.
 
 Message Groups
   In addition to local messages addressed by name to specific nodes, it is possible to subscribe to group messages. Multiple group names can be added to this field as a comma delimited list. Group messages are retrieved from the web server specified in the *Local Message URL* field. The following are example grouping ideas:

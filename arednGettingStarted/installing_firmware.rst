@@ -319,9 +319,7 @@ Cudy Travel Routers use a customized version of OpenWRT software, but the “Upd
 #. Login to the stock Cudy web interface and use the “Upgrade Firmware” option to install the intermediate firmware image provided by Cudy to OpenWRT (for example, ``cudy_tr3000-v1-sysupgrade.bin``)
 #. Login to the newly installed intermediate OpenWRT firmware and use "System > Flash Firmware" to install the appropriate AREDN® firmware image
 
-Check the `Cudy documentation <https://openwrt.org/toh/cudy/>`_ for your specific device if you have questions.
-
-There are currently two models of Cudy Travel Router that are supported: `Cudy TR1200 v1 <https://openwrt.org/toh/cudy/tr1200>`_ and `Cudy TR3000 v1 <https://openwrt.org/toh/cudy/tr3000>`_. Since these models use different chipsets, be sure to obtain the correct installation files for your specific model. The example below uses the TR3000 image.
+Check the `Cudy documentation <https://openwrt.org/toh/cudy/>`_ for your specific device if you have questions. Several models of Cudy Travel Router are supported (for example: `Cudy TR1200 v1 <https://openwrt.org/toh/cudy/tr1200>`_ and `Cudy TR3000 v1 <https://openwrt.org/toh/cudy/tr3000>`_). Since these models use different chipsets, be sure to obtain the correct installation files for your specific model. The example below uses the TR3000 image.
 
 - Download the Cudy intermediate firmware image for your device and save it to your computer. At the present time there is a download link toward the bottom of `this Cudy FAQ <https://www.cudy.com/blogs/faq/openwrt-software-download>`_  post. Be sure to download the correct intermediate firmware for your specific model. Unzip this file to extract the Cudy intermediate image as a ``sysupgrade.bin`` file.
 
@@ -382,8 +380,19 @@ Supported models currently include HaLowLink 1, Heltec HT-HD01 & HT-HD7608, and 
 
 The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section.
 
-After the firmware install
---------------------------
+Zyxel device install process
+-----------------------------
+
+The Zyxel NWA55AXE allows you to use the manufacturer's native web interface to apply new firmware images. Follow the guidelines in the Zyxel User Guide for connecting the device to the supplied PoE to power it on. Use an Ethernet cable to connect the Zyxel LAN port to your Ethernet switch where your computer is also connected (see diagram at the top of this section).
+
+Check the Zyxel User Guide for the steps for accessing the web configurator. By default the Zyxel device has an IP address of 192.168.1.2, so give your computer an IP address in the 192.168.1.x subnet (for example, 192.168.1.10). Open your web browser and navigate to ``http://192.168.1.2`` where you will be prompted to enter a username and password. By default the Zyxel ``admin`` account uses the password that is printed on the label attached to the device. Select your preferred language and choose the **Standalone** management mode.
+
+In the navigation bar on the left, click the *Configuration* icon and navigate to the *Maintenance* menu. Under *File Manager* select *Firmware Package*. To upload the AREDN® firmware, browse to the appropriate *FACTORY* image you previously downloaded from the AREDN® Firmware Selector, then click the *Upload* button. The node will automatically reboot with an IP address of 192.168.1.1 so that you can configure the AREDN® firmware.
+
+The `OpenWRT information page <https://openwrt.org/toh/zyxel/nwa55axe>`_ for this device may provide additional help for more in-depth troubleshooting.
+
+After the AREDN® firmware install
+---------------------------------
 
 After the node reboots, it should have a default IP address of 192.168.1.1. Make sure your computer has an IP address on the 192.168.1.x network. You should be able to ping the node at 192.168.1.1. Don't proceed until you can ping the node. You may need to disconnect and reconnect your computer's network cable to ensure that it has a connection.
 

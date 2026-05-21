@@ -41,6 +41,9 @@ Mikrotik
 GL.iNET, MorseMicro, Cudy, and OpenWRT One
   These devices require only the *SYSUPGRADE* image for both first-time installs and firmware upgrades.
 
+ZyXel
+  ZyXel devices always take the *FACTORY* image.
+
 Click the appropriate button to download the image file to your local computer. Make a note of the download location on your computer, since you will use the downloaded image(s) to install the AREDN® firmware on your device.
 
 The latest AREDN® firmware contains features which are inherited from the newest OpenWRT upstream releases. The `OpenWRT Release Notes <https://openwrt.org/>`_ describe these new features.

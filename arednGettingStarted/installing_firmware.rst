@@ -335,8 +335,9 @@ Check the `Cudy documentation <https://openwrt.org/toh/cudy/>`_ for your specifi
 
 .. warning:: In the "Flash image?" box, be sure you **deselect/uncheck** the box for "Keep settings and retain the current configuration." Existing Cudy/OpenWRT settings are not compatible with the AREDN® firmware.
 
-The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section. If for some reason you need to recover your device to factory firmware, you can search the Cudy website for a recovery procedure such as the process documented here:
-`Cudy recovery procedure <https://www.cudy.com/en-us/blogs/faq/how-to-recovery-the-cudy-router-from-openwrt-firmware-to-cudy-official-firmware>`_
+The node will automatically reboot after installing AREDN®, and you may need to refresh your computer's network interface to receive a new IP address before continuing to the *Firstboot node setup* steps in the **Getting Started** section.
+
+If for some reason you need to recover your device to factory firmware, you can search the Cudy website for a recovery procedure such as the process documented here: `Cudy recovery procedure <https://www.cudy.com/en-us/blogs/faq/how-to-recovery-the-cudy-router-from-openwrt-firmware-to-cudy-official-firmware>`_. You connect your computer to the *WAN* port of the Cudy, and the Cudy original firmware must be renamed to *recovery.bin*.
 
 OpenWRT One first install process
 ---------------------------------

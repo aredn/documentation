@@ -6,6 +6,17 @@ Chat Programs
 
 Chat programs are one of the least network-intensive types of communication programs, so they are a good candidate as low impact services on a mesh network. Many chat programs also offer file sharing, which allows you to get two functions within a single program. The following list is not comprehensive or complete but represents a sample of the types of chat programs that might be available for you to use as services on your mesh network. Only programs with open source licenses were included in this list, although commercial chat software can also be used.
 
+Raven
+-----
+
+**Raven** is a decentralized messaging platform with the ability to bridge messages between AREDN® and other message platforms. To participate in Raven it is recommended that you install the Raven package on your primary node, making sure that the node has plenty of available memory. Login to your node to launch the Raven app from the left navigation bar.
+
+*Channels* maintain message streams separately from each other, and by default there are channels for *AREDN*, *Meshtastic*, and *Meshcore*. You can create additional channels for specific topics or purposes using the configuration display. `Visit this site for additional information about Raven <https://github.com/kn6plv/Raven/wiki>`_, and the Raven installation package (*apk* or *ipk*) can be `downloaded from this site <https://github.com/kn6plv/Raven>`_.
+
+.. image:: _images/raven.png
+   :alt: Raven Web Interface
+   :align: center
+
 MeshChat
 --------
 
@@ -19,7 +30,7 @@ MeshChat *Action Scripts* also provide for functional extensions, such as sendin
 
 Although MeshChat is a commonly deployed service, it is a third party package which is not available in the AREDN® repositories. You can find additional information by visiting this link: `MeshChat at Trevor's Bench <http://www.trevorsbench.com/meshchat-messaging-for-mesh-networks/>`_
 
-As originally designed, MeshChat was written in the Perl programming language. After the retirement of Perl on AREDN® nodes, an alternative was created using the Lua programming language. If you are running the original Perl version on an external computer, you can install the Lua API on your node to provide the computer with the list of MeshChat nodes. This package is available here: `Lua version of MeshChat <https://github.com/kn6plv/meshchat>`_ 
+As originally designed, MeshChat was written in the Perl programming language. After the retirement of Perl on AREDN® nodes, an alternative was created using the Lua programming language. If you are running the original Perl version on an external computer, you can install the Lua API on your node to provide the computer with the list of MeshChat nodes. This package is available here: `Lua version of MeshChat <https://github.com/kn6plv/meshchat>`_
 
 .. image:: _images/meshchat.png
    :alt: MeshChat Web Interface
@@ -87,7 +98,8 @@ Platform abbreviations:
 ===========  =============  ============  ====  ===============  ======
 Program      Architecture   Network Load  Age   Platform         Effort
 ===========  =============  ============  ====  ===============  ======
-MeshChat     mesh aware     small         new   node/rpi         easy
+Raven        distributed    small         new   node             easy
+MeshChat     distributed    small         new   node             easy
 IRCd server  client-server  small         old   lin/mac/rpi/win  medium
 Jabber/XMPP  client-server  small         old   lin/mac/rpi/win  medium
 Let's Chat   client-server  small         new   lin/mac/rpi/win  medium

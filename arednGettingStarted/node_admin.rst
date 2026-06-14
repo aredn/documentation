@@ -131,14 +131,53 @@ If you need to remotely upgrade the firmware on a node which has a marginal conn
 Backup Configuration
 ++++++++++++++++++++
 
-Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button on the *Firmware* menu. This will create a compressed archive of the node's configuration settings and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer a configuration to new hardware. It is also possible to generate a node backup file from the command line of your node:
+Once you have your node configured the way you want it, you can save those configuration settings by clicking the ``Backup`` button on the *Firmware* menu. This will create a compressed archive of the node's configuration files and it will download the timestamped backup file to your local computer. This snapshot file can be used to restore your node's configuration to a known good point in time, and it also allows you to transfer the configuration to another device using the same hardware.
+
+It is also possible to generate a node backup file from the command line of your node:
 
 ::
 
   # /usr/local/bin/backup
   Generated backup file: /tmp/node-backup.backup
 
-.. attention:: Be aware that a saved backup file can only be used to restore to the same node or identical hardware running the same firmware version, but it cannot be restored to different hardware or a node running a different firmware version.
+.. attention:: A saved backup file can only be used to restore to the same node or identical hardware running the same firmware version, but it cannot be restored to different hardware or a node running a different firmware version.
+
+The backup file will include all of the information contained in the files and directories listed in the ``/etc/arednsysupgrade.conf`` file. For example, this currently includes:
+
+::
+
+  /etc/config.mesh/setup
+  /etc/config.mesh/wireguard
+  /etc/config.mesh/aredn
+  /etc/config.mesh/xlink
+  /etc/config.mesh/firewall.user
+  /etc/config.mesh/dropbear
+  /etc/aredn_include/swconfig.user
+  /etc/aredn_include/static_routes
+  /etc/aredn_include/fixedmac.lan
+  /etc/aredn_include/fixedmac.wan
+  /etc/aredn_include/fixedmac.dtdlink
+  /etc/aredn_include/bridge.network.user
+  /etc/aredn_include/lan.network.user
+  /etc/aredn_include/wan.network.user
+  /etc/aredn_include/dtdlink.network.user
+  /etc/aredn_include/dnsmasq-user.conf
+  /etc/aredn_include/babel-user.conf
+  /etc/arednsysupgrade.d
+  /etc/dropbear/dropbear_dss_host_key
+  /etc/dropbear/dropbear_rsa_host_key
+  /etc/dropbear/dropbear_ecdsa_host_key
+  /etc/dropbear/dropbear_ed25519_host_key
+  /etc/dropbear/authorized_keys
+  /etc/local/mesh-firewall/59-custom-rules
+  /etc/local/uci/hsmmmesh
+  /etc/passwd
+  /etc/shadow
+  /etc/package_store
+  /etc/state/babel-state
+  /app/resource/css/theme.css
+  /app/resource/css/theme.version
+
 
 Backing up custom files
   There may be cases when you have added your own custom files on a node, and you want those files to be included in the backup archive. You can accomplish this by adding your own backup file list and placing it into the ``/etc/arednsysupgrade.d/`` directory on your node. For example, you could navigate to the *arednsysupgrade.d* directory and create a file called ``MYCALL-wxservice-files.conf``. This will be a simple text file containing the full paths of the custom files you want to have backed up. For example:

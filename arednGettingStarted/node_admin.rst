@@ -918,6 +918,9 @@ Highlight and click the section displaying your node's **Tunnels** to open the t
    :alt: Admin Tunnel Settings
    :align: center
 
+Tunnel Server
+  This first setting is relevant if you will be using your node as a tunnel server. Otherwise you can skip to the next section. A tunnel server node must be reachable from the Internet. Enter the public IP address (obtained from your ISP) or DDNS hostname in the field at the right.
+
 Add/Delete Tunnels
 ^^^^^^^^^^^^^^^^^^
 

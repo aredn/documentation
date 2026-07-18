@@ -469,7 +469,7 @@ PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
 
 WAN Monitor
-  This background monitor will ping the Internet IP addresses entered here to determine whether they are reachable through your node's WAN interface. If WAN connectivity is not available, the node's WAN interface is no longer made available to locally connected LAN devices or on the mesh for others to use (assuming that option is enabled). By default the *WAN Monitor* verifies that the WAN interface and Internet connection are working by checking the Cloudflare (1.1.1.1) and Google (8.8.8.8) DNS servers. The *WAN Monitor* can be disabled by deleting the Internet addresses from these fields. 
+  This background monitor will ping the Internet IP addresses entered here to determine whether they are reachable through your node's WAN interface. If WAN connectivity is not available, the node's WAN is no longer made available to locally connected LAN devices or on the mesh for others to use (assuming that option is enabled). By default the *WAN Monitor* verifies that the WAN interface and Internet connection are working by checking the Cloudflare (1.1.1.1) and Google (8.8.8.8) DNS servers. The *WAN Monitor* can be disabled by deleting the Internet addresses from these fields.
 
 AREDN® Alert Messages
 +++++++++++++++++++++

@@ -918,9 +918,34 @@ Highlight and click the section displaying your node's **Tunnels** to open the t
    :alt: Admin Tunnel Settings
    :align: center
 
-The **Default Tunnel Cost** is the weighting factor used by the routing protocol to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel cost by providing an individual per-tunnel value as described above.
+Add/Delete Tunnels
+^^^^^^^^^^^^^^^^^^
 
-The **Default Tunnel MTU** is the default packet size (MTU). If your WAN network requires smaller packets than usual, this can be set between 1280 and 1420. Changing this global default will affect all tunnels on your node. Remember to change the MTU size on the other end of tunnels to match.
+To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create, then click the [+] icon to create a new entry. To delete an existing tunnel entry, click the [-] icon at the right of the existing tunnel you want to remove.
+
+Be aware that without proper time synchronization, Wireguard will not establish tunnels. Make sure that an NTP or GPS time source is reachable at boot time so that the key exchange between the client and server will happen correctly. If mesh based NTP servers are available, ask the owners to advertise them as services to ensure that time synchronization happens across your mesh network even if the Internet is not available. Review the **Local Services** section above for instructions on advertising a local NTP server.
+
+For each tunnel definition there is a *Cost* or tunnel weight field. The global default tunnel cost is configured under *Advanced Options* as described below, but you can override this value on a per tunnel basis. Leave this field empty to accept the global default, or enter a tunnel cost to override the default if you desire. Each tunnel definition also has a *Notes* field in which you may enter helpful notes about the tunnel link. The switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established, at which time it will be green.
+
+Wireguard Client
+  Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described below for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
+
+Wireguard Server
+  Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. The security key, network, and port settings are automatically generated and displayed. Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
+
+Tunnel Backup/Restore
+^^^^^^^^^^^^^^^^^^^^^
+
+If you want to keep a copy of all your tunnel settings you can click the ``Backup`` button to save them to a file. This will backup the tunnel credentials and settings as well as the DNS value and tunnel subnets. If you have a previously saved tunnel backup file, you can restore those settings to your node. Choose the tunnel backup file to restore and those setting will be displayed. Click ``Done`` and you will be returned to the *admin status* page where you can ``Commit`` or ``Revert`` the changes. The settings in the tunnel backup file will overwrite and replace any existing settings on your node.
+
+Advanced Tunnel Options
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Default Tunnel Cost
+  The weighting factor used by the routing protocol to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel cost by providing an individual per-tunnel value as described above.
+
+Default Tunnel MTU
+  The default packet size (MTU). If your WAN network requires smaller packets than usual, this can be set between 1280 and 1420. Changing this global default will affect all tunnels on your node. Remember to change the MTU size on the other end of tunnels to match.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

@@ -468,6 +468,9 @@ Wireless Watchdog
 PoE and USB Power Passthrough
   These settings will only appear if you have node hardware which supports PoE or USB power passthrough. One example is the *Mikrotik hAP ac lite* which provides one USB-A power jack (~5v) as well as PoE power passthrough on Ethernet port 5 (~22v). You are allowed to enable or disable power passthrough on nodes with ports that support this feature.
 
+WAN Monitor
+  This background monitor will ping the Internet IP addresses entered here to determine whether they are reachable through your node's WAN interface. If WAN connectivity is not available, the node's WAN interface is no longer made available to locally connected LAN devices or on the mesh for others to use (assuming that option is enabled). By default the *WAN Monitor* verifies that the WAN interface and Internet connection are working by checking the Cloudflare (1.1.1.1) and Google (8.8.8.8) DNS servers. The *WAN Monitor* can be disabled by deleting the Internet addresses from these fields. 
+
 AREDN® Alert Messages
 +++++++++++++++++++++
 
@@ -674,8 +677,6 @@ Radios & Antennas
 
 At the top of the right-hand column, highlight and click the section displaying your node's radio information. The **Radios & Antennas** display allows you to configure the radios on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
-If your device has two radios, you can configure them separately but you cannot put them both into the same mode. For example, you can use one radio for Mesh RF while the second radio functions as a LAN Hotspot or a WAN Client (as described below). Some devices may not have any available radios, but some of the radio options will still be shown if they are applicable to the device.
-
 .. image:: _images/admin-radio-1.png
  :alt: Admin Radio Settings
  :align: center
@@ -859,7 +860,7 @@ To delete a tag or option, click the [-] icon on the right of the existing row f
 Ethernet Ports & Xlinks
 -----------------------
 
-If you have a multiport node or one which supports xlinks, then the *Ethernet Ports & Xlinks* section will be displayed. This provides a way for you to configure the ports on your node and/or the configuration of xlinks. Context-sensitive help is available by clicking the ``Help`` button.
+If you have a multiport node or one which supports xlinks, then the *Ethernet Ports & Xlinks* section will be displayed. This provides a way for you to configure the ports on your node and/or to configure xlinks. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-ports-xlinks.png
   :alt: Admin Ethernet Ports and Xlinks
@@ -877,7 +878,7 @@ Ports (if available)
   If you want to change a port's configuration, simply check or uncheck the settings desired on each port.
 
 Xlinks
-  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® links. To add an xlink click the [+] icon, enter an unused VLAN number for the link. Enter the IP address for the link, the `CIDR <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_ netmask, and a weighting factor which will be used by the routing protocol to determine the best route for AREDN® traffic. On a multiport device you also enter the port to which the near-side device is connected to your node. You may also add a note to describe the link or provide contact information. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
+  A cross-link (xlink) allows your node to pass AREDN® traffic across non-AREDN® links. To add an xlink click the [+] icon, enter an unused VLAN number for the link. Enter a weighting factor which will be used by the routing protocol to determine the best route for AREDN® traffic. On a multiport device you also enter the port to which the near-side device is connected to your node. You may also add a note to describe the link or provide contact information. If you want to remove an xlink, simply click the [-] icon on the right side of the row to remove it.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
@@ -901,9 +902,7 @@ In order to run your node as either a *Tunnel Server* or *Tunnel Client*, you wi
 
 Multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware. If you are using any other type of node, then you will need to configure a separate VLAN-capable switch. Set your VLAN-capable network switch to appropriately tag traffic from the Internet with *VLAN 1* before sending it to your node. This allows your node to properly identify the traffic as coming from the Internet to its WAN interface. See the equipment manual for your smart switch to determine how to configure VLAN settings.
 
-**Tunnels** allows you to configure connections for tunnel roles (Client & Server). The Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection that is both efficient and secure. It only encrypts the traffic as it traverses the public Internet, so no encrypted traffic will be sent via radio in compliance with FCC Part 97 requirements.
-
-.. attention:: Any older legacy *vtun* tunnels should be migrated to Wireguard as soon as possible.
+**Tunnels** allows you to configure connections for tunnel roles (Client & Server). The Wireguard tunneling protocol provides an *encrypted* :abbr:`UDP (User Datagram Protocol)` connection that is both efficient and secure. It only encrypts the traffic as it traverses the public Internet, so no encrypted traffic will be sent via radio in order to comply with FCC Part 97 requirements.
 
 Networking for Tunnel Servers
   In order for remote tunnel clients to reach your tunnel server node, your Internet-connected firewall must allow that traffic to enter your network and it must also forward that traffic to your tunnel server node. In order for your router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
@@ -919,41 +918,9 @@ Highlight and click the section displaying your node's **Tunnels** to open the t
    :alt: Admin Tunnel Settings
    :align: center
 
-Tunnel Server
-  This first setting is relevant if you will be using your node as a tunnel server. Otherwise you can skip to the next section. A tunnel server node must be reachable from the Internet. Enter the public IP address (obtained from your :abbr:`ISP (Internet Service Provider)`) or `DDNS <https://en.wikipedia.org/wiki/Dynamic_DNS>`_ hostname in the field at the right.
-
-Add Tunnel
-++++++++++
-
-To add a tunnel connection, click in the field at the right to select from the dropdown list the type of tunnel you want to create. Be aware that without proper time synchronization, Wireguard will not establish tunnels. Make sure that an NTP or GPS time source is reachable at boot time so that the key exchange between the client and server will happen correctly. If mesh based NTP servers are available, ask the owners to advertise them as services to ensure that time synchronization happens across your mesh network even if the Internet is not available. Review the **Local Services** section above for instructions on advertising a local NTP server.
-
-For each tunnel definition there is a *Cost* or tunnel weight field. The global default tunnel cost is configured under *Advanced Options* as described below, but you can override this value on a per tunnel basis. Leave this field empty to accept the global default, or enter a tunnel cost to override the default if you desire. Each tunnel definition also has a *Notes* field in which you may enter helpful notes about the tunnel link.
-
-Wireguard Client
-^^^^^^^^^^^^^^^^
-
-Select *Wireguard Client* from the dropdown list and click the [+] icon. For tunnel client credentials, contact the Amateur Radio operator who controls the tunnel server you want to connect to and request client credentials by providing your specific node name. The tunnel server administrator will send you the public IP or hostname for the tunnel server field, the key you are to use, and the network IP address & port for your client node. If your client credentials were provided using the method described below for servers, you can highlight and copy the entire set of values, click into one of the fields on your tunnel client row, and when you paste into one of the fields then all of the credentials will be automatically entered into the correct fields for you. Otherwise, you can manually enter these values into the appropriate fields on your node.
-
-Wireguard Server
-^^^^^^^^^^^^^^^^
-
-Select *Wireguard Server* from the dropdown list and click the [+] icon. In the ``Node Name`` field enter the exact node name of the client node that will be allowed to connect to your tunnel server. Do not include the "local.mesh" suffix. The security key, network, and port settings are automatically generated and displayed. Click the *copy* icon to the right of the *Notes* field to display all of the connection settings in a new web page. These settings can then be copied and pasted into an email or text file to provide the credentials to the owner of the client node.
-
-The switch on the right is ``enabled`` by default, but it appears gray until the tunnel connection is established, at which time it will be green.
-
-Tunnel Backup/Restore
-^^^^^^^^^^^^^^^^^^^^^
-
-If you want to keep a copy of all your tunnel settings you can click the ``Backup`` button to save them to a file. This will backup the tunnel credentials and settings as well as the DNS value and tunnel subnets. If you have a previously saved tunnel backup file, you can restore those settings to your node. Choose the tunnel backup file to restore and those setting will be displayed. Click ``Done`` and you will be returned to the *admin status* page where you can ``Commit`` or ``Revert`` the changes. The settings in the tunnel backup file will overwrite and replace any existing settings on your node.
-
-Advanced Tunnel Options
-^^^^^^^^^^^^^^^^^^^^^^^
-
-The **Tunnel Server Network** address is displayed under *Advanced Options*. This is the starting IP address for your tunnel server's network, and it is calculated automatically. It should not be changed unless there is a specific reason why the default will not work for your situation.
-
-.. attention:: This value is only editable when there are no existing server credentials being provided by your node. If you already have tunnels on your node then this field will be grayed out and uneditable.
-
 The **Default Tunnel Cost** is the weighting factor used by the routing protocol to determine the link cost of sending traffic via the tunnel. This value is a global default, but you can override the tunnel cost by providing an individual per-tunnel value as described above.
+
+The **Default Tunnel MTU** is the default packet size (MTU). If your WAN network requires smaller packets than usual, this can be set between 1280 and 1420. Changing this global default will affect all tunnels on your node. Remember to change the MTU size on the other end of tunnels to match.
 
 You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 

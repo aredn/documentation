@@ -119,6 +119,7 @@ List of acronyms sometimes encountered in the AREDN® project.
 :MBPS: Megabits (10E6 bits) per second
 :MCC: Mobile Command and Control
 :MCS: Modulation Coding Scheme
+:Mesh: WiFi *ad hoc* mode which allows devices to connect directly to each other without communicating through an intermediate access point.
 :MG: Magnetic North
 :MHZ: Megahertz (10E6 Hertz)
 :µV: Microvolt (10E-6 volt)
@@ -157,8 +158,8 @@ List of acronyms sometimes encountered in the AREDN® project.
 :PR: Pull Request (a GitHub mechanism)
 :PSK: Phase-Shift Keying
 :PSK: Protect Access Pre-Shared Key
-:PTMP: Point to multipoint
-:PTP: Point to point
+:PTMP: Point to multipoint; uses WiFi *infrastructure* mode to establish communication between a specific access point (AP) and multiple station nodes.
+:PTP: Point to point; uses WiFi *infrastructure* mode to limit communication between an access point (AP) and a single station node.
 :PTZ: Pan, Tilt, and Zoom (video camera control)
 :PUB: Public Key File Extension
 :PUTTY: Communications tool for running interactive command-line sessions on other computers

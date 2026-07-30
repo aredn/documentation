@@ -334,25 +334,38 @@ It is important to understand AREDN® VLANs when configuring network smart switc
 Mesh to WAN
 ^^^^^^^^^^^
 
-Enabling this switch will allow your node to route traffic from its Mesh interface to/from its WAN interface. This allows any device on the mesh network to use the WAN on your node, typically for accessing the Internet. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN® is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway. The default value is ``disabled`` and it is recommended that you keep this default unless there is a special reason to enable it.
-
 .. image:: _images/admin-network-3.png
   :alt: Admin Network Advanced Options
-  :align: center
+  :align: right
 
-LAN to Mesh WAN
-^^^^^^^^^^^^^^^
+Enabling this switch will allow your node to route traffic from its Mesh interface to/from its WAN interface. This allows any device on the mesh network to use the WAN on your node, typically for accessing the Internet. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN® is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules. If you want local devices to have wireless Internet access, consider using an FCC Part 15 access point instead of your node's WAN gateway. The default value is ``disabled`` and it is recommended that you keep this default unless there is a special reason to enable it.
 
-There may be times when your node has its own LAN devices, but your node does not provide WAN Internet access for them. Enabling this option will allow your node's LAN devices to find and use an Internet connection that might be available from another node across the mesh network. This option is ``disabled`` by default.
+DtD to WAN
+^^^^^^^^^^
+
+.. image:: _images/admin-network-4.png
+  :alt: Admin Network Advanced Options
+  :align: right
+
+This option is ``enabled`` by default and allows locally connected nodes (DtD) to use this node's WAN interface. This means that if this node has its WAN interface enabled (for example, as a link to the Internet), then other locally connected nodes are allowed to use it. If this is ``disabled`` then DtD connected nodes will no longer be able to use this node's WAN link to the Internet.
 
 LAN to WAN
 ^^^^^^^^^^
 
-The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the WAN, which means that your LAN hosts will not be able to reach the Internet even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
-
-.. image:: _images/admin-network-4.png
+.. image:: _images/admin-network-5.png
   :alt: Admin Network Advanced Options
-  :align: center
+  :align: right
+
+The default value is ``enabled`` which allows devices on your node's LAN to access your node's WAN network. Setting this value to ``disabled`` will prevent LAN devices from accessing the node's WAN interface, even if your node has Internet access via its WAN. You may need to disable WAN access if your device needs to be connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network.
+
+LAN to Mesh WAN
+^^^^^^^^^^^^^^^
+
+.. image:: _images/admin-network-6.png
+  :alt: Admin Network Advanced Options
+  :align: right
+
+There may be times when your node itself does not have WAN Internet access for its own LAN devices. Enabling this option will allow your node's LAN devices to traverse the mesh network in order to use an Internet connection that is provided by another node across the mesh network. This option is ``disabled`` by default for the same reason *Mesh to WAN* is disabled. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN® is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules.
 
 LAN to 44Net
 ^^^^^^^^^^^^
@@ -363,6 +376,11 @@ LAN default route
 ^^^^^^^^^^^^^^^^^
 
 Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes for more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
+
+Mesh Internet Router
+^^^^^^^^^^^^^^^^^^^^
+
+This option is ``enabled`` by default and allows other nodes to route their Internet-bound traffic through your node. In some circumstances you may wish to restrict traffic which is bound for the Internet. Setting this switch to ``disabled`` prevents the node from routing any non-AREDN® traffic, so this node cannot be used in any part of the path to get to the Internet. The node itself will only be able to access the Internet if it has a local connection on its WAN interface or if *DtD to WAN* is provided by a DtD connected local node.
 
 Custom firewall rules
 ^^^^^^^^^^^^^^^^^^^^^

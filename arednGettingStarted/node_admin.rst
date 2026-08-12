@@ -331,6 +331,11 @@ The following VLANs are preconfigured in the AREDN® firmware:
 
 It is important to understand AREDN® VLANs when configuring network smart switches for single-port nodes to access the Internet, tunneling, or DtD linking of nodes. There are some useful tutorials available on the AREDN® website for configuring VLAN-capable switches: `Video <https://www.arednmesh.org/content/understanding-vlans>`_ or `Text+Images <https://www.arednmesh.org/content/configuring-netgear-gs105e-switch-lanwan-ports>`_. You can get the latest information about the specific port configured as the node's WAN port from the AREDN® website here: `Ethernet Port Usage <http://downloads.arednmesh.org/snapshots/readme.md>`_.
 
+WAN MTU
+^^^^^^^
+
+The default packet size (MTU) for your WAN interface is set to ``1500``. If your ISP requires a smaller packet size, this can be adjusted here.
+
 Mesh to WAN
 ^^^^^^^^^^^
 

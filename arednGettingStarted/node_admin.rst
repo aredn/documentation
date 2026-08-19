@@ -466,6 +466,9 @@ WAN telnet
 WAN web
   This switch enables http/https access to your node on its WAN interface. Disabling this option will not prevent http/https access to your node from the Mesh and LAN interfaces.
 
+LAN radio
+  This switch allows your node to pass AREDN® traffic across a non-AREDN® radio that is connected to its LAN. This simplifies using a non-AREDN® radio to extend the AREDN® network, rather than using an ``xlink`` for example. A LAN port on your node must only be connected to a single non-AREDN® radio.
+
 Hardware Watchdog
   Hardware watchdog is a background monitor that keeps track of core node processes. If any of the processes has issues, it will reboot the node. This feature is ``disabled`` by default. Currently the set of node processes that are monitored include dnsmasq, telnetd, dropbear, uhttpd, and babeld. Hardware watchdog events are logged in the standard log on the node. Because the watchdog operates at the hardware level, the node will still reboot itself even if the kernel crashes.
 

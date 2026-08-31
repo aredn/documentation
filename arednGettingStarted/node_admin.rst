@@ -372,15 +372,15 @@ LAN to Mesh WAN
 
 There may be times when your node itself does not have WAN Internet access for its own LAN devices. Enabling this option will allow your node's LAN devices to traverse the mesh network in order to use an Internet connection that is provided by another node across the mesh network. This option is ``disabled`` by default for the same reason *Mesh to WAN* is disabled. It is usually not desirable to route Internet traffic over your Mesh interface. AREDN® is an FCC Part 97 amateur radio network, so be sure that any traffic which will be sent over the radio complies with FCC Part 97 rules.
 
-LAN to 44Net
-^^^^^^^^^^^^
-
-The default value is ``enabled`` which provides a 44Net route for any LAN device on your node, even if your default route is disabled.
-
 LAN default route
 ^^^^^^^^^^^^^^^^^
 
 Your node's DHCP server will provide routes to its LAN devices so they can access any available networks. A default route is required for WAN access, and that is provided automatically if **LAN to WAN** is *enabled* as discussed above. However, some LAN devices (such as certain IP cameras) may not support DHCP option 121, so they will require a default route in order to access the mesh network. Setting this value to ``enabled`` will provide a default route to those devices. If a LAN device is connected to two networks at once, such as an Ethernet connection to your node as well as a wifi connection to a local served agency network, care should be taken to understand how the device will deal with default routes for more than one network. The default value is ``disabled`` and you should not enable it unless you have a special reason to do so.
+
+WAN firewall
+^^^^^^^^^^^^
+
+This switch is ``enabled`` by default and allows your node to provide all of the normal WAN firewall and Network Address Translation (NAT) functions. This is the standard mode which should be used on your node unless you have a specific requirement to disable these protections. Turning off the WAN firewall and NAT will open your node to all WAN traffic, which can then be routed to/from your LAN devices. If you choose to disable the WAN firewall, then the other WAN-related switches described above will also be disabled automatically.
 
 LAN radio
 ^^^^^^^^^

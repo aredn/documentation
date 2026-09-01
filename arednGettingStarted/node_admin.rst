@@ -261,14 +261,16 @@ Highlight and click the section displaying your node's network settings. This di
 Mesh address
 ++++++++++++
 
-The **Mesh Address** is the primary IP address of your node. The AREDN® firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses on your node. Normally you will not need to change this, so keep this value unless you fully understand how the mesh works and why the defaults may not be suitable for your situation.
+The **Mesh Address** is the primary IP address of your node. The AREDN® firmware has been designed to simplify the process of configuring network interfaces. Network values are automatically calculated based on the unique :abbr:`MAC (Media Access Control)` addresses on your node. Normally you will not need to change this, so keep this value unless you fully understand why the default may not be suitable for your situation.
 
 LAN
 +++
 
-The **LAN Type** allows you to set the number of devices your node will be able to host on its Local Area Network (LAN). Click in the field at the right to see the dropdown list of options for the size of your node's LAN. The default value is ``5 hosts``. It is important not to select a size that is larger than necessary because the chance of an IP address conflict on the mesh increases with the size of the subnet. The LAN subnet parameters are automatically calculated and depend on the IP address of the *Mesh* interface. If a conflict does occur it can be fixed by changing the *Mesh* IP address above.
+The **LAN Type** allows you to set the number of devices your node will be able to host on its Local Area Network (LAN). Click in the field at the right to see a dropdown list of options for the size of your node's LAN. The default value is ``5 hosts``. It is important not to select a size that is larger than necessary because the chance of an IP address conflict on the mesh increases with the size of the subnet.
 
-The most common configuration is to have the LAN address space managed automatically for you. In this case the LAN shares the same address space as the mesh at large, and every host on the LAN has direct access to and from the mesh. You have the option of selecting the size of the LAN subnet which can accommodate either 1, 5, 13, or 29 LAN hosts. A single host subnet can be useful for either a single server or a separate network router using its own NAT which is capable of more advanced routing functions than those available on a mesh node. This design minimizes the amount of manual effort needed to provide services to the mesh, since many services do not work well if they are hosted behind a :abbr:`NAT (Network Address Translation)` router.
+The LAN **IP Address** is automatically generated based on the *Mesh* address. Normally you will not need to change this address, so keep this value unless you fully understand why the default may not be suitable for your situation. If required, the LAN IP address can be changed by editing this field.
+
+The most common configuration is to have the LAN address space managed automatically for you. In this case the LAN shares the same address space as the mesh at large, and every host on the LAN has direct access to and from the mesh. You have the option of selecting the size of the LAN subnet which can accommodate either 1, 5, 13, or 29 LAN hosts. A single host subnet can be useful for either a single server or a separate network router using its own NAT which is capable of more advanced routing functions than those available on a mesh node. This minimizes the amount of manual effort needed to provide services to the mesh, since many services do not work well if they are hosted behind a :abbr:`NAT (Network Address Translation)` router.
 
 When you connect a device to your node's LAN, not only will it have an IP address in the LAN IP address range, but it is best practice for LAN device to obtain its DNS Server information automatically from the node. Be aware that if a LAN device does not use the DNS Server entry provided by the node to which it is connected, then that device will be unable to resolve hostnames on the mesh network. Also, hard-coding a device's DNS Server entry with the mesh node's IP address could result in unexpected failures if that IP address changes.
 
@@ -286,7 +288,7 @@ In ``NAT`` mode you are responsible for managing the IP address space of your no
 44Net Mode
 ^^^^^^^^^^
 
-Another choice for *LAN Type* is ``44Net`` and this mode allows you to use IP addresses from the `AMPRnet <https://www.ardc.net/44net/>`_ address space (44.0.0.0/9 to 44.128.0.0/10).
+Yet another choice for *LAN Type* is ``44Net`` and this mode allows you to use IP addresses from the `AMPRnet <https://www.ardc.net/44net/>`_ address space (44.0.0.0/9 to 44.128.0.0/10).
 
 .. image:: _images/admin-network-44net.png
   :alt: Admin Network - 44Net

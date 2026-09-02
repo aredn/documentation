@@ -92,7 +92,6 @@ html_theme = 'sphinx_book_theme'
 #
 html_logo = "_images/AREDN-Logo.png"
 html_theme_options = {
-    'logo_only': True,
     "toc_title": "Page Navigation",
     "use_download_button": False,
     "show_toc_level": 3,

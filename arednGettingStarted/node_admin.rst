@@ -438,13 +438,16 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Internal Services
 -----------------
 
-When you are logged in as *admin* you will see an Internal Services status display at the top of the center column. This shows the state of each of the listed services, which will be described below in more detail. The ``Metrics`` status is informational only and simply indicates whether this node is currently being monitored by providing metrics to an external service (such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_). The ``Supernode`` status is informational and will only appear on nodes capable of being a Supernode, indicating whether this node is currently configured as a Supernode.
+When you are logged in as *admin* you will see an **Internal Services** status display at the top of the center column. This shows the state of each of the listed services which are described below.
 
 .. image:: _images/admin-internal-svc-1.png
  :alt: Admin Internal Services Status
  :align: center
 
-Highlight and click the section displaying your node's **Internal Services**, which allows you to manage the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+Highlighting and clicking the **Internal Services** section will allow you to manage the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
+
+Informational Statuses
+  ``Metrics`` simply indicates whether this node has provided metrics to an external service such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_. ``Supernode`` will only appear on nodes capable of being a Supernode and it indicates whether the node is currently configured as a Supernode. ``LAN Monitor`` indicates that LAN services are being checked for reachability, by default every five minutes.
 
 .. image:: _images/admin-internal-svc-2.png
  :alt: Admin Internal Services

@@ -18,7 +18,7 @@ Within each group the nodes are displayed side by side in two columns. The node 
    :alt: Mesh Status tool icons
    :align: right
 
-Three icons are displayed to the right of a selected node name. The first will open the ``ping`` tool which provides network latency metrics. The second opens the ``traceroute`` tool which displays the network nodes traversed between two devices. The third opens the ``iperf3`` tool which provides network throughput metrics. Each of these tools is discussed in the *Tools* section of the **Node Admin** guide.
+When you are logged into your node, three icons are displayed to the right of a selected node name. The first will open the ``ping`` tool which provides network latency metrics. The second opens the ``traceroute`` tool which displays the network nodes traversed between two devices. The third opens the ``iperf3`` tool which provides network throughput metrics. Each of these tools is discussed in the *Tools* section of the **Node Admin** guide.
 
 The **mesh status** display shows each node, any connected :abbr:`LAN (Local Area Network)` devices, and any advertised services available on the node or its hosts. Small icons appear to the right of each service which indicate the type of service, with the definition of these service types described in the *Local Services* section of the **Node Admin** guide. You can click any available web links to navigate to the nodes or services shown on the **mesh status** display.
 

@@ -170,19 +170,21 @@ Step3: Install the firmware
 Mikrotik first install process
 ------------------------------
 
+*Contributor: Orv Beach W6BI*
+
 These devices require a **two-part install** process: First, boot the correct Mikrotik *initramfs-kernel* file, and then use that temporary AREDN® environment to complete the installation of the appropriate *sysupgrade* file.
 
 Mikrotik devices have a built-in `PXE <https://en.wikipedia.org/wiki/Preboot_Execution_Environment>`_ *client* which allows them to download a boot image from an external source. See the **Preparing Your Computer** section above for an explanation. The Windows example below uses *Tiny PXE*, while the Linux example uses the native ``dnsmasq`` program.
 
-.. image:: _images/mikrotik-protectboot.png
-  :alt: Uncheck Mikrotik Protected Boot
-  :align: right
+For Mikrotik devices you will use what is called *Etherboot* mode, and there are several ways to put your device into *Etherboot* mode depending on the version of the manufacturer's firmware. The easiest way is to follow the examples below using the device's reset button. If for some reason this does not work, then you can log into Mikrotik RouterOS from the command line to set:
 
-For Mikrotik devices you will use what is called *Etherboot* mode, and there are several ways to put your device into *Etherboot* mode (depending on the version of the manufacturer's firmware it is running). The easiest way is to use the device's reset button as described in the procedure below. If for some reason this does not work, then you can try logging into the Mikrotik RouterOS and setting *System > Routerboard > Settings > Boot Device* to ``try-ethernet-once-then-nand`` (either through the RouterOS web interface or via command line). Next time the device boots it will try *Etherboot* once before defaulting back to regular boot mode.
+::
 
-If your Mikrotik device has "Protected Routerboot" enabled, then you will need to disable it before proceeding. Use the manufacturer's instructions to connect to your device and display the RouterOS web interface or command line. Navigate to *System > Routerboard > Settings > Boot Device* to uncheck or deselect ``Protected Routerboot``. Click the *Apply* button, then you should be able to power down the device and continue with the steps in the AREDN® firmware install checklist.
+  /system/routerboard/settings/set boot-device=try-ethernet-once-then-nand
 
-.. tip:: There may be cases when your Mikrotik device boots the AREDN® *kernel* file but its RouterOS version does not allow the *sysupgrade* file to be installed. You can read the instructions on this page (`OpenWRT - Procedures for RouterOS <https://openwrt.org/toh/mikrotik/common#make_sure_the_bootloader_is_compatible>`_) to determine which version of Mikrotik RouterOS your device has. If it is running version ``7.x`` then you can try installing the AREDN® *sysupgrade v7* firmware file. Or you can `downgrade Mikrotik RouterOS <https://openwrt.org/toh/mikrotik/common#downgrading_routeros>`_ prior to flashing the regular AREDN® *sysupgrade* file. Earlier versions of RouterOS and their NetInstall utilities can be found on the `Mikrotik website <https://mikrotik.com/download/archive>`_. Download an ARM version (``routeros-arm``) for devices that use the *ipq40xx* AREDN® firmware, or download a MIPSBE version (``routeros-mipsbe``) for other Mikrotik devices. Typically you can install a RouterOS version that is equal to or newer than the RouterOS version shown in the *Factory Firmware* field on the Mikrotik web display.
+Next time the device boots it will try to Etherboot *once* before reverting to regular boot mode.
+
+If a message is displayed that the RouterOS *Device Mode* is blocking changes, then you must update the *Device Mode* setting before proceeding. Refer to the *Help with Mikrotik Settings* section of the **How-To Guide** or the `Mikrotik help pages <https://help.mikrotik.com/docs/spaces/ROS/pages/93749258/Device-mode>`_ for additional assistance.
 
 Mikrotik Install preparation
 ++++++++++++++++++++++++++++

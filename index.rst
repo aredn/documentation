@@ -68,6 +68,7 @@ Additional information about the AREDN® project can be found at the links below
 
    arednHow-toGuides/beginner-guide
    arednHow-toGuides/firmware_tips
+   arednHow-toGuides/mikrotik-settings
    arednHow-toGuides/home-router-connection
    arednHow-toGuides/poe
    arednHow-toGuides/command-line

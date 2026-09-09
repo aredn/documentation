@@ -76,3 +76,7 @@ If the command still fails, check the result of ``/system/device-mode/print`` an
 * If ``attempt-count`` is nonzero or you receive “too many unsuccessful attempts” then your Device Mode changes were not confirmed. Cold power-cycle or use the physical power button to confirm and then retry setting ``boot-device`` as shown above.
 
 * If ``routerboard: yes`` but ``protected-routerboot: enabled`` then disable Protected RouterBOOT and retry setting the ``boot-device`` as shown above.
+
+  ::
+
+    /system routerboard settings set protected-routerboot=disabled

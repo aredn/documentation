@@ -51,10 +51,10 @@ Several sections of node information are presented here (listed from top to bott
 Node Description
   This is not a required field, but node owners typically use it to list their contact information or the tactical purpose for the node.
 
-Node Time, Uptime, Load Average, and Free Memory
+Node Time, Uptime, Load Average, and Memory Stats
   The node time is displayed and if an NTP or GPS time source is available, that source will be displayed in parentheses. If an Internet connection or a local `NTP <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_ server is available, your node's NTP client will sync its time with that source. If a local `GPS <https://en.wikipedia.org/wiki/Global_Positioning_System>`_ source is available, your node can use that source.
 
-  The ``uptime`` is also displayed, which is the time since the last reboot. ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash`` and ``free ram`` shows how much storage space is remaining on your node. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
+  The ``uptime`` is also displayed, which is the time since the last reboot. ``load`` is the average system utilization for the last 1, 5, and 15 minutes. ``free flash``, ``available ram``, and ``total ram`` show memory statistics. ``flash`` is the internal non-volatile storage where the operating system, configuration files, and software packages are kept. ``ram`` is the amount of :abbr:`RAM (Random Access Memory)` available for running processes on the node.
 
 Firmware Information
   This displays the node's current firmware version. A badge on the right indicates the status of the firmware, with valid values including ``Up to date``, ``Update available``, and ``Custom``. If your node has access to the Internet you can also click the *issues* label below the firmware version, and this will open the AREDN® `Issues <https://github.com/aredn/aredn/issues>`_ page on GitHub. Clicking the *release notes* label will open the `Changelog <https://downloads.arednmesh.org/snapshots/CHANGELOG.md>`_ page on the AREDN® website.

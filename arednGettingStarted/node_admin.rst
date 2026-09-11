@@ -776,7 +776,9 @@ This configures the radio as a wifi *infrastructure* mode **AP** which can be ac
 Mesh Station settings
 +++++++++++++++++++++
 
-This configures the radio as a wifi *infrastructure* mode **Station** which can connect to a designated PtMP or PtP **AP** node. In this mode the SSID will include the channel being used for the link. Be aware that these links may take several minutes to initialize.
+This configures the radio as a wifi *infrastructure* mode **Station** which can connect to a PtMP or PtP **AP** node. In this mode the SSID will include the channel being used for the link. Be aware that these links may take several minutes to initialize.
+
+As a mesh **Station** your node may be within range of several **PTMP** nodes. If you want your node to connect to the AP that has the strongest :abbr:`SNR (signal-to-noise ratio)`, you can add multiple channels to your mesh **Station** by clicking the [+] icon on the right side of the *Channel* field and selecting another channel from the dropdown list. Once multiple channels have been added, you can delete channels by clicking the [-] icon on the right side of the channel you wish to remove. If the **Station** becomes disconnected from its currently selected AP, it will search again for the strongest signal to reconnect.
 
 LAN Hotspot settings
 ++++++++++++++++++++

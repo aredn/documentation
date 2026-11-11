@@ -708,7 +708,7 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Radios & Antennas
 -----------------
 
-At the top of the right-hand column, highlight and click the section displaying your node's radio information. The **Radios & Antennas** display allows you to configure the radios on your node. Context-sensitive help is available by clicking the ``Help`` button.
+At the top of the right-hand column, highlight and click the section displaying your node's radio information. The **Radios & Antennas** display allows you to configure the radios on your node. Context-sensitive help is available by clicking the ``Help`` button. The ``Cancel`` button will ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
 .. image:: _images/admin-radio-1.png
  :alt: Admin Radio Settings
@@ -834,7 +834,10 @@ Height
 Elevation
   Click in the field at the right to enter an angle (in degrees) of uptilt or downtilt that you have set on your antenna. Note that some omnidirectional and sector antennas have a built-in downtilt, and that value can be entered here.
 
-You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
+Unlicensed Restrictions
++++++++++++++++++++++++
+
+This switch allows your node to display unlicensed radio restrictions for your location based on the current timezone setting. Restrictions are for informational purposes only, since they are not enforced in the node. Correct configuration of your device is the operator's responsibility. This switch is ``disabled`` by default.
 
 Mesh section
 ------------

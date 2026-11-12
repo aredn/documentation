@@ -82,9 +82,9 @@ You can click the ``Cancel`` button to ignore any changes you made on this displ
 Time settings
 -------------
 
-Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. Two fields are provided for entering the hostnames of :abbr:`NTP (Network Time Protocol)` servers if your node is connected to a network with network time services. You can enter valid hostnames in the *NTP Server* fields: for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [Daily] but you may also select once per hour [Hourly] or you can have your node run the NTP program [Continually].
+Highlight and click the section displaying your node's time. Select your timezone from the dropdown list, where the default value is :abbr:`UTC (Coordinated Universal Time)`. Two fields are provided for entering the hostnames of :abbr:`NTP (Network Time Protocol)` servers if your node is connected to a network with network time services. You can enter valid hostnames in the *NTP Server* fields: for example ``us.pool.ntp.org`` or ``AD5BC-ntp.local.mesh``. You may also choose how often NTP will update the node’s clock by selecting a value from the *NTP Updates* dropdown list. The default is once per day [Daily] but you may also select once per hour [Hourly] or you can have your node run the NTP program [Continually]. If you run NTP on your node *Continually* then a new switch will appear which allows your node to function as an NTP Server for any of your LAN-connected devices. The *NTP Server* switch is ``disabled`` by default.
 
-If you run NTP on your node *Continually* then a new switch will appear which allows your node to function as an NTP Server for any of your LAN-connected devices. The *NTP Server* switch is ``disabled`` by default.
+By default your node can use a local *GPS Time source if one is available. To disable this behavior, slide the switch to the *off* position. If you want your node to function as a GPS time *server* you will need to install the ``whenandwhere`` package. Select and install this package from the *Packages > Download Package* list on your node. This package installs the required dependencies for a USB GPS dongle so your node can provide GPS time for itself and other local DtD linked devices.
 
 .. image:: _images/admin-time.png
   :alt: Admin Time
@@ -93,12 +93,6 @@ If you run NTP on your node *Continually* then a new switch will appear which al
 |
 
 By default the time on your node will be shown as a 12-hour clock with *am/pm*. To display node time using a 24-hour clock, enable the *24-Hour Clock* switch.
-
-Additional options are displayed when you click **Advanced Options**.
-
-By default your node can use a local **GPS Time** source if one is available. To disable this behavior, slide the switch to the *off* position.
-
-If you want your node to function as a GPS time *server* you will need to install the ``whenandwhere`` package. Select and install this package from the *Packages > Download Package* list on your node. This meta-package installs the required dependencies for a USB GPS dongle so your node can provide GPS time for itself and other local DtD linked devices.
 
 If you plan to use Wireguard tunneling, make sure that a GPS or NTP time source is reachable when the node boots so that the key exchange between the client and server will happen correctly. Without proper time synchronization, Wireguard will not establish tunnels.
 

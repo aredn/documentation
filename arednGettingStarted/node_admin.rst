@@ -101,7 +101,7 @@ Context-sensitive help is available by clicking the ``Help`` button. You can cli
 Firmware settings
 -----------------
 
-Highlight and click the section displaying your node's firmware version. The top field displays the currently installed version of firmware on your node. Context-sensitive help is available by clicking the ``Help`` button. There are three ways to update your node's firmware.
+Highlight and click the section displaying your node's firmware version. The top field displays the currently installed version of firmware on your node. There are three ways to update your node's firmware. If you are only making changes to firmware configuration settings, you will click the ``Done`` button. You are then returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. However, if you are updating the node's firmware then the ``Fetch and Update`` process will begin immediately and you are not required to click the *Done* button. Context-sensitive help is available by clicking the ``Help`` button.
 
 .. image:: _images/admin-firmware-1.png
   :alt: Admin Firmware
@@ -172,7 +172,6 @@ The backup file will include all of the information contained in the files and d
   /app/resource/css/theme.css
   /app/resource/css/theme.version
 
-
 Backing up custom files
   There may be cases when you have added your own custom files on a node, and you want those files to be included in the backup archive. You can accomplish this by adding your own backup file list and placing it into the ``/etc/arednsysupgrade.d/`` directory on your node. For example, you could navigate to the *arednsysupgrade.d* directory and create a file called ``MYCALL-wxservice-files.conf``. This will be a simple text file containing the full paths of the custom files you want to have backed up. For example:
 
@@ -209,7 +208,14 @@ Dangerous Upgrade
 Firmware URL
   This is the source URL that is queried by the *Download Firmware* process in order to refresh the list of available firmware for your node. The default value is ``http://downloads.arednmesh.org`` which allows your Internet-connected node to retrieve firmware from the AREDN® website. You can also set this firmware URL to a local server which provides firmware images.
 
-If you are only making changes to firmware settings, you will click the ``Done`` button. You are then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` your changes. However, if you are updating the node's firmware as described in the previous sections, then the ``Fetch and Update`` process will begin immediately and you are not required to click the *Done* button.
+CLI Upgrade and Restore
++++++++++++++++++++++++
+
+It is possible to upgrade your node's firmware from the command line using the ``aredn_sysupgrade`` command. Several optional flags [enclosed in brackets] are available as needed. The ``--firstuse`` option upgrades the node's firmware and immediately opens the "First Use" configuration display. The ``--force`` option will bypass the node's firmware compatibility check when upgrading the firmware. The ``--backup`` option will upgrade the node's firmware and immediately restore the settings listed in the specified ``<backupfile>`` you have previously created on the node. The ``<firmwarefile>`` parameter specifies the absolute or relative path to the firmware file you have copied to the node.
+
+::
+
+  Usage: aredn_sysupgrade [--firstuse] [--force] [--backup <backupfile>] <firmwarefile>
 
 Package settings
 ----------------

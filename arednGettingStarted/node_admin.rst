@@ -192,6 +192,8 @@ Once you have generated and saved a backup configuration, you can restore that p
 
 A progress bar at the bottom of the display will show the status of your download or upload. Any error messages will also be displayed in a message bar at the top of this display. You should then see a display showing that the image is being installed, along with a timer and progress indicator.
 
+It is also possible to select a firmware file to upgrade and at the same time select a backup file for restoring the specific settings it contains. If both filenames are provided, then the backup settings will be applied after the firmware upgrade has completed.
+
 Advanced Firmware Options
 +++++++++++++++++++++++++
 

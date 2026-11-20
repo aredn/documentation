@@ -947,12 +947,12 @@ Multiport nodes have the appropriate VLANs preconfigured in the AREDN® firmware
 Networking for Tunnel Servers
   In order for remote tunnel clients to reach your tunnel server node, your Internet-connected firewall must allow that traffic to enter your network and it must also forward that traffic to your tunnel server node. In order for your router/firewall to have a consistent way to forward traffic to your node, it is best practice to set a static IP address on your tunnel server node's WAN interface or to reserve its DHCP IP address in your router.
 
-  On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The starting port should be ``5525``, which will provide for one Wireguard tunnel client connection. If you want to allow up to 10 Wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
+  On your Internet-connected router/firewall set the firewall rules to permit UDP traffic from the Internet on an appropriate range of ports. The default starting port is ``5525``, which will provide for one Wireguard tunnel client connection. If you want to allow up to 10 Wireguard tunnel links (for example), you would permit UDP traffic on the range of ports between ``5525-5534``. Then configure a port forwarding rule to send any traffic from the Internet on your range of ports to the IP address of your node's WAN interface.
 
 Tunnel settings
 +++++++++++++++
 
-Highlight and click the section displaying your node's **Tunnels** to open the tunnel configuration display as shown below. Context-sensitive help is available by clicking the ``Help`` button.
+Highlight and click the section displaying your node's **Tunnels** to open the tunnel configuration display as shown below. Context-sensitive help is available by clicking the ``Help`` button. You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
 
 .. image:: _images/admin-tunnels.png
    :alt: Admin Tunnel Settings
@@ -990,7 +990,8 @@ Default Tunnel Cost
 Default Tunnel MTU
   The default packet size (MTU). If your WAN network requires smaller packets than usual, this can be set between 1280 and 1420. Remember to change the MTU size on the other end of tunnels to match.
 
-You can click the ``Cancel`` button to ignore any changes you made on this display. When you are finished with your changes, click the ``Done`` button. You will then be returned to your node's *admin* view where you will be able to ``Commit`` or ``Revert`` any changes.
+First Server Port
+  The default starting port for use by your node's tunnel server is 5525. If ports beginning with this number are not appropriate for your environment, you can change the starting port here. Note that this value can only be changed if you do not currently have any tunnel client credentials configured on your tunnel server. Changing this value may be useful if you have more than one node serving tunnel connections and those nodes share your Internet connection.
 
 Tools
 -----

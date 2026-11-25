@@ -449,7 +449,7 @@ When you are logged in as *admin* you will see an **Internal Services** status d
 Highlighting and clicking the **Internal Services** section will allow you to manage the internal settings on your node. Context-sensitive help is available by clicking the ``Help`` button.
 
 Informational Statuses
-  ``Metrics`` simply indicates whether this node has provided metrics to an external service such as `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_. ``Supernode`` will only appear on nodes capable of being a Supernode and it indicates whether the node is currently configured as a Supernode. ``LAN Monitor`` indicates that LAN services are being checked for reachability, by default every five minutes.
+  **Metrics** indicates whether this node has provided metrics to an external service such as ``sysinfo`` or `Prometheus <https://en.wikipedia.org/wiki/Prometheus_(software)>`_. **Supernode** will only appear on nodes capable of being a Supernode and it indicates whether the node is currently configured as a Supernode. **LAN Monitor** indicates that LAN services are being checked for reachability, by default every five minutes. **Wireguard Monitor** indicates whether wireguard interfaces are present on the node. 
 
 .. image:: _images/admin-internal-svc-2.png
  :alt: Admin Internal Services
